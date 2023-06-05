@@ -15,9 +15,10 @@ public class QueGG {
     public static void main(String[] args) throws Exception {
         System.out.println("Grammar Parser!!!");
         Grammar grammar=new GrammarFactory(new File(grammarFileName)).getGrammar();
-        String sentence="Who is the editor of Forbes?";
+        String sentence="Who is the editor of Amefurashi?";
         try {
-            grammar.parser(sentence);
+            String sparql=grammar.parser(sentence);
+            System.out.println(sparql);
              } catch (Exception e) {
             System.err.printf("%s: %s%n", e.getClass().getSimpleName(), e.getMessage());
         }

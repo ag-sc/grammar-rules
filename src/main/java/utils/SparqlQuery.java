@@ -136,7 +136,7 @@ public class SparqlQuery {
         //SparqlQuery sparqlQuery=new SparqlQuery("Person");
         //System.out.print(sparqlQuery.getEntityMap());
 
-       
+     
 
     }
 

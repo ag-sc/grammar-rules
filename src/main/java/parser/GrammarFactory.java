@@ -67,9 +67,9 @@ public class GrammarFactory {
 
     private String modifySparql(String template, String sparql, String returnVariable) {
         if (template != null && template.contains("HOW_MANY_THING")) {
-            sparql = "SELECT COUNT(?Arg) WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
+            sparql = "SELECT COUNT(?Answer ) WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
         } else {
-            sparql = "SELECT ?Arg WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
+            sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
         }
 
         if (returnVariable.contains("objOfProp")) {

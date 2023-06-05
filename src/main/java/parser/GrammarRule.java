@@ -46,6 +46,10 @@ public class GrammarRule {
         return this.qaElement.getSparql();
     }
 
+    public String getBindingType() {
+        return bindingType;
+    }
+
     @Override
     public String toString() {
         return "GrammarRule{" + "qaElement=" + qaElement + ", entityMap=" + entityMap + '}';
