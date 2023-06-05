@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :composer-of ;
+  lemon:entry    :composer-of_form_preposition .
+
+:composer-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :composer-of_form ;
+  lemon:otherForm  :composer-of_singular ;
+  lemon:otherForm  :composer-of_plural ;
+  lemon:sense          :composer-of_sense_1 ;
+  lemon:synBehavior    :composer-of_nounpp .
+
+:composer-of_form a lemon:Form ;
+  lemon:writtenRep "music composer"@en .
+
+:composer-of_singular a    lemon:Form ;
+  lemon:writtenRep "music composer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:composer-of_plural a   lemon:Form ;
+  lemon:writtenRep "music composers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:composer-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:composer-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :composer-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/composer> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :composer-of_sense_1_condition .
+
+:composer-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2 lemon:marker :composer-of_form_preposition .
+## Prepositions ##
+:composer-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

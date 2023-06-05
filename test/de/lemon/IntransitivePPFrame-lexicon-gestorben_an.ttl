@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :gestorben_an ;
+  lemon:entry    :form_gestorben_an_present_preposition .
+
+:gestorben_an a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_gestorben_an_present ;
+  lemon:otherForm      :gestorben_an_present3rd ;
+  lemon:otherForm      :gestorben_an_past ;
+  lemon:otherForm      :gestorben_an_perfect ;
+  lemon:sense          :gestorben_an_sense_1 ;
+  lemon:synBehavior    :gestorben_an_frame .
+
+:form_gestorben_an_present a           lemon:Form ;
+  lemon:writtenRep     "sterben"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:gestorben_an_present3rd a      lemon:Form ;
+  lemon:writtenRep "stirbt"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:gestorben_an_past a lemon:Form ;
+  lemon:writtenRep  "starb"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:gestorben_an_perfect a lemon:Form ;
+  lemon:writtenRep  "gestorben"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:gestorben_an_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :gestorben_an_subj ;
+  lexinfo:prepositionalAdjunct :gestorben_an_obj .
+
+:gestorben_an_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :gestorben_an_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/deathCause> ;
+  lemon:subjOfProp  :gestorben_an_obj ;
+  lemon:objOfProp   :gestorben_an_subj ;
+  lemon:condition   :gestorben_an_sense_1_condition .
+
+:gestorben_an_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Disease> .
+
+
+:gestorben_an_obj lemon:marker :an .
+
+:arg2 lemon:marker :form_gestorben_an_present_preposition .
+
+## Prepositions ##
+
+:form_gestorben_an_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "an"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Stadtteile_von ;
+  lemon:entry    :Stadtteile_von_form_preposition .
+
+:Stadtteile_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :Stadtteile_von_form ;
+  lemon:otherForm      :Stadtteile_von_plural_form ;
+  lemon:otherForm      :Stadtteile_von_accusative_form ;
+  lemon:otherForm      :Stadtteile_von_dative_form ;
+  lemon:otherForm      :Stadtteile_von_genitive_form ;
+  lemon:otherForm      :Stadtteile_von_plural_form ;
+  lemon:sense          :Stadtteile_von_sense_1 ;
+  lemon:synBehavior    :Stadtteile_von_nounpp .
+
+:Stadtteile_von_form a lemon:Form ;
+  lemon:writtenRep "Stadtteil"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Stadtteile_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Stadtteile"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Stadtteile_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Stadtteil"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:Stadtteile_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Stadtteil"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:Stadtteile_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Stadtteil"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:Stadtteile_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2 ;
+  lexinfo:prepositionalAdjunct :arg1 .
+
+:Stadtteile_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :Stadtteile_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/governmentType> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :Stadtteile_von_sense_1_condition .
+
+:Stadtteile_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Town> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2 lemon:marker :Stadtteile_von_form_preposition .
+
+## Prepositions ##
+
+:Stadtteile_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

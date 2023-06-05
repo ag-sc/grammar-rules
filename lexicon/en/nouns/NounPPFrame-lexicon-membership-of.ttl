@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :membership-of ;
+  lemon:entry    :membership-of_form_preposition .
+
+:membership-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :membership-of_form ;
+  lemon:otherForm  :membership-of_singular ;
+  lemon:otherForm  :membership-of_plural ;
+  lemon:sense          :membership-of_sense_1 ;
+  lemon:synBehavior    :membership-of_nounpp .
+
+:membership-of_form a lemon:Form ;
+  lemon:writtenRep "member"@en .
+
+:membership-of_singular a    lemon:Form ;
+  lemon:writtenRep "member"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:membership-of_plural a   lemon:Form ;
+  lemon:writtenRep "members"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:membership-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:membership-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :membership-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/bandMember> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :membership-of_sense_1_condition .
+
+:membership-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Band> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/MusicalArtist> .
+
+:arg2 lemon:marker :membership-of_form_preposition .
+## Prepositions ##
+:membership-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

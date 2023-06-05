@@ -1,0 +1,64 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :headquarter_of ;
+  lemon:entry    :headquarter_of_form_preposition .
+
+:headquarter_of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :headquarter_of_form ;
+  lemon:otherForm  :headquarter_of_singular ;
+  lemon:otherForm  :headquarter_of_plural ;
+  lemon:sense          :headquarter_of_sense_1 ;
+  lemon:sense          :headquarter_of_sense_2 ;
+  lemon:synBehavior    :headquarter_of_nounpp .
+
+:headquarter_of_form a lemon:Form ;
+  lemon:writtenRep "headquarter"@en .
+
+:headquarter_of_singular a    lemon:Form ;
+  lemon:writtenRep "headquarter"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:headquarter_of_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:headquarter_of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:headquarter_of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :headquarter_of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/headquarter> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :headquarter_of_sense_1_condition .
+
+:headquarter_of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/PopulatedPlace> .
+
+:headquarter_of_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :headquarter_of_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/location> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :headquarter_of_sense_2_condition .
+
+:headquarter_of_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Building> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2 lemon:marker :headquarter_of_form_preposition .
+## Prepositions ##
+:headquarter_of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

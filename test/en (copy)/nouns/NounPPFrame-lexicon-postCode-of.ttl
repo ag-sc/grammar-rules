@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :postCode-of ;
+  lemon:entry    :postCode-of_form_preposition .
+
+:postCode-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :postCode-of_form ;
+  lemon:otherForm  :postCode-of_singular ;
+  lemon:otherForm  :postCode-of_plural ;
+  lemon:sense          :postCode-of_sense_1 ;
+  lemon:synBehavior    :postCode-of_nounpp .
+
+:postCode-of_form a lemon:Form ;
+  lemon:writtenRep "post code"@en .
+
+:postCode-of_singular a    lemon:Form ;
+  lemon:writtenRep "post code"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:postCode-of_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:postCode-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:postCode-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :postCode-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/postalCode> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :postCode-of_sense_1_condition .
+
+:postCode-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2 lemon:marker :postCode-of_form_preposition .
+## Prepositions ##
+:postCode-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

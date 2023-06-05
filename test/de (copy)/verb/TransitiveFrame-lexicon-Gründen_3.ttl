@@ -1,0 +1,91 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :to_Gründen_3 ;
+  lemon:entry    :Gründen_3ed ;
+  lemon:entry    :form_Gründen_3_preposition .
+
+:to_Gründen_3 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_Gründen_3 ;
+  lemon:otherForm      :form_Gründen_3s ;
+  lemon:otherForm      :form_Gründen_3ed ;
+  lemon:sense          :Gründen_3_sense_1 ;
+  lemon:synBehavior    :Gründen_3_frame_transitive .
+
+:form_Gründen_3 a         lemon:Form ;
+  lemon:writtenRep     "gründen"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_Gründen_3s a    lemon:Form ;
+  lemon:writtenRep "gründet"@de ;
+  lexinfo:tense    lexinfo:past ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+
+:form_Gründen_3s a    lemon:Form ;
+  lemon:writtenRep "gründete"@de ;
+  lexinfo:tense    lexinfo:past ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:form_Gründen_3ed a   lemon:Form ;
+  lemon:writtenRep "gegründet"@de ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:Gründen_3_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :Gründen_3_subj ;
+  lexinfo:directObject     :Gründen_3_obj .
+
+:Gründen_3_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :Gründen_3_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/founder> ;
+  lemon:subjOfProp  :Gründen_3_obj ;
+  lemon:objOfProp   :Gründen_3_subj ;
+  lemon:condition   :Gründen_3_sense_1_condition .
+
+
+:Gründen_3_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Publisher> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+:Gründen_3ed a            lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_Gründen_3ed_canonical ;
+  lemon:otherForm      :form_Gründen_3ed_by ;
+  lemon:synBehavior    :Gründen_3ed_frame_adjectivepp ;
+  lemon:sense          :Gründen_3ed_ontomap .
+
+:form_Gründen_3ed_canonical a lemon:Form ;
+  lemon:writtenRep         "gründen"@de .
+
+:form_Gründen_3ed_by a    lemon:Form ;
+  lemon:writtenRep     "gründen"@de ;
+  lexinfo:verbFormMood lexinfo:participle .
+
+
+:Gründen_3ed_frame_adjectivepp a  lexinfo:AdjectivePPFrame ;
+  lexinfo:copulativeSubject    :Gründen_3ed_subj ;
+  lexinfo:prepositionalAdjunct :Gründen_3ed_obj .
+
+:Gründen_3ed_ontomap a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :Gründen_3ed_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/founder> ;
+  lemon:subjOfProp  :Gründen_3ed_subj ;
+  lemon:objOfProp   :Gründen_3ed_obj ;
+  lemon:condition   :Gründen_3_sense_1_condition .
+:Gründen_3ed_obj lemon:marker :von .
+
+:arg2 lemon:marker :form_Gründen_3_form_preposition .
+
+## Prepositions ##
+
+:form_Gründen_3_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

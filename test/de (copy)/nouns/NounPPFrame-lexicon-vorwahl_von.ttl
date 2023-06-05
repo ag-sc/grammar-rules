@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :vorwahl_von ;
+  lemon:entry    :vorwahl_von_form_preposition .
+
+:vorwahl_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :vorwahl_von_form ;
+  lemon:otherForm      :vorwahl_von_plural_form ;
+  lemon:otherForm      :vorwahl_von_accusative_form ;
+  lemon:otherForm      :vorwahl_von_dative_form ;
+  lemon:otherForm      :vorwahl_von_genitive_form ;
+  lemon:otherForm      :vorwahl_von_plural_form ;
+  lemon:sense          :vorwahl_von_sense_1 ;
+  lemon:synBehavior    :vorwahl_von_nounpp .
+
+:vorwahl_von_form a lemon:Form ;
+  lemon:writtenRep "Vorwahl"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:vorwahl_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Vorwahl"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:vorwahl_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Vorwahl"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:vorwahl_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Vorwahl"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:vorwahl_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Vorwahl"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:vorwahl_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:vorwahl_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :vorwahl_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/areaCode> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :vorwahl_von_sense_1_condition .
+
+:vorwahl_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Place> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2 lemon:marker :vorwahl_von_form_preposition .
+
+## Prepositions ##
+
+:vorwahl_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

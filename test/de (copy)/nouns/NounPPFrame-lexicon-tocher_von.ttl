@@ -1,0 +1,87 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :tocher_von ;
+  lemon:entry    :tocher_von_form_preposition .
+
+:tocher_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :tocher_von_form ;
+  lemon:otherForm      :tocher_von_plural_form ;
+  lemon:otherForm      :tocher_von_accusative_form ;
+  lemon:otherForm      :tocher_von_dative_form ;
+  lemon:otherForm      :tocher_von_genitive_form ;
+  lemon:otherForm      :tocher_von_plural_form ;
+  lemon:sense          :tocher_von_sense_1 ;
+  lemon:sense          :tocher_von_sense_2 ;
+  lemon:synBehavior    :tocher_von_nounpp .
+
+:tocher_von_form a lemon:Form ;
+  lemon:writtenRep "Tochter"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:tocher_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Töchter"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:tocher_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Tochter"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:tocher_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Tochter"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:tocher_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Tochter"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:tocher_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:tocher_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :tocher_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :tocher_von_sense_1_condition .
+
+:tocher_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:tocher_von_sense_2 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :tocher_von_sense_2 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :tocher_von_sense_2_condition .
+
+:tocher_von_sense_2_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2 lemon:marker :tocher_von_form_preposition .
+
+## Prepositions ##
+
+:tocher_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

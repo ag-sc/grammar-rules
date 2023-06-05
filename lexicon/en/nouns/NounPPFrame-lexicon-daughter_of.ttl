@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :daughter_of ;
+  lemon:entry    :daughter_of_form_preposition .
+
+:daughter_of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :daughter_of_form ;
+  lemon:otherForm  :daughter_of_singular ;
+  lemon:otherForm  :daughter_of_plural ;
+  lemon:sense          :daughter_of_sense_1 ;
+  lemon:synBehavior    :daughter_of_nounpp .
+
+:daughter_of_form a lemon:Form ;
+  lemon:writtenRep "daughter"@en .
+
+:daughter_of_singular a    lemon:Form ;
+  lemon:writtenRep "daughter"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:daughter_of_plural a   lemon:Form ;
+  lemon:writtenRep "daughters"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:daughter_of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:daughter_of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :daughter_of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/child> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :daughter_of_sense_1_condition .
+
+:daughter_of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2 lemon:marker :daughter_of_form_preposition .
+## Prepositions ##
+:daughter_of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

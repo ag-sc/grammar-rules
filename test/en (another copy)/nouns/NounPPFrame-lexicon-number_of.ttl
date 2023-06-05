@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :number_of ;
+  lemon:entry    :number_of_form_preposition .
+
+:number_of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :number_of_form ;
+  lemon:otherForm  :number_of_singular ;
+  lemon:otherForm  :number_of_plural ;
+  lemon:sense          :number_of_sense_1 ;
+  lemon:synBehavior    :number_of_nounpp .
+
+:number_of_form a lemon:Form ;
+  lemon:writtenRep "number of locations"@en .
+
+:number_of_singular a    lemon:Form ;
+  lemon:writtenRep "number of locations"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:number_of_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:number_of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:number_of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :number_of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/numberOfLocations> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :number_of_sense_1_condition .
+
+:number_of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Company> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2 lemon:marker :number_of_form_preposition .
+## Prepositions ##
+:number_of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :book_by ;
+  lemon:entry    :book_by_form_preposition .
+
+:book_by a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :book_by_form ;
+  lemon:otherForm  :book_by_singular ;
+  lemon:otherForm  :book_by_plural ;
+  lemon:sense          :book_by_sense_1 ;
+  lemon:synBehavior    :book_by_nounpp .
+
+:book_by_form a lemon:Form ;
+  lemon:writtenRep "book"@en .
+
+:book_by_singular a    lemon:Form ;
+  lemon:writtenRep "book"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:book_by_plural a   lemon:Form ;
+  lemon:writtenRep "books"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:book_by_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2 ;
+  lexinfo:prepositionalAdjunct :arg1 .
+
+:book_by_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :book_by_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/author> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :book_by_sense_1_condition .
+
+:book_by_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Book> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Writer> .
+
+:arg2 lemon:marker :book_by_form_preposition .
+## Prepositions ##
+:book_by_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

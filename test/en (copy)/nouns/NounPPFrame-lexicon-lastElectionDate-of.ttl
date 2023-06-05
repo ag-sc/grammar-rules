@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :lastElectionDate-of ;
+  lemon:entry    :lastElectionDate-of_form_preposition .
+
+:lastElectionDate-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :lastElectionDate-of_form ;
+  lemon:otherForm  :lastElectionDate-of_singular ;
+  lemon:otherForm  :lastElectionDate-of_plural ;
+  lemon:sense          :lastElectionDate-of_sense_1 ;
+  lemon:synBehavior    :lastElectionDate-of_nounpp .
+
+:lastElectionDate-of_form a lemon:Form ;
+  lemon:writtenRep "last Election Date"@en .
+
+:lastElectionDate-of_singular a    lemon:Form ;
+  lemon:writtenRep "last Election Date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:lastElectionDate-of_plural a   lemon:Form ;
+  lemon:writtenRep "last Election Dates"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:lastElectionDate-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:lastElectionDate-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :lastElectionDate-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/lastElectionDate> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :lastElectionDate-of_sense_1_condition .
+
+:lastElectionDate-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2 lemon:marker :lastElectionDate-of_form_preposition .
+## Prepositions ##
+:lastElectionDate-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

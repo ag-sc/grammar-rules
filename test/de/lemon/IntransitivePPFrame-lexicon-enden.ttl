@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :enden ;
+  lemon:entry    :form_enden_present_preposition .
+
+:enden a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_enden_present ;
+  lemon:otherForm      :enden_present3rd ;
+  lemon:otherForm      :enden_past ;
+  lemon:otherForm      :enden_perfect ;
+  lemon:sense          :enden_sense_1 ;
+  lemon:synBehavior    :enden_frame .
+
+:form_enden_present a           lemon:Form ;
+  lemon:writtenRep     "enden"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:enden_present3rd a      lemon:Form ;
+  lemon:writtenRep "endet"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:enden_past a lemon:Form ;
+  lemon:writtenRep  "endete"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:enden_perfect a lemon:Form ;
+  lemon:writtenRep  "geendet"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:enden_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :enden_subj ;
+  lexinfo:prepositionalAdjunct :enden_obj .
+
+:enden_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :enden_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/dissolutionDate> ;
+  lemon:subjOfProp  :enden_obj ;
+  lemon:objOfProp   :enden_subj ;
+  lemon:condition   :enden_sense_1_condition .
+
+:enden_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:enden_obj lemon:marker :am .
+
+:arg2 lemon:marker :form_enden_present_preposition .
+
+## Prepositions ##
+
+:form_enden_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "am"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

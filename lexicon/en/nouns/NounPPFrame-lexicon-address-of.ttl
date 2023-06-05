@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :address-of ;
+  lemon:entry    :address-of_form_preposition .
+
+:address-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :address-of_form ;
+  lemon:otherForm  :address-of_singular ;
+  lemon:otherForm  :address-of_plural ;
+  lemon:sense          :address-of_sense_1 ;
+  lemon:synBehavior    :address-of_nounpp .
+
+:address-of_form a lemon:Form ;
+  lemon:writtenRep "address"@en .
+
+:address-of_singular a    lemon:Form ;
+  lemon:writtenRep "address"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:address-of_plural a   lemon:Form ;
+  lemon:writtenRep "addresses"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:address-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:address-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :address-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/address> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :address-of_sense_1_condition .
+
+:address-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/ArchitecturalStructure> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2 lemon:marker :address-of_form_preposition .
+## Prepositions ##
+:address-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

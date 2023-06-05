@@ -1,0 +1,9 @@
+{
+  "endpoint" : "https://virtuoso.pret-tool.staging.derilinx.com/sparql",
+  "prefix" : {
+    "citizenProp" :   "http%3A%2F%2Fwww.citizensinformation.ie%2F%23",
+    "citizenRes" :    "http%3A%2F%2Fwww.citizensinformation.ie%2F%23",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#"
+  },
+  "bindingLimit": 10
+}

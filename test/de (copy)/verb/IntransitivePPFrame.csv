@@ -1,0 +1,41 @@
+LemonEntry,partOfSpeech,writtenFormInfinitive,writtenFormThridPerson,writtenFormPast,writtenFormPast,preposition,SyntacticFrame,subject,prepositionalAdjunct,sense,reference,domain,range
+Stattfinden,TrennVerb,stattfinden,findet statt,fand statt,stattgefunden,am,IntransitivePPFrame,domain,range,1,dbp:date,dbo:MilitaryConflict,xsd:date
+durchführen,TrennVerb,durchführen,führt durch,führte durch,durchgeführt,am,IntransitivePPFrame,domain,range,1,dbo:date,dbo:MilitaryConflict,xsd:date
+verheiraten_mit,verb,verheiraten,verheiratet,verheiratete,verheiratet,mit,IntransitivePPFrame,domain,range,1,dbo:spouse,dbo:Person,dbo:Person
+aufhören,TrennVerb,aufhören,hört auf,hörte auf,aufgehört,in,IntransitivePPFrame,domain,range,1,dbo:routeEnd,dbo:Road,dbo:Location
+gestorben_an,verb,sterben,stirbt,starb,gestorben,an,IntransitivePPFrame,domain,range,1,dbo:deathCause,dbo:Person,dbo:Disease
+gestorben_am,verb,sterben,stirbt,starb,gestorben,am,IntransitivePPFrame,domain,range,1,dbo:deathDate,dbo:Person,xsd:date
+gestorben_in,verb,sterben,stirbt,starb,gestorben,in,IntransitivePPFrame,range,domain,1,dbo:deathPlace,dbo:Person,dbo:City
+fliessen_durch_1,verb,fließen,fließt,floss,geflossen,durch,IntransitivePPFrame,domain,range,1,dbo:city,dbo:River,dbo:City
+fliessen_durch_2,verb,fließen,fließt,floss,geflossen,durch,IntransitivePPFrame,domain,range,1,dbp:country,dbo:River,dbo:Country
+Überspannen,verb,überspannen,überspannt,überspannte,überspannt,in,IntransitivePPFrame,domain,range,1,dbo:crosses,dbo:Bridge,dbo:BodyOfWater
+anfangen,TrennVerb,anfangen,fängt an,fängt an,angefangen,in,IntransitivePPFrame,domain,range,1,dbo:routeStart,dbo:Place,dbo:Road
+sprechen,verb,sprechen,spricht,sprach,gesprochen,in,IntransitivePPFrame,domain,range,1,dbo:language,dbo:Country,dbo:Language
+entspringen,veb,entspringen,entspringt,entsprang,entsprungen,in,IntransitivePPFrame,domain,range,1,dbp:mouthLocation,dbo:River,dbo:Place
+geborn_am_1,verb,gebären,gebärt,gebar,geboren,am,IntransitivePPFrame,domain,range,1,dbo:birthYear,dbo:Person,xsd:date
+geborn_in_1,verb,gebären,gebärt,gebar,geboren,in,IntransitivePPFrame,domain,range,1,dbo:birthPlace,dbo:Person,dbo:Place
+geborn_in_2,verb,gebären,gebärt,gebar,geboren,in,IntransitivePPFrame,domain,range,1,dbo:birthPlace,dbo:Person,dbo:City
+geborn_in_3,verb,gebären,gebärt,gebar,geboren,in,IntransitivePPFrame,domain,range,1,dbo:birthPlace,dbo:Person,dbo:Country
+geborn_in_4,verb,gebären,gebärt,gebar,geboren,in,IntransitivePPFrame,domain,range,1,dbo:birthPlace,dbo:Actor,dbo:Country
+geborn_in_5,verb,gebären,gebärt,gebar,geboren,in,IntransitivePPFrame,domain,range,1,dbo:birthPlace,dbo:Surfer,dbo:Country
+fertigstellen_in,TrennVerb,fertigstellen,stellt fertig,stellte fertig,fertiggestellt,in,IntransitivePPFrame,domain,range,1,dbo:completionDate,dbo:Ship,xsd:date
+ausstellen,TrennVerb,ausstellen,stellt aus,stellte aus,ausgestellt,in,IntransitivePPFrame,domain,range,1,dbo:museum,dbo:Artwork,dbo:Museum
+befinden,RefVerb,befinden,befindet,befand,befunden,in,IntransitivePPFrame,domain,range,1,dbo:country,dbo:Lake,dbo:Country
+schreiben_in,verb,schreiben,schreibt,schrieb,geschrieben,in,IntransitivePPFrame,domain,range,1,dbo:programmingLanguage,dbo:Software,dbo:Language
+wohnen_in,verb,wohnen,wohnt,wohnte,gewohnt,in,IntransitivePPFrame,domain,range,1,dbo:residence,dbo:Person,dbo:City
+enden,verb,enden,endet,endete,geendet,am,IntransitivePPFrame,domain,range,1,dbo:dissolutionDate,dbo:Country,xsd:date
+Liegen_1,verb,liegen,liegt,lag,gelegen,in,IntransitivePPFrame,domain,range,1,dbo:country,dbo:City,dbo:Country
+Liegen_2,verb,liegen,liegt,lag,gelegen,in,IntransitivePPFrame,domain,range,1,dbp:location,dbo:MilitaryUnit,dbo:Location
+Liegen_3,verb,liegen,liegt,lag,gelegen,in,IntransitivePPFrame,domain,range,1,dbp:location,dbo:HistoricPlace,dbo:Location
+Liegen_4,verb,liegen,liegt,lag,gelegen,in,IntransitivePPFrame,domain,range,1,dbo:country,dbo:Lake,dbo:Country
+Liegen_5,verb,liegen,liegt,lag,gelegen,in,IntransitivePPFrame,domain,range,1,dbo:locatedInArea,dbo:Mountain,dbo:Country
+Stehen_1,verb,stehen,steht,stand,gestanden,fuer,IntransitivePPFrame,domain,range,1,dbo:abbreviation,owl:Thing,xsd:string
+Stehen_2,verb,stehen,steht,standen,gestanden,fuer,IntransitivePPFrame,domain,range,1,dbo:connotation,dbo:Colour,owl:Thing
+leben_in_3,verb,Menschen leben,lebt,lebte,gelebt,in,IntransitivePPFrame,domain,range,1,dbo:populationTotal,dbo:Country,xsd:double
+leben_in_4,verb,Menschen leben,lebt,lebte,gelebt,in,IntransitivePPFrame,domain,range,1,dbo:populationTotal,dbo:City,xsd:double
+wachsen_in_1,verb,wachsen,wächst,wuchs,gewachsen,in,IntransitivePPFrame,domain,range,1,dbo:growingGrape,dbo:WineRegion,dbo:Grape
+wachsen_in_2,verb,wachsen,wächst,wuchs,gewachsen,in,IntransitivePPFrame,range,domain,1,dbo:wineRegion,dbo:Grape,dbo:WineRegion
+mitspielen,verb,mitspiele,spielt mit,spielte mit,mitgespielt,in,IntransitivePPFrame,domain,range,1,dbo:starring,dbo:Film,dbo:Person
+bezahlen_mit,verb,bezahlen,bezahlt,bezahlte,bezahlt,mit,IntransitivePPFrame,domain,range,1,dbo:currency,dbo:Location,dbo:Currency
+nennen,veb,nennen,nennt,nante,genannt,in,IntransitivePPFrame,domain,range,1,dbp:nickname,dbo:Person,xsd:string
+sprechen,veb,sprechen,spricht,sprach,gesprochen,in,IntransitivePPFrame,domain,range,1,dbo:language,dbo:Location,dbo:Language

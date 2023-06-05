@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :first_to_climb ;
+  lemon:entry    :first_to_climb_form_preposition .
+
+:first_to_climb a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :first_to_climb_form ;
+  lemon:otherForm  :first_to_climb_singular ;
+  lemon:otherForm  :first_to_climb_plural ;
+  lemon:sense          :first_to_climb_sense_1 ;
+  lemon:synBehavior    :first_to_climb_nounpp .
+
+:first_to_climb_form a lemon:Form ;
+  lemon:writtenRep "first to climb"@en .
+
+:first_to_climb_singular a    lemon:Form ;
+  lemon:writtenRep "first to climb"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:first_to_climb_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:first_to_climb_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:first_to_climb_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :first_to_climb_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/firstAscentPerson> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :first_to_climb_sense_1_condition .
+
+:first_to_climb_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Mountain> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2 lemon:marker :first_to_climb_form_preposition .
+## Prepositions ##
+:first_to_climb_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep ""@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

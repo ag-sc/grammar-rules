@@ -1,0 +1,1352 @@
+QALD id,match status,QALD question,QueGG question,comment,QALD SPARQL query,QueGG SPARQL query,TP,FP,FN,Precision,Recall,F-Measure
+0,0.9523809524,Wann fand die Schlacht von Gettysburg statt?,"""Wann fand Schlacht von Gettysburg statt?""",,PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE {res:Battle_of_Gettysburg dbp:date ?date .},"""select ?o 
+{
+ <http://dbpedia.org/resource/Battle_of_Gettysburg> <http://dbpedia.org/property/date> ?o . 
+}""",2,0,0,1,1,1
+1,0.8139534884,Liste alle Musicals mit Musik von Elton John auf.,"""Liste alle Musiken von Elton John auf""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+ ?uri rdf:type dbo:Musical .
+ ?uri dbo:musicBy res:Elton_John .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Elton_John> . 
+}""",4,0,0,1,1,1
+2,0,Wie hoch ist der Leuchtturm in Colombo?,,,SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Colombo_Lighthouse> <http://dbpedia.org/ontology/height> ?num . },,0,0,1,1,0,0
+3,0.7848101266,Wer war die Frau von US-Pr├ñsident Lincoln?,"""wer war die Frau von Abraham Lincoln?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Abraham_Lincoln dbo:spouse ?uri.
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Abraham_Lincoln> <http://dbpedia.org/ontology/spouse> ?o . 
+}""",1,0,0,1,1,1
+4,0.9350649351,Wer moderiert die BBC Wildlife Specials?,"""wer moderieren BBC Wildlife Specials?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/BBC_Wildlife_Specials> <http://dbpedia.org/ontology/presenter> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/BBC_Wildlife_Specials> <http://dbpedia.org/ontology/presenter> ?o . 
+}""",1,0,0,1,1,1
+5,0.9855072464,Wieviel hat Pulp Fiction gekostet?,"""Wieviel hat Pulp Fiction gekostet?""",,SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Pulp_Fiction> <http://dbpedia.org/ontology/budget> ?n . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Pulp_Fiction> <http://dbpedia.org/ontology/budget> ?o . 
+}""",1,0,0,1,1,1
+6,0.7105263158,In welcher Stadt ist die Heinekenbrauerei?,"""in welcher Stadt ist Cher geboren?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Heineken> <http://dbpedia.org/ontology/manufacturer> ?x . ?x <http://dbpedia.org/ontology/locationCity> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Cher> <http://dbpedia.org/ontology/birthPlace> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",0,1,0,0,0,0
+7,0.9333333333,Wann wurde die Operation Overlord durchgef├╝hrt?,"""Wann wurde Operation Overlord durchgef´┐¢hrt?""",,SELECT DISTINCT ?d WHERE { <http://dbpedia.org/resource/Operation_Overlord> <http://dbpedia.org/ontology/date> ?d . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Operation_Overlord> <http://dbpedia.org/ontology/date> ?o . 
+}""",1,0,0,1,1,1
+8,0.7692307692,In welcher Stadt h├Ârt die Ruta 68 auf?,"""in welcher Lage h´┐¢rte Ruta 68 Chile auf?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Chile_Route_68> <http://dbpedia.org/ontology/routeEnd> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Chile_Route_68> <http://dbpedia.org/ontology/routeEnd> ?o . 
+}""",1,0,0,1,1,1
+9,1,Wer hat Slack entwickelt?,"""wer hat Slack entwickelt?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Slack_(software)> . },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Slack_(software)> . 
+}""",1,0,0,1,1,1
+10,1,Wer war mit Jacques Chirac verheiratet?,"""wer war mit Jacques Chirac verheiratet?""",,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Jacques_Chirac dbo:spouse ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Jacques_Chirac> <http://dbpedia.org/ontology/spouse> ?o . 
+}""",1,0,0,1,1,1
+11,1,Woran ist Abraham Lincoln gestorben?,"""woran ist Abraham Lincoln gestorben?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Abraham_Lincoln dbo:deathCause ?uri . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Abraham_Lincoln> <http://dbpedia.org/ontology/deathCause> ?o . 
+}""",1,0,0,1,1,1
+12,0.8349514563,Wer malte Christus im Sturm auf dem See von Galilea?,"""wer malen Christus im Sturm auf dem See Genezareth?""",,"PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:The_Storm_on_the_Sea_of_Galilee dbp:artist ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/The_Storm_on_the_Sea_of_Galilee> <http://dbpedia.org/property/artist> ?o . 
+}""",1,0,0,1,1,1
+13,0.8860759494,Durch welche St├ñdte flie├ƒt die Zeravshan?,"""durch welche St´┐¢dte flie´┐¢en Zeravshan?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Zeravshan_(river)> <http://dbpedia.org/ontology/city> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Zeravshan_(river)> <http://dbpedia.org/ontology/city> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",3,0,0,1,1,1
+14,0,Wieviele Pl├ñtze hat das Heimstadium des FC Porto?,,,SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/FC_Porto> <http://dbpedia.org/ontology/ground> ?x . ?x <http://dbpedia.org/ontology/seatingCapacity> ?n . },,0,0,1,1,0,0
+15,0.7962962963,Mit wem ist die Tochter von Robert Kennedy verheiratet?,"""wer hat die Tochter von John F. Kennedy? verheiratet?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Robert_F._Kennedy> <http://dbpedia.org/ontology/child> ?child . ?child <http://dbpedia.org/ontology/spouse> ?uri . },"""SELECT DISTINCT ?objOfProp WHERE 
+{
+ ?subjOfProp <http://dbpedia.org/ontology/spouse> ?objOfProp . <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/child> ?subjOfProp .
+}""",0,2,4,0,0,0
+16,0.7102803738,Welche B├╝cher von Kerouac wurden von Viking Press verlegt?,"""welche Webseite wurde von Viking Press gegr´┐¢ndet?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> . ?uri <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/Viking_Press> . ?uri <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Jack_Kerouac> . },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Viking_Press> . 
+}""",0,0,3,1,0,0
+17,0.76,Wie gro├ƒ ist Amazon Eve?,"""wer ist Amazon Eve s Sohn?""",,SELECT DISTINCT ?height WHERE { <http://dbpedia.org/resource/Amazon_Eve> <http://dbpedia.org/ontology/height> ?height . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Amazon_Eve> <http://dbpedia.org/ontology/child> ?o . 
+}""",0,0,0,1,0,0
+18,0.9,In welchem Museum ist Der Schrei von Munch ausgestellt?,"""in welchem Museum ist Der Schrei ausgestellt?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:The_Scream dbo:museum ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/The_Scream> <http://dbpedia.org/ontology/museum> ?o . 
+}""",2,0,0,1,1,1
+19,0.8266666667,Wer schrieb das Buch Die S├ñulen der Erde?,"""wer schreiben Die S├ñulen der Erde?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:The_Pillars_of_the_Earth dbo:author ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/The_Pillars_of_the_Earth> <http://dbpedia.org/ontology/author> ?o . 
+}""",1,0,0,1,1,1
+20,0.7741935484,Ist James Bond verheiratet?,"""wer ist mit Jane Fonda verheiratet?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ res:James_Bond dbo:spouse ?uri . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Jane_Fonda> <http://dbpedia.org/ontology/spouse> ?o . 
+}""",0,3,1,0,0,0
+21,0.95,Wer entdeckte Ceres?,"""wer entdecken Ceres?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ceres_(dwarf_planet)> <http://dbpedia.org/ontology/discoverer> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Ceres_(dwarf_planet)> <http://dbpedia.org/ontology/discoverer> ?o . 
+}""",1,0,0,1,1,1
+22,0.8888888889,Welchen Fluss ├╝berspannt die Brooklyn Bridge?,"""in welchen Fluss ´┐¢berspannen Brooklyn Bridge?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Brooklyn_Bridge dbo:crosses ?uri . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Brooklyn_Bridge> <http://dbpedia.org/ontology/crosses> ?o . 
+}""",1,0,0,1,1,1
+23,0,Wer wurde Eagles genannt?,,,"PREFIX dbp: <http://dbpedia.org/property/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ ?uri dbp:nickname 'The Tiger'@en . 
+}",,0,0,10,1,0,0
+24,0.7868852459,Was ist das gr├Â├ƒte Land der Welt?,"""was ist gr´┐¢´┐¢te Land in Welt?""",,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> . ?uri <http://dbpedia.org/ontology/areaTotal> ?n . } ORDER BY DESC(?n) OFFSET 0 LIMIT 1,"""SELECT DISTINCT ?subjOfProp WHERE 
+{
+ ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . ?subjOfProp <http://dbpedia.org/ontology/areaTotal> ?num . 
+} ORDER BY DESC(?num) LIMIT 1""",1,0,0,1,1,1
+25,0.9117647059,Wer ist B├╝rgermeister von Paris?,"""wer ist der B´┐¢rgermeister von Paris?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/mayor> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/mayor> ?o . 
+}""",1,0,0,1,1,1
+26,0.8288288288,Wer ist der Trainer von Ankaras Eishockeymannschaft?,"""wer ist der Trainer von Kasachische Eishockeymeisterschaft?""",,SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Ankara> . ?x <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Turkish_Ice_Hockey_First_League> . ?x <http://dbpedia.org/ontology/coach> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Kazakhstan_Hockey_Championship> <http://dbpedia.org/ontology/coach> ?o . 
+}""",0,0,1,1,0,0
+27,0.9203539823,Wer ist der B├╝rgermeister der Hauptstadt von Russland?,"""wer ist der B´┐¢rgermeister von die Hauptstadt von Russland??""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+ res:Russia dbo:capital ?x .
+ ?x dbo:leaderName ?uri .
+}","""SELECT DISTINCT ?objOfProp WHERE 
+{
+ ?subjOfProp <http://dbpedia.org/ontology/leaderName> ?objOfProp . <http://dbpedia.org/resource/Russia> <http://dbpedia.org/ontology/capital> ?subjOfProp .
+}""",1,0,0,1,1,1
+28,0.9473684211,Welche Preise hat Douglas Hofstadter gewonnen?,"""welcher Preis hat Douglas R. Hofstadter gewonnen?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Douglas_Hofstadter dbo:award ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Douglas_Hofstadter> <http://dbpedia.org/ontology/award> ?o . 
+}""",4,0,0,1,1,1
+29,0.8169014085,Wieviel hat der Legofilm gekostet?,"""Wieviel hat The LEGO Movie gekostet?""",,SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/The_Lego_Movie> <http://dbpedia.org/ontology/budget> ?n . },"""select ?o 
+{
+ <http://dbpedia.org/resource/The_Lego_Movie> <http://dbpedia.org/ontology/budget> ?o . 
+}""",1,0,0,1,1,1
+30,0.84,Wo f├ñngt Piccadilly an?,"""was f´┐¢ngt in Piccadilly an?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/routeStart> <http://dbpedia.org/resource/Piccadilly>. },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/routeStart> <http://dbpedia.org/resource/Piccadilly> . 
+}""",1,0,0,1,1,1
+31,0,Haben Prinz Harry und Prinz William dieselben Eltern?,,,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+ASK
+WHERE { 
+ <http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> dbo:parent ?x . 
+ <http://dbpedia.org/resource/Prince_Harry> dbo:parent ?x .
+}",,0,0,1,1,0,0
+32,1,Wer hat Agent Smith gespielt?,"""wer hat Agent Smith gespielt?""",,"PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Agent_Smith dbp:portrayer ?uri . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Agent_Smith> <http://dbpedia.org/property/portrayer> ?o . 
+}""",3,0,0,1,1,1
+33,0.8118811881,Wieviele Sprachen werden in Turkmenistan gesprochen?,"""in welchen Sprachen sind Turkmenistan gesprochen?""",,SELECT (COUNT(DISTINCT ?x) as ?c) WHERE { <http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/language> ?x . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/language> ?o . 
+}""",0,3,1,0,0,0
+34,0,In welchen Filmen spielen sowohl Julia Roberts als auch Richard Gere mit?,,,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> . ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Gere> . },,0,0,2,1,0,0
+35,0.8648648649,In welchem Land entspringt der Ganges?,"""in welchen Lagen entspringen Ganges?""",,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ res:Ganges <http://dbpedia.org/property/mouthLocation> ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Ganges> <http://dbpedia.org/property/mouthLocation> ?o . 
+}""",1,0,0,1,1,1
+36,0.8941176471,In welchem Jahr wurde Rachel Stevens geboren?,"""am welche wurde Rachel Stevens geboren?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rachel_Stevens> <http://dbpedia.org/ontology/birthYear> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Rachel_Stevens> <http://dbpedia.org/ontology/birthYear> ?o . 
+}""",1,0,0,1,1,1
+37,0.7692307692,Ist Barack Obama ein Demokrat?,"""wer ist Barack Obama s Doktorvater?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK
+WHERE { 
+ res:Barack_Obama dbo:party <http://dbpedia.org/resource/Democratic_Party_(United_States)> . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Barack_Obama> <http://dbpedia.org/ontology/doctoralAdvisor> ?o . 
+}""",0,0,1,1,0,0
+38,1,Wo wurde Johann Sebastian Bach geboren?,"""Wo wurde Johann Sebastian Bach geboren?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Johann_Sebastian_Bach dbo:birthPlace ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Johann_Sebastian_Bach> <http://dbpedia.org/ontology/birthPlace> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",0,0,1,1,0,0
+39,0.90625,Wie oft hat Jane Fonda geheiratet?,"""wer hat Jane Fonda geheiratet?""",,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE { <http://dbpedia.org/resource/Jane_Fonda> <http://dbpedia.org/ontology/spouse> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Jane_Fonda> <http://dbpedia.org/ontology/spouse> ?o . 
+}""",0,3,1,0,0,0
+40,0.8101265823,Wer hat als erstes den Mount Everest bestiegen?,"""wer hat Mount Everest bestiegen?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Mount_Everest dbo:firstAscentPerson ?uri . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Mount_Everest> <http://dbpedia.org/ontology/firstAscentPerson> ?o . 
+}""",2,0,0,1,1,1
+41,0.9538461538,Wieviele Menschen leben in Polen?,"""Wieviel Menschen leben in Polen""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Poland> <http://dbpedia.org/ontology/populationTotal> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Poland> <http://dbpedia.org/ontology/populationTotal> ?o . 
+}""",1,0,0,1,1,1
+42,0.9285714286,Wo ist der Westminster-Palast?,"""Wo ist Westminster-Palast?""",,SELECT ?uri WHERE { <http://dbpedia.org/resource/Palace_of_Westminster> <http://dbpedia.org/ontology/location> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Palace_of_Westminster> <http://dbpedia.org/ontology/routeStart> ?o . 
+}""",0,0,3,1,0,0
+43,0,Spielt Christian Bale in Batman Begins mit?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ res:Batman_Begins dbo:starring res:Christian_Bale .
+}",,0,0,1,1,0,0
+44,0.8965517241,In welchem Land befindet sich der Limerick Lake?,"""in welchem Land befindet Limerick Lake?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+ res:Limerick_Lake dbo:country ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Limerick_Lake> <http://dbpedia.org/ontology/country> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",1,0,0,1,1,1
+45,0.7179487179,Was war der letzte Film mit Alec Guinness?,"""was war die Musik von Alec Guinness?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Alec_Guinness> . ?uri <http://dbpedia.org/ontology/releaseDate> ?date . } ORDER BY DESC(?date) LIMIT 1,"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Alec_Guinness> . 
+}""",0,0,1,1,0,0
+46,0.9230769231,Was ist der h├Âchste Berg in Australien?,"""was ist das h´┐¢chste Berg in Australien?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri rdf:type dbo:Mountain .
+ ?uri dbo:locatedInArea res:Australia .
+ ?uri dbo:elevation ?elevation .
+} 
+ORDER BY DESC(?elevation) LIMIT 1","""SELECT DISTINCT ?subjOfProp WHERE 
+{
+ ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Mountain> . ?subjOfProp <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Australia> . ?subjOfProp <http://dbpedia.org/ontology/elevation> ?num . 
+} ORDER BY DESC(?num) LIMIT 1""",1,0,0,1,1,1
+47,0.75,Lebt Frank Herbert noch?,"""wer ist Frank Herbert s Tochter?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ OPTIONAL { res:Frank_Herbert dbo:deathDate ?date . }
+ FILTER (!BOUND(?date))
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Frank_Herbert> <http://dbpedia.org/ontology/child> ?o . 
+}""",0,1,1,0,0,0
+48,1,Wer hat sich Family Guy ausgedacht?,"""wer hat sich Family Guy ausgedacht?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Family_Guy> <http://dbpedia.org/ontology/creator> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Family_Guy> <http://dbpedia.org/ontology/creator> ?o . 
+}""",1,0,0,1,1,1
+49,0.9863013699,Was ist die Amtssprache Von Surinam?,"""was ist die Amtssprache von Suriname?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Suriname dbo:officialLanguage ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Suriname> <http://dbpedia.org/ontology/officialLanguage> ?o . 
+}""",1,0,0,1,1,1
+50,0.8915662651,Wer hat das Lied Hotel California geschrieben?,"""wer hat Hotel California geschrieben?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Hotel_California> <http://dbpedia.org/ontology/writer> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Hotel_California> <http://dbpedia.org/ontology/writer> ?o . 
+}""",3,0,0,1,1,1
+51,0,"Gib mir alle Schauspieler von Filmen, in denen William Shatner Regie gef├╝hrt hat.",,,SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/William_Shatner> . ?x <http://dbpedia.org/ontology/starring> ?uri . },,0,0,7,1,0,0
+52,0,Was ist in Chocolate Chip Cookies drin?,,,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Chocolate_chip_cookie> <http://dbpedia.org/ontology/ingredient> ?uri . },,0,0,10,1,0,0
+53,0,Gib mir alle Profiskateboarder aus Schweden.,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri dbo:occupation res:Skateboarding . 
+ { ?uri dbo:birthPlace res:Sweden . }
+ UNION
+ { ?uri dbo:birthPlace ?place . 
+ ?place dbo:country res:Sweden . }
+}",,0,0,2,1,0,0
+54,0,Welche Zutaten brauche ich f├╝r M├Âhrenkuchen?,,,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Carrot_cake> <http://dbpedia.org/ontology/ingredient> ?uri . },,0,0,5,1,0,0
+55,0,Spielt Neymar f├╝r Real Madrid?,,,ASK WHERE { <http://dbpedia.org/resource/Neymar> <http://dbpedia.org/ontology/team> <http://dbpedia.org/resource/Real_Madrid_C.F.> . },,0,0,1,1,0,0
+56,0,Welcher Informatiker hat einen Oscar gewonnen?,,,"SELECT DISTINCT ?uri WHERE { { ?uri <http://dbpedia.org/ontology/field> <http://dbpedia.org/resource/Computer_science> . } UNION { ?uri <http://purl.org/dc/elements/1.1/description> ?s . FILTER regex(?s,'computer scientist','i') } ?uri <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Academy_Awards> . }",,0,0,0,1,0,0
+57,0,Wieviele Firmen wurden im selben Jahr wie Google gegr├╝ndet?,,,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/foundingYear> ?year . <http://dbpedia.org/resource/Google> <http://dbpedia.org/ontology/foundingYear> ?year . },,0,0,1,1,0,0
+58,0,In welcher Stadt im Vereinigten K├Ânigreich ist das Hauptquartier des MI6?,,,"PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE { 
+ res:Secret_Intelligence_Service dbo:headquarter ?uri . 
+ ?uri dbo:country res:United_Kingdom . 
+}",,0,0,2,1,0,0
+59,0,War die Kubakrise vor der Schweinebuchtinvasion?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ res:Cuban_Missile_Crisis dbo:date ?x .
+ res:Bay_of_Pigs_Invasion dbo:date ?y .
+ FILTER (?x < ?y)
+}",,0,0,1,1,0,0
+60,0.8947368421,F├╝r was steh IYCM?,"""fuer was steht IYCM?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri dbo:abbreviation 'IYCM' .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/abbreviation> 'IYCM' 
+}""",1,0,0,1,1,1
+61,0.9473684211,Wann endete die Japanisches Kaiserreich?,"""Wann endete Japanisches Kaiserreich?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?date
+WHERE { 
+ res:Empire_of_Japan dbo:dissolutionDate ?date .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Empire_of_Japan> <http://dbpedia.org/ontology/dissolutionDate> ?o . 
+}""",1,0,0,1,1,1
+62,0,Liste alle Episoden der ersten Staffel der HBO-Fernsehserie Die Sopranos auf.,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri dbo:series res:The_Sopranos .
+ ?uri dbo:seasonNumber 1 .
+}",,0,0,0,1,0,0
+63,0.9908256881,"Was ist die Gesamteinwohnerzahl von Melbourne, Florida?","""was ist die Gesamteinwohnerzahl von Melbourne Florida?""",,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT ?uri 
+WHERE { 
+ <http://dbpedia.org/resource/Melbourne,_Florida> dbo:populationTotal ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Melbourne,_Florida> <http://dbpedia.org/ontology/populationTotal> ?o . 
+}""",1,0,0,1,1,1
+64,0.7640449438,Hat Arnold Schwarzenegger eine Universit├ñt besucht?,"""wer hat Arnold Schwarzenegger besucht?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ASK
+WHERE {
+ res:Arnold_Schwarzenegger dbo:almaMater ?x .
+ ?x rdf:type dbo:University .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Arnold_Schwarzenegger> <http://dbpedia.org/ontology/almaMater> ?o . 
+}""",0,0,1,1,0,0
+65,0.9444444444,In welchem Land ist der Mount Everest?,"""in welchem Land ist Mount Everest?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Mount_Everest dbo:locatedInArea ?uri . 
+ ?uri rdf:type dbo:Country .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Mount_Everest> <http://dbpedia.org/ontology/locatedInArea> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",2,0,0,1,1,1
+66,0.9487179487,Was ist die gr├Â├ƒte Stadt in Australien?,"""was ist die gr´┐¢´┐¢te Stadt in Australien?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Australia dbo:largestCity ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Australia> <http://dbpedia.org/ontology/largestCity> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",1,0,0,1,1,1
+67,0.9247311828,Gib mir alle von der NASA betriebenen Startrampen.,"""Gib mir alle von NASA betrieben Startrampen""",,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ ?uri rdf:type dbo:LaunchPad . 
+ ?uri dbo:operator res:NASA . 
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/operator> <http://dbpedia.org/resource/NASA> . ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/LaunchPad> . 
+}""",14,0,0,1,1,1
+68,0.9736842105,Wer ist der B├╝rgermeister von Florenz?,"""wer ist der B´┐¢rgermeister von Florenz?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Florence dbo:leaderName ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Florence> <http://dbpedia.org/ontology/mayor> ?o . 
+}""",0,0,1,1,0,0
+69,0,Liste alle Episoden der ersten Staffel der HBO-Fernsehserie Die Sopranos auf.,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri dbo:series res:The_Sopranos .
+ ?uri dbo:seasonNumber 1 .
+}",,0,0,0,1,0,0
+70,1,Wer hat Batman erfunden?,"""wer hat Batman erfunden?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Batman> <http://dbpedia.org/ontology/creator> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Batman> <http://dbpedia.org/ontology/creator> ?o . 
+}""",2,0,0,1,1,1
+71,0.9310344828,Wer hat Gus Fring gespielt?,"""wer hat Gustavo Fring gespielt?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Gus_Fring> <http://dbpedia.org/ontology/portrayer> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Gus_Fring> <http://dbpedia.org/property/portrayer> ?o . 
+}""",1,0,0,1,1,1
+72,0.7956989247,In welcher Programmiersprache wurde GIMP geschrieben?,"""in welcher Sprache ist GIMP geschrieben?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+ res:GIMP dbo:programmingLanguage ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/GIMP> <http://dbpedia.org/ontology/programmingLanguage> ?o . 
+}""",2,0,0,1,1,1
+73,0,In welchem alten Reich konnte man mit Kakaobohnen bezahlen?,,,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Cocoa_bean> . },,0,0,2,1,0,0
+74,0.8536585366,Wer ist der Herausgeber von Forbes?,"""wer ist der Herausgeber von Forbes Zeitschrift?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Forbes dbo:editor ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Forbes> <http://dbpedia.org/ontology/editor> ?o . 
+}""",1,0,0,1,1,1
+75,0.7912087912,Wieviele Menschen leben in der Hauptstadt Australiens?,"""Wieviel Menschen leben in Australien""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+ res:Australia dbo:capital ?x .
+ ?x dbo:populationTotal ?num .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Australia> <http://dbpedia.org/ontology/populationTotal> ?o . 
+}""",0,0,1,1,0,0
+76,0.9230769231,Welche Profisurfer wurden in Australien geboren?,"""welcher Surfer wurde in Australien geboren?""",,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ ?uri dbo:occupation res:Surfing . 
+ ?uri dbo:birthPlace res:Australia . 
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Australia> . ?s <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Surfing> . 
+}""",2,0,0,1,1,1
+77,0,Welche Elektronikunternehmen wurden in Peking gegr├╝ndet?,,,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Electronics> . ?uri <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/Beijing> . },,0,0,0,1,0,0
+78,0.9900990099,Gib mir alle Videospiele von Mean Hamster Software.,"""Gib mir alle Videospiele von Mean Hamster Software""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri rdf:type dbo:VideoGame .
+ ?uri dbo:publisher res:Mean_Hamster_Software . 
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/Mean_Hamster_Software> . 
+}""",1,0,0,1,1,1
+79,0,Wieviele Aldi-Filialen gibt es?,,,SELECT DISTINCT ?number WHERE { <http://dbpedia.org/resource/Aldi> <http://dbpedia.org/ontology/numberOfLocations> ?number . },,0,0,1,1,0,0
+80,1,Was ist die Hauptstadt von Kamerun?,"""was ist die Hauptstadt von Kamerun?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Cameroon> <http://dbpedia.org/ontology/capital> ?uri. },"""select ?o 
+{
+ <http://dbpedia.org/resource/Cameroon> <http://dbpedia.org/ontology/capital> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",0,0,1,1,0,0
+81,0,"Gibt es ein Videospiel, das Battle Chess hei├ƒt?",,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK 
+WHERE {
+ ?uri rdf:type dbo:VideoGame .
+ ?uri rdfs:label 'Battle Chess'@en .
+}",,0,0,1,1,0,0
+82,0,Hie├ƒ die Frau von Pr├ñsident Lincoln Mary?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK 
+WHERE {
+ res:Abraham_Lincoln dbo:spouse ?spouse .
+ ?spouse rdfs:label ?name .
+ FILTER(regex(?name,'Mary')) 
+}",,0,0,1,1,0,0
+83,0,"Gib mir alle Filme, bei denen Francis Ford Coppola Regie gef├╝hrt hat.",,,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Francis_Ford_Coppola> . },,0,0,33,1,0,0
+84,0,Welcher von Tim Burtons Filmen hatte das h├Âchste Budget?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+ ?uri dbo:director res:Tim_Burton .
+ ?uri dbo:budget ?b .
+}
+ORDER BY ?b
+OFFSET 0 LIMIT 1",,0,0,1,1,0,0
+85,0,Hat Breaking Bad mehr Episoden als Game of Thrones?,,,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+ res:Breaking_Bad dbo:numberOfEpisodes ?x . 
+ res:Game_of_Thrones dbo:numberOfEpisodes ?y . 
+ FILTER (?y > ?x) 
+}",,0,0,1,1,0,0
+86,0,Wer wurde Rodzilla genannt?,,,"PREFIX dbp: <http://dbpedia.org/property/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ ?uri dbp:nickname ""Rodzilla""@en .
+}",,0,0,0,1,0,0
+87,0.7157894737,Wurde Natalie Portman in den Vereinigten Staaten geboren?,"""was ist in Vereinigte Staaten geboren?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE { 
+ res:Natalie_Portman dbo:birthPlace ?city .
+ ?city dbo:country res:United_States .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/United_States> . ?s <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Surfing> . 
+}""",0,0,1,1,0,0
+88,0.985915493,Gib mir die Enkel von Elvis Presley.,"""Gib mir die Enkel von Elvis Presley""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Elvis_Presley> <http://dbpedia.org/ontology/child> ?child . ?child <http://dbpedia.org/ontology/child> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Elvis_Presley> <http://dbpedia.org/ontology/parent> ?o . 
+}""",0,0,1,1,0,0
+89,0,"Bei welchen Filmen, in denen Mickey Rourke mitspielt, hat Guy Ritchie Regie gef├╝hrt?",,,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Mickey_Rourke> . ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Guy_Ritchie> . },,0,0,1,1,0,0
+90,0.8219178082,Wann ist Draculas Sch├Âpfer gestorben?,"""Wann ist Claudia Schiffer gestorben?""",,SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Count_Dracula> <http://dbpedia.org/ontology/creator> ?x . ?x <http://dbpedia.org/ontology/deathDate> ?date . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Claudia_Schiffer> <http://dbpedia.org/ontology/deathDate> ?o . 
+}""",0,0,1,1,0,0
+91,0,Aus welchem Land kommt der Erfinder von Nijntje?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Miffy dbo:creator ?x .
+ ?x dbo:nationality ?uri .
+}",,0,0,0,1,0,0
+92,0.9841269841,Was ist Batmans richtiger Name?,"""was ist Batman s richtiger Name?""",,SELECT DISTINCT ?s WHERE { <http://dbpedia.org/resource/Batman> <http://dbpedia.org/property/alterEgo> ?s . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Batman> <http://dbpedia.org/property/alterEgo> ?o . 
+}""",1,0,0,1,1,1
+93,0.8059701493,Welche Regierungsform hat Russland?,"""die Regierungsform von Russland?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Russia> <http://dbpedia.org/ontology/governmentType> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Russia> <http://dbpedia.org/ontology/governmentType> ?o . 
+}""",1,0,0,1,1,1
+94,0,Wieviele Firmen hat der Gr├╝nder von Facebook gegr├╝ndet?,,,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE { <http://dbpedia.org/resource/Facebook> <http://dbpedia.org/ontology/foundedBy> ?uri . ?uri <http://dbpedia.org/ontology/foundedBy> ?uri . },,0,0,1,1,0,0
+95,0,Gib mir alle kanadischen Grunge-Plattenfirmen.,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri rdf:type dbo:RecordLabel .
+ ?uri dbo:genre res:Grunge .
+ ?uri dbo:country res:Canada .
+}",,0,0,1,1,0,0
+96,0.7804878049,Wieviele Kinder hatte Benjamin Franklin?,"""welche Person heiratete Benjamin Franklin?""",,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE { <http://dbpedia.org/resource/Benjamin_Franklin> <http://dbpedia.org/ontology/child> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Benjamin_Franklin> <http://dbpedia.org/ontology/spouse> ?o . 
+}""",0,1,1,0,0,0
+97,0.9882352941,Liste die Kinder von Margaret Thatcher auf.,"""Liste die Kinder von Margaret Thatcher auf""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Margaret_Thatcher dbo:child ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Margaret_Thatcher> <http://dbpedia.org/ontology/child> ?o . 
+}""",2,0,0,1,1,1
+98,0.7956989247,Aus welcher Region ist der Melon de Bourgogne?,"""welche weinregion w´┐¢chst in Melon de Bourgogne?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri
+WHERE {
+ res:Melon_de_Bourgogne dbo:wineRegion ?uri .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/growingGrape> <http://dbpedia.org/resource/Melon_de_Bourgogne> . 
+}""",1,3,3,0.25,0.25,0.25
+99,0.8684210526,Wer ist das ├ñlteste Kind von Meryl Streep?,"""wer ist die Kind von Meryl Streep?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Meryl_Streep dbo:child ?uri . 
+ ?uri dbo:birthDate ?d .
+}
+ORDER BY ASC(?d)
+OFFSET 0 LIMIT 1","""select ?o 
+{
+ <http://dbpedia.org/resource/Meryl_Streep> <http://dbpedia.org/ontology/child> ?o . 
+}""",1,3,0,0.25,1,0.4
+100,0,Sind Laubfr├Âsche Amphibien?,,,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+ res:Hylidae dbo:class res:Amphibian . 
+}",,0,0,1,1,0,0
+101,0,Spielt Christian Bale in Velvet Goldmine mit?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK
+WHERE {
+ res:Velvet_Goldmine dbo:starring res:Christian_Bale .
+}",,0,0,1,1,0,0
+102,0.985915493,Liste alle Spiele von GMT Games auf.,"""Liste alle Spiele von GMT Games auf""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+ ?uri dbo:publisher res:GMT_Games .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/GMT_Games> . 
+}""",9,0,0,1,1,1
+103,0,Flie├ƒt die Isar in einen See?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ASK
+WHERE {
+ ?x dbo:inflow res:Isar .
+ ?x rdf:type dbo:Lake . 
+}",,0,0,1,1,0,0
+104,0.7179487179,Welche Flugh├ñfen fliegt Yeti Airlines an?,"""welcher Agent gr´┐¢ndete Yeti Airlines?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Yeti_Airlines> <http://dbpedia.org/ontology/targetAirport> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Yeti_Airlines> <http://dbpedia.org/ontology/foundedBy> ?o . 
+}""",0,0,5,1,0,0
+105,0,Welches indische Unternehmen hat die meisten Angestellten?,,,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/India> . ?uri <http://dbpedia.org/ontology/numberOfEmployees> ?n . } ORDER BY DESC(?n) OFFSET 0 LIMIT 1,,0,0,1,1,0,0
+106,0.8857142857,Welche Farbe steht f├╝r den Reichtum?,"""welcher Farbe steht fuer Reichtum?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/connotation> <http://dbpedia.org/resource/Wealth> . },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/connotation> <http://dbpedia.org/resource/Wealth> . 
+}""",2,0,0,1,1,1
+107,0,Welche Stadt hat die meisten Einwohner?,,,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+ ?uri rdf:type dbo:City . 
+ ?uri dbo:populationTotal ?pop . 
+}
+ORDER BY DESC(?pop)
+OFFSET 0 LIMIT 1",,0,0,1,1,0,0
+108,0.9583333333,Wer hat Gmail gegr├╝ndet?,"""wer hat Gmail gegr´┐¢ndet?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Gmail dbo:author ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Gmail> <http://dbpedia.org/ontology/author> ?o . 
+}""",1,0,0,1,1,1
+109,0.7857142857,Ist Rita Wilson die Frau von Tom Hanks?,"""wer ist die Frau von die Frau von Tom Hanks??""",,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+ res:Tom_Hanks dbo:spouse res:Rita_Wilson . 
+}","""SELECT DISTINCT ?objOfProp WHERE 
+{
+ ?subjOfProp <http://dbpedia.org/ontology/spouse> ?objOfProp . <http://dbpedia.org/resource/Tom_Hanks> <http://dbpedia.org/ontology/spouse> ?subjOfProp .
+}""",0,1,1,0,0,0
+110,0.7191011236,Hei├ƒt die Frau von Pr├ñsident Obama Michelle?,"""wer ist die Frau von President of Montenegro?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK 
+WHERE {
+ res:Barack_Obama dbo:spouse ?spouse .
+ ?spouse rdfs:label ?name .
+ FILTER(regex(?name,'Michelle')) 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/President_of_Montenegro> <http://dbpedia.org/ontology/spouse> ?o . 
+}""",0,0,1,1,0,0
+111,0.725,Wieviele ethnische Gruppen leben in Slovenien?,"""Wieviel Menschen leben in Spanien""",,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE { <http://dbpedia.org/resource/Slovenia> <http://dbpedia.org/ontology/ethnicGroup> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Spain> <http://dbpedia.org/ontology/populationTotal> ?o . 
+}""",0,0,1,1,0,0
+112,0.9807692308,Wer ist der Pr├ñsident von Hamburgische B├╝rgerschaft?,"""wer ist der pr´┐¢sident von Hamburgische B├╝rgerschaft?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Hamburg_Parliament> <http://dbpedia.org/ontology/leader> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Hamburg_Parliament> <http://dbpedia.org/ontology/leader> ?o . 
+}""",2,0,0,1,1,1
+113,0,Bei wievielen Filmen hat Stanley Kubrick Regie gef├╝hrt?,,,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Stanley_Kubrick> . },,0,0,16,1,0,0
+114,0.9444444444,Wann wurde die Titanic fertiggestellt?,"""Wann wurde Titanic fertiggestellt?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?date
+WHERE { 
+ res:Titanic dbo:completionDate ?date . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Titanic> <http://dbpedia.org/ontology/completionDate> ?o . 
+}""",1,0,0,1,1,1
+115,0.7826086957,Wieviele Seiten hat Krieg und Frieden?,"""wer verlegen Krieg und Frieden?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?n
+WHERE {
+ res:War_and_Peace dbo:numberOfPages ?n .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/War_and_Peace> <http://dbpedia.org/ontology/publisher> ?o . 
+}""",0,1,1,0,0,0
+116,0,Wer ist der j├╝ngste Spieler in der Premier League?,,,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ ?uri dbo:team ?x . 
+ ?x dbo:league res:Premier_League . 
+ ?uri dbo:birthDate ?y . 
+} 
+ORDER BY DESC(?y) 
+OFFSET 0 LIMIT 1",,0,0,0,1,0,0
+117,0.9166666667,Was ist der h├Âchste Berg in Italien?,"""was ist das h´┐¢chste Berg in Italien?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri rdf:type dbo:Mountain .
+ ?uri dbo:locatedInArea res:Italy .
+ ?uri dbo:elevation ?num .
+}
+ORDER BY DESC(?num)
+OFFSET 0 LIMIT 1","""SELECT DISTINCT ?subjOfProp WHERE 
+{
+ ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Mountain> . ?subjOfProp <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Italy> . ?subjOfProp <http://dbpedia.org/ontology/elevation> ?num . 
+} ORDER BY DESC(?num) LIMIT 1""",1,0,0,1,1,1
+118,0.8064516129,Wie gro├ƒ ist Claudia Schiffer?,"""wer ist Claudia Schiffer s Sohn?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?height 
+WHERE { 
+ res:Claudia_Schiffer dbo:height ?height . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Claudia_Schiffer> <http://dbpedia.org/ontology/child> ?o . 
+}""",0,0,1,1,0,0
+119,0.9782608696,Wer war der Vizepr├ñsident unter Samuel Schmid?,"""wer war der Vizepr´┐¢sident unter Samuel Schmid?""",,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { res:Samuel_Schmid dbo:vicePresident ?uri . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Samuel_Schmid> <http://dbpedia.org/ontology/vicePresident> ?o . 
+}""",1,0,0,1,1,1
+120,0,Welche Tochtergesellschaft von Lufthansa fliegt sowohl Dortmund als auch Berlin Tegel an?,,,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Lufthansa dbo:subsidiary ?uri .
+ ?uri dbo:targetAirport res:Dortmund_Airport .
+ ?uri dbo:targetAirport res:Berlin_Tegel_Airport .
+}",,0,0,0,1,0,0
+121,1,Wer war der Nachfolger von Patrick F. Kennedy?,"""wer war der Nachfolger von Patrick F. Kennedy?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Patrick_F._Kennedy dbo:successor ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Patrick_F._Kennedy> <http://dbpedia.org/ontology/successor> ?o . 
+}""",5,0,0,1,1,1
+122,0,Wer hat den Soundtrack f├╝r Camerons Titanic geschrieben?,,,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Titanic_(1997_film)> <http://dbpedia.org/ontology/musicComposer> ?uri . },,0,0,1,1,0,0
+123,0.7848101266,Welche Filme hat Kurosawa gedreht?,"""welcher Film wird von Akira Kurosawa gedreht?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri rdf:type dbo:Film .
+ ?uri dbo:director res:Akira_Kurosawa .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Akira_Kurosawa> . ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . 
+}""",32,0,0,1,1,1
+124,0,Welche Plattenfirma hat Elvis' erstes Album aufgenommen?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?x rdf:type dbo:Album .
+ ?x dbo:artist res:Elvis_Presley .
+ ?x dbo:releaseDate ?y .
+ ?x dbo:recordLabel ?uri .
+}
+ORDER BY ASC(?y) 
+OFFSET 0 LIMIT 1",,0,0,1,1,0,0
+125,0.7096774194,In welcher Zeitzone liegt Rom?,"""in welchem Land liegt Rotterdam?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rome> <http://dbpedia.org/ontology/timeZone> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Rotterdam> <http://dbpedia.org/ontology/country> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",0,1,1,0,0,0
+126,0,Welche W├ñhrung benutzt China?,,,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri
+WHERE { 
+ res:China dbo:currency ?uri . 
+}",,0,0,1,1,0,0
+127,0.9411764706,Wer sind die Entwickler von DBpedia?,"""wer sind Entwickler von DBpedia?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/DBpedia> <http://dbpedia.org/ontology/developer> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/DBpedia> <http://dbpedia.org/ontology/developer> ?o . 
+}""",3,0,0,1,1,1
+128,0,Hat Abraham Lincolns Sterbeort eine Webseite?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ res:Abraham_Lincoln dbo:deathPlace ?p .
+ ?p dbo:website ?w . 
+}",,0,0,1,1,0,0
+129,0.8695652174,Wer ist der K├Ânig der Australisches Parlament?,"""was ist der K´┐¢nig von Australisches Parlament?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Parliament_of_Australia> <http://dbpedia.org/ontology/leader> ?uri . ?uri a <http://dbpedia.org/ontology/Royalty> . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Parliament_of_Australia> <http://dbpedia.org/ontology/leader> ?o . 
+}""",1,0,0,1,1,1
+130,1,In welcher Stadt ist Nikos Kazantzakis gestorben?,"""in welcher Stadt ist Nikos Kazantzakis gestorben?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Nikos_Kazantzakis> <http://dbpedia.org/ontology/deathPlace> ?uri . ?uri a <http://dbpedia.org/ontology/City> . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Nikos_Kazantzakis> <http://dbpedia.org/ontology/deathPlace> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",1,0,0,1,1,1
+131,0.835443038,Wer war der Vater von K├Ânigin Elizabeth II?,"""wer war die Vater von Elisabeth II.?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Elizabeth_II dbp:father ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Elizabeth_II> <http://dbpedia.org/property/father> ?o . 
+}""",1,0,0,1,1,1
+132,0,Gib mir eine Liste aller stark bedrohten Vogelarten.,,,SELECT DISTINCT ?uri ?p WHERE { ?uri a <http://dbpedia.org/ontology/Bird> . { ?uri <http://dbpedia.org/ontology/conservationStatus> 'CR'^^<http://www.w3.org/2001/XMLSchema#string> . } UNION { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Critically_endangered_animals> . } },,0,0,27,1,0,0
+133,0.7083333333,Wieviele Einwohner hat die gr├Â├ƒte Stadt in Kanada?,"""welche St´┐¢dte sind die gr´┐¢´┐¢te Stadt in Kanada?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num
+WHERE {
+ res:Canada dbo:largestCity ?city . 
+ ?city dbo:populationTotal ?num .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Canada> <http://dbpedia.org/ontology/largestCity> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",0,1,1,0,0,0
+134,0,An welchen milit├ñrischen Auseinandersetzungen war Lawrence von Arabien beteiligt?,,,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ res:T._E._Lawrence dbo:battle ?uri . 
+}",,0,0,6,1,0,0
+135,0,Welches Buch hat die meisten Seiten?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+ ?uri rdf:type dbo:Book . 
+ ?uri dbo:numberOfPages ?n .
+}
+ORDER BY DESC(?n)
+OFFSET 0 LIMIT 1",,0,0,1,1,0,0
+136,0.8405797101,In welchem Land entspringt der Nil?,"""in welchen Lagen entspringen Nile?""",,"PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Nile dbp:mouthLocation ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Nile> <http://dbpedia.org/property/mouthLocation> ?o . 
+}""",2,0,0,1,1,1
+137,0,Wer ist der Formel-1-Fahrer mit den meisten Rennen?,,,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/FormulaOneRacer> . ?uri <http://dbpedia.org/ontology/races> ?x . } ORDER BY DESC(?x) OFFSET 0 LIMIT 1,,0,0,1,1,0,0
+138,0.8055555556,Welche Firmen stellen Hovercrafts her?,"""welche Schiffe stellen Hovercraft?""",,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Hovercraft> . },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Hovercraft> . 
+}""",6,0,0,1,1,1
+139,0.7666666667,Hatte Elvis Presley Kinder?,"""wer hat Elvis Presley insipriert?""",,ASK WHERE { <http://dbpedia.org/resource/Elvis_Presley> <http://dbpedia.org/ontology/child> ?uri . },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/influenced> <http://dbpedia.org/resource/Elvis_Presley> . 
+}""",0,0,1,1,0,0
+140,0.9189189189,In welcher Stadt ist der Pr├ñsident von Montenegro geboren?,"""in welcher Stadt ist President of Montenegro geboren?""",,SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/property/office> <http://dbpedia.org/resource/President_of_Montenegro> . ?x <http://dbpedia.org/ontology/birthPlace> ?uri . ?uri a <http://dbpedia.org/ontology/City> . },"""select ?o 
+{
+ <http://dbpedia.org/resource/President_of_Montenegro> <http://dbpedia.org/ontology/birthPlace> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",0,0,0,1,0,0
+141,1,In welcher Stadt ist Bill Gates geboren?,"""in welcher Stadt ist Bill Gates geboren?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Bill_Gates> <http://dbpedia.org/ontology/birthPlace> ?uri . ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Bill_Gates> <http://dbpedia.org/ontology/birthPlace> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",1,0,0,1,1,1
+142,0.8333333333,In welcher L├ñndern wird Japanisch gesprochen?,"""in welchem Land wird Japanische Sprache gesprochen?""",,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> . ?uri <http://dbpedia.org/ontology/language> <http://dbpedia.org/resource/Japanese_language> . },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/language> <http://dbpedia.org/resource/Japanese_language> . ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",12,0,0,1,1,1
+143,0,"Zeig mir das Buch, das Muhammad Ali geschrieben hat.",,,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ ?uri rdf:type dbo:Book . 
+ ?uri dbo:author res:Muhammad_Ali . 
+}",,0,0,2,1,0,0
+144,0.7708333333,Ist Michelle Obama die Frau von Barack Obama?,"""wer ist die Tochter von die Frau von Barack Obama??""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ res:Barack_Obama dbo:spouse res:Michelle_Obama .
+}","""SELECT DISTINCT ?objOfProp WHERE 
+{
+ ?subjOfProp <http://dbpedia.org/ontology/child> ?objOfProp . <http://dbpedia.org/resource/Barack_Obama> <http://dbpedia.org/ontology/spouse> ?subjOfProp .
+}""",0,1,1,0,0,0
+145,1,Was ist die Vorwahl von Berlin?,"""was ist die Vorwahl von Berlin?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?string 
+WHERE {
+ res:Berlin dbo:areaCode ?string .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Berlin> <http://dbpedia.org/ontology/areaCode> ?o . 
+}""",1,0,0,1,1,1
+146,0,"Gib mir alle Schauspieler, die in Last Action Hero mitgespielt haben.",,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Last_Action_Hero dbo:starring ?uri . 
+}",,0,0,10,1,0,0
+147,0.95,Was sind die Spitznamen von San Francisco?,"""was sind Spitznamen von San Francisco?""",,SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/San_Francisco> <http://dbpedia.org/property/nickname> ?string . },"""select ?o 
+{
+ <http://dbpedia.org/resource/San_Francisco> <http://dbpedia.org/property/nickname> ?o . 
+}""",1,0,0,1,1,1
+148,0,Was war das erste Queen-Album?,,,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Album> . ?uri <http://dbpedia.org/ontology/artist> <http://dbpedia.org/resource/Queen_(band)> . ?uri <http://dbpedia.org/ontology/releaseDate> ?d . } ORDER BY ASC(?d) OFFSET 0 LIMIT 1,,0,0,1,1,0,0
+149,0.9142857143,Durch welche L├ñnder flie├ƒt der Talsperre El Burguillo?,"""durch welche L´┐¢nder flie´┐¢en Talsperre El Burguillo?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:El_Burguillo_Reservoir dbp:country ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/El_Burguillo_Reservoir> <http://dbpedia.org/property/country> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",1,0,0,1,1,1
+150,0.82,Welche Fernsehserien hat Walt Disney entworfen?,"""welche Fernsehsendung wird von Walt Disney entworfen?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri rdf:type dbo:TelevisionShow .
+ ?uri dbo:creator res:Walt_Disney .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/creator> <http://dbpedia.org/resource/Walt_Disney> . ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow> . 
+}""",6,0,0,1,1,1
+151,0,Welche Br├╝cke hat die l├ñngste Spannweite?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri rdf:type dbo:Bridge .
+ ?uri dbo:mainspan ?s . 
+} 
+ORDER BY DESC(?s) 
+OFFSET 0 LIMIT 1",,0,0,1,1,0,0
+152,0,Aus welchem Land kommt Sitecore?,,,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Sitecore> <http://dbpedia.org/ontology/foundationPlace> ?uri . },,0,0,0,1,0,0
+153,1,Wen hat Donald Trump geheiratet?,"""Wen hat Donald Trump geheiratet?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Donald_Trump> . },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Donald_Trump> . 
+}""",3,0,0,1,1,1
+154,1,Was ist die Hauptstadt von Kanada?,"""was ist die Hauptstadt von Kanada?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Canada dbo:capital ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Canada> <http://dbpedia.org/ontology/capital> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",1,0,0,1,1,1
+155,0.8888888889,Wer hat Friedrich Wilhelm Joseph Schelling inspiriert?,"""wer hat Friedrich Wilhelm Joseph Schelling geheiratet?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/influenced> <http://dbpedia.org/resource/Friedrich_Wilhelm_Joseph_Schelling> . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Friedrich_Wilhelm_Joseph_Schelling> <http://dbpedia.org/ontology/spouse> ?o . 
+}""",0,0,6,1,0,0
+156,1,In welcher Stadt ist John F. Kennedy gestorben?,"""in welcher Stadt ist John F. Kennedy gestorben?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE { 
+ res:John_F._Kennedy dbo:deathPlace ?uri .
+ ?uri rdf:type dbo:City .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",1,0,0,1,1,1
+157,0,War US-Pr├ñsident Jackson in einen Krieg verwickelt?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ res:Andrew_Jackson dbo:battle ?battle . 
+}",,0,0,1,1,0,0
+158,0.7912087912,Wer hat das Titellied f├╝r Games of Thrones geschrieben?,"""wer hat Game of Thrones geschrieben?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Game_of_Thrones> <http://dbpedia.org/ontology/composer> ?uri. },"""select ?o 
+{
+ <http://dbpedia.org/resource/Game_of_Thrones> <http://dbpedia.org/ontology/composer> ?o . 
+}""",1,0,0,1,1,1
+159,0.9444444444,Wer hat die Brooklyn Bridge entworfen?,"""wer hat Brooklyn Bridge entworfen?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Brooklyn_Bridge dbo:architect ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Brooklyn_Bridge> <http://dbpedia.org/ontology/architect> ?o . 
+}""",1,0,0,1,1,1
+160,0,Wann hat Boris Becker seine aktive Karriere beendet?,,,SELECT DISTINCT ?d WHERE { <http://dbpedia.org/resource/Boris_Becker> <http://dbpedia.org/ontology/activeYearsEndDate> ?d . },,0,0,1,1,0,0
+161,0.8636363636,Welche Traubenarten wachsen in Oregon?,"""welchen Traubenarten wachsen in Weinbau in Oregon?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Oregon_wine> <http://dbpedia.org/ontology/growingGrape> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Oregon_wine> <http://dbpedia.org/ontology/growingGrape> ?o . 
+}""",84,0,0,1,1,1
+162,0.7931034483,Wie gro├ƒ ist Michael Jordan?,"""wer ist Michael Jordan s Frau?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+ res:Michael_Jordan dbo:height ?num .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Michael_Jordan> <http://dbpedia.org/ontology/spouse> ?o . 
+}""",0,0,1,1,0,0
+163,0.7339449541,Welcher Partei geh├Ârt die B├╝rgermeisterin von Paris an?,"""welcher Person heiratete der B´┐¢rgermeister von Paris??""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/mayor> ?x . ?x <http://dbpedia.org/ontology/party> ?uri . },"""SELECT DISTINCT ?objOfProp WHERE 
+{
+ ?subjOfProp <http://dbpedia.org/ontology/spouse> ?objOfProp . <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/leaderName> ?subjOfProp .
+}""",0,0,1,1,0,0
+164,0.8266666667,Wer schrieb das Buch Die S├ñulen der Erde?,"""wer schreiben Die S├ñulen der Erde?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:The_Pillars_of_the_Earth dbo:author ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/The_Pillars_of_the_Earth> <http://dbpedia.org/ontology/author> ?o . 
+}""",1,0,0,1,1,1
+165,0.7878787879,Wer war der 16. Pr├ñsident der Vereinigten Staaten?,"""was war der Vizepr´┐¢sident von Vereinigte Staaten?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri dbo:office 'President of the United States' .
+ ?uri dbo:orderInOffice '16th' .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/United_States> <http://dbpedia.org/ontology/vicePresident> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",0,0,0,1,0,0
+166,0.8076923077,Wie hoch ist der Mount Everest?,"""Wo ist Mount Everest?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+ res:Mount_Everest dbo:elevation ?num.
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Mount_Everest> <http://dbpedia.org/ontology/routeStart> ?o . 
+}""",0,0,0,1,0,0
+167,1,Wer war der Doktorvater von Albert Einstein?,"""wer war der Doktorvater von Albert Einstein?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Albert_Einstein> <http://dbpedia.org/ontology/doctoralAdvisor> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Albert_Einstein> <http://dbpedia.org/ontology/doctoralAdvisor> ?o . 
+}""",1,0,0,1,1,1
+168,0.8941176471,In welcher Stadt wohnt Sylvester Stallone?,"""in welcher Stadt stirbt Sylvester Stallone?""",,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/City> . <http://dbpedia.org/resource/Sylvester_Stallone> <http://dbpedia.org/ontology/residence> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Sylvester_Stallone> <http://dbpedia.org/ontology/deathPlace> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . 
+}""",0,0,0,1,0,0
+169,0.756097561,Was ist die W├ñhrung der Tschechischen Republik?,"""was ist die W´┐¢hrung von Tschechien?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Czech_Republic dbo:currency ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Czech_Republic> <http://dbpedia.org/ontology/currency> ?o . 
+}""",1,0,0,1,1,1
+170,0.8115942029,Hat Sokrates Aristoteles beeinflusst?,"""wer hat Aristoteles beeinflusst?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ res:Aristotle dbo:influencedBy res:Socrates .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Aristotle> <http://dbpedia.org/ontology/influencedBy> ?o . 
+}""",0,8,1,0,0,0
+171,0.8461538462,In welcher Zeitzone liegt Salt Lake City?,"""in welchem Land liegt Salt Lake City?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Salt_Lake_City dbp:timezone ?uri . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Salt_Lake_City> <http://dbpedia.org/ontology/country> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",0,1,1,0,0,0
+172,0.8235294118,Wer ist der Sohn von Sonny und Cher?,"""wer ist die Sohn von Sonny Bono?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Cher> . ?uri <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Sonny_Bono> . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Sonny_Bono> <http://dbpedia.org/ontology/child> ?o . 
+}""",0,0,1,1,0,0
+173,0,In welcher Stadt ist das Hauptquartier der Vereinten Nationen?,,,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Headquarters_of_the_United_Nations> <http://dbpedia.org/ontology/location> ?uri . ?uri a <http://dbpedia.org/ontology/City> . },,0,0,1,1,0,0
+174,0.96875,Wer hat Penguin Books gegr├╝ndet?,"""wer hat Penguin Books gegr´┐¢ndet?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+ res:Penguin_Books dbo:founder ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Penguin_Books> <http://dbpedia.org/ontology/founder> ?o . 
+}""",1,0,0,1,1,1
+175,0.8823529412,Wann wurde Jack Wolfskin gegr├╝ndet?,"""Wann wurde Jack Wolfskin geboren?""",,SELECT DISTINCT ?year WHERE { <http://dbpedia.org/resource/Jack_Wolfskin> <http://dbpedia.org/ontology/foundingYear> ?year . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Jack_Wolfskin> <http://dbpedia.org/ontology/birthYear> ?o . 
+}""",0,0,1,1,0,0
+176,0.972972973,Wer ist der B├╝rgermeister von Moskau?,"""wer ist der B´┐¢rgermeister von Moskau?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Moscow dbo:leaderName ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Moscow> <http://dbpedia.org/ontology/mayor> ?o . 
+}""",0,0,1,1,0,0
+177,0,Gib mir alle Schwedischen Ozeanographen.,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri dbo:field res:Oceanography . 
+ ?uri dbo:birthPlace res:Sweden . 
+}",,0,0,0,1,0,0
+178,0,Zeig mir Hemmingways Autobiographie.,,,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Ernest_Hemingway> . ?uri <http://dbpedia.org/ontology/literaryGenre> <http://dbpedia.org/resource/Autobiography> . },,0,0,1,1,0,0
+179,0.72,Wer sind die Eltern der Frau von Juan Carlos I?,"""wer sind Elternteile von die Frau von Julia Roberts??""",,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ res:Juan_Carlos_I_of_Spain dbo:spouse ?x . 
+ ?x dbo:parent ?uri . 
+}","""SELECT DISTINCT ?objOfProp WHERE 
+{
+ ?subjOfProp <http://dbpedia.org/ontology/parent> ?objOfProp . <http://dbpedia.org/resource/Julia_Roberts> <http://dbpedia.org/ontology/spouse> ?subjOfProp .
+}""",0,0,0,1,0,0
+180,0.7865168539,Hat Tesla den Nobelpreis f├╝r Physik gewonnen?,"""wer wird von Nobelpreis f├╝r Physik gewonnen?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ res:Nikola_Tesla dbo:award res:Nobel_Prize_in_Physics .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Physics> . 
+}""",0,190,1,0,0,0
+181,0.8450704225,Wer ist der h├Âchste Basketballspieler?,"""wer ist gr´┐¢´┐¢te Basketballspieler?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/BasketballPlayer> . ?uri <http://dbpedia.org/ontology/height> ?num . } ORDER BY DESC(?num) OFFSET 0 LIMIT 1,"""SELECT DISTINCT ?subjOfProp WHERE 
+{
+ ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/BasketballPlayer> . ?subjOfProp <http://dbpedia.org/ontology/height> ?num . 
+} ORDER BY DESC(?num) LIMIT 1""",1,0,0,1,1,1
+182,0,Welche Stadt hat die wenigsten Einwohner?,,,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> . ?uri <http://dbpedia.org/ontology/populationTotal> ?pop . } ORDER BY ASC(?pop) OFFSET 0 LIMIT 1,,0,0,1,1,0,0
+183,0,Ist Proinsulin ein Protein?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ASK 
+WHERE {
+ res:Proinsulin rdf:type dbo:Protein .
+}",,0,0,1,1,0,0
+184,0,Wer waren die Eltern von K├Ânigin Viktoria?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Queen_Victoria dbo:parent ?uri .
+}",,0,0,2,1,0,0
+185,0.7307692308,Hatte Che Guevara Kinder?,"""wer ist Che Guevara s Kind?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK
+WHERE { 
+ res:Che_Guevara dbo:child ?uri . 
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Che_Guevara> <http://dbpedia.org/ontology/child> ?o . 
+}""",0,1,1,0,0,0
+186,0,Ist der Baikalsee gr├Â├ƒer als der Gro├ƒe B├ñrensee?,,,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+ASK
+WHERE { 
+ res:Lake_Baikal dbo:areaTotal ?a1 . 
+ res:Great_Bear_Lake dbo:areaTotal ?a2 .
+ FILTER (?a1 > ?a2)
+}",,0,0,1,1,0,0
+187,0,Hat Kaurism├ñki jemals den Gro├ƒen Preis der Jury in Cannes gewonnen?,,,ASK WHERE { <http://dbpedia.org/resource/Aki_Kaurism├ñki> <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Grand_Prix_(Cannes_Film_Festival)> . },,0,0,1,1,0,0
+188,0,Gib mir alle B├╝cher von William Goldman mit mehr als 300 Seiten.,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri rdf:type dbo:Book .
+ ?uri dbo:author res:William_Goldman .
+ ?uri dbo:numberOfPages ?x .
+ FILTER (?x > 300)
+}",,0,0,10,1,0,0
+189,1,Wo liegt Fort Knox?,"""Wo liegt Fort Knox?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Fort_Knox> <http://dbpedia.org/property/location> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Fort_Knox> <http://dbpedia.org/property/location> ?o . 
+}""",1,0,0,1,1,1
+190,0.7567567568,In welchem US-Bundesstaat liegt Fort Knox?,"""in welcher Lage liegt Fort Knox?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ res:Fort_Knox dbp:location ?uri .
+ ?uri dbo:country res:United_States .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Fort_Knox> <http://dbpedia.org/property/location> ?o . 
+}""",1,0,0,1,1,1
+191,0,Wo liegt Syngman Rhee begraben?,,,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Syngman_Rhee> <http://dbpedia.org/ontology/restingPlace> ?uri . },,0,0,3,1,0,0
+192,0.8041237113,In welcher Zeitzone liegt San Pedro de Atacama?,"""welche war die Zeitzone von San Pedro de Atacama?""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/San_Pedro_de_Atacama> <http://dbpedia.org/ontology/timeZone> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/San_Pedro_de_Atacama> <http://dbpedia.org/ontology/timeZone> ?o . 
+}""",1,0,0,1,1,1
+193,0,Welcher Stilrichtung geh├Ârte der Maler der Drei T├ñnzer an?,,,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Three_Dancers> <http://dbpedia.org/ontology/author> ?person . ?person <http://dbpedia.org/ontology/movement> ?uri . },,0,0,2,1,0,0
+194,0,Welcher Wissenschaftler ist bekannt f├╝r das Manhattan-Projekt und den Friedensnobelpreis?,,,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri dbo:knownFor res:Manhattan_Project .
+ ?uri rdf:type dbo:Scientist .
+ ?uri dbo:knownFor res:Nobel_Peace_Prize .
+}",,0,0,0,1,0,0
+195,0,Zeig mir alle B├╝cher in Asimovs Foundation-Serie.,,,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/series> <http://dbpedia.org/resource/Foundation_series> . },,0,0,12,1,0,0
+196,0,"Gib mir alle St├ñdte in New Jersey, die mehr als 100000 Einwohner haben.",,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+ ?uri rdf:type dbo:City .
+ ?uri dbo:isPartOf res:New_Jersey .
+ ?uri dbp:populationTotal ?inhabitants .
+ FILTER (?inhabitants > 100000) .
+}",,0,0,0,1,0,0
+197,0,Welches Museum in New York hat die meisten Besucher?,,,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Museum> . ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/New_York_City> . ?uri <http://dbpedia.org/ontology/numberOfVisitors> ?num . } ORDER BY DESC(?num) OFFSET 0 LIMIT 1,,0,0,1,1,0,0
+198,0.7674418605,Wie hoch ist der Yokohama Marine Tower?,"""welche ist die H´┐¢he von Yokohama Marine Tower?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num
+WHERE {
+ res:Yokohama_Marine_Tower dbo:height ?num .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Yokohama_Marine_Tower> <http://dbpedia.org/ontology/height> ?o . 
+}""",1,0,0,1,1,1
+199,0,Hat die neue Battlestar-Galactica-Serie mehr Episoden als die alte?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+ <http://dbpedia.org/resource/Battlestar_Galactica_%281978_TV_series%29> dbo:numberOfEpisodes ?x .
+ <http://dbpedia.org/resource/Battlestar_Galactica_%282004_TV_series%29> dbo:numberOfEpisodes ?y .
+ FILTER (?y > ?x)
+}",,0,0,1,1,0,0
+200,0.8852459016,Wer ist der j├╝ngste Dartspieler?,"""wer ist j´┐¢ngsten Dartspieler?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri rdf:type dbo:DartsPlayer .
+ ?uri dbo:birthDate ?date .
+}
+ORDER BY DESC(?date)
+OFFSET 0 LIMIT 1","""SELECT DISTINCT ?subjOfProp WHERE 
+{
+ ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/DartsPlayer> . ?subjOfProp <http://dbpedia.org/ontology/birthDate> ?num . 
+} ORDER BY DESC(?num) LIMIT 1""",1,0,0,1,1,1
+201,0.8314606742,Wer hat das Videospiel World of Warcraft entwickelt?,"""wer hat World of Warcraft entwickelt?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:World_of_Warcraft dbo:developer ?uri . 
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/World_of_Warcraft> . 
+}""",0,0,1,1,0,0
+202,0,Welcher Papst hat das Vatikanische Fernsehen gegr├╝ndet?,,,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT ?uri 
+WHERE { 
+ ?uri rdf:type dbo:Pope . 
+ res:Vatican_Television_Center dbo:foundedBy ?uri .
+}",,0,0,0,1,0,0
+203,0.8372093023,Wer hat die Musik f├╝r Harold und Maude komponiert?,"""wer hat Harold und Maude komponiert?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+ res:Harold_and_Maude dbo:musicComposer ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Harold_and_Maude> <http://dbpedia.org/ontology/musicComposer> ?o . 
+}""",0,0,0,1,0,0
+204,0.9397590361,Gib mir alle Bandmitglieder von Prodigy.,"""Gib mir alle Bandmitglieder von The Prodigy""",,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Prodigy> <http://dbpedia.org/ontology/bandMember> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/The_Prodigy> <http://dbpedia.org/ontology/bandMember> ?o . 
+}""",2,0,0,1,1,1
+205,0,Wer spielt alles in spanischen Filmen produziert von Benicio del Toro mit?,,,SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Spain> . ?film <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Benicio_del_Toro> . ?film <http://dbpedia.org/ontology/starring> ?uri . ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . },,0,0,1,1,0,0
+206,0,Welche Tochtergesellschaft von TUI Travel fliegt sowohl Glasgow als auch Dublin an?,,,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/TUI_Travel> <http://dbpedia.org/ontology/subsidiary> ?uri . ?uri <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Glasgow_Airport> . ?uri <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Dublin_Airport> . },,0,0,1,1,0,0
+207,1,In welchem Land liegt Mekka?,"""in welchem Land liegt Mekka?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+ res:Mecca dbo:country ?uri .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Mecca> <http://dbpedia.org/ontology/country> ?o . ?o <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . 
+}""",1,0,0,1,1,1
+208,0.8,Wieviele Sprachen werden in Kolumbien gesprochen?,"""in welchen Sprachen sind Kolumbien gesprochen?""",,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Language> . <http://dbpedia.org/resource/Colombia> <http://dbpedia.org/ontology/language> ?uri . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Colombia> <http://dbpedia.org/ontology/language> ?o . 
+}""",0,0,1,1,0,0
+209,0.9473684211,Was ist das gr├Â├ƒte Stadion in Spanien?,"""was ist das gr´┐¢´┐¢te Stadion in Spanien?""",,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Stadium> . ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Spain> . ?uri <http://dbpedia.org/ontology/seatingCapacity> ?n . } ORDER BY DESC(?n) OFFSET 0 LIMIT 1,"""SELECT DISTINCT ?subjOfProp WHERE 
+{
+ ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Stadium> . ?subjOfProp <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Spain> . ?subjOfProp <http://dbpedia.org/ontology/seatingCapacity> ?num . 
+} ORDER BY DESC(?num) LIMIT 1""",1,0,0,1,1,1
+210,0.9142857143,Welche Schauspieler wurden auf den Philippinen geboren?,"""welcher Schauspieler wurde in Philippinen geboren?""",,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri dbo:occupation res:Actor .
+ ?uri dbo:birthPlace res:Philippines .
+}","""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Philippines> . ?s <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Actor> . 
+}""",238,0,0,1,1,1
+211,0.9622641509,Was sind die Stadtteile von Konstitutionelle Monarchie?,"""was sind Stadtteile von Konstitutionelle Monarchie?""",,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/governmentType> <http://dbpedia.org/resource/Constitutional_monarchy> . },"""select ?s 
+{
+ ?s <http://dbpedia.org/ontology/governmentType> <http://dbpedia.org/resource/Constitutional_monarchy> . 
+}""",141,0,0,1,1,1
+212,0,Ist Cola ein Getr├ñnk?,,,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ASK 
+WHERE {
+ res:Cola rdf:type dbo:Beverage .
+}",,0,0,1,1,0,0
+213,0.875,Wann ist Elisabeth von Sachsen gestorben?,"""Wann ist Elisabeth of Saxony gestorben?""",,SELECT DISTINCT ?d WHERE { <http://dbpedia.org/resource/Elisabeth_of_Saxony> <http://dbpedia.org/ontology/deathDate> ?d . },"""select ?o 
+{
+ <http://dbpedia.org/resource/Elisabeth_of_Saxony> <http://dbpedia.org/ontology/deathDate> ?o . 
+}""",1,0,0,1,1,1
+214,0.7179487179,Wo in Frankreich wird Schaumwein hergestellt?,"""was wird von Schaumwein gestellt?""",,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri
+WHERE {
+ ?uri dbo:wineProduced res:Sparkling_wine .
+ ?uri dbo:location res:France .
+}","""select ?o 
+{
+ <http://dbpedia.org/resource/Sparkling_wine> <http://dbpedia.org/ontology/product> ?o . 
+}""",0,0,1,1,0,0
+,,,,,,overall result,627,219,244,0.7411347518,0.7198622273,0.7303436226
+,,,,,,average result,,,,0.9186046512,0.4257863992,0.421627907
+,,,,,,,TP,FP,FN,Precision,Recall,F-Measure

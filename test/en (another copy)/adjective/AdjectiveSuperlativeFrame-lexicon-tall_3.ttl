@@ -1,0 +1,47 @@
+@prefix :        <http://localhost:8080/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+@prefix oils:     <http://lemon-model.net/oils#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :tall_3 ;
+  lemon:entry    :form_tall_3_preposition ;
+  lemon:entry    :tall_3_res .
+
+:tall_3 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_tall_3 ;
+  lemon:otherForm      :form_tall_3_comperative ;
+  lemon:otherForm      :form_tall_3_superlative ;
+  lemon:sense          :tall_3_sense_1 ;
+  lemon:synBehavior    :tall_3_predFrame .
+
+:form_tall_3 lemon:writtenRep "tall"@en .
+
+:form_tall_3_comperative lemon:writtenRep "taller"@en .
+
+:form_tall_3_superlative lemon:writtenRep "tallest"@en .
+
+:tall_3_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :tall_3_PredSynArg .
+
+:tall_3_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :tall_3_res ;
+  lemon:isA       :tall_3_PredSynArg ;
+  lemon:condition :tall_3_sense_1_condition .
+
+:tall_3_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/elevation> ;
+  oils:degree   <http://lemon-model.net/oils/strong> .
+
+:tall_3_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/Mountain> .## Prepositions ##
+:form_tall_3_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :deliveryDate-of ;
+  lemon:entry    :deliveryDate-of_form_preposition .
+
+:deliveryDate-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :deliveryDate-of_form ;
+  lemon:otherForm  :deliveryDate-of_singular ;
+  lemon:otherForm  :deliveryDate-of_plural ;
+  lemon:sense          :deliveryDate-of_sense_1 ;
+  lemon:synBehavior    :deliveryDate-of_nounpp .
+
+:deliveryDate-of_form a lemon:Form ;
+  lemon:writtenRep "delivery Date"@en .
+
+:deliveryDate-of_singular a    lemon:Form ;
+  lemon:writtenRep "delivery Date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:deliveryDate-of_plural a   lemon:Form ;
+  lemon:writtenRep "delivery Dates"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:deliveryDate-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:deliveryDate-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :deliveryDate-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/deliveryDate> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :deliveryDate-of_sense_1_condition .
+
+:deliveryDate-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/MeanOfTransportation> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2 lemon:marker :deliveryDate-of_form_preposition .
+## Prepositions ##
+:deliveryDate-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

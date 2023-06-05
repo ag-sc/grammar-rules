@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :entwickler_von ;
+  lemon:entry    :entwickler_von_form_preposition .
+
+:entwickler_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :entwickler_von_form ;
+  lemon:otherForm      :entwickler_von_plural_form ;
+  lemon:otherForm      :entwickler_von_accusative_form ;
+  lemon:otherForm      :entwickler_von_dative_form ;
+  lemon:otherForm      :entwickler_von_genitive_form ;
+  lemon:otherForm      :entwickler_von_plural_form ;
+  lemon:sense          :entwickler_von_sense_1 ;
+  lemon:synBehavior    :entwickler_von_nounpp .
+
+:entwickler_von_form a lemon:Form ;
+  lemon:writtenRep "Entwickler"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:entwickler_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Entwickler"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:entwickler_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Entwickler"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:entwickler_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Entwickler"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:entwickler_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Entwicklers"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:entwickler_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:entwickler_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :entwickler_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/developer> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :entwickler_von_sense_1_condition .
+
+:entwickler_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Software> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/University> .
+
+:arg2 lemon:marker :entwickler_von_form_preposition .
+
+## Prepositions ##
+
+:entwickler_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

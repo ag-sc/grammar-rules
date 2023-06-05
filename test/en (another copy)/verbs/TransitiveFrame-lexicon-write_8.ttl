@@ -1,0 +1,87 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_write_8 ;
+  lemon:entry    :write_8ed ;
+  lemon:entry    :form_write_8_preposition .
+
+:to_write_8 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_write_8 ;
+  lemon:otherForm      :form_write_8s ;
+  lemon:otherForm      :form_write_8ed ;
+  lemon:otherForm      :form_write_8perfect ;
+  lemon:sense          :write_8_sense_1 ;
+  lemon:synBehavior    :write_8_frame_transitive .
+
+:form_write_8 a         lemon:Form ;
+  lemon:writtenRep     "write"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_write_8s a    lemon:Form ;
+  lemon:writtenRep "writes"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_write_8ed a   lemon:Form ;
+  lemon:writtenRep "wrote"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_write_8perfect a   lemon:Form ;
+  lemon:writtenRep "wrote"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:write_8_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :write_8_subj ;
+  lexinfo:directObject     :write_8_obj .
+
+:write_8_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :write_8_sense_1 ;
+  lemon:reference   <http://dbpedia.org/property/writer> ;
+  lemon:subjOfProp  :write_8_obj ;
+  lemon:objOfProp   :write_8_subj ;
+  lemon:condition   :write_8_sense_1_condition .
+
+
+:write_8_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+:write_8ed a            lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_write_8ed_canonical ;
+  lemon:otherForm      :form_write_8ed_by ;
+  lemon:synBehavior    :write_8ed_frame_adjectivepp ;
+  lemon:sense          :write_8ed_ontomap .
+
+:form_write_8ed_canonical a lemon:Form ;
+  lemon:writtenRep         "write"@en .
+
+:form_write_8ed_by a    lemon:Form ;
+  lemon:writtenRep     "write"@en ;
+  lexinfo:verbFormMood lexinfo:participle .
+
+
+:write_8ed_frame_adjectivepp a  lexinfo:AdjectivePPFrame ;
+  lexinfo:copulativeSubject    :write_8ed_subj ;
+  lexinfo:prepositionalAdjunct :write_8ed_obj .
+
+:write_8ed_ontomap a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :write_8ed_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/writer> ;
+  lemon:subjOfProp  :write_8ed_subj ;
+  lemon:objOfProp   :write_8ed_obj ;
+  lemon:condition   :write_8_sense_1_condition .
+:write_8ed_obj lemon:marker :form_write_8_preposition .
+
+## Prepositions ##
+:form_write_8_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

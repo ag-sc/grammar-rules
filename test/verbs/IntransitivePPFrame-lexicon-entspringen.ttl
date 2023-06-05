@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :entspringen ;
+  lemon:entry    :form_entspringen_present_preposition .
+
+:entspringen a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_entspringen_present ;
+  lemon:otherForm      :entspringen_present3rd ;
+  lemon:otherForm      :entspringen_past ;
+  lemon:otherForm      :entspringen_perfect ;
+  lemon:sense          :entspringen_sense_1 ;
+  lemon:synBehavior    :entspringen_frame .
+
+:form_entspringen_present a           lemon:Form ;
+  lemon:writtenRep     "entspringen"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:entspringen_present3rd a      lemon:Form ;
+  lemon:writtenRep "entspringt"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:entspringen_past a lemon:Form ;
+  lemon:writtenRep  "entsprang"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:entspringen_perfect a lemon:Form ;
+  lemon:writtenRep  "entsprungen"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:entspringen_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :entspringen_subj ;
+  lexinfo:prepositionalAdjunct :entspringen_obj .
+
+:entspringen_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :entspringen_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/mouthLocation> ;
+  lemon:subjOfProp  :entspringen_obj ;
+  lemon:objOfProp   :entspringen_subj ;
+  lemon:condition   :entspringen_sense_1_condition .
+
+:entspringen_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/River> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Place> .
+
+
+:entspringen_obj lemon:marker :in .
+
+:arg2 lemon:marker :form_entspringen_present_preposition .
+
+## Prepositions ##
+
+:form_entspringen_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

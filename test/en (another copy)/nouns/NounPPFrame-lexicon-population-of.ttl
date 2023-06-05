@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :population-of ;
+  lemon:entry    :population-of_form_preposition .
+
+:population-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :population-of_form ;
+  lemon:otherForm  :population-of_singular ;
+  lemon:otherForm  :population-of_plural ;
+  lemon:sense          :population-of_sense_1 ;
+  lemon:synBehavior    :population-of_nounpp .
+
+:population-of_form a lemon:Form ;
+  lemon:writtenRep "population"@en .
+
+:population-of_singular a    lemon:Form ;
+  lemon:writtenRep "population"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:population-of_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:population-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:population-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :population-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/populationTotal> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :population-of_sense_1_condition .
+
+:population-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/PopulatedPlace> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+:arg2 lemon:marker :population-of_form_preposition .
+## Prepositions ##
+:population-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

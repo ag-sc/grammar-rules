@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :officialLanguage-of ;
+  lemon:entry    :officialLanguage-of_form_preposition .
+
+:officialLanguage-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :officialLanguage-of_form ;
+  lemon:otherForm  :officialLanguage-of_singular ;
+  lemon:otherForm  :officialLanguage-of_plural ;
+  lemon:sense          :officialLanguage-of_sense_1 ;
+  lemon:synBehavior    :officialLanguage-of_nounpp .
+
+:officialLanguage-of_form a lemon:Form ;
+  lemon:writtenRep "official language"@en .
+
+:officialLanguage-of_singular a    lemon:Form ;
+  lemon:writtenRep "official language"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:officialLanguage-of_plural a   lemon:Form ;
+  lemon:writtenRep "official languages"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:officialLanguage-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:officialLanguage-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :officialLanguage-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/officialLanguage> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :officialLanguage-of_sense_1_condition .
+
+:officialLanguage-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Language> .
+
+:arg2 lemon:marker :officialLanguage-of_form_preposition .
+## Prepositions ##
+:officialLanguage-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

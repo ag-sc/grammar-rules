@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :releaseDate-of ;
+  lemon:entry    :releaseDate-of_form_preposition .
+
+:releaseDate-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :releaseDate-of_form ;
+  lemon:otherForm  :releaseDate-of_singular ;
+  lemon:otherForm  :releaseDate-of_plural ;
+  lemon:sense          :releaseDate-of_sense_1 ;
+  lemon:synBehavior    :releaseDate-of_nounpp .
+
+:releaseDate-of_form a lemon:Form ;
+  lemon:writtenRep "release date"@en .
+
+:releaseDate-of_singular a    lemon:Form ;
+  lemon:writtenRep "release date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:releaseDate-of_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:releaseDate-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:releaseDate-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :releaseDate-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/releaseDate> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :releaseDate-of_sense_1_condition .
+
+:releaseDate-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Software> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2 lemon:marker :releaseDate-of_form_preposition .
+## Prepositions ##
+:releaseDate-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :openingDate-of ;
+  lemon:entry    :openingDate-of_form_preposition .
+
+:openingDate-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :openingDate-of_form ;
+  lemon:otherForm  :openingDate-of_singular ;
+  lemon:otherForm  :openingDate-of_plural ;
+  lemon:sense          :openingDate-of_sense_1 ;
+  lemon:synBehavior    :openingDate-of_nounpp .
+
+:openingDate-of_form a lemon:Form ;
+  lemon:writtenRep "opening Date"@en .
+
+:openingDate-of_singular a    lemon:Form ;
+  lemon:writtenRep "opening Date"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:openingDate-of_plural a   lemon:Form ;
+  lemon:writtenRep "opening Dates"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:openingDate-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:openingDate-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :openingDate-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/openingDate> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :openingDate-of_sense_1_condition .
+
+:openingDate-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/ArchitecturalStructure> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#date> .
+
+:arg2 lemon:marker :openingDate-of_form_preposition .
+## Prepositions ##
+:openingDate-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

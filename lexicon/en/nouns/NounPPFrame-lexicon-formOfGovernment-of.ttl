@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :formOfGovernment-of ;
+  lemon:entry    :formOfGovernment-of_form_preposition .
+
+:formOfGovernment-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :formOfGovernment-of_form ;
+  lemon:otherForm  :formOfGovernment-of_singular ;
+  lemon:otherForm  :formOfGovernment-of_plural ;
+  lemon:sense          :formOfGovernment-of_sense_1 ;
+  lemon:synBehavior    :formOfGovernment-of_nounpp .
+
+:formOfGovernment-of_form a lemon:Form ;
+  lemon:writtenRep "form of government"@en .
+
+:formOfGovernment-of_singular a    lemon:Form ;
+  lemon:writtenRep "form of government"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:formOfGovernment-of_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:formOfGovernment-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:formOfGovernment-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :formOfGovernment-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/governmentType> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :formOfGovernment-of_sense_1_condition .
+
+:formOfGovernment-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2 lemon:marker :formOfGovernment-of_form_preposition .
+## Prepositions ##
+:formOfGovernment-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

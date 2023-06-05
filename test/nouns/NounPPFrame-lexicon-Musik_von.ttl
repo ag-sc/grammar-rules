@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Musik_von ;
+  lemon:entry    :Musik_von_form_preposition .
+
+:Musik_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :Musik_von_form ;
+  lemon:otherForm      :Musik_von_plural_form ;
+  lemon:otherForm      :Musik_von_accusative_form ;
+  lemon:otherForm      :Musik_von_dative_form ;
+  lemon:otherForm      :Musik_von_genitive_form ;
+  lemon:otherForm      :Musik_von_plural_form ;
+  lemon:sense          :Musik_von_sense_1 ;
+  lemon:synBehavior    :Musik_von_nounpp .
+
+:Musik_von_form a lemon:Form ;
+  lemon:writtenRep "Musik"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Musik_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Musiken"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Musik_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Musik"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:Musik_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Musik"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:Musik_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Musik"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:Musik_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2 ;
+  lexinfo:prepositionalAdjunct :arg1 .
+
+:Musik_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :Musik_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/musicBy> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :Musik_von_sense_1_condition .
+
+:Musik_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Musical> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2 lemon:marker :Musik_von_form_preposition .
+
+## Prepositions ##
+
+:Musik_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

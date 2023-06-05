@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :employer-of ;
+  lemon:entry    :employer-of_form_preposition .
+
+:employer-of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :employer-of_form ;
+  lemon:otherForm  :employer-of_singular ;
+  lemon:otherForm  :employer-of_plural ;
+  lemon:sense          :employer-of_sense_1 ;
+  lemon:synBehavior    :employer-of_nounpp .
+
+:employer-of_form a lemon:Form ;
+  lemon:writtenRep "employer"@en .
+
+:employer-of_singular a    lemon:Form ;
+  lemon:writtenRep "employer"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:employer-of_plural a   lemon:Form ;
+  lemon:writtenRep "employers"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:employer-of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:employer-of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :employer-of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/employer> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :employer-of_sense_1_condition .
+
+:employer-of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Place> .
+
+:arg2 lemon:marker :employer-of_form_preposition .
+## Prepositions ##
+:employer-of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

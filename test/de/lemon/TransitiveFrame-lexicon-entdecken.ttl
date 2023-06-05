@@ -1,0 +1,91 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :to_entdecken ;
+  lemon:entry    :entdeckened ;
+  lemon:entry    :form_entdecken_preposition .
+
+:to_entdecken a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_entdecken ;
+  lemon:otherForm      :form_entdeckens ;
+  lemon:otherForm      :form_entdeckened ;
+  lemon:sense          :entdecken_sense_1 ;
+  lemon:synBehavior    :entdecken_frame_transitive .
+
+:form_entdecken a         lemon:Form ;
+  lemon:writtenRep     "entdecken"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_entdeckens a    lemon:Form ;
+  lemon:writtenRep "entdeckt"@de ;
+  lexinfo:tense    lexinfo:past ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+
+:form_entdeckens a    lemon:Form ;
+  lemon:writtenRep "entdeckte"@de ;
+  lexinfo:tense    lexinfo:past ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:form_entdeckened a   lemon:Form ;
+  lemon:writtenRep "entdeckt"@de ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:entdecken_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :entdecken_subj ;
+  lexinfo:directObject     :entdecken_obj .
+
+:entdecken_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :entdecken_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/discoverer> ;
+  lemon:subjOfProp  :entdecken_obj ;
+  lemon:objOfProp   :entdecken_subj ;
+  lemon:condition   :entdecken_sense_1_condition .
+
+
+:entdecken_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/CelestialBody> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+:entdeckened a            lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_entdeckened_canonical ;
+  lemon:otherForm      :form_entdeckened_by ;
+  lemon:synBehavior    :entdeckened_frame_adjectivepp ;
+  lemon:sense          :entdeckened_ontomap .
+
+:form_entdeckened_canonical a lemon:Form ;
+  lemon:writtenRep         "entdecken"@de .
+
+:form_entdeckened_by a    lemon:Form ;
+  lemon:writtenRep     "entdecken"@de ;
+  lexinfo:verbFormMood lexinfo:participle .
+
+
+:entdeckened_frame_adjectivepp a  lexinfo:AdjectivePPFrame ;
+  lexinfo:copulativeSubject    :entdeckened_subj ;
+  lexinfo:prepositionalAdjunct :entdeckened_obj .
+
+:entdeckened_ontomap a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :entdeckened_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/discoverer> ;
+  lemon:subjOfProp  :entdeckened_subj ;
+  lemon:objOfProp   :entdeckened_obj ;
+  lemon:condition   :entdecken_sense_1_condition .
+:entdeckened_obj lemon:marker :von .
+
+:arg2 lemon:marker :form_entdecken_form_preposition .
+
+## Prepositions ##
+
+:form_entdecken_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

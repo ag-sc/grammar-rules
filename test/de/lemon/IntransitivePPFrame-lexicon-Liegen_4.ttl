@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Liegen_4 ;
+  lemon:entry    :form_Liegen_4_present_preposition .
+
+:Liegen_4 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_Liegen_4_present ;
+  lemon:otherForm      :Liegen_4_present3rd ;
+  lemon:otherForm      :Liegen_4_past ;
+  lemon:otherForm      :Liegen_4_perfect ;
+  lemon:sense          :Liegen_4_sense_1 ;
+  lemon:synBehavior    :Liegen_4_frame .
+
+:form_Liegen_4_present a           lemon:Form ;
+  lemon:writtenRep     "liegen"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:Liegen_4_present3rd a      lemon:Form ;
+  lemon:writtenRep "liegt"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:Liegen_4_past a lemon:Form ;
+  lemon:writtenRep  "lag"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:Liegen_4_perfect a lemon:Form ;
+  lemon:writtenRep  "gelegen"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:Liegen_4_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :Liegen_4_subj ;
+  lexinfo:prepositionalAdjunct :Liegen_4_obj .
+
+:Liegen_4_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :Liegen_4_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/country> ;
+  lemon:subjOfProp  :Liegen_4_obj ;
+  lemon:objOfProp   :Liegen_4_subj ;
+  lemon:condition   :Liegen_4_sense_1_condition .
+
+:Liegen_4_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Lake> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Country> .
+
+
+:Liegen_4_obj lemon:marker :in .
+
+:arg2 lemon:marker :form_Liegen_4_present_preposition .
+
+## Prepositions ##
+
+:form_Liegen_4_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

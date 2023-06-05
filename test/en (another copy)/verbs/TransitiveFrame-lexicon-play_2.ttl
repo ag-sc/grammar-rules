@@ -1,0 +1,87 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_play_2 ;
+  lemon:entry    :play_2ed ;
+  lemon:entry    :form_play_2_preposition .
+
+:to_play_2 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_play_2 ;
+  lemon:otherForm      :form_play_2s ;
+  lemon:otherForm      :form_play_2ed ;
+  lemon:otherForm      :form_play_2perfect ;
+  lemon:sense          :play_2_sense_1 ;
+  lemon:synBehavior    :play_2_frame_transitive .
+
+:form_play_2 a         lemon:Form ;
+  lemon:writtenRep     "play"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_play_2s a    lemon:Form ;
+  lemon:writtenRep "plays"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_play_2ed a   lemon:Form ;
+  lemon:writtenRep "played"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_play_2perfect a   lemon:Form ;
+  lemon:writtenRep "played"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:play_2_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :play_2_subj ;
+  lexinfo:directObject     :play_2_obj .
+
+:play_2_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :play_2_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/portrayer> ;
+  lemon:subjOfProp  :play_2_obj ;
+  lemon:objOfProp   :play_2_subj ;
+  lemon:condition   :play_2_sense_1_condition .
+
+
+:play_2_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Work> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Actor> .
+
+:play_2ed a            lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_play_2ed_canonical ;
+  lemon:otherForm      :form_play_2ed_by ;
+  lemon:synBehavior    :play_2ed_frame_adjectivepp ;
+  lemon:sense          :play_2ed_ontomap .
+
+:form_play_2ed_canonical a lemon:Form ;
+  lemon:writtenRep         "play"@en .
+
+:form_play_2ed_by a    lemon:Form ;
+  lemon:writtenRep     "play"@en ;
+  lexinfo:verbFormMood lexinfo:participle .
+
+
+:play_2ed_frame_adjectivepp a  lexinfo:AdjectivePPFrame ;
+  lexinfo:copulativeSubject    :play_2ed_subj ;
+  lexinfo:prepositionalAdjunct :play_2ed_obj .
+
+:play_2ed_ontomap a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :play_2ed_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/portrayer> ;
+  lemon:subjOfProp  :play_2ed_subj ;
+  lemon:objOfProp   :play_2ed_obj ;
+  lemon:condition   :play_2_sense_1_condition .
+:play_2ed_obj lemon:marker :form_play_2_preposition .
+
+## Prepositions ##
+:form_play_2_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

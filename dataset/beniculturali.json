@@ -1,0 +1,23 @@
+{
+    "endpoint": "https://dati.beniculturali.it/sparql",
+    "prefix": 
+            {
+		    "arco": "https://dati.beniculturali.it/lodview-arco/ontology/arco/",
+                    "arco-arco" : "https://w3id.org/arco/core/",
+		    "arco-catalogue" : "https://w3id.org/arco/ontology/catalogue/",
+		    "arco-cd" : "https://w3id.org/arco/ontology/context-description/",
+		    "arco-dd" : "https://w3id.org/arco/ontology/denotative-description/",
+		    "arco-location" : "https://w3id.org/arco/ontology/location/", 
+		    "cis" : "http://dati.beniculturali.it/cis/",
+		    "clvapit" : "https://w3id.org/italia/onto/CLV/",
+		    "context" : "https://w3id.org/arco/ontology/context-description/",
+            "dc" :"http://purl.org/dc/elements/1.1/",
+		    "dcterms" : "http://purl.org/dc/terms/",
+		    "l0" : "https://w3id.org/italia/onto/l0/",
+		    "muapit" : "https://w3id.org/italia/onto/MU/",
+            "oad": "http://lod.xdams.org/reload/oad/",
+		    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+		    "roapit" : "https://w3id.org/italia/onto/RO/"
+            }
+}

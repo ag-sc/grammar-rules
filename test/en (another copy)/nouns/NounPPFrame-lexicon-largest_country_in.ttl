@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :largest_country_in ;
+  lemon:entry    :largest_country_in_form_preposition .
+
+:largest_country_in a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :largest_country_in_form ;
+  lemon:otherForm  :largest_country_in_singular ;
+  lemon:otherForm  :largest_country_in_plural ;
+  lemon:sense          :largest_country_in_sense_1 ;
+  lemon:synBehavior    :largest_country_in_nounpp .
+
+:largest_country_in_form a lemon:Form ;
+  lemon:writtenRep "largest country"@en .
+
+:largest_country_in_singular a    lemon:Form ;
+  lemon:writtenRep "largest country"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:largest_country_in_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:largest_country_in_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:largest_country_in_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :largest_country_in_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/areaTotal> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :largest_country_in_sense_1_condition .
+
+:largest_country_in_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Country> .
+
+:arg2 lemon:marker :largest_country_in_form_preposition .
+## Prepositions ##
+:largest_country_in_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

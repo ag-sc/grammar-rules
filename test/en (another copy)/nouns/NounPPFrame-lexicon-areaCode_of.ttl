@@ -1,0 +1,52 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :areaCode_of ;
+  lemon:entry    :areaCode_of_form_preposition .
+
+:areaCode_of a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :areaCode_of_form ;
+  lemon:otherForm  :areaCode_of_singular ;
+  lemon:otherForm  :areaCode_of_plural ;
+  lemon:sense          :areaCode_of_sense_1 ;
+  lemon:synBehavior    :areaCode_of_nounpp .
+
+:areaCode_of_form a lemon:Form ;
+  lemon:writtenRep "area code"@en .
+
+:areaCode_of_singular a    lemon:Form ;
+  lemon:writtenRep "area code"@en ;
+  lexinfo:number   lexinfo:singular .
+
+:areaCode_of_plural a   lemon:Form ;
+  lemon:writtenRep "XX"@en ;
+  lexinfo:number    lexinfo:plural .
+
+:areaCode_of_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:areaCode_of_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :areaCode_of_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/areaCode> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :areaCode_of_sense_1_condition .
+
+:areaCode_of_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#string> .
+
+:arg2 lemon:marker :areaCode_of_form_preposition .
+## Prepositions ##
+:areaCode_of_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "of"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

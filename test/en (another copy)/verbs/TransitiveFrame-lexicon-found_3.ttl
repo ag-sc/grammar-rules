@@ -1,0 +1,87 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_found_3 ;
+  lemon:entry    :found_3ed ;
+  lemon:entry    :form_found_3_preposition .
+
+:to_found_3 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_found_3 ;
+  lemon:otherForm      :form_found_3s ;
+  lemon:otherForm      :form_found_3ed ;
+  lemon:otherForm      :form_found_3perfect ;
+  lemon:sense          :found_3_sense_1 ;
+  lemon:synBehavior    :found_3_frame_transitive .
+
+:form_found_3 a         lemon:Form ;
+  lemon:writtenRep     "found"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_found_3s a    lemon:Form ;
+  lemon:writtenRep "founds"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_found_3ed a   lemon:Form ;
+  lemon:writtenRep "founded"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_found_3perfect a   lemon:Form ;
+  lemon:writtenRep "founded"@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:found_3_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :found_3_subj ;
+  lexinfo:directObject     :found_3_obj .
+
+:found_3_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :found_3_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/foundedBy> ;
+  lemon:subjOfProp  :found_3_obj ;
+  lemon:objOfProp   :found_3_subj ;
+  lemon:condition   :found_3_sense_1_condition .
+
+
+:found_3_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Organisation> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+:found_3ed a            lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_found_3ed_canonical ;
+  lemon:otherForm      :form_found_3ed_by ;
+  lemon:synBehavior    :found_3ed_frame_adjectivepp ;
+  lemon:sense          :found_3ed_ontomap .
+
+:form_found_3ed_canonical a lemon:Form ;
+  lemon:writtenRep         "found"@en .
+
+:form_found_3ed_by a    lemon:Form ;
+  lemon:writtenRep     "found"@en ;
+  lexinfo:verbFormMood lexinfo:participle .
+
+
+:found_3ed_frame_adjectivepp a  lexinfo:AdjectivePPFrame ;
+  lexinfo:copulativeSubject    :found_3ed_subj ;
+  lexinfo:prepositionalAdjunct :found_3ed_obj .
+
+:found_3ed_ontomap a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :found_3ed_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/foundedBy> ;
+  lemon:subjOfProp  :found_3ed_subj ;
+  lemon:objOfProp   :found_3ed_obj ;
+  lemon:condition   :found_3_sense_1_condition .
+:found_3ed_obj lemon:marker :form_found_3_preposition .
+
+## Prepositions ##
+:form_found_3_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

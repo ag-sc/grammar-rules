@@ -1,0 +1,87 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "en" ;
+  lemon:entry    :to_follow_4 ;
+  lemon:entry    :follow_4ed ;
+  lemon:entry    :form_follow_4_preposition .
+
+:to_follow_4 a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_follow_4 ;
+  lemon:otherForm      :form_follow_4s ;
+  lemon:otherForm      :form_follow_4ed ;
+  lemon:otherForm      :form_follow_4perfect ;
+  lemon:sense          :follow_4_sense_1 ;
+  lemon:synBehavior    :follow_4_frame_transitive .
+
+:form_follow_4 a         lemon:Form ;
+  lemon:writtenRep     "follow"@en ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_follow_4s a    lemon:Form ;
+  lemon:writtenRep "follows"@en ;
+  lexinfo:person   lexinfo:secondPerson .
+
+:form_follow_4ed a   lemon:Form ;
+  lemon:writtenRep "followed"@en ;
+  lexinfo:tense    lexinfo:past .
+
+:form_follow_4perfect a   lemon:Form ;
+  lemon:writtenRep ""@en ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:follow_4_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :follow_4_subj ;
+  lexinfo:directObject     :follow_4_obj .
+
+:follow_4_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :follow_4_sense_1 ;
+  lemon:reference   <http://dbpedia.org/property/successor> ;
+  lemon:subjOfProp  :follow_4_obj ;
+  lemon:objOfProp   :follow_4_subj ;
+  lemon:condition   :follow_4_sense_1_condition .
+
+
+:follow_4_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Politician> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Politician> .
+
+:follow_4ed a            lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_follow_4ed_canonical ;
+  lemon:otherForm      :form_follow_4ed_by ;
+  lemon:synBehavior    :follow_4ed_frame_adjectivepp ;
+  lemon:sense          :follow_4ed_ontomap .
+
+:form_follow_4ed_canonical a lemon:Form ;
+  lemon:writtenRep         "follow"@en .
+
+:form_follow_4ed_by a    lemon:Form ;
+  lemon:writtenRep     "follow"@en ;
+  lexinfo:verbFormMood lexinfo:participle .
+
+
+:follow_4ed_frame_adjectivepp a  lexinfo:AdjectivePPFrame ;
+  lexinfo:copulativeSubject    :follow_4ed_subj ;
+  lexinfo:prepositionalAdjunct :follow_4ed_obj .
+
+:follow_4ed_ontomap a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :follow_4ed_ontomap ;
+  lemon:reference   <http://dbpedia.org/property/successor> ;
+  lemon:subjOfProp  :follow_4ed_subj ;
+  lemon:objOfProp   :follow_4ed_obj ;
+  lemon:condition   :follow_4_sense_1_condition .
+:follow_4ed_obj lemon:marker :form_follow_4_preposition .
+
+## Prepositions ##
+:form_follow_4_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "by"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+
