@@ -39,28 +39,26 @@ public class GrammarFactory {
     private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries) {
         List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
         for (GrammarEntryUnit grammarEntryUnit : grammarEntries.getGrammarEntries()) {
-            List<UriLabel> bindingList = grammarEntryUnit.getBindingList();
-            List<String> questions = this.modifyQyestions(grammarEntryUnit.getSentences());
-
+            List<String[]> questions = this.modifyQyestions(grammarEntryUnit.getSentences());
             if (!questions.isEmpty()&&grammarEntryUnit.getSparqlQuery() != null) {
                 String sparql = this.modifySparql(grammarEntryUnit.getSentenceTemplate(), grammarEntryUnit.getSparqlQuery(), grammarEntryUnit.getReturnVariable());
-                GrammarRule grammarRule = new GrammarRule(questions, sparql, bindingList);
+                GrammarRule grammarRule = new GrammarRule(questions, sparql,grammarEntryUnit.getBindingType());
                 grammarRules.add(grammarRule);
-                System.out.println(grammarRule);
             }
 
         }
         return grammarRules;
     }
 
-    private List<String> modifyQyestions(List<String> questions) {
-        List<String> modifyQuestions = new ArrayList<String>();
-        for (String question : questions) {
-            if (question.contains("(") && question.contains(")")) {
-                String result = StringUtils.substringBetween(question, "(", ")");
-                question = question.replace(result, "$Arg");
-                question=question.replace("(", "").replace(")","");
-                modifyQuestions.add(question);
+    private List<String[]> modifyQyestions(List<String> questions) {
+        List<String[]> modifyQuestions = new ArrayList<String[]>();
+        for (String ruleWithVariable : questions) {
+            if (ruleWithVariable.contains("(") && ruleWithVariable.contains(")")) {
+                String result = StringUtils.substringBetween(ruleWithVariable, "(", ")");
+                ruleWithVariable = ruleWithVariable.replace(result, "$Arg");
+                ruleWithVariable=ruleWithVariable.replace("(", "").replace(")","");
+                String ruleAsRegularExp=ruleWithVariable.replace("$Arg", "(.*?)");
+                modifyQuestions.add(new String[]{ruleWithVariable,ruleAsRegularExp});
             }
         }
         return modifyQuestions;
@@ -75,10 +73,11 @@ public class GrammarFactory {
         }
 
         if (returnVariable.contains("objOfProp")) {
-            return sparql.replace("subjOfProp", "Arg");
+            sparql = sparql.replace("subjOfProp", "Arg").replace("objOfProp", "Answer");
         } else {
-            return sparql.replace("objOfProp", "Arg");
+            sparql = sparql.replace("objOfProp", "Arg").replace("subjOfProp", "Answer");
         }
+        return sparql;
     }
 
     private String findProperty(String triple) {

@@ -2,6 +2,9 @@ package parser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.apache.commons.lang3.tuple.Pair;
 
 /*
@@ -15,41 +18,57 @@ import org.apache.commons.lang3.tuple.Pair;
  */
 public class Grammar {
 
-    List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
+    private List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
 
     public Grammar(List<GrammarRule> grammarRules) {
         this.grammarRules = grammarRules;
     }
 
     //The methods return a SPARQL query or „null“ if there is no parse.
-    public String parser(String sentence) {
+    public String parser(String sentence) throws Exception {
         String sparqlQuery = null;
 
         for (GrammarRule grammarRule : grammarRules) {
-            if (this.isMatch(sentence, grammarRule)) {
-                List<String> questions = grammarRule.getQuestion();
-                if (!questions.isEmpty()) {
-                    String question = grammarRule.getQuestion().iterator().next();
-                    String uri = this.findEntityUri(question);
-                    sparqlQuery = this.prepareSparql(grammarRule.getSparql(), uri);
-                    break;
+            List<String[]> questions = grammarRule.getQaElement().getQuestion();
+            if (!questions.isEmpty()) {
+                for (String[] rule : questions) {
+                    String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
+                    if (isMatch(sentence, ruleRegularEx)) {
+                        Map<String, String> entityMap =grammarRule.getEntityMap();
+                        System.out.println(entityMap);
+                        String uri = this.findEntityUri(ruleRegularEx, sentence, grammarRule.getEntityMap());
+                        if(uri!=null){
+                          sparqlQuery = this.prepareSparql(grammarRule.getSparql(), uri);
+                          break;
+                        }
+                        else
+                            throw new Exception("the entity is not found!");
+                    }
+
                 }
+
             }
+
         }
         return sparqlQuery;
-
     }
 
-    private boolean isMatch(String sentence, GrammarRule grammarRule) {
-        return true;
-    }
-
-    private String findEntityUri(String question) {
-        return null;
+    private boolean isMatch(String sentence, String ruleRegularEx) {
+        Pattern pattern = Pattern.compile(ruleRegularEx);
+        Matcher m = pattern.matcher(sentence);
+        return  m.matches();       
     }
 
     private String prepareSparql(String sparql, String uri) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return sparql.replace("?Arg", "<"+uri+">");
+    }
+
+    private String findEntityUri(String regulardExpr, String sentence, Map<String, String> entityMap) {
+        String entity = sentence.replace(regulardExpr, "");
+        if (entityMap.containsKey(entity)) {
+            return entityMap.get(entity);
+        }
+        return null;
     }
 
 }

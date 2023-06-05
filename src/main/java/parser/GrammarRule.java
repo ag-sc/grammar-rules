@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import utils.SparqlQuery;
 import utils.UriLabel;
 
 /*
@@ -21,29 +22,24 @@ import utils.UriLabel;
  * that can fill $Arg. 
  */
 public class GrammarRule {
-    //  question = "Who is the president of "+argument+" s?";
-    //    sparql = "SELECT X X president Sub";
 
+    public static Integer RULE_VARIABLE_INDEX = 0;
+    public static Integer RULE_REGULAR_EXPRESSION_INDEX = 1;
     private QAElement qaElement = null;
+    private String bindingType = null;
     private Map<String, String> entityMap = new TreeMap<String, String>();
 
-    public GrammarRule(List<String> questions, String sparql, List<UriLabel> bindingList) {
-       this.qaElement = new QAElement(questions, sparql);
-       this.findUriLables(bindingList);
-    }
-    
-    private void findUriLables(List<UriLabel> bindingList) {
-        for(UriLabel uriLabel:bindingList){
-            entityMap.put(uriLabel.getUri(), uriLabel.getLabel());
-        }
+    public GrammarRule(List<String[]> questions, String sparql, String bindingType) {
+        this.qaElement = new QAElement(questions, sparql);
+        this.bindingType=bindingType;
     }
 
     public Map<String, String> getEntityMap() {
-        return entityMap;
+        return new SparqlQuery(this.bindingType).getEntityMap();
     }
 
-    public List<String> getQuestion() {
-        return this.qaElement.getQuestion();
+    public QAElement getQaElement() {
+        return qaElement;
     }
 
     public String getSparql() {
@@ -54,7 +50,5 @@ public class GrammarRule {
     public String toString() {
         return "GrammarRule{" + "qaElement=" + qaElement + ", entityMap=" + entityMap + '}';
     }
-
-   
 
 }

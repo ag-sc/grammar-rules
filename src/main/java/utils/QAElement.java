@@ -13,15 +13,15 @@ import java.util.List;
  * @author elahi
  */
 public class QAElement {
-    private List<String> question = new ArrayList<String>();
+    private List<String[]> question = new ArrayList<String[]>();
     private String sparql = null;
     
-    public QAElement(List<String> question,String sparql){
+    public QAElement(List<String[]> question,String sparql){
        this.question = question;
        this.sparql = sparql;
     }
 
-    public List<String> getQuestion() {
+    public List<String[]> getQuestion() {
         return question;
     }
 
