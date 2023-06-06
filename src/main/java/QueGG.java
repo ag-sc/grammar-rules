@@ -13,7 +13,7 @@ import utils.TripleProcess;
 public class QueGG {
     private static String grammarFileName="grammarFiles/grammar_FULL_DATASET_EN.json";
     private static String qaldFileName="";
-    private static Boolean entityRetriveOnline=false;
+    private static Boolean entityRetriveOnline=true;
     private static Integer numberOfEntities=-1;
 
     public static void main(String[] args) throws Exception {
