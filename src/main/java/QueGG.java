@@ -11,23 +11,31 @@ import utils.TripleProcess;
 
 @NoArgsConstructor
 public class QueGG {
-    private static String grammarFileName="src/main/resources/grammar_FULL_DATASET_EN.json";
+    private static String grammarFileName="grammarFiles/grammar_FULL_DATASET_EN.json";
     private static String qaldFileName="";
-    private static Boolean entityRetriveOnline=true;
+    private static Boolean entityRetriveOnline=false;
     private static Integer numberOfEntities=-1;
-     private static String language="en";
 
     public static void main(String[] args) throws Exception {
         System.out.println("Grammar Parser!!!");
-        
-        Grammar grammar=new GrammarFactory(new File(grammarFileName),entityRetriveOnline,numberOfEntities,language).getGrammar();
-        String sentence="Who is the editor of Forbes?";
-        try {
-            String sparql=grammar.parser(sentence);
-            System.out.println(sparql);
-             } catch (Exception e) {
-            System.err.printf("%s: %s%n", e.getClass().getSimpleName(), e.getMessage());
+
+        if (args.length < 2) {
+            System.err.printf("Too few parameters (%s/%s)", args.length);
+            throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
+        } else if (args.length == 2) {
+            String language = args[0];
+            String sentence = args[1];
+            //sentence = "What is the capital of Bangladesh?";
+            //language="en";
+            Grammar grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
+            try {
+                String sparql = grammar.parser(sentence);
+                System.out.println(sparql);
+            } catch (Exception e) {
+                System.err.printf("%s: %s%n", e.getClass().getSimpleName(), e.getMessage());
+            }
         }
+
     }
 
 }
