@@ -38,9 +38,11 @@ public class Grammar {
         String sparqlQuery = null;
         for (GrammarRule grammarRule : grammarRules) {
             List<String[]> questions = grammarRule.getQaElement().getQuestion();
+            String sparql=grammarRule.getSparql();
             if (!questions.isEmpty()) {
                 for (String[] rule : questions) {
                     String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
+                    //System.out.println(ruleRegularEx);
                     Matcher matcher = Match.isMatch(sentence, ruleRegularEx);
                     if (matcher.matches()) {
                         Map<String, String> entityMap=new TreeMap<String,String>();
@@ -50,9 +52,11 @@ public class Grammar {
                             entityMap=grammarRule.findEntityMapEndpoint();
                         }
                         //printMap(entityMap);
+                        //System.out.println(sentence);
+                        //System.out.println(sparql);
                         String uri = this.findUriGivenEntity(ruleRegularEx, sentence, entityMap);
                         if (uri != null) {
-                            return this.prepareSparql(grammarRule.getSparql(), uri);
+                            return this.prepareSparql(sparql, uri);
                         } else {
                             throw new Exception("the entity is not found!");
                         }
@@ -71,6 +75,7 @@ public class Grammar {
 
     private String findUriGivenEntity(String regulardExpr, String sentence, Map<String, String> entityMap) {
         String entity = findEntity(regulardExpr, sentence);
+        entity=entity.replace(" ","_");
 
         if (entityMap.containsKey(entity)) {
             return entityMap.get(entity);

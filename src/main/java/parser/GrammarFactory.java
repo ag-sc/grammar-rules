@@ -41,7 +41,10 @@ public class GrammarFactory {
         for (GrammarEntryUnit grammarEntryUnit : grammarEntries.getGrammarEntries()) {
             List<String[]> questions = this.modifyQyestions(grammarEntryUnit.getSentences());
             if (!questions.isEmpty()&&grammarEntryUnit.getSparqlQuery() != null) {
-                String sparql = this.modifySparql(grammarEntryUnit.getSentenceTemplate(), grammarEntryUnit.getSparqlQuery(), grammarEntryUnit.getReturnVariable());
+                /*if(!grammarEntryUnit.getFrameType().equals("IPP")){
+                    continue;
+                }*/
+                String sparql = this.modifySparql(grammarEntryUnit);
                 GrammarRule grammarRule = new GrammarRule(questions, sparql,grammarEntryUnit.getBindingType());
                 grammarRules.add(grammarRule);
             }
@@ -65,18 +68,42 @@ public class GrammarFactory {
 
     }
 
-    private String modifySparql(String template, String sparql, String returnVariable) {
-        if (template != null && template.contains("HOW_MANY_THING")) {
-            sparql = "SELECT COUNT(?Answer ) WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
+    private String modifySparql(GrammarEntryUnit grammarEntryUnit) {
+        String sparql = grammarEntryUnit.getSparqlQuery(), returnVariable = grammarEntryUnit.getReturnVariable();
+        String frameType = grammarEntryUnit.getFrameType();
+        String template = grammarEntryUnit.getSentenceTemplate();
+        if (frameType.equals("NPP") || frameType.equals("VP") || frameType.equals("IPP")) {
+            if (template != null && template.contains("HOW_MANY_THING")) {
+                sparql = "SELECT COUNT(?Answer ) WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
+            } else {
+                sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
+            }
+            sparql=this.replaceSubjObjWithArg(sparql, returnVariable);
+        } else if (grammarEntryUnit.getFrameType().equals("AG")) {
+
+            //System.out.println(" " + sparql + " " + grammarEntryUnit.getSentences());
+            if (template.contains("adjectiveBaseForm")) {
+                sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
+                sparql=this.replaceSubjObjWithArg(sparql, returnVariable);
+            } else {
+                sparql = grammarEntryUnit.getExecutable();
+                sparql = sparql.replace("VARIABLE", "Arg").replace("subjOfProp", "Answer");
+            }
+
         } else {
             sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + this.findProperty(sparql) + ">" + " ?objOfProp .}";
         }
 
+        return sparql;
+    }
+    
+    private String replaceSubjObjWithArg(String sparql, String returnVariable) {
         if (returnVariable.contains("objOfProp")) {
             sparql = sparql.replace("subjOfProp", "Arg").replace("objOfProp", "Answer");
         } else {
             sparql = sparql.replace("objOfProp", "Arg").replace("subjOfProp", "Answer");
         }
+
         return sparql;
     }
 

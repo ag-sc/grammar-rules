@@ -59,11 +59,6 @@ public class GrammarRule {
         return entityMap;
     }
     
-  
-
-    /*public Map<String, String> getEntityMap() {
-        return new SparqlQuery(this.bindingType).getEntityMap();
-    }*/
     public QAElement getQaElement() {
         return qaElement;
     }
