@@ -1,12 +1,10 @@
 package parser;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.apache.commons.lang3.tuple.Pair;
 import utils.Match;
 
 /*
@@ -21,9 +19,15 @@ import utils.Match;
 public class Grammar {
 
     private List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
+    private Boolean entityRetriveOnline=false;
+    private Integer numberOfEntities=-1;
+    private String language="en";
 
-    public Grammar(List<GrammarRule> grammarRules) {
+    public Grammar(List<GrammarRule> grammarRules,Boolean retriveType, Integer numberofEntities, String language) {
         this.grammarRules = grammarRules;
+        this.entityRetriveOnline=retriveType;
+        this. numberOfEntities=numberofEntities;
+        this.language=language;
     }
 
     private Grammar() {
@@ -32,28 +36,29 @@ public class Grammar {
     //The methods return a SPARQL query or „null“ if there is no parse.
     public String parser(String sentence) throws Exception {
         String sparqlQuery = null;
-
         for (GrammarRule grammarRule : grammarRules) {
             List<String[]> questions = grammarRule.getQaElement().getQuestion();
             if (!questions.isEmpty()) {
                 for (String[] rule : questions) {
                     String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
-                    Matcher matcher=Match.isMatch(sentence, ruleRegularEx);
+                    Matcher matcher = Match.isMatch(sentence, ruleRegularEx);
                     if (matcher.matches()) {
-                        Map<String, String> entityMap =grammarRule.getEntityMap();
-                        System.out.println(entityMap);
-                        String uri = this.findUriGivenEntity(ruleRegularEx, sentence, grammarRule.getEntityMap());
-                        if(uri!=null){
-                          return this.prepareSparql(grammarRule.getSparql(), uri);
+                        Map<String, String> entityMap=new TreeMap<String,String>();
+                        if (!entityRetriveOnline) {
+                            entityMap=grammarRule.findEntityMapOffline( numberOfEntities, language);
+                        } else {
+                            entityMap=grammarRule.findEntityMapEndpoint();
                         }
-                        else
+                        //printMap(entityMap);
+                        String uri = this.findUriGivenEntity(ruleRegularEx, sentence, entityMap);
+                        if (uri != null) {
+                            return this.prepareSparql(grammarRule.getSparql(), uri);
+                        } else {
                             throw new Exception("the entity is not found!");
+                        }
                     }
-
                 }
-
             }
-
         }
         return sparqlQuery;
     }
@@ -109,6 +114,12 @@ public class Grammar {
         if (matcher.find()) {
             System.out.println(matcher.group(1));
         }*/
+    }
+
+    private void printMap(Map<String, String> entityMap) {
+        for(String key:entityMap.keySet()){
+            System.out.println(key+" "+entityMap.get(key));
+        }
     }
 
 }

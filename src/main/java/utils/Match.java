@@ -38,4 +38,27 @@ public class Match {
         return input.replace("?", "").replace(".", "");
     }
 
+    public static String clean(String value, String language) {
+        value = value.replace("<", "");
+        value = value.replace(">", "");
+        value = value.replace("^^<http://www.w3.org/2001/XMLSchema#date>", "");
+        value = value.trim().strip().stripLeading().stripTrailing();
+        return value;
+    }
+    
+    public static String cleanHttp(String value, String language) {
+        if (language.contains("it")) {
+            value = value.replace("http://it.dbpedia.org/resource/", "");
+            value = value.replace("http://it.dbpedia.org/resource//", "");
+        }
+        if (language.contains("en")) {
+            value = value.replace("http://dbpedia.org/resource/", "");
+        }
+
+        value = value.replace("^^<http://www.w3.org/2001/XMLSchema#date>", "");
+        value = value.trim().strip().stripLeading().stripTrailing();
+        return value;
+    }
+    
+
 }

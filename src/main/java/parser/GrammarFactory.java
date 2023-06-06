@@ -26,11 +26,11 @@ public class GrammarFactory {
 
     private Grammar grammar = null;
 
-    public GrammarFactory(File file) {
+    public GrammarFactory(File file,Boolean entityRetriveOnline,Integer numberOfEntities,String language) {
         ObjectMapper mapper = new ObjectMapper();
         try {
             GrammarEntries grammarEntries = mapper.readValue(file, GrammarEntries.class);
-            grammar = new Grammar(getAllGrammarRules(grammarEntries));
+            grammar = new Grammar(getAllGrammarRules(grammarEntries),entityRetriveOnline,numberOfEntities,language);
         } catch (IOException ex) {
             Logger.getLogger(GrammarFactory.class.getName()).log(Level.SEVERE, null, ex);
         }

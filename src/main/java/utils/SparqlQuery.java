@@ -28,12 +28,16 @@ public class SparqlQuery {
 
     private static String endpoint = "https://dbpedia.org/sparql";
     private Map<String,String> entityMap = new TreeMap<String,String>();
+    
+    public SparqlQuery() {
+       
+    }
 
     public SparqlQuery(String bindingType) {
         this.parseResult(this.executeSparqlQuery(this.getSparql(bindingType)));
     }
 
-    private String executeSparqlQuery(String query) {
+    public String executeSparqlQuery(String query) {
         String result = null, resultUnicode = null;
         Process process = null;
         try {
@@ -95,7 +99,7 @@ public class SparqlQuery {
                     Node childNode = childList.item(j);
                     if ("result".equals(childNode.getNodeName())) {
                         String url= childList.item(j).getTextContent().trim();
-                        String label= url.replace("http://dbpedia.org/resource/", "").replace("_", "");
+                        String label= url.replace("http://dbpedia.org/resource/", "");
                         this.entityMap.put(label, url);
                     }
                 }
@@ -129,12 +133,16 @@ public class SparqlQuery {
     }
 
     public static void main(String args[]) throws IOException {
+        SparqlQuery sparqlQuery=new SparqlQuery();
         String endpoint = "https://dbpedia.org/sparql";
         //String endpoint = "http://localhost:9999/blazegraph/sparql";
         String url = "http://dbpedia.org/resource/Hundred_Years'_War";
-        String sparqlL = "";
+        String sparql = "";
         //SparqlQuery sparqlQuery=new SparqlQuery("Person");
         //System.out.print(sparqlQuery.getEntityMap());
+        sparql="SELECT distinct ?o WHERE { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?o .}";
+        sparqlQuery.executeSparqlQuery(sparql);
+        System.out.println(sparqlQuery.getEntityMap());
 
      
 

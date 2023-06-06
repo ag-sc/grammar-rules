@@ -1,11 +1,15 @@
 package parser;
 
+import java.io.File;
 import utils.QAElement;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import utils.Match;
 import utils.SparqlQuery;
+import utils.TripleProcess;
 import utils.UriLabel;
 
 /*
@@ -25,19 +29,39 @@ public class GrammarRule {
 
     public static Integer RULE_VARIABLE_INDEX = 0;
     public static Integer RULE_REGULAR_EXPRESSION_INDEX = 1;
+    public static String ENTITY_DIR = "turtle/";
     private QAElement qaElement = null;
     private String bindingType = null;
     private Map<String, String> entityMap = new TreeMap<String, String>();
 
     public GrammarRule(List<String[]> questions, String sparql, String bindingType) {
         this.qaElement = new QAElement(questions, sparql);
-        this.bindingType=bindingType;
+        this.bindingType = bindingType;
     }
 
-    public Map<String, String> getEntityMap() {
+    public Map<String, String> findEntityMapEndpoint() {
         return new SparqlQuery(this.bindingType).getEntityMap();
     }
 
+    public Map<String, String> findEntityMapOffline(Integer numberOfEntities, String language) throws Exception {
+        Map<String, String> entityMap = new TreeMap<String, String>();
+        TripleProcess tripleProcess = new TripleProcess();
+        String fileName = ENTITY_DIR+ File.separator + this.bindingType + ".ttl";
+        Set<String> entities = tripleProcess.findSubjObjProp(fileName, numberOfEntities, "subject", language);
+        if(entities.isEmpty()){
+           throw new Exception("no entity found for the binding type!!!"); 
+        }
+        for (String entity : entities) {
+            String label =Match.cleanHttp(entity, language);
+            label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
+            entityMap.put(label, entity);
+        }
+        return entityMap;
+    }
+
+    /*public Map<String, String> getEntityMap() {
+        return new SparqlQuery(this.bindingType).getEntityMap();
+    }*/
     public QAElement getQaElement() {
         return qaElement;
     }
@@ -48,6 +72,10 @@ public class GrammarRule {
 
     public String getBindingType() {
         return bindingType;
+    }
+
+    public Map<String, String> getEntityMap() {
+        return entityMap;
     }
 
     @Override
