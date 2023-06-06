@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  *
@@ -45,7 +46,7 @@ public class Match {
         value = value.trim().strip().stripLeading().stripTrailing();
         return value;
     }
-    
+
     public static String cleanHttp(String value, String language) {
         if (language.contains("it")) {
             value = value.replace("http://it.dbpedia.org/resource/", "");
@@ -59,6 +60,15 @@ public class Match {
         value = value.trim().strip().stripLeading().stripTrailing();
         return value;
     }
-    
+
+    public static String makeLabel(String entity, String language) {
+        String label = Match.cleanHttp(entity, language);
+        label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
+        if (label.contains("(")) {
+            String insideStr = StringUtils.substringBetween(label, "(", ")");
+            label = label.replace(insideStr, "").replace("(", "").replace(")", "");
+        }
+        return label;
+    }
 
 }

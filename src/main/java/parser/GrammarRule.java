@@ -53,21 +53,13 @@ public class GrammarRule {
            throw new Exception("no entity found for the binding type!!!"); 
         }
         for (String entity : entities) {
-            String label = getLabel(entity,language);
+            String label = Match.makeLabel(entity,language);
             entityMap.put(label, entity);
         }
         return entityMap;
     }
     
-    private String getLabel(String entity,String language) {
-        String label = Match.cleanHttp(entity, language);
-        label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
-        if (label.contains("(")) {
-            String insideStr = StringUtils.substringBetween(label, "(", ")");
-            label=label.replace(insideStr, "").replace("(", "").replace(")", "");
-        }
-       return label;
-    }
+  
 
     /*public Map<String, String> getEntityMap() {
         return new SparqlQuery(this.bindingType).getEntityMap();
