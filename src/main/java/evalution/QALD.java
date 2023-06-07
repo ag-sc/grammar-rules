@@ -9,11 +9,7 @@ import parser.GrammarRule;
 import utils.QAElement;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
+ *retrive qald question.not finished yet
  *
  * @author elahi
  */

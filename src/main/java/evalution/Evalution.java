@@ -9,6 +9,7 @@ package evalution;
 /**
  *
  * @author elahi
+ * evaluate qald questions
  */
 public class Evalution {
     
