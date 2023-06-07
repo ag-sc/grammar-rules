@@ -48,11 +48,11 @@ public class TripleProcess {
                     for (String value : lines) {
                         index = index + 1;
                         if (index == 2) {
-                            subject = Match.clean(value, language);
+                            subject = StringModifier.clean(value, language);
                         } else if (index == 6) {
-                            object = Match.clean(value, language);
+                            object = StringModifier.clean(value, language);
                         } else if (index == 4) {
-                            property = Match.clean(value, language);
+                            property = StringModifier.clean(value, language);
                         }
                     }
 
@@ -120,13 +120,13 @@ public class TripleProcess {
                     for (String value : lines) {
                         index = index + 1;
                         if (index == 2) {
-                            subject = Match.clean(value, language);
+                            subject = StringModifier.clean(value, language);
                             label=makeLabel(subject, language);
                         } else if (index == 6) {
-                            object = Match.clean(value, language);
+                            object = StringModifier.clean(value, language);
                             label=makeLabel(object, language);
                         } else if (index == 4) {
-                            property = Match.clean(value, language);
+                            property = StringModifier.clean(value, language);
                             label=makeLabel(property, language);
                         }
                     }
@@ -181,7 +181,7 @@ public class TripleProcess {
     }
     
       public static String makeLabel(String entity, String language) {
-        String label = Match.cleanHttp(entity, language);
+        String label = StringModifier.cleanHttp(entity, language);
         label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
         if (label.contains("(")) {
             String insideStr = StringUtils.substringBetween(label, "(", ")");
@@ -190,11 +190,11 @@ public class TripleProcess {
         return label;
     }
 
-    public static void main(String[] args) throws IOException {
+    /*public static void main(String[] args) throws IOException {
         TripleProcess tripleProcess = new TripleProcess();
         Map<String,String>  entityMap = new TreeMap<String,String>();
         //String instanceTypeFile = "turtle/instance_types_sorted_en.ttl";
-        /*String grepFile = "turtle/class.sh";
+        String grepFile = "turtle/class.sh";
         Set<String> temp = tripleProcess.findSubjObjProp(instanceTypeFile,-1, "object", "en");
         String content = "";
         for (String line : temp) {
@@ -203,10 +203,10 @@ public class TripleProcess {
             content +=line;
         }
         System.out.println(content);
-        tripleProcess.stringToFile(content, grepFile);*/
-        String instanceTypeFile = "turtle/instance_types_en.ttl";
-        entityMap=tripleProcess.findEntityMap(instanceTypeFile, -1, "subject", "en");
-        System.out.println(entityMap.keySet().size());
-    }
+        tripleProcess.stringToFile(content, grepFile);
+        //String instanceTypeFile = "turtle/instance_types_en.ttl";
+        //entityMap=tripleProcess.findEntityMap(instanceTypeFile, -1, "subject", "en");
+        //System.out.println(entityMap.keySet().size());
+    }*/
 
 }

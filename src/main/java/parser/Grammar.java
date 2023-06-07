@@ -1,11 +1,12 @@
 package parser;
 
+import utils.RegularExpression;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
-import utils.Match;
+import utils.StringModifier;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -43,7 +44,7 @@ public class Grammar {
                 for (String[] rule : questions) {
                     String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
                     //System.out.println(ruleRegularEx);
-                    Matcher matcher = Match.isMatch(sentence, ruleRegularEx);
+                    Matcher matcher = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
                     if (matcher.matches()) {
                         Map<String, String> entityMap=new TreeMap<String,String>();
                         if (!entityRetriveOnline) {
@@ -84,9 +85,9 @@ public class Grammar {
     }
 
     private String findEntity(String regulardExpr, String sentence) {
-        sentence=Match.removeDelimiter(sentence);
-        regulardExpr=Match.removeDelimiter(regulardExpr);
-        List<String> results = Match.findCommonWords(sentence, regulardExpr);
+        sentence=StringModifier.removeDelimiter(sentence);
+        regulardExpr=StringModifier.removeDelimiter(regulardExpr);
+        List<String> results = StringModifier.findCommonWords(sentence, regulardExpr);
         for (String word : results) {
             sentence = sentence.replace(word, "");
         }
@@ -95,7 +96,7 @@ public class Grammar {
     }
 
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         String ruleRegularEx = "Who is the editor of (.*?)?";
         String sentence = "Who is the editor of AmerasiaJournal?";
         List<String> results=Match.findCommonWords(sentence, ruleRegularEx);
@@ -105,21 +106,21 @@ public class Grammar {
         System.out.println(results);
         System.out.println(sentence.stripLeading());
 
-        /*Grammar grammar = new Grammar();
+        Grammar grammar = new Grammar();
         String ruleRegularEx = "Who is the editor of (.*?)?";
         String sentence = "Who is the editor of AmerasiaJournal?";
         Matcher matcher = grammar.isMatch(sentence, ruleRegularEx);
         System.out.println(matcher.matches());
 
-        System.out.println(matcher.end());*/
+        System.out.println(matcher.end());
 
-        /*String mydata = "some string with 'the data i want' inside";
+        String mydata = "some string with 'the data i want' inside";
         Pattern pattern = Pattern.compile("'(.*?)'");
         Matcher matcher = pattern.matcher(mydata);
         if (matcher.find()) {
             System.out.println(matcher.group(1));
-        }*/
-    }
+        }
+    }*/
 
     private void printMap(Map<String, String> entityMap) {
         for(String key:entityMap.keySet()){

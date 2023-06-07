@@ -16,13 +16,7 @@ import org.apache.commons.lang3.StringUtils;
  *
  * @author elahi
  */
-public class Match {
-
-    public static Matcher isMatch(String sentence, String ruleRegularEx) {
-        Pattern pattern = Pattern.compile(ruleRegularEx);
-        Matcher matcher = pattern.matcher(sentence);
-        return matcher;
-    }
+public class StringModifier {
 
     public static List<String> findCommonWords(String input1, String input2) {
         input1 = removeDelimiter(input1);
@@ -62,7 +56,7 @@ public class Match {
     }
 
     public static String makeLabel(String entity, String language) {
-        String label = Match.cleanHttp(entity, language);
+        String label = StringModifier.cleanHttp(entity, language);
         label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
         if (label.contains("(")) {
             String insideStr = StringUtils.substringBetween(label, "(", ")");
