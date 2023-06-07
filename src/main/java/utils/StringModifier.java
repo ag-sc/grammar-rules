@@ -57,12 +57,13 @@ public class StringModifier {
 
     public static String makeLabel(String entity, String language) {
         String label = StringModifier.cleanHttp(entity, language);
-        label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
+        //label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
+        label = label.strip().stripLeading().stripTrailing().trim();
         if (label.contains("(")) {
             String insideStr = StringUtils.substringBetween(label, "(", ")");
             label = label.replace(insideStr, "").replace("(", "").replace(")", "");
         }
-        return label;
+        return label.toLowerCase();
     }
 
 }

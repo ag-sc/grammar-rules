@@ -20,11 +20,8 @@ import utils.UriLabel;
  */
 /**
  *
- * @author elahi a grammar rule Each grammar rule is essentially a string with
- * one variable $Arg that is passed by a constructor, in addition to a SPARQL
- * Query where the position of the URI to be inserted is marked with $Arg as
- * well. In the constructor we also pass a list of all entities and their URIs
- * that can fill $Arg. 
+ * @author 
+  
  */
 public class GrammarRule {
 
@@ -44,7 +41,7 @@ public class GrammarRule {
         return new SparqlQuery(this.bindingType).getEntityMap();
     }
 
-    public Map<String, String> findEntityMapOffline(Integer numberOfEntities, String language) throws Exception {
+    public Map<String, String> findEntityMapFromBindingType(Integer numberOfEntities, String language) throws Exception {
         Map<String, String> entityMap = new TreeMap<String, String>();
         TripleProcess tripleProcess = new TripleProcess();
         String fileName = ENTITY_DIR+ File.separator + this.bindingType + ".ttl";

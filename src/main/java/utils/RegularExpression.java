@@ -44,6 +44,8 @@ public class RegularExpression {
      given a sentence match it with regular expression
     */
     public static Matcher isMatchWithRegEx(String sentence, String ruleRegularEx) {
+        sentence=sentence.toLowerCase();
+        ruleRegularEx=ruleRegularEx.toLowerCase();
         Pattern pattern = Pattern.compile(ruleRegularEx);
         Matcher matcher = pattern.matcher(sentence);
         return matcher;

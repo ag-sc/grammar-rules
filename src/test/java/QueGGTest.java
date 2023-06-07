@@ -29,7 +29,7 @@ public class QueGGTest {
        System.out.println("NounPPFrame::");
        System.out.println(input);
        System.out.println(sparql);
-       input = "Who created Hollywood Darlings?";
+       input = "who created Hollywood Darlings?";
        sparql=parse(input,language);
        System.out.println();
        System.out.println("TransitiveFrame::");
@@ -41,13 +41,13 @@ public class QueGGTest {
        System.out.println("InTransitivePPFrame::");
        System.out.println(input);
        System.out.println(sparql);
-       input = "How high is Wylam Railway Bridge?";
+       input = "how high is Wylam Railway Bridge?";
        sparql=parse(input,language);
        System.out.println();
        System.out.println("Gradable Frame example 1::");
        System.out.println(input);
        System.out.println(sparql);
-       input = "What is the highest mountain in Australia?";
+       input = "what is the highest mountain in Australia?";
        sparql=parse(input,language);
        System.out.println();
        System.out.println("Gradable Frame example 2::");

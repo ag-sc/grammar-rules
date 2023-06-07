@@ -48,13 +48,13 @@ public class Grammar {
                     if (matcher.matches()) {
                         Map<String, String> entityMap=new TreeMap<String,String>();
                         if (!entityRetriveOnline) {
-                            entityMap=grammarRule.findEntityMapOffline( numberOfEntities, language);
+                            entityMap=grammarRule.findEntityMapFromBindingType( numberOfEntities, language);
                         } else {
                             entityMap=grammarRule.findEntityMapEndpoint();
                         }
-                        //printMap(entityMap);
-                        //System.out.println(sentence);
-                        //System.out.println(sparql);
+                         //printMap(entityMap);
+                         //System.out.println(sentence);
+                         //System.out.println(sparql);
                         String uri = this.findUriGivenEntity(ruleRegularEx, sentence, entityMap);
                         if (uri != null) {
                             return this.prepareSparql(sparql, uri);
@@ -85,8 +85,8 @@ public class Grammar {
     }
 
     private String findEntity(String regulardExpr, String sentence) {
-        sentence=StringModifier.removeDelimiter(sentence);
-        regulardExpr=StringModifier.removeDelimiter(regulardExpr);
+        sentence=StringModifier.removeDelimiter(sentence).toLowerCase();
+        regulardExpr=StringModifier.removeDelimiter(regulardExpr).toLowerCase();
         List<String> results = StringModifier.findCommonWords(sentence, regulardExpr);
         for (String word : results) {
             sentence = sentence.replace(word, "");

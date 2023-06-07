@@ -99,7 +99,8 @@ public class SparqlQuery {
                     Node childNode = childList.item(j);
                     if ("result".equals(childNode.getNodeName())) {
                         String url= childList.item(j).getTextContent().trim();
-                        String label= url.replace("http://dbpedia.org/resource/", "");
+                        //String label= url.replace("http://dbpedia.org/resource/", "");
+                        String label= StringModifier.makeLabel(url, "en");
                         this.entityMap.put(label, url);
                     }
                 }

@@ -121,13 +121,13 @@ public class TripleProcess {
                         index = index + 1;
                         if (index == 2) {
                             subject = StringModifier.clean(value, language);
-                            label=makeLabel(subject, language);
+                            label=StringModifier.makeLabel(subject, language);
                         } else if (index == 6) {
                             object = StringModifier.clean(value, language);
-                            label=makeLabel(object, language);
+                            label=StringModifier.makeLabel(object, language);
                         } else if (index == 4) {
                             property = StringModifier.clean(value, language);
-                            label=makeLabel(property, language);
+                            label=StringModifier.makeLabel(property, language);
                         }
                     }
 
@@ -180,7 +180,7 @@ public class TripleProcess {
 
     }
     
-      public static String makeLabel(String entity, String language) {
+      /*public static String makeLabel(String entity, String language) {
         String label = StringModifier.cleanHttp(entity, language);
         label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
         if (label.contains("(")) {
@@ -188,7 +188,7 @@ public class TripleProcess {
             label = label.replace(insideStr, "").replace("(", "").replace(")", "");
         }
         return label;
-    }
+    }*/
 
     /*public static void main(String[] args) throws IOException {
         TripleProcess tripleProcess = new TripleProcess();
