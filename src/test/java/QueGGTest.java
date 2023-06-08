@@ -1,6 +1,7 @@
 
 import java.io.File;
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.Test;
 import parser.Grammar;
 import parser.GrammarFactory;
@@ -21,14 +22,15 @@ public class QueGGTest {
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
     
-    //rough test
-    public static void main(String []args) throws Exception {
+    //make it test package with @Test 
+    public static void main(String args[]) throws Exception {
        String language = "en",input =null,sparql=null;
        input = "What is the capital of Canada?";
        sparql=parse(input,language);
        System.out.println("NounPPFrame::");
        System.out.println(input);
        System.out.println(sparql);
+        assertNotEquals(0, sparql,sparql);
        input = "who created Hollywood Darlings?";
        sparql=parse(input,language);
        System.out.println();

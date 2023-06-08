@@ -38,62 +38,24 @@ public class Grammar {
     public String parser(String sentence) throws Exception {
         String sparqlQuery = null;
         for (GrammarRule grammarRule : grammarRules) {
-            List<String[]> questions = grammarRule.getQaElement().getQuestion();
-            String sparql=grammarRule.getSparql();
-            if (!questions.isEmpty()) {
-                for (String[] rule : questions) {
-                    String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
-                    //System.out.println(ruleRegularEx);
-                    Matcher matcher = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
-                    if (matcher.matches()) {
-                        Map<String, String> entityMap=new TreeMap<String,String>();
-                        if (!entityRetriveOnline) {
-                            entityMap=grammarRule.findEntityMapFromBindingType( numberOfEntities, language);
-                        } else {
-                            entityMap=grammarRule.findEntityMapEndpoint();
-                        }
-                         //printMap(entityMap);
-                         //System.out.println(sentence);
-                         //System.out.println(sparql);
-                        String uri = this.findUriGivenEntity(ruleRegularEx, sentence, entityMap);
-                        if (uri != null) {
-                            return this.prepareSparql(sparql, uri);
-                        } else {
-                            throw new Exception("the entity is not found!");
-                        }
-                    }
-                }
+            if (grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language)) {
+                 return  grammarRule.getQaElement().getSparql();
             }
+            /*else if(grammarRule.getQaElement().getSparql()!=null){
+               String nounPrhase=grammarRule.getQaElement().getSparql();
+               String []complexSentence=new String[]{sentence,};
+            }*/
         }
         return sparqlQuery;
     }
 
    
 
-    private String prepareSparql(String sparql, String uri) {
-        return sparql.replace("?Arg", "<"+uri+">");
-    }
+    
 
-    private String findUriGivenEntity(String regulardExpr, String sentence, Map<String, String> entityMap) {
-        String entity = findEntity(regulardExpr, sentence);
-        entity=entity.replace(" ","_");
+   
 
-        if (entityMap.containsKey(entity)) {
-            return entityMap.get(entity);
-        }
-        return null;
-    }
-
-    private String findEntity(String regulardExpr, String sentence) {
-        sentence=StringModifier.removeDelimiter(sentence).toLowerCase();
-        regulardExpr=StringModifier.removeDelimiter(regulardExpr).toLowerCase();
-        List<String> results = StringModifier.findCommonWords(sentence, regulardExpr);
-        for (String word : results) {
-            sentence = sentence.replace(word, "");
-        }
-        sentence=sentence.stripLeading().stripTrailing().strip().trim();
-        return sentence;
-    }
+    
 
     
     /*public static void main(String[] args) {
@@ -122,10 +84,6 @@ public class Grammar {
         }
     }*/
 
-    private void printMap(Map<String, String> entityMap) {
-        for(String key:entityMap.keySet()){
-            System.out.println(key+" "+entityMap.get(key));
-        }
-    }
+   
 
 }

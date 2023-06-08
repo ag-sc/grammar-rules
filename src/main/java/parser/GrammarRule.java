@@ -7,7 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Matcher;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
+import utils.RegularExpression;
 import utils.StringModifier;
 import utils.SparqlQuery;
 import utils.TripleProcess;
@@ -20,8 +23,7 @@ import utils.UriLabel;
  */
 /**
  *
- * @author 
-  
+ * @author  
  */
 public class GrammarRule {
 
@@ -32,6 +34,7 @@ public class GrammarRule {
     private String bindingType = null;
     private Map<String, String> entityMap = new TreeMap<String, String>();
 
+    // write parse in 
     public GrammarRule(List<String[]> questions, String sparql, String bindingType) {
         this.qaElement = new QAElement(questions, sparql);
         this.bindingType = bindingType;
@@ -44,18 +47,87 @@ public class GrammarRule {
     public Map<String, String> findEntityMapFromBindingType(Integer numberOfEntities, String language) throws Exception {
         Map<String, String> entityMap = new TreeMap<String, String>();
         TripleProcess tripleProcess = new TripleProcess();
-        String fileName = ENTITY_DIR+ File.separator + this.bindingType + ".ttl";
+        String fileName = ENTITY_DIR + File.separator + this.bindingType + ".ttl";
         Set<String> entities = tripleProcess.findSubjObjProp(fileName, numberOfEntities, "subject", language);
-        if(entities.isEmpty()){
-           throw new Exception("no entity found for the binding type!!!"); 
+        if (entities.isEmpty()) {
+            throw new Exception("no entity found for the binding type!!!");
         }
         for (String entity : entities) {
-            String label = StringModifier.makeLabel(entity,language);
+            String label = StringModifier.makeLabel(entity, language);
             entityMap.put(label, entity);
         }
         return entityMap;
     }
+
+    public Boolean parse(String sentence, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
+        List<String[]> questions = this.qaElement.getQuestion();
+        String sparql = this.qaElement.getSparql();
+        if (!questions.isEmpty()) {
+            for (String[] rule : questions) {
+                String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
+                //System.out.println(ruleRegularEx);
+                Matcher matcher = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
+                if (matcher.matches()) {
+                    Map<String, String> entityMap = new TreeMap<String, String>();
+                    if (!entityRetriveOnline) {
+                        entityMap = this.findEntityMapFromBindingType(numberOfEntities, language);
+                    } else {
+                        entityMap = this.findEntityMapEndpoint();
+                    }
+                    //printMap(entityMap);
+                    //System.out.println(sentence);
+                    //System.out.println(sparql);
+                    String uri = findUriGivenEntity(ruleRegularEx, sentence, entityMap);
+                    if (uri != null) {
+                        if (uri.contains("http")) {
+                            sparql=prepareSparql(sparql,uri);
+                            this.qaElement=new QAElement(questions,sparql);
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+       return false;
+    }
     
+    private String prepareSparql(String sparql, String uri) {
+        return sparql.replace("?Arg", "<"+uri+">");
+    }
+
+    private String findUriGivenEntity(String regulardExpr, String sentence, Map<String, String> entityMap) {
+        String entity = findEntity(regulardExpr, sentence);
+        entity = entity.replace(" ", "_");
+
+        if (entityMap.containsKey(entity)) {
+            return entityMap.get(entity);
+        }
+        return null;
+    }
+
+    private String findEntity(String regulardExpr, String sentence) {
+        sentence = StringModifier.removeDelimiter(sentence).toLowerCase();
+        regulardExpr = regulardExpr.replace("(.*?)", "");
+        regulardExpr = StringModifier.removeDelimiter(regulardExpr).toLowerCase();
+
+        sentence = sentence.replace(regulardExpr, "");
+
+        /*List<String> results = StringModifier.findCommonWords(sentence, regulardExpr);
+        for (String word : results) {
+            sentence = sentence.replace(word, "");
+        }*/
+        sentence = sentence.stripLeading().stripTrailing().strip().trim();
+        return sentence;
+    }
+
+    private void printMap(Map<String, String> entityMap) {
+        for (String key : entityMap.keySet()) {
+            System.out.println(key + " " + entityMap.get(key));
+        }
+    }
+
     public QAElement getQaElement() {
         return qaElement;
     }
@@ -75,6 +147,14 @@ public class GrammarRule {
     @Override
     public String toString() {
         return "GrammarRule{" + "qaElement=" + qaElement + ", entityMap=" + entityMap + '}';
+    }
+
+    boolean isParsed() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    String result() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
