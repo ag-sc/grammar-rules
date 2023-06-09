@@ -55,6 +55,12 @@ public class QueGGTest {
        System.out.println("Gradable Frame example 2::");
        System.out.println(input);
        System.out.println(sparql);
+       input = "Who is the mayor of the capital of Russia?";
+       sparql=parse(input,language);
+       System.out.println();
+       System.out.println("complex example::");
+       System.out.println(input);
+       System.out.println(sparql);
        //SELECT ?Answer WHERE { <http://dbpedia.org/resource/Bangladesh> <http://dbpedia.org/ontology/capital> ?Answer .}
 
     }

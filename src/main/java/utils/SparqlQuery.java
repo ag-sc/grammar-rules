@@ -28,9 +28,10 @@ public class SparqlQuery {
 
     private static String endpoint = "https://dbpedia.org/sparql";
     private Map<String,String> entityMap = new TreeMap<String,String>();
+    private String singleResult =null;
     
-    public SparqlQuery() {
-       
+    public SparqlQuery(String query, Boolean flag) {
+       this.parseResult(this.executeSparqlQuery(query));
     }
 
     public SparqlQuery(String bindingType) {
@@ -133,19 +134,22 @@ public class SparqlQuery {
         return entityMap;
     }
 
+    public String getSingleResult() {
+        String key=entityMap.keySet().iterator().next();
+        return this.entityMap.get(key);
+    }
+
     public static void main(String args[]) throws IOException {
-        SparqlQuery sparqlQuery=new SparqlQuery();
         String endpoint = "https://dbpedia.org/sparql";
         //String endpoint = "http://localhost:9999/blazegraph/sparql";
         String url = "http://dbpedia.org/resource/Hundred_Years'_War";
         String sparql = "";
+        SparqlQuery sparqlQuery = new SparqlQuery(sparql, true);
         //SparqlQuery sparqlQuery=new SparqlQuery("Person");
         //System.out.print(sparqlQuery.getEntityMap());
-        sparql="SELECT distinct ?o WHERE { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?o .}";
+        sparql = "SELECT distinct ?o WHERE { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?o .}";
         sparqlQuery.executeSparqlQuery(sparql);
         System.out.println(sparqlQuery.getEntityMap());
-
-     
 
     }
 

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
+import utils.QAElement;
 import utils.StringModifier;
 
 /*
@@ -23,6 +24,7 @@ public class Grammar {
     private Boolean entityRetriveOnline=false;
     private Integer numberOfEntities=-1;
     private String language="en";
+    private QAElement qaElement=null;
 
     public Grammar(List<GrammarRule> grammarRules,Boolean retriveType, Integer numberofEntities, String language) {
         this.grammarRules = grammarRules;
@@ -36,17 +38,29 @@ public class Grammar {
 
     //The methods return a SPARQL query or „null“ if there is no parse.
     public String parser(String sentence) throws Exception {
-        String sparqlQuery = null;
+        String sparql=null;
         for (GrammarRule grammarRule : grammarRules) {
-            if (grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language)) {
-                 return  grammarRule.getQaElement().getSparql();
+            Boolean flag = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language);
+            if (flag) {
+                String complexSentence = grammarRule.getQaElement().getComplexSentence();
+                sparql = grammarRule.getQaElement().getSparql();
+                if (complexSentence != null) {
+                    qaElement=grammarRule.getQaElement();
+                    sparql=parser(grammarRule.getQaElement().getComplexSentence());
+                    sparql=grammarRule.joinSparql(qaElement.getSparql(),sparql);
+                    return sparql;
+                } else {
+                    //System.out.println(grammarRule.getQaElement().getSparql());
+                    return sparql= grammarRule.getQaElement().getSparql();
+                }
             }
+
             /*else if(grammarRule.getQaElement().getSparql()!=null){
                String nounPrhase=grammarRule.getQaElement().getSparql();
                String []complexSentence=new String[]{sentence,};
             }*/
         }
-        return sparqlQuery;
+        return null;
     }
 
    

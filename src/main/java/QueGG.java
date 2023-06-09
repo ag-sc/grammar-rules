@@ -18,15 +18,13 @@ public class QueGG {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Grammar Parser!!!");
-
+        args=new String[]{"en","Who is the mayor of the capital of Bangladesh?"};
         if (args.length < 2) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
             throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
         } else if (args.length == 2) {
             String language = args[0];
             String sentence = args[1];
-            //sentence = "What is the capital of Bangladesh?";
-            //language="en";
             Grammar grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
             try {
                 String sparql = grammar.parser(sentence);

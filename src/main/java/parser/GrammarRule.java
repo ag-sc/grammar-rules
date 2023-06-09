@@ -30,6 +30,8 @@ public class GrammarRule {
     public static Integer RULE_VARIABLE_INDEX = 0;
     public static Integer RULE_REGULAR_EXPRESSION_INDEX = 1;
     public static String ENTITY_DIR = "turtle/";
+
+  
     private QAElement qaElement = null;
     private String bindingType = null;
     private Map<String, String> entityMap = new TreeMap<String, String>();
@@ -77,20 +79,27 @@ public class GrammarRule {
                     //printMap(entityMap);
                     //System.out.println(sentence);
                     //System.out.println(sparql);
-                    String uri = findUriGivenEntity(ruleRegularEx, sentence, entityMap);
-                    if (uri != null) {
-                        if (uri.contains("http")) {
-                            sparql=prepareSparql(sparql,uri);
+                    String result = findUriGivenEntity(ruleRegularEx, sentence, entityMap);
+                    if (result != null) {
+                        if (result.contains("http")) {
+                            sparql=prepareSparql(sparql,result);
                             this.qaElement=new QAElement(questions,sparql);
                             return true;
                         } else {
-                            return false;
+                            result=result.replace("_", " ");
+                            this.qaElement=new QAElement(questions,sparql,result);
+                            return true;
                         }
                     }
                 }
             }
         }
        return false;
+    }
+    
+    String  joinSparql(String mainSparql,String partSparql) {
+        String uri=new SparqlQuery(partSparql,true).getSingleResult();
+        return prepareSparql(mainSparql, uri);
     }
     
     private String prepareSparql(String sparql, String uri) {
@@ -104,7 +113,7 @@ public class GrammarRule {
         if (entityMap.containsKey(entity)) {
             return entityMap.get(entity);
         }
-        return null;
+        return entity;
     }
 
     private String findEntity(String regulardExpr, String sentence) {

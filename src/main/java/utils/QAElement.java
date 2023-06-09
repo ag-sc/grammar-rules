@@ -15,10 +15,16 @@ import java.util.List;
 public class QAElement {
     private List<String[]> question = new ArrayList<String[]>();
     private String sparql = null;
+    private String complexSentence = null;
     
     public QAElement(List<String[]> question,String sparql){
        this.question = question;
        this.sparql = sparql;
+    }
+    public QAElement(List<String[]> question,String sparql,String  complexSentence){
+       this.question = question;
+       this.sparql = sparql;
+       this.complexSentence = complexSentence;
     }
 
     public List<String[]> getQuestion() {
@@ -29,9 +35,16 @@ public class QAElement {
         return sparql;
     }
 
+    public String getComplexSentence() {
+        return complexSentence;
+    }
+
+
     @Override
     public String toString() {
         return "QAElement{" + "question=" + question + ", sparql=" + sparql + '}';
     }
+
+   
     
 }
