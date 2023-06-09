@@ -18,7 +18,7 @@ public class QueGG {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Grammar Parser!!!");
-        args=new String[]{"en","Who is the mayor of the capital of Bangladesh?"};
+        //args=new String[]{"en","Who is the mayor of the capital of Bangladesh?"};
         if (args.length < 2) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
             throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));

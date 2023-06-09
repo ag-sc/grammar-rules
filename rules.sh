@@ -11,4 +11,7 @@ echo "How high is Wylam Railway Bridge?"
 java -jar target/QuestionGrammarGenerator.jar "en" "How high is Wylam Railway Bridge?"
 echo "What is the highest mountain in Australia?"
 java -jar target/QuestionGrammarGenerator.jar "en" "What is the highest mountain in Australia?"
+echo "Who is the mayor of the capital of Russia?"
+java -jar target/QuestionGrammarGenerator.jar "en" "Who is the mayor of the capital of Russia?"
+
 
