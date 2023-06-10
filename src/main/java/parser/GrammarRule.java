@@ -68,8 +68,8 @@ public class GrammarRule {
             for (String[] rule : questions) {
                 String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
                 //System.out.println(ruleRegularEx);
-                Matcher matcher = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
-                if (matcher.matches()) {
+                String extractedPart = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
+                if (extractedPart!=null) {
                     Map<String, String> entityMap = new TreeMap<String, String>();
                     if (!entityRetriveOnline) {
                         entityMap = this.findEntityMapFromBindingType(numberOfEntities, language);
@@ -79,7 +79,7 @@ public class GrammarRule {
                     //printMap(entityMap);
                     //System.out.println(sentence);
                     //System.out.println(sparql);
-                    String result = findUriGivenEntity(ruleRegularEx, sentence, entityMap);
+                    String result = findUriGivenEntity(extractedPart, entityMap);
                     if (result != null) {
                         if (result.contains("http")) {
                             sparql=prepareSparql(sparql,result);
@@ -106,9 +106,8 @@ public class GrammarRule {
         return sparql.replace("?Arg", "<"+uri+">");
     }
 
-    private String findUriGivenEntity(String regulardExpr, String sentence, Map<String, String> entityMap) {
-        String entity = findEntity(regulardExpr, sentence);
-        entity = entity.replace(" ", "_");
+    private String findUriGivenEntity(String extractedPart, Map<String, String> entityMap) {
+        String entity = StringModifier.makeLabel(extractedPart, "en");
 
         if (entityMap.containsKey(entity)) {
             return entityMap.get(entity);
