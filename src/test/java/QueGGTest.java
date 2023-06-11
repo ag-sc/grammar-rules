@@ -1,6 +1,7 @@
 
 import java.io.File;
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.Test;
 import parser.Grammar;
@@ -30,7 +31,6 @@ public class QueGGTest {
        System.out.println("NounPPFrame::");
        System.out.println(input);
        System.out.println(sparql);
-        assertNotEquals(0, sparql,sparql);
        input = "Who created Hollywood Darlings?";
        sparql=parse(input,language);
        System.out.println();
