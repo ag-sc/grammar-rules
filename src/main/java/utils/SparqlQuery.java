@@ -30,8 +30,11 @@ public class SparqlQuery {
     private Map<String,String> entityMap = new TreeMap<String,String>();
     private String singleResult =null;
     
-    public SparqlQuery(String query, Boolean flag) {
-       this.parseResult(this.executeSparqlQuery(query));
+    public SparqlQuery(String query, Boolean flag) throws java.lang.Exception {
+        if(query!=null)
+           this.parseResult(this.executeSparqlQuery(query));
+        else
+            throw new Exception("The sparql query not found!!!"+query);
     }
 
     public SparqlQuery(String bindingType) {
@@ -139,7 +142,7 @@ public class SparqlQuery {
         return this.entityMap.get(key);
     }
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, java.lang.Exception {
         String endpoint = "https://dbpedia.org/sparql";
         //String endpoint = "http://localhost:9999/blazegraph/sparql";
         String url = "http://dbpedia.org/resource/Hundred_Years'_War";
@@ -151,6 +154,10 @@ public class SparqlQuery {
         sparqlQuery.executeSparqlQuery(sparql);
         System.out.println(sparqlQuery.getEntityMap());
 
+    }
+
+    private Exception Exception() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

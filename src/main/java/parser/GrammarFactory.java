@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.jena.query.QueryType;
 import utils.GrammarEntries;
 import utils.GrammarEntryUnit;
 import utils.UriLabel;
@@ -41,7 +42,7 @@ public class GrammarFactory {
     private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries) {
         List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
         for (GrammarEntryUnit grammarEntryUnit : grammarEntries.getGrammarEntries()) {
-            List<String[]> questions = RegularExpression.ruleToRegEx(grammarEntryUnit.getSentences());
+            List<String[]> questions = ruletoRegExConversion(grammarEntryUnit.getSentences());
             if (!questions.isEmpty()&&grammarEntryUnit.getSparqlQuery() != null) {
                 /*if(!grammarEntryUnit.getFrameType().equals("IPP")){
                     continue;
@@ -54,6 +55,19 @@ public class GrammarFactory {
         }
         return grammarRules;
     }
+    
+    private static List<String[]> ruletoRegExConversion(List<String> givenGrammarRules) {
+        List<String[]> modifyQuestions = new ArrayList<String[]>();
+        for (String ruleWithVariable : givenGrammarRules) {
+            /*if(!ruleWithVariable.contains( "Is ($x | Person_NP) the wife of ($x | Person_NP)?"))
+                continue;*/
+            String ruleAsRegularExp = RegularExpression.ruleToRegEx(ruleWithVariable);
+            //System.out.println(ruleAsRegularExp);
+            modifyQuestions.add(new String[]{ruleWithVariable, ruleAsRegularExp});
+        }
+        return modifyQuestions;
+
+    }
 
    
 
@@ -61,37 +75,47 @@ public class GrammarFactory {
         String sparql = grammarEntryUnit.getSparqlQuery(), returnVariable = grammarEntryUnit.getReturnVariable();
         String frameType = grammarEntryUnit.getFrameType();
         String template = grammarEntryUnit.getSentenceTemplate();
-        String property= this.findProperty(sparql);
-        if (frameType.equals("NPP") || frameType.equals("VP") || frameType.equals("IPP")) {
-            if (template != null && template.contains("HOW_MANY_THING")) {
-                sparql = "SELECT COUNT(?Answer ) WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
+        String property = this.findProperty(sparql);
+        if (grammarEntryUnit.getQueryType().equals(QueryType.SELECT)) {
+            if (frameType.equals("NPP") || frameType.equals("VP") || frameType.equals("IPP")) {
+                if (template != null && template.contains("HOW_MANY_THING")) {
+                    sparql = "SELECT COUNT(?Answer ) WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
+                } else {
+                    sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
+                }
+                sparql = this.modifySparql(sparql,QueryType.SELECT.toString(), returnVariable);
+            } else if (grammarEntryUnit.getFrameType().equals("AG")) {
+
+                //System.out.println(" " + sparql + " " + grammarEntryUnit.getSentences());
+                if (template.contains("adjectiveBaseForm")) {
+                    sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
+                    sparql = this.modifySparql(sparql, QueryType.SELECT.toString(), returnVariable);
+                } else {
+                    sparql = grammarEntryUnit.getExecutable();
+                    sparql = sparql.replace("VARIABLE", "Arg").replace("subjOfProp", "Answer");
+                }
+
             } else {
                 sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
             }
-            sparql=this.modifySparql(sparql, returnVariable);
-        } else if (grammarEntryUnit.getFrameType().equals("AG")) {
-
-            //System.out.println(" " + sparql + " " + grammarEntryUnit.getSentences());
-            if (template.contains("adjectiveBaseForm")) {
-                sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
-                sparql=this.modifySparql(sparql, returnVariable);
-            } else {
-                sparql = grammarEntryUnit.getExecutable();
-                sparql = sparql.replace("VARIABLE", "Arg").replace("subjOfProp", "Answer");
-            }
-
-        } else {
-            sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
+        }
+        else if (grammarEntryUnit.getQueryType().equals(QueryType.ASK)){
+               sparql = grammarEntryUnit.getSparqlQuery();
+               //sparql = this.modifySparql(sparql, QueryType.ASK.toString(),returnVariable);
         }
 
         return sparql;
     }
     
-    private String modifySparql(String sparql, String returnVariable) {
-        if (returnVariable.contains("objOfProp")) {
-            sparql = sparql.replace("subjOfProp", "Arg").replace("objOfProp", "Answer");
-        } else {
-            sparql = sparql.replace("objOfProp", "Arg").replace("subjOfProp", "Answer");
+    private String modifySparql(String sparql, String queryType, String returnVariable) {
+        if (queryType.contains(QueryType.SELECT.name())) {
+            if (returnVariable.contains("objOfProp")) {
+                sparql = sparql.replace("subjOfProp", "Arg").replace("objOfProp", "Answer");
+            } else {
+                sparql = sparql.replace("objOfProp", "Arg").replace("subjOfProp", "Answer");
+            }
+        } else if (queryType.contains(QueryType.ASK.name())) {
+            sparql = sparql.replace("objOfProp", "Arg");
         }
 
         return sparql;

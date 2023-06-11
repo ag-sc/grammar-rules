@@ -7,6 +7,7 @@ package utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
@@ -20,23 +21,7 @@ public class RegularExpression {
     private static String PLACE_HOLDER = "$Arg";
     private static String REGULAR_EXPRESSION_END ="(.*?)";
      private static String REGULAR_EXPRESSION_MIDDLE = "([A-Za-z0-9]*)";
-    
-    /*
-    grammar rule in QUEGG: "What is the death place of ($x | Politician_NP)?"
-    replace the content inside () with $Arg
-    replace the content $Arg with regularExpression
-    */
-    public static List<String[]> ruleToRegEx(List<String> givenGrammarRules) {
-        List<String[]> modifyQuestions = new ArrayList<String[]>();
-        for (String ruleWithVariable : givenGrammarRules) {
-            /*if(!ruleWithVariable.contains("completed"))
-                continue;*/
-            String ruleAsRegularExp = ruleToRegEx(ruleWithVariable);
-            modifyQuestions.add(new String[]{ruleWithVariable, ruleAsRegularExp});
-        }
-        return modifyQuestions;
-
-    }
+   
     
     public static String ruleToRegEx(String ruleWithVariable) {
         if (ruleWithVariable.contains("(") && ruleWithVariable.contains(")")) {
@@ -59,17 +44,36 @@ public class RegularExpression {
     /*
      given a sentence match it with regular expression
     */
-    public static String isMatchWithRegEx(String sentence, String ruleRegularEx) {
-        //sentence=sentence.toLowerCase();
-        //ruleRegularEx=ruleRegularEx.toLowerCase();
+    public static List<String> isMatchWithRegEx(String sentence, String ruleRegularEx) {
+        List<String> results = new ArrayList<String>();
         sentence = replaceSpaceWithSlash(sentence);
-        //System.out.println(sentence + " " + ruleRegularEx);
         Pattern pattern = Pattern.compile(ruleRegularEx);
         Matcher matcher = pattern.matcher(sentence);
-        if (matcher.find()) {
-            return matcher.group(1);
-        }
-        return null;
+        String extractPattern = null;
+
+        //if (firstWordMatch(sentence, ruleRegularEx)) {
+
+            if (matcher.find()) {
+                for (Integer index = 1; index <= matcher.groupCount(); index++) {
+                    extractPattern = matcher.group(index);
+                    results.add(extractPattern);
+                }
+                //System.out.println(sentence + " " + ruleRegularEx);
+            }
+        //}
+        return results;
     }
+    
+    public static Boolean firstWordMatch(String sentence, String ruleRegularEx) {
+        String firstWord_1=sentence.split("_")[0];
+        String firstWord_2=ruleRegularEx.split("_")[0];
+        //System.out.println("first::"+firstWord_1+" second::"+firstWord_2);
+        if(firstWord_1.contains(firstWord_2)){
+            return true;
+        }
+        return false;
+    }
+    
+    
 
 }

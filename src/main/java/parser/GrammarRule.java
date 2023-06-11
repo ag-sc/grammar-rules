@@ -3,6 +3,7 @@ package parser;
 import java.io.File;
 import utils.QAElement;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -68,8 +69,8 @@ public class GrammarRule {
             for (String[] rule : questions) {
                 String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
                 //System.out.println(ruleRegularEx);
-                String extractedPart = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
-                if (extractedPart!=null) {
+                List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
+                if (!extractedParts.isEmpty()) {
                     Map<String, String> entityMap = new TreeMap<String, String>();
                     if (!entityRetriveOnline) {
                         entityMap = this.findEntityMapFromBindingType(numberOfEntities, language);
@@ -79,17 +80,27 @@ public class GrammarRule {
                     //printMap(entityMap);
                     //System.out.println(sentence);
                     //System.out.println(sparql);
-                    String result = findUriGivenEntity(extractedPart, entityMap);
-                    if (result != null) {
-                        if (result.contains("http")) {
-                            sparql=prepareSparql(sparql,result);
-                            this.qaElement=new QAElement(questions,sparql);
-                            return true;
-                        } else {
-                            result=result.replace("_", " ");
-                            this.qaElement=new QAElement(questions,sparql,result);
-                            return true;
+                    List<String> results = findUriGivenEntity(extractedParts, entityMap);
+                    if (!results.isEmpty()) {
+                        if (results.size() == 1) {
+                            String result = results.iterator().next();
+                            if (result.contains("http")) {
+                                sparql = prepareSparql(sparql, result);
+                                this.qaElement = new QAElement(questions, sparql);
+                                return true;
+                            } else {
+                                result = result.replace("_", " ");
+                                this.qaElement = new QAElement(questions, sparql, result);
+                                return true;
+                            }
+
                         }
+                        else if(results.size()>1){
+                            sparql = prepareSparql(sparql, results);
+                            this.qaElement = new QAElement(questions, sparql);
+                                return true;
+                        }
+
                     }
                 }
             }
@@ -97,7 +108,7 @@ public class GrammarRule {
        return false;
     }
     
-    String  joinSparql(String mainSparql,String partSparql) {
+    String  joinSparql(String mainSparql,String partSparql) throws Exception {
         String uri=new SparqlQuery(partSparql,true).getSingleResult();
         return prepareSparql(mainSparql, uri);
     }
@@ -105,14 +116,28 @@ public class GrammarRule {
     private String prepareSparql(String sparql, String uri) {
         return sparql.replace("?Arg", "<"+uri+">");
     }
-
-    private String findUriGivenEntity(String extractedPart, Map<String, String> entityMap) {
-        String entity = StringModifier.makeLabel(extractedPart, "en");
-
-        if (entityMap.containsKey(entity)) {
-            return entityMap.get(entity);
+    private String prepareSparql(String sparql, List<String> uris) {
+        if (uris.size() == 1) {
+            return sparql.replace("?Arg", "<" + uris.get(0) + ">");
+        } else {
+            sparql = sparql.replace("subjOfProp", "<" + uris.get(0) + ">");
+            sparql = sparql.replace("objOfProp", "<" + uris.get(1) + ">");
         }
-        return entity;
+
+        return sparql;
+    }
+
+    private List<String> findUriGivenEntity(List<String> extractedParts, Map<String, String> entityMap) {
+        List<String> entities = new ArrayList<String>();
+        for (String extractedPart : extractedParts) {
+            String entity = StringModifier.makeLabel(extractedPart, "en");
+
+            if (entityMap.containsKey(entity)) {
+                entities.add(entityMap.get(entity));
+            }
+        }
+
+        return entities;
     }
 
     private String findEntity(String regulardExpr, String sentence) {

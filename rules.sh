@@ -13,5 +13,7 @@ echo "What is the highest mountain in Australia?"
 java -jar target/QuestionGrammarGenerator.jar "en" "What is the highest mountain in Australia?"
 echo "Who is the mayor of the capital of Russia?"
 java -jar target/QuestionGrammarGenerator.jar "en" "Who is the mayor of the capital of Russia?"
+echo "Is Cab Kaye the wife of Cabassous?"
+java -jar target/QuestionGrammarGenerator.jar "en" "Is Cab Kaye the wife of Cabassous?"
 
 

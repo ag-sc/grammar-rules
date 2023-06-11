@@ -34631,7 +34631,32 @@
       "bindingList" : null
     },
     "combination" : false
-  }, {
+  },{
+    "id" : "1000",
+    "lexicalEntryUri" : "http://localhost:8080#wife-of",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : "Person",
+    "returnType" : "Person",
+    "frameType" : "NPP",
+    "grammarRuleNo" : null,
+    "sentenceTemplate" : null,
+    "sentences" : [ "Is ($x | Person_NP) the wife of ($x | Person_NP)?"],
+    "queryType" : "ASK",
+    "sparqlQuery" : "ASK WHERE { ?subjOfProp <http://dbpedia.org/ontology/spouse> ?objOfProp . }",
+    "executable" : null,
+    "bindingListType" : null,
+    "sentenceToSparqlParameterMapping" : {
+      "$x" : "subjOfProp"
+    },
+    "returnVariable" : "objOfProp",
+    "sentenceBindings" : {
+      "bindingVariableName" : "$x",
+      "bindingList" : null
+    },
+    "combination" : false
+  }, 
+    {
     "id" : "1444",
     "lexicalEntryUri" : null,
     "language" : "EN",
