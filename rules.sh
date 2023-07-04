@@ -15,5 +15,7 @@ echo "Who is the mayor of the capital of Russia?"
 java -jar target/QuestionGrammarGenerator.jar "en" "Who is the mayor of the capital of Russia?"
 echo "Is Cab Kaye the wife of Cabassous?"
 java -jar target/QuestionGrammarGenerator.jar "en" "Is Cab Kaye the wife of Cabassous?"
+echo "the capital of Russia"
+java -jar target/QuestionGrammarGenerator.jar "en" "the capital of Russia"
 
 

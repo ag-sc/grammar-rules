@@ -64,7 +64,7 @@ public class QueGGTest {
        input = "Is Cab Kaye the wife of Cabassous?";
        sparql=parse(input,language);
        System.out.println();
-       System.out.println("complex example::");
+       System.out.println("ask example::");
        System.out.println(input);
        System.out.println(sparql);
        //SELECT ?Answer WHERE { <http://dbpedia.org/resource/Bangladesh> <http://dbpedia.org/ontology/capital> ?Answer .}

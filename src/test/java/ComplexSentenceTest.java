@@ -19,7 +19,7 @@ public class ComplexSentenceTest {
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
 
-    public static void main(String args[]) throws Exception {
+    /*public static void main(String args[]) throws Exception {
         String language = "en", input = null, sparql = null;
         input = "Who is the mayor of the capital of Russia?";
         sparql = parse(input, language);
@@ -40,6 +40,6 @@ public class ComplexSentenceTest {
         return sparql;
         //Assertions.assertSame(sparql, sparql);
 
-    }
+    }*/
 
 }
