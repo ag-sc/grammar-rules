@@ -5,9 +5,17 @@
  */
 package utils;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -17,8 +25,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  *
@@ -26,19 +32,28 @@ import java.util.regex.Pattern;
  */
 public class SparqlQuery {
 
-    private static String endpoint = "https://dbpedia.org/sparql";
-    private Map<String,String> entityMap = new TreeMap<String,String>();
-    private String singleResult =null;
-    
+    //private static String endpoint = "https://dbpedia.org/sparql";
+    //private static String endpoint = "http://localhost:9999/blazegraph/sparql";
+    private static String endpoint ="http://localhost:19999/bigdata/sparql";
+    private String objectOfProperty;
+    private String sparqlQuery = null;
+    private String command = null;
+    private Map<String, String> entityMap = new TreeMap<String, String>();
+
+    private String type = null;
+    private Boolean online = false;
+
     public SparqlQuery(String query, Boolean flag) throws java.lang.Exception {
-        if(query!=null)
-           this.parseResult(this.executeSparqlQuery(query));
-        else
-            throw new Exception("The sparql query not found!!!"+query);
+        if (query != null) {
+            this.parseResult(this.executeSparqlQuery(query));
+        } else {
+            throw new Exception("The sparql query not found!!!" + query);
+        }
     }
 
-    public SparqlQuery(String bindingType) {
-        this.parseResult(this.executeSparqlQuery(this.getSparql(bindingType)));
+    public SparqlQuery(String sparqlQuery) {
+        String resultSparql = executeSparqlQuery(sparqlQuery);
+        this.parseResult(resultSparql);
     }
 
     public String executeSparqlQuery(String query) {
@@ -46,8 +61,16 @@ public class SparqlQuery {
         Process process = null;
         try {
             resultUnicode = this.stringToUrlUnicode(query);
-            String command = "curl " + endpoint + "?query=" + resultUnicode;
+            this.command = "curl " + endpoint + "?query=" + resultUnicode;
+            //System.out.println(this.command);
             process = Runtime.getRuntime().exec(command);
+        } catch (Exception ex) {
+            Logger.getLogger(SparqlQuery.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("error in unicode in sparql query!" + ex.getMessage());
+            ex.printStackTrace();
+        }
+
+        try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             StringBuilder builder = new StringBuilder();
             String line = null;
@@ -56,12 +79,11 @@ public class SparqlQuery {
                 builder.append(System.getProperty("line.separator"));
             }
             result = builder.toString();
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             Logger.getLogger(SparqlQuery.class.getName()).log(Level.SEVERE, null, ex);
-            System.err.println("error in unicode in sparql query!" + ex.getMessage());
+            System.err.println("error in reading sparql query!" + ex.getMessage());
             ex.printStackTrace();
         }
-
         return result;
     }
 
@@ -102,10 +124,9 @@ public class SparqlQuery {
                 for (int j = 0; j < childList.getLength(); j++) {
                     Node childNode = childList.item(j);
                     if ("result".equals(childNode.getNodeName())) {
-                        String url= childList.item(j).getTextContent().trim();
-                        //String label= url.replace("http://dbpedia.org/resource/", "");
-                        String label= StringModifier.makeLabel(url, "en");
-                        this.entityMap.put(label, url);
+                        String objectOfProperty = childList.item(j).getTextContent().trim();
+                        String label = StringModifier.makeLabel(objectOfProperty, "en");
+                        entityMap.put(label, objectOfProperty);
                     }
                 }
 
@@ -121,16 +142,17 @@ public class SparqlQuery {
 
     }
 
-    private String getSparql(String bindingType) {
-        return "SELECT ?subOfProp WHERE { ?subOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingType + "> .}";
-    }
-    private String getSparqlLabel(String url) {
-        return "SELECT ?subOfProp WHERE { ?subOfProp <http://www.w3.org/2000/01/rdf-schema##label> <"+url+"> .}";
-    }
-
     public String stringToUrlUnicode(String string) throws UnsupportedEncodingException {
         String encodedString = URLEncoder.encode(string, "UTF-8");
         return encodedString;
+    }
+
+    public String getObject() {
+        return this.objectOfProperty;
+    }
+
+    public String getSparqlQuery() {
+        return sparqlQuery;
     }
 
     public Map<String, String> getEntityMap() {
@@ -138,26 +160,51 @@ public class SparqlQuery {
     }
 
     public String getSingleResult() {
-        String key=entityMap.keySet().iterator().next();
+        String key = entityMap.keySet().iterator().next();
         return this.entityMap.get(key);
     }
 
-    public static void main(String args[]) throws IOException, java.lang.Exception {
-        String endpoint = "https://dbpedia.org/sparql";
-        //String endpoint = "http://localhost:9999/blazegraph/sparql";
-        String url = "http://dbpedia.org/resource/Hundred_Years'_War";
-        String sparql = "";
-        SparqlQuery sparqlQuery = new SparqlQuery(sparql, true);
-        //SparqlQuery sparqlQuery=new SparqlQuery("Person");
-        //System.out.print(sparqlQuery.getEntityMap());
-        sparql = "SELECT distinct ?o WHERE { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?o .}";
-        sparqlQuery.executeSparqlQuery(sparql);
-        System.out.println(sparqlQuery.getEntityMap());
+    @Override
+    public String toString() {
+        return "SparqlQuery{" + "objectOfProperty=" + objectOfProperty + ", sparqlQuery=" + sparqlQuery + '}';
+    }
+
+    public SparqlQuery() {
 
     }
 
-    private Exception Exception() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void setEndpoint(String endpointT) {
+        endpoint = endpointT;
+    }
+
+    private boolean isEntity(String entityUrl) {
+        if (entityUrl.contains("http:")) {
+            return true;
+        }
+        return false;
+    }
+
+   
+
+    public static void main(String args[]) throws IOException {
+        String sparql=null;
+        Map<String, String> entityMap = new TreeMap<String, String>();
+        //"SELECT ?o WHERE {  ?o <http://dbpedia.org/ontology/presenter> <http://dbpedia.org/resource/David_Attenborough> .}";
+        // String sparql="SELECT ?s WHERE { ?subjOfProp ?p ?o .}";
+        //<http://dbpedia.org/resource/BBC_Wildlife_Specials>
+        sparql="SELECT ?subjOfProp WHERE { ?subjOfProp <http://dbpedia.org/ontology/language> ?objOfProp .}";
+        SparqlQuery sparqlQuery=new SparqlQuery(sparql);
+        entityMap=sparqlQuery.getEntityMap();
+        String objectOfProperty="http://dbpedia.org/resource/Turkmenistan";
+        String label=StringModifier.makeLabel(objectOfProperty, "en");
+        
+        System.out.println(entityMap.size());
+        if(entityMap.containsKey(label)){
+            String value=entityMap.get(label);
+            System.out.println(value);
+        }
+        //FileUtils.hashMapOrgtoFile(sparqlQuery.getEntityMap(), "/home/elahi/A-Grammar/grammar-rules/resources/entity.txt");
+        
     }
 
 }

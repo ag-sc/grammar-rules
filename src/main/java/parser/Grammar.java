@@ -24,7 +24,6 @@ public class Grammar {
     private Boolean entityRetriveOnline=false;
     private Integer numberOfEntities=-1;
     private String language="en";
-    private QAElement qaElement=null;
 
     public Grammar(List<GrammarRule> grammarRules,Boolean retriveType, Integer numberofEntities, String language) {
         this.grammarRules = grammarRules;
@@ -40,18 +39,19 @@ public class Grammar {
     public String parser(String sentence) throws Exception {
         String sparql=null;
         for (GrammarRule grammarRule : grammarRules) {
-            Boolean flag = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language);
-            if (flag) {
+             sparql = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language);
+            if (sparql!=null) {
                 String complexSentence = grammarRule.getQaElement().getComplexSentence();
-                sparql = grammarRule.getQaElement().getSparql();
                 if (complexSentence != null) {
-                    qaElement=grammarRule.getQaElement();
-                    sparql=parser(grammarRule.getQaElement().getComplexSentence());
-                    sparql=grammarRule.joinSparql(qaElement.getSparql(),sparql);
-                    return sparql;
+                    String mainSparql=sparql;
+                    String partSparql=parser(complexSentence);
+                    if(partSparql!=null)
+                       return grammarRule.joinSparql(mainSparql,partSparql);
+                    else
+                    return mainSparql;
                 } else {
-                    //System.out.println(grammarRule.getQaElement().getSparql());
-                    return sparql= grammarRule.getQaElement().getSparql();
+
+                    return sparql;
                 }
             }
 

@@ -1,0 +1,19 @@
+How many: 5,17, 29, 33, 39 (rule is wrong), 41, 96(add new rule), 111(rule is wrong), 115(add new rule, number of pages), 118, 162, 166, 198, 208
+ 
+
+57: How many companies were founded in the same year as Google?
+ sparql:null
+75: How many people live in the capital of Australia?
+[australia]
+3943
+ sparql:SELECT ?objOfProp WHERE { <http://dbpedia.org/resource/Australia> <http://dbpedia.org/ontology/capital> ?objOfProp .}
+79: How many Aldi stores are there?
+ sparql:null
+94: How many companies were founded by the founder of Facebook?
+[facebook]
+10487
+ sparql:SELECT ?objOfProp WHERE { <http://dbpedia.org/resource/Facebook> <http://dbpedia.org/ontology/foundedBy> ?objOfProp .}
+
+
+133: How many inhabitants does the largest city in Canada have?
+ sparql:null

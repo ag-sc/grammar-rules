@@ -23,7 +23,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class TripleProcess {
 
-    public Set<String> findSubjObjProp(String fileName, Integer numberOfTriples, String type, String language) {
+    public Set<String> findSubjObjPropOffLine(String fileName, Integer numberOfTriples, String type, String language) {
         Set<String> results = new TreeSet<String>();
         BufferedReader reader;
         String line = "";
@@ -61,7 +61,7 @@ public class TripleProcess {
                         break;
                     }
 
-                    //System.out.println(lineNumber+" subject:" + subject + " " + "object:" + object + " " + "property:" + property);
+                    System.out.println(lineNumber+" subject:" + subject + " " + "object:" + object + " " + "property:" + property);
                     if (subject != null && object != null) {
                         ;
                     } else {

@@ -25,11 +25,12 @@ public class RegularExpression {
     
     public static String ruleToRegEx(String ruleWithVariable) {
         if (ruleWithVariable.contains("(") && ruleWithVariable.contains(")")) {
+            ruleWithVariable=ruleWithVariable.toLowerCase();
             String result = StringUtils.substringBetween(ruleWithVariable, "(", ")");
             ruleWithVariable = ruleWithVariable.replace(result, PLACE_HOLDER);
             ruleWithVariable = ruleWithVariable.replace("(", "").replace(")", "");
-            ruleWithVariable = ruleWithVariable.replace(PLACE_HOLDER, REGULAR_EXPRESSION_END);
-            ruleWithVariable = ruleWithVariable.replace(REGULAR_EXPRESSION_END, "([A-Za-z0-9_]*)");
+            ruleWithVariable = ruleWithVariable.replace(PLACE_HOLDER, "([A-Za-z0-9_]*)");
+            //ruleWithVariable = ruleWithVariable.replace(REGULAR_EXPRESSION_END, "([A-Za-z0-9_]*)");
             ruleWithVariable = replaceSpaceWithSlash(ruleWithVariable);
         }
 
@@ -46,10 +47,13 @@ public class RegularExpression {
     */
     public static List<String> isMatchWithRegEx(String sentence, String ruleRegularEx) {
         List<String> results = new ArrayList<String>();
+        sentence=sentence.toLowerCase();
         sentence = replaceSpaceWithSlash(sentence);
+        //System.out.println(sentence+" "+ruleRegularEx);
         Pattern pattern = Pattern.compile(ruleRegularEx);
         Matcher matcher = pattern.matcher(sentence);
         String extractPattern = null;
+        //System.out.println(sentence+" "+ruleRegularEx);
 
         //if (firstWordMatch(sentence, ruleRegularEx)) {
 

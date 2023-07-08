@@ -1,0 +1,918 @@
+id,question,sparql,answer,,,,,,,,
+0,When was the Battle of Gettysburg?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?date 
+WHERE { 
+       res:Battle_of_Gettysburg dbo:date ?date .
+}","[""1863-07-03""^^xsd:date]",,,,,,,,
+1,List all the musicals with music by Elton John.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+        ?uri rdf:type dbo:Musical .
+        ?uri dbo:musicBy res:Elton_John .
+}","[<http://dbpedia.org/resource/Aida_(musical)>, <http://dbpedia.org/resource/The_Lion_King_(musical)>, <http://dbpedia.org/resource/Billy_Elliot_the_Musical>, <http://dbpedia.org/resource/Lestat_(musical)>]",,,,,,,,
+2,How high is the lighthouse in Colombo?,SELECT DISTINCT ?num WHERE {  <http://dbpedia.org/resource/Colombo_Lighthouse> <http://dbpedia.org/ontology/height> ?num . } ,"[""29.0""^^xsd:double]",,,,,,,,
+3,Who was the wife of U.S. president Lincoln?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:Abraham_Lincoln dbo:spouse ?uri.
+}",[<http://dbpedia.org/resource/Mary_Todd_Lincoln>],,,,,,,,
+4,Who is the host of the BBC Wildlife Specials?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/BBC_Wildlife_Specials> <http://dbpedia.org/ontology/presenter> ?uri . },[<http://dbpedia.org/resource/David_Attenborough>],,,,,,,,
+5,How much did Pulp Fiction cost?,SELECT DISTINCT ?n WHERE {  <http://dbpedia.org/resource/Pulp_Fiction> <http://dbpedia.org/ontology/budget> ?n . } ,"[""8500000.0""^^<http://dbpedia.org/datatype/usDollar>]",,,,,,,,
+6,In what city is the Heineken brewery?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Heineken> <http://dbpedia.org/ontology/manufacturer> ?x . ?x <http://dbpedia.org/ontology/locationCity> ?uri . },[<http://dbpedia.org/resource/Amsterdam>],,,,,,,,
+7,When did Operation Overlord commence?,SELECT DISTINCT ?d WHERE { <http://dbpedia.org/resource/Operation_Overlord> <http://dbpedia.org/ontology/date> ?d . } ,"[""1944-08-25""^^xsd:date]",,,,,,,,
+8,In which city does the Chile Route 68 end?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/Chile_Route_68> <http://dbpedia.org/ontology/routeEnd> ?uri . } ,[<http://dbpedia.org/resource/Valpara%C3%ADso>],,,,,,,,
+9,Who developed Slack?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Slack_(software)> . },[http://dbpedia.org/resource/Slack_Technologies],,,,,,,,
+10,Who was married to president Chirac?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri
+WHERE { 
+         res:Jacques_Chirac dbo:spouse ?uri .
+}",[<http://dbpedia.org/resource/Bernadette_Chirac>],,,,,,,,
+11,What did Bruce Carver die from?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri
+WHERE {
+        res:Bruce_Carver dbo:deathCause ?uri .     
+}",[<http://dbpedia.org/resource/Cancer>],,,,,,,,
+12,Who painted The Storm on the Sea of Galilee?,"PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:The_Storm_on_the_Sea_of_Galilee dbp:artist ?uri .
+}",[<http://dbpedia.org/resource/Rembrandt>],,,,,,,,
+13,Which cities does the Weser flow through?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/Weser> <http://dbpedia.org/ontology/city> ?uri . } ,"[<http://dbpedia.org/resource/Bremen>, <http://dbpedia.org/resource/Bremerhaven>, <http://dbpedia.org/resource/Fulda_(river)>, <http://dbpedia.org/resource/Hamelin>, <http://dbpedia.org/resource/Hann._M%C3%BCnden>, <http://dbpedia.org/resource/Kassel>, <http://dbpedia.org/resource/Minden>]",,,,,,,,
+14,How many seats does the home stadium of FC Porto have?,SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/FC_Porto> <http://dbpedia.org/ontology/ground> ?x . ?x <http://dbpedia.org/ontology/seatingCapacity> ?n . } ,[50035],,,,,,,,
+15,Who is the daughter of Robert Kennedy married to?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/Robert_F._Kennedy> <http://dbpedia.org/ontology/child> ?child .  ?child <http://dbpedia.org/ontology/spouse> ?uri . } ,[<http://dbpedia.org/resource/Andrew_Cuomo>],,,,,,,,
+16,Which books by Kerouac were published by Viking Press?,SELECT DISTINCT ?uri WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> .  ?uri <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/Viking_Press> .  ?uri <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Jack_Kerouac> . } ,"[<http://dbpedia.org/resource/Book_of_Haikus>, <http://dbpedia.org/resource/Orpheus_Emerged>, <http://dbpedia.org/resource/Old_Angel_Midnight>, <http://dbpedia.org/resource/Beat_Generation_(play)>, <http://dbpedia.org/resource/The_Subterraneans>, <http://dbpedia.org/resource/Atop_an_Underwood:_Early_Stories_and_Other_Writings>, <http://dbpedia.org/resource/The_Sea_is_My_Brother>, <http://dbpedia.org/resource/Good_Blonde_&_Others>, <http://dbpedia.org/resource/Scattered_Poems>, <http://dbpedia.org/resource/Tristessa>, <http://dbpedia.org/resource/Book_of_Dreams_(novel)>, <http://dbpedia.org/resource/Book_of_Sketches>, <http://dbpedia.org/resource/Lonesome_Traveler>, <http://dbpedia.org/resource/Door_Wide_Open>, <http://dbpedia.org/resource/On_the_Road>, <http://dbpedia.org/resource/The_Dharma_Bums>, <http://dbpedia.org/resource/Desolation_Angels_(novel)>, <http://dbpedia.org/resource/And_the_Hippos_Were_Boiled_in_Their_Tanks>, <http://dbpedia.org/resource/Visions_of_Gerard>, <http://dbpedia.org/resource/Visions_of_Cody>, <http://dbpedia.org/resource/Big_Sur_(novel)>, <http://dbpedia.org/resource/Doctor_Sax>, <http://dbpedia.org/resource/Maggie_Cassidy>, <http://dbpedia.org/resource/Satori_in_Paris>, <http://dbpedia.org/resource/The_Town_and_the_City>, <http://dbpedia.org/resource/Mexico_City_Blues>, <http://dbpedia.org/resource/Pic_(novel)>, <http://dbpedia.org/resource/Vanity_of_Duluoz>, <http://dbpedia.org/resource/References_in_On_the_Road>]",,,,,,,,
+17,How tall is Amazon Eve?,SELECT DISTINCT ?height WHERE {  <http://dbpedia.org/resource/Amazon_Eve> <http://dbpedia.org/ontology/height> ?height . } ,"[""2.02""^^xsd:double]",,,,,,,,
+18,Which museum exhibits The Scream by Munch?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+       res:The_Scream dbo:museum ?uri .
+}",[<http://dbpedia.org/resource/National_Gallery_(Norway)>],,,,,,,,
+19,Who wrote the book Les Piliers de la terre?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:The_Pillars_of_the_Earth dbo:author ?uri .
+}",[<http://dbpedia.org/resource/Ken_Follett>],,,,,,,,
+20,Is James Bond married?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+        res:James_Bond dbo:spouse ?uri . 
+}",[true],,,,,,,,
+21,Who discovered Ceres?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ceres_(dwarf_planet)> <http://dbpedia.org/ontology/discoverer> ?uri . },[<http://dbpedia.org/resource/Giuseppe_Piazzi>],,,,,,,,
+22,Which river does the Brooklyn Bridge cross?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {       
+        res:Brooklyn_Bridge dbo:crosses ?uri . 
+}",[<http://dbpedia.org/resource/East_River>],,,,,,,,
+23,Who was called Frank The Tank?,"PREFIX dbp: <http://dbpedia.org/property/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbp:nickname 'Frank The Tank'@en . 
+}",[<http://dbpedia.org/resource/Frank_Young_(basketball)>],,,,,,,,
+24,What is the largest country in the world?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> . ?uri <http://dbpedia.org/ontology/areaTotal> ?n . } ORDER BY DESC(?n) OFFSET 0 LIMIT 1,[<http://dbpedia.org/resource/Organization_for_Security_and_Co-operation_in_Europe>],,,,,,,,
+25,Who is the mayor of Paris?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/mayor> ?uri . },[<http://dbpedia.org/resource/Anne_Hidalgo>],,,,,,,,
+26,Who is the coach of Ankara's ice hockey team?,SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Ankara> . ?x <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Turkish_Ice_Hockey_First_League> . ?x <http://dbpedia.org/ontology/coach> ?uri . },[<http://dbpedia.org/resource/%C4%B0brahim_O%C4%9Fuz>],,,,,,,,
+27,Who is the mayor of the capital of French Polynesia?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:French_Polynesia dbo:capital ?x .
+        ?x dbo:mayor ?uri .
+}",[<http://dbpedia.org/resource/Michel_Buillard>],,,,,,,,
+28,Which awards did Douglas Hofstadter win?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri
+WHERE {
+        res:Douglas_Hofstadter dbo:award ?uri .
+}","[<http://dbpedia.org/resource/American_Academy_of_Arts_and_Sciences>, <http://dbpedia.org/resource/National_Book_Award>, <http://dbpedia.org/resource/Pulitzer_Prize>]",,,,,,,,
+29,How much did the Lego Movie cost?,SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/The_Lego_Movie> <http://dbpedia.org/ontology/budget> ?n . } ,"[""6.0E7""^^<http://dbpedia.org/datatype/usDollar>]",,,,,,,,
+30,Where does Piccadilly start?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/routeStart> <http://dbpedia.org/resource/Piccadilly>. } ,[<http://dbpedia.org/resource/Dover_Street>],,,,,,,,
+31,Do Prince Harry and Prince William have the same parents?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+ASK
+WHERE { 
+        <http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> dbo:parent ?x . 
+        <http://dbpedia.org/resource/Prince_Harry> dbo:parent ?x .
+}",[true],,,,,,,,
+32,Who played Agent Smith in Matrix?,"PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+        res:Agent_Smith dbp:portrayer ?uri . 
+}","[<http://dbpedia.org/resource/Hugo_Weaving>, <http://dbpedia.org/resource/Ian_Bliss>]",,,,,,,,
+33,How many languages are spoken in Turkmenistan?,SELECT (COUNT(DISTINCT ?x) as ?c) WHERE {  <http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/language> ?x . } ,[2],,,,,,,,
+34,In which films did Julia Roberts as well as Richard Gere play?,SELECT DISTINCT ?uri WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> .  ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> .  ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Gere> . } ,"[<http://dbpedia.org/resource/Runaway_Bride_(1999_film)>, <http://dbpedia.org/resource/The_Ant_Bully_(film)>, <http://dbpedia.org/resource/Valentine's_Day_(2010_film)>, <http://dbpedia.org/resource/Fireflies_in_the_Garden>, <http://dbpedia.org/resource/The_Pelican_Brief_(film)>, <http://dbpedia.org/resource/Mystic_Pizza>, <http://dbpedia.org/resource/Mirror_Mirror_(film)>, <http://dbpedia.org/resource/Hook_(film)>, <http://dbpedia.org/resource/I_Love_Trouble_(1994_film)>, <http://dbpedia.org/resource/Steel_Magnolias>, <http://dbpedia.org/resource/Notting_Hill_(film)>, <http://dbpedia.org/resource/Ocean's_Twelve>, <http://dbpedia.org/resource/Full_Frontal_(film)>, <http://dbpedia.org/resource/Pretty_Woman>, <http://dbpedia.org/resource/The_Normal_Heart_(film)>, <http://dbpedia.org/resource/Pr%C3%AAt-%C3%A0-Porter_(film)>, <http://dbpedia.org/resource/August:_Osage_County_(film)>, <http://dbpedia.org/resource/Closer_(2004_film)>, <http://dbpedia.org/resource/Erin_Brockovich_(film)>, <http://dbpedia.org/resource/Dying_Young>, <http://dbpedia.org/resource/Eat_Pray_Love>, <http://dbpedia.org/resource/My_Best_Friend's_Wedding>, <http://dbpedia.org/resource/Charlotte's_Web_(2006_film)>, <http://dbpedia.org/resource/Duplicity_(film)>, <http://dbpedia.org/resource/Stepmom_(film)>, <http://dbpedia.org/resource/Satisfaction_(film)>, <http://dbpedia.org/resource/Flatliners>, <http://dbpedia.org/resource/America's_Sweethearts>, <http://dbpedia.org/resource/Sleeping_with_the_Enemy>, <http://dbpedia.org/resource/Michael_Collins_(film)>, <http://dbpedia.org/resource/Larry_Crowne>, <http://dbpedia.org/resource/Confessions_of_a_Dangerous_Mind>, <http://dbpedia.org/resource/Charlie_Wilson's_War>, <http://dbpedia.org/resource/Something_to_Talk_About_(film)>, <http://dbpedia.org/resource/Mona_Lisa_Smile>, <http://dbpedia.org/resource/Ocean's_Eleven>, <http://dbpedia.org/resource/The_Mexican>, <http://dbpedia.org/resource/Mary_Reilly_(film)>, <http://dbpedia.org/resource/Conspiracy_Theory_(film)>]",,,,,,,,
+35,In which country does the Ganges start?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Ganges dbo:sourceCountry ?uri .
+}",[<http://dbpedia.org/resource/India>],,,,,,,,
+36,In which year was Rachel Stevens born?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/Rachel_Stevens> <http://dbpedia.org/ontology/birthYear> ?uri . } ,"[""1978""^^xsd:gYear]",,,,,,,,
+37,Is Barack Obama a democrat?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK
+WHERE { 
+        res:Barack_Obama dbo:party <http://dbpedia.org/resource/Democratic_Party_(United_States)> . 
+}",[true],,,,,,,,
+38,Where was Bach born?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Johann_Sebastian_Bach dbo:birthPlace ?uri .
+}",[<http://dbpedia.org/resource/Eisenach>],,,,,,,,
+39,How often did Jane Fonda marry?,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE {  <http://dbpedia.org/resource/Jane_Fonda> <http://dbpedia.org/ontology/spouse> ?uri . } ,[3],,,,,,,,
+40,Who was the first to climb Mount Everest?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri
+WHERE {
+          res:Mount_Everest dbo:firstAscentPerson ?uri . 
+}","[<http://dbpedia.org/resource/Edmund_Hillary>, <http://dbpedia.org/resource/Krzysztof_Wielicki>, <http://dbpedia.org/resource/Leszek_Cichy>, <http://dbpedia.org/resource/Tenzing_Norgay>]",,,,,,,,
+41,How many people live in Poland?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Poland> <http://dbpedia.org/ontology/populationTotal> ?uri . }  ,"[""38186860""^^xsd:nonNegativeInteger]",,,,,,,,
+42,What is the location of the Houses of Parliament?,SELECT ?uri WHERE {  <http://dbpedia.org/resource/Palace_of_Westminster> <http://dbpedia.org/ontology/location> ?uri . } ,"[<http://dbpedia.org/resource/City_of_Westminster>, <http://dbpedia.org/resource/England>, <http://dbpedia.org/resource/Greater_London>]",,,,,,,,
+43,Is Christian Bale starring in Batman Begins?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+	res:Batman_Begins dbo:starring res:Christian_Bale .
+}",[true],,,,,,,,
+44,In which country is the Limerick Lake?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+	res:Limerick_Lake dbo:country ?uri .
+}",[<http://dbpedia.org/resource/Canada>],,,,,,,,
+45,What was the last movie with Alec Guinness?,SELECT DISTINCT ?uri WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> .  ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Alec_Guinness> .  ?uri <http://dbpedia.org/ontology/releaseDate> ?date . } ORDER BY DESC(?date) LIMIT 1 ,[<http://dbpedia.org/resource/Kafka_(film)>],,,,,,,,
+46,What is the highest mountain in Australia?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+	?uri rdf:type dbo:Mountain .
+        ?uri dbo:locatedInArea res:Australia .
+        ?uri dbo:elevation ?elevation .
+} 
+ORDER BY DESC(?elevation) LIMIT 1",[<http://dbpedia.org/resource/Mawson_Peak>],,,,,,,,
+47,Is Frank Herbert still alive?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+	OPTIONAL { res:Frank_Herbert dbo:deathDate ?date . }
+        FILTER (!BOUND(?date))
+}",[true],,,,,,,,
+48,Who created Family Guy?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Family_Guy> <http://dbpedia.org/ontology/creator> ?uri . }  ,[<http://dbpedia.org/resource/Seth_MacFarlane>],,,,,,,,
+49,What is the official language of Suriname?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+        res:Suriname dbo:officialLanguage ?uri .
+}",[<http://dbpedia.org/resource/Dutch_language>],,,,,,,,
+50,Who wrote the song Hotel California?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Hotel_California> <http://dbpedia.org/ontology/writer> ?uri . },"[<http://dbpedia.org/resource/Don_Felder>, <http://dbpedia.org/resource/Don_Henley>, <http://dbpedia.org/resource/Glenn_Frey>]",,,,,,,,
+51,Give me all actors starring in movies directed by William Shatner.,SELECT DISTINCT ?uri WHERE {  ?x <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/William_Shatner> .  ?x <http://dbpedia.org/ontology/starring> ?uri . } ,"[<http://dbpedia.org/resource/DeForest_Kelley>, <http://dbpedia.org/resource/George_Takei>, <http://dbpedia.org/resource/James_Doohan>, <http://dbpedia.org/resource/Leonard_Nimoy>, <http://dbpedia.org/resource/Nichelle_Nichols>, <http://dbpedia.org/resource/Walter_Koenig>, <http://dbpedia.org/resource/Dan_Martin_(actor)>, <http://dbpedia.org/resource/William_Shatner>, <http://dbpedia.org/resource/Tom_Towles>, <http://dbpedia.org/resource/Chuck_Williams_(actor)>, <http://dbpedia.org/resource/Amy_Acker>, <http://dbpedia.org/resource/Duane_Whitaker>, <http://dbpedia.org/resource/John_Prosky>, <http://dbpedia.org/resource/Dan_Gauthier>, <http://dbpedia.org/resource/J.T._Colosa>, <http://dbpedia.org/resource/Dick_Van_Patten>, <http://dbpedia.org/resource/Brenda_Bakke>, <http://dbpedia.org/resource/Rickey_Medlocke>]",,,,,,,,
+52,What is in a chocolate chip cookie?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Chocolate_chip_cookie> <http://dbpedia.org/ontology/ingredient> ?uri . },"[<http://dbpedia.org/resource/Chocolate_chip>, <http://dbpedia.org/resource/Vanilla>, <http://dbpedia.org/resource/Sodium_bicarbonate>, <http://dbpedia.org/resource/Egg_(food)>, <http://dbpedia.org/resource/Brown_sugar>, <http://dbpedia.org/resource/Salt>, <http://dbpedia.org/resource/Butter>, <http://dbpedia.org/resource/Shortening>, <http://dbpedia.org/resource/Sugar>, <http://dbpedia.org/resource/Flour>]",,,,,,,,
+53,Give me all professional skateboarders from Sweden.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	?uri dbo:occupation res:Skateboarding . 
+        { ?uri dbo:birthPlace res:Sweden . }
+        UNION
+        { ?uri dbo:birthPlace ?place . 
+          ?place dbo:country res:Sweden . }
+}","[<http://dbpedia.org/resource/Ali_Boulala>, <http://dbpedia.org/resource/Tony_Magnusson>]",,,,,,,,
+54,Which ingredients do I need for carrot cake?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/Carrot_cake> <http://dbpedia.org/ontology/ingredient> ?uri . } ,"[<http://dbpedia.org/resource/Allspice>, <http://dbpedia.org/resource/Carrot>, <http://dbpedia.org/resource/Cream_cheese>, <http://dbpedia.org/resource/Egg_(food)>, <http://dbpedia.org/resource/Flour>, <http://dbpedia.org/resource/Icing_(food)>, <http://dbpedia.org/resource/Marzipan>, <http://dbpedia.org/resource/Nutmeg>, <http://dbpedia.org/resource/Sugar>]",,,,,,,,
+55,Does Neymar play for Real Madrid?,ASK WHERE { <http://dbpedia.org/resource/Neymar> <http://dbpedia.org/ontology/team> <http://dbpedia.org/resource/Real_Madrid_C.F.> . },[true],,,,,,,,
+56,Which computer scientist won an oscar?,"SELECT DISTINCT ?uri WHERE { { ?uri <http://dbpedia.org/ontology/field> <http://dbpedia.org/resource/Computer_science> . } UNION { ?uri <http://purl.org/dc/elements/1.1/description> ?s . FILTER regex(?s,'computer scientist','i') } ?uri <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Academy_Awards> . } ",[<http://dbpedia.org/resource/Edwin_Catmull>],,,,,,,,
+57,How many companies were founded in the same year as Google?,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company> .  ?uri <http://dbpedia.org/ontology/foundingYear> ?year .  <http://dbpedia.org/resource/Google> <http://dbpedia.org/ontology/foundingYear> ?year . } ,[0],,,,,,,,
+58,In which UK city are the headquarters of the MI6?,"PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Secret_Intelligence_Service dbo:headquarter ?uri . 
+        ?uri dbo:country res:United_Kingdom . 
+}",[<http://dbpedia.org/resource/Londo>],,,,,,,,
+59,Was the Cuban Missile Crisis earlier than the Bay of Pigs Invasion?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+        res:Cuban_Missile_Crisis dbo:date ?x .
+	res:Bay_of_Pigs_Invasion dbo:date ?y .
+	FILTER (?x < ?y)
+}",[true],,,,,,,,
+60,What does IYCM stand for?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+        ?uri dbo:abbreviation 'IYCM' .
+}",[<http://dbpedia.org/resource/Youth_Climate_Movemen>],,,,,,,,
+61,When did the Ming dynasty dissolve?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?date
+WHERE {  
+        res:Ming_dynasty dbo:dissolutionDate ?date .
+}","[""1644-04-25""^^xsd:date]",,,,,,,,
+62,List all episodes of the first season of the HBO television series The Sopranos!,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	?uri dbo:series res:The_Sopranos  .
+        ?uri dbo:seasonNumber 1 .
+}","[<http://dbpedia.org/resource/He_Is_Risen_(The_Sopranos)>, <http://dbpedia.org/resource/Everybody_Hurts_(The_Sopranos)>, http://dbpedia.org/resource/Proshai, <http://dbpedia.org/resource/Two_Tonys>, <http://dbpedia.org/resource/The_Blue_Comet>, <http://dbpedia.org/resource/I_Dream_of_Jeannie_Cusamano>, <http://dbpedia.org/resource/Where's_Johnny%3F>, <http://dbpedia.org/resource/Stage_5_(The_Sopranos)>, <http://dbpedia.org/resource/Mergers_and_Acquisitions_(The_Sopranos)>, <http://dbpedia.org/resource/Eloise_(The_Sopranos)>, <http://dbpedia.org/resource/The_Legend_of_Tennessee_Moltisanti>, <http://dbpedia.org/resource/Johnny_Cakes_(The_Sopranos)>, <http://dbpedia.org/resource/46_Long>, <http://dbpedia.org/resource/The_Second_Coming_(The_Sopranos)>, <http://dbpedia.org/resource/Big_Girls_Don't_Cry_(The_Sopranos)>, <http://dbpedia.org/resource/Moe_n'_Joe>, http://dbpedia.org/resource/The_Strong, <http://dbpedia.org/resource/Irregular_Around_the_Margins>, <http://dbpedia.org/resource/Toodle_Fucking-Oo>, <http://dbpedia.org/resource/The_Happy_Wanderer_(The_Sopranos)>, <http://dbpedia.org/resource/House_Arrest_(The_Sopranos)>, <http://dbpedia.org/resource/Unidentified_Black_Males>, <http://dbpedia.org/resource/Guy_Walks_into_a_Psychiatrist's_Office...>, <http://dbpedia.org/resource/No_Show>, <http://dbpedia.org/resource/Isabella_(The_Sopranos)>, <http://dbpedia.org/resource/Watching_Too_Much_Television>, <http://dbpedia.org/resource/Mr._Ruggerio's_Neighborhood>, <http://dbpedia.org/resource/Pax_Soprana>, <http://dbpedia.org/resource/Whoever_Did_This>, <http://dbpedia.org/resource/Army_of_One_(The_Sopranos)>, <http://dbpedia.org/resource/Another_Toothpick>, <http://dbpedia.org/resource/The_Weight_(The_Sopranos)>, <http://dbpedia.org/resource/Amour_Fou>, <http://dbpedia.org/resource/Pine_Barrens_(The_Sopranos)>, <http://dbpedia.org/resource/University_(The_Sopranos)>, <http://dbpedia.org/resource/Remember_When_(The_Sopranos)>, <http://dbpedia.org/resource/...To_Save_Us_All_from_Satan's_Power>, <http://dbpedia.org/resource/Members_Only_(The_Sopranos)>, <http://dbpedia.org/resource/Second_Opinion_(The_Sopranos)>, <http://dbpedia.org/resource/Live_Free_or_Die_(The_Sopranos)>, <http://dbpedia.org/resource/Made_in_America_(The_Sopranos)>, <http://dbpedia.org/resource/Nobody_Knows_Anything>, <http://dbpedia.org/resource/Kennedy_and_Heidi>, <http://dbpedia.org/resource/D-Girl_(The_Sopranos)>, <http://dbpedia.org/resource/Employee_of_the_Month_(The_Sopranos)>, <http://dbpedia.org/resource/Cold_Stones>, <http://dbpedia.org/resource/All_Happy_Families...>, <http://dbpedia.org/resource/The_Ride_(The_Sopranos)>, <http://dbpedia.org/resource/Soprano_Home_Movies>, <http://dbpedia.org/resource/Do_Not_Resuscitate_(The_Sopranos)>, <http://dbpedia.org/resource/Commendatori>, <http://dbpedia.org/resource/All_Due_Respect_(The_Sopranos)>, <http://dbpedia.org/resource/A_Hit_Is_a_Hit>, <http://dbpedia.org/resource/Boca_(The_Sopranos)>, <http://dbpedia.org/resource/Calling_All_Cars_(The_Sopranos)>, <http://dbpedia.org/resource/For_All_Debts_Public_and_Private>, <http://dbpedia.org/resource/Kaisha>, <http://dbpedia.org/resource/College_(The_Sopranos)>, <http://dbpedia.org/resource/The_Knight_in_White_Satin_Armor>, http://dbpedia.org/resource/Denial, <http://dbpedia.org/resource/Christopher_(The_Sopranos)>, <http://dbpedia.org/resource/The_Telltale_Moozadell>, <http://dbpedia.org/resource/Cold_Cuts_(The_Sopranos)>, <http://dbpedia.org/resource/Down_Neck>, <http://dbpedia.org/resource/Long_Term_Parking>, <http://dbpedia.org/resource/Pie-O-My>, <http://dbpedia.org/resource/Join_the_Club>, <http://dbpedia.org/resource/From_Where_to_Eternity>, <http://dbpedia.org/resource/Mayham>, <http://dbpedia.org/resource/Whitecaps_(The_Sopranos)>, <http://dbpedia.org/resource/The_Fleshy_Part_of_the_Thigh>, <http://dbpedia.org/resource/Rat_Pack_(The_Sopranos)>, <http://dbpedia.org/resource/Full_Leather_Jacket>, <http://dbpedia.org/resource/Mr._&_Mrs._John_Sacrimoni_Request...>, <http://dbpedia.org/resource/The_Test_Dream>, <http://dbpedia.org/resource/Bust_Out>, <http://dbpedia.org/resource/Walk_Like_a_Man_(The_Sopranos)>, <http://dbpedia.org/resource/Sentimental_Education_(The_Sopranos)>, <http://dbpedia.org/resource/Funhouse_(The_Sopranos)>, <http://dbpedia.org/resource/Chasing_It>, <http://dbpedia.org/resource/Meadowlands_(The_Sopranos)>, <http://dbpedia.org/resource/In_Camelot>, <http://dbpedia.org/resource/Fortunate_Son_(The_Sopranos)>, <http://dbpedia.org/resource/Marco_Polo_(The_Sopranos)>, <http://dbpedia.org/resource/Luxury_Lounge>, <http://dbpedia.org/resource/The_Sopranos_(episode)>]",,,,,,,,
+63,"What is the total population of Melbourne, Florida?","PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT ?uri 
+WHERE { 
+        <http://dbpedia.org/resource/Melbourne,_Florida> dbo:populationTotal ?uri .
+}","[""76068""^^xsd:nonNegativeInteger]",,,,,,,,
+64,Did Arnold Schwarzenegger attend a university?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ASK
+WHERE {
+        res:Arnold_Schwarzenegger dbo:almaMater ?x .
+        ?x rdf:type dbo:University .
+}",[true],,,,,,,,
+65,What country is Mount Everest in?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+        res:Mount_Everest dbo:locatedInArea ?uri . 
+        ?uri rdf:type dbo:Country .
+}","[<http://dbpedia.org/resource/China>, <http://dbpedia.org/resource/Nepal>, <http://dbpedia.org/resource/Sagarmatha_Zone>, <http://dbpedia.org/resource/Shigatse_Prefecture>, <http://dbpedia.org/resource/Solukhumbu_District>, <http://dbpedia.org/resource/Tibet_Autonomous_Region>, <http://dbpedia.org/resource/Tingri_County>]",,,,,,,,
+66,What is the largest city in Australia?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:Australia dbo:largestCity ?uri .
+}",[<http://dbpedia.org/resource/Sydney>],,,,,,,,
+67,Give me all launch pads operated by NASA.,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:LaunchPad .  
+        ?uri dbo:operator res:NASA . 
+}","[<http://dbpedia.org/resource/Kennedy_Space_Center_Launch_Complex_39>, <http://dbpedia.org/resource/MV_Retriever>, <http://dbpedia.org/resource/Cape_Canaveral_Air_Force_Station_Launch_Complex_13>, <http://dbpedia.org/resource/Spaceport_Florida_Launch_Complex_36>, <http://dbpedia.org/resource/White_Sands_Space_Harbor>, <http://dbpedia.org/resource/Broglio_Space_Centre>, <http://dbpedia.org/resource/Mid-Atlantic_Regional_Spaceport_Launch_Pad_0>, <http://dbpedia.org/resource/Keweenaw_Rocket_Range>, <http://dbpedia.org/resource/Wallops_Flight_Facility_Launch_Area_3>]",,,,,,,,
+68,Who is the mayor of Tel Aviv?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+        res:Tel_Aviv dbo:leaderName ?uri .
+}",[<http://dbpedia.org/resource/Ron_Huldai>],,,,,,,,
+69,List all episodes of the first season of the HBO television series The Sopranos.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri dbo:series res:The_Sopranos  .
+        ?uri dbo:seasonNumber 1 .
+}","[<http://dbpedia.org/resource/He_Is_Risen_(The_Sopranos)>, <http://dbpedia.org/resource/Everybody_Hurts_(The_Sopranos)>, http://dbpedia.org/resource/Proshai, <http://dbpedia.org/resource/Two_Tonys>, <http://dbpedia.org/resource/The_Blue_Comet>, <http://dbpedia.org/resource/I_Dream_of_Jeannie_Cusamano>, <http://dbpedia.org/resource/Where's_Johnny%3F>, <http://dbpedia.org/resource/Stage_5_(The_Sopranos)>, <http://dbpedia.org/resource/Mergers_and_Acquisitions_(The_Sopranos)>, <http://dbpedia.org/resource/Eloise_(The_Sopranos)>, <http://dbpedia.org/resource/The_Legend_of_Tennessee_Moltisanti>, <http://dbpedia.org/resource/Johnny_Cakes_(The_Sopranos)>, <http://dbpedia.org/resource/46_Long>, <http://dbpedia.org/resource/The_Second_Coming_(The_Sopranos)>, <http://dbpedia.org/resource/Big_Girls_Don't_Cry_(The_Sopranos)>, <http://dbpedia.org/resource/Moe_n'_Joe>, http://dbpedia.org/resource/The_Strong, <http://dbpedia.org/resource/Irregular_Around_the_Margins>, <http://dbpedia.org/resource/Toodle_Fucking-Oo>, <http://dbpedia.org/resource/The_Happy_Wanderer_(The_Sopranos)>, <http://dbpedia.org/resource/House_Arrest_(The_Sopranos)>, <http://dbpedia.org/resource/Unidentified_Black_Males>, <http://dbpedia.org/resource/Guy_Walks_into_a_Psychiatrist's_Office...>, <http://dbpedia.org/resource/No_Show>, <http://dbpedia.org/resource/Isabella_(The_Sopranos)>, <http://dbpedia.org/resource/Watching_Too_Much_Television>, <http://dbpedia.org/resource/Mr._Ruggerio's_Neighborhood>, <http://dbpedia.org/resource/Pax_Soprana>, <http://dbpedia.org/resource/Whoever_Did_This>, <http://dbpedia.org/resource/Army_of_One_(The_Sopranos)>, <http://dbpedia.org/resource/Another_Toothpick>, <http://dbpedia.org/resource/The_Weight_(The_Sopranos)>, <http://dbpedia.org/resource/Amour_Fou>, <http://dbpedia.org/resource/Pine_Barrens_(The_Sopranos)>, <http://dbpedia.org/resource/Remember_When_(The_Sopranos)>, <http://dbpedia.org/resource/University_(The_Sopranos)>, <http://dbpedia.org/resource/...To_Save_Us_All_from_Satan's_Power>, <http://dbpedia.org/resource/Members_Only_(The_Sopranos)>, <http://dbpedia.org/resource/Second_Opinion_(The_Sopranos)>, <http://dbpedia.org/resource/Live_Free_or_Die_(The_Sopranos)>, <http://dbpedia.org/resource/Made_in_America_(The_Sopranos)>, <http://dbpedia.org/resource/Nobody_Knows_Anything>, <http://dbpedia.org/resource/Kennedy_and_Heidi>, <http://dbpedia.org/resource/D-Girl_(The_Sopranos)>, <http://dbpedia.org/resource/Employee_of_the_Month_(The_Sopranos)>, <http://dbpedia.org/resource/Cold_Stones>, <http://dbpedia.org/resource/All_Happy_Families...>, <http://dbpedia.org/resource/The_Ride_(The_Sopranos)>, <http://dbpedia.org/resource/Soprano_Home_Movies>, <http://dbpedia.org/resource/Do_Not_Resuscitate_(The_Sopranos)>, <http://dbpedia.org/resource/Commendatori>, <http://dbpedia.org/resource/All_Due_Respect_(The_Sopranos)>, <http://dbpedia.org/resource/A_Hit_Is_a_Hit>, <http://dbpedia.org/resource/Boca_(The_Sopranos)>, <http://dbpedia.org/resource/Calling_All_Cars_(The_Sopranos)>, <http://dbpedia.org/resource/For_All_Debts_Public_and_Private>, <http://dbpedia.org/resource/Kaisha>, <http://dbpedia.org/resource/College_(The_Sopranos)>, <http://dbpedia.org/resource/The_Knight_in_White_Satin_Armor>, http://dbpedia.org/resource/Denial, <http://dbpedia.org/resource/Christopher_(The_Sopranos)>, <http://dbpedia.org/resource/The_Telltale_Moozadell>, <http://dbpedia.org/resource/Cold_Cuts_(The_Sopranos)>, <http://dbpedia.org/resource/Down_Neck>, <http://dbpedia.org/resource/Long_Term_Parking>, <http://dbpedia.org/resource/Pie-O-My>, <http://dbpedia.org/resource/Join_the_Club>, <http://dbpedia.org/resource/From_Where_to_Eternity>, <http://dbpedia.org/resource/Mayham>, <http://dbpedia.org/resource/Whitecaps_(The_Sopranos)>, <http://dbpedia.org/resource/The_Fleshy_Part_of_the_Thigh>, <http://dbpedia.org/resource/Rat_Pack_(The_Sopranos)>, <http://dbpedia.org/resource/Full_Leather_Jacket>, <http://dbpedia.org/resource/Mr._&_Mrs._John_Sacrimoni_Request...>, <http://dbpedia.org/resource/The_Test_Dream>, <http://dbpedia.org/resource/Bust_Out>, <http://dbpedia.org/resource/Walk_Like_a_Man_(The_Sopranos)>, <http://dbpedia.org/resource/Sentimental_Education_(The_Sopranos)>, <http://dbpedia.org/resource/Funhouse_(The_Sopranos)>, <http://dbpedia.org/resource/Chasing_It>, <http://dbpedia.org/resource/Meadowlands_(The_Sopranos)>, <http://dbpedia.org/resource/In_Camelot>, <http://dbpedia.org/resource/Fortunate_Son_(The_Sopranos)>, <http://dbpedia.org/resource/Marco_Polo_(The_Sopranos)>, <http://dbpedia.org/resource/Luxury_Lounge>, <http://dbpedia.org/resource/The_Sopranos_(episode)>]",,,,,,,,
+70,Who created Batman?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/Batman> <http://dbpedia.org/ontology/creator> ?uri . } ,"[<http://dbpedia.org/resource/Bill_Finger>, <http://dbpedia.org/resource/Bob_Kane>]",,,,,,,,
+71,Who played Gus Fring in Breaking Bad?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Gus_Fring> <http://dbpedia.org/ontology/portrayer> ?uri . },[<http://dbpedia.org/resource/Giancarlo_Esposito>],,,,,,,,
+72,In which programming language is GIMP written?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+	res:GIMP dbo:programmingLanguage ?uri .
+}","[<http://dbpedia.org/resource/C_(programming_language)>, <http://dbpedia.org/resource/GTK+>]",,,,,,,,
+73,In which ancient empire could you pay with cocoa beans?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Cocoa_bean> . },[<http://dbpedia.org/resource/Aztec_Empire>],,,,,,,,
+74,Who is the editor of Forbes?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Forbes dbo:editor ?uri .
+}",[<http://dbpedia.org/resource/Steve_Forbes>],,,,,,,,
+75,How many people live in the capital of Australia?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+        res:Australia dbo:capital ?x .
+        ?x dbo:populationTotal ?num .
+}","[""381488""^^xsd:nonNegativeInteger]",,,,,,,,
+76,Which professional surfers were born in Australia?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:occupation res:Surfing .  
+        ?uri dbo:birthPlace res:Australia . 
+}","[<http://dbpedia.org/resource/Kevin_Volchok>, <http://dbpedia.org/resource/Mark_Morgan_(composer)>, <http://dbpedia.org/resource/Midget_Farrelly>, <http://dbpedia.org/resource/Doc_Paskowitz>, <http://dbpedia.org/resource/Marcus_Adoro>, <http://dbpedia.org/resource/Peggy_Oki>, <http://dbpedia.org/resource/Cheyne_Magnusson>, <http://dbpedia.org/resource/Johnny_Harper>, <http://dbpedia.org/resource/Simon_Anderson>, <http://dbpedia.org/resource/James_Lovett>, <http://dbpedia.org/resource/Koby_Abberton>, <http://dbpedia.org/resource/Daize_Shayne>, <http://dbpedia.org/resource/Ian_Cairns>, <http://dbpedia.org/resource/Kit_Horn>]",,,,,,,,
+77,Which electronics companies were founded in Beijing?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Electronics> . ?uri <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/Beijing> . },"[<http://dbpedia.org/resource/Greatview>, <http://dbpedia.org/resource/Sinosteel>, <http://dbpedia.org/resource/SuperMap>, <http://dbpedia.org/resource/Beijing_Mass_Transit_Railway_Operation_Corporation_Limited>, <http://dbpedia.org/resource/China_Central_Huijin>, <http://dbpedia.org/resource/China_National_Aero-Technology_Import_&_Export_Corporation>, <http://dbpedia.org/resource/Aluminum_Corporation_of_China_Limited>, <http://dbpedia.org/resource/CITS_Group_Corporation>, <http://dbpedia.org/resource/Aviation_Industry_Corporation_of_China>, <http://dbpedia.org/resource/Lenovo>, <http://dbpedia.org/resource/Foton_Motor>, <http://dbpedia.org/resource/China_Construction_Bank>, <http://dbpedia.org/resource/Datang_Telecom>, <http://dbpedia.org/resource/Industrial_and_Commercial_Bank_of_China>, <http://dbpedia.org/resource/Alpine_Data_Labs>, <http://dbpedia.org/resource/Xiaomi>, <http://dbpedia.org/resource/Bank_of_China>, <http://dbpedia.org/resource/China_National_Salt_Industry_Corporation>, <http://dbpedia.org/resource/China_Medical_Technologies>, <http://dbpedia.org/resource/Sinovel>, <http://dbpedia.org/resource/China_Petrochemical_Corporation>, <http://dbpedia.org/resource/BeijingWest_Industries>, <http://dbpedia.org/resource/BAW>, <http://dbpedia.org/resource/Qihoo>, <http://dbpedia.org/resource/Sanyuan_Group>, <http://dbpedia.org/resource/Safedom>, <http://dbpedia.org/resource/AcrossChina>, <http://dbpedia.org/resource/Sinopec>]",,,,,,,,
+78,Give me all video games published by Mean Hamster Software.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+      ?uri rdf:type dbo:VideoGame .
+      ?uri dbo:publisher res:Mean_Hamster_Software . 
+}","[<http://dbpedia.org/resource/Crossbow_(video_game)>, <http://dbpedia.org/resource/Riven>]",,,,,,,,
+79,How many Aldi stores are there?,SELECT DISTINCT ?number WHERE {  <http://dbpedia.org/resource/Aldi> <http://dbpedia.org/ontology/numberOfLocations> ?number . } ,"[""9235""^^xsd:nonNegativeInteger]",,,,,,,,
+80,What is the capital of Cameroon?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Cameroon> <http://dbpedia.org/ontology/capital> ?uri. } ,[<http://dbpedia.org/resource/Yaound%C3%A9>],,,,,,,,
+81,Is there a video game called Battle Chess?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK 
+WHERE {
+	?uri rdf:type dbo:VideoGame .
+        ?uri rdfs:label 'Battle Chess'@en .
+}",[true],,,,,,,,
+82,Was the wife of president Lincoln called Mary?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK 
+WHERE {
+        res:Abraham_Lincoln dbo:spouse ?spouse .
+        ?spouse rdfs:label ?name .
+        FILTER(regex(?name,'Mary')) 
+}",[true],,,,,,,,
+83,Give me all movies directed by Francis Ford Coppola.,SELECT DISTINCT ?uri WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> .  ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Francis_Ford_Coppola> . } ,"[<http://dbpedia.org/resource/Youth_Without_Youth_(film)>, <http://dbpedia.org/resource/Apocalypse_Now_Redux>, <http://dbpedia.org/resource/The_Rain_People>, <http://dbpedia.org/resource/The_Godfather_Part_III>, <http://dbpedia.org/resource/Tonight_for_Sure>, <http://dbpedia.org/resource/The_Cotton_Club_(film)>, <http://dbpedia.org/resource/One_from_the_Heart>, <http://dbpedia.org/resource/Tetro>, <http://dbpedia.org/resource/The_Bellboy_and_the_Playgirls>, <http://dbpedia.org/resource/Peggy_Sue_Got_Married>, <http://dbpedia.org/resource/The_Rainmaker_(1997_film)>, <http://dbpedia.org/resource/Dementia_13>, <http://dbpedia.org/resource/Jack_(1996_film)>, <http://dbpedia.org/resource/The_Godfather>, <http://dbpedia.org/resource/The_Godfather_Saga>, <http://dbpedia.org/resource/You're_a_Big_Boy_Now>, <http://dbpedia.org/resource/Apocalypse_Now>, <http://dbpedia.org/resource/Hammett_(film)>, <http://dbpedia.org/resource/The_Conversation>, <http://dbpedia.org/resource/The_Godfather_Part_II>, <http://dbpedia.org/resource/Battle_Beyond_the_Sun>, <http://dbpedia.org/resource/Tucker:_The_Man_and_His_Dream>, <http://dbpedia.org/resource/The_Terror_(1963_film)>, <http://dbpedia.org/resource/Rumble_Fish>, <http://dbpedia.org/resource/The_Godfather_(film_series)>, <http://dbpedia.org/resource/Twixt_(film)>, <http://dbpedia.org/resource/Gardens_of_Stone>, <http://dbpedia.org/resource/Bram_Stoker's_Dracula>, <http://dbpedia.org/resource/The_Outsiders_(film)>, <http://dbpedia.org/resource/New_York_Stories>]",,,,,,,,
+84,Which of Tim Burton's films had the highest budget?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:director res:Tim_Burton .
+        ?uri dbo:budget ?b .
+}
+ORDER BY ?b
+OFFSET 0 LIMIT 1",[<http://dbpedia.org/resource/Big_Eyes>],,,,,,,,
+85,Does Breaking Bad have more episodes than Game of Thrones?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+        res:Breaking_Bad dbo:numberOfEpisodes ?x . 
+        res:Game_of_Thrones dbo:numberOfEpisodes ?y . 
+        FILTER (?y > ?x) 
+}",[true],,,,,,,,
+86,Who was called Rodzilla?,"PREFIX dbp: <http://dbpedia.org/property/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+         ?uri dbp:nickname ""Rodzilla""@en .
+}",[<http://dbpedia.org/resource/Rodney_Blake>],,,,,,,,
+87,Was Natalie Portman born in the United States?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE { 
+	res:Natalie_Portman dbo:birthPlace ?city .
+      	?city dbo:country res:United_States .
+}",[true],,,,,,,,
+88,Give me the grandchildren of Elvis Presley.,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Elvis_Presley> <http://dbpedia.org/ontology/child> ?child . ?child <http://dbpedia.org/ontology/child> ?uri . },[<http://dbpedia.org/resource/Riley_Keough>],,,,,,,,
+89,Which movies starring Mickey Rourke were directed by Guy Ritchie?,SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Mickey_Rourke> . ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Guy_Ritchie> . } ,"[http://dbpedia.org/resource/Lock, <http://dbpedia.org/resource/Revolver_(2005_film)>, <http://dbpedia.org/resource/Snatch_(film)>, <http://dbpedia.org/resource/Sherlock_Holmes_(2009_film)>, <http://dbpedia.org/resource/Sherlock_Holmes:_A_Game_of_Shadows>, <http://dbpedia.org/resource/The_Man_from_U.N.C.L.E._(film)>, <http://dbpedia.org/resource/RocknRolla>, <http://dbpedia.org/resource/Swept_Away_(2002_film)>, <http://dbpedia.org/resource/The_Hire>]",,,,,,,,
+90,When did Dracula's creator die?,SELECT DISTINCT ?date WHERE {  <http://dbpedia.org/resource/Count_Dracula> <http://dbpedia.org/ontology/creator> ?x .  ?x <http://dbpedia.org/ontology/deathDate> ?date . } ,"[""1912-04-20""^^xsd:date]",,,,,,,,
+91,Which country does the creator of Miffy come from?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:Miffy dbo:creator ?x .
+	?x dbo:nationality ?uri .
+}",[<http://dbpedia.org/resource/Netherlands>],,,,,,,,
+92,What is Batman's real name?,SELECT DISTINCT ?s WHERE { <http://dbpedia.org/resource/Batman> <http://dbpedia.org/property/alterEgo> ?s . },"[""Bruce Wayne""@en]",,,,,,,,
+93,What form of government does Russia have?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Russia> <http://dbpedia.org/ontology/governmentType> ?uri . } ,[<http://dbpedia.org/resource/Federalism>],,,,,,,,
+94,How many companies were founded by the founder of Facebook?,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE {  <http://dbpedia.org/resource/Facebook> <http://dbpedia.org/ontology/foundedBy> ?uri .  ?uri <http://dbpedia.org/ontology/foundedBy> ?uri . } ,[<http://dbpedia.org/resource/Riley_Keough>],,,,,,,,
+95,Give me all Canadian Grunge record labels.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+	?uri rdf:type dbo:RecordLabel .
+        ?uri dbo:genre res:Grunge .
+        ?uri dbo:country res:Canada .
+}",[<http://dbpedia.org/resource/Murderecords>],,,,,,,,
+96,How many children did Benjamin Franklin have?,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE {  <http://dbpedia.org/resource/Benjamin_Franklin> <http://dbpedia.org/ontology/child> ?uri . } ,[3],,,,,,,,
+97,List the children of Margaret Thatcher.,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:Margaret_Thatcher dbo:child ?uri .
+}","[<http://dbpedia.org/resource/Carol_Thatcher>, <http://dbpedia.org/resource/Mark_Thatcher>]",,,,,,,,
+98,From which region is the Melon de Bourgogne?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri
+WHERE {
+        res:Melon_de_Bourgogne dbo:wineRegion ?uri .
+}","[<http://dbpedia.org/resource/Loire_Valley_(wine)>, <http://dbpedia.org/resource/Oregon>, <http://dbpedia.org/resource/Southern_Ontario>, <http://dbpedia.org/resource/Washington_(state)>]",,,,,,,,
+99,Who is the oldest child of Meryl Streep?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE { 
+        res:Meryl_Streep dbo:child ?uri . 
+        ?uri dbo:birthDate ?d .
+}
+ORDER BY ASC(?d)
+OFFSET 0 LIMIT 1",[<http://dbpedia.org/resource/Henry_Wolfe_Gummer>],,,,,,,,
+100,Are tree frogs a type of amphibian?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+        res:Hylidae dbo:class res:Amphibian . 
+}",[true],,,,,,,,
+101,Is Christian Bale starring in Velvet Goldmine?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK
+WHERE {
+        res:Velvet_Goldmine dbo:starring res:Christian_Bale .
+}",[true],,,,,,,,
+102,List all games by GMT.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {	
+        ?uri dbo:publisher res:GMT_Games .
+}","[<http://dbpedia.org/resource/Twilight_Struggle>, <http://dbpedia.org/resource/Washington's_War>, <http://dbpedia.org/resource/Chandragupta_(board_game)>, <http://dbpedia.org/resource/Paths_of_Glory_(board_game)>, <http://dbpedia.org/resource/Fields_of_Fire_(game)>, <http://dbpedia.org/resource/Sword_of_Rome>, <http://dbpedia.org/resource/Commands_&_Colors:_Ancients>]",,,,,,,,
+103,Does the Isar flow into a lake?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ASK
+WHERE {
+        ?x dbo:inflow res:Isar .
+        ?x rdf:type dbo:Lake . 
+}",[true],,,,,,,,
+104,Which airports does Yeti Airlines serve?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/Yeti_Airlines> <http://dbpedia.org/ontology/targetAirport> ?uri . },"[<http://dbpedia.org/resource/Pokhara> , <http://dbpedia.org/resource/Siddharthanagar> ,<http://dbpedia.org/resource/Biratnagar>]",,,,,,,,
+105,Which Indian company has the most employees?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/India> . ?uri <http://dbpedia.org/ontology/numberOfEmployees> ?n . } ORDER BY DESC(?n) OFFSET 0 LIMIT 1,[<http://dbpedia.org/resource/Indian_Railways>],,,,,,,,
+106,What color expresses loyalty?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/connotation> <http://dbpedia.org/resource/Loyalty> . },[<http://dbpedia.org/resource/Indigo>],,,,,,,,
+107,Which city has the most inhabitants?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+         ?uri rdf:type dbo:City . 
+         ?uri dbo:populationTotal ?pop . 
+}
+ORDER BY DESC(?pop)
+OFFSET 0 LIMIT 1",[<http://dbpedia.org/resource/Karachi>],,,,,,,,
+108,Who created Wikipedia?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+	res:Wikipedia dbo:author ?uri .
+}","[<http://dbpedia.org/resource/Jimmy_Wales>, <http://dbpedia.org/resource/Larry_Sanger>]",,,,,,,,
+109,Is Rita Wilson the wife of Tom Hanks?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+ASK 
+WHERE { 
+        res:Tom_Hanks dbo:spouse res:Rita_Wilson . 
+}",[true],,,,,,,,
+110,Is the wife of president Obama called Michelle?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ASK 
+WHERE {
+        res:Barack_Obama dbo:spouse ?spouse .
+        ?spouse rdfs:label ?name .
+        FILTER(regex(?name,'Michelle')) 
+}",[true],,,,,,,,
+111,How many ethnic groups live in Slovenia?,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE {  <http://dbpedia.org/resource/Slovenia> <http://dbpedia.org/ontology/ethnicGroup> ?uri . } ,[4],,,,,,,,
+112,Who is the president of Eritrea?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Eritrea> <http://dbpedia.org/ontology/leader> ?uri . <http://dbpedia.org/resource/Eritrea> <http://dbpedia.org/ontology/leaderTitle> 'President'@en . }  ,[<http://dbpedia.org/resource/Isaias_Afwerki>],,,,,,,,
+113,Which films did Stanley Kubrick direct?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Stanley_Kubrick> . },"[<http://dbpedia.org/resource/Lolita_(1962_film)>, <http://dbpedia.org/resource/The_Shining_(film)>, <http://dbpedia.org/resource/Paths_of_Glory>, <http://dbpedia.org/resource/Eyes_Wide_Shut>, <http://dbpedia.org/resource/The_Seafarers>, <http://dbpedia.org/resource/2001:_A_Space_Odyssey_(film)>, <http://dbpedia.org/resource/A_Clockwork_Orange_(film)>, <http://dbpedia.org/resource/Fear_and_Desire>, <http://dbpedia.org/resource/Barry_Lyndon>, <http://dbpedia.org/resource/Spartacus_(film)>, <http://dbpedia.org/resource/The_Killing_(film)>, <http://dbpedia.org/resource/Flying_Padre>, <http://dbpedia.org/resource/Dr._Strangelove>, <http://dbpedia.org/resource/Day_of_the_Fight>, <http://dbpedia.org/resource/Full_Metal_Jacket>, <http://dbpedia.org/resource/Killer's_Kiss>]",,,,,,,,
+114,When was the Titanic completed?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?date
+WHERE { 
+        res:RMS_Titanic dbo:completionDate ?date . 
+}","[""1912-04-02""^^xsd:date]",,,,,,,,
+115,How many pages does War and Peace have?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?n
+WHERE {
+        res:War_and_Peace dbo:numberOfPages ?n .
+}","[""1225""^^xsd:positiveInteger]",,,,,,,,
+116,Who is the youngest player in the Premier League?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:team ?x . 
+        ?x dbo:league res:Premier_League . 
+        ?uri dbo:birthDate ?y . 
+} 
+ORDER BY DESC(?y) 
+OFFSET 0 LIMIT 1",[<http://dbpedia.org/resource/Ernie_Pinkney>],,,,,,,,
+117,What is the highest mountain in Italy?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+        ?uri rdf:type dbo:Mountain .
+        ?uri dbo:locatedInArea res:Italy .
+        ?uri dbo:elevation ?num .
+}
+ORDER BY DESC(?num)
+OFFSET 0 LIMIT 1",[1.81],,,,,,,,
+118,How tall is Claudia Schiffer?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?height 
+WHERE {       
+        res:Claudia_Schiffer dbo:height ?height .      
+}","[""1.81""^^xsd:double]",,,,,,,,
+119,Who was John F. Kennedy's vice president?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { res:John_F._Kennedy dbo:vicePresident ?uri . 
+}",[<http://dbpedia.org/resource/Lyndon_B._Johnson>],,,,,,,,
+120,Which subsidiary of Lufthansa serves both Dortmund and Berlin Tegel?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Lufthansa dbo:subsidiary ?uri .
+        ?uri dbo:targetAirport res:Dortmund_Airport .
+        ?uri dbo:targetAirport res:Berlin_Tegel_Airport .
+}","[<http://dbpedia.org/resource/JetBlue>, <http://dbpedia.org/resource/SunExpress>, <http://dbpedia.org/resource/Brussels_Airlines>, <http://dbpedia.org/resource/Eurowings>, <http://dbpedia.org/resource/Lufthansa_Regional>, <http://dbpedia.org/resource/LSG_Sky_Chefs>, <http://dbpedia.org/resource/AeroLogic>, <http://dbpedia.org/resource/Tyrolean_Airways>, <http://dbpedia.org/resource/Swiss_European_Air_Lines>, <http://dbpedia.org/resource/Lufthansa_Cargo>, <http://dbpedia.org/resource/Lufthansa_Systems>, <http://dbpedia.org/resource/Lufthansa_Technik>, <http://dbpedia.org/resource/Lufthansa_Consulting>, <http://dbpedia.org/resource/Global_Load_Control>, <http://dbpedia.org/resource/Swiss_International_Air_Lines>, <http://dbpedia.org/resource/Air_Dolomiti>, <http://dbpedia.org/resource/Edelweiss_Air>, <http://dbpedia.org/resource/Lufthansa_CityLine>, <http://dbpedia.org/resource/Austrian_Airlines>, <http://dbpedia.org/resource/Luxair>, <http://dbpedia.org/resource/Lufthansa_Flight_Training>, <http://dbpedia.org/resource/Germanwings>]",,,,,,,,
+121,Who was the successor of John F. Kennedy?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:John_F._Kennedy dbo:successor ?uri .
+}","[<http://dbpedia.org/resource/Benjamin_A._Smith_II>, <http://dbpedia.org/resource/Lyndon_B._Johnson>, <http://dbpedia.org/resource/Tip_O'Neill>]",,,,,,,,
+122,Who composed the soundtrack for Cameron's Titanic?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Titanic_(1997_film)> <http://dbpedia.org/ontology/musicComposer> ?uri . } ,[<http://dbpedia.org/resource/James_Horner>],,,,,,,,
+123,Which movies did Kurosawa direct?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+        ?uri rdf:type dbo:Film .
+        ?uri dbo:director res:Akira_Kurosawa .
+}","[<http://dbpedia.org/resource/Horse_(1941_film)>, <http://dbpedia.org/resource/The_Men_Who_Tread_on_the_Tiger's_Tail>, <http://dbpedia.org/resource/Yojimbo_(film)>, <http://dbpedia.org/resource/Ran_(film)>, <http://dbpedia.org/resource/Dersu_Uzala_(1975_film)>, <http://dbpedia.org/resource/Madadayo>, <http://dbpedia.org/resource/One_Wonderful_Sunday>, <http://dbpedia.org/resource/The_Idiot_(1951_film)>, <http://dbpedia.org/resource/The_Quiet_Duel>, <http://dbpedia.org/resource/Seven_Samurai>, <http://dbpedia.org/resource/High_and_Low_(1963_film)>, <http://dbpedia.org/resource/Ikiru>, <http://dbpedia.org/resource/Scandal_(1950_film)>, <http://dbpedia.org/resource/Stray_Dog_(film)>, <http://dbpedia.org/resource/Throne_of_Blood>, <http://dbpedia.org/resource/Sanshiro_Sugata_Part_II>, <http://dbpedia.org/resource/Sanjuro>, <http://dbpedia.org/resource/Red_Beard>, <http://dbpedia.org/resource/Sanshiro_Sugata>, <http://dbpedia.org/resource/No_Regrets_for_Our_Youth>, <http://dbpedia.org/resource/Those_Who_Make_Tomorrow>, <http://dbpedia.org/resource/The_Lower_Depths_(1957_film)>, <http://dbpedia.org/resource/The_Most_Beautiful>, <http://dbpedia.org/resource/Kagemusha>, <http://dbpedia.org/resource/Dreams_(1990_film)>, <http://dbpedia.org/resource/I_Live_in_Fear>, <http://dbpedia.org/resource/Rashomon>, <http://dbpedia.org/resource/The_Hidden_Fortress>, <http://dbpedia.org/resource/The_Bad_Sleep_Well>, <http://dbpedia.org/resource/Drunken_Angel>, <http://dbpedia.org/resource/Rhapsody_in_August>, <http://dbpedia.org/resource/Dodes'ka-den>]",,,,,,,,
+124,For which label did Elvis record his first album?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?x rdf:type dbo:Album .
+        ?x dbo:artist res:Elvis_Presley .
+        ?x dbo:releaseDate ?y .
+        ?x dbo:recordLabel ?uri .
+}
+ORDER BY ASC(?y) 
+OFFSET 0 LIMIT 1",[<http://dbpedia.org/resource/Pickwick_Records>],,,,,,,,
+125,In which time zone is Rome?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rome> <http://dbpedia.org/ontology/timeZone> ?uri . } ,[<http://dbpedia.org/resource/Central_European_Time>],,,,,,,,
+126,Give me the currency of China.,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri
+WHERE {  
+   res:China dbo:currency ?uri . 
+}",[<http://dbpedia.org/resource/Renminbi>],,,,,,,,
+127,Who are the developers of DBpedia?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/DBpedia> <http://dbpedia.org/ontology/developer> ?uri . },"[<http://dbpedia.org/resource/Free_University_of_Berlin>, <http://dbpedia.org/resource/Leipzig_University>, <http://dbpedia.org/resource/OpenLink_Software>]",,,,,,,,
+128,Does Abraham Lincoln's death place have a website?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+        res:Abraham_Lincoln dbo:deathPlace ?p .
+        ?p dbo:website ?w . 
+}",[true],,,,,,,,
+129,Who is the king of the Netherlands?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Netherlands> <http://dbpedia.org/ontology/leader> ?uri . ?uri a <http://dbpedia.org/ontology/Royalty> . } ,"[<http://dbpedia.org/resource/Mark_Rutte>, <http://dbpedia.org/resource/Willem-Alexander_of_the_Netherlands>]",,,,,,,,
+130,In which city did Nikos Kazantzakis die?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Nikos_Kazantzakis> <http://dbpedia.org/ontology/deathPlace> ?uri . ?uri a <http://dbpedia.org/ontology/Town> . },"[<http://dbpedia.org/resource/Freiburg_im_Breisgau>, <http://dbpedia.org/resource/Germany>, <http://dbpedia.org/resource/West_Germany>]",,,,,,,,
+131,Who was the father of Queen Elizabeth II?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT DISTINCT ?uri
+WHERE { 
+        res:Elizabeth_II dbp:father ?uri .
+}",[<http://dbpedia.org/resource/George_VI>],,,,,,,,
+132,Give me a list of all critically endangered birds.,SELECT DISTINCT ?uri ?p WHERE { ?uri a <http://dbpedia.org/ontology/Bird> . { ?uri <http://dbpedia.org/ontology/conservationStatus> 'CR'^^<http://www.w3.org/2001/XMLSchema#string> . } UNION { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Critically_endangered_animals> . } },[http://dbpedia.org/resource/Chatham_pigeon],,,,,,,,
+133,How many inhabitants does the largest city in Canada have?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num
+WHERE {
+        res:Canada dbo:largestCity ?city . 
+        ?city dbo:populationTotal ?num .
+}","[""2615060""^^xsd:nonNegativeInteger]",,,,,,,,
+134,In which military conflicts did Lawrence of Arabia participate?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:T._E._Lawrence dbo:battle ?uri . 
+}","[<http://dbpedia.org/resource/Battle_of_Megiddo_(1918)>, <http://dbpedia.org/resource/Battle_of_Aqaba>, <http://dbpedia.org/resource/Battle_of_Aba_el_Lissan>, <http://dbpedia.org/resource/World_War_I>, <http://dbpedia.org/resource/Siege_of_Medina>, <http://dbpedia.org/resource/Arab_Revolt>, <http://dbpedia.org/resource/Capture_of_Damascus_(1918)>, <http://dbpedia.org/resource/Battle_of_Deraa>, <http://dbpedia.org/resource/Battle_of_Talifeh>, <http://dbpedia.org/resource/Battle_of_Fwelia>]",,,,,,,,
+135,Which book has the most pages?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+        ?uri rdf:type dbo:Book . 
+        ?uri dbo:numberOfPages ?n .
+}
+ORDER BY DESC(?n)
+OFFSET 0 LIMIT 1",[<http://dbpedia.org/resource/The_Tolkien_Reader>],,,,,,,,
+136,In which country does the Nile start?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {       
+        res:Nile dbo:sourceCountry ?uri .
+}","[<http://dbpedia.org/resource/Ethiopia>, <http://dbpedia.org/resource/Rwanda>]",,,,,,,,
+137,Who is the Formula 1 race driver with the most races?,SELECT DISTINCT ?uri WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/FormulaOneRacer> .  ?uri <http://dbpedia.org/ontology/races> ?x . } ORDER BY DESC(?x) OFFSET 0 LIMIT 1 ,[<http://dbpedia.org/resource/Michael_Schumacher>],,,,,,,,
+138,Which companies produce hovercrafts?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Hovercraft> . },[http://dbpedia.org/resource/Slack_Technologies],,,,,,,,
+139,Did Elvis Presley have children?,ASK WHERE { <http://dbpedia.org/resource/Elvis_Presley> <http://dbpedia.org/ontology/child> ?uri . } ,[true],,,,,,,,
+140,In which city was the president of Montenegro born?,SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/property/office> <http://dbpedia.org/resource/President_of_Montenegro> . ?x <http://dbpedia.org/ontology/birthPlace> ?uri . ?uri a <http://dbpedia.org/ontology/City> . } ,"[<http://dbpedia.org/resource/Belgrade>, <http://dbpedia.org/resource/Socialist_Federal_Republic_of_Yugoslavia>, <http://dbpedia.org/resource/Socialist_Republic_of_Serbia>, <http://dbpedia.org/resource/Nikšić>, <http://dbpedia.org/resource/Socialist_Republic_of_Montenegro>]",,,,,,,,
+141,Which country was Bill Gates born in?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Bill_Gates> <http://dbpedia.org/ontology/birthPlace> ?x . ?x <http://dbpedia.org/ontology/country> ?uri . },[<http://dbpedia.org/resource/United_States>],,,,,,,,
+142,In which countries do people speak Japanese?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> . ?uri <http://dbpedia.org/ontology/language> <http://dbpedia.org/resource/Japanese_language> . } ,"[<http://dbpedia.org/resource/Japan>, <http://dbpedia.org/resource/Palau>, <http://dbpedia.org/resource/Allied_Military_Government_for_Occupied_Territories>]",,,,,,,,
+143,Show me the book that Muhammad Ali wrote.,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+         ?uri rdf:type dbo:Book . 
+         ?uri dbo:author res:Muhammad_Ali . 
+}",[<http://dbpedia.org/resource/The_Soul_of_a_Butterfly>],,,,,,,,
+144,Is Michelle Obama the wife of Barack Obama?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+	res:Barack_Obama dbo:spouse res:Michelle_Obama .
+}",[true],,,,,,,,
+145,What is the area code of Berlin?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?string 
+WHERE {
+	res:Berlin dbo:areaCode ?string .
+}","[""030""]",,,,,,,,
+146,Give me all actors starring in Last Action Hero.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+        res:Last_Action_Hero dbo:starring ?uri . 
+}","[<http://dbpedia.org/resource/Anthony_Quinn>, <http://dbpedia.org/resource/Arnold_Schwarzenegger>, <http://dbpedia.org/resource/Art_Carney>, <http://dbpedia.org/resource/Austin_O'Brien>, <http://dbpedia.org/resource/Bridgette_Wilson>, <http://dbpedia.org/resource/Charles_Dance>, <http://dbpedia.org/resource/F._Murray_Abraham>, <http://dbpedia.org/resource/Robert_Prosky>, <http://dbpedia.org/resource/Tom_Noonan>]",,,,,,,,
+147,What are the nicknames of San Francisco?,SELECT DISTINCT ?string WHERE {  <http://dbpedia.org/resource/San_Francisco> <http://dbpedia.org/property/nickname> ?string . } ,"[""The City by the Bay; Fog City; San Fran; Frisco; The City that Knows How ; Baghdad by the Bay ; The Paris of the West""@en]",,,,,,,,
+148,What was the first Queen album?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Album> . ?uri <http://dbpedia.org/ontology/artist> <http://dbpedia.org/resource/Queen_(band)> . ?uri <http://dbpedia.org/ontology/releaseDate> ?d . } ORDER BY ASC(?d) OFFSET 0 LIMIT 1,[<http://dbpedia.org/resource/Queen_(Queen_album)>],,,,,,,,
+149,Through which countries does the Yenisei river flow?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Yenisei_River dbp:country ?uri .
+}",[<>],,,,,,,,
+150,Which television shows were created by Walt Disney?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+	?uri rdf:type dbo:TelevisionShow .
+        ?uri dbo:creator res:Walt_Disney .
+}","[<http://dbpedia.org/resource/Figaro_(Disney)>, <http://dbpedia.org/resource/Oswald_the_Lucky_Rabbit>, <http://dbpedia.org/resource/The_Mickey_Mouse_Club>, <http://dbpedia.org/resource/Pete_Junior>, <http://dbpedia.org/resource/Evil_Queen_(Disney)>, <http://dbpedia.org/resource/Ludwig_Von_Drake>, <http://dbpedia.org/resource/Clarabelle_Cow>, <http://dbpedia.org/resource/List_of_Jiminy_Cricket_educational_serials>, <http://dbpedia.org/resource/Mickey_Mouse>, <http://dbpedia.org/resource/Mickey_Mouse_Clubhouse>, <http://dbpedia.org/resource/Minnie_Mouse>, <http://dbpedia.org/resource/Humphrey_the_Bear>, <http://dbpedia.org/resource/Louie_the_Mountain_Lion>, <http://dbpedia.org/resource/Goofy>, <http://dbpedia.org/resource/Horace_Horsecollar>, <http://dbpedia.org/resource/Pete_(Disney)>, <http://dbpedia.org/resource/Donald_Duck>, <http://dbpedia.org/resource/Julius_the_Cat>]",,,,,,,,
+151,What is the bridge with the longest span?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type dbo:Bridge .
+        ?uri dbo:mainspan ?s . 
+} 
+ORDER BY DESC(?s) 
+OFFSET 0 LIMIT 1","[<http://dbpedia.org/resource/Russia>, <http://dbpedia.org/resource/Mongolia>]",,,,,,,,
+152,What country is Sitecore from?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Sitecore> <http://dbpedia.org/ontology/foundationPlace> ?uri . },[<http://dbpedia.org/resource/Denmark>],,,,,,,,
+153,Whom did Lance Bass marry?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Lance_Bass> . } ,[<http://dbpedia.org/resource/Michael_Turchin>],,,,,,,,
+154,What is the capital of Canada?,"PREFIX dbo:  <http://dbpedia.org/ontology/>
+PREFIX res:  <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Canada dbo:capital ?uri .
+}",[<http://dbpedia.org/resource/Ottawa>],,,,,,,,
+155,Who was Vincent van Gogh inspired by?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/influenced> <http://dbpedia.org/resource/Vincent_van_Gogh> . },"[<http://dbpedia.org/resource/Adolphe_Joseph_Thomas_Monticelli>, <http://dbpedia.org/resource/Anton_Mauve>]",,,,,,,,
+156,In which city did John F. Kennedy die?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE { 
+        res:John_F._Kennedy dbo:deathPlace ?uri .
+        ?uri rdf:type dbo:City .
+}","[<http://dbpedia.org/resource/Dallas>, <http://dbpedia.org/resource/Texas>]",,,,,,,,
+157,Was U.S. president Jackson involved in a war?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+	res:Andrew_Jackson dbo:battle ?battle .    
+}",[true],,,,,,,,
+158,Who wrote the Game of Thrones theme?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Game_of_Thrones> <http://dbpedia.org/ontology/composer> ?uri. },[<http://dbpedia.org/resource/Ramin_Djawadi>],,,,,,,,
+159,Who designed the Brooklyn Bridge?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:Brooklyn_Bridge dbo:architect ?uri .
+}",[<http://dbpedia.org/resource/John_A._Roebling>],,,,,,,,
+160,When did Boris Becker end his active career?,SELECT DISTINCT ?d WHERE { <http://dbpedia.org/resource/Boris_Becker> <http://dbpedia.org/ontology/activeYearsEndDate> ?d . } ,"[""1999-06-30""^^xsd:date]",,,,,,,,
+161,Which types of grapes grow in Oregon?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Oregon_wine> <http://dbpedia.org/ontology/growingGrape> ?uri . } ,"[<http://dbpedia.org/resource/Barbera>, <http://dbpedia.org/resource/Gew%C3%BCrztraminer>, <http://dbpedia.org/resource/Black_Muscat>, <http://dbpedia.org/resource/M%C3%BCller-Thurgau>, <http://dbpedia.org/resource/Riesling>, <http://dbpedia.org/resource/Merlot>, <http://dbpedia.org/resource/Chenin_blanc>, <http://dbpedia.org/resource/Malbec>, <http://dbpedia.org/resource/Pinot_Meunier>, <http://dbpedia.org/resource/Grenache>, <http://dbpedia.org/resource/Chardonnay>, <http://dbpedia.org/resource/Melon>, <http://dbpedia.org/resource/Pinot_noir>, <http://dbpedia.org/resource/Syrah>, <http://dbpedia.org/resource/Huxelrebe>, <http://dbpedia.org/resource/Cabernet_Sauvignon>, <http://dbpedia.org/resource/Sangiovese>, <http://dbpedia.org/resource/Dolcetto>, <http://dbpedia.org/resource/Pinot_gris>, <http://dbpedia.org/resource/Sauvignon_blanc>, <http://dbpedia.org/resource/Cabernet_Franc>, <http://dbpedia.org/resource/Muscat_Blanc_%C3%A0_Petits_Grains>, <http://dbpedia.org/resource/Marechal_Foch>, <http://dbpedia.org/resource/Pinot_blanc>, <http://dbpedia.org/resource/Scheurebe>, <http://dbpedia.org/resource/Baco_noir>, <http://dbpedia.org/resource/L%C3%A9on_Millot>, <http://dbpedia.org/resource/Muscat_(grape)>, <http://dbpedia.org/resource/Carmine>, <http://dbpedia.org/resource/S%C3%A9millon>, <http://dbpedia.org/resource/Viognier>, <http://dbpedia.org/resource/Gamay>, <http://dbpedia.org/resource/Zinfandel>, <http://dbpedia.org/resource/Petit_Verdot>]",,,,,,,,
+162,How tall is Michael Jordan?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+        res:Michael_Jordan dbo:height ?num .
+}","[""1.9812""^^xsd:double]",,,,,,,,
+163,To which party does the mayor of Paris belong?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/mayor> ?x . ?x <http://dbpedia.org/ontology/party> ?uri . },[<http://dbpedia.org/resource/Socialist_Party_(France)>],,,,,,,,
+164,Who wrote the book The Pillars of the Earth?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+        res:The_Pillars_of_the_Earth dbo:author ?uri .
+}",[<http://dbpedia.org/resource/Ken_Follett>],,,,,,,,
+165,Who was the 16th president of the United States?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+         ?uri dbo:office 'President of the United States' .
+         ?uri dbo:orderInOffice '16th' .
+}","[<http://dbpedia.org/resource/%C5%A0imun_de_Michieli-Vitturi>, <http://dbpedia.org/resource/A._H._G._Dawson>]",,,,,,,,
+166,How high is the Mount Everest?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num 
+WHERE {
+	res:Mount_Everest dbo:elevation ?num.
+}","[""8848.0""^^xsd:double]",,,,,,,,
+167,Who was the doctoral supervisor of Albert Einstein?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Albert_Einstein> <http://dbpedia.org/ontology/doctoralAdvisor> ?uri . },[<http://dbpedia.org/resource/Alfred_Kleiner>],,,,,,,,
+168,In which city does Sylvester Stallone live?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/City> . <http://dbpedia.org/resource/Sylvester_Stallone> <http://dbpedia.org/ontology/residence> ?uri . },"[http://dbpedia.org/resource/Beverly_Hills, <http://dbpedia.org/resource/California>]",,,,,,,,
+169,What is the currency of the Czech Republic?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+	res:Czech_Republic dbo:currency ?uri .
+}",[<http://dbpedia.org/resource/Czech_koruna>],,,,,,,,
+170,Did Socrates influence Aristotle?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+	res:Aristotle dbo:influencedBy res:Socrates .
+}",[true],,,,,,,,
+171,What is the time zone of Salt Lake City?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:Salt_Lake_City dbp:timezone ?uri . 
+}",[<http://dbpedia.org/resource/Mountain_Time_Zone>],,,,,,,,
+172,Who is the son of Sonny and Cher?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Cher> . ?uri <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Sonny_Bono> . },[<http://dbpedia.org/resource/Chaz_Bono>],,,,,,,,
+173,In which city are the headquarters of the United Nations?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Headquarters_of_the_United_Nations> <http://dbpedia.org/ontology/location> ?uri . ?uri a <http://dbpedia.org/ontology/City> . } ,[<http://dbpedia.org/resource/New_York_City>],,,,,,,,
+174,Who is the founder of Penguin Books?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri
+WHERE { 
+        res:Penguin_Books dbo:founder ?uri .
+}",[<http://dbpedia.org/resource/Allen_Lane>],,,,,,,,
+175,When was Jack Wolfskin founded?,SELECT DISTINCT ?year WHERE {  <http://dbpedia.org/resource/Jack_Wolfskin> <http://dbpedia.org/ontology/foundingYear> ?year . } ,"[""1981""^^xsd:gYear]",,,,,,,,
+176,Who is the mayor of Rotterdam?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+        res:Rotterdam dbo:leaderName ?uri .
+}",[<http://dbpedia.org/resource/Ahmed_Aboutaleb>],,,,,,,,
+177,Give me all Swedish oceanographers.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+        ?uri dbo:field res:Oceanography . 
+        ?uri dbo:birthPlace res:Sweden .        
+}","[<http://dbpedia.org/resource/Tad_Murty>, <http://dbpedia.org/resource/Henry_Elderfield>, <http://dbpedia.org/resource/Bj%C3%B8rn_Helland-Hansen>, <http://dbpedia.org/resource/Stephen_E._Calvert>, <http://dbpedia.org/resource/Walter_Munk>, <http://dbpedia.org/resource/Maurice_Ewing>, <http://dbpedia.org/resource/Shailesh_Nayak>, <http://dbpedia.org/resource/Mar%C3%ADa_de_los_%C3%81ngeles_Alvari%C3%B1o_Gonz%C3%A1lez>, <http://dbpedia.org/resource/Josh_Willis>, <http://dbpedia.org/resource/Archibald_Gowanlock_Huntsman>, <http://dbpedia.org/resource/Lucien_Laubier>, <http://dbpedia.org/resource/Vagn_Walfrid_Ekman>, <http://dbpedia.org/resource/T._Wayland_Vaughan>, <http://dbpedia.org/resource/Joseph_Pedlosky>, <http://dbpedia.org/resource/Peter_Clift>, <http://dbpedia.org/resource/Alexandra_Worden>, <http://dbpedia.org/resource/Louis_Dangeard>, <http://dbpedia.org/resource/Stefan_Rahmstorf>, <http://dbpedia.org/resource/Felisa_Wolfe-Simon>, <http://dbpedia.org/resource/Archie_Carr>, <http://dbpedia.org/resource/Bruce_C._Heezen>, <http://dbpedia.org/resource/Alfred_C._Redfield>, <http://dbpedia.org/resource/Anny_Cazenave>, <http://dbpedia.org/resource/Marie_Tharp>, <http://dbpedia.org/resource/Robert_F._Dill>, <http://dbpedia.org/resource/Suzette_Kimball>, <http://dbpedia.org/resource/Sulochana_Gadgil>, <http://dbpedia.org/resource/Henryk_Arctowski>, <http://dbpedia.org/resource/Mojib_Latif>, <http://dbpedia.org/resource/Michael_Fasham>, <http://dbpedia.org/resource/Wies%C5%82aw_Mas%C5%82owski>, <http://dbpedia.org/resource/Jeffrey_C._Wynn>, <http://dbpedia.org/resource/Reuben_Lasker>, <http://dbpedia.org/resource/Alfred_Merz>, <http://dbpedia.org/resource/Harald_Sverdrup_(oceanographer)>, <http://dbpedia.org/resource/Peter_Huybers>, <http://dbpedia.org/resource/Sylvia_Earle>, <http://dbpedia.org/resource/Carl_Wunsch>, <http://dbpedia.org/resource/Nikolai_Mikhailovich_Knipovich>, <http://dbpedia.org/resource/Georg_W%C3%BCst>, <http://dbpedia.org/resource/Peter_A._Rona>, <http://dbpedia.org/resource/John_Imbrie>]",,,,,,,,
+178,Show me Hemingway's autobiography.,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Ernest_Hemingway> . ?uri <http://dbpedia.org/ontology/literaryGenre> <http://dbpedia.org/resource/Autobiography> . },"[<http://dbpedia.org/resource/Death_in_the_Afternoon>, <http://dbpedia.org/resource/Green_Hills_of_Africa>, <http://dbpedia.org/resource/A_Farewell_to_Arms>, <http://dbpedia.org/resource/Islands_in_the_Stream_(novel)>, http://dbpedia.org/resource/A_Clean, <http://dbpedia.org/resource/The_Complete_Short_Stories_of_Ernest_Hemingway>, <http://dbpedia.org/resource/The_Fifth_Column_and_Four_Stories_of_the_Spanish_Civil_War>, <http://dbpedia.org/resource/To_Have_and_Have_Not>, <http://dbpedia.org/resource/A_Moveable_Feast>, <http://dbpedia.org/resource/The_Garden_of_Eden_(novel)>, <http://dbpedia.org/resource/Dateline:_Toronto>, <http://dbpedia.org/resource/In_Another_Country>, <http://dbpedia.org/resource/For_Whom_the_Bell_Tolls>, <http://dbpedia.org/resource/Che_Ti_Dice_La_Patria%3F>, <http://dbpedia.org/resource/The_Old_Man_and_the_Sea>, <http://dbpedia.org/resource/Now_I_Lay_Me>, <http://dbpedia.org/resource/The_Dangerous_Summer>, <http://dbpedia.org/resource/Hills_Like_White_Elephants>, <http://dbpedia.org/resource/The_Fifth_Column_and_the_First_Forty-Nine_Stories>, <http://dbpedia.org/resource/Across_the_River_and_into_the_Trees>, <http://dbpedia.org/resource/A_Day's_Wait>]",,,,,,,,
+179,Who are the parents of the wife of Juan Carlos I?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Juan_Carlos_I_of_Spain dbo:spouse ?x . 
+        ?x dbo:parent ?uri . 
+}","[<http://dbpedia.org/resource/Frederica_of_Hanover>, <http://dbpedia.org/resource/Paul_of_Greece>]",,,,,,,,
+180,Did Tesla win a nobel prize in physics?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+        res:Nikola_Tesla dbo:award res:Nobel_Prize_in_Physics .
+}",[true],,,,,,,,
+181,Who is the tallest basketball player?,SELECT DISTINCT ?uri WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/BasketballPlayer> .  ?uri <http://dbpedia.org/ontology/height> ?num . } ORDER BY DESC(?num) OFFSET 0 LIMIT 1 ,[<http://dbpedia.org/resource/Thijs_Vermeulen>],,,,,,,,
+182,Which city has the least inhabitants?,SELECT DISTINCT ?uri WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/City> .  ?uri <http://dbpedia.org/ontology/populationTotal> ?pop . } ORDER BY ASC(?pop) OFFSET 0 LIMIT 1 ,"[<http://dbpedia.org/resource/Greenhorn,_Orego>]",,,,,,,,
+183,Is proinsulin a protein?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ASK 
+WHERE {
+	res:Proinsulin rdf:type dbo:Protein .
+}",[true],,,,,,,,
+184,Who were the parents of Queen Victoria?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+         res:Queen_Victoria dbo:parent ?uri .
+}","[http://dbpedia.org/resource/Prince_Edward, <http://dbpedia.org/resource/Princess_Victoria_of_Saxe-Coburg-Saalfeld>]",,,,,,,,
+185,Did Che Guevara have children?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK
+WHERE { 
+        res:Che_Guevara dbo:child ?uri . 
+}",[true],,,,,,,,
+186,Is Lake Baikal bigger than the Great Bear Lake?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+ASK
+WHERE {  
+        res:Lake_Baikal dbo:areaTotal ?a1 . 
+        res:Great_Bear_Lake dbo:areaTotal ?a2 .
+        FILTER (?a1 > ?a2)
+}",[true],,,,,,,,
+187,Did Kaurismäki ever win the Grand Prix at Cannes?,ASK WHERE { <http://dbpedia.org/resource/Aki_Kaurismäki> <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Grand_Prix_(Cannes_Film_Festival)> . },[true],,,,,,,,
+188,Give me all books by William Goldman with more than 300 pages.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri 
+WHERE {
+        ?uri rdf:type dbo:Book .
+        ?uri dbo:author res:William_Goldman .
+        ?uri dbo:numberOfPages ?x .
+        FILTER (?x > 300)
+}","[<http://dbpedia.org/resource/The_Color_of_Light>, <http://dbpedia.org/resource/Boys_and_Girls_Together>, <http://dbpedia.org/resource/Which_Lie_Did_I_Tell%3F>, <http://dbpedia.org/resource/Wait_Till_Next_Year>, <http://dbpedia.org/resource/Tinsel_(novel)>, <http://dbpedia.org/resource/Control_(novel)>, <http://dbpedia.org/resource/Marathon_Man_(novel)>, <http://dbpedia.org/resource/Hype_and_Glory>, <http://dbpedia.org/resource/The_Princess_Bride>, <http://dbpedia.org/resource/Brothers_(Goldman_novel)>]",,,,,,,,
+189,Where is Fort Knox located?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/Fort_Knox> <http://dbpedia.org/property/location> ?uri . },[<http://dbpedia.org/resource/Kentucky>],,,,,,,,
+190,In which U.S. state is Fort Knox located?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+	res:Fort_Knox dbp:location ?uri .
+        ?uri dbo:country res:United_States .
+}",[<http://dbpedia.org/resource/Kentucky>],,,,,,,,
+191,Where is Syngman Rhee buried?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Syngman_Rhee> <http://dbpedia.org/ontology/restingPlace> ?uri . } ,[<http://dbpedia.org/resource/Seoul_National_Cemetery>],,,,,,,,
+192,What is the timezone in San Pedro de Atacama?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/San_Pedro_de_Atacama> <http://dbpedia.org/ontology/timeZone> ?uri . } ,[<http://dbpedia.org/resource/Time_in_Chile>],,,,,,,,
+193,To which artistic movement did the painter of The Three Dancers belong?,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/The_Three_Dancers> <http://dbpedia.org/ontology/author> ?person .  ?person <http://dbpedia.org/ontology/movement> ?uri . } ,[<http://dbpedia.org/resource/Cubism>],,,,,,,,
+194,Which scientist is known for the Manhattan Project and the Nobel Peace Prize?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+        ?uri dbo:knownFor res:Manhattan_Project .
+        ?uri rdf:type dbo:Scientist .
+        ?uri dbo:knownFor res:Nobel_Peace_Prize .
+}","[<http://dbpedia.org/resource/Ralph_Bunche>, <http://dbpedia.org/resource/Ferdinand_Buisson>, <http://dbpedia.org/resource/Joseph_Rotblat>, <http://dbpedia.org/resource/Ludwig_Quidde>, <http://dbpedia.org/resource/Jody_Williams>, <http://dbpedia.org/resource/Norman_Angell>, <http://dbpedia.org/resource/Emily_Greene_Balch>]",,,,,,,,
+195,Show me all books in Asimov's Foundation series.,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/series> <http://dbpedia.org/resource/Foundation_series> . } ,[<http://dbpedia.org/resource/Seoul_National_Cemetery>],,,,,,,,
+197,Which museum in New York has the most visitors?,SELECT DISTINCT ?uri WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Museum> .  ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/New_York_City> .  ?uri <http://dbpedia.org/ontology/numberOfVisitors> ?num . } ORDER BY DESC(?num) OFFSET 0 LIMIT 1 ,[<http://dbpedia.org/resource/Museum_of_Motherhood>],,,,,,,,
+198,How high is the Yokohama Marine Tower?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?num
+WHERE {
+        res:Yokohama_Marine_Tower dbo:height ?num .
+}","[""106.0704""^^xsd:double]",,,,,,,,
+199,Does the new Battlestar Galactica series have more episodes than the old one?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+ASK 
+WHERE {
+	<http://dbpedia.org/resource/Battlestar_Galactica_%281978_TV_series%29> dbo:numberOfEpisodes ?x .
+	<http://dbpedia.org/resource/Battlestar_Galactica_%282004_TV_series%29> dbo:numberOfEpisodes ?y .
+	FILTER (?y > ?x)
+}",[true],,,,,,,,
+200,Who is the youngest Darts player?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?uri
+WHERE {
+        ?uri rdf:type dbo:DartsPlayer .
+        ?uri dbo:birthDate ?date .
+}
+ORDER BY DESC(?date)
+OFFSET 0 LIMIT 1",[<http://dbpedia.org/resource/Max_Hopp>],,,,,,,,
+201,Who developed the video game World of Warcraft?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:World_of_Warcraft dbo:developer ?uri . 
+}",[<http://dbpedia.org/resource/Blizzard_Entertainment>],,,,,,,,
+202,Who was the pope that founded the Vatican Television?,"PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT ?uri 
+WHERE { 
+         ?uri rdf:type dbo:Pope . 
+         res:Vatican_Television_Center dbo:foundedBy ?uri .
+}",[<http://dbpedia.org/resource/Pope_John_Paul_II>],,,,,,,,
+203,Who composed the music for Harold and Maude?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?uri 
+WHERE {
+	res:Harold_and_Maude dbo:musicComposer ?uri .
+}",[<http://dbpedia.org/resource/Cat_Stevens>],,,,,,,,
+204,Give me all members of Prodigy.,SELECT DISTINCT ?uri WHERE {  <http://dbpedia.org/resource/The_Prodigy> <http://dbpedia.org/ontology/bandMember> ?uri . } ,"[<http://dbpedia.org/resource/Keith_Flint>, <http://dbpedia.org/resource/Liam_Howlett>, <http://dbpedia.org/resource/Maxim_Reality>]",,,,,,,,
+205,Who is starring in Spanish movies produced by Benicio del Toro?,SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Spain> . ?film <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Benicio_del_Toro> . ?film <http://dbpedia.org/ontology/starring> ?uri . ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person> . } ,"[<http://dbpedia.org/resource/Maxim_(musician)>, <http://dbpedia.org/resource/Liam_Howlett>, <http://dbpedia.org/resource/Keith_Flint>]",,,,,,,,
+206,Which subsidiary of TUI Travel serves both Glasgow and Dublin?,SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/TUI_Travel> <http://dbpedia.org/ontology/subsidiary> ?uri .  ?uri <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Glasgow_Airport> . ?uri <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Dublin_Airport> . } ,"[<http://dbpedia.org/resource/Thomson_Airways>, <http://dbpedia.org/resource/Thomson_Holidays>]",,,,,,,,
+207,In which country is Mecca located?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri 
+WHERE {  
+        res:Mecca dbo:country ?uri .
+}",[<http://dbpedia.org/resource/Benicio_del_Toro>],,,,,,,,
+208,How many languages are spoken in Colombia?,SELECT (COUNT(DISTINCT ?uri) as ?c) WHERE {  ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Language> .  <http://dbpedia.org/resource/Colombia> <http://dbpedia.org/ontology/language> ?uri . } ,[2],,,,,,,,
+209,What is the biggest stadium in Spain?,SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Stadium> . ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Spain> . ?uri <http://dbpedia.org/ontology/seatingCapacity> ?n . } ORDER BY DESC(?n) OFFSET 0 LIMIT 1,[<http://dbpedia.org/resource/Camp_Nou>],,,,,,,,
+210,Which professional surfers were born on the Philippines?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+SELECT DISTINCT ?uri
+WHERE {
+	?uri dbo:occupation res:Surfing .
+	?uri dbo:birthPlace res:Philippines .
+}","[<http://dbpedia.org/resource/Kevin_Volchok>, <http://dbpedia.org/resource/Mark_Morgan_(composer)>, <http://dbpedia.org/resource/Midget_Farrelly>, <http://dbpedia.org/resource/Doc_Paskowitz>, <http://dbpedia.org/resource/Marcus_Adoro>, <http://dbpedia.org/resource/Peggy_Oki>, <http://dbpedia.org/resource/Cheyne_Magnusson>, <http://dbpedia.org/resource/Johnny_Harper>, <http://dbpedia.org/resource/Simon_Anderson>, <http://dbpedia.org/resource/James_Lovett>, <http://dbpedia.org/resource/Koby_Abberton>, <http://dbpedia.org/resource/Daize_Shayne>, <http://dbpedia.org/resource/Ian_Cairns>, <http://dbpedia.org/resource/Kit_Horn>]",,,,,,,,
+211,What are the five boroughs of New York?,SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/governmentType> <http://dbpedia.org/resource/Borough_(New_York_City)> . },"[<http://dbpedia.org/resource/The_Bronx>, <http://dbpedia.org/resource/Brooklyn>, <http://dbpedia.org/resource/Queens>, <http://dbpedia.org/resource/Staten_Island>, <http://dbpedia.org/resource/Manhattan>]",,,,,,,,
+212,Is Cola a beverage?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ASK 
+WHERE {
+        res:Cola rdf:type dbo:Beverage .
+}",[true],,,,,,,,
+213,When did princess Diana die?,"SELECT DISTINCT ?d WHERE { <http://dbpedia.org/resource/Diana,_Princess_of_Wales> <http://dbpedia.org/ontology/deathDate> ?d . }","[""1997-08-31""^^xsd:date]",,,,,,,,
+214,Where in France is sparkling wine produced?,"PREFIX res: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT DISTINCT ?uri
+WHERE {
+        ?uri dbo:wineProduced res:Sparkling_wine .
+        ?uri dbo:location res:France .
+}","[<http://dbpedia.org/resource/Tasmanian_wine>, <http://dbpedia.org/resource/Wahluke_Slope_AVA>, <http://dbpedia.org/resource/Columbia_Valley_AVA>, <http://dbpedia.org/resource/Yakima_Valley_AVA>, <http://dbpedia.org/resource/Puget_Sound_AVA>, <http://dbpedia.org/resource/Horse_Heaven_Hills_AVA>, <http://dbpedia.org/resource/Loire_Valley_(wine)>, <http://dbpedia.org/resource/Walla_Walla_Valley_AVA>]",,,,,,,,
+,,,,,,0,0,0,NaN,NaN,NaN

@@ -13,38 +13,43 @@ import java.util.List;
  * @author elahi
  */
 public class QAElement {
+
     private List<String[]> question = new ArrayList<String[]>();
-    private String sparql = null;
+    private List<String> bindingSparqls = new ArrayList<String>();
+    private String questionSparql = null;
     private String complexSentence = null;
-    
-    public QAElement(List<String[]> question,String sparql){
-       this.question = question;
-       this.sparql = sparql;
+
+    public QAElement(List<String[]> question, List<String> bindingSparqls, String questionSparql) {
+        this.question = question;
+        this.bindingSparqls = bindingSparqls;
+        this.questionSparql = questionSparql;
     }
-    public QAElement(List<String[]> question,String sparql,String  complexSentence){
-       this.question = question;
-       this.sparql = sparql;
-       this.complexSentence = complexSentence;
+
+    public QAElement(List<String[]> question, List<String> bindingSparqls, String questionSparql, String complexSentence) {
+        this.question = question;
+        this.bindingSparqls = bindingSparqls;
+        this.complexSentence = complexSentence;
     }
 
     public List<String[]> getQuestion() {
         return question;
     }
 
-    public String getSparql() {
-        return sparql;
-    }
-
     public String getComplexSentence() {
         return complexSentence;
     }
 
+    public List<String> getBindingSparqls() {
+        return bindingSparqls;
+    }
+
+    public String getQuestionSparql() {
+        return questionSparql;
+    }
 
     @Override
     public String toString() {
-        return "QAElement{" + "question=" + question + ", sparql=" + sparql + '}';
+        return "QAElement{" + "question=" + question + ", sparql1=" + bindingSparqls+'}';
     }
 
-   
-    
 }

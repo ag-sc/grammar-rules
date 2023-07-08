@@ -59,11 +59,32 @@ public class StringModifier {
         String label = StringModifier.cleanHttp(entity, language);
         //label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
         label = label.strip().stripLeading().stripTrailing().trim();
-        if (label.contains("(")) {
+        
+        /*if(entity.contains("Slack")){
+            System.out.println(label);
+        }
+        System.out.println(entity+ " label::"+label);
+        */
+        if (label.contains("(") && label.contains(")")) {
             String insideStr = StringUtils.substringBetween(label, "(", ")");
-            label = label.replace(insideStr, "").replace("(", "").replace(")", "");
+            if (insideStr!=null) {
+                label = label.replace(insideStr, "").replace("_(", "").replace(")", "");
+                label = label.replace("(", "");
+            }
+            else {
+                label = label.replace("(", "").replace(")", "");
+            }
+
         }
         return label.toLowerCase();
     }
+    
+     public static void main(String []args) {
+         String entity="http://dbpedia.org/resource/Slack_(software)";
+         entity="http://dbpedia.org/resource/IT_infrastructure_management)_(cloud_services";
+         String label=makeLabel( entity,  "en");
+         System.out.println(label);
+         
+     }
 
 }
