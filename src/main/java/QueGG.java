@@ -16,7 +16,7 @@ import utils.TripleProcess;
 public class QueGG {
 
     private static String grammarFileName = "grammarFiles/grammar_FULL_DATASET_EN.json";
-    private static String inputDir = "/home/elahi/A-Grammar/grammar-rules/resources/";
+    private static String inputDir = "resources/";
     private static String qaldFileName = "";
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
