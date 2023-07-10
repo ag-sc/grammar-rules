@@ -79,6 +79,10 @@ public class StringModifier {
         return label.toLowerCase();
     }
     
+    public static String deleteQuote(String sentence) {
+        return sentence.replace("\"", "");
+    }
+    
      public static void main(String []args) {
          String entity="http://dbpedia.org/resource/Slack_(software)";
          entity="http://dbpedia.org/resource/IT_infrastructure_management)_(cloud_services";
