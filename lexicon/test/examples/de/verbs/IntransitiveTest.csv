@@ -1,0 +1,6 @@
+LemonEntry,partOfSpeech,writtenFormInfinitive,writtenFormThridPerson,writtenFormPast,writtenFormPast,preposition,SyntacticFrame,subject,prepositionalAdjunct,sense,reference,domain,range,domainArticle,domainWrittenSingular,domainWrittenPlural,rangeArticle,rangeWrittenSingular,rangeWrittenPlural
+durchführen,TrennVerb,durchführen,führt durch,führte durch,durchgeführt,am,IntransitivePPFrame,domain,range,1,dbo:date,dbo:MilitaryConflict,xsd:date,masculine,MilitärKonflikt,MilitärKonflikte,neuter,-,-
+verheiraten_mit,verb,verheiraten,verheiratet,verheiratete,verheiratet,mit,IntransitivePPFrame,domain,range,1,dbo:spouse,dbo:Person,dbo:Person,masculine,Person,Personen,masculine,Person,Personen
+fertigstellen_in,TrennVerb,fertigstellen,stellt fertig,stellte fertig,fertiggestellt,in,IntransitivePPFrame,domain,range,1,dbo:completionDate,dbo:Ship,xsd:date,neuter,Schiff,Schiffe,neuter,-,-
+ausstellen,TrennVerb,ausstellen,stellt aus,stellte aus,ausgestellt,in,IntransitivePPFrame,domain,range,1,dbo:museum,dbo:Artwork,dbo:Museum,neuter,Kunstwerk,Kunstwerke,neuter,Museum,Museen
+befinden,RefVerb,befinden,befindet,befand,befunden,in,IntransitivePPFrame,domain,range,1,dbo:country,dbo:Lake,dbo:Country,masculine,See,Seen,feminine,Land,Länder

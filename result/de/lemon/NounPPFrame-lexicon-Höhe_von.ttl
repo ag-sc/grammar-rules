@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Höhe_von ;
+  lemon:entry    :Höhe_von_form_preposition .
+
+:Höhe_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :Höhe_von_form ;
+  lemon:otherForm      :Höhe_von_plural_form ;
+  lemon:otherForm      :Höhe_von_accusative_form ;
+  lemon:otherForm      :Höhe_von_dative_form ;
+  lemon:otherForm      :Höhe_von_genitive_form ;
+  lemon:otherForm      :Höhe_von_plural_form ;
+  lemon:sense          :Höhe_von_sense_1 ;
+  lemon:synBehavior    :Höhe_von_nounpp .
+
+:Höhe_von_form a lemon:Form ;
+  lemon:writtenRep "Höhe"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Höhe_von_plural_form a lemon:Form ;
+  lemon:writtenRep "-"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Höhe_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Höhe"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:Höhe_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Höhe"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:Höhe_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Höhe"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:Höhe_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:Höhe_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :Höhe_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/height> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :Höhe_von_sense_1_condition .
+
+:Höhe_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Lighthouse> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#integer> .
+
+:arg2 lemon:marker :Höhe_von_form_preposition .
+
+## Prepositions ##
+
+:Höhe_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

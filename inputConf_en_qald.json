@@ -1,0 +1,23 @@
+{
+  "languageCode" : "en",
+   "online" : "false",
+   "externalEntittyList" : "false",
+  "inputDir"     : "lexicon",
+  "outputDir"    : "../resources/",
+  "entityDir"    : "../resources/en/property/",
+  "questionDir"  : "../resources/en/questions/",
+  "classDir"     : "../resources/en/entity/",
+  "wikiFile"     : "../resources/en/turtle/wikipedia_links_en_filter.ttl",
+  "abstractFile" : "../resources/en/turtle/short_abstracts_sorted_en_filter.ttl",
+  "qaldDir"      : "qald7Original",
+  "numberOfEntities" : 100,
+  "similarityThresold" : 0.7,
+  "csvToTurtle" : false,
+  "turtleToProtoType" : false,
+  "single": true,
+  "composite": false,
+  "protoTypeToQuestion" : false,
+  "evalution" : true
+}
+
+

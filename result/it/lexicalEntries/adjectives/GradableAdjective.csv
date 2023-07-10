@@ -1,0 +1,21 @@
+LemonEntry,partOfSpeech,writtenForm,comparative,superlative_singular,superlative_plural,SyntacticFrame,predFrame,sense,reference,oils:boundTo,oils:degree,domain,range,preposition,domainArticleIndex,domainWrittenSingularForm,domainWrittenPluralForm,rangeArticleIndex,rangeWrittenSingularForm,rangeWrittenPluralForm
+High_1,adjective,alto,più alto,il più alto,il più alto,AdjectiveSuperlativeFrame,PredSynArg,1,oils:CovariantScalar,dbo:elevation,oils:strong,dbo:Place,dbo:Mountain,in,masculine_il,paese,paesi,feminine_la,montagna,montagna
+High_2,adjective,alto,più alto,il più alto,il più alto,AdjectiveSuperlativeFrame,PredSynArg,1,oils:CovariantScalar,dbo:height,oils:high,dbo:Place,dbo:Lighthouse,in,masculine_il,paese,paesi,masculine_il,faro,fari
+Tall_1,adjective,alta,più alta,il più alta,la più alta,AdjectiveSuperlativeFrame,PredSynArg,1,oils:CovariantScalar,dbo:height,oils:high,dbo:Place,dbo:Tower,in,masculine_il,paese,paesi,feminine_la,torre,torre
+Tall_2,adjective,alta,più alta,il più alta,la più alta,AdjectiveSuperlativeFrame,PredSynArg,1,oils:CovariantScalar,dbo:height,oils:high,owl:Thing,dbo:Model,in,masculine_il,mondo,mondo,masculine_li,modello,modelli
+Tall_3,adjective,alta,più alta,il più alta,la più alta,AdjectiveSuperlativeFrame,PredSynArg,1,oils:CovariantScalar,dbo:height,oils:high,owl:Thing,dbo:BasketballPlayer,al,masculine_il,mondo,mondo,masculine_il,giocatore di pallacanestro,giocatore di pallacanestro
+Large_1,adjective,grande,più grande,il più grande,il più grande,AdjectiveSuperlativeFrame,PredSynArg,1,oils:CovariantScalar,dbo:seatingCapacity,oils:high,dbo:Country,dbo:Stadium,in,masculine_il,paese,paesi,masculine_lo,stadio,stadi
+Large_2,adjective,grande,più grande,il più grande,il più grande,AdjectiveSuperlativeFrame,PredSynArg,1,oils:CovariantScalar,dbo:areaTotal,oils:high,owl:Thing,dbo:Country,al,masculine_il,país,países,masculine_il,nazione,nazione
+young,adjective,giovane,più giovane,il più giovane,il più giovane,AdjectiveSuperlativeFrame,PredSynArg,1,oils:CovariantScalar,dbo:birthDate,oils:high,owl:Thing,dbo:DartsPlayer,in,masculine_il,mondo,mondo,masculine_il,giocatore di freccette,giocatore di freccette
+high,adjective,alto,più alto,il più alto,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:elevation,oils:strong,dbo:Country,dbo:Mountain,,,,,,,
+tall,adjective,alto,più alto,il più alto,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:elevation,oils:strong,dbo:Country,dbo:Building,,,,,,,
+big,adjective,grande,più grande,il più grande,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:seatingCapacity,oils:high,dbo:Country,dbo:Stadium,,,,,,,
+large,adjective,grande,più grande,il più grande,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:areaTotal,oils:high,dbo:Country,dbo:City,,,,,,,
+populous,adjective,popolosa,-,la più popolosa,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:populationTotal,oils:high,dbo:Country,dbo:City,,,,,,,
+small,adjective,piccolo,più piccolo,il più piccolo,,AdjectiveGradableFrame,PredSynArg,1,oils:ContravariantScalar,dbo:areaTotal,oils:low,dbo:Country,dbo:City,,,,,,,
+-,adjective,piccolo,più piccolo,il più piccolo,,AdjectiveGradableFrame,PredSynArg,1,oils:ContravariantScalar,dbo:populationTotal,oils:low,dbo:Country,dbo:City,,,,,,,
+long,adjective,lungo,più lungo,il più lungo,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:length,oils:high,dbo:Country,dbo:Bridge,,,,,,,
+-,adjective,lungo,più lungo,il più lungo,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:length,oils:high,dbo:Country,dbo:River,,,,,,,
+tall,adjective,alto,più alto,il più alto,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:elevation,oils:strong,dbo:ArchitecturalStructure,xsd:double,,,,,,-,
+tall_f,adjective,alta,più alta,la piiù alta,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:height,oils:high,dbo:Person,xsd:double,,,,,,,
+tall_m,adjective,alto,più alto,il più alto,,AdjectiveGradableFrame,PredSynArg,1,oils:CovariantScalar,dbo:height,oils:high,dbo:Person,xsd:double,,,,,,,

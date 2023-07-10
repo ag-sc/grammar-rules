@@ -64,7 +64,7 @@
                         </manifestEntries>
                     </archive>
 
-                    <finalName>QuestionGrammarGenerator</finalName>
+                    <finalName>grammar-rules</finalName>
                 </configuration>
             </plugin>
 

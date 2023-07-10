@@ -1,0 +1,2 @@
+LemonEntry,partOfSpeech,writtenFormInfinitive,writtenForm3rdPresent,writtenFormPast,writtenFormPerfect,SyntacticFrame,subject,directObject,sense,reference,domain,range,passivePreposition
+drehen,verb,drehen,dreht,drehte,gedreht,TransitiveFrame,range,domain,1,dbo:director,dbo:Film,dbo:Person,von

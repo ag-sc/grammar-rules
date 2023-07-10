@@ -1,0 +1,294 @@
+Class,Article,WrittenSingularForm,WrittenPluralForm
+dbo:Country,masculine,país,países
+dbo:City,feminine,ciudad,ciudades
+dbo:City,feminine,ciudad,ciudades
+dbo:Country,masculine,país,países
+dbo:Person,feminine,persona,personas
+dbo:Band,feminine,banda,bandas
+dbo:Person,feminine,persona,personas
+dbo:Musical,masculine,musical,musicales
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:City,feminine,ciudad,ciudades
+dbo:Country,masculine,país,países
+dbo: Software,masculine,software,software
+dbo:Place,feminine,Lage,Lagen
+dbo:Person,feminine,persona,personas
+dbo:Politician,masculine,político,políticos
+dbo:Politician,masculine,político,políticos
+dbo:Country,masculine,país,países
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Country,masculine,país,países
+dbo:VideoGame,masculine,videojuego,videojuegos
+dbo:VideoGame,masculine,videojuego,videojuegos
+dbo:FictionalCharacter,masculine,carácter ficticio,carácteres ficticios
+dbo:City,feminine,ciudad,ciudades
+dbo:Town,feminine,ciudad,ciudades
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Politician,masculine,político,políticos
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Location,feminine,ubicacion,ubicaciones
+dbo:WrittenWork,trabajo escrito,trabajos escritos,dbo:Person
+dbo:Legislature,masculine,legislador,legisladores
+dbo:Country,masculine,país,países
+dbo:Country,masculine,país,países
+dbo:Food,masculine,ingredientes,ingredientes
+dbo:WrittenWork,masculine,Trabajo escrito,Trabajo escrito
+dbo:Publisher,masculine,editor,editor
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:Place,feminine,ciudad,ciudades
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Language,masculine,idioma,idiomas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+xsd:string,-,-,-
+dbo:GovernmentType,masculine,tipo,tipos
+dbo:University,feminine,universidad,universidades
+xsd:string,-,-,-
+dbo:Person,masculine,país,países
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Currency,feminine,moneda,monedas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:City,feminine,ciudad,ciudades
+dbo:Company,feminine,empresa,empresas
+dbo:Publisher,masculine,editor,editor
+xsd:string,-,-,-
+xsd:string,-,-,-
+xsd:string,-,-,-
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+xsd:string,-,-,-
+dbo:Place,masculine,lugar,lugares
+xsd:string,-,-,-
+xsd:double,-,-,-
+masculine,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:GovernmentType,masculine,tipo,tipos
+dbo:Country,masculine,tipo,tipos
+xsd:string,-,-,-
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Company,feminine,compañia,compañias
+dbo:Artwork,feminine,obra de arte,obras de arte
+dbo:Planet,masculine,planeta,planetas
+dbo:Bridge,masculine,puente,puentes
+dbo:Scientist,masculine,científico,científicos
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:Website,masculine,sitio web,sitio web
+dbo:Film,feminine,película,películas
+dbo:LaunchPad,feminine,plataforma de lanzamiento,plataformas de lanzamiento
+dbo:FictionalCharacter,masculine,carácter ficticio,caracteres ficticios
+dbo:FictionalCharacter,masculine,carácter ficticio,caracteres ficticios
+dbo:Book,masculine,libro,libros
+dbo:Film,feminine,película,películas
+dbo:Airline,feminine,aerolínea,aerolíneas
+dbo:ArchitecturalStructure,feminine,estructura arquitectónica,estructuras arquitectónicas
+dbo:Colour,masculine,color,colores
+dbo:VideoGame,masculine,videojuego,videojuegos
+dbo:Colour,masculine,color,colores
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:Song,neuter,canción,canciones
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:Book,feminine,persona,personas
+dbo:Film,feminine,película,películas
+dbo:Agent,feminine,compañia,compañias
+dbo:CelestialBody,masculine,cuerpo celeste,cuerpos celestes
+dbo:Person,feminine,persona,personas
+dbo:Artist,masculine,artista,artistas
+dbo:Person,feminine,ciudad,ciudades
+dbo:Bridge,masculine,puente,puentes
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:Website,masculine,sitio web,sitios web
+dbo:Language,masculine,idioma,idiomas
+dbo:Work,masculine,trabajo,trabajo
+dbo:Mountain,montaña,montañas,dbo:Person
+dbo:Food,feminine,comida,comida
+dbo:Person,masculine,soldado,soldados
+dbo:Film,feminine,película,películas
+dbo:FictionalCharacter,masculine,carácter ficticio,caracteres ficticios
+dbo:Company,feminine,compañia,compañias
+dbo:EthnicGroup,masculine,grupo étnico,grupos étnicos
+dbo:Film,feminine,película,películas
+dbo:Person,feminine,ciudad,ciudades
+dbo:Person,feminine,ciudad,ciudades
+dbo:Ship,masculine,barco,barcos
+dbo:Work,feminine,obra,obras
+dbo:Scientist,masculine,científico,científicos
+dbo:Film,feminine,película,películas
+dbo:TelevisionShow,feminine,serie televisiva,series televisivas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Software,masculine,software,-
+dbo: Museum,masculine,museo,museos
+dbo:Person,feminine,ciudad,ciudades
+dbo:River,masculine,río,ríos
+dbo:Award,masculine,premio,premios
+dbo:Agent,masculine,agente,agentes
+dbo:Person,feminine,persona,personas
+dbo:Agent,masculine,agente,agentes
+dbo:Person,masculine,actor,actores
+dbo:Organisation,feminine,organización,organizaciones
+dbo:Person,feminine,ciudad,ciudades
+dbo:Person,feminine,ciudad,ciudades
+dbo:Agent,masculine,agente,agentes
+dbo:Person,feminine,ciudad,ciudades
+dbo:Airport,masculine,aeropuerto,aeropuertos
+dbo:Architect,masculine,arquitecto,arquitectos
+owl:Thing,-,-,-
+dbo:Agent,masculine,agente,agentes
+owl:Thing,-,-,-
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Person,masculine,libro,libros
+dbo:Person,feminine,persona,personas
+dbo:Pope,masculine,Papa,Papas
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Artist,masculine,artista,artistas
+dbo:Person,feminine,ciudad,ciudades
+dbo:Person,feminine,persona,personas
+dbo:Agent,masculine,agente,agentes
+dbo:Person,feminine,persona,personas
+dbo:Country,feminine,país,países
+dbo:Person,feminine,persona,personas
+feminine,feminine,persona,personas
+owl:Thing,-,-,-
+dbo:MilitaryConflict,masculine,conflicto militar,conflictos militares
+xsd:double,-,-,-
+dbo:Person,feminine,persona,personas
+dbo:Ship,masculine,barco,barcos
+dbo:Country,masculine,país,países
+xsd:double,-,-,-
+xsd:String,-,-,-
+dbo:Person,feminine,ciudad,ciudades
+dbo:Company,feminine,compañia,compañias
+dbo:Person,feminine,persona,personas
+dbo:Award,masculine,premio,premios
+xsd:double,-,-,-
+dbo:Person,feminine,persona,personas
+dbo:University,feminine,universidad,universidades
+xsd:String,-,-,-
+dbo:Road,masculine,camino,caminos
+dbo:WineRegion,feminine,región vitivinícola,regiones vitivinícolas
+dbo:Person,feminine,persona,personas
+dbo:PopulatedPlace,feminine,región administrativa,regiones administrativas
+dbo:Ship,masculine,barco,barcos
+dbo:Person,feminine,persona,personas
+dbo:Company,feminine,organización,organizaciones
+dbo:MilitaryConflict,masculine,conflicto,conflictos
+dbo:MilitaryConflict,masculine,conflicto,conflictos
+dbo:Person,feminine,persona,personas
+dbo:River,masculine,río,ríos
+dbo:Road,masculine,camino,caminos
+dbo:Person,feminine,persona,Personen
+dbo:Person,feminine,persona,Personen
+dbo:Person,feminine,persona,personas
+dbo:Person,feminine,persona,Personen
+dbo:Actor,masculine,actor,actores
+dbo:Surfing,masculine,surfistas profesionales,surfistas profesionales
+dbo:Ship,masculine,barco,barcos
+dbo:River,masculine,río,ríos
+dbo:River,masculine,río,ríos
+dbo:Location,feminine,localización,localizaciones
+dbo:MilitaryUnit,masculine,conflicto,conflictos
+dbo:HistoricPlace,masculine,Lugar,Lugar
+dbo:Lake,masculine,lago,lagos
+dbo:City,feminine,ciudad,ciudades
+dbo:Mountain,masculine,montaña,montaña
+dbo:Work,masculine,Unidad militar,Unidad militar
+dbo:River,masculine,río,ríos
+dbo:Country,feminine,país,países
+dbo:Person,feminine,persona,personas
+dbo:Single,feminine,persona,personas
+dbo:Food,feminine,comida,comida
+owl:Thing,-,-,-
+dbo:Grape,feminine,uva,uva
+dbo:MilitaryConflict,masculine,conflicto,conflictos
+dbo:MilitaryConflict,conflicto,conflictos,xsd:date
+dbo:Software,masculine,software,-
+dbo:Country,masculine,stati,stati
+dbo:Athlete,masculine,athleta,athletas
+,feminine,persona,personas
+dbo:Person,feminine,persona,personas
+dbo:Scientist,masculine,científico,científicos
+dbo:River,masculine,río,ríos
+dbo:Place,feminine,ciudad,ciudades
+dbo:Grape,feminine,tipo de uva,tipo de uva
+xsd:string,feminine,cosa,cosas
+xsd:date,-,-,-
+xsd:date,masculine,año,años
+dbo:Place,feminine,ciudad,ciudades
+xsd:gYear,masculine,año,años
+xsd:date,masculine,año,años
+xsd:date,-,-,-
+dbo:City,feminine,ciudad,ciudades
+dbo:City,feminine,ciudad,ciudades
+dbo:Road,masculine,camino,caminos
+xsd:date,masculine,año,años
+dbo:City,feminine,ciudad,ciudades
+xsd:date,masculine,año,años
+dbo:Place,masculine,país,países
+dbo:Place,masculine,país,países
+dbo:Place,masculine,país,países
+xsd:date,-,-,-
+dbo:City,feminine,ciudad,ciudades
+dbo:Country,feminine,país,países
+dbo:Place,masculine,lugar,lugares
+dbo:Location,masculine,estado,estado
+dbo:Location,feminine,localización,localizaciones
+dbo:Country,masculine,país,países
+dbo:Country,masculine,país,países
+dbo:Country,masculine,país,países
+dbo:Language,masculine,lenguaje de programación,lenguaje de programación
+dbo:Place,masculine,país,países
+xsd:double,-,-,-
+dbo:City,feminine,ciudad,ciudades
+dbo:City,feminine,ciudad,ciudades
+owl:Thing,masculine,ingredientes,ingredientes
+xsd:string,-,-,-
+dbo:Location,feminine,región,región
+xsd:date,-,-,-
+masculine,-,-,-
+dbo:Language,masculine,lenguaje de programación,lenguaje de programación
+dbo:Language,masculine,idioma,idiomas
+xsd:date,-,-,-
+xsd:String,-,-,-
+dbo:MilitaryUnit,feminine,unidad militar,unidades militares
+dbo:River,masculine,río,ríos
+dbo:Country,masculine,país,países
+dbo:Place,masculine,país,países
+owl:Thing,masculine,mundo,mundos
+owl:Thing,masculine,mundo,mundos
+owl:Thing,masculine,mundo,mundos
+dbo:Person,feminine,ciudad,ciudades
+dbo:Country,masculine,país,países
+owl:Thing,masculine,mundo,mundos
+owl:Thing,masculine,mundo,mundos
+dbo:Mountain,feminine,montaña,montañas
+dbo:Lighthouse,masculine,faro,faros
+dbo:BasketballPlayer,masculine,jugador de baloncesto,jugadores de baloncesto
+dbo:Model,masculine,modelo,modelos
+dbo:DartsPlayer,masculine,jugador de dardos,jugador de dardos
+dbo:Person,masculine,niño,niños
+dbo:Stadium,masculine,estadio,estadios
+dbo:Country,masculine,país,países
+dbo:Politician,masculine,político,políticos

@@ -1,0 +1,183 @@
+{
+  "grammarEntries" : [ {
+    "entry" : "aelt",
+    "id" : 1,
+    "Entry" : "aelt",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativePerson",
+      "sentences" : [ "wer ist älteste Kind of <NP{domain,dbo:birthDate}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:birthDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "groeß_1",
+    "id" : 2,
+    "Entry" : "groeß_1",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativeWorld",
+      "sentences" : [ "welcher Basketballspieler ist größte Basketballspieler in <NP{domain,dbo:height}>?", "wer ist größte Basketballspieler in <NP{domain,dbo:height}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:height}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:height}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "groeß_2",
+    "id" : 3,
+    "Entry" : "groeß_2",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativeWorld",
+      "sentences" : [ "welcher Modell ist größte Modell in <NP{domain,dbo:height}>?", "wer ist größte Modell in <NP{domain,dbo:height}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:height}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:height}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "groeß_3",
+    "id" : 4,
+    "Entry" : "groeß_3",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativeWorld",
+      "sentences" : [ "was ist größte Land in <NP{domain,dbo:areaTotal}>?", "welcher Land ist größte Land in <NP{domain,dbo:areaTotal}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:areaTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:areaTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:areaTotal ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:areaTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:areaTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:areaTotal ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "groeß_4",
+    "id" : 5,
+    "Entry" : "groeß_4",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativeLocation",
+      "sentences" : [ "was ist die größte Stadion in <NP{domain,dbo:seatingCapacity}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:seatingCapacity}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:seatingCapacity ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:seatingCapacity ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:seatingCapacity}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:seatingCapacity ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:seatingCapacity ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "hoch_1",
+    "id" : 6,
+    "Entry" : "hoch_1",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativeCountry",
+      "sentences" : [ "was ist die höchste Berg in <NP{domain,dbo:elevation}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:elevation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:elevation ?objOfProp.}",
+      "answerSparqlQuery" : "(bgp (triple ?subjOfProp <http://dbpedia.org/ontology/elevation> ?objOfProp))\n"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:elevation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:elevation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:elevation ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "hoch_2",
+    "id" : 7,
+    "Entry" : "hoch_2",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativeCountry",
+      "sentences" : [ "was ist die höchste Leuchtturm in <NP{domain,dbo:height}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:height}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}",
+      "answerSparqlQuery" : "(bgp (triple ?subjOfProp <http://dbpedia.org/ontology/height> ?objOfProp))\n"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:height}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "jueng_1",
+    "id" : 8,
+    "Entry" : "jueng_1",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativeWorld",
+      "sentences" : [ "welcher Dartspieler ist jüngsten Dartspieler in <NP{domain,dbo:birthDate}>?", "wer ist jüngsten Dartspieler in <NP{domain,dbo:birthDate}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:birthDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "jueng_2",
+    "id" : 9,
+    "Entry" : "jueng_2",
+    "syntacticFrame" : "AG",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : "superlativeWorld",
+      "sentences" : [ "welcher Politiker ist jüngsten Politiker in <NP{domain,dbo:birthDate}>?", "wer ist jüngsten Politiker in <NP{domain,dbo:birthDate}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "adjectiveBaseForm",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:birthDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthDate ?objOfProp.}"
+    } ]
+  } ]
+}

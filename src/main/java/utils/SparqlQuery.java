@@ -11,9 +11,6 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import javax.xml.parsers.DocumentBuilder;
@@ -109,6 +106,7 @@ public class SparqlQuery {
             Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
             return doc;
         } catch (Exception e) {
+            System.out.println("localEndpoint is NOT runing!!!!!");
             e.printStackTrace();
         }
         return null;
@@ -126,6 +124,7 @@ public class SparqlQuery {
                     if ("result".equals(childNode.getNodeName())) {
                         String objectOfProperty = childList.item(j).getTextContent().trim();
                         String label = StringModifier.makeLabel(objectOfProperty, "en");
+                        //System.out.println(objectOfProperty);
                         entityMap.put(label, objectOfProperty);
                     }
                 }
@@ -192,16 +191,23 @@ public class SparqlQuery {
         //"SELECT ?o WHERE {  ?o <http://dbpedia.org/ontology/presenter> <http://dbpedia.org/resource/David_Attenborough> .}";
         // String sparql="SELECT ?s WHERE { ?subjOfProp ?p ?o .}";
         //<http://dbpedia.org/resource/BBC_Wildlife_Specials>
-        sparql="SELECT ?subjOfProp WHERE { ?subjOfProp <http://dbpedia.org/ontology/language> ?objOfProp .}";
+        sparql = "SELECT ?objOfProp WHERE { ?Answer <http://dbpedia.org/ontology/foundingYear> ?objOfProp .}";
+        //PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?s ?uri WHERE { ?s dbo:officialLanguage ?uri }
         SparqlQuery sparqlQuery=new SparqlQuery(sparql);
         entityMap=sparqlQuery.getEntityMap();
-        String objectOfProperty="http://dbpedia.org/resource/Turkmenistan";
+        String objectOfProperty="http://dbpedia.org/resource/New_York_City";
         String label=StringModifier.makeLabel(objectOfProperty, "en");
         
-        System.out.println(entityMap.size());
+        for(String key:entityMap.keySet()){
+            String value=entityMap.get(key);
+            System.out.println(key+" "+value); 
+
+        }
+        label="1950";
         if(entityMap.containsKey(label)){
             String value=entityMap.get(label);
-            System.out.println(value);
+            System.out.println("value::"+value); 
+           
         }
         //FileUtils.hashMapOrgtoFile(sparqlQuery.getEntityMap(), "/home/elahi/A-Grammar/grammar-rules/resources/entity.txt");
         

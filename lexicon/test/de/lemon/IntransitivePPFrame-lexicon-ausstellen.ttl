@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :ausstellen ;
+  lemon:entry    :form_ausstellen_present_preposition .
+
+:ausstellen a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_ausstellen_present ;
+  lemon:otherForm      :ausstellen_present3rd ;
+  lemon:otherForm      :ausstellen_past ;
+  lemon:otherForm      :ausstellen_perfect ;
+  lemon:sense          :ausstellen_sense_1 ;
+  lemon:synBehavior    :ausstellen_frame .
+
+:form_ausstellen_present a           lemon:Form ;
+  lemon:writtenRep     "ausstellen"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:ausstellen_present3rd a      lemon:Form ;
+  lemon:writtenRep "stellt aus"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:ausstellen_past a lemon:Form ;
+  lemon:writtenRep  "stellte aus"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:ausstellen_perfect a lemon:Form ;
+  lemon:writtenRep  "ausgestellt"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:ausstellen_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :ausstellen_subj ;
+  lexinfo:prepositionalAdjunct :ausstellen_obj .
+
+:ausstellen_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :ausstellen_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/museum> ;
+  lemon:subjOfProp  :ausstellen_obj ;
+  lemon:objOfProp   :ausstellen_subj ;
+  lemon:condition   :ausstellen_sense_1_condition .
+
+:ausstellen_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Artwork> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Museum> .
+
+
+:ausstellen_obj lemon:marker :in .
+
+:arg2 lemon:marker :form_ausstellen_present_preposition .
+
+## Prepositions ##
+
+:form_ausstellen_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

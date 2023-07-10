@@ -38,9 +38,9 @@ public class GrammarEntryUnit {
     @JsonProperty("type")
     private String type;
     @JsonProperty("bindingType")
-    private String bindingType;
+    private List<String> bindingType;
     @JsonProperty("returnType")
-    private String returnType;
+    private List<String> returnType;
     @JsonProperty("frameType")
     private String frameType;
     @JsonProperty("sentenceTemplate")
@@ -77,11 +77,11 @@ public class GrammarEntryUnit {
         return type;
     }
 
-    public String getBindingType() {
+    public List<String> getBindingType() {
         return bindingType;
     }
 
-    public String getReturnType() {
+    public List<String> getReturnType() {
         return returnType;
     }
 

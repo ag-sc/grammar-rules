@@ -1,0 +1,140 @@
+LemonEntry,partOfSpeech,writtenFormInfinitive/2ndPerson,writtenForm3rdPerson,writtenFormPast,writtenFormPastPassive,SyntacticFrame,subject,directObject,sense,reference,domain,range,domainArticle,domainWrittenSingular,domainWrittenPlural,rangeArticle,rangeWrittenSingular,rangeWrittenPlural,passivePreposition
+Develop_1,verb,sviluppare,sviluppa,ha sviluppato,è stato sviluppato,TransitiveFrame,domain,range,1,dbo:product,dbo:Company,dbo:Software,feminine_la,compagnia,compagnie,masculine_il,software,software,da
+Develop_2,verb,sviluppare,sviluppa,ha sviluppato,è stato sviluppato,TransitiveFrame,range,domain,1,dbo:developer,dbo:Work,dbo:Agent,feminine_l,opera,opere,masculine_l,agente,agenti,da
+Develop_3,verb,creare,crea,ha creato,è stata creata,TransitiveFrame,range,domain,1,dbo:developer,dbo:Work,dbo:Agent,feminine_l,opera,opere,masculine_l,agente,agenti,da
+marry,verb,sposarsi,si sposa,ha sposato,è stato sposato,TransitiveFrame,range,domain,1,dbo:spouse,dbo:Person,dbo:Person,feminine_la,persona,persone,feminine_la,persona,persone,da
+paint,verb,dipingere,dipinge,ha dipinto,è stato dipinto,TransitiveFrame,range,domain,1,dbp:artist,dbo:Work,dbo:Person,feminine_l,opera,opere,feminine_la,persona,persone,da
+exhibit,verb,esporre,espone,ha esposto,è esposto,TransitiveFrame,range,domain,1,dbo:museum,dbo:Artwork,dbo: Museum,feminine_l,opera,opere,masculine_il,museo,musei,da
+discover,verb,scoprire,scopre,ha scoperto,è stato scoperto,TransitiveFrame,range,domain,1,dbo:discoverer,dbo:Planet,dbo:Person,masculine_il,pianeta,pianeti,feminine_la,persona,persone,da
+cross,verb,attraversare,attraversa,ha attraversato,è attraversato,TransitiveFrame,range,domain,1,dbo:crosses,dbo:Bridge,dbo:River,masculine_il,ponte,pont,masculine_il,fiume,fiumi,da
+win,verb,vincere,vince,ha vinto,è stato vinto,TransitiveFrame,range,domain,1,dbo:award,dbo:Scientist,dbo:Award,masculine_lo,scienziato,scienziati,masculine_il,premio,premi,da
+create_1,verb,creare,creato,creato,creato,TransitiveFrame,range,domain,1,dbo:creator,dbo:TelevisionShow,dbo:Agent,masculine_lo,show televisivo,show televisivi,masculine_l,agente,agenti,da
+create_2,verb,creare,creato,creato,creato,TransitiveFrame,range,domain,1,dbo:author,dbo:Website,dbo:Agent,masculine_lo,luogo,luogo,masculine_l,agente,agenti,da
+create_3,verb,creare,creato,creato,creato,TransitiveFrame,range,domain,1,dbo:developer,dbo:VideoGame,dbo:Agent,masculine_il,videogioco,videogioco,masculine_l,agente,agenti,da
+create_4,verb,creare,creato,creato,creato,TransitiveFrame,domain,range,1,dbo:creator,dbo:TelevisionShow,dbo:Person,masculine_lo,serie televisive,serie televisive,feminine_la,persona,persone,da
+write_1,verb,scrivere,scrive,ha scritto,è stata scritta,TransitiveFrame,range,domain,1,dbo:writer,dbo:Song,dbo:Person,feminine_la,canzone,canzoni,feminine_la,persona,persone,da
+write_2,verb,scrivere,scrive,ha scritto,è stata scritta,TransitiveFrame,range,domain,1,dbo:author,dbo:WrittenWork,dbo:Person,feminine_la,libro,libro,feminine_la,persona,persone,da
+write_3,verb,scrivere,scrive,ha scritto,è stato scritto,TransitiveFrame,range,domain,1,dbo:composer,dbo:TelevisionShow,dbo:Person,masculine_lo,show televisivo,show televisivi,feminine_la,persona,persone,da
+starr,verb,recitare in,recita in,ha recitato in,è recitato,TransitiveFrame,range,domain,1,dbo:starring,dbo:Film,dbo:Person,masculine_il,film,films,masculine_l,attore,attori,da
+operate_1,verb,operare,opera,ha operato,è operato,TransitiveFrame,range,domain,1,dbp:operator,dbo:LaunchPad,dbo:Organisation,feminine_la,rampa di lancio,rampe di lancio,masculine_l,organizzazione,organizzazioni,da
+play_1,verb,interpretare,interpreta,ha interpretato,è interpretato,TransitiveFrame,range,domain,1,dbp:portrayer,dbo:FictionalCharacter,dbo:Person,masculine_il,personaggio fittizio,personaggi fittizi,feminine_la,persona,persone,da
+play_2,verb,interpretare,interpreta,ha interpretato,è interpretata,TransitiveFrame,range,domain,1,dbo:portrayer,dbo:Work,dbo:Person,feminine_la,opera,opere,masculine_l,attore,attori,da
+publish_1,verb,pubblicare,pubblica,ha pubblicato,è pubblicato,TransitiveFrame,range,domain,1,dbo:publisher,dbo:Book,dbo:Agent,masculine_il,libro,libri,masculine_l,agente,agenti,da
+publish_2,verb,pubblicare,pubblica,ha pubblicato,è pubblicato,TransitiveFrame,range,domain,1,dbo:publisher,dbo:Publisher,dbo:Agent,masculine_il,videogioco,videogiochi,masculine_l,agente,agenti,da
+direct_1,verb,dirigere,dirige,ha diretto,è stato diretto,TransitiveFrame,range,domain,1,dbo:director,dbo:Film,dbo:Person,masculine_il,film,film,feminine_la,persona,persone,da
+serve_1,verb,servire,serve,ha servito,è servito,TransitiveFrame,range,domain,1,dbo:targetAirport,dbo:Airline,dbo:Airport,feminine_la,compagnia aerea,compagnie aeree,masculine_l,aeroporto,aeroporti,da
+design_1,verb,progettare,progetta,ha progettato,è stato progettato,TransitiveFrame,range,domain,1,dbo:architect,dbo:ArchitecturalStructure,dbo:Architect,feminine_la,struttura,struttura,masculine_l,architetto,architetti,da
+publish_1,verb,pubblicare,pubblica,ha pubblicato,è stato pubblicato,TransitiveFrame,range,domain,1,dbo:publisher,dbo:Book,dbo:Agent,masculine_il,libro,libri,masculine_l,agente,agenti,da
+publish_2,verb,pubblicare,pubblica,ha pubblicato,è stato pubblicato,TransitiveFrame,range,domain,1,dbo:publisher,dbo:Book,dbo:Publisher,masculine_il,libro,libri,feminine_l,azienda,azienda,da
+present,verb,presentare,presenta,ha presentato,è presentato da,TransitiveFrame,range,domain,1,dbo:presenter,dbo:TelevisionShow,dbo:Person,masculine_lo,show televisivo,show televisivi,feminine_la,persona,persone,da
+speak,verb,parlare,parla,parlato,parlato,TransitiveFrame,range,domain,1,dbo:language,dbo:Language,dbo:Country,masculine,Lingua,Lingua,masculine,Lingua,Lingua,in
+live_1,verb,vivono,vivono,vivono,vivono,TransitiveFrame,range,domain,1,dbo:ethnicGroup,dbo:EthnicGroup,dbo:Country,masculine,grupo étnico,grupos étnicos,masculine,paese,paesi,in
+express,verb,esprime,esprime,esprime,esprime,TransitiveFrame,range,domain,1,dbo:connotation,dbo:Colour,owl:Thing,masculine,colore,colore,-,-,-,da
+compose,verb,comporre la colonna sonora,comporre la colonna sonora,ha composto la colonna sonora,ha composto la colonna sonora,TransitiveFrame,range,domain,1,dbo:musicComposer,dbo:Film,dbo:Person,masculine_il,film,films,feminine,persona,personas,da
+producono,verb,producono,producono,producono,producono,TransitiveFrame,range,domain,1,dbo:product,dbo:Company,dbo:Ship,feminine_la,compagnia,compagnie,feminine,Nave,Nave,da
+inspirar_1,verb,inspirato,inspirato,ha inspirato,ha inspirato,TransitiveFrame,range,domain,1,dbo:influenced,dbo:Person,dbo:Person,feminine_la,persona,persone,feminine_la,persona,persone,da
+Develop_1,verb,sviluppare,sviluppa,ha sviluppato,è stato sviluppato,TransitiveFrame,domain,range,1,dbo:product,dbo:Company,dbo:Software,,compagnia,compagnie,,softwaree,software,da
+Develop_2,verb,sviluppare,sviluppa,ha sviluppato,è stato sviluppato,TransitiveFrame,domain,range,1,dbo:developer,dbo:Work,dbo:Agent,,opera,opere,,agente,agenti,da
+marry,verb,sposare,sposa,ha sposato,è stato sposato,TransitiveFrame,range,domain,1,dbo:spouse,dbo:Person,dbo:Person,,persona,persone,,persona,persone,da
+paint,verb,dipingere,dipinge,ha dipinto,è stato dipinto,TransitiveFrame,range,domain,1,dbp:artist,dbo:Work,dbo:Person,,opera,opere,,persona,persone,da
+exhibit,verb,mostrare,mostra,ha mostrato,è mostrato,TransitiveFrame,range,domain,1,dbo:museum,dbo:Artwork,dbo: Museum,,opera,opere,,museo,musei,da
+discover,verb,scoprire,scopre,ha scoperto,è stato scoperto,TransitiveFrame,range,domain,1,dbo:discoverer,dbo:Planet,dbo:Person,,pianeta,pianeti,,persona,persone,da
+cross,verb,attraversare,attraversa,ha attraversato,è attraversato,TransitiveFrame,range,domain,1,dbo:crosses,dbo:Bridge,dbo:River,,ponte,pont,,fiume,fiumi,da
+win,verb,vincere,vince,ha vinto,è stato vinto,TransitiveFrame,range,domain,1,dbo:award,dbo:Scientist,dbo:Award,,scienziato,scienziati,,premio,premi,da
+create_1,verb,creare,creatii,ha creato,è stato creato,TransitiveFrame,range,domain,1,dbo:creator,dbo:TelevisionShow,dbo:Agent,,show televisivo,show televisivi,,agente,agenti,da
+write_1,verb,scrivere,scrive,ha scritto,è stata scritta,TransitiveFrame,range,domain,1,dbo:writer,dbo:Song,dbo:Person,,canzone,canzoni,,persona,persone,da
+write_2,verb,scrivere,scrivere,ha scritto,è stato scritto,TransitiveFrame,range,domain,2,dbo:writer,dbo:Book,dbo:Person,,libro,libri,,persona,persone,da
+write_3,verb,scrivere,scrive,ha scritto,è stata scritta,TransitiveFrame,range,domain,3,dbo:writer,dbo:MusicalWork,dbo:Person,,opera musicale,opere musicali,,persona,persone,da
+write_4,verb,scrivere,scrive,ha scritto,è stata scritta,TransitiveFrame,range,domain,4,dbo:author,dbo:WrittenWork,dbo:Person,,persona,persone,,opera scritta,opere scritte,da
+write_5,verb,scrivere,scrive,ha scritto,è stata scritta,TransitiveFrame,range,domain,5,dbo:writer,dbo:Work,dbo:Person,,opera,opere,,persona,persone,da
+starr,verb,recitare in,recita in,ha recitato in,è recitato,TransitiveFrame,range,domain,5,dbo:starring,dbo:Film,dbo:Actor,,film,films,,attore,attori,da
+operate_1,verb,operare,opera,ha operato,è operato,TransitiveFrame,domain,range,1,dbp:operator,dbo:LaunchPad,dbo:Organisation,,piattaforma di lancio,piattaforme di lancio,,organizzazione,organizzazioni,da
+play_1,verb,interpretare,interpreta,ha interpretato,è interpretato,TransitiveFrame,range,domain,1,dbo:portrayer,dbo:FictionalCharacter,dbo:Person,,personaggio fittizio,personaggi fittizi,,persona,persone,da
+play_2,verb,interpretare,interpreta,ha interpretato,è interpretata,TransitiveFrame,range,domain,2,dbo:portrayer,dbo:Work,dbo:Actor,,opera,opere,,attore,attori,da
+publish_1,verb,pubblicare,pubblica,ha pubblicato,è pubblicato,TransitiveFrame,range,domain,1,dbo:publisher,dbo:Book,dbo:Agent,,libro,libri,,agente,agenti,da
+publish_2,verb,pubblicare,pubblica,ha pubblicato,è pubblicato,TransitiveFrame,range,domain,2,dbo:publisher,dbo:Publisher,dbo:Agent,,videogioco,videogiochi,,agente,agenti,da
+direct_1,verb,dirigere,dirige,ha diretto,è stato diretto,TransitiveFrame,range,domain,1,dbo:director,dbo:Film,dbo:Person,,film,film,,persona,persone,da
+serve_1,verb,servire,serve,ha servito,è servito,TransitiveFrame,range,domain,1,dbo:targetAirport,dbo:Airline,dbo:Airport,,compagnia aerea,compagnie aeree,,aeroporto,aeroporti,da
+speak_1,verb,parlare,parla,ha parlato,è parlato,TransitiveFrame,range,domain,1,dbo:language,dbo:Language,dbo:Country,,lingua,lingue,,paese,paesi,da
+design_1,verb,progettare,progetta,ha progettato,è stato progettato,TransitiveFrame,range,domain,1,dbo:architect,dbo:ArchitecturalStructure,dbo:Architect,,struttura ,struttura,,architetto,architetti,da
+design_2,verb,progettare,progetta,ha progettato,è stato progettato,TransitiveFrame,range,domain,2,dbo:designer,dbo:Building,dbo:Person,,edificio,edifici,,persona,persone,da
+direct,verb,dirigere,dirige,ha diretto,,TransitiveFrame,range,domain,1,dbo:director,dbo:Film,dbo:Person,,,,,,,da
+design,verb,progettare,progetta,ha progettato,,TransitiveFrame,range,domain,1,dbo:architect,dbo:Bridge,dbo:Architect,,,,,,,da
+cross,verb,attraversare,attraversa,ha attraversato,,TransitiveFrame,range,domain,1,dbo:crosses,dbo:Bridge,dbo:River,,,,,,,da
+discover,verb,scoprire,scopre,ha scoperto,,TransitiveFrame,range,domain,1,dbo:discoverer,dbo:Place,dbo:Person,,,,,,,da
+produce,verb,produrre,produce,ha prodotto,,TransitiveFrame,range,domain,1,dbo:producer,dbo:Film,dbo:Person,,,,,,,da
+publish,verb,pubblicare,pubblica,ha pubblicato,,TransitiveFrame,range,domain,1,dbo:publisher,dbo:Book,dbo:Agent,,,,,,,da
+write,verb,scrivere,scrive,ha scritto,,TransitiveFrame,range,domain,1,dbo:writer,dbo:Song,dbo:Person,,,,,,,da
+paint,verb,dipingere,dbp:artist,ha dipinto,,TransitiveFrame,range,domain,1,dbo:artist,dbo:ArtWork,dbo:Person,,,,,,,da
+win,verb,vincere,vince,ha vinto,,TransitiveFrame,range,domain,1,dbo:award,dbo:Person,dbo:Award,,,,,,,da
+found,verb,fondare,fonda,ha fondato,,TransitiveFrame,range,domain,1,dbo:foundedBy,dbo:Organisation,dbo:Person,,,,,,,da
+present,verb,presentare,presenta,ha presentato,,TransitiveFrame,range,domain,1,dbo:presenter,dbo:TelevisionShow,dbo:Person,,,,,,,da
+perform,verb,suonare,suona,ha suonato,,TransitiveFrame,range,domain,1,dbo:artist,dbo:MusicalWork,dbo:Agent,,,,,,,da
+succeed,verb,seguire,segue,ha seguito,,TransitiveFrame,range,domain,1,dbo:successor,dbo:Person,dbo:Person,,,,,,,da
+distribute,verb,dsitribuire,distribuisce,ha distribuito,,TransitiveFrame,range,domain,1,dbo:distributor,dbo:TelevisionShow,dbo:Organisation,,,,,,,da
+air,verb,trasmettere,trasmette,ha trasmesso,,TransitiveFrame,range,domain,1,dbo:network,dbo:Film,dbo:Broadcaster,,,,,,,da
+precede,verb,precedere,precede,ha preceduto,,TransitiveFrame,range,domain,1,dbp:prevTitle,dbo:Album,dbo:Album,,,,,,,da
+marry,verb,sposare,sposa,ha sposato,,TransitiveFrame,range,domain,1,dbo:spouse,dbo:Person,dbo:Person,,,,,,,da
+own,verb,possedere,possiede,ha posseduto,,TransitiveFrame,range,domain,1,dbo:owner,dbo:Airport,dbo:Agent,,,,,,,da
+operate,verb,operare,opera,ha operato,,TransitiveFrame,range,domain,1,dbp:operator,dbo:Airport,dbo:Organisation,,,,,,,da
+control,verb,controllare,controlla,ha controllato,,TransitiveFrame,range,domain,1,dbp:controlledby,dbo:Airport,dbo:Organisation,,,,,,,da
+illustrate,verb,illustrare,illustra,ha illustrato,,TransitiveFrame,range,domain,1,dbo:illustrator,dbo:WrittenWork,dbo:Person,,,,,,,da
+support,verb,supportare,supporta,ha supportato,,TransitiveFrame,range,domain,1,dbo:ideology,dbo:Ideology,dbo:Agent,,,,,,,da
+speak,verb,parlare,parla,parlava,,TransitiveFrame,range,domain,1,dbo:officialLanguage,dbo:Language,dbo:PopulatedPlace,,,,,,,da
+join,verb,unirsi,si unisce,si è unito,,TransitiveFrame,range,domain,1,dbo:riverMouth,dbo:BodyOfWater,dbo:River,,,,,,,da
+create,verb,creare,crea,ha creato,,TransitiveFrame,range,domain,1,dbo:creator,dbo:TelevisionShow,dbo:Agent,,,,,,,da
+leave,verb,lasciare,lascia,ha lasciato,,TransitiveFrame,range,domain,1,dbo:formerBandMember,dbo:Band,dbo:Person,,,,,,,da
+program,verb,programmare,programma,ha programmato,,TransitiveFrame,range,domain,1,dbp:programmer,dbo:Software,dbo:Person,,,,,,,da
+cover,verb,occuparsi,si occupa,si occupava,,TransitiveFrame,range,domain,1,dbo:academicDiscipline,owl:Thing,dbo:AcademicJournal,,,,,,,da
+edit,verb,curare,cura,curava,,TransitiveFrame,range,domain,1,dbo:editor,dbo:AcademicJournal,dbo:Agent,,,,,,,da
+manage,verb,occuparsi,si occupa,si occupava,,TransitiveFrame,range,domain,1,dbo:managerClub,dbo:SportsTeam,dbo:Athlete,,,,,,,da
+lead,verb,guidare,guida,guiidava,,TransitiveFrame,range,domain,1,dbp:leaderName,dbo:Place,dbo:Person,,,,,,,da
+drain,verb,drenare,drena,ha drenato,,TransitiveFrame,range,domain,1,dbo:outflow,dbo:BodyOfWater,dbo:River,,,,,,,da
+maintain,verb,curare,cura,curava,,TransitiveFrame,range,domain,1,dbo:maintainedBy,dbo:ArchitecturalStructure,dbo:Agent,,,,,,,da
+rent,verb,affittare,affitta,affittava,,TransitiveFrame,range,domain,1,dbo:tenant,dbo:ArchitecturalStructure,dbo:Organisation,,,,,,,da
+breed,verb,allevare,alleva,allevava,,TransitiveFrame,range,domain,1,dbo:breeder,dbo:Animal,dbo:Person,,,,,,,da
+train,verb,allenare,allena,ha allenato,,TransitiveFrame,range,domain,1,dbo:trainer,dbo:Athlete,dbo:Person,,,,,,,da
+follow,verb,seguire,segue,ha seguito,,TransitiveFrame,range,domain,1,dbp:nextTitle,dbo:Album,dbo:Album,,,,,,,da
+compose,verb,comporre,compone,ha composto,,TransitiveFrame,range,domain,1,dbo:musicComposer,dbo:Work,dbo:Person,,,,,,,da
+develop,verb,sviluppare,sviluppa,ha sviluppato,,TransitiveFrame,range,domain,1,dbo:developer,dbo:Work,dbo:Person,,,,,,,da
+play,verb,interpretare,interpreta,ha interpretato,,TransitiveFrame,range,domain,1,dbp:portrayer,dbo:FictionalCharacter,dbo:Person,,,,,,,da
+Direct_1,verb,dirigere,dirige,ha diretto,,TransitiveFrame,range,domain,1,dbo:director,dbo:Film,dbo:Person,,,,,,,da
+Create_1,verb,creare,crea,ha creato,,TransitiveFrame,range,domain,1,dbo:creator,dbo:TelevisionShow,dbo:Agent,,,,,,,da
+Create_2,verb,creare,crea,ha creato,,TransitiveFrame,range,domain,1,dbo:creator,dbo:Book,dbo:Agent,,,,,,,da
+Create_3,verb,creare,crea,ha creato,,TransitiveFrame,range,domain,1,dbo:creator,dbo:Website,dbo:Agent,,,,,,,da
+Create_4,verb,creare,crea,ha creato,,TransitiveFrame,range,domain,1,dbo:creator,dbo:Work,dbo:Agent,,,,,,,da
+Design_1,verb,progettare,progetta,ha progettato,,TransitiveFrame,range,domain,1,dbo:architect,dbo:Bridge,dbo:Architect,,,,,,,da
+Cross_1,verb,attraversa,attraversa,ha attraversato,,TransitiveFrame,range,domain,1,dbo:crosses,dbo:Bridge,dbo:River,,,,,,,da
+Discover_1,verb,scoprire,scopre,ha scoperto,,TransitiveFrame,range,domain,1,dbo:discoverer,dbo:Place,dbo:Person,,,,,,,da
+Write_1,verb,scrivere,scrive,ha scritto,,TransitiveFrame,range,domain,1,dbo:writer,dbo:Song,dbo:Person,,,,,,,da
+Speak_1,verb,parla,parla,parlava,,TransitiveFrame,range,domain,1,dbo:language,dbo:Language,dbo:Country,,,,,,,da
+produce_1,verb,produrre,produce,ha prodotto,,TransitiveFrame,range,domain,1,dbo:producer,dbo:Film,dbo:Person,,,,,,,da
+publish_1,verb,pubblicare,pubblica,ha pubblicato,,TransitiveFrame,range,domain,1,dbo:publisher,dbo:Agent,dbo:Book,,,,,,,da
+publish_2,verb,pubblicare,pubblica,ha pubblicato,,TransitiveFrame,range,domain,1,dbo:publisher,dbo:Agent,dbo:VideoGame,,,,,,,da
+publish_3,verb,pubblicare,pubblica,ha pubblicato,,TransitiveFrame,range,domain,1,dbo:publisher,dbo:VideoGame,dbo:Agent,,,,,,,da
+paint_1,verb,dipingere,dipinge,ha dipinto,,TransitiveFrame,range,domain,1,dbo:artist,dbo:ArtWork,dbo:Person,,,,,,,da
+win_1,verb,vincere,vince,ha vinto,,TransitiveFrame,range,domain,1,dbo:award,dbo:Person,dbo:Award,,,,,,,da
+win_2,verb,vincere,vince,ha vinto,,TransitiveFrame,range,domain,1,dbo:award,dbo:Award,dbo:Person,,,,,,,da
+found_1,verb,dbo:BroadcastNetwork,fonda,ha fondato,,TransitiveFrame,range,domain,1,dbo:foundedBy,dbo:Organisation,dbo:Person,,,,,,,da
+present_1,verb,presentare,presenta,ha presentato,,TransitiveFrame,range,domain,1,dbo:presenter,dbo:TelevisionShow,dbo:Person,,,,,,,da
+perform_1,verb,suonare,suona,ha suonato,,TransitiveFrame,range,domain,1,dbo:artist,dbo:MusicalWork,dbo:Agent,,,,,,,da
+succeed_1,verb,seguire,segue,ha seguito,,TransitiveFrame,range,domain,1,dbo:successor,dbo:Person,dbo:Person,,,,,,,da
+distribute_1,verb,distribuire,distribuisce,ha distribuito,,TransitiveFrame,range,domain,1,dbo:distributor,dbo:TelevisionShow,dbo:Organisation,,,,,,,da
+air_1,verb,trasmettere,trasmette,ha trasmesso,,TransitiveFrame,range,domain,1,dbo:network,dbo:Film,dbo:Broadcaster,,,,,,,da
+operate_1,verb,operare,opera,ha operato,,TransitiveFrame,range,domain,1,dbp:operator,dbo:LaunchPad,dbo:Organisation,,,,,,,da
+create_1,verb,creare,crea,ha creato,,TransitiveFrame,range,domain,1,dbo:creator,dbo:TelevisionShow,dbo:Agent,,,,,,,da
+create_2,verb,creare,crea,ha creato,,TransitiveFrame,range,domain,1,dbo:creator,dbo:Website,dbo:Agent,,,,,,,da
+develop_1,verb,sviluppare,sviluppa,ha sviluppato,,TransitiveFrame,range,domain,1,dbo:developer,dbo:Product,dbo:Person,,,,,,,da
+play_1,verb,interpretare,interpreta,ha interpretato,,TransitiveFrame,range,domain,1,dbo:portrayer,dbo:FictionalCharacter,dbo:Person,,,,,,,da
+called_m,verb,venire chiamato,viene chiamato,venne chiamato,,TransitiveFrame,range,domain,1,dbp:nickname,xsd:string,dbo:Person,,,,,,,da
+called_f,verb,venire chiamata,viene chiamata,venne chiamata,,TransitiveFrame,range,domain,1,dbp:nickname,xsd:string,dbo:Person,,,,,,,da
+win_3,verb,avere vinto,ha vinto,ebbe vinto,,TransitiveFrame,range,domain,1,dbo:award,dbo:Person,dbo:Award,,,,,,,da
+play_2,verb,interpretare,interpreta,interpretava,,TransitiveFrame,range,domain,1,dbp:portrayer,dbo:FictionalCharacter,dbo:Person,,,,,,,da
+mean,verb,significare,significa,significava,,TransitiveFrame,range,domain,1,dbo:abbreviation,xsd:string,xsd:string,,,,,,,da
+express,verb,esprimere,esprime,esprimeva,,TransitiveFrame,range,domain,1,dbo:connotation,dbo:Colour,owl:Thing,,,,,,,da
+serve,verb,serve,sono serviti,ha servito,,TransitiveFrame,range,domain,1,dbo:targetAirport,dbo:Airline,dbo:Airport,,,,,,,da
+record,verb,incidere,incide,ha inciso,,TransitiveFrame,range,domain,1,dbo:recordLabel,dbo:MusicalArtist,dbo:Company,,,,,,,da
+influence,verb,influenzare,influenza,ha influenzato,,TransitiveFrame,range,domain,1,dbo:influenced,dbo:Person,dbo:Person,,,,,,,da
+write,verb,scrivere,scrive,ha scritto,,TransitiveFrame,range,domain,1,dbo:author,dbo:Book,dbo:Person,,,,,,,da
+found_2,verb,fondare,fonda,ha fondato,,TransitiveFrame,range,domain,1,dbo:foundedBy,dbo:Organisation,dbo:Person,,,,,,,da
+compose,verb,comporre,compone,ha composto,,TransitiveFrame,range,domain,1,dbo:musicComposer,dbo:Film,dbo:Person,,,,,,,da

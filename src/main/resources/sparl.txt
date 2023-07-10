@@ -1,0 +1,2 @@
+SELECT ?subjOfProp WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .
+FILTER (?Answer=<http://dbpedia.org/resource/GMT_Games>) } 

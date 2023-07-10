@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Spiele_von ;
+  lemon:entry    :Spiele_von_form_preposition .
+
+:Spiele_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :Spiele_von_form ;
+  lemon:otherForm      :Spiele_von_plural_form ;
+  lemon:otherForm      :Spiele_von_accusative_form ;
+  lemon:otherForm      :Spiele_von_dative_form ;
+  lemon:otherForm      :Spiele_von_genitive_form ;
+  lemon:otherForm      :Spiele_von_plural_form ;
+  lemon:sense          :Spiele_von_sense_1 ;
+  lemon:synBehavior    :Spiele_von_nounpp .
+
+:Spiele_von_form a lemon:Form ;
+  lemon:writtenRep "Spiel"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Spiele_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Spiele"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Spiele_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Spiel"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:Spiele_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Spiel"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:Spiele_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Spieles"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:Spiele_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg2 ;
+  lexinfo:prepositionalAdjunct :arg1 .
+
+:Spiele_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :Spiele_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/publisher> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :Spiele_von_sense_1_condition .
+
+:Spiele_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Publisher> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Company> .
+
+:arg2 lemon:marker :Spiele_von_form_preposition .
+
+## Prepositions ##
+
+:Spiele_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

@@ -1,0 +1,975 @@
+{
+  "grammarEntries" : [ {
+    "entry" : "anfangen",
+    "id" : 1,
+    "Entry" : "anfangen",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo fängt <NP{domain,dbo:routeStart}> an?", "Wo ist <NP{domain,dbo:routeStart}>?", "in welcher Strasse fängt <NP{domain,dbo:routeStart}> an?", "in welcher Strasse ist <NP{domain,dbo:routeStart}> angefangen?" ],
+      "nonTerminal" : "<NP{domain,dbo:routeStart}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:routeStart ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:routeStart ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "was fängt in <NP{range,dbo:routeStart}> an?" ],
+      "nonTerminal" : "<NP{range,dbo:routeStart}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:routeStart ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:routeStart ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:routeStart}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:routeStart ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:routeStart ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "aufhören",
+    "id" : 2,
+    "Entry" : "aufhören",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo hört <NP{domain,dbo:routeEnd}> auf?", "Wo ist <NP{domain,dbo:routeEnd}>?", "in welcher Stadt hört <NP{domain,dbo:routeEnd}> auf?", "in welcher Stadt hörte <NP{domain,dbo:routeEnd}> auf?", "in welcher Stadt ist <NP{domain,dbo:routeEnd}> aufgehört?" ],
+      "nonTerminal" : "<NP{domain,dbo:routeEnd}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:routeEnd ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:routeEnd ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "was hörte in <NP{range,dbo:routeEnd}> auf?" ],
+      "nonTerminal" : "<NP{range,dbo:routeEnd}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:routeEnd ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:routeEnd ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:routeEnd}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:routeEnd ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:routeEnd ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "ausstellen",
+    "id" : 3,
+    "Entry" : "ausstellen",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbo:museum}>?", "Wo stellt <NP{domain,dbo:museum}> aus?", "in welchem Museum ist <NP{domain,dbo:museum}> ausgestellt?", "in welchem Museum stellt <NP{domain,dbo:museum}> aus?", "in welchem Museum stellte <NP{domain,dbo:museum}> aus?" ],
+      "nonTerminal" : "<NP{domain,dbo:museum}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:museum ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:museum ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "was stellte in <NP{range,dbo:museum}> aus?" ],
+      "nonTerminal" : "<NP{range,dbo:museum}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:museum ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:museum ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:museum}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:museum ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:museum ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "befinden",
+    "id" : 4,
+    "Entry" : "befinden",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "in welchem Land befindet <NP{domain,dbo:country}>?", "in welchem Land ist <NP{domain,dbo:country}> befunden?", "in welchem Land ist <NP{domain,dbo:country}>?", "in welchen Länder befinden <NP{domain,dbo:country}>?", "in welchen Länder sind <NP{domain,dbo:country}> befunden?" ],
+      "nonTerminal" : "<NP{domain,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_LOCATION",
+      "sentences" : [ "was befinden in <NP{range,dbo:country}>?", "welche Seen befinden in <NP{range,dbo:country}>?", "welcher See befinden in <NP{range,dbo:country}>?" ],
+      "nonTerminal" : "<NP{range,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "durchführen",
+    "id" : 5,
+    "Entry" : "durchführen",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wann führte <NP{domain,dbo:date}> durch?", "Wann wurde <NP{domain,dbo:date}> durchgeführt?" ],
+      "nonTerminal" : "<NP{domain,dbo:date}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:date ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:date ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHEN_WHAT_PAST_THING",
+      "sentences" : [ "was wurde am <NP{range,dbo:date}> durchgeführt?", "welcher MilitärKonflikt wurde am <NP{range,dbo:date}> durchgeführt?" ],
+      "nonTerminal" : "<NP{range,dbo:date}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:date ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:date ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:date}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:date ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:date ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "enden",
+    "id" : 6,
+    "Entry" : "enden",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wann endete <NP{domain,dbo:dissolutionDate}>?", "Wann wurde <NP{domain,dbo:dissolutionDate}> geendet?" ],
+      "nonTerminal" : "<NP{domain,dbo:dissolutionDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:dissolutionDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:dissolutionDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHEN_WHAT_PAST_THING",
+      "sentences" : [ "was wurde am <NP{range,dbo:dissolutionDate}> geendet?", "welcher Land wurde am <NP{range,dbo:dissolutionDate}> geendet?" ],
+      "nonTerminal" : "<NP{range,dbo:dissolutionDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:dissolutionDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:dissolutionDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:dissolutionDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:dissolutionDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:dissolutionDate ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "entspringen",
+    "id" : 7,
+    "Entry" : "entspringen",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo entspringt <NP{domain,dbp:mouthLocation}>?", "Wo ist <NP{domain,dbp:mouthLocation}>?", "in welchem Stadt entspringt <NP{domain,dbp:mouthLocation}>?", "in welchem Stadt ist <NP{domain,dbp:mouthLocation}> entsprungen?", "in welchen Städte entspringen <NP{domain,dbp:mouthLocation}>?", "in welchen Städte sind <NP{domain,dbp:mouthLocation}> entsprungen?" ],
+      "nonTerminal" : "<NP{domain,dbp:mouthLocation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:mouthLocation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:mouthLocation ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "in Welchem Fluss wird <NP{range,dbp:mouthLocation}> entsprungen?", "in was entspringt <NP{range,dbp:mouthLocation}>?", "in welchen Flüsse werden <NP{range,dbp:mouthLocation}> entsprungen?", "was entspringen in <NP{range,dbp:mouthLocation}>?", "welche Flüsse entspringen in <NP{range,dbp:mouthLocation}>?", "welcher Fluss entspringt in <NP{range,dbp:mouthLocation}>?" ],
+      "nonTerminal" : "<NP{range,dbp:mouthLocation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:mouthLocation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:mouthLocation ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbp:mouthLocation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:mouthLocation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbp:mouthLocation ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "fertigstellen_in",
+    "id" : 8,
+    "Entry" : "fertigstellen_in",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wann stellte <NP{domain,dbo:completionDate}> fertig?", "Wann wurde <NP{domain,dbo:completionDate}> fertiggestellt?" ],
+      "nonTerminal" : "<NP{domain,dbo:completionDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:completionDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:completionDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHEN_WHAT_PAST_THING",
+      "sentences" : [ "was wurde in <NP{range,dbo:completionDate}> fertiggestellt?", "welcher Schiff wurde in <NP{range,dbo:completionDate}> fertiggestellt?" ],
+      "nonTerminal" : "<NP{range,dbo:completionDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:completionDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:completionDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:completionDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:completionDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:completionDate ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "fliessen_durch_1",
+    "id" : 9,
+    "Entry" : "fliessen_durch_1",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo fließt <NP{domain,dbo:city}>?", "Wo ist <NP{domain,dbo:city}>?", "durch welche Stadt fließt <NP{domain,dbo:city}>?", "durch welche Stadt ist <NP{domain,dbo:city}> geflossen?", "durch welche Stadte fließen <NP{domain,dbo:city}>?", "durch welche Stadte sind <NP{domain,dbo:city}> geflossen?" ],
+      "nonTerminal" : "<NP{domain,dbo:city}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:city ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:city ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "durch was fließt <NP{range,dbo:city}>?", "durch welche Flüsse werden <NP{range,dbo:city}> geflossen?", "durch welchen Fluss wird <NP{range,dbo:city}> geflossen?", "was fließen durch <NP{range,dbo:city}>?", "welche Flüsse fließen durch <NP{range,dbo:city}>?", "welcher Fluss fließt durch <NP{range,dbo:city}>?" ],
+      "nonTerminal" : "<NP{range,dbo:city}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:city ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:city ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:city}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:city ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:city ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "fliessen_durch_2",
+    "id" : 10,
+    "Entry" : "fliessen_durch_2",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo fließt <NP{domain,dbp:country}>?", "Wo ist <NP{domain,dbp:country}>?", "durch welche Länder fließen <NP{domain,dbp:country}>?", "durch welche Länder sind <NP{domain,dbp:country}> geflossen?", "durch welches Land fließt <NP{domain,dbp:country}>?", "durch welches Land ist <NP{domain,dbp:country}> geflossen?" ],
+      "nonTerminal" : "<NP{domain,dbp:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:country ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "durch was fließt <NP{range,dbp:country}>?", "durch welche Flüsse werden <NP{range,dbp:country}> geflossen?", "durch welchen Fluss wird <NP{range,dbp:country}> geflossen?", "was fließen durch <NP{range,dbp:country}>?", "welche Flüsse fließen durch <NP{range,dbp:country}>?", "welcher Fluss fließt durch <NP{range,dbp:country}>?" ],
+      "nonTerminal" : "<NP{range,dbp:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:country ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbp:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbp:country ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "geborn_am_1",
+    "id" : 11,
+    "Entry" : "geborn_am_1",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wann ist <NP{domain,dbo:birthYear}> geboren?", "Wann wurde <NP{domain,dbo:birthYear}> geboren?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthYear}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthYear ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthYear ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHEN_WHO_PAST_PERSON",
+      "sentences" : [ "welcher Kind wurde <NP{range,dbo:birthYear}> geboren?", "wer ist am <NP{range,dbo:birthYear}> geboren?" ],
+      "nonTerminal" : "<NP{range,dbo:birthYear}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthYear ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthYear ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:birthYear}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthYear ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:birthYear ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "geborn_in_1",
+    "id" : 12,
+    "Entry" : "geborn_in_1",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo wurde <NP{domain,dbo:birthPlace}> geboren?", "in welchem Stadt gebärt <NP{domain,dbo:birthPlace}>?", "in welchem Stadt ist <NP{domain,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHERE_WHO_PAST_PERSON",
+      "sentences" : [ "welcher Kind wurde in <NP{range,dbo:birthPlace}> geboren?", "wer ist in <NP{range,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "geborn_in_2",
+    "id" : 13,
+    "Entry" : "geborn_in_2",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo wurde <NP{domain,dbo:birthPlace}> geboren?", "in welcher Stadt gebärt <NP{domain,dbo:birthPlace}>?", "in welcher Stadt ist <NP{domain,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHERE_WHO_PAST_PERSON",
+      "sentences" : [ "welcher Kind wurde in <NP{range,dbo:birthPlace}> geboren?", "wer ist in <NP{range,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "geborn_in_3",
+    "id" : 14,
+    "Entry" : "geborn_in_3",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo wurde <NP{domain,dbo:birthPlace}> geboren?", "in welchem Land gebärt <NP{domain,dbo:birthPlace}>?", "in welchem Land ist <NP{domain,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHERE_WHO_PAST_PERSON",
+      "sentences" : [ "welcher Kind wurde in <NP{range,dbo:birthPlace}> geboren?", "wer ist in <NP{range,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "geborn_in_4",
+    "id" : 15,
+    "Entry" : "geborn_in_4",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo wurde <NP{domain,dbo:birthPlace}> geboren?", "in welchem Land gebärt <NP{domain,dbo:birthPlace}>?", "in welchem Land ist <NP{domain,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHERE_WHO_PAST_PERSON",
+      "sentences" : [ "welcher Schauspieler wurde in <NP{range,dbo:birthPlace}> geboren?", "wer ist in <NP{range,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "geborn_in_5",
+    "id" : 16,
+    "Entry" : "geborn_in_5",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo wurde <NP{domain,dbo:birthPlace}> geboren?", "in welchem Land gebärt <NP{domain,dbo:birthPlace}>?", "in welchem Land ist <NP{domain,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{domain,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHERE_WHO_PAST_PERSON",
+      "sentences" : [ "welcher Surfer wurde in <NP{range,dbo:birthPlace}> geboren?", "wer ist in <NP{range,dbo:birthPlace}> geboren?" ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:birthPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:birthPlace ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "gestorben_am",
+    "id" : 17,
+    "Entry" : "gestorben_am",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wann ist <NP{domain,dbo:deathDate}> gestorben?", "Wann wurde <NP{domain,dbo:deathDate}> gestorben?" ],
+      "nonTerminal" : "<NP{domain,dbo:deathDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:deathDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:deathDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHEN_WHO_PAST_PERSON",
+      "sentences" : [ "welcher Kind wurde <NP{range,dbo:deathDate}> gestorben?", "wer ist am <NP{range,dbo:deathDate}> gestorben?" ],
+      "nonTerminal" : "<NP{range,dbo:deathDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:deathDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:deathDate ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:deathDate}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:deathDate ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:deathDate ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "gestorben_an",
+    "id" : 18,
+    "Entry" : "gestorben_an",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "an was ist <NP{domain,dbo:deathCause}> gestorben?", "woran ist <NP{domain,dbo:deathCause}> gestorben?" ],
+      "nonTerminal" : "<NP{domain,dbo:deathCause}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:deathCause ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:deathCause ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "PERSON_CAUSE",
+      "sentences" : [ "wer ist an <NP{range,dbo:deathCause}> gestorben?", "wer war an <NP{range,dbo:deathCause}> gestorben?" ],
+      "nonTerminal" : "<NP{range,dbo:deathCause}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:deathCause ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:deathCause ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:deathCause}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:deathCause ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:deathCause ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "gestorben_in",
+    "id" : 19,
+    "Entry" : "gestorben_in",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo wurde <NP{range,dbo:deathPlace}> gestorben?", "in welcher Stadt ist <NP{range,dbo:deathPlace}> gestorben?", "in welcher Stadt stirbt <NP{range,dbo:deathPlace}>?" ],
+      "nonTerminal" : "<NP{range,dbo:deathPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:deathPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:deathPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHERE_WHO_PAST_PERSON",
+      "sentences" : [ "was ist in <NP{domain,dbo:deathPlace}> gestorben?", "welcher Kind wurde in <NP{domain,dbo:deathPlace}> gestorben?" ],
+      "nonTerminal" : "<NP{domain,dbo:deathPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:deathPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:deathPlace ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:deathPlace}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:deathPlace ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:deathPlace ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "leben_in_3",
+    "id" : 20,
+    "Entry" : "leben_in_3",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:populationTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "HOW_MANY_TOTAL",
+      "sentences" : [ "welcher Land hat <NP{range,dbo:populationTotal}> gelebt?" ],
+      "nonTerminal" : "<NP{range,dbo:populationTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:populationTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "leben_in_4",
+    "id" : 21,
+    "Entry" : "leben_in_4",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:populationTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "HOW_MANY_TOTAL",
+      "sentences" : [ "welcher Stadt hat <NP{range,dbo:populationTotal}> gelebt?" ],
+      "nonTerminal" : "<NP{range,dbo:populationTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:populationTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "liegen_1",
+    "id" : 22,
+    "Entry" : "liegen_1",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "in welchem Land ist <NP{domain,dbo:country}> gelegen?", "in welchem Land ist <NP{domain,dbo:country}>?", "in welchem Land liegt <NP{domain,dbo:country}>?", "in welchen Länder liegen <NP{domain,dbo:country}>?", "in welchen Länder sind <NP{domain,dbo:country}> gelegen?" ],
+      "nonTerminal" : "<NP{domain,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_LOCATION",
+      "sentences" : [ "was liegen in <NP{range,dbo:country}>?", "welche Stadte liegen in <NP{range,dbo:country}>?", "welcher Stadt liegen in <NP{range,dbo:country}>?" ],
+      "nonTerminal" : "<NP{range,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "liegen_2",
+    "id" : 23,
+    "Entry" : "liegen_2",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbp:location}>?", "Wo liegt <NP{domain,dbp:location}>?", "in welchen Städte liegen <NP{domain,dbp:location}>?", "in welchen Städte sind <NP{domain,dbp:location}> gelegen?", "in welcher Stadt ist <NP{domain,dbp:location}> gelegen?", "in welcher Stadt liegt <NP{domain,dbp:location}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:location}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:location ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:location ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "in was liegt <NP{range,dbp:location}>?", "in welchen Militäreinheit werden <NP{range,dbp:location}> gelegen?", "in welcher Militäreinheit wird <NP{range,dbp:location}> gelegen?", "was liegen in <NP{range,dbp:location}>?", "welche Militäreinheit liegen in <NP{range,dbp:location}>?", "welcher Militäreinheit liegt in <NP{range,dbp:location}>?" ],
+      "nonTerminal" : "<NP{range,dbp:location}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:location ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:location ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbp:location}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:location ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbp:location ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "liegen_3",
+    "id" : 24,
+    "Entry" : "liegen_3",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbp:location}>?", "Wo liegt <NP{domain,dbp:location}>?", "in welchen Städte liegen <NP{domain,dbp:location}>?", "in welchen Städte sind <NP{domain,dbp:location}> gelegen?", "in welcher Stadt ist <NP{domain,dbp:location}> gelegen?", "in welcher Stadt liegt <NP{domain,dbp:location}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:location}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:location ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:location ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "in was liegt <NP{range,dbp:location}>?", "in welchem historischer Ort wird <NP{range,dbp:location}> gelegen?", "in welchen historischer Orten werden <NP{range,dbp:location}> gelegen?", "was liegen in <NP{range,dbp:location}>?", "welche historischer Orten liegen in <NP{range,dbp:location}>?", "welcher historischer Ort liegt in <NP{range,dbp:location}>?" ],
+      "nonTerminal" : "<NP{range,dbp:location}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:location ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:location ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbp:location}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:location ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbp:location ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "liegen_4",
+    "id" : 25,
+    "Entry" : "liegen_4",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "in welchem Land ist <NP{domain,dbo:country}> gelegen?", "in welchem Land ist <NP{domain,dbo:country}>?", "in welchem Land liegt <NP{domain,dbo:country}>?", "in welchen Länder liegen <NP{domain,dbo:country}>?", "in welchen Länder sind <NP{domain,dbo:country}> gelegen?" ],
+      "nonTerminal" : "<NP{domain,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_LOCATION",
+      "sentences" : [ "was liegen in <NP{range,dbo:country}>?", "welche Seen liegen in <NP{range,dbo:country}>?", "welcher See liegen in <NP{range,dbo:country}>?" ],
+      "nonTerminal" : "<NP{range,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:country}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:country ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:country ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "liegen_5",
+    "id" : 26,
+    "Entry" : "liegen_5",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "in welchem Land ist <NP{domain,dbo:locatedInArea}> gelegen?", "in welchem Land ist <NP{domain,dbo:locatedInArea}>?", "in welchem Land liegt <NP{domain,dbo:locatedInArea}>?", "in welchen Länder liegen <NP{domain,dbo:locatedInArea}>?", "in welchen Länder sind <NP{domain,dbo:locatedInArea}> gelegen?" ],
+      "nonTerminal" : "<NP{domain,dbo:locatedInArea}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:locatedInArea ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:locatedInArea ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_LOCATION",
+      "sentences" : [ "was liegen in <NP{range,dbo:locatedInArea}>?", "welche Berge liegen in <NP{range,dbo:locatedInArea}>?", "welcher Berg liegen in <NP{range,dbo:locatedInArea}>?" ],
+      "nonTerminal" : "<NP{range,dbo:locatedInArea}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:locatedInArea ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:locatedInArea ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:locatedInArea}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:locatedInArea ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:locatedInArea ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "schreiben_in",
+    "id" : 27,
+    "Entry" : "schreiben_in",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbo:programmingLanguage}>?", "Wo schreibt <NP{domain,dbo:programmingLanguage}>?", "in welchen Programmiersprachen schreiben <NP{domain,dbo:programmingLanguage}>?", "in welchen Programmiersprachen sind <NP{domain,dbo:programmingLanguage}> geschrieben?", "in welcher Programmiersprache ist <NP{domain,dbo:programmingLanguage}> geschrieben?", "in welcher Programmiersprache schreibt <NP{domain,dbo:programmingLanguage}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:programmingLanguage}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:programmingLanguage ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:programmingLanguage ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "in was schreibt <NP{range,dbo:programmingLanguage}>?", "in welchen Software werden <NP{range,dbo:programmingLanguage}> geschrieben?", "in welcher Software wird <NP{range,dbo:programmingLanguage}> geschrieben?", "was schreiben in <NP{range,dbo:programmingLanguage}>?", "welche Software schreiben in <NP{range,dbo:programmingLanguage}>?", "welcher Software schreibt in <NP{range,dbo:programmingLanguage}>?" ],
+      "nonTerminal" : "<NP{range,dbo:programmingLanguage}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:programmingLanguage ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:programmingLanguage ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:programmingLanguage}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:programmingLanguage ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:programmingLanguage ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "sprechen",
+    "id" : 28,
+    "Entry" : "sprechen",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbo:language}>?", "Wo spricht <NP{domain,dbo:language}>?", "in welchen Programmiersprachen sind <NP{domain,dbo:language}> gesprochen?", "in welchen Programmiersprachen sprechen <NP{domain,dbo:language}>?", "in welcher Programmiersprache ist <NP{domain,dbo:language}> gesprochen?", "in welcher Programmiersprache spricht <NP{domain,dbo:language}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:language}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:language ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:language ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "in was spricht <NP{range,dbo:language}>?", "in welchem Land wird <NP{range,dbo:language}> gesprochen?", "in welchen Länder werden <NP{range,dbo:language}> gesprochen?", "was sprechen in <NP{range,dbo:language}>?", "welche Länder sprechen in <NP{range,dbo:language}>?", "welcher Land spricht in <NP{range,dbo:language}>?" ],
+      "nonTerminal" : "<NP{range,dbo:language}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:language ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:language ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:language}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:language ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:language ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "stattfinden",
+    "id" : 29,
+    "Entry" : "stattfinden",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wann fand <NP{domain,dbp:date}> statt?", "Wann wurde <NP{domain,dbp:date}> stattgefunden?" ],
+      "nonTerminal" : "<NP{domain,dbp:date}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:date ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:date ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHEN_WHAT_PAST_THING",
+      "sentences" : [ "was wurde am <NP{range,dbp:date}> stattgefunden?", "welcher MilitärKonflikt wurde am <NP{range,dbp:date}> stattgefunden?" ],
+      "nonTerminal" : "<NP{range,dbp:date}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:date ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:date ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbp:date}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbp:date ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbp:date ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "stehen_1",
+    "id" : 30,
+    "Entry" : "stehen_1",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbo:abbreviation}>?", "Wo steht <NP{domain,dbo:abbreviation}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:abbreviation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:abbreviation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:abbreviation ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "fuer was steht <NP{range,dbo:abbreviation}>?", "was stehen fuer <NP{range,dbo:abbreviation}>?" ],
+      "nonTerminal" : "<NP{range,dbo:abbreviation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:abbreviation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:abbreviation ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:abbreviation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:abbreviation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:abbreviation ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "stehen_2",
+    "id" : 31,
+    "Entry" : "stehen_2",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbo:connotation}>?", "Wo steht <NP{domain,dbo:connotation}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:connotation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:connotation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:connotation ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "fuer was steht <NP{range,dbo:connotation}>?", "fuer welche Farben werden <NP{range,dbo:connotation}> gestanden?", "fuer welchen Farbe wird <NP{range,dbo:connotation}> gestanden?", "was stehen fuer <NP{range,dbo:connotation}>?", "welche Farben stehen fuer <NP{range,dbo:connotation}>?", "welcher Farbe steht fuer <NP{range,dbo:connotation}>?" ],
+      "nonTerminal" : "<NP{range,dbo:connotation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:connotation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:connotation ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:connotation}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:connotation ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:connotation ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "verheiraten_mit",
+    "id" : 32,
+    "Entry" : "verheiraten_mit",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "welcher Kind ist mit <NP{domain,dbo:spouse}> verheiratet?", "welcher Kind war mit <NP{domain,dbo:spouse}> verheiratet?", "wer ist mit <NP{domain,dbo:spouse}> verheiratet?", "wer war mit <NP{domain,dbo:spouse}> verheiratet?" ],
+      "nonTerminal" : "<NP{domain,dbo:spouse}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:spouse ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:spouse ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHO_WHO_PERSON",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:spouse}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:spouse ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:spouse ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:spouse}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:spouse ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:spouse ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "wachsen_in_1",
+    "id" : 33,
+    "Entry" : "wachsen_in_1",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbo:growingGrape}>?", "Wo wächst <NP{domain,dbo:growingGrape}>?", "in welchen Traubenarten sind <NP{domain,dbo:growingGrape}> gewachsen?", "in welchen Traubenarten wachsen <NP{domain,dbo:growingGrape}>?", "in welcher Traubenarte ist <NP{domain,dbo:growingGrape}> gewachsen?", "in welcher Traubenarte wächst <NP{domain,dbo:growingGrape}>?", "welchen Traubenarten wachsen in <NP{domain,dbo:growingGrape}>?", "welcher Traubenarte wächst in <NP{domain,dbo:growingGrape}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:growingGrape}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:growingGrape ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:growingGrape ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_2",
+      "sentences" : [ "in was wächst <NP{range,dbo:growingGrape}>?", "in welchen weinregionen werden <NP{range,dbo:growingGrape}> gewachsen?", "in welcher weinregion wird <NP{range,dbo:growingGrape}> gewachsen?", "was wachsen in <NP{range,dbo:growingGrape}>?", "welche weinregionen wachsen in <NP{range,dbo:growingGrape}>?", "welcher weinregion wächst in <NP{range,dbo:growingGrape}>?" ],
+      "nonTerminal" : "<NP{range,dbo:growingGrape}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:growingGrape ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:growingGrape ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:growingGrape}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:growingGrape ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:growingGrape ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "wachsen_in_2",
+    "id" : 34,
+    "Entry" : "wachsen_in_2",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{range,dbo:wineRegion}>?", "Wo wächst <NP{range,dbo:wineRegion}>?", "in welchen weinregionen sind <NP{range,dbo:wineRegion}> gewachsen?", "in welchen weinregionen wachsen <NP{range,dbo:wineRegion}>?", "in welcher weinregion ist <NP{range,dbo:wineRegion}> gewachsen?", "in welcher weinregion wächst <NP{range,dbo:wineRegion}>?" ],
+      "nonTerminal" : "<NP{range,dbo:wineRegion}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:wineRegion ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:wineRegion ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "in was wächst <NP{domain,dbo:wineRegion}>?", "in welchen Traubenarten werden <NP{domain,dbo:wineRegion}> gewachsen?", "in welcher Traubenarte wird <NP{domain,dbo:wineRegion}> gewachsen?", "was wachsen in <NP{domain,dbo:wineRegion}>?", "welche Traubenarten wachsen in <NP{domain,dbo:wineRegion}>?", "welcher Traubenarte wächst in <NP{domain,dbo:wineRegion}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:wineRegion}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:wineRegion ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:wineRegion ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{domain,dbo:wineRegion}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:wineRegion ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:wineRegion ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "wohnen_in",
+    "id" : 35,
+    "Entry" : "wohnen_in",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo wurde <NP{domain,dbo:residence}> gewohnt?", "in welcher Stadt ist <NP{domain,dbo:residence}> gewohnt?", "in welcher Stadt wohnt <NP{domain,dbo:residence}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:residence}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:residence ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:residence ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHERE_WHO_PAST_PERSON",
+      "sentences" : [ "welcher Kind wurde in <NP{range,dbo:residence}> gewohnt?", "wer ist in <NP{range,dbo:residence}> gewohnt?" ],
+      "nonTerminal" : "<NP{range,dbo:residence}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:residence ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:residence ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:residence}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:residence ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:residence ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "überspannen",
+    "id" : 36,
+    "Entry" : "überspannen",
+    "syntacticFrame" : "IPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Wo ist <NP{domain,dbo:crosses}>?", "Wo überspannt <NP{domain,dbo:crosses}>?", "in Welchem Fluss ist <NP{domain,dbo:crosses}> überspannt?", "in Welchem Fluss überspannt <NP{domain,dbo:crosses}>?", "in welchen Fluss sind <NP{domain,dbo:crosses}> überspannt?", "in welchen Fluss überspannen <NP{domain,dbo:crosses}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:crosses}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:crosses ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:crosses ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+      "sentences" : [ "in was überspannt <NP{range,dbo:crosses}>?", "in welchen Brücken werden <NP{range,dbo:crosses}> überspannt?", "in welcher Brücke wird <NP{range,dbo:crosses}> überspannt?", "was überspannen in <NP{range,dbo:crosses}>?", "welche Brücken überspannen in <NP{range,dbo:crosses}>?", "welcher Brücke überspannt in <NP{range,dbo:crosses}>?" ],
+      "nonTerminal" : "<NP{range,dbo:crosses}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:crosses ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:crosses ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : "HOW_MANY_THING_BACKWARD",
+      "sentences" : [ ],
+      "nonTerminal" : "<NP{range,dbo:crosses}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:crosses ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT Count(?subjOfProp) WHERE {?subjOfProp dbo:crosses ?objOfProp.}"
+    } ]
+  } ]
+}

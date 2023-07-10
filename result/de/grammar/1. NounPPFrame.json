@@ -1,0 +1,857 @@
+{
+  "grammarEntries" : [ {
+    "entry" : "amtssprache_von",
+    "id" : 1,
+    "Entry" : "amtssprache_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Amtssprachen von <NP{domain,dbo:officialLanguage}>.", "Gib mir die Amtssprache von <NP{domain,dbo:officialLanguage}>.", "Gib mir die Amtssprachen von <NP{domain,dbo:officialLanguage}>.", "Liste alle Amtssprachen von <NP{domain,dbo:officialLanguage}> auf.", "Liste die Amtssprachen von <NP{domain,dbo:officialLanguage}> auf.", "was ist die Amtssprache von <NP{domain,dbo:officialLanguage}>?", "was sind Amtssprachen von <NP{domain,dbo:officialLanguage}>?", "was war die Amtssprache von <NP{domain,dbo:officialLanguage}>?", "was waren Amtssprachen von <NP{domain,dbo:officialLanguage}>?", "welche Programmiersprachen sind die Amtssprache von <NP{domain,dbo:officialLanguage}>??", "welche Programmiersprachen waren die Amtssprache von <NP{domain,dbo:officialLanguage}>??", "welcher Programmiersprache ist die Amtssprache von <NP{domain,dbo:officialLanguage}>??", "welcher Programmiersprache war die Amtssprache von <NP{domain,dbo:officialLanguage}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:officialLanguage}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:officialLanguage ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:officialLanguage ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Amtssprache von <NP{domain,dbo:officialLanguage}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:officialLanguage}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:officialLanguage ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:officialLanguage ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "bandmitglieder_von",
+    "id" : 2,
+    "Entry" : "bandmitglieder_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Bandmitglieder von <NP{domain,dbo:bandMember}>.", "Gib mir den Bandmitglieder von <NP{domain,dbo:bandMember}>.", "Gib mir die Bandmitglieder von <NP{domain,dbo:bandMember}>.", "Liste alle Bandmitglieder von <NP{domain,dbo:bandMember}> auf.", "Liste die Bandmitglieder von <NP{domain,dbo:bandMember}> auf.", "welche Kinder sind der Bandmitglieder von <NP{domain,dbo:bandMember}>??", "welche Kinder waren der Bandmitglieder von <NP{domain,dbo:bandMember}>??", "welcher Kind ist der Bandmitglieder von <NP{domain,dbo:bandMember}>??", "welcher Kind war der Bandmitglieder von <NP{domain,dbo:bandMember}>??", "wer ist der Bandmitglieder von <NP{domain,dbo:bandMember}>?", "wer sind Bandmitglieder von <NP{domain,dbo:bandMember}>?", "wer war der Bandmitglieder von <NP{domain,dbo:bandMember}>?", "wer waren Bandmitglieder von <NP{domain,dbo:bandMember}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:bandMember}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:bandMember ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:bandMember ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Bandmitglieder von <NP{domain,dbo:bandMember}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:bandMember}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:bandMember ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:bandMember ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "bürgermeister_von_1",
+    "id" : 3,
+    "Entry" : "bürgermeister_von_1",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir den Bürgermeister von <NP{domain,dbo:mayor}>.", "welche Kinder sind der Bürgermeister von <NP{domain,dbo:mayor}>??", "welche Kinder waren der Bürgermeister von <NP{domain,dbo:mayor}>??", "welcher Kind ist der Bürgermeister von <NP{domain,dbo:mayor}>??", "welcher Kind war der Bürgermeister von <NP{domain,dbo:mayor}>??", "wer ist der Bürgermeister von <NP{domain,dbo:mayor}>?", "wer war der Bürgermeister von <NP{domain,dbo:mayor}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:mayor}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:mayor ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:mayor ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Bürgermeister von <NP{domain,dbo:mayor}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:mayor}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:mayor ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:mayor ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "bürgermeister_von_2",
+    "id" : 4,
+    "Entry" : "bürgermeister_von_2",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir den Bürgermeister von <NP{domain,dbo:leaderName}>.", "welche Kinder sind der Bürgermeister von <NP{domain,dbo:leaderName}>??", "welche Kinder waren der Bürgermeister von <NP{domain,dbo:leaderName}>??", "welcher Kind ist der Bürgermeister von <NP{domain,dbo:leaderName}>??", "welcher Kind war der Bürgermeister von <NP{domain,dbo:leaderName}>??", "wer ist der Bürgermeister von <NP{domain,dbo:leaderName}>?", "wer war der Bürgermeister von <NP{domain,dbo:leaderName}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:leaderName}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:leaderName ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:leaderName ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Bürgermeister von <NP{domain,dbo:leaderName}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:leaderName}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:leaderName ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:leaderName ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "doktorvater_von",
+    "id" : 5,
+    "Entry" : "doktorvater_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Doktorväter von <NP{domain,dbo:doctoralAdvisor}>.", "Gib mir den Doktorvater von <NP{domain,dbo:doctoralAdvisor}>.", "Gib mir die Doktorväter von <NP{domain,dbo:doctoralAdvisor}>.", "Liste alle Doktorväter von <NP{domain,dbo:doctoralAdvisor}> auf.", "Liste die Doktorväter von <NP{domain,dbo:doctoralAdvisor}> auf.", "welche Kinder sind der Doktorvater von <NP{domain,dbo:doctoralAdvisor}>??", "welche Kinder waren der Doktorvater von <NP{domain,dbo:doctoralAdvisor}>??", "welcher Kind ist der Doktorvater von <NP{domain,dbo:doctoralAdvisor}>??", "welcher Kind war der Doktorvater von <NP{domain,dbo:doctoralAdvisor}>??", "wer ist der Doktorvater von <NP{domain,dbo:doctoralAdvisor}>?", "wer sind Doktorväter von <NP{domain,dbo:doctoralAdvisor}>?", "wer war der Doktorvater von <NP{domain,dbo:doctoralAdvisor}>?", "wer waren Doktorväter von <NP{domain,dbo:doctoralAdvisor}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:doctoralAdvisor}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:doctoralAdvisor ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:doctoralAdvisor ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Doktorvater von <NP{domain,dbo:doctoralAdvisor}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:doctoralAdvisor}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:doctoralAdvisor ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:doctoralAdvisor ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "eltern_von",
+    "id" : 6,
+    "Entry" : "eltern_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Enkel von <NP{domain,dbo:parent}>.", "Gib mir den Enkel von <NP{domain,dbo:parent}>.", "Gib mir die Enkel von <NP{domain,dbo:parent}>.", "Liste alle Enkel von <NP{domain,dbo:parent}> auf.", "Liste die Enkel von <NP{domain,dbo:parent}> auf.", "welche Kinder sind der Enkel von <NP{domain,dbo:parent}>??", "welche Kinder waren der Enkel von <NP{domain,dbo:parent}>??", "welcher Kind ist der Enkel von <NP{domain,dbo:parent}>??", "welcher Kind war der Enkel von <NP{domain,dbo:parent}>??", "wer ist der Enkel von <NP{domain,dbo:parent}>?", "wer sind Enkel von <NP{domain,dbo:parent}>?", "wer war der Enkel von <NP{domain,dbo:parent}>?", "wer waren Enkel von <NP{domain,dbo:parent}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:parent}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Enkel von <NP{domain,dbo:parent}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:parent}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "elternteil_of",
+    "id" : 7,
+    "Entry" : "elternteil_of",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Elternteile von <NP{domain,dbo:parent}>.", "Gib mir den Elternteil von <NP{domain,dbo:parent}>.", "Gib mir die Elternteile von <NP{domain,dbo:parent}>.", "Liste alle Elternteile von <NP{domain,dbo:parent}> auf.", "Liste die Elternteile von <NP{domain,dbo:parent}> auf.", "welche Kinder sind der Elternteil von <NP{domain,dbo:parent}>??", "welche Kinder waren der Elternteil von <NP{domain,dbo:parent}>??", "welcher Kind ist der Elternteil von <NP{domain,dbo:parent}>??", "welcher Kind war der Elternteil von <NP{domain,dbo:parent}>??", "wer ist der Elternteil von <NP{domain,dbo:parent}>?", "wer sind Elternteile von <NP{domain,dbo:parent}>?", "wer war der Elternteil von <NP{domain,dbo:parent}>?", "wer waren Elternteile von <NP{domain,dbo:parent}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:parent}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Elternteil von <NP{domain,dbo:parent}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:parent}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "enkel_von",
+    "id" : 8,
+    "Entry" : "enkel_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Enkel von <NP{domain,dbo:parent}>.", "Gib mir den Enkel von <NP{domain,dbo:parent}>.", "Gib mir die Enkel von <NP{domain,dbo:parent}>.", "Liste alle Enkel von <NP{domain,dbo:parent}> auf.", "Liste die Enkel von <NP{domain,dbo:parent}> auf.", "welche Kinder sind der Enkel von <NP{domain,dbo:parent}>??", "welche Kinder waren der Enkel von <NP{domain,dbo:parent}>??", "welcher Kind ist der Enkel von <NP{domain,dbo:parent}>??", "welcher Kind war der Enkel von <NP{domain,dbo:parent}>??", "wer ist der Enkel von <NP{domain,dbo:parent}>?", "wer sind Enkel von <NP{domain,dbo:parent}>?", "wer war der Enkel von <NP{domain,dbo:parent}>?", "wer waren Enkel von <NP{domain,dbo:parent}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:parent}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Enkel von <NP{domain,dbo:parent}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:parent}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:parent ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "entwickler_von",
+    "id" : 9,
+    "Entry" : "entwickler_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Entwickler von <NP{domain,dbo:developer}>.", "Gib mir den Entwickler von <NP{domain,dbo:developer}>.", "Gib mir die Entwickler von <NP{domain,dbo:developer}>.", "Liste alle Entwickler von <NP{domain,dbo:developer}> auf.", "Liste die Entwickler von <NP{domain,dbo:developer}> auf.", "welche Universität sind der Entwickler von <NP{domain,dbo:developer}>??", "welche Universität waren der Entwickler von <NP{domain,dbo:developer}>??", "welcher Universität ist der Entwickler von <NP{domain,dbo:developer}>??", "welcher Universität war der Entwickler von <NP{domain,dbo:developer}>??", "wer ist der Entwickler von <NP{domain,dbo:developer}>?", "wer sind Entwickler von <NP{domain,dbo:developer}>?", "wer war der Entwickler von <NP{domain,dbo:developer}>?", "wer waren Entwickler von <NP{domain,dbo:developer}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:developer}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:developer ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:developer ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Entwickler von <NP{domain,dbo:developer}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:developer}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:developer ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:developer ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "frau_von",
+    "id" : 10,
+    "Entry" : "frau_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Frauen von <NP{domain,dbo:spouse}>.", "Gib mir die Frau von <NP{domain,dbo:spouse}>.", "Gib mir die Frauen von <NP{domain,dbo:spouse}>.", "Liste alle Frauen von <NP{domain,dbo:spouse}> auf.", "Liste die Frauen von <NP{domain,dbo:spouse}> auf.", "welche Kinder sind die Frau von <NP{domain,dbo:spouse}>??", "welche Kinder waren die Frau von <NP{domain,dbo:spouse}>??", "welcher Kind ist die Frau von <NP{domain,dbo:spouse}>??", "welcher Kind war die Frau von <NP{domain,dbo:spouse}>??", "wer ist die Frau von <NP{domain,dbo:spouse}>?", "wer sind Frauen von <NP{domain,dbo:spouse}>?", "wer war die Frau von <NP{domain,dbo:spouse}>?", "wer waren Frauen von <NP{domain,dbo:spouse}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:spouse}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:spouse ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:spouse ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Frau von <NP{domain,dbo:spouse}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:spouse}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:spouse ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:spouse ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "gesamteinwohnerzahl_von",
+    "id" : 11,
+    "Entry" : "gesamteinwohnerzahl_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir die Gesamteinwohnerzahl von <NP{domain,dbo:populationTotal}>.", "was ist die Gesamteinwohnerzahl von <NP{domain,dbo:populationTotal}>?", "was war die Gesamteinwohnerzahl von <NP{domain,dbo:populationTotal}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:populationTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Gesamteinwohnerzahl von <NP{domain,dbo:populationTotal}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:populationTotal}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:populationTotal ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "government_type",
+    "id" : 12,
+    "Entry" : "government_type",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Regierungsform von <NP{domain,dbo:governmentType}>.", "Gib mir die Regierungsform von <NP{domain,dbo:governmentType}>.", "Liste alle Regierungsform von <NP{domain,dbo:governmentType}> auf.", "Liste die Regierungsform von <NP{domain,dbo:governmentType}> auf.", "was ist die Regierungsform von <NP{domain,dbo:governmentType}>?", "was sind Regierungsform von <NP{domain,dbo:governmentType}>?", "was war die Regierungsform von <NP{domain,dbo:governmentType}>?", "was waren Regierungsform von <NP{domain,dbo:governmentType}>?", "welche Typen sind die Regierungsform von <NP{domain,dbo:governmentType}>??", "welche Typen waren die Regierungsform von <NP{domain,dbo:governmentType}>??", "welcher Typ ist die Regierungsform von <NP{domain,dbo:governmentType}>??", "welcher Typ war die Regierungsform von <NP{domain,dbo:governmentType}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:governmentType}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:governmentType ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:governmentType ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Regierungsform von <NP{domain,dbo:governmentType}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:governmentType}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:governmentType ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:governmentType ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "größthauptstadt_von",
+    "id" : 13,
+    "Entry" : "größthauptstadt_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle größte Städte in <NP{domain,dbo:largestCity}>.", "Gib mir die größte Stadt in <NP{domain,dbo:largestCity}>.", "Gib mir die größte Städte in <NP{domain,dbo:largestCity}>.", "Liste alle größte Städte in <NP{domain,dbo:largestCity}> auf.", "Liste die größte Städte in <NP{domain,dbo:largestCity}> auf.", "was ist die größte Stadt in <NP{domain,dbo:largestCity}>?", "was sind größte Städte in <NP{domain,dbo:largestCity}>?", "was war die größte Stadt in <NP{domain,dbo:largestCity}>?", "was waren größte Städte in <NP{domain,dbo:largestCity}>?", "welche Stadte sind die größte Stadt in <NP{domain,dbo:largestCity}>??", "welche Stadte waren die größte Stadt in <NP{domain,dbo:largestCity}>??", "welcher Stadt ist die größte Stadt in <NP{domain,dbo:largestCity}>??", "welcher Stadt war die größte Stadt in <NP{domain,dbo:largestCity}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:largestCity}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:largestCity ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:largestCity ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die größte Stadt in <NP{domain,dbo:largestCity}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:largestCity}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:largestCity ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:largestCity ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "hauptstadt_von",
+    "id" : 14,
+    "Entry" : "hauptstadt_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir die Hauptstadt von <NP{domain,dbo:capital}>.", "was ist die Hauptstadt von <NP{domain,dbo:capital}>?", "was war die Hauptstadt von <NP{domain,dbo:capital}>?", "welche Stadte sind die Hauptstadt von <NP{domain,dbo:capital}>??", "welche Stadte waren die Hauptstadt von <NP{domain,dbo:capital}>??", "welcher Stadt ist die Hauptstadt von <NP{domain,dbo:capital}>??", "welcher Stadt war die Hauptstadt von <NP{domain,dbo:capital}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:capital}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:capital ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:capital ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Hauptstadt von <NP{domain,dbo:capital}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:capital}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:capital ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:capital ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "heimstadion_von",
+    "id" : 15,
+    "Entry" : "heimstadion_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle HeimStadien von <NP{domain,dbo:ground}>.", "Gib mir das HeimStadion von <NP{domain,dbo:ground}>.", "Gib mir die HeimStadien von <NP{domain,dbo:ground}>.", "Liste alle HeimStadien von <NP{domain,dbo:ground}> auf.", "Liste die HeimStadien von <NP{domain,dbo:ground}> auf.", "was ist die HeimStadion von <NP{domain,dbo:ground}>?", "was sind HeimStadien von <NP{domain,dbo:ground}>?", "was war die HeimStadion von <NP{domain,dbo:ground}>?", "was waren HeimStadien von <NP{domain,dbo:ground}>?", "welche Stadien sind die HeimStadion von <NP{domain,dbo:ground}>??", "welche Stadien waren die HeimStadion von <NP{domain,dbo:ground}>??", "welcher Stadion ist die HeimStadion von <NP{domain,dbo:ground}>??", "welcher Stadion war die HeimStadion von <NP{domain,dbo:ground}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:ground}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:ground ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:ground ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die HeimStadion von <NP{domain,dbo:ground}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:ground}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:ground ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:ground ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "herausgeber_von",
+    "id" : 16,
+    "Entry" : "herausgeber_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Herausgeber von <NP{domain,dbo:editor}>.", "Gib mir den Herausgeber von <NP{domain,dbo:editor}>.", "Gib mir die Herausgeber von <NP{domain,dbo:editor}>.", "Liste alle Herausgeber von <NP{domain,dbo:editor}> auf.", "Liste die Herausgeber von <NP{domain,dbo:editor}> auf.", "welche Kinder sind der Herausgeber von <NP{domain,dbo:editor}>??", "welche Kinder waren der Herausgeber von <NP{domain,dbo:editor}>??", "welcher Kind ist der Herausgeber von <NP{domain,dbo:editor}>??", "welcher Kind war der Herausgeber von <NP{domain,dbo:editor}>??", "wer ist der Herausgeber von <NP{domain,dbo:editor}>?", "wer sind Herausgeber von <NP{domain,dbo:editor}>?", "wer war der Herausgeber von <NP{domain,dbo:editor}>?", "wer waren Herausgeber von <NP{domain,dbo:editor}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:editor}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:editor ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:editor ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Herausgeber von <NP{domain,dbo:editor}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:editor}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:editor ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:editor ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "höhe_von",
+    "id" : 17,
+    "Entry" : "höhe_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir die Höhe von <NP{domain,dbo:height}>.", "was ist die Höhe von <NP{domain,dbo:height}>?", "was war die Höhe von <NP{domain,dbo:height}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:height}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Höhe von <NP{domain,dbo:height}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:height}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:height ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "kinder_von",
+    "id" : 18,
+    "Entry" : "kinder_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Kinder von <NP{domain,dbo:child}>.", "Gib mir die Kind von <NP{domain,dbo:child}>.", "Gib mir die Kinder von <NP{domain,dbo:child}>.", "Liste alle Kinder von <NP{domain,dbo:child}> auf.", "Liste die Kinder von <NP{domain,dbo:child}> auf.", "welche Kinder sind die Kind von <NP{domain,dbo:child}>??", "welche Kinder waren die Kind von <NP{domain,dbo:child}>??", "welcher Kind ist die Kind von <NP{domain,dbo:child}>??", "welcher Kind war die Kind von <NP{domain,dbo:child}>??", "wer ist die Kind von <NP{domain,dbo:child}>?", "wer sind Kinder von <NP{domain,dbo:child}>?", "wer war die Kind von <NP{domain,dbo:child}>?", "wer waren Kinder von <NP{domain,dbo:child}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:child}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Kind von <NP{domain,dbo:child}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:child}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "koenig_von",
+    "id" : 19,
+    "Entry" : "koenig_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle König von <NP{domain,dbo:leader}>.", "Gib mir den König von <NP{domain,dbo:leader}>.", "Gib mir die König von <NP{domain,dbo:leader}>.", "Liste alle König von <NP{domain,dbo:leader}> auf.", "Liste die König von <NP{domain,dbo:leader}> auf.", "was ist der König von <NP{domain,dbo:leader}>?", "was sind König von <NP{domain,dbo:leader}>?", "was war der König von <NP{domain,dbo:leader}>?", "was waren König von <NP{domain,dbo:leader}>?", "welche Königtümer sind der König von <NP{domain,dbo:leader}>??", "welche Königtümer waren der König von <NP{domain,dbo:leader}>??", "welcher Königtum ist der König von <NP{domain,dbo:leader}>??", "welcher Königtum war der König von <NP{domain,dbo:leader}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:leader}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:leader ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:leader ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der König von <NP{domain,dbo:leader}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:leader}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:leader ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:leader ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "musik_von",
+    "id" : 20,
+    "Entry" : "musik_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Musiken von <NP{range,dbo:musicBy}>.", "Gib mir die Musik von <NP{range,dbo:musicBy}>.", "Gib mir die Musiken von <NP{range,dbo:musicBy}>.", "Liste alle Musiken von <NP{range,dbo:musicBy}> auf.", "Liste die Musiken von <NP{range,dbo:musicBy}> auf.", "was ist die Musik von <NP{range,dbo:musicBy}>?", "was sind Musiken von <NP{range,dbo:musicBy}>?", "was war die Musik von <NP{range,dbo:musicBy}>?", "was waren Musiken von <NP{range,dbo:musicBy}>?", "welche Kinder sind die Musik von <NP{range,dbo:musicBy}>??", "welche Kinder waren die Musik von <NP{range,dbo:musicBy}>??", "welcher Kind ist die Musik von <NP{range,dbo:musicBy}>??", "welcher Kind war die Musik von <NP{range,dbo:musicBy}>??" ],
+      "nonTerminal" : "<NP{range,dbo:musicBy}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:musicBy ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:musicBy ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Musik von <NP{range,dbo:musicBy}>?" ],
+      "nonTerminal" : "<NP{range,dbo:musicBy}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:musicBy ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:musicBy ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "nachfolger_von",
+    "id" : 21,
+    "Entry" : "nachfolger_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Nachfolger von <NP{domain,dbo:successor}>.", "Gib mir den Nachfolger von <NP{domain,dbo:successor}>.", "Gib mir die Nachfolger von <NP{domain,dbo:successor}>.", "Liste alle Nachfolger von <NP{domain,dbo:successor}> auf.", "Liste die Nachfolger von <NP{domain,dbo:successor}> auf.", "welche Kinder sind der Nachfolger von <NP{domain,dbo:successor}>??", "welche Kinder waren der Nachfolger von <NP{domain,dbo:successor}>??", "welcher Kind ist der Nachfolger von <NP{domain,dbo:successor}>??", "welcher Kind war der Nachfolger von <NP{domain,dbo:successor}>??", "wer ist der Nachfolger von <NP{domain,dbo:successor}>?", "wer sind Nachfolger von <NP{domain,dbo:successor}>?", "wer war der Nachfolger von <NP{domain,dbo:successor}>?", "wer waren Nachfolger von <NP{domain,dbo:successor}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:successor}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:successor ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:successor ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Nachfolger von <NP{domain,dbo:successor}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:successor}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:successor ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:successor ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "partei-von",
+    "id" : 22,
+    "Entry" : "partei-von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Parteien von <NP{domain,dbo:party}>.", "Gib mir die Partei von <NP{domain,dbo:party}>.", "Gib mir die Parteien von <NP{domain,dbo:party}>.", "Liste alle Parteien von <NP{domain,dbo:party}> auf.", "Liste die Parteien von <NP{domain,dbo:party}> auf.", "was ist die Partei von <NP{domain,dbo:party}>?", "was sind Parteien von <NP{domain,dbo:party}>?", "was war die Partei von <NP{domain,dbo:party}>?", "was waren Parteien von <NP{domain,dbo:party}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:party}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:party ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:party ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Partei von <NP{domain,dbo:party}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:party}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:party ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:party ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "präsident_von",
+    "id" : 23,
+    "Entry" : "präsident_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle präsidenten von <NP{domain,dbo:leader}>.", "Gib mir den präsident von <NP{domain,dbo:leader}>.", "Gib mir die präsidenten von <NP{domain,dbo:leader}>.", "Liste alle präsidenten von <NP{domain,dbo:leader}> auf.", "Liste die präsidenten von <NP{domain,dbo:leader}> auf.", "welche Kinder sind der präsident von <NP{domain,dbo:leader}>??", "welche Kinder waren der präsident von <NP{domain,dbo:leader}>??", "welcher Kind ist der präsident von <NP{domain,dbo:leader}>??", "welcher Kind war der präsident von <NP{domain,dbo:leader}>??", "wer ist der präsident von <NP{domain,dbo:leader}>?", "wer sind präsidenten von <NP{domain,dbo:leader}>?", "wer war der präsident von <NP{domain,dbo:leader}>?", "wer waren präsidenten von <NP{domain,dbo:leader}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:leader}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:leader ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:leader ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der präsident von <NP{domain,dbo:leader}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:leader}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:leader ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:leader ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "richtiger_name_of",
+    "id" : 24,
+    "Entry" : "richtiger_name_of",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle richtiger Name von <NP{domain,dbp:alterEgo}>.", "Gib mir die richtiger Name von <NP{domain,dbp:alterEgo}>.", "Liste alle richtiger Name von <NP{domain,dbp:alterEgo}> auf.", "Liste die richtiger Name von <NP{domain,dbp:alterEgo}> auf.", "was ist die richtiger Name von <NP{domain,dbp:alterEgo}>?", "was sind richtiger Name von <NP{domain,dbp:alterEgo}>?", "was war die richtiger Name von <NP{domain,dbp:alterEgo}>?", "was waren richtiger Name von <NP{domain,dbp:alterEgo}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:alterEgo}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:alterEgo ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:alterEgo ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die richtiger Name von <NP{domain,dbp:alterEgo}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:alterEgo}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:alterEgo ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:alterEgo ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "schöpfer_von",
+    "id" : 25,
+    "Entry" : "schöpfer_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Schöpfer von <NP{domain,dbo:creator}>.", "Gib mir die Schöpfer von <NP{domain,dbo:creator}>.", "Liste alle Schöpfer von <NP{domain,dbo:creator}> auf.", "Liste die Schöpfer von <NP{domain,dbo:creator}> auf.", "welche Kinder sind die Schöpfer von <NP{domain,dbo:creator}>??", "welche Kinder waren die Schöpfer von <NP{domain,dbo:creator}>??", "welcher Kind ist die Schöpfer von <NP{domain,dbo:creator}>??", "welcher Kind war die Schöpfer von <NP{domain,dbo:creator}>??", "wer ist die Schöpfer von <NP{domain,dbo:creator}>?", "wer sind Schöpfer von <NP{domain,dbo:creator}>?", "wer war die Schöpfer von <NP{domain,dbo:creator}>?", "wer waren Schöpfer von <NP{domain,dbo:creator}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:creator}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:creator ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:creator ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Schöpfer von <NP{domain,dbo:creator}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:creator}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:creator ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:creator ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "sohn_von",
+    "id" : 26,
+    "Entry" : "sohn_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Söhne von <NP{domain,dbo:child}>.", "Gib mir die Sohn von <NP{domain,dbo:child}>.", "Gib mir die Söhne von <NP{domain,dbo:child}>.", "Liste alle Söhne von <NP{domain,dbo:child}> auf.", "Liste die Söhne von <NP{domain,dbo:child}> auf.", "welche Kinder sind die Sohn von <NP{domain,dbo:child}>??", "welche Kinder waren die Sohn von <NP{domain,dbo:child}>??", "welcher Kind ist die Sohn von <NP{domain,dbo:child}>??", "welcher Kind war die Sohn von <NP{domain,dbo:child}>??", "wer ist die Sohn von <NP{domain,dbo:child}>?", "wer sind Söhne von <NP{domain,dbo:child}>?", "wer war die Sohn von <NP{domain,dbo:child}>?", "wer waren Söhne von <NP{domain,dbo:child}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:child}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Sohn von <NP{domain,dbo:child}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:child}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "spiele_von",
+    "id" : 27,
+    "Entry" : "spiele_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Spiele von <NP{range,dbo:publisher}>.", "Gib mir die Spiel von <NP{range,dbo:publisher}>.", "Gib mir die Spiele von <NP{range,dbo:publisher}>.", "Liste alle Spiele von <NP{range,dbo:publisher}> auf.", "Liste die Spiele von <NP{range,dbo:publisher}> auf.", "was ist die Spiel von <NP{range,dbo:publisher}>?", "was sind Spiele von <NP{range,dbo:publisher}>?", "was war die Spiel von <NP{range,dbo:publisher}>?", "was waren Spiele von <NP{range,dbo:publisher}>?", "welche Schiffe sind die Spiel von <NP{range,dbo:publisher}>??", "welche Schiffe waren die Spiel von <NP{range,dbo:publisher}>??", "welcher Schiff ist die Spiel von <NP{range,dbo:publisher}>??", "welcher Schiff war die Spiel von <NP{range,dbo:publisher}>??" ],
+      "nonTerminal" : "<NP{range,dbo:publisher}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:publisher ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:publisher ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Spiel von <NP{range,dbo:publisher}>?" ],
+      "nonTerminal" : "<NP{range,dbo:publisher}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:publisher ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:publisher ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "spitzname_von",
+    "id" : 28,
+    "Entry" : "spitzname_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Spitznamen von <NP{domain,dbp:nickname}>.", "Gib mir die Spitzname von <NP{domain,dbp:nickname}>.", "Gib mir die Spitznamen von <NP{domain,dbp:nickname}>.", "Liste alle Spitznamen von <NP{domain,dbp:nickname}> auf.", "Liste die Spitznamen von <NP{domain,dbp:nickname}> auf.", "was ist die Spitzname von <NP{domain,dbp:nickname}>?", "was sind Spitznamen von <NP{domain,dbp:nickname}>?", "was war die Spitzname von <NP{domain,dbp:nickname}>?", "was waren Spitznamen von <NP{domain,dbp:nickname}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:nickname}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:nickname ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:nickname ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Spitzname von <NP{domain,dbp:nickname}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:nickname}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:nickname ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:nickname ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "staatsangehörigkeit_of",
+    "id" : 29,
+    "Entry" : "staatsangehörigkeit_of",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Staatsangehörigkeit von <NP{domain,dbo:nationality}>.", "Gib mir die Staatsangehörigkeit von <NP{domain,dbo:nationality}>.", "Liste alle Staatsangehörigkeit von <NP{domain,dbo:nationality}> auf.", "Liste die Staatsangehörigkeit von <NP{domain,dbo:nationality}> auf.", "was ist die Staatsangehörigkeit von <NP{domain,dbo:nationality}>?", "was sind Staatsangehörigkeit von <NP{domain,dbo:nationality}>?", "was war die Staatsangehörigkeit von <NP{domain,dbo:nationality}>?", "was waren Staatsangehörigkeit von <NP{domain,dbo:nationality}>?", "welche Länder sind die Staatsangehörigkeit von <NP{domain,dbo:nationality}>??", "welche Länder waren die Staatsangehörigkeit von <NP{domain,dbo:nationality}>??", "welcher Land ist die Staatsangehörigkeit von <NP{domain,dbo:nationality}>??", "welcher Land war die Staatsangehörigkeit von <NP{domain,dbo:nationality}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:nationality}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:nationality ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:nationality ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Staatsangehörigkeit von <NP{domain,dbo:nationality}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:nationality}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:nationality ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:nationality ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "staatsangehörigkeit_von",
+    "id" : 30,
+    "Entry" : "staatsangehörigkeit_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Staatsangehörigkeit von <NP{domain,dbo:nationality}>.", "Gib mir die Staatsangehörigkeit von <NP{domain,dbo:nationality}>.", "Liste alle Staatsangehörigkeit von <NP{domain,dbo:nationality}> auf.", "Liste die Staatsangehörigkeit von <NP{domain,dbo:nationality}> auf.", "was ist die Staatsangehörigkeit von <NP{domain,dbo:nationality}>?", "was sind Staatsangehörigkeit von <NP{domain,dbo:nationality}>?", "was war die Staatsangehörigkeit von <NP{domain,dbo:nationality}>?", "was waren Staatsangehörigkeit von <NP{domain,dbo:nationality}>?", "welche Länder sind die Staatsangehörigkeit von <NP{domain,dbo:nationality}>??", "welche Länder waren die Staatsangehörigkeit von <NP{domain,dbo:nationality}>??", "welcher Land ist die Staatsangehörigkeit von <NP{domain,dbo:nationality}>??", "welcher Land war die Staatsangehörigkeit von <NP{domain,dbo:nationality}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:nationality}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:nationality ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:nationality ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Staatsangehörigkeit von <NP{domain,dbo:nationality}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:nationality}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:nationality ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:nationality ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "stadtteile_von",
+    "id" : 31,
+    "Entry" : "stadtteile_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Stadtteile von <NP{range,dbo:governmentType}>.", "Gib mir die Stadtteil von <NP{range,dbo:governmentType}>.", "Gib mir die Stadtteile von <NP{range,dbo:governmentType}>.", "Liste alle Stadtteile von <NP{range,dbo:governmentType}> auf.", "Liste die Stadtteile von <NP{range,dbo:governmentType}> auf.", "was ist die Stadtteil von <NP{range,dbo:governmentType}>?", "was sind Stadtteile von <NP{range,dbo:governmentType}>?", "was war die Stadtteil von <NP{range,dbo:governmentType}>?", "was waren Stadtteile von <NP{range,dbo:governmentType}>?", "welche Länder sind die Stadtteil von <NP{range,dbo:governmentType}>??", "welche Länder waren die Stadtteil von <NP{range,dbo:governmentType}>??", "welcher Land ist die Stadtteil von <NP{range,dbo:governmentType}>??", "welcher Land war die Stadtteil von <NP{range,dbo:governmentType}>??" ],
+      "nonTerminal" : "<NP{range,dbo:governmentType}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:governmentType ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:governmentType ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Stadtteil von <NP{range,dbo:governmentType}>?" ],
+      "nonTerminal" : "<NP{range,dbo:governmentType}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:governmentType ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:governmentType ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "tocher_von",
+    "id" : 32,
+    "Entry" : "tocher_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Töchter von <NP{domain,dbo:child}>.", "Gib mir die Tochter von <NP{domain,dbo:child}>.", "Gib mir die Töchter von <NP{domain,dbo:child}>.", "Liste alle Töchter von <NP{domain,dbo:child}> auf.", "Liste die Töchter von <NP{domain,dbo:child}> auf.", "welche Kinder sind die Tochter von <NP{domain,dbo:child}>??", "welche Kinder waren die Tochter von <NP{domain,dbo:child}>??", "welcher Kind ist die Tochter von <NP{domain,dbo:child}>??", "welcher Kind war die Tochter von <NP{domain,dbo:child}>??", "wer ist die Tochter von <NP{domain,dbo:child}>?", "wer sind Töchter von <NP{domain,dbo:child}>?", "wer war die Tochter von <NP{domain,dbo:child}>?", "wer waren Töchter von <NP{domain,dbo:child}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:child}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Tochter von <NP{domain,dbo:child}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:child}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 3,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Töchter von <NP{domain,dbo:child}>.", "Gib mir die Tochter von <NP{domain,dbo:child}>.", "Gib mir die Töchter von <NP{domain,dbo:child}>.", "Liste alle Töchter von <NP{domain,dbo:child}> auf.", "Liste die Töchter von <NP{domain,dbo:child}> auf.", "welche Kinder sind die Tochter von <NP{domain,dbo:child}>??", "welche Kinder waren die Tochter von <NP{domain,dbo:child}>??", "welcher Kind ist die Tochter von <NP{domain,dbo:child}>??", "welcher Kind war die Tochter von <NP{domain,dbo:child}>??", "wer ist die Tochter von <NP{domain,dbo:child}>?", "wer sind Töchter von <NP{domain,dbo:child}>?", "wer war die Tochter von <NP{domain,dbo:child}>?", "wer waren Töchter von <NP{domain,dbo:child}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:child}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 4,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Tochter von <NP{domain,dbo:child}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:child}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:child ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "trainer_von",
+    "id" : 33,
+    "Entry" : "trainer_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Trainer von <NP{domain,dbo:coach}>.", "Gib mir den Trainer von <NP{domain,dbo:coach}>.", "Gib mir die Trainer von <NP{domain,dbo:coach}>.", "Liste alle Trainer von <NP{domain,dbo:coach}> auf.", "Liste die Trainer von <NP{domain,dbo:coach}> auf.", "welche Trainer sind der Trainer von <NP{domain,dbo:coach}>??", "welche Trainer waren der Trainer von <NP{domain,dbo:coach}>??", "welcher Trainer ist der Trainer von <NP{domain,dbo:coach}>??", "welcher Trainer war der Trainer von <NP{domain,dbo:coach}>??", "wer ist der Trainer von <NP{domain,dbo:coach}>?", "wer sind Trainer von <NP{domain,dbo:coach}>?", "wer war der Trainer von <NP{domain,dbo:coach}>?", "wer waren Trainer von <NP{domain,dbo:coach}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:coach}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:coach ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:coach ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Trainer von <NP{domain,dbo:coach}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:coach}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:coach ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:coach ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "vater_von_1",
+    "id" : 34,
+    "Entry" : "vater_von_1",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Väter von <NP{domain,dbp:father}>.", "Gib mir die Vater von <NP{domain,dbp:father}>.", "Gib mir die Väter von <NP{domain,dbp:father}>.", "Liste alle Väter von <NP{domain,dbp:father}> auf.", "Liste die Väter von <NP{domain,dbp:father}> auf.", "welche Kinder sind die Vater von <NP{domain,dbp:father}>??", "welche Kinder waren die Vater von <NP{domain,dbp:father}>??", "welcher Kind ist die Vater von <NP{domain,dbp:father}>??", "welcher Kind war die Vater von <NP{domain,dbp:father}>??", "wer ist die Vater von <NP{domain,dbp:father}>?", "wer sind Väter von <NP{domain,dbp:father}>?", "wer war die Vater von <NP{domain,dbp:father}>?", "wer waren Väter von <NP{domain,dbp:father}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:father}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:father ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:father ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Vater von <NP{domain,dbp:father}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:father}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:father ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:father ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "videospiele_von",
+    "id" : 35,
+    "Entry" : "videospiele_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Videospiele von <NP{range,dbo:publisher}>.", "Gib mir die Videospiel von <NP{range,dbo:publisher}>.", "Gib mir die Videospiele von <NP{range,dbo:publisher}>.", "Liste alle Videospiele von <NP{range,dbo:publisher}> auf.", "Liste die Videospiele von <NP{range,dbo:publisher}> auf.", "was ist die Videospiel von <NP{range,dbo:publisher}>?", "was sind Videospiele von <NP{range,dbo:publisher}>?", "was war die Videospiel von <NP{range,dbo:publisher}>?", "was waren Videospiele von <NP{range,dbo:publisher}>?", "welche Schiffe sind die Videospiel von <NP{range,dbo:publisher}>??", "welche Schiffe waren die Videospiel von <NP{range,dbo:publisher}>??", "welcher Schiff ist die Videospiel von <NP{range,dbo:publisher}>??", "welcher Schiff war die Videospiel von <NP{range,dbo:publisher}>??" ],
+      "nonTerminal" : "<NP{range,dbo:publisher}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:publisher ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:publisher ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Videospiel von <NP{range,dbo:publisher}>?" ],
+      "nonTerminal" : "<NP{range,dbo:publisher}>",
+      "nonTerminalSparqlQuery" : "SELECT ?objOfProp. WHERE {?subjOfProp dbo:publisher ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:publisher ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "vizepräsident_unter",
+    "id" : 36,
+    "Entry" : "vizepräsident_unter",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Vizepräsidenten unter <NP{domain,dbo:vicePresident}>.", "Gib mir den Vizepräsident unter <NP{domain,dbo:vicePresident}>.", "Gib mir die Vizepräsidenten unter <NP{domain,dbo:vicePresident}>.", "Liste alle Vizepräsidenten unter <NP{domain,dbo:vicePresident}> auf.", "Liste die Vizepräsidenten unter <NP{domain,dbo:vicePresident}> auf.", "welche Kinder sind der Vizepräsident unter <NP{domain,dbo:vicePresident}>??", "welche Kinder waren der Vizepräsident unter <NP{domain,dbo:vicePresident}>??", "welcher Kind ist der Vizepräsident unter <NP{domain,dbo:vicePresident}>??", "welcher Kind war der Vizepräsident unter <NP{domain,dbo:vicePresident}>??", "wer ist der Vizepräsident unter <NP{domain,dbo:vicePresident}>?", "wer sind Vizepräsidenten unter <NP{domain,dbo:vicePresident}>?", "wer war der Vizepräsident unter <NP{domain,dbo:vicePresident}>?", "wer waren Vizepräsidenten unter <NP{domain,dbo:vicePresident}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:vicePresident}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:vicePresident ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:vicePresident ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Vizepräsident unter <NP{domain,dbo:vicePresident}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:vicePresident}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:vicePresident ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:vicePresident ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "vizepräsident_von",
+    "id" : 37,
+    "Entry" : "vizepräsident_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Vizepräsidenten von <NP{domain,dbo:vicePresident}>.", "Gib mir den Vizepräsident von <NP{domain,dbo:vicePresident}>.", "Gib mir die Vizepräsidenten von <NP{domain,dbo:vicePresident}>.", "Liste alle Vizepräsidenten von <NP{domain,dbo:vicePresident}> auf.", "Liste die Vizepräsidenten von <NP{domain,dbo:vicePresident}> auf.", "was ist der Vizepräsident von <NP{domain,dbo:vicePresident}>?", "was sind Vizepräsidenten von <NP{domain,dbo:vicePresident}>?", "was war der Vizepräsident von <NP{domain,dbo:vicePresident}>?", "was waren Vizepräsidenten von <NP{domain,dbo:vicePresident}>?", "welche Länder sind der Vizepräsident von <NP{domain,dbo:vicePresident}>??", "welche Länder waren der Vizepräsident von <NP{domain,dbo:vicePresident}>??", "welcher Land ist der Vizepräsident von <NP{domain,dbo:vicePresident}>??", "welcher Land war der Vizepräsident von <NP{domain,dbo:vicePresident}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:vicePresident}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:vicePresident ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:vicePresident ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "der Vizepräsident von <NP{domain,dbo:vicePresident}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:vicePresident}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:vicePresident ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:vicePresident ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "vorwahl_von",
+    "id" : 38,
+    "Entry" : "vorwahl_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Vorwahl von <NP{domain,dbo:areaCode}>.", "Gib mir die Vorwahl von <NP{domain,dbo:areaCode}>.", "Liste alle Vorwahl von <NP{domain,dbo:areaCode}> auf.", "Liste die Vorwahl von <NP{domain,dbo:areaCode}> auf.", "was ist die Vorwahl von <NP{domain,dbo:areaCode}>?", "was sind Vorwahl von <NP{domain,dbo:areaCode}>?", "was war die Vorwahl von <NP{domain,dbo:areaCode}>?", "was waren Vorwahl von <NP{domain,dbo:areaCode}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:areaCode}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:areaCode ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:areaCode ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Vorwahl von <NP{domain,dbo:areaCode}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:areaCode}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:areaCode ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:areaCode ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "währung_von",
+    "id" : 39,
+    "Entry" : "währung_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Währungen von <NP{domain,dbo:currency}>.", "Gib mir die Währung von <NP{domain,dbo:currency}>.", "Gib mir die Währungen von <NP{domain,dbo:currency}>.", "Liste alle Währungen von <NP{domain,dbo:currency}> auf.", "Liste die Währungen von <NP{domain,dbo:currency}> auf.", "was ist die Währung von <NP{domain,dbo:currency}>?", "was sind Währungen von <NP{domain,dbo:currency}>?", "was war die Währung von <NP{domain,dbo:currency}>?", "was waren Währungen von <NP{domain,dbo:currency}>?", "welche Währungen sind die Währung von <NP{domain,dbo:currency}>??", "welche Währungen waren die Währung von <NP{domain,dbo:currency}>??", "welcher Währung ist die Währung von <NP{domain,dbo:currency}>??", "welcher Währung war die Währung von <NP{domain,dbo:currency}>??" ],
+      "nonTerminal" : "<NP{domain,dbo:currency}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:currency ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:currency ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Währung von <NP{domain,dbo:currency}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:currency}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:currency ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:currency ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "zeitzone_von_1",
+    "id" : 40,
+    "Entry" : "zeitzone_von_1",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Zeitzonen von <NP{domain,dbo:timeZone}>.", "Gib mir die Zeitzone von <NP{domain,dbo:timeZone}>.", "Gib mir die Zeitzonen von <NP{domain,dbo:timeZone}>.", "Liste alle Zeitzonen von <NP{domain,dbo:timeZone}> auf.", "Liste die Zeitzonen von <NP{domain,dbo:timeZone}> auf.", "was ist die Zeitzone von <NP{domain,dbo:timeZone}>?", "was sind Zeitzonen von <NP{domain,dbo:timeZone}>?", "was war die Zeitzone von <NP{domain,dbo:timeZone}>?", "was waren Zeitzonen von <NP{domain,dbo:timeZone}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:timeZone}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:timeZone ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:timeZone ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Zeitzone von <NP{domain,dbo:timeZone}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:timeZone}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:timeZone ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:timeZone ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "zeitzone_von_2",
+    "id" : 41,
+    "Entry" : "zeitzone_von_2",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Zeitzonen von <NP{domain,dbp:timezone}>.", "Gib mir die Zeitzone von <NP{domain,dbp:timezone}>.", "Gib mir die Zeitzonen von <NP{domain,dbp:timezone}>.", "Liste alle Zeitzonen von <NP{domain,dbp:timezone}> auf.", "Liste die Zeitzonen von <NP{domain,dbp:timezone}> auf.", "was ist die Zeitzone von <NP{domain,dbp:timezone}>?", "was sind Zeitzonen von <NP{domain,dbp:timezone}>?", "was war die Zeitzone von <NP{domain,dbp:timezone}>?", "was waren Zeitzonen von <NP{domain,dbp:timezone}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:timezone}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:timezone ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:timezone ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Zeitzone von <NP{domain,dbp:timezone}>?" ],
+      "nonTerminal" : "<NP{domain,dbp:timezone}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbp:timezone ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbp:timezone ?objOfProp.}"
+    } ]
+  }, {
+    "entry" : "zutaten_von",
+    "id" : 42,
+    "Entry" : "zutaten_von",
+    "syntacticFrame" : "NPP",
+    "rules" : [ {
+      "grammarRuleNo" : 1,
+      "sentTemplate" : null,
+      "sentences" : [ "Gib mir alle Zutaten von <NP{domain,dbo:ingredient}>.", "Gib mir die Zutaten von <NP{domain,dbo:ingredient}>.", "Liste alle Zutaten von <NP{domain,dbo:ingredient}> auf.", "Liste die Zutaten von <NP{domain,dbo:ingredient}> auf.", "was ist die Zutaten von <NP{domain,dbo:ingredient}>?", "was sind Zutaten von <NP{domain,dbo:ingredient}>?", "was war die Zutaten von <NP{domain,dbo:ingredient}>?", "was waren Zutaten von <NP{domain,dbo:ingredient}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:ingredient}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:ingredient ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:ingredient ?objOfProp.}"
+    }, {
+      "grammarRuleNo" : 2,
+      "sentTemplate" : "nounPhrase",
+      "sentences" : [ "die Zutaten von <NP{domain,dbo:ingredient}>?" ],
+      "nonTerminal" : "<NP{domain,dbo:ingredient}>",
+      "nonTerminalSparqlQuery" : "SELECT ?subjOfProp WHERE {?subjOfProp dbo:ingredient ?objOfProp.}",
+      "answerSparqlQuery" : "SELECT ?objOfProp WHERE {?subjOfProp dbo:ingredient ?objOfProp.}"
+    } ]
+  } ]
+}

@@ -1,0 +1,47 @@
+@prefix :        <http://localhost:8080/#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+@prefix oils:     <http://lemon-model.net/oils#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :groeß_3 ;
+  lemon:entry    :form_groeß_3_preposition ;
+  lemon:entry    :groeß_3_res .
+
+:groeß_3 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_groeß_3 ;
+  lemon:otherForm      :form_groeß_3_comperative ;
+  lemon:otherForm      :form_groeß_3_superlative ;
+  lemon:sense          :groeß_3_sense_1 ;
+  lemon:synBehavior    :groeß_3_predFrame .
+
+:form_groeß_3 lemon:writtenRep "größ"@de .
+
+:form_groeß_3_comperative lemon:writtenRep "größer"@de .
+
+:form_groeß_3_superlative lemon:writtenRep "größte"@de .
+
+:groeß_3_predFrame a        lexinfo:AdjectiveSuperlativeFrame ;
+  lexinfo:copulativeSubject :groeß_3_PredSynArg .
+
+:groeß_3_sense_1 a  lemon:LexicalSense ;
+  lemon:reference :groeß_3_res ;
+  lemon:isA       :groeß_3_PredSynArg ;
+  lemon:condition :groeß_3_sense_1_condition .
+
+:groeß_3_res a   oils:CovariantScalar ;
+  oils:boundTo  <http://dbpedia.org/ontology/areaTotal> ;
+  oils:degree   <http://lemon-model.net/oils/high> .
+
+:groeß_3_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain   <http://www.w3.org/2002/07/owl#Thing> ;
+  lemon:propertyRange    <http://dbpedia.org/ontology/Country> .## Prepositions ##
+:form_groeß_3_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@de ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
+

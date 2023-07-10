@@ -1,0 +1,81 @@
+{
+  "grammarEntries" : [ {
+    "id" : "1",
+    "lexicalEntryUri" : "http://localhost:8080#boardgame_by_1",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Work" ],
+    "returnType" : [ "Agent" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : null,
+    "sentences" : [ "Give me all boardgames by ($x | Work_NP).", "List all the boardgames by ($x | Work_NP).", "show me all boardgames by ($x | Work_NP).", "which agent is the boardgame by ($x | Work_NP)?", "which agent was the boardgame by ($x | Work_NP)?", "which agents are the boardgames by ($x | Work_NP)?", "which agents were the boardgames by ($x | Work_NP)?", "Who are the boardgames by ($x | Work_NP)?", "Who is the boardgame by ($x | Work_NP)?", "Who was the boardgame by ($x | Work_NP)?", "Who were the boardgames by ($x | Work_NP)?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }, {
+    "id" : "2",
+    "lexicalEntryUri" : "http://localhost:8080#boardgame_by_1",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Work", "Agent" ],
+    "returnType" : [ "BooleanFlag" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : "booleanQuestion",
+    "sentences" : [ "is ($x | Agent_NP) the boardgame by ($x | Work_NP)?." ],
+    "sparqlQuery" : "ASK WHERE {?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }, {
+    "id" : "3",
+    "lexicalEntryUri" : "http://localhost:8080#boardgame_by_1",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Agent" ],
+    "returnType" : [ "Work" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : "Copulative_Subject",
+    "sentences" : [ "($x | Agent_NP) is the boardgame by which work?", "($x | Agent_NP) was the boardgame by which work?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }, {
+    "id" : "4",
+    "lexicalEntryUri" : "http://localhost:8080#boardgame_by_1",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Work" ],
+    "returnType" : [ "Agent" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : "HOW_MANY_THING_FORWARD",
+    "sentences" : [ "How many boardgame does ($x | Work_NP) have?" ],
+    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }, {
+    "id" : "5",
+    "lexicalEntryUri" : "http://localhost:8080#boardgame_by_1",
+    "language" : "EN",
+    "type" : "NP",
+    "bindingType" : [ "Work" ],
+    "returnType" : [ "Agent" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : "nounPhrase",
+    "sentences" : [ "the boardgame by ($x | Work_NP)?", "the boardgames by ($x | Work_NP)?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }, {
+    "id" : "6",
+    "lexicalEntryUri" : null,
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Location" ],
+    "returnType" : [ "Location" ],
+    "frameType" : "FULL_DATASET",
+    "sentenceTemplate" : null,
+    "sentences" : [ "Where is $x located?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <null> ?objOfProp .}",
+    "returnVariable" : null,
+    "combination" : false
+  } ]
+}

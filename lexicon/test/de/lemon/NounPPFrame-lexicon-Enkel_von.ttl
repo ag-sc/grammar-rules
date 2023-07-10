@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Enkel_von ;
+  lemon:entry    :Enkel_von_form_preposition .
+
+:Enkel_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :Enkel_von_form ;
+  lemon:otherForm      :Enkel_von_plural_form ;
+  lemon:otherForm      :Enkel_von_accusative_form ;
+  lemon:otherForm      :Enkel_von_dative_form ;
+  lemon:otherForm      :Enkel_von_genitive_form ;
+  lemon:otherForm      :Enkel_von_plural_form ;
+  lemon:sense          :Enkel_von_sense_1 ;
+  lemon:synBehavior    :Enkel_von_nounpp .
+
+:Enkel_von_form a lemon:Form ;
+  lemon:writtenRep "Enkel"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Enkel_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Enkel"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Enkel_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Enkel"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:Enkel_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Enkel"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:Enkel_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Enkels"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:Enkel_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:Enkel_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :Enkel_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/parent> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :Enkel_von_sense_1_condition .
+
+:Enkel_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2 lemon:marker :Enkel_von_form_preposition .
+
+## Prepositions ##
+
+:Enkel_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

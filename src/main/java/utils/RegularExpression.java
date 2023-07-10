@@ -32,6 +32,7 @@ public class RegularExpression {
             ruleWithVariable = ruleWithVariable.replace(PLACE_HOLDER, "([A-Za-z0-9_]*)");
             //ruleWithVariable = ruleWithVariable.replace(REGULAR_EXPRESSION_END, "([A-Za-z0-9_]*)");
             ruleWithVariable = replaceSpaceWithSlash(ruleWithVariable);
+
         }
 
         return ruleWithVariable;
@@ -49,7 +50,7 @@ public class RegularExpression {
         List<String> results = new ArrayList<String>();
         sentence=sentence.toLowerCase();
         sentence = replaceSpaceWithSlash(sentence);
-        //System.out.println(sentence+" "+ruleRegularEx);
+        //System.out.println(ruleRegularEx+" "+sentence);
         Pattern pattern = Pattern.compile(ruleRegularEx);
         Matcher matcher = pattern.matcher(sentence);
         String extractPattern = null;
@@ -62,7 +63,7 @@ public class RegularExpression {
                     extractPattern = matcher.group(index);
                     results.add(extractPattern);
                 }
-                //System.out.println(sentence + " " + ruleRegularEx);
+                System.out.println(sentence + " " + ruleRegularEx);
             }
         //}
         return results;

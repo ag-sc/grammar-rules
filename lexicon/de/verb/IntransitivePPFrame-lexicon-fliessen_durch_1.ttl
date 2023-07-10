@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :fliessen_durch_1 ;
+  lemon:entry    :form_fliessen_durch_1_present_preposition .
+
+:fliessen_durch_1 a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_fliessen_durch_1_present ;
+  lemon:otherForm      :fliessen_durch_1_present3rd ;
+  lemon:otherForm      :fliessen_durch_1_past ;
+  lemon:otherForm      :fliessen_durch_1_perfect ;
+  lemon:sense          :fliessen_durch_1_sense_1 ;
+  lemon:synBehavior    :fliessen_durch_1_frame .
+
+:form_fliessen_durch_1_present a           lemon:Form ;
+  lemon:writtenRep     "fließen"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:fliessen_durch_1_present3rd a      lemon:Form ;
+  lemon:writtenRep "fließt"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:fliessen_durch_1_past a lemon:Form ;
+  lemon:writtenRep  "floss"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:fliessen_durch_1_perfect a lemon:Form ;
+  lemon:writtenRep  "geflossen"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:fliessen_durch_1_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :fliessen_durch_1_subj ;
+  lexinfo:prepositionalAdjunct :fliessen_durch_1_obj .
+
+:fliessen_durch_1_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :fliessen_durch_1_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/city> ;
+  lemon:subjOfProp  :fliessen_durch_1_obj ;
+  lemon:objOfProp   :fliessen_durch_1_subj ;
+  lemon:condition   :fliessen_durch_1_sense_1_condition .
+
+:fliessen_durch_1_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/River> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/City> .
+
+
+:fliessen_durch_1_obj lemon:marker :durch .
+
+:arg2 lemon:marker :form_fliessen_durch_1_present_preposition .
+
+## Prepositions ##
+
+:form_fliessen_durch_1_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "durch"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

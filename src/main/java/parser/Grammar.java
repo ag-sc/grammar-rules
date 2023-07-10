@@ -48,9 +48,8 @@ public class Grammar {
                     if(partSparql!=null)
                        return grammarRule.joinSparql(mainSparql,partSparql);
                     else
-                    return mainSparql;
+                    return null;
                 } else {
-
                     return sparql;
                 }
             }

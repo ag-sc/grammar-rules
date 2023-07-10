@@ -47,10 +47,16 @@ public class GrammarFactory {
                     continue;
                 }*/
                 String sparql = this.modifySparql(grammarEntryUnit);
-                GrammarRule grammarRule = new GrammarRule(questions, sparql, grammarEntryUnit.getBindingType(),grammarEntryUnit.getReturnType(),
-                                                         grammarEntryUnit.getReturnVariable(),grammarEntryUnit.getQueryType().name()
-                                                         ,grammarEntryUnit.getSentenceTemplate());
-                                                         grammarRules.add(grammarRule);
+                if (grammarEntryUnit.getLexicalEntryUri() != null) {
+
+                    if (grammarEntryUnit.getReturnVariable() != null) {
+                        GrammarRule grammarRule = new GrammarRule(questions, sparql, grammarEntryUnit.getBindingType(),
+                                grammarEntryUnit.getReturnVariable(),
+                                grammarEntryUnit.getSentenceTemplate());
+                        grammarRules.add(grammarRule);
+                    }
+
+                }
             }
 
         }
@@ -75,8 +81,8 @@ public class GrammarFactory {
         String frameType = grammarEntryUnit.getFrameType();
         String template = grammarEntryUnit.getSentenceTemplate();
         String property = this.findProperty(sparql);
-        if (grammarEntryUnit.getQueryType().equals(QueryType.SELECT)) {
-            if (frameType.equals("NPP") || frameType.equals("VP") || frameType.equals("IPP")) {
+        if (grammarEntryUnit.getSparqlQuery().contains(QueryType.ASK.name())) {
+            if (frameType.contains("NPP") || frameType.contains("VP") || frameType.contains("IPP")) {
                 if (template != null && template.contains("HOW_MANY_THING_BACKWARD")) {
                     sparql = "SELECT (COUNT(DISTINCT ?Answer) as ?c) WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
                 } else if (template != null && template.contains("HOW_MANY")) {
@@ -100,10 +106,11 @@ public class GrammarFactory {
             } else {
                 sparql = "SELECT ?Answer WHERE { ?subjOfProp " + "<" + property + ">" + " ?objOfProp .}";
             }
-        } else if (grammarEntryUnit.getQueryType().equals(QueryType.ASK)) {
+        } else if (grammarEntryUnit.getSparqlQuery().contains(QueryType.ASK.name())) {
             sparql = grammarEntryUnit.getSparqlQuery();
             //sparql = this.modifySparql(sparql, QueryType.ASK.toString(),returnVariable);
         }
+        
 
         return sparql;
     }

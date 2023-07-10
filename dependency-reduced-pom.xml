@@ -54,7 +54,7 @@
               <Class-Path>.</Class-Path>
             </manifestEntries>
           </archive>
-          <finalName>QuestionGrammarGenerator</finalName>
+          <finalName>grammar-rules</finalName>
         </configuration>
       </plugin>
       <plugin>

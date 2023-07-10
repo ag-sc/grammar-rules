@@ -1,0 +1,91 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :to_erfinden ;
+  lemon:entry    :erfindened ;
+  lemon:entry    :form_erfinden_preposition .
+
+:to_erfinden a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_erfinden ;
+  lemon:otherForm      :form_erfindens ;
+  lemon:otherForm      :form_erfindened ;
+  lemon:sense          :erfinden_sense_1 ;
+  lemon:synBehavior    :erfinden_frame_transitive .
+
+:form_erfinden a         lemon:Form ;
+  lemon:writtenRep     "erfinden"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_erfindens a    lemon:Form ;
+  lemon:writtenRep "erfindet"@de ;
+  lexinfo:tense    lexinfo:past ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+
+:form_erfindens a    lemon:Form ;
+  lemon:writtenRep "erfand"@de ;
+  lexinfo:tense    lexinfo:past ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:form_erfindened a   lemon:Form ;
+  lemon:writtenRep "erfunden"@de ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:erfinden_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :erfinden_subj ;
+  lexinfo:directObject     :erfinden_obj .
+
+:erfinden_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :erfinden_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/creator> ;
+  lemon:subjOfProp  :erfinden_obj ;
+  lemon:objOfProp   :erfinden_subj ;
+  lemon:condition   :erfinden_sense_1_condition .
+
+
+:erfinden_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/TelevisionShow> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+:erfindened a            lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_erfindened_canonical ;
+  lemon:otherForm      :form_erfindened_by ;
+  lemon:synBehavior    :erfindened_frame_adjectivepp ;
+  lemon:sense          :erfindened_ontomap .
+
+:form_erfindened_canonical a lemon:Form ;
+  lemon:writtenRep         "erfinden"@de .
+
+:form_erfindened_by a    lemon:Form ;
+  lemon:writtenRep     "erfinden"@de ;
+  lexinfo:verbFormMood lexinfo:participle .
+
+
+:erfindened_frame_adjectivepp a  lexinfo:AdjectivePPFrame ;
+  lexinfo:copulativeSubject    :erfindened_subj ;
+  lexinfo:prepositionalAdjunct :erfindened_obj .
+
+:erfindened_ontomap a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :erfindened_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/creator> ;
+  lemon:subjOfProp  :erfindened_subj ;
+  lemon:objOfProp   :erfindened_obj ;
+  lemon:condition   :erfinden_sense_1_condition .
+:erfindened_obj lemon:marker :von .
+
+:arg2 lemon:marker :form_erfinden_form_preposition .
+
+## Prepositions ##
+
+:form_erfinden_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

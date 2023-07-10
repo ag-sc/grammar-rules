@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :spitzname_von ;
+  lemon:entry    :spitzname_von_form_preposition .
+
+:spitzname_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :spitzname_von_form ;
+  lemon:otherForm      :spitzname_von_plural_form ;
+  lemon:otherForm      :spitzname_von_accusative_form ;
+  lemon:otherForm      :spitzname_von_dative_form ;
+  lemon:otherForm      :spitzname_von_genitive_form ;
+  lemon:otherForm      :spitzname_von_plural_form ;
+  lemon:sense          :spitzname_von_sense_1 ;
+  lemon:synBehavior    :spitzname_von_nounpp .
+
+:spitzname_von_form a lemon:Form ;
+  lemon:writtenRep "Spitzname"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:spitzname_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Spitznamen"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:spitzname_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Spitzname"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:spitzname_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Spitznames"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:spitzname_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Spitznames"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:spitzname_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:spitzname_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :spitzname_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/property/nickname> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :spitzname_von_sense_1_condition .
+
+:spitzname_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/City> ;
+  lemon:propertyRange   <http://www.w3.org/2001/XMLSchema#String> .
+
+:arg2 lemon:marker :spitzname_von_form_preposition .
+
+## Prepositions ##
+
+:spitzname_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

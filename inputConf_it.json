@@ -1,0 +1,27 @@
+{
+  "languageCode" : "it",
+   "online" : "false",
+   "externalEntittyList" : "false",
+   "evalutionQuestion" : "false",
+   "offlineQuestion" : "true",
+   "onlineAnswer" : "false",
+  "inputDir"     : "lexicon",
+  "outputDir"    : "../resources/",
+  "entityDir"    : "../resources/it/property/",
+  "questionDir"  : "../resources/it/questions/",
+  "classDir"     : "../resources/it/entity/",
+  "wikiFile"     : "../resources/it/turtle/wikipedia_links_en_filter.ttl",
+  "abstractFile" : "../resources/it/turtle/short_abstracts_sorted_en_filter.ttl",
+  "evalutionBindingFile" : "src/main/resources/it/LcQuad/lcquad1_test_en_de.csv",
+  "batchFile" : "../resources/en/batch.prop",
+  "qaldDir"      : "qald7Modified/",
+  "numberOfEntities" : 100,
+  "similarityThresold" : 0.7,
+  "csvToTurtle" : false,
+  "turtleToProtoType" : false,
+  "single": true,
+  "composite": false,
+  "protoTypeToQuestion" : true,
+  "evalution" : false
+}
+

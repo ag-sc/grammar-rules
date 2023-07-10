@@ -1,0 +1,521 @@
+domain_dbpedia,domainSingularArticle,domainWrittenSingularForm,domainWrittenPluralForm
+dbo:Person,feminine_la,persona,persone
+dbo:City,feminine_la,città,città
+dbo:City,feminine_la,città,città
+dbo:Place,masculine_il,luogo,luoghi
+dbo:Country,masculine_il,paese,paesi
+dbo:Work,feminine_la,opera,opere
+dbo:Country,masculine_il,paese,paesi
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:FictionalCharacter,masculine_il,personaggio fittizio,personaggio fittizio
+dbo:Grape,feminine_la,uva,uva
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Place,feminine_la,città,ciittà
+dbo:Country,feminine_la,paese,paesi
+dbo:Person,feminine_la,persona,persone
+dbo:Legislature,feminine_la,legislatura,legislature
+dbo:Legislature,feminine_la,legislatura,legislature
+dbo:Country,masculine_il,paese,paesi
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Band,feminine_la,band,band
+dbo:GovernmentType,feminine_la,forma di governo,forme di governo
+dbo:Place,masculine_il,paese,paesi
+dbo:VideoGame,masculine_il,videogioco,videogioco
+dbo:Agent,feminine_la,compagnia,compagnie
+dbo:Person,feminine_la,persona,persone
+dbo:Organisation,feminine_la,organizzazione,organizzazioni
+dbo:Model,feminine_la,modella,modelle
+dbo:Tower,feminine_la,torre,torri
+dbo:TelevisionShow,feminine_la,show televisivo,show televisivi
+dbo:Film,feminine_la,film,films
+dbo:Person,feminine_la,persona,persone
+dbo:SoccerClub,feminine_la,soccer club,soccer clubs
+dbo:Country,feminine_la,paese,-
+dbo:IceHockeyLeague,feminine_la,lega hockey da ghiacciio,leghe hockey da ghiaccio
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Mountain,feminine_la,montagna,montagne
+dbo:Food,feminine_la,cibo,cibi
+dbo:PopulatedPlace,feminine_la,luogo popolato,luoghi popolati
+dbo:TelevisionShow,feminine_la,show televisivo,show televisivi
+dbo:Country,feminine_la,paese,paesi
+dbo:Software,feminine_la,software,software
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Person,feminine_la,persona,persone
+dbo:Royalty,feminine_la,i reali,i reali
+dbo:Person,feminine_la,persona,persone
+dbo:Country,feminine_la,paese,paesi
+dbo:Genre,feminine_la,genere,generi
+dbo:Loyalty,feminine_la,lealtà,lealtà
+dbo:Country,feminine_la,paese,paesi
+dbo:TelevisionShow,feminine_la,show televisivo,show televisivi
+dbo:WrittenWork,feminine_la,opera scritta,opera scritta
+dbo:Film,feminine_la,film,film
+dbo:Work,feminine_la,opera,opere
+dbo:Person,feminine_la,persona,persone
+dbo:FormulaOneRacer,feminine_la,pilota,piloti
+dbo:Film,feminine_la,film,film
+dbo:City,feminine_la,città,città
+dbo:City,feminine_la,città,città
+dbo:Organisation,feminine_la,organizzazione,organizzazioni
+dbo:Person,feminine_la,persona,persone
+dbo:Politician,feminine_la,politico,politici
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Scientist,feminine_la,scienziato,scienziati
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Organisation,feminine_la,organizzazione,organizzazioni
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Autobiography,feminine_la,autobiografia,autobiografie
+dbo:Person,feminine_la,persona,persone
+dbo:Artist,feminine_la,artista,artiisti
+dbo:Work,feminine_la,opera,opere
+dbo:Foundation_series,feminine_la,libro,libri
+dbo:AdministrativeRegion,feminine_la,regione amministrativa,regioni amministrative
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Person,feminine_la,persona,persone
+dbo:SoccerClub,feminine_la,soccer club,soccer clubs
+dbo:Country,feminine_la,paese,-
+dbo:City,feminine_la,città,città
+dbo:IceHockeyLeague,feminine_la,lega hockey da ghiacciio,leghe hockey da ghiaccio
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Mountain,feminine_la,montagna,montagne
+dbo:Country,feminine_la,paese,paesi
+dbo:Food,feminine_la,cibo,cibi
+dbo:PopulatedPlace,feminine_la,luogo popolato,luoghi popolati
+dbo:TelevisionShow,feminine_la,show televisivo,show televisivi
+dbo:Country,feminine_la,paese,paesi
+dbo:Software,feminine_la,software,software
+dbo:Work,feminine_la,opera,opere
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Country,feminine_la,paese,paesi
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Royalty,feminine_la,i reali,i reali
+dbo:Person,feminine_la,persona,persone
+dbo:TelevisionShow,feminine_la,show televisivo,show televisivi
+dbo:Country,feminine_la,paese,paesi
+dbo:Genre,feminine_la,genere,generi
+dbo:Grape,feminine_la,uva,uva
+dbo:Loyalty,feminine_la,lealtà,lealtà
+dbo:Country,feminine_la,paese,paesi
+dbo:TelevisionShow,feminine_la,show televisivo,show televisivi
+dbo:WrittenWork,feminine_la,opera scritta,opera scritta
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Film,feminine_la,film,film
+dbo:City,feminine_la,città,ciittà
+dbo:Country,feminine_la,paese,paesi
+dbo:Work,feminine_la,opera,opere
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:FormulaOneRacer,feminine_la,pilota,piloti
+dbo:Film,feminine_la,film,film
+dbo:City,feminine_la,città,città
+dbo:City,feminine_la,città,città
+dbo:Organisation,feminine_la,organizzazione,organizzazioni
+dbo:Person,feminine_la,persona,persone
+dbo:Politician,feminine_la,politico,politici
+dbo:Country,feminine_la,paese,paesi
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Scientist,feminine_la,scienziato,scienziati
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Country,feminine_la,paese,paesi
+dbo:Person,feminine_la,persona,persone
+dbo:Organisation,feminine_la,organizzazione,organizzazioni
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Autobiography,feminine_la,autobiografia,autobiografie
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Artist,feminine_la,artista,artiisti
+dbo:Work,feminine_la,opera,opere
+dbo:Foundation_series,feminine_la,libro,libri
+dbo:AdministrativeRegion,feminine_la,regione amministrativa,regioni amministrative
+dbo:BroadcastNetwork,feminine_la,rete televisiva,reti televisive
+dbo:Band,feminine_la,band,band
+dbo:City,feminine_la,città,città
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Place,città,città,-
+dbo:Book,libro,libri,persona
+dbo:Musical,feminine_la,musical,musical
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+xsd:nonNegativeInteger,feminine_la,-,-
+dbo:Language,feminine_la,lingua,lingue
+dbo:Person,feminine_la,persona,persone
+dbo:Place,feminine_la,città,città
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+xsd:string,-,-,-
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+xsd:string,feminine,-,-
+dbo:Currency,feminine_la,moneta,monete
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Currency,feminine_la,moneta,monete
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:MusicalArtist,masculine_l,artista musicale,artisti musicali
+dbo:Country,masculine_il,paese,paesi
+xsd:string,-,-,-
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Pope,feminine_la,papa,papa
+dbo:TelevisionShow,feminine_la,persona,persone
+dbo:Place,feminine_la,città,città
+xsd:double,feminine_la,-,-
+xsd:double,feminine_la,-,-
+dbo:Person,feminine_la,persona,persone
+xsd:double,feminine_la,-,-
+xsd:String,feminine_la,ragione,ragioni
+xsd:nonNegativeInteger,feminine_la,-,-
+dbo:Country,feminine_la,paese,-
+dbo:Person,feminine_la,persona,persone
+xsd:gYear,feminine_la,anno,anni
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Place,feminine_la,luogo,luoghi
+owl:Thing,feminine_la,cosa,cose
+xsd:date,feminine_la,-,-
+xsd:nonNegativeInteger,feminine_la,-,-
+dbo:City,feminine_la,città,città
+dbo:Language,feminine_la,linguaggio,linguaggi
+xsd:nonNegativeInteger,feminine_la,-,-
+xsd:date,feminine_la,-,-
+xsd:date,feminine_la,-,-
+dbo:Country,feminine_la,persona,persone
+dbo:GovernmentType,feminine_la,forma di governo,forme di governo
+xsd:string,feminine_la,-,-
+dbo:Color,feminine_la,colore,colori
+dbo:Person,feminine_la,persona,persone
+xsd:date,feminine_la,-,-
+xsd:positiveInteger,feminine_la,-,-
+dbo:Person,feminine_la,persona,persone
+dbo:Agent,feminine_la,agente,agenti
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Person,feminine_la,persona,persone
+dbo:Company,feminine_la,compagnia,compagnie
+xsd:string,feminine_la,-,-
+xsd:string,feminine_la,-,-
+dbo:City,feminine_la,città,città
+dbo:Person,feminine_la,persona,persone
+xsd:string,feminine_la,-,-
+xsd:double,feminine_la,-,-
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:PopulatedPlace,feminine_la,populated place,populated places
+xsd:gYear,feminine_la,anno,anni
+dbo:Author,feminine_la,autore,autori
+xsd:string,feminine_la,-,-
+owl:Thing,feminine_la,cosa,cose
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:City,feminine_la,città,città
+dbo:Location,feminine_la,luogo,luoghi
+xsd:String,feminine_la,ragione,ragioni
+xsd:nonNegativeInteger,feminine_la,-,-
+dbo:Country,feminine_la,paese,-
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+xsd:gYear,feminine_la,anno,anni
+dbo:Place,feminine_la,luogo,luoghi
+xsd:nonNegativeInteger,feminine_la,-,-
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Language,feminine_la,lingua,lingue
+owl:Thing,feminine_la,cosa,cose
+xsd:date,feminine_la,-,-
+xsd:nonNegativeInteger,feminine_la,-,-
+dbo:City,feminine_la,città,città
+dbo:Language,feminine_la,linguaggio,linguaggi
+dbo:Person,feminine_la,persona,persone
+xsd:nonNegativeInteger,feminine_la,-,-
+dbo:City,feminine_la,città,città
+dbo:Person,feminine_la,persona,persone
+xsd:date,feminine_la,-,-
+xsd:date,feminine_la,-,-
+dbo:Country,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:GovernmentType,feminine_la,forma di governo,forme di governo
+xsd:string,feminine_la,-,-
+dbo:Place,feminine_la,luogo,luoghi
+dbo:Color,feminine_la,colore,colori
+dbo:Person,feminine_la,persona,persone
+xsd:date,feminine_la,-,-
+xsd:positiveInteger,feminine_la,-,-
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+xsd:string,feminine_la,-,-
+dbo:Currency,feminine_la,moneta,monete
+dbo:Agent,feminine_la,agente,agenti
+dbo:Place,feminine_la,luogo ,luoghi
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Company,feminine_la,compagnia,compagnie
+xsd:string,feminine_la,-,-
+xsd:string,feminine_la,-,-
+dbo:City,feminine_la,città,città
+dbo:Person,feminine_la,persona,persone
+xsd:string,feminine_la,-,-
+xsd:string,feminine_la,-,-
+xsd:double,feminine_la,-,-
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Currency,feminine_la,moneta,monete
+dbo:Person,feminine_la,persona,persone
+dbo:PopulatedPlace,feminine_la,populated place,populated places
+dbo:Agent,feminine_la,agente,agenti
+xsd:gYear,feminine_la,anno,anni
+dbo:Author,feminine_la,autore,autori
+dbo:Person,feminine_la,persona,persone
+xsd:string,feminine_la,-,-
+owl:Thing,feminine_la,cosa,cose
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:City,feminine_la,città,città
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:MusicalArtist,feminine_la,artista musicale,artisti musicali
+dbo:Organisation,feminine_la,organizzazione,organizzazioni
+dbo:Location,feminine_la,luogo,luoghi
+xsd:string,-,,
+dbo:Person,persone,,
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Work,feminine_l,opera,opere
+dbo:Work,feminine_l,opera,opere
+dbo:Person,feminine_la,persona,persone
+dbo:Work,feminine_l,opera,opere
+dbo:Artwork,feminine_l,opera,opere
+dbo:Planet,masculine_il,pianeta,pianeti
+dbo:Bridge,masculine_il,ponte,pont
+dbo:Scientist,masculine_lo,scienziato,scienziati
+dbo:TelevisionShow,masculine_lo,show televisivo,show televisivi
+dbo:Website,masculine_lo,luogo,luogo
+dbo:VideoGame,masculine_il,videogioco,videogioco
+dbo:TelevisionShow,masculine_lo,serie televisive,serie televisive
+dbo:Song,feminine_la,canzone,canzoni
+dbo:WrittenWork,feminine_la,libro,libro
+dbo:TelevisionShow,masculine_lo,show televisivo,show televisivi
+dbo:Film,masculine_il,film,films
+dbo:LaunchPad,feminine_la,rampa di lancio,rampe di lancio
+dbo:FictionalCharacter,masculine_il,personaggio fittizio,personaggi fittizi
+dbo:Work,feminine_la,opera,opere
+dbo:Book,masculine_il,libro,libri
+dbo:Publisher,masculine_il,videogioco,videogiochi
+dbo:Film,masculine_il,film,film
+dbo:Airline,feminine_la,compagnia aerea,compagnie aeree
+dbo:ArchitecturalStructure,feminine_la,struttura,struttura
+dbo:Book,masculine_il,libro,libri
+dbo:Book,masculine_il,libro,libri
+dbo:TelevisionShow,masculine_lo,show televisivo,show televisivi
+dbo:Language,masculine,Lingua,Lingua
+dbo:EthnicGroup,masculine,grupo étnico,grupos étnicos
+dbo:Colour,masculine,colore,colore
+dbo:Film,masculine_il,film,films
+dbo:Company,feminine_la,compagnia,compagnie
+dbo:Person,feminine_la,persona,persone
+dbo:Company,,compagnia,compagnie
+dbo:Work,,opera,opere
+dbo:Person,,persona,persone
+dbo:Work,,opera,opere
+dbo:Artwork,,opera,opere
+dbo:Planet,,pianeta,pianeti
+dbo:Bridge,,ponte,pont
+dbo:Scientist,,scienziato,scienziati
+dbo:TelevisionShow,,show televisivo,show televisivi
+dbo:Song,,canzone,canzoni
+dbo:Book,,libro,libri
+dbo:MusicalWork,,opera musicale,opere musicali
+dbo:WrittenWork,,persona,persone
+dbo:Work,,opera,opere
+dbo:Film,,film,films
+dbo:LaunchPad,,piattaforma di lancio,piattaforme di lancio
+dbo:FictionalCharacter,,personaggio fittizio,personaggi fittizi
+dbo:Work,,opera,opere
+dbo:Book,,libro,libri
+dbo:Publisher,,videogioco,videogiochi
+dbo:Film,,film,film
+dbo:Airline,,compagnia aerea,compagnie aeree
+dbo:Language,,lingua,lingue
+dbo:ArchitecturalStructure,,struttura ,struttura
+dbo:Building,,edificio,edifici
+dbo:Software,masculine_il,software,software
+dbo:Agent,masculine_l,agente,agenti
+dbo:Agent,masculine_l,agente,agenti
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo: Museum,masculine_il,museo,musei
+dbo:Person,feminine_la,persona,persone
+dbo:River,masculine_il,fiume,fiumi
+dbo:Award,masculine_il,premio,premi
+dbo:Agent,masculine_l,agente,agenti
+dbo:Agent,masculine_l,agente,agenti
+dbo:Agent,masculine_l,agente,agenti
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Person,masculine_l,attore,attori
+dbo:Organisation,masculine_l,organizzazione,organizzazioni
+dbo:Person,feminine_la,persona,persone
+dbo:Person,masculine_l,attore,attori
+dbo:Agent,masculine_l,agente,agenti
+dbo:Agent,masculine_l,agente,agenti
+dbo:Person,feminine_la,persona,persone
+dbo:Airport,masculine_l,aeroporto,aeroporti
+dbo:Architect,masculine_l,architetto,architetti
+dbo:Agent,masculine_l,agente,agenti
+dbo:Publisher,feminine_l,azienda,azienda
+dbo:Person,feminine_la,persona,persone
+dbo:Country,masculine,Lingua,Lingua
+dbo:Country,masculine,paese,paesi
+owl:Thing,-,-,-
+dbo:Person,feminine,persona,personas
+dbo:Ship,feminine,Nave,Nave
+dbo:Person,feminine_la,persona,persone
+dbo:Software,,softwaree,software
+dbo:Agent,,agente,agenti
+dbo:Person,,persona,persone
+dbo:Person,,persona,persone
+dbo: Museum,,museo,musei
+dbo:Person,,persona,persone
+dbo:River,,fiume,fiumi
+dbo:Award,,premio,premi
+dbo:Agent,,agente,agenti
+dbo:Person,,persona,persone
+dbo:Person,,persona,persone
+dbo:Person,,persona,persone
+dbo:Person,,opera scritta,opere scritte
+dbo:Person,,persona,persone
+dbo:Actor,,attore,attori
+dbo:Organisation,,organizzazione,organizzazioni
+dbo:Person,,persona,persone
+dbo:Actor,,attore,attori
+dbo:Agent,,agente,agenti
+dbo:Agent,,agente,agenti
+dbo:Person,,persona,persone
+dbo:Airport,,aeroporto,aeroporti
+dbo:Country,,paese,paesi
+dbo:Architect,,architetto,architetti
+dbo:Person,,persona,persone
+dbo:MilitaryConflict,masculine_il,conflitto,conflitti
+dbo:Event,masculine_l,evento,eventi
+dbo:Road,feminine_la,strada,strade
+dbo:River,masculine_il,fiume,fiumi
+dbo:BodyOfWater,masculine_il,fiume,fiumi
+dbo:Road,feminine_la,strada,strade
+dbo:River,masculine_il,fiume,fiumi
+dbo:WineRegion,feminine_la,regione del vino,regioni del vino
+dbo:Person,feminine_la,persona,persone
+dbo:PopulatedPlace,masculine_il,luogo popolato,luoghi popolati
+dbo:PopulatedPlace,masculine_il,luogo popolato,luoghi popolati
+dbo:Ship,feminine_la,nave,navi
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Actor,masculine_l,attore,attore
+dbo:Surfing,masculine_il,surfisti,surfisti
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Person,feminine_la,persona,persone
+dbo:Single,feminine_la,persona,persone
+dbo:Organisation,feminine_l,organizzazione,organizzazioni
+dbo:Person,feminine_la,persona,persone
+dbo:Location,masculine_il,luogo,luoghi
+dbo:MilitaryUnit,feminine_l,unità militare,unità militare
+dbo:HistoricPlace,masculine_il,posto storico,posto storico
+dbo:City,masculine_il,posto storico,posto storico
+dbo:Lake,masculine_il,lago,lago
+dbo:Mountain,feminine_la,montagna,montagna
+dbo:ArchitecturalStructure,feminine_la,lago,lagos
+dbo:Software,masculine_il,software,software
+dbo:Country,masculine_il,stato,stato
+dbo:Film,masculine_il,film,film
+dbo:Person,feminine_la,persona,persone
+owl:Thing,-,-,-
+dbo:Country,feminine_la,stato,stato
+dbo:MilitaryConflict,,conflitto,conflitti
+dbo:Event,,evento,eventi
+dbo:Athlete,,atleta,atleti
+dbo:Road,,strada,strade
+dbo:River,,fiume,fiumi
+dbo:River,,fiume,fiumi
+dbo:Road,,strada,strade
+dbo:River,,fiume,fiumi
+dbo:River,,fiume,fiumi
+dbo:WineRegion,,regione del vino,regioni del vino
+dbo:Award,,premio,premi
+xsd:date,masculine_l,anno,anni
+xsd:date,masculine_l,anno,anni
+dbo:City,feminine_la,città,città
+dbo:Place,feminine_la,città,città
+dbo:Place,masculine_il,paese,paesi
+dbo:Road,feminine_la,strada,strade
+dbo:Place,masculine_lo,stato,stato
+dbo:Grape,masculine_il,tipo di uva,tipi di uva
+xsd:string,-,-,-
+xsd:date,masculine_l,anno,anni
+xsd:gYear,masculine_l,anno,anni
+xsd:date,masculine_l,anno,anni
+dbo:Place,masculine_il,luogo,luoghi
+dbo:Place,masculine_il,luogo,luoghi
+dbo:Place,masculine_il,luogo,luoghi
+dbo:Place,masculine_il,luogo,luoghi
+xsd:gYear,masculine_l,anno,anni
+dbo:Place,feminine_la,città,città
+dbo:Place,masculine_lo,stato,stati
+dbo:City,feminine_la,città,città
+dbo:City,feminine_la,città,città
+xsd:gYear,masculine_l,anno,anni
+xsd:gYear,masculine_l,anno,anni
+dbo:Place,masculine_il,luogo,luoghi
+dbo:Location,masculine_il,luogo,luoghi
+dbo:Place,feminine_la,città,città
+dbo:Country,masculine_lo,stato,stati
+dbo:Country,masculine_lo,stato,stati
+dbo:Country,masculine_lo,stato,stati
+dbo:City,feminine_la,città,città
+dbo:Language,masculine_il,linguaggio di programmazione,linguaggi di programmazione
+xsd:double,-,-,-
+dbo:Double,-,-,-
+dbo:MilitaryConflict,masculine_il,conflitti militari,conflitti militari
+xsd:string,-,-,-
+dbo:Language,feminine_la,Lingua,Lingua
+xsd:date,,anno,anni
+xsd:date,,anno,anni
+xsd:date,,anno,anni
+dbo:City,,città,città
+dbo:City,,città,città
+dbo:Country,,paese,paesi
+dbo:Road,,strada,strade
+dbo:Country,,paese,paesi
+dbo:River,,fiume,fiumi
+dbo:Grape,,uva,uva
+dbo:Person,,persona,persone
+dbo:Place,masculine_il,paese,paesi
+dbo:Place,masculine_il,paese,paesi
+dbo:Place,masculine_il,paese,paesi
+owl:Thing,masculine_il,mondo,mondo
+owl:Thing,masculine_il,mondo,mondo
+dbo:Country,masculine_il,paese,paesi
+owl:Thing,masculine_il,país,países
+owl:Thing,masculine_il,mondo,mondo
+dbo:Mountain,feminine_la,montagna,montagna
+dbo:Lighthouse,masculine_il,faro,fari
+dbo:Tower,feminine_la,torre,torre
+dbo:Model,masculine_li,modello,modelli
+dbo:BasketballPlayer,masculine_il,giocatore di pallacanestro,giocatore di pallacanestro
+dbo:Stadium,masculine_lo,stadio,stadi
+dbo:Country,masculine_il,nazione,nazione
+dbo:DartsPlayer,masculine_il,giocatore di freccette,giocatore di freccette

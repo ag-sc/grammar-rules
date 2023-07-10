@@ -26,35 +26,33 @@ import static utils.csv.CsvUtils.readAllDataAtOnce;
 @NoArgsConstructor
 public class QueGG {
 
-    private static String grammarFileName = "grammarFiles/grammar_FULL_DATASET_EN.json";
-    private static String inputDir = "resources/";
+    private static String grammarFileName = "/home/elahi/A-Grammar/multilingual-grammar-generator/result/en/grammar_FULL_DATASET_EN.json";
+    private static String inputDir = "result/en/";
     private static String qaldFileName = "";
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
 
     public static void main(String[] args) {
-        String inputDir = "resources/";
+        String inputDir =  "result/en/";
         args = new String[]{"en", inputDir, "QALD9"};
         String language = args[0];
         Grammar grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
-        Boolean parseFlag = false, evaluateFlag = true;
+        Boolean parseFlag = true, evaluateFlag = false;
         File[] files = new File(inputDir).listFiles();
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
             //throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
             exit(1);
         }
-
+        
         if (parseFlag) {
             System.out.println("Grammar Parser!!!");
-            Integer limit = -1;
             for (File file : files) {
                 if (file.getName().contains("input-") && file.getName().contains("QALD9")) {
                     List<String[]> rows = CsvUtils.readAllDataAtOnce(file);
                     File outputFile = new File(inputDir + file.getName().replace("input-", "output-"));
                     List<String[]> outputs = new ArrayList<String[]>();
-
-                    Integer index = 0;
+                    Integer limit = 1; Integer index = 0;
                     for (String[] row : rows) {
                         for (String cell : row) {
                             String[] data = cell.split("\t");
@@ -62,13 +60,16 @@ public class QueGG {
                             String id = data[0];
                             String sentence = data[2];
                             String sparqlGold = data[3];
+                            sentence="Who created the comic Captain America?";
                             String[] result = runParser(grammar, id, sentence, sparqlGold);
                             outputs.add(result);
                             index = index + 1;
+                            //break;
                             if (limit == -1)
                                 ; else if (index >= limit) {
                                 break;
                             }
+                          
 
                         }
                         if (limit == -1)
@@ -178,6 +179,7 @@ public class QueGG {
                 return new String[]{id, "WORKS", sentence, sparql, sparqlGold};
             } else {
                 //line = id + "," + "-" + "," + sentence + "," + "-" + "," + sparqlGold;
+                System.out.println(" sparql:" + sparql);
                 return new String[]{id, "-", sentence, "-", sparqlGold};
             }
 

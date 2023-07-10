@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Bandmitglieder_von ;
+  lemon:entry    :Bandmitglieder_von_form_preposition .
+
+:Bandmitglieder_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :Bandmitglieder_von_form ;
+  lemon:otherForm      :Bandmitglieder_von_plural_form ;
+  lemon:otherForm      :Bandmitglieder_von_accusative_form ;
+  lemon:otherForm      :Bandmitglieder_von_dative_form ;
+  lemon:otherForm      :Bandmitglieder_von_genitive_form ;
+  lemon:otherForm      :Bandmitglieder_von_plural_form ;
+  lemon:sense          :Bandmitglieder_von_sense_1 ;
+  lemon:synBehavior    :Bandmitglieder_von_nounpp .
+
+:Bandmitglieder_von_form a lemon:Form ;
+  lemon:writtenRep "Bandmitglieder"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Bandmitglieder_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Bandmitglieder"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Bandmitglieder_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Bandmitglieder"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:Bandmitglieder_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Bandmitglieder"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:Bandmitglieder_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Bandmitgliederes"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:Bandmitglieder_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:Bandmitglieder_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :Bandmitglieder_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/bandMember> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :Bandmitglieder_von_sense_1_condition .
+
+:Bandmitglieder_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Band> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Person> .
+
+:arg2 lemon:marker :Bandmitglieder_von_form_preposition .
+
+## Prepositions ##
+
+:Bandmitglieder_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

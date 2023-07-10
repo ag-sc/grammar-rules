@@ -1,0 +1,4 @@
+lemon,partOfSpeech,writtenForm (singular),writtenForm (plural),preposition,SyntacticFrame,copulativeArg,prepositionalAdjunct,sense,reference,domain,range
+boardgame_by_1,noun,boardgame,boardgames,by,NounPPFrame,range,domain,1,dbo:publisher,dbo:Work,dbo:Agent
+mayor_of_1,noun,mayor,mayors,of,NounPPFrame,range,domain,1,dbo:mayor,dbo:City,dbo:Person
+mayor_of_2,noun,mayor,mayors,of,NounPPFrame,range,domain,1,dbo:leaderName,dbo:City,dbo:Person

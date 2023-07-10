@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Überspannen ;
+  lemon:entry    :form_Überspannen_present_preposition .
+
+:Überspannen a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_Überspannen_present ;
+  lemon:otherForm      :Überspannen_present3rd ;
+  lemon:otherForm      :Überspannen_past ;
+  lemon:otherForm      :Überspannen_perfect ;
+  lemon:sense          :Überspannen_sense_1 ;
+  lemon:synBehavior    :Überspannen_frame .
+
+:form_Überspannen_present a           lemon:Form ;
+  lemon:writtenRep     "überspannen"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:Überspannen_present3rd a      lemon:Form ;
+  lemon:writtenRep "überspannt"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:Überspannen_past a lemon:Form ;
+  lemon:writtenRep  "überspannte"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:Überspannen_perfect a lemon:Form ;
+  lemon:writtenRep  "überspannt"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:Überspannen_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :Überspannen_subj ;
+  lexinfo:prepositionalAdjunct :Überspannen_obj .
+
+:Überspannen_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :Überspannen_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/crosses> ;
+  lemon:subjOfProp  :Überspannen_obj ;
+  lemon:objOfProp   :Überspannen_subj ;
+  lemon:condition   :Überspannen_sense_1_condition .
+
+:Überspannen_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Bridge> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/BodyOfWater> .
+
+
+:Überspannen_obj lemon:marker :in .
+
+:arg2 lemon:marker :form_Überspannen_present_preposition .
+
+## Prepositions ##
+
+:form_Überspannen_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

@@ -4,6 +4,7 @@ import java.io.File;
 import utils.QAElement;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ import java.util.regex.Matcher;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.jena.query.QueryType;
+import utils.JaccardSimilarity;
 import utils.RegularExpression;
 import utils.SparqlQuery;
 import utils.StringModifier;
@@ -34,14 +36,13 @@ public class GrammarRule {
     public static Integer RULE_REGULAR_EXPRESSION_INDEX = 1;
     public static String ENTITY_DIR = "../resources/en/turtle/";
     private QAElement qaElement = null;
-    private String bindingType = null;
     public static Map<String, Map<String, List<String>>> regularExpreMap = new TreeMap<String, Map<String, List<String>>>();
 
     // write parse in 
-    public GrammarRule(List<String[]> questions, String sparql, String bindingType, String returnType, String returnVariable, String queryType, String sentenceTemplate) {
-        this.bindingType = bindingType;
-        List<String> bindingSparqls = this.modifySparqlBinding(queryType, bindingType, returnType, returnVariable, sentenceTemplate, sparql);
-        String questionSparql = this.modifyQuestionSparql(queryType, returnVariable, sparql);
+    
+    public GrammarRule(List<String[]> questions, String sparql, List<String> bindingType,  String returnVariable, String sentenceTemplate) {
+        List<String> bindingSparqls = this.modifySparqlBinding(bindingType,returnVariable, sentenceTemplate, sparql);
+        String questionSparql = this.modifyQuestionSparql(returnVariable, sparql);
         this.qaElement = new QAElement(questions, bindingSparqls, questionSparql);
         for (String[] rule : questions) {
             String ruleRegularEx = rule[GrammarRule.RULE_REGULAR_EXPRESSION_INDEX];
@@ -69,8 +70,8 @@ public class GrammarRule {
                     for (String questionSparql : sparqls.keySet()) {
                         List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
                         List<String> bindingSparqls = sparqls.get(questionSparql);
-                        //System.out.println(bindingSparqls);
-                        //System.out.println(questionSparql);
+                        System.out.println(bindingSparqls);
+                        System.out.println(questionSparql);
                         if (!entityRetriveOnline) {
                             //entityMap = this.findBindingTypeOffline(numberOfEntities, language);
                         } else {
@@ -81,10 +82,10 @@ public class GrammarRule {
                         printMap(entityMap);
                         System.out.println(extractedParts);
                     }*/
-                        //System.out.println(extractedParts);
-                        //System.out.println(entityMaps.size());
+                        System.out.println(extractedParts);
+                        System.out.println(entityMaps.iterator().next().size());
                         LinkedHashSet<String> resultsTemp = findUriGivenEntity(extractedParts, entityMaps);
-                        //System.out.println(resultsTemp);
+                        System.out.println(resultsTemp);
                         if (!resultsTemp.isEmpty()) {
                             if (resultsTemp.size() == 1) {
                                 String result = resultsTemp.iterator().next();
@@ -127,7 +128,7 @@ public class GrammarRule {
         return entityMaps;
     }
 
-    public Map<String, String> findBindingTypeOffline(Integer numberOfEntities, String language) throws Exception {
+    /*public Map<String, String> findBindingTypeOffline(Integer numberOfEntities, String language) throws Exception {
         Map<String, String> entityMap = new TreeMap<String, String>();
         TripleProcess tripleProcess = new TripleProcess();
         String fileName = ENTITY_DIR + File.separator + this.bindingType + ".ttl";
@@ -140,44 +141,41 @@ public class GrammarRule {
             entityMap.put(label, entity);
         }
         return entityMap;
-    }
+    }*/
 
-    private String modifyQuestionSparql(String queryType, String returnVariable, String sparql) {
-        if (queryType.contains(QueryType.SELECT.name())) {
+    private String modifyQuestionSparql(String returnVariable, String sparql) {
+        if (sparql.contains(QueryType.SELECT.name())) {
             if (returnVariable.contains("objOfProp")) {
-                sparql = sparql.replace("subjOfProp", "Arg").replace("Answer", "objOfProp");
+                sparql = sparql.replace("subjOfProp", "Arg");//.replace("Answer", "objOfProp");
             } else {
-                sparql = sparql.replace("objOfProp", "Arg").replace("Answer", "subjOfProp");
+                sparql = sparql.replace("objOfProp", "Arg");//.replace("Answer", "subjOfProp");
             }
 
         }
-        /*else if (queryType.contains(QueryType.ASK.name())) {
-            sparql = sparql.replace("objOfProp", "Arg");
-        }*/
-
+       
         return sparql;
     }
 
-    private List<String> modifySparqlBinding(String queryType, String bindingType, String returnType, String returnVariable, String template, String sparql) {
+    private List<String> modifySparqlBinding(List<String> bindingTypes, String returnVariable, String template, String sparql) {
         List<String> sparqls = new ArrayList<String>();
-        if (queryType.contains(QueryType.SELECT.name())) {
+        String bindingVariable=findBindingVariable(returnVariable);
+        if (sparql.contains(QueryType.SELECT.name())) {
             if (template != null && template.contains("superlative")) {
-                sparql = "SELECT ?Answer WHERE {  ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingType + "> . } ";
+                sparql = "SELECT ?Answer WHERE {  ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingTypes.get(0) + "> . } ";
             }
-            if (template != null && template.contains("HOW_MANY_THING_BACKWARD")) {
-                sparql = sparql.replace("(COUNT(DISTINCT ?Answer) as ?c)", "?Answer");
+            if (template != null && template.contains("HOW_MANY_THING_FORWARD")) {
+                sparql = sparql.replace("(COUNT(DISTINCT ?Answer) as ?c)", "?"+bindingVariable);
             }
-            if (returnVariable.contains("objOfProp")) {
-                sparql = sparql.replace("?Answer", "?subjOfProp");
-            } else {
-                sparql = sparql.replace("?Answer", "?objOfProp");
-            }
+            else  {
+                sparql = sparql.replace("SELECT ?Answer", "SELECT ?"+bindingVariable);
+            } 
+           
             sparqls.add(sparql);
 
-        } else if (queryType.contains(QueryType.ASK.name())) {
+        } else if (sparql.contains(QueryType.ASK.name())) {
             //sparql = sparql.replace("?objOfProp", "?Arg");
-            String sparqlArg1 = "SELECT ?Answer WHERE {?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingType + "> . } ";
-            String sparqlArg2 = "SELECT ?Answer WHERE {?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + returnType + "> . } ";
+            String sparqlArg1 = "SELECT ?Answer WHERE {?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingTypes.get(0) + "> . } ";
+            String sparqlArg2 = "SELECT ?Answer WHERE {?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingTypes.get(1) + "> . } ";
             sparqls.add(sparqlArg1);
             sparqls.add(sparqlArg2);
         }
@@ -190,7 +188,7 @@ public class GrammarRule {
     }
 
     private String prepareSparql(String sparql, String uri) {
-        return sparql.replace("?Arg", "<" + uri + ">");
+        return sparql.replace("?Arg",  uri );
     }
 
     private String prepareSparql(String sparql, LinkedHashSet<String> uris) {
@@ -212,12 +210,30 @@ public class GrammarRule {
 
         return sparql;
     }
-
+    
     private LinkedHashSet<String> findUriGivenEntity(List<String> extractedParts, List<Map<String, String>> entityMaps) {
+        LinkedHashSet<String> entities = new LinkedHashSet<String>();
+        for (String extractedPart : extractedParts) {
+            extractedPart = StringModifier.makeLabel(extractedPart, "en");
+            for (Map<String, String> entityMap : entityMaps) {
+                JaccardSimilarity jac = new JaccardSimilarity(extractedPart, entityMap);
+                Double score=jac.getScore();
+                String uri=jac.getBestMatch();
+                if(uri!=null)
+                 entities.add( uri);
+            }
+
+        }
+
+        return entities;
+    }
+
+    /*private LinkedHashSet<String> findUriGivenEntity(List<String> extractedParts, List<Map<String, String>> entityMaps) {
         LinkedHashSet<String> entities = new LinkedHashSet<String>();
         for (String extractedPart : extractedParts) {
             String entity = StringModifier.makeLabel(extractedPart, "en");
             for (Map<String, String> entityMap : entityMaps) {
+                System.out.println(entityMap.keySet());
                 if (entityMap.containsKey(entity)) {
                     String uri = entityMap.get(entity);
                     entities.add(uri);
@@ -227,7 +243,7 @@ public class GrammarRule {
         }
 
         return entities;
-    }
+    }*/
 
 
     /*private List<String> findUriGivenEntity(List<String> extractedParts, Map<String, String> entityMap) {
@@ -267,10 +283,6 @@ public class GrammarRule {
         return qaElement;
     }
 
-    public String getBindingType() {
-        return bindingType;
-    }
-
     /*private String modifySparqlForResult(String sparql) {
         if (queryType.contains(QueryType.SELECT.name())) {
             if (returnVariable.contains("objOfProp")) {
@@ -287,6 +299,21 @@ public class GrammarRule {
     @Override
     public String toString() {
         return "GrammarRule{" + "qaElement=" + qaElement.getQuestionSparql() + '}';
+    }
+
+    private String findBindingVariable(String returnVariable) {
+        if (returnVariable.contains("objOfProp")) {
+            return "subjOfProp";
+        } else {
+            return "objOfProp";
+        }
+    }
+
+    private boolean isParsed(String sparql) {
+        if(sparql.contains("?Arg")){
+            return false;
+        }
+        return true;
     }
 
 
