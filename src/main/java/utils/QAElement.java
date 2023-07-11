@@ -6,7 +6,9 @@
 package utils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import parser.GrammarRule;
 
 /**
  *
@@ -14,25 +16,25 @@ import java.util.List;
  */
 public class QAElement {
 
-    private List<String[]> question = new ArrayList<String[]>();
+    private List<String> sortedQuestions = new ArrayList<String>();
     private List<String> bindingSparqls = new ArrayList<String>();
     private String questionSparql = null;
     private String complexSentence = null;
 
-    public QAElement(List<String[]> question, List<String> bindingSparqls, String questionSparql) {
-        this.question = question;
+    public QAElement(List<String> sortQuestions, List<String> bindingSparqls, String questionSparql) {
+        this.sortedQuestions =sortQuestions;
         this.bindingSparqls = bindingSparqls;
         this.questionSparql = questionSparql;
     }
 
-    public QAElement(List<String[]> question, List<String> bindingSparqls, String questionSparql, String complexSentence) {
-        this.question = question;
+    public QAElement(List<String> sortQuestions, List<String> bindingSparqls, String questionSparql, String complexSentence) {
+        this.sortedQuestions =sortQuestions;
         this.bindingSparqls = bindingSparqls;
         this.complexSentence = complexSentence;
     }
 
-    public List<String[]> getQuestion() {
-        return question;
+    public List<String> getQuestion() {
+        return sortedQuestions;
     }
 
     public String getComplexSentence() {
@@ -49,7 +51,7 @@ public class QAElement {
 
     @Override
     public String toString() {
-        return "QAElement{" + "question=" + question + ", sparql1=" + bindingSparqls+'}';
+        return "QAElement{" + "question=" + sortedQuestions + ", sparql1=" + bindingSparqls+'}';
     }
 
 }

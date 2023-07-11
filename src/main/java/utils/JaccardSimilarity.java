@@ -37,12 +37,13 @@ public class JaccardSimilarity {
             this.score = 1.0;
             try {
                 Integer valueInterger = Integer.parseInt(value);
-                this.bestMatch="\""+valueInterger+"\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
+                this.bestMatch = "\"" + valueInterger + "\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
             } catch (Exception ex) {
-                this.bestMatch = "<"+value+">";
+                this.bestMatch = "<" + value + ">";
             }
-          
+
         } else {
+
             for (String label : entityMap.keySet()) {
                 String uri = entityMap.get(label);
                 index = index + 1;
@@ -51,11 +52,12 @@ public class JaccardSimilarity {
                 entityMapJaccard.put(score, uri);
 
             }
+            if (!entityMapJaccard.isEmpty()) {
+                this.score = this.entityMapJaccard.keySet().iterator().next();
+                if (this.score > 0.0) {
+                    this.bestMatch = entityMapJaccard.get(score);
 
-            this.score = this.entityMapJaccard.keySet().iterator().next();
-            if (this.score > 0.0) {
-                this.bestMatch = entityMapJaccard.get(score);
-
+                }
             }
         }
 
@@ -148,7 +150,7 @@ public class JaccardSimilarity {
 
         System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("In what city is the Heineken brewery?",
                 "In what city is Heineken International located?"));
-         System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("games",
+        System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("games",
                 "_the_kremlin_games"));
 
         /*System.out.println("s13 and s14:::" + jaccardSimilarityManual("Give me all professional skateboarders from Sweden.", 

@@ -17,6 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.query.QueryType;
 import utils.GrammarEntries;
 import utils.GrammarEntryUnit;
+import utils.Sorting;
 import utils.UriLabel;
 
 /**
@@ -48,9 +49,10 @@ public class GrammarFactory {
                 }*/
                 String sparql = this.modifySparql(grammarEntryUnit);
                 if (grammarEntryUnit.getLexicalEntryUri() != null) {
+                    List<String> sorttedQuestions=Sorting.sortQuestions(questions);
 
                     if (grammarEntryUnit.getReturnVariable() != null) {
-                        GrammarRule grammarRule = new GrammarRule(questions, sparql, grammarEntryUnit.getBindingType(),
+                        GrammarRule grammarRule = new GrammarRule(sorttedQuestions, sparql, grammarEntryUnit.getBindingType(),
                                 grammarEntryUnit.getReturnVariable(),
                                 grammarEntryUnit.getSentenceTemplate());
                         grammarRules.add(grammarRule);

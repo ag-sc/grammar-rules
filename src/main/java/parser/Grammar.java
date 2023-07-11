@@ -61,6 +61,34 @@ public class Grammar {
         }
         return null;
     }
+    
+        //The methods return a SPARQL query or „null“ if there is no parse.
+    public String parser(String sentence,String givenSparql) throws Exception {
+        String sparql=null;
+        for (GrammarRule grammarRule : grammarRules) {
+             sparql = grammarRule.parse(sentence, givenSparql,entityRetriveOnline, numberOfEntities, language);
+            if (sparql!=null) {
+                String complexSentence = grammarRule.getQaElement().getComplexSentence();
+                if (complexSentence != null) {
+                    String mainSparql=sparql;
+                    String partSparql=parser(complexSentence,givenSparql);
+                    if(partSparql!=null)
+                       return grammarRule.joinSparql(mainSparql,partSparql);
+                    else
+                    return null;
+                } else {
+                    return sparql;
+                }
+            }
+
+            /*else if(grammarRule.getQaElement().getSparql()!=null){
+               String nounPrhase=grammarRule.getQaElement().getSparql();
+               String []complexSentence=new String[]{sentence,};
+            }*/
+        }
+        return null;
+    }
+
 
    
 

@@ -44,7 +44,7 @@ public class QueGG {
             //throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
             exit(1);
         }
-        
+        //"In which countries do people speak Japanese?"
         if (parseFlag) {
             System.out.println("Grammar Parser!!!");
             for (File file : files) {
@@ -56,11 +56,14 @@ public class QueGG {
                     for (String[] row : rows) {
                         for (String cell : row) {
                             String[] data = cell.split("\t");
-                            //System.out.println(data[0] + " " + data[1] + " " + data[2]);
                             String id = data[0];
                             String sentence = data[2];
                             String sparqlGold = data[3];
-                            sentence="Who created the comic Captain America?";
+                            //sentence="Who is the founder of Penguin Books?";
+                            if(!sentence.contains("In which programming language is GIMP written?")){
+                                continue;
+                            }
+                            System.out.println(data[0] + " " + data[1] + " " + data[2]+" "+data[3]);
                             String[] result = runParser(grammar, id, sentence, sparqlGold);
                             outputs.add(result);
                             index = index + 1;
@@ -171,7 +174,7 @@ public class QueGG {
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
             sparqlGold = StringModifier.deleteQuote(sparqlGold).replace("\n", "");
-            String sparql = grammar.parser(sentence);
+            String sparql = grammar.parser(sentence,sparqlGold);
             String line = null;
             if (sparql != null) {
                 System.out.println(" sparql:" + sparql);

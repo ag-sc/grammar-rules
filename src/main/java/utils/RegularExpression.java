@@ -50,11 +50,10 @@ public class RegularExpression {
         List<String> results = new ArrayList<String>();
         sentence=sentence.toLowerCase();
         sentence = replaceSpaceWithSlash(sentence);
-        //System.out.println(ruleRegularEx+" "+sentence);
         Pattern pattern = Pattern.compile(ruleRegularEx);
         Matcher matcher = pattern.matcher(sentence);
         String extractPattern = null;
-        //System.out.println(sentence+" "+ruleRegularEx);
+        System.out.println(sentence+" "+ruleRegularEx);
 
         //if (firstWordMatch(sentence, ruleRegularEx)) {
 
@@ -62,8 +61,9 @@ public class RegularExpression {
                 for (Integer index = 1; index <= matcher.groupCount(); index++) {
                     extractPattern = matcher.group(index);
                     results.add(extractPattern);
+                    //System.out.println(sentence + " " + ruleRegularEx);
+
                 }
-                System.out.println(sentence + " " + ruleRegularEx);
             }
         //}
         return results;
@@ -78,6 +78,15 @@ public class RegularExpression {
         }
         return false;
     }
+    
+     public static void main(String[] args) {
+         String ruleRegularEx=" in_which_city_did_([A-Za-z0-9]*)_die?";
+         String sentence="in_which_city_did_john_f._kennedy_die?";
+         sentence=sentence.replace(".", "");
+         List<String> result=isMatchWithRegEx(sentence,ruleRegularEx);
+         System.out.println(result);
+         
+     }
     
     
 
