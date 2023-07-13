@@ -2,11 +2,15 @@ package parser;
 
 import utils.RegularExpression;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import utils.QAElement;
+import utils.Sorting;
 import utils.StringModifier;
 
 /*
@@ -64,10 +68,21 @@ public class Grammar {
     
         //The methods return a SPARQL query or „null“ if there is no parse.
     public String parser(String sentence, String givenSparql) throws Exception {
-        String sparql = null;
+        Map<String,GrammarRule> matchedGrammarRules=new HashMap<String,GrammarRule>();
         for (GrammarRule grammarRule : grammarRules) {
-            sparql = grammarRule.parse(sentence, givenSparql, entityRetriveOnline, numberOfEntities, language);
-            if (sparql != null) {
+             String regEx=grammarRule.parse(sentence, givenSparql, entityRetriveOnline, numberOfEntities, language);
+             if(regEx!=null){
+                matchedGrammarRules.put(regEx,grammarRule);
+             }
+             
+           
+
+        }
+        List<String> sortedRegularEx=Sorting.sortQuestionsReg(matchedGrammarRules.keySet());
+        for(String regularEx:sortedRegularEx){
+             GrammarRule grammarRule=matchedGrammarRules.get(regularEx);
+             String sparql=grammarRule.parse(sentence, regularEx);
+              if (sparql != null) {
                 String complexSentence = grammarRule.getQaElement().getComplexSentence();
                 if (complexSentence != null) {
                     String mainSparql = sparql;
@@ -81,8 +96,8 @@ public class Grammar {
                     return sparql;
                 }
             }
-
         }
+        
         return null;
     }
 

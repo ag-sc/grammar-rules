@@ -1,0 +1,1 @@
+"33","WORKS","Give me all writers that won the Nobel Prize in literature.","SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> .}","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> }"

@@ -37,7 +37,7 @@ public class QueGG {
         args = new String[]{"en", inputDir, "QALD9"};
         String language = args[0];
         Grammar grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
-        Boolean parseFlag = true, evaluateFlag = false;
+        Boolean parseFlag = true, evaluateFlag = true;
         File[] files = new File(inputDir).listFiles();
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
@@ -52,29 +52,28 @@ public class QueGG {
                     List<String[]> rows = CsvUtils.readAllDataAtOnce(file);
                     File outputFile = new File(inputDir + file.getName().replace("input-", "output-"));
                     List<String[]> outputs = new ArrayList<String[]>();
-                    Integer limit = 1; Integer index = 0;
+                    Integer limit = 1; Integer index = 0, countWork=1;
                     for (String[] row : rows) {
-                        for (String cell : row) {
-                            String[] data = cell.split("\t");
-                            String id = data[0];
-                            String sentence = data[2];
-                            String sparqlGold = data[3];
-                            //sentence="Who is the founder of Penguin Books?";
-                            if(!sentence.contains("What movies does Jesse Eisenberg play in?")){
-                                continue;
-                            }
-                            System.out.println(data[0] + " " + data[1] + " " + data[2]+" "+data[3]);
-                            String[] result = runParser(grammar, id, sentence, sparqlGold);
-                            outputs.add(result);
-                            index = index + 1;
+                         System.out.println(row[0] + " " + row[1] + " " + row[2]+" "+row[3]);
+                         if(!row[2].contains("Give me all writers that won the Nobel Prize in literature.")){
+                            continue; 
+                         }
+                         row[3]=row[3].replace("WHERE { Answer", "WHERE { ?Answer");
+                         String[] result = runParser(grammar,row[0], row[1],row[2], row[3]);
+                         outputs.add(result);
+                         if(row[1].contains("WORK")){
+                           countWork=countWork+1;   
+                         }
+                        
+                         index = index + 1;
                             //break;
-                            if (limit == -1)
+                           if (limit == -1)
                                 ; else if (index >= limit) {
                                 break;
                             }
                           
 
-                        }
+                        //}
                         if (limit == -1)
                                 ; else if (index >= limit) {
                             break;
@@ -82,9 +81,8 @@ public class QueGG {
 
                     }
                     try {
-                        //System.out.println(str);
+                        System.out.println("countWork::"+countWork+" row:Size::"+rows.size());
                         CsvUtils.writeDataAtOnce(outputFile, outputs);
-                        //FileUtils.stringToFile(str, outputFileName);
                     } catch (Exception ex) {
                         Logger.getLogger(QueGG.class.getName()).log(Level.SEVERE, null, ex);
                         ex.getMessage();
@@ -101,8 +99,9 @@ public class QueGG {
                     File outputFile = new File(inputDir + file.getName().replace("output-", "evaluation-"));
                     List<String[]> outputs = new ArrayList<String[]>();
                     outputs.add(new String[]{"ID", "status", "sentence", "sparqlQueGG", "sparqlQald", 
-                                              "TP","FP","FN","Precision","Recall","Fscore"});
-                    float globalTp = 0, globalFp = 0, globalFn = 0, totalPreision = 0, totalRecall = 0, totalF_measure = 0;
+                                              "TP","FP","FN","Precision","Recall","Fscore","Status"});
+                    float globadTp = 0, globalFp = 0, globalFn= 0, globalPrecision=0,globalRecall=0,globalFscore=0,microPreision = 0, microRecall = 0, microFmeasure = 0;
+                    float macroPreision = 0, macroRecall = 0, macroFmeasure= 0;
                     Integer numberOfMatch=0;
                     Integer limit = -1, index = 0;
                     for (String[] row : rows) {
@@ -129,7 +128,6 @@ public class QueGG {
                                 Map<String, String> resultQald = new SparqlQuery(sparqlQald).getEntityMap();
                                 System.out.println(id + " queGGSparql=" + sparqlQueGG + " qaldSparql=" + sparqlQald);
                                 System.out.println(id + " resultQueGG=" + resultQueGG.size() + " resultQald=" + resultQald.size());
-                                Integer numberQueGG = resultQueGG.size(), numberQald = resultQald.size();
                                 FscoreCalculation cal=new FscoreCalculation(resultQueGG.keySet(),resultQald.keySet());
                                 System.out.println(cal.getTp()+" "+cal.getFn()+" "+cal.getFn());
                                 System.out.println(cal.getPrecision()+" "+cal.getRecall()+" "+cal.getFscore());
@@ -139,24 +137,37 @@ public class QueGG {
                                 float precision=cal.getPrecision();
                                 float recall=cal.getRecall();
                                 float fscore=cal.getFscore();
-                                outputs.add(new String[]{id, status, sentence, sparqlQueGG, sparqlQald, 
-                                                         Float.toString(tp),Float.toString(fp),Float.toString(fn),
-                                                         Float.toString(precision),Float.toString(recall),Float.toString(fscore)});
-                                globalTp += tp;
+                                outputs.add(new String[]{id, status, sentence,  
+                                                         sparqlQueGG, sparqlQald,Float.toString(tp),Float.toString(fp),Float.toString(fn),
+                                                         Float.toString(precision),Float.toString(recall),Float.toString(fscore),
+                                                         status});
+                                globadTp += tp;
                                 globalFp += fp;
                                 globalFn += fn;
-                                totalPreision += precision;
-                                totalRecall += recall;
-                                totalF_measure += fscore;
+                                globalPrecision+=precision;
+                                globalRecall+=recall;
+                                globalFscore+=fscore;
+                               
                             }
 
                         }
                     }
                     try {
                         //System.out.println(str);
+                        FscoreCalculation fscoreTotal=new FscoreCalculation(globadTp, globalFp, globalFn);
+                        microPreision = fscoreTotal.getPrecision();
+                        microRecall = fscoreTotal.getRecall();
+                        microFmeasure = fscoreTotal.getFscore();
+                        float totalRow=rows.size();
+                        macroPreision = globalPrecision/totalRow;
+                        macroRecall = globalRecall/totalRow;
+                        macroFmeasure = globalFscore/totalRow;
                         outputs.add(new String[]{"", "", "", "", "", 
-                                                         Float.toString(globalTp),Float.toString(globalFp),Float.toString(globalFn),
-                                                         Float.toString(totalPreision),Float.toString(totalRecall),Float.toString(totalF_measure)});
+                                                 Float.toString(globadTp),Float.toString(globalFp),Float.toString(globalFn),
+                                                 Float.toString(microPreision),Float.toString(microRecall),Float.toString(microFmeasure)});
+                        outputs.add(new String[]{"", "", "", "", "", "","","",
+                                                 Float.toString(macroPreision),Float.toString(macroRecall),Float.toString(macroFmeasure)});
+                    
                         CsvUtils.writeDataAtOnce(outputFile, outputs);
                         //FileUtils.stringToFile(str, outputFileName);
                     } catch (Exception ex) {
@@ -169,7 +180,7 @@ public class QueGG {
 
     }
 
-    private static String[] runParser(Grammar grammar, String id, String sentence, String sparqlGold) {
+    private static String[] runParser(Grammar grammar, String id, String status,String sentence, String sparqlGold) {
         try {
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
@@ -193,5 +204,36 @@ public class QueGG {
         }
         return new String[]{};
     }
+    
+    private static String[] runParserOffLine(String id, String status, String sentence, String sparqlGold) {
+        try {
+            id = StringModifier.deleteQuote(id);
+            sentence = StringModifier.deleteQuote(sentence);
+            String sparql = StringModifier.deleteQuote(sparqlGold).replace("\n", "");
+            if (sparql != null) {
+                if (status.contains("WORK")) {
+                   return new String[]{id, status, sentence, sparqlGold, sparql};
+                }
+                else{
+                   return new String[]{id, status, sentence, sparqlGold, "N"}; 
+                }
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(QueGG.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+        return new String[]{};
+    }
+
+    /*private static String deletePrefix(String sparql) {
+        //PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        sparql=sparql.replace("PREFIX dbo: <http://dbpedia.org/ontology/>", "");
+        sparql=sparql.replace("PREFIX res: <http://dbpedia.org/resource/>", "");
+        sparql=sparql.replace(" PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ","");
+        sparql=sparql.trim().strip().stripLeading().stripTrailing();
+        System.out.println(sparql);
+        return sparql;
+    }*/
+
 
 }

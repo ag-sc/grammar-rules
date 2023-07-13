@@ -20,6 +20,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.apache.jena.query.QueryType;
 import utils.JaccardSimilarity;
 import utils.RegularExpression;
+import utils.Sorting;
 import utils.SparqlQuery;
 import utils.StringModifier;
 import utils.TripleProcess;
@@ -45,6 +46,7 @@ public class GrammarRule {
     // write parse in 
     
     public GrammarRule(List<String> questions, String sparql, List<String> bindingType,  String returnVariable, String sentenceTemplate) {
+        sparql=sparql.replace("WHERE { Answer", "WHERE { ?Answer");
         List<String> bindingSparqls = this.modifySparqlBinding(bindingType,returnVariable, sentenceTemplate, sparql);
         String questionSparql = this.modifyQuestionSparql(returnVariable, sparql);
         this.qaElement = new QAElement(questions, bindingSparqls, questionSparql);
@@ -122,6 +124,8 @@ public class GrammarRule {
         return null;
     }
     
+   
+    
     public String parse(String sentence, String goldSparql, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
         List<String> results = new ArrayList<String>();
@@ -130,14 +134,41 @@ public class GrammarRule {
             for (String ruleRegularEx : questions) {
                 List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
                 if (!extractedParts.isEmpty()) {
-                    System.out.println("match found!!:: " + sentence + " ::" + ruleRegularEx + " " + extractedParts);
-                    Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
-                    for (String questionSparql : sparqls.keySet()) {
+                    return ruleRegularEx;
+                    //Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
+                   
+                    /*for (String questionSparql : sparqls.keySet()) {
                         List<String> bindingSparqls = sparqls.get(questionSparql);
                         //String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
                         //if(selecttedSparql!=null){
                         for (String bindingSparql : bindingSparqls) {
-                            System.out.println("bindingSparql::"+bindingSparql);
+                            //System.out.println("bindingSparql::"+bindingSparql);
+                            List<Map<String, String>> entityMaps = this.findEntityMapEndpoint(bindingSparql);
+                            if (!entityMaps.isEmpty()) {
+                                return this.findEntity(questions, entityMaps, extractedParts, bindingSparqls, questionSparql);
+                            }
+
+                        }
+                    }*/
+                }
+            }
+        }
+        return null;
+    }
+    
+    public String parse(String sentence, String ruleRegularEx) throws Exception {
+        List<String> results = new ArrayList<String>();
+        List<String> questions=this.qaElement.getQuestion();
+        List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
+        if (!extractedParts.isEmpty()) {
+            System.out.println("match found!!:: " + sentence + " ::" + ruleRegularEx + " " + extractedParts);
+            Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
+            for (String questionSparql : sparqls.keySet()) {
+                        List<String> bindingSparqls = sparqls.get(questionSparql);
+                        //String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
+                        //if(selecttedSparql!=null){
+                        for (String bindingSparql : bindingSparqls) {
+                            //System.out.println("bindingSparql::"+bindingSparql);
                             List<Map<String, String>> entityMaps = this.findEntityMapEndpoint(bindingSparql);
                             if (!entityMaps.isEmpty()) {
                                 return this.findEntity(questions, entityMaps, extractedParts, bindingSparqls, questionSparql);
@@ -145,9 +176,6 @@ public class GrammarRule {
 
                         }
                     }
-                }
-
-            }
         }
         return null;
     }

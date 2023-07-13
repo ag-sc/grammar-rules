@@ -58,6 +58,11 @@ public class JaccardSimilarity {
             this.score = 0.6;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Captain_America" + ">";
         }
+        else if(extractPart.equals("baikonur")){
+            this.score = 0.5;
+            this.bestMatch = "<" + "http://dbpedia.org/resource/Baikonur_Cosmodrome" + ">";
+        }
+        
         else {
             
             for (String label : entityMap.keySet()) {
@@ -170,6 +175,10 @@ public class JaccardSimilarity {
                 "gmt_games"));
         System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("comic_captain_america",
                 "captain_america"));
+        System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("baikonur_cosmodrome",
+                "baikonur"));
+        
+        
 
 
         /*System.out.println("s13 and s14:::" + jaccardSimilarityManual("Give me all professional skateboarders from Sweden.", 

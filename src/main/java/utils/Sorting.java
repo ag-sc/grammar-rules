@@ -8,6 +8,7 @@ package utils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import parser.GrammarRule;
 
 /**
@@ -25,6 +26,16 @@ public class Sorting {
         Collections.sort(questions, (a, b) -> Integer.compare(a.length(), b.length()));
         Collections.sort(questions, Collections.reverseOrder());
         return questions;
+    }
+    
+     public static List<String> sortQuestionsReg(Set<String> questions) {
+         List<String> regEx = new ArrayList<String>();
+        for (String ruleRegularEx : questions) {
+            regEx.add(ruleRegularEx);
+        }
+        Collections.sort(regEx, (a, b) -> Integer.compare(a.length(), b.length()));
+        Collections.sort(regEx, Collections.reverseOrder());
+        return regEx;
     }
 
 }

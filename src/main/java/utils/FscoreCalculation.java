@@ -72,6 +72,10 @@ public class FscoreCalculation {
         queGGResults = this.validList(queGGResults);
         existBothQaldQueGG = new HashSet<String>(qaldResults);
         existBothQaldQueGG.retainAll(queGGResults);
+        System.out.println("qaldResults::"+qaldResults);
+        System.out.println("queGGResults::"+queGGResults);
+        System.out.println("existBothQaldQueGG::"+existBothQaldQueGG);
+        System.out.println("existBothQaldQueGG::"+existBothQaldQueGG);
         if (existBothQaldQueGG.isEmpty()) {
             return 0;
         } else {
