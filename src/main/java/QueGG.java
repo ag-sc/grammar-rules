@@ -60,7 +60,7 @@ public class QueGG {
                             String sentence = data[2];
                             String sparqlGold = data[3];
                             //sentence="Who is the founder of Penguin Books?";
-                            if(!sentence.contains("In which programming language is GIMP written?")){
+                            if(!sentence.contains("What movies does Jesse Eisenberg play in?")){
                                 continue;
                             }
                             System.out.println(data[0] + " " + data[1] + " " + data[2]+" "+data[3]);

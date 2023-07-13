@@ -53,7 +53,7 @@ public class RegularExpression {
         Pattern pattern = Pattern.compile(ruleRegularEx);
         Matcher matcher = pattern.matcher(sentence);
         String extractPattern = null;
-        System.out.println(sentence+" "+ruleRegularEx);
+        //System.out.println(sentence+" "+ruleRegularEx);
 
         //if (firstWordMatch(sentence, ruleRegularEx)) {
 

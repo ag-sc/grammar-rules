@@ -124,23 +124,27 @@ public class GrammarRule {
     
     public String parse(String sentence, String goldSparql, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
+        List<String> results = new ArrayList<String>();
         //System.out.println(questions);
         if (!questions.isEmpty()) {
             for (String ruleRegularEx : questions) {
-                 System.out.println(ruleRegularEx);
                 List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
                 if (!extractedParts.isEmpty()) {
-                    //System.out.println("rule:: "+ruleRegularEx);
+                    System.out.println("match found!!:: " + sentence + " ::" + ruleRegularEx + " " + extractedParts);
                     Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
                     for (String questionSparql : sparqls.keySet()) {
                         List<String> bindingSparqls = sparqls.get(questionSparql);
-                        String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
-                        if(selecttedSparql!=null){
-                           List<Map<String, String>> entityMaps = this.findEntityMapEndpoint(selecttedSparql);
-                           return this.findEntity(questions, entityMaps, extractedParts, bindingSparqls, questionSparql);
+                        //String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
+                        //if(selecttedSparql!=null){
+                        for (String bindingSparql : bindingSparqls) {
+                            System.out.println("bindingSparql::"+bindingSparql);
+                            List<Map<String, String>> entityMaps = this.findEntityMapEndpoint(bindingSparql);
+                            if (!entityMaps.isEmpty()) {
+                                return this.findEntity(questions, entityMaps, extractedParts, bindingSparqls, questionSparql);
+                            }
+
                         }
-                       
-                    } 
+                    }
                 }
 
             }
@@ -387,7 +391,7 @@ public class GrammarRule {
         return true;
     }
 
-    private String isSparqlMatch(List<String> bindingSparqls, String givenSparql) {
+    /*private String isSparqlMatch(List<String> bindingSparqls, String givenSparql) {
         for (String bindingSparql : bindingSparqls) {
             String bindingProperty = findProperty(bindingSparql);
             String goldProperty = findProperty(givenSparql);
@@ -412,7 +416,7 @@ public class GrammarRule {
             index=index+1;
         }
         return null;
-    }
+    }*/
 
     
 
