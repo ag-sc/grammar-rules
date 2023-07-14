@@ -74,9 +74,6 @@ public class Grammar {
              if(regEx!=null){
                 matchedGrammarRules.put(regEx,grammarRule);
              }
-             
-           
-
         }
         List<String> sortedRegularEx=Sorting.sortQuestionsReg(matchedGrammarRules.keySet());
         for(String regularEx:sortedRegularEx){

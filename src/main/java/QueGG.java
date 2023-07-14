@@ -55,9 +55,10 @@ public class QueGG {
                     Integer limit = 1; Integer index = 0, countWork=1;
                     for (String[] row : rows) {
                          System.out.println(row[0] + " " + row[1] + " " + row[2]+" "+row[3]);
-                         if(!row[2].contains("Give me all writers that won the Nobel Prize in literature.")){
-                            continue; 
+                         if(!row[0].contains("289")){
+                            continue;  
                          }
+                         
                          row[3]=row[3].replace("WHERE { Answer", "WHERE { ?Answer");
                          String[] result = runParser(grammar,row[0], row[1],row[2], row[3]);
                          outputs.add(result);

@@ -11,6 +11,7 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  *
@@ -33,6 +34,9 @@ public class RegularExpression {
             //ruleWithVariable = ruleWithVariable.replace(REGULAR_EXPRESSION_END, "([A-Za-z0-9_]*)");
             ruleWithVariable = replaceSpaceWithSlash(ruleWithVariable);
 
+        }else{
+            ruleWithVariable=ruleWithVariable.toLowerCase();
+            ruleWithVariable=replaceSpaceWithSlash(ruleWithVariable);
         }
 
         return ruleWithVariable;
@@ -48,27 +52,24 @@ public class RegularExpression {
     */
     public static List<String> isMatchWithRegEx(String sentence, String ruleRegularEx) {
         List<String> results = new ArrayList<String>();
-        sentence=sentence.toLowerCase();
+        Tuple tuple=new Tuple(Boolean.FALSE,results);
+        sentence = sentence.toLowerCase();
         sentence = replaceSpaceWithSlash(sentence);
+
         Pattern pattern = Pattern.compile(ruleRegularEx);
         Matcher matcher = pattern.matcher(sentence);
         String extractPattern = null;
-        //System.out.println(sentence+" "+ruleRegularEx);
-
-        //if (firstWordMatch(sentence, ruleRegularEx)) {
-
-            if (matcher.find()) {
-                for (Integer index = 1; index <= matcher.groupCount(); index++) {
-                    extractPattern = matcher.group(index);
-                    results.add(extractPattern);
-                    //System.out.println(sentence + " " + ruleRegularEx);
-
-                }
+        
+        if (matcher.find()) {
+            for (Integer index = 1; index <= matcher.groupCount(); index++) {
+                extractPattern = matcher.group(index);
+                results.add(extractPattern);
             }
-        //}
+        }
+        
         return results;
     }
-    
+
     public static Boolean firstWordMatch(String sentence, String ruleRegularEx) {
         String firstWord_1=sentence.split("_")[0];
         String firstWord_2=ruleRegularEx.split("_")[0];
@@ -83,8 +84,8 @@ public class RegularExpression {
          String ruleRegularEx=" in_which_city_did_([A-Za-z0-9]*)_die?";
          String sentence="in_which_city_did_john_f._kennedy_die?";
          sentence=sentence.replace(".", "");
-         List<String> result=isMatchWithRegEx(sentence,ruleRegularEx);
-         System.out.println(result);
+         List<String> results =isMatchWithRegEx(sentence,ruleRegularEx);
+         System.out.println(results);
          
      }
     
