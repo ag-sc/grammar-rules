@@ -4,6 +4,7 @@ import java.io.File;
 import utils.QAElement;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import static java.util.Collections.list;
 import java.util.Comparator;
@@ -18,6 +19,7 @@ import java.util.regex.Matcher;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.jena.query.QueryType;
+import static org.apache.jena.riot.web.LangTag.check;
 import utils.JaccardSimilarity;
 import utils.RegularExpression;
 import utils.Sorting;
@@ -42,11 +44,13 @@ public class GrammarRule {
     public static Integer RULE_REGULAR_EXPRESSION_INDEX = 1;
     public static String ENTITY_DIR = "../resources/en/turtle/";
     private QAElement qaElement = null;
+    private String template = null;
     public static Map<String, Map<String, List<String>>> regularExpreMap = new TreeMap<String, Map<String, List<String>>>();
 
     // write parse in 
     
     public GrammarRule(List<String> questions, String sparql, List<String> bindingType,  String returnVariable, String sentenceTemplate) {
+        this.template=sentenceTemplate;
         sparql=sparql.replace("WHERE { Answer", "WHERE { ?Answer");
         List<String> bindingSparqls = this.modifySparqlBinding(bindingType,returnVariable, sentenceTemplate, sparql);
         String questionSparql = this.modifyQuestionSparql(sentenceTemplate,returnVariable, sparql);
@@ -159,13 +163,19 @@ public class GrammarRule {
         List<String> questions = this.qaElement.getQuestion();
         List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
         if (!extractedParts.isEmpty()) {
+            System.out.println(extractedParts);
             Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
             for (String questionSparql : sparqls.keySet()) {
                 List<String> bindingSparqls = sparqls.get(questionSparql);
                 //String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
                 //if(selecttedSparql!=null){
                 for (String bindingSparql : bindingSparqls) {
-                    //System.out.println("bindingSparql::"+bindingSparql);
+                    if(this.template.contains("comperative")){
+                      String value=extractedParts.iterator().next();
+                      value=checkMeasure(value);
+                      bindingSparql=bindingSparql.replace("VARIABLE", value);
+                    }
+                    System.out.println("bindingSparql::"+bindingSparql);
                     List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
                     entityMaps = this.findEntityMapEndpoint(bindingSparql);
                     if (!entityMaps.isEmpty()) {
@@ -448,7 +458,18 @@ public class GrammarRule {
         return null;
     }*/
 
+    private String checkMeasure(String value) {
+        Set<String> measures=new HashSet<String>(Arrays.asList(new String[]{"meter","second","mole","ampere","kelvin","candela","kilogram"}));
+        for(String measure:measures){
+            if(value.contains(measure)){
+                if(value.contains("_")){
+                    String[]info=value.split("_");
+                    return info[0];
+                }
+            }
+        }
+      return value;
     
-
+    }
    
 }

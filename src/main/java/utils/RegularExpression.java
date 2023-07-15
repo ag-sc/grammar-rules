@@ -81,7 +81,7 @@ public class RegularExpression {
     }
     
      public static void main(String[] args) {
-         String ruleRegularEx=" in_which_city_did_([A-Za-z0-9]*)_die?";
+         String ruleRegularEx="in_which_city_did_([A-Za-z0-9]*)_die?";
          String sentence="in_which_city_did_john_f._kennedy_die?";
          sentence=sentence.replace(".", "");
          List<String> results =isMatchWithRegEx(sentence,ruleRegularEx);

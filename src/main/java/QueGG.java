@@ -55,7 +55,7 @@ public class QueGG {
                     Integer limit = 1; Integer index = 0, countWork=1;
                     for (String[] row : rows) {
                          System.out.println(row[0] + " " + row[1] + " " + row[2]+" "+row[3]);
-                         if(!row[0].contains("289")){
+                         if(!row[0].contains("34")){
                             continue;  
                          }
                          
