@@ -132,8 +132,13 @@ public class GrammarRule {
     public String parse(String sentence, String goldSparql, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
         if (!questions.isEmpty()) {
+            if(this.template!=null&&this.template.contains("superlativeWorld")){
+                sentence=sentence.toLowerCase().replace(" ","_");
+                if(regularExpreMap.containsKey(sentence)){
+                    return sentence;
+                }
+            }
             for (String ruleRegularEx : questions) {
-                //System.out.println(ruleRegularEx);
                 List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
                 if (!extractedParts.isEmpty()) {
                     return ruleRegularEx;
@@ -161,9 +166,14 @@ public class GrammarRule {
     public String parse(String sentence, String ruleRegularEx) throws Exception {
         List<String> results = new ArrayList<String>();
         List<String> questions = this.qaElement.getQuestion();
+        if(this.template!=null&&this.template.contains("superlativeWorld")){
+            Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
+            for (String questionSparql : sparqls.keySet()) {
+                 return questionSparql;
+            }
+        }
         List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
         if (!extractedParts.isEmpty()) {
-            System.out.println(extractedParts);
             Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
             for (String questionSparql : sparqls.keySet()) {
                 List<String> bindingSparqls = sparqls.get(questionSparql);
@@ -175,7 +185,6 @@ public class GrammarRule {
                       value=checkMeasure(value);
                       bindingSparql=bindingSparql.replace("VARIABLE", value);
                     }
-                    System.out.println("bindingSparql::"+bindingSparql);
                     List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
                     entityMaps = this.findEntityMapEndpoint(bindingSparql);
                     if (!entityMaps.isEmpty()) {
@@ -256,7 +265,7 @@ public class GrammarRule {
 
     private String modifyQuestionSparql(String template, String returnVariable, String sparql) {
         if (sparql.contains(QueryType.SELECT.name())) {
-            if (template.contains("superlative")) {
+            if (template!=null&&template.contains("superlative")) {
                 sparql = sparql.replace("?VARIABLE", "?Arg");//.replace("Answer", "subjOfProp"); 
             } else {
                 if (returnVariable.contains("objOfProp")) {

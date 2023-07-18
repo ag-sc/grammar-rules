@@ -1,1 +1,0 @@
-"34","-","Show me all basketball players that are higher than 2 meters.","-","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }"
