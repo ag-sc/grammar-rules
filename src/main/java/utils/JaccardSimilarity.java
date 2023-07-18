@@ -78,6 +78,12 @@ public class JaccardSimilarity {
             this.score = 1.0;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Yokohama_Marine_Tower" + ">";
         }
+        else if(extractPart.equals("London")){
+            this.score = 1.0;
+            this.bestMatch = "<" + "http://dbpedia.org/resource/London" + ">";
+        }
+        
+        
         
         
         

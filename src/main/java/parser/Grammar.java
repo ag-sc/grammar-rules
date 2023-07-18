@@ -39,38 +39,12 @@ public class Grammar {
     private Grammar() {
     }
 
-    //The methods return a SPARQL query or „null“ if there is no parse.
-    public String parser(String sentence) throws Exception {
-        String sparql=null;
-        for (GrammarRule grammarRule : grammarRules) {
-             sparql = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language);
-            if (sparql!=null) {
-                String complexSentence = grammarRule.getQaElement().getComplexSentence();
-                if (complexSentence != null) {
-                    String mainSparql=sparql;
-                    String partSparql=parser(complexSentence);
-                    if(partSparql!=null)
-                       return grammarRule.joinSparql(mainSparql,partSparql);
-                    else
-                    return null;
-                } else {
-                    return sparql;
-                }
-            }
-
-            /*else if(grammarRule.getQaElement().getSparql()!=null){
-               String nounPrhase=grammarRule.getQaElement().getSparql();
-               String []complexSentence=new String[]{sentence,};
-            }*/
-        }
-        return null;
-    }
-    
+  
         //The methods return a SPARQL query or „null“ if there is no parse.
-    public String parser(String sentence, String givenSparql) throws Exception {
+    public String parser(String sentence) throws Exception {
         Map<String,GrammarRule> matchedGrammarRules=new HashMap<String,GrammarRule>();
         for (GrammarRule grammarRule : grammarRules) {
-             String regEx=grammarRule.parse(sentence, givenSparql, entityRetriveOnline, numberOfEntities, language);
+             String regEx=grammarRule.parse(sentence,  entityRetriveOnline, numberOfEntities, language);
              if(regEx!=null){
                 matchedGrammarRules.put(regEx,grammarRule);
              }
@@ -83,7 +57,7 @@ public class Grammar {
                 String complexSentence = grammarRule.getQaElement().getComplexSentence();
                 if (complexSentence != null) {
                     String mainSparql = sparql;
-                    String partSparql = parser(complexSentence, givenSparql);
+                    String partSparql = parser(complexSentence);
                     if (partSparql != null) {
                         return grammarRule.joinSparql(mainSparql, partSparql);
                     } else {

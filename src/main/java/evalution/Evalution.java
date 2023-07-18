@@ -24,8 +24,12 @@ public class Evalution {
     private String[] head = new String[]{"ID", "status", "sentence", "sparqlQueGG", "sparqlQald",
         "TP", "FP", "FN", "Precision", "Recall", "Fscore", "Status"};
 
-    public Evalution(String inputDir, String qaldDataType, String dataSetType, String inductive) {
-        File[] files = new File(inputDir).listFiles();
+    public Evalution() {
+       
+
+    }
+    public void evalute(String inputDir, String qaldDataType, String dataSetType, String inductive) {
+         File[] files = new File(inputDir).listFiles();
         for (File file : files) {
             if (file.getName().contains("output-") && file.getName().contains(qaldDataType)
                     && file.getName().contains(dataSetType) && file.getName().contains(inductive)) {
@@ -36,7 +40,6 @@ public class Evalution {
             }
 
         }
-
     }
 
     public List<String[]> evalute(List<String[]> rows) {

@@ -29,7 +29,7 @@ public class GrammarFactory {
 
     private Grammar grammar = null;
 
-    public GrammarFactory(File file, Boolean entityRetriveOnline, Integer numberOfEntities, String language) {
+    public GrammarFactory(File file, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         try {
             GrammarEntries grammarEntries = mapper.readValue(file, GrammarEntries.class);
@@ -39,23 +39,22 @@ public class GrammarFactory {
         }
     }
 
-    private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries) {
+    private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries) throws Exception {
         List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
         for (GrammarEntryUnit grammarEntryUnit : grammarEntries.getGrammarEntries()) {
             List<String[]> questions = ruletoRegExConversion(grammarEntryUnit.getSentences());
             if (!questions.isEmpty() && grammarEntryUnit.getSparqlQuery() != null) {
-                /*if(!grammarEntryUnit.getFrameType().equals("IPP")){
-                    continue;
-                }*/
                 String sparql = this.modifySparql(grammarEntryUnit);
                 if (grammarEntryUnit.getLexicalEntryUri() != null) {
                     List<String> sorttedQuestions=Sorting.sortQuestions(questions);
-
                     if (grammarEntryUnit.getReturnVariable() != null) {
                         GrammarRule grammarRule = new GrammarRule(sorttedQuestions, sparql, grammarEntryUnit.getBindingType(),
                                 grammarEntryUnit.getReturnVariable(),
                                 grammarEntryUnit.getSentenceTemplate());
                         grammarRules.add(grammarRule);
+                    }
+                    else{
+                        throw new Exception("No return variable found for: "+grammarEntryUnit.getLexicalEntryUri());
                     }
 
                 }
@@ -68,10 +67,7 @@ public class GrammarFactory {
     private static List<String[]> ruletoRegExConversion(List<String> givenGrammarRules) {
         List<String[]> modifyQuestions = new ArrayList<String[]>();
         for (String ruleWithVariable : givenGrammarRules) {
-            /*if(!ruleWithVariable.contains( "Is ($x | Person_NP) the wife of ($x | Person_NP)?"))
-                continue;*/
             String ruleAsRegularExp = RegularExpression.ruleToRegEx(ruleWithVariable);
-            //System.out.println(ruleAsRegularExp);
             modifyQuestions.add(new String[]{ruleWithVariable, ruleAsRegularExp});
         }
         return modifyQuestions;

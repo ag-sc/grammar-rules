@@ -35,8 +35,14 @@ public class QueGG {
         String inputDir = "result/en/";
         args = new String[]{"en", inputDir, "QALD9"};
         String language = args[0];
-        Grammar grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
-        Boolean parseFlag = false, evaluateFlag = true;
+        Grammar grammar=null;
+        try {
+            grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
+        } catch (Exception ex) {
+            Logger.getLogger(QueGG.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+        Boolean parseFlag = true, evaluateFlag = false;
         String qaldDataType = "QALD9";
         String dataSetType = "train";
         String inductive = "incremental";
@@ -58,22 +64,21 @@ public class QueGG {
                     File outputFile = new File(inputDir + file.getName().replace("input-", "output-"));
                     List<String[]> outputs = new ArrayList<String[]>();
                     outputs.add(header);
-                    Integer limit = -1;
+                    Integer limit = 51;
                     Integer index = 0, countWork = 1;
                     for (String[] row : rows) {
-                        System.out.println(row[0] + " " + row[1] + " " + row[2] + " " + row[3]);
-                        /*if(!row[0].equals("31")){
+                        if(!row[0].equals("3")){
                             continue;  
-                         }*/
-
+                         }
+                        System.out.println(row[0] + " " + row[1] + " " + row[2] + " " + row[3]);
                         String[] result = runParser(grammar, row[0], row[1], row[2], row[3]);
                         outputs.add(result);
+                        System.out.println(result[0]+" "+result[1]+" "+result[2]+" "+result[3]);
                         /*if (row[1].contains("WORK")) {
                             countWork = countWork + 1;
                         }*/
 
                         index = index + 1;
-                        //break;
                         if (limit == -1)
                                 ; else if (index >= limit) {
                             break;
@@ -99,7 +104,9 @@ public class QueGG {
         }
         if (evaluateFlag) {
             System.out.println("evaluate with QALD!!!");
-            Evalution evalution = new Evalution(inputDir, qaldDataType, dataSetType, inductive);
+            Evalution evalution = new Evalution();
+            evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+            
         }
 
     }
@@ -109,16 +116,13 @@ public class QueGG {
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
             sparqlGold = StringModifier.deleteQuote(sparqlGold).replace("\n", "");
-            String sparql = grammar.parser(sentence, sparqlGold);
+            String sparql = grammar.parser(sentence);
             String line = null;
             if (sparql != null) {
-                System.out.println(" sparql:" + sparql);
                 //line = id + "," + "WORKS" + "," + sentence + "," + sparql + "," + sparqlGold;
-                return new String[]{id, "WORKS", sentence, sparql, sparqlGold};
+                return new String[]{id, status, sentence, sparql, sparqlGold};
             } else {
-                //line = id + "," + "-" + "," + sentence + "," + "-" + "," + sparqlGold;
-                System.out.println(" sparql:" + sparql);
-                return new String[]{id, "-", sentence, "-", sparqlGold};
+                return new String[]{id, status, sentence, "N", sparqlGold};
             }
 
             //str += line + "\n";

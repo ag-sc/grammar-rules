@@ -66,7 +66,7 @@ public class GrammarRule {
         }
     }
 
-    public String parse(String sentence, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
+    /*public String parse(String sentence, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
         
         if (!questions.isEmpty()) {
@@ -77,22 +77,14 @@ public class GrammarRule {
                     for (String questionSparql : sparqls.keySet()) {
                         List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
                         List<String> bindingSparqls = sparqls.get(questionSparql);
-                        //System.out.println(bindingSparqls);
-                        //System.out.println(questionSparql);
+                       
                         if (!entityRetriveOnline) {
                             //entityMap = this.findBindingTypeOffline(numberOfEntities, language);
                         } else {
                             entityMaps = this.findEntityMapEndpoint(bindingSparqls);
                         }
 
-                        /*if(extractedParts.contains("mount_everest")){
-                        printMap(entityMap);
-                        //System.out.println(extractedParts);
-                    }*/
-                        //System.out.println(extractedParts);
-                        //System.out.println(entityMaps.iterator().next().size());
                         LinkedHashSet<String> resultsTemp = findUriGivenEntity(extractedParts, entityMaps);
-                        //System.out.println(resultsTemp);
                         if (!resultsTemp.isEmpty()) {
                             if (resultsTemp.size() == 1) {
                                 String result = resultsTemp.iterator().next();
@@ -125,11 +117,11 @@ public class GrammarRule {
             }
         }
         return null;
-    }
+    }*/
     
    
     
-    public String parse(String sentence, String goldSparql, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
+    public String parse(String sentence, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
         if (!questions.isEmpty()) {
             if(this.template!=null&&this.template.contains("superlativeWorld")){
@@ -142,21 +134,6 @@ public class GrammarRule {
                 List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
                 if (!extractedParts.isEmpty()) {
                     return ruleRegularEx;
-                    //Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
-
-                    /*for (String questionSparql : sparqls.keySet()) {
-                        List<String> bindingSparqls = sparqls.get(questionSparql);
-                        //String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
-                        //if(selecttedSparql!=null){
-                        for (String bindingSparql : bindingSparqls) {
-                            //System.out.println("bindingSparql::"+bindingSparql);
-                            List<Map<String, String>> entityMaps = this.findEntityMapEndpoint(bindingSparql);
-                            if (!entityMaps.isEmpty()) {
-                                return this.findEntity(questions, entityMaps, extractedParts, bindingSparqls, questionSparql);
-                            }
-
-                        }
-                    }*/
                 }
             }
         }
@@ -180,7 +157,8 @@ public class GrammarRule {
                 //String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
                 //if(selecttedSparql!=null){
                 for (String bindingSparql : bindingSparqls) {
-                    if(this.template.contains("comperative")){
+                     
+                    if(this.template!=null&&this.template.contains("comperative")){
                       String value=extractedParts.iterator().next();
                       value=checkMeasure(value);
                       bindingSparql=bindingSparql.replace("VARIABLE", value);
@@ -479,6 +457,10 @@ public class GrammarRule {
         }
       return value;
     
+    }
+
+    private boolean isPlaceHolder(String bindingSparql) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
 }
