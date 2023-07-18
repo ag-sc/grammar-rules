@@ -36,7 +36,7 @@ public class QueGG {
         args = new String[]{"en", inputDir, "QALD9"};
         String language = args[0];
         Grammar grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
-        Boolean parseFlag = true, evaluateFlag = false;
+        Boolean parseFlag = false, evaluateFlag = true;
         String qaldDataType = "QALD9";
         String dataSetType = "train";
         String inductive = "incremental";
