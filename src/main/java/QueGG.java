@@ -35,7 +35,7 @@ public class QueGG {
         System.out.println("Grammar Parser!!!");
         File file = new File(inputFileName);
         List<String[]> rows = CsvUtils.readAllDataAtOnce(file);
-        File outputFile = new File(inputFileName.replace("input.csv", "output.csv"));
+        File outputFile = new File(inputFileName.replace("input", "output"));
         List<String[]> outputs = new ArrayList<String[]>();
         outputs.add(header);
         for (String[] row : rows) {

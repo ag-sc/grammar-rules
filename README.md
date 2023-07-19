@@ -8,7 +8,7 @@ mvn clean package
 ```` 
 
 Run the system:
-````input file example: grammarFiles/en/input.csv
+````input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input.csv)
 id	question
 1	List all boardgames by GMT.
 2	Who developed Skype?
@@ -17,12 +17,12 @@ id	question
 5	Who is the mayor of New York City?
 ```` 
 
-rules.sh contains the following input
+run the command
 ````
 java -jar target/grammar-rules.jar "en" "grammarFiles/en/grammar_FULL_DATASET_EN.json" "grammarFiles/en/input.csv"
 ````  
 
-output
+output [output.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/output..csv)
 ````
 ID	status	sentence	sparqlQald
 1	WORK	List all boardgames by GMT.	SELECT ?Answer WHERE { <http://dbpedia.org/resource/GMT_Games> <http://dbpedia.org/ontology/publisher> ?Answer .}
