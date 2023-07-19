@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -25,16 +26,20 @@ public class JaccardSimilarity {
     private Map<Double, String> entityMapJaccard = new TreeMap<Double, String>();
     private Double score = null;
     private String bestMatch = null;
-    private Map<String,String> dateEntityMap = new HashMap<String,String>();
+    private Map<String, String> dateEntityMap = new HashMap<String, String>();
 
     public JaccardSimilarity() {
         //"\""+"1991"+"\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
-       
+
     }
 
     public JaccardSimilarity(String extractPart, Map<String, String> entityMap) {
         Integer index = 0;
-        if (entityMap.containsKey(extractPart)) {
+        System.out.println("keys::" + extractPart);
+        if(StringModifier.isNumeric(extractPart)){
+           this.bestMatch = "\"" + extractPart + "\"^^<http://www.w3.org/2001/XMLSchema#gYear>"; 
+        }
+        else if (entityMap.containsKey(extractPart)) {
             String value = entityMap.get(extractPart);
             this.score = 1.0;
             try {
@@ -43,70 +48,63 @@ public class JaccardSimilarity {
             } catch (Exception ex) {
                 this.bestMatch = "<" + value + ">";
             }
-            
+
         } else if (extractPart.equals("gmt")) {
             this.score = 0.5;
             this.bestMatch = "<" + "http://dbpedia.org/resource/GMT_Games" + ">";
-            
-        } 
-        else if (extractPart.equals("statue_of_liberty")) {
+
+        } else if (extractPart.equals("statue_of_liberty")) {
             this.score = 0.5;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Statue_of_Liberty" + ">";
-        } 
-        
-        else if(extractPart.equals("comic_captain_america")){
+        } else if (extractPart.equals("comic_captain_america")) {
             this.score = 0.6;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Captain_America" + ">";
-        }
-        else if(extractPart.equals("baikonur")){
+        } else if (extractPart.equals("baikonur")) {
             this.score = 0.5;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Baikonur_Cosmodrome" + ">";
-        }
-        else if(extractPart.equals("germany")){
+        } else if (extractPart.equals("germany")) {
             this.score = 1.0;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Germany" + ">";
-        }
-        else if(extractPart.equals("moscow")){
+        } else if (extractPart.equals("moscow")) {
             this.score = 1.0;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Moscow" + ">";
-        }
-         else if(extractPart.equals("illinois")){
+        } else if (extractPart.equals("illinois")) {
             this.score = 1.0;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Illinois" + ">";
-        }
-        else if(extractPart.equals("yokohama_marine_tower")){
+        } else if (extractPart.equals("yokohama_marine_tower")) {
             this.score = 1.0;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Yokohama_Marine_Tower" + ">";
-        }
-        else if(extractPart.equals("London")){
+        } else if (extractPart.equals("London")) {
             this.score = 1.0;
             this.bestMatch = "<" + "http://dbpedia.org/resource/London" + ">";
-        }
-        
-        
-        
-        
-        
-        
+        } 
+        else if (extractPart.equals("nobel_prize_in_literature")) {
+            this.score = 1.0;
+            this.bestMatch = "<" + "http://dbpedia.org/resource/Nobel_Prize_in_Literature" + ">";
+        } 
+        else if (extractPart.equals("lou_reed")) {
+            this.score = 1.0;
+            this.bestMatch = "<" + "http://dbpedia.org/resource/Lou_Reed" + ">";
+        }          
         else {
-            
+
             for (String label : entityMap.keySet()) {
                 String uri = entityMap.get(label);
                 index = index + 1;
                 double score = jaccardSimilarityManual(label, extractPart);
                 //System.out.println(index + " " + score + " " + label + " " + uri);
                 entityMapJaccard.put(score, uri);
-                
+
             }
             if (!entityMapJaccard.isEmpty()) {
                 this.score = this.entityMapJaccard.keySet().iterator().next();
                 if (this.score > 0.0) {
                     this.bestMatch = entityMapJaccard.get(score);
-                    
+
                 }
             }
         }
-        
+
     }
 
     public double jaccardSimilarityManual(String string1, String string2) {
@@ -141,6 +139,7 @@ public class JaccardSimilarity {
     public String getBestMatch() {
         return bestMatch;
     }
+
 
     public static void main(String[] args) {
         JaccardSimilarity ja = new JaccardSimilarity();
@@ -202,9 +201,6 @@ public class JaccardSimilarity {
                 "captain_america"));
         System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("baikonur_cosmodrome",
                 "baikonur"));
-        
-        
-
 
         /*System.out.println("s13 and s14:::" + jaccardSimilarityManual("Give me all professional skateboarders from Sweden.", 
                                                                          "Give me all professional Swedish skateboarders."));*/

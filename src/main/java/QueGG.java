@@ -67,13 +67,13 @@ public class QueGG {
                     Integer limit = 51;
                     Integer index = 0, countWork = 1;
                     for (String[] row : rows) {
-                        if(!row[0].equals("3")){
+                        /*if(!row[0].equals("44")){
                             continue;  
-                         }
+                         }*/
                         System.out.println(row[0] + " " + row[1] + " " + row[2] + " " + row[3]);
                         String[] result = runParser(grammar, row[0], row[1], row[2], row[3]);
                         outputs.add(result);
-                        System.out.println(result[0]+" "+result[1]+" "+result[2]+" "+result[3]);
+                        System.out.println("result::"+result[0]+" "+result[1]+" "+result[2]+" "+result[3]);
                         /*if (row[1].contains("WORK")) {
                             countWork = countWork + 1;
                         }*/

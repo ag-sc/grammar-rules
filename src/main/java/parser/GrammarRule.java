@@ -124,13 +124,16 @@ public class GrammarRule {
     public String parse(String sentence, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
         if (!questions.isEmpty()) {
-            if(this.template!=null&&this.template.contains("superlativeWorld")){
-                sentence=sentence.toLowerCase().replace(" ","_");
-                if(regularExpreMap.containsKey(sentence)){
+            if (!isPlaceHolder(this.template)) {
+                sentence = sentence.toLowerCase().replace(" ", "_");
+                if (regularExpreMap.containsKey(sentence)) {
                     return sentence;
                 }
+               // else throw new Exception("No place holder but sparql missing!!");
             }
+
             for (String ruleRegularEx : questions) {
+                //System.out.println(ruleRegularEx);
                 List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
                 if (!extractedParts.isEmpty()) {
                     return ruleRegularEx;
@@ -141,9 +144,8 @@ public class GrammarRule {
     }
     
     public String parse(String sentence, String ruleRegularEx) throws Exception {
-        List<String> results = new ArrayList<String>();
         List<String> questions = this.qaElement.getQuestion();
-        if(this.template!=null&&this.template.contains("superlativeWorld")){
+        if (!isPlaceHolder(this.template)) {
             Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
             for (String questionSparql : sparqls.keySet()) {
                  return questionSparql;
@@ -157,11 +159,9 @@ public class GrammarRule {
                 //String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
                 //if(selecttedSparql!=null){
                 for (String bindingSparql : bindingSparqls) {
-                     
-                    if(this.template!=null&&this.template.contains("comperative")){
-                      String value=extractedParts.iterator().next();
-                      value=checkMeasure(value);
-                      bindingSparql=bindingSparql.replace("VARIABLE", value);
+                    String sparql=isExceptional(this.template,extractedParts,bindingSparql);
+                    if(sparql!=null){
+                       return sparql;
                     }
                     List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
                     entityMaps = this.findEntityMapEndpoint(bindingSparql);
@@ -265,7 +265,7 @@ public class GrammarRule {
             if (template != null && template.contains("superlative")) {
                 sparql = "SELECT ?Answer WHERE {  ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingTypes.get(0) + "> . } ";
             }
-            if (template != null && template.contains("HOW_MANY_THING_FORWARD")) {
+            else if (template != null && template.contains("HOW_MANY_THING_FORWARD")) {
                 sparql = sparql.replace("(COUNT(DISTINCT ?Answer) as ?c)", "?"+bindingVariable);
             }
             else  {
@@ -459,8 +459,20 @@ public class GrammarRule {
     
     }
 
-    private boolean isPlaceHolder(String bindingSparql) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private boolean isPlaceHolder(String template) {
+        if (template != null && (template.contains("superlativeWorld") || template.contains("predicateAdjectiveBaseForm"))) {
+            return false;
+        }
+        return true;
+    }
+
+    private String isExceptional(String template, List<String> extractedParts,String bindingSparql) {
+        if (this.template != null && this.template.contains("comperative")) {
+            String value = extractedParts.iterator().next();
+            value = checkMeasure(value);
+            return bindingSparql.replace("VARIABLE", value);
+        }
+        return null;
     }
    
 }
