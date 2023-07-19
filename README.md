@@ -7,8 +7,8 @@ go to director:
 mvn clean package
 ```` 
 
-Run the system:
-````input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input.csv)
+input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input.csv)
+````
 id	question
 1	List all boardgames by GMT.
 2	Who developed Skype?
