@@ -8,29 +8,31 @@ mvn clean package
 ```` 
 
 Run the system:
-````shell script
-sh ./rules.sh
+````input file example: grammarFiles/en/input.csv
+id	question
+1	List all boardgames by GMT.
+2	Who developed Skype?
+3	Which people were born in Heraklion?
+4	In which U.S. state is Area 51 located?
+5	Who is the mayor of New York City?
 ```` 
 
 rules.sh contains the following input
 ````
-java -jar target/QuestionGrammarGenerator.jar "en" "What is the capital of Canada?"
+java -jar target/grammar-rules.jar "en" "grammarFiles/en/grammar_FULL_DATASET_EN.json" "grammarFiles/en/input.csv"
 ````  
 
 output
 ````
-SELECT ?Answer WHERE { <http://dbpedia.org/resource/Canada> <http://dbpedia.org/ontology/capital> ?Answer .}
+ID	status	sentence	sparqlQald
+1	WORK	List all boardgames by GMT.	SELECT ?Answer WHERE { <http://dbpedia.org/resource/GMT_Games> <http://dbpedia.org/ontology/publisher> ?Answer .}
+2	WORK	Who developed Skype?	SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Skype> .}
+3	WORK	Which people were born in Heraklion?	SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Heraklion> .}
+4	N	In which U.S. state is Area 51 located?	N
+5	WORK	Who is the mayor of New York City?	SELECT ?Answer WHERE { <http://dbpedia.org/resource/New_York_City> <http://dbpedia.org/ontology/leaderName> ?Answer .}
+
 ```` 
 
-### Multilingual question parse test
-
-| Language      | NounPPFrame        | TransitiveFrame | InTransitivePP | Gradable | Attributive|
-| :------------ |:---------------| :-----|:-----|:-----|:-----|
-| English       |What is the capital of Canada?| Who created Hollywood Darlings? | which grape grows in Swan Creek AVA?|What is the highest mountain in Australia?|[en_QASystem]|
-|               ||  | |||
-| German        |[de_LexicalEntries]| [de_Templates] |[de_Grammar]|[de_Questions]|[de_QASystem]|
-| Italian       |[it_LexicalEntries]| [it_Templates] |[it_Grammar]|[it_Questions]|[it_QASystem]|
-| Spanish       |[es_LexicalEntries]| [es_Templates]|[es_Grammar]|[es_Questions]|[es_QSystem]|
 
 
 

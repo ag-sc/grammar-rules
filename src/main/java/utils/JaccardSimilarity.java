@@ -35,7 +35,7 @@ public class JaccardSimilarity {
 
     public JaccardSimilarity(String extractPart, Map<String, String> entityMap) {
         Integer index = 0;
-        System.out.println("keys::" + extractPart);
+        //System.out.println("keys::" + extractPart);
         if(StringModifier.isNumeric(extractPart)){
            this.bestMatch = "\"" + extractPart + "\"^^<http://www.w3.org/2001/XMLSchema#gYear>"; 
         }
