@@ -919,8 +919,8 @@
     "frameType" : "NPP",
     "sentenceTemplate" : "forward",
     "sentences" : [ "Give me all boardgames by ($x | Work_NP).", "Give me the ($x | Work_NP) boardgame.", "Give me the ($x | Work_NP) boardgames.", "List all boardgames by ($x | Work_NP).", "List all the agents with boardgame by ($x | Work_NP).", "List all the boardgames by ($x | Work_NP).", "show me all boardgames by ($x | Work_NP).", "which agent is the boardgame by ($x | Work_NP)?", "which agent is the boardgame by the ($x | Work_NP)?", "which agent was the boardgame by ($x | Work_NP)?", "which agent was the boardgame by the ($x | Work_NP)?", "which agents are the boardgames by ($x | Work_NP)?", "which agents are the boardgames by the ($x | Work_NP)?", "which agents were the boardgames by ($x | Work_NP)?", "which agents were the boardgames by the ($x | Work_NP)?", "Who agent are the boardgames by ($x | Work_NP)?", "Who agent are the boardgames by the ($x | Work_NP)?", "Who agent is ($x | Work_NP) 's boardgame?", "Who agent is the boardgame by ($x | Work_NP)?", "Who agent is the boardgame by the ($x | Work_NP)?", "Who agent was ($x | Work_NP) 's boardgame?", "Who agent was the boardgame by ($x | Work_NP)?", "Who agent was the boardgame by the ($x | Work_NP)?", "Who agent were the boardgames by ($x | Work_NP)?", "Who agent were the boardgames by the ($x | Work_NP)?" ],
-    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}",
-    "returnVariable" : "objOfProp",
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
+    "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
     "id" : "170",
@@ -932,7 +932,7 @@
     "frameType" : "NPP",
     "sentenceTemplate" : "nounPhrase",
     "sentences" : [ "the boardgame by ($x | Work_NP)?", "the boardgames by ($x | Work_NP)?" ],
-    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}",
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {

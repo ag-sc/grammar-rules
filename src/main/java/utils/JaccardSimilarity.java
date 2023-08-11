@@ -5,6 +5,7 @@
  */
 package utils;
 
+import static java.lang.System.exit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -26,14 +27,57 @@ public class JaccardSimilarity {
     private Map<Double, String> entityMapJaccard = new TreeMap<Double, String>();
     private Double score = null;
     private String bestMatch = null;
-    private Map<String, String> dateEntityMap = new HashMap<String, String>();
 
     public JaccardSimilarity() {
         //"\""+"1991"+"\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
 
     }
+    
+    public JaccardSimilarity(String extractPart, Map<String, String> entityMap) throws Exception {
+        Integer index = 0;
+        //System.out.println("keys::" + extractPart);
+        if (StringModifier.isNumeric(extractPart)) {
+            this.bestMatch = "\"" + extractPart + "\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
+        } else if (entityMap.containsKey(extractPart)) {
+            String value = entityMap.get(extractPart);
+            this.score = 1.0;
+            try {
+                Integer valueInterger = Integer.parseInt(value);
+                this.bestMatch = "\"" + valueInterger + "\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
+            } catch (Exception ex) {
+                this.bestMatch = "<" + value + ">";
+            }
 
-    public JaccardSimilarity(String extractPart, Map<String, String> entityMap) {
+        }
+        else {
+            /*if(entityMap.isEmpty()){
+                throw new Exception("No entites is found!!");
+            }*/
+            //System.out.println(entityMap.keySet());
+            for (String label : entityMap.keySet()) {
+                String uri = entityMap.get(label);
+                index = index + 1;
+                double score = jaccardSimilarityManual(label, extractPart);
+                if (score>0.0) {
+                    System.out.println(index + " " + score + " " + label + " " + uri);
+                    entityMapJaccard.put(score, uri);
+                }
+
+            }
+            //System.out.println(index + " " + score + " " + label + " " + uri);
+
+            if (!entityMapJaccard.isEmpty()) {
+                this.score = this.entityMapJaccard.keySet().iterator().next();
+                if (this.score > 0.0) {
+                    this.bestMatch = entityMapJaccard.get(score);
+
+                }
+            }
+        }
+
+    }
+
+    /*public JaccardSimilarity(String extractPart, Map<String, String> entityMap) {
         Integer index = 0;
         //System.out.println("keys::" + extractPart);
         if(StringModifier.isNumeric(extractPart)){
@@ -85,27 +129,42 @@ public class JaccardSimilarity {
         else if (extractPart.equals("lou_reed")) {
             this.score = 1.0;
             this.bestMatch = "<" + "http://dbpedia.org/resource/Lou_Reed" + ">";
-        }          
+        }
+        else if (extractPart.equals("skype")) {
+            this.score = 1.0;
+            this.bestMatch = "<" + "http://dbpedia.org/resource/Skype" + ">";
+        }
+        else if (extractPart.equals("heraklion")) {
+            this.score = 1.0;
+            this.bestMatch = "<" + "http://dbpedia.org/resource/Heraklion" + ">";
+        }
+        else if (extractPart.equals("new_ york_city")) {
+            this.score = 1.0;
+            this.bestMatch = "<" + "http://dbpedia.org/resource/New York City" + ">";
+        } 
         else {
+            this.score = 1.0;
+            this.bestMatch = "<" + "http://dbpedia.org/resource/"+extractPart + ">";
+        }
+        
+        for (String label : entityMap.keySet()) {
+            String uri = entityMap.get(label);
+            index = index + 1;
+            double score = jaccardSimilarityManual(label, extractPart);
+            //System.out.println(index + " " + score + " " + label + " " + uri);
+            entityMapJaccard.put(score, uri);
 
-            for (String label : entityMap.keySet()) {
-                String uri = entityMap.get(label);
-                index = index + 1;
-                double score = jaccardSimilarityManual(label, extractPart);
-                //System.out.println(index + " " + score + " " + label + " " + uri);
-                entityMapJaccard.put(score, uri);
+        }
+        if (!entityMapJaccard.isEmpty()) {
+            this.score = this.entityMapJaccard.keySet().iterator().next();
+            if (this.score > 0.0) {
+                this.bestMatch = entityMapJaccard.get(score);
 
-            }
-            if (!entityMapJaccard.isEmpty()) {
-                this.score = this.entityMapJaccard.keySet().iterator().next();
-                if (this.score > 0.0) {
-                    this.bestMatch = entityMapJaccard.get(score);
-
-                }
             }
         }
 
-    }
+
+    }*/
 
     public double jaccardSimilarityManual(String string1, String string2) {
         string1 = process(string1).toLowerCase().toLowerCase().replace("_", " ");
@@ -199,8 +258,14 @@ public class JaccardSimilarity {
                 "gmt_games"));
         System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("comic_captain_america",
                 "captain_america"));
-        System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("baikonur_cosmodrome",
+        System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("baikonur cosmodrome",
                 "baikonur"));
+        System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("JFK",
+                "John F. Kennedy"));
+        System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("the_philippines",
+                "history_of_the_philippines"));
+        
+        
 
         /*System.out.println("s13 and s14:::" + jaccardSimilarityManual("Give me all professional skateboarders from Sweden.", 
                                                                          "Give me all professional Swedish skateboarders."));*/

@@ -20,7 +20,7 @@ public class QueGG {
     private static Integer numberOfEntities = -1;
 
     public static void main(String[] args) throws Exception {
-        //args = new String[]{"en", "grammarFiles/en/grammar_FULL_DATASET_EN.json","grammarFiles/en/input.csv"};
+        args = new String[]{"en", "grammarFiles/en/grammar_FULL_DATASET_EN.json","grammarFiles/en/input.csv"};
        
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
@@ -41,11 +41,16 @@ public class QueGG {
         for (String[] row : rows) {
             String id=row[0];
             String sentence=row[1];
+            //sentence="Where was Bach born?";
+            Integer idInteger=Integer.parseInt(id);
+            if(idInteger!=10)
+               continue; 
             System.out.println(id+" sentence::" + sentence);
             String[] result = runParser(grammar, id, sentence);
             outputs.add(result);
             System.out.println("result::"+ id+" " +result[2] + " " + result[3]+" "+result[1]);
             System.out.println();
+            
         }
         try {
             CsvUtils.writeDataAtOnce(outputFile, outputs);
@@ -56,7 +61,7 @@ public class QueGG {
 
     }
 
-    private static String[] runParser(Grammar grammar, String id,  String sentence) {
+    private static String[] runParser(Grammar grammar, String id,  String sentence) throws Exception {
         try {
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
@@ -68,9 +73,9 @@ public class QueGG {
             }
         } catch (Exception ex) {
             Logger.getLogger(QueGG.class.getName()).log(Level.SEVERE, null, ex);
-            ex.printStackTrace();
+            throw new Exception("Parsing failed for the text:"+sentence);
+
         }
-        return new String[]{};
     }
 
     private static Grammar loadGrammar(String grammarFileName, String language) throws Exception {

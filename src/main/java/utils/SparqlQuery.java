@@ -49,6 +49,7 @@ public class SparqlQuery {
     }
 
     public SparqlQuery(String sparqlQuery) {
+        System.out.println(sparqlQuery);
         String resultSparql = executeSparqlQuery(sparqlQuery);
         this.parseResult(resultSparql);
     }
@@ -193,7 +194,7 @@ public class SparqlQuery {
         //<http://dbpedia.org/resource/BBC_Wildlife_Specials>
         sparql = "SELECT ?objOfProp WHERE { ?Answer <http://dbpedia.org/ontology/foundingYear> ?objOfProp .}";
         //PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?s ?uri WHERE { ?s dbo:officialLanguage ?uri }
-        SparqlQuery sparqlQuery=new SparqlQuery(sparql);
+        /*SparqlQuery sparqlQuery=new SparqlQuery(sparql);
         entityMap=sparqlQuery.getEntityMap();
         String objectOfProperty="http://dbpedia.org/resource/New_York_City";
         String label=StringModifier.makeLabel(objectOfProperty, "en");
@@ -208,6 +209,16 @@ public class SparqlQuery {
             String value=entityMap.get(label);
             System.out.println("value::"+value); 
            
+        }*/
+        
+        sparql="SELECT ?uri WHERE { ?uri <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/GMT_Games> }";
+        sparql="SELECT ?subjOfProp WHERE { ?subjOfProp <http://dbpedia.org/ontology/officialLanguage> ?Answer .}";
+        SparqlQuery sparqlQuery=new SparqlQuery(sparql);
+        entityMap=sparqlQuery.getEntityMap();
+        for(String key:entityMap.keySet()){
+            String value=entityMap.get(key);
+            System.out.println(key+" "+value); 
+
         }
         //FileUtils.hashMapOrgtoFile(sparqlQuery.getEntityMap(), "/home/elahi/A-Grammar/grammar-rules/resources/entity.txt");
         

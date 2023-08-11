@@ -177,36 +177,41 @@ public class GrammarRule {
     }
 
    
-    public String findEntity(List<String> questions,List<Map<String, String>> entityMaps, 
-                             List<String> extractedParts, List<String> bindingSparqls,
-                             String questionSparql) throws Exception {
+    public String findEntity(List<String> questions, List<Map<String, String>> entityMaps,
+            List<String> extractedParts, List<String> bindingSparqls,
+            String questionSparql) throws Exception {
 
         LinkedHashSet<String> resultsTemp = findUriGivenEntity(extractedParts, entityMaps);
-        if (!resultsTemp.isEmpty()) {
-            if (resultsTemp.size() == 1) {
-                String result = resultsTemp.iterator().next();
-                if (result.contains("http")) {
-                    questionSparql = prepareSparql(questionSparql, result);
+
+        try {
+            if (!resultsTemp.isEmpty()) {
+                if (resultsTemp.size() == 1) {
+                    String result = resultsTemp.iterator().next();
+                    if (result.contains("http")) {
+                        questionSparql = prepareSparql(questionSparql, result);
+                        this.qaElement = new QAElement(questions, bindingSparqls, questionSparql);
+                        return questionSparql;
+                    } else {
+                        questionSparql = prepareSparql(qaElement.getQuestionSparql(), result);
+                        result = result.replace("_", " ");
+                        this.qaElement = new QAElement(questions, bindingSparqls, questionSparql, result);
+                        return questionSparql;
+                    }
+
+                } else if (resultsTemp.size() > 1) {
+                    questionSparql = prepareSparql(questionSparql, resultsTemp);
                     this.qaElement = new QAElement(questions, bindingSparqls, questionSparql);
-                    return questionSparql;
-                } else {
-                    questionSparql = prepareSparql(qaElement.getQuestionSparql(), result);
-                    result = result.replace("_", " ");
-                    this.qaElement = new QAElement(questions, bindingSparqls, questionSparql, result);
                     return questionSparql;
                 }
 
-            } else if (resultsTemp.size() > 1) {
-                questionSparql = prepareSparql(questionSparql, resultsTemp);
-                this.qaElement = new QAElement(questions, bindingSparqls, questionSparql);
+            } else {
+                String npPhrase = extractedParts.iterator().next();
+                //String newSparql = this.parse(npPhrase, entityRetriveOnline, numberOfEntities, language);
+                this.qaElement = new QAElement(questions, bindingSparqls, questionSparql, npPhrase);
                 return questionSparql;
             }
-
-        } else {
-            String npPhrase = extractedParts.iterator().next();
-            //String newSparql = this.parse(npPhrase, entityRetriveOnline, numberOfEntities, language);
-            this.qaElement = new QAElement(questions, bindingSparqls, questionSparql, npPhrase);
-            return questionSparql;
+        }catch(Exception ex ){
+           return "No Sparql!!!!";
         }
 
         return null;
@@ -313,7 +318,7 @@ public class GrammarRule {
         return sparql;
     }
     
-    private LinkedHashSet<String> findUriGivenEntity(List<String> extractedParts, List<Map<String, String>> entityMaps) {
+    private LinkedHashSet<String> findUriGivenEntity(List<String> extractedParts, List<Map<String, String>> entityMaps) throws Exception {
         LinkedHashSet<String> entities = new LinkedHashSet<String>();
         for (String extractedPart : extractedParts) {
             extractedPart = StringModifier.makeLabel(extractedPart, "en");

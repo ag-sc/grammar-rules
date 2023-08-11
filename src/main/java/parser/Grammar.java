@@ -25,35 +25,31 @@ import utils.StringModifier;
 public class Grammar {
 
     private List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
-    private Boolean entityRetriveOnline=false;
-    private Integer numberOfEntities=-1;
-    private String language="en";
+    private Boolean entityRetriveOnline = false;
+    private Integer numberOfEntities = -1;
+    private String language = "en";
 
-    public Grammar(List<GrammarRule> grammarRules,Boolean retriveType, Integer numberofEntities, String language) {
+    public Grammar(List<GrammarRule> grammarRules, Boolean retriveType, Integer numberofEntities, String language) {
         this.grammarRules = grammarRules;
-        this.entityRetriveOnline=retriveType;
-        this. numberOfEntities=numberofEntities;
-        this.language=language;
+        this.entityRetriveOnline = retriveType;
+        this.numberOfEntities = numberofEntities;
+        this.language = language;
     }
 
-    private Grammar() {
-    }
-
-  
-        //The methods return a SPARQL query or „null“ if there is no parse.
+    //The methods return a SPARQL query or „null“ if there is no parse.
     public String parser(String sentence) throws Exception {
-        Map<String,GrammarRule> matchedGrammarRules=new HashMap<String,GrammarRule>();
+        Map<String, GrammarRule> matchedGrammarRules = new HashMap<String, GrammarRule>();
         for (GrammarRule grammarRule : grammarRules) {
-             String regEx=grammarRule.parse(sentence,  entityRetriveOnline, numberOfEntities, language);
-             if(regEx!=null){
-                matchedGrammarRules.put(regEx,grammarRule);
-             }
+            String regEx = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language);
+            if (regEx != null) {
+                matchedGrammarRules.put(regEx, grammarRule);
+            }
         }
-        List<String> sortedRegularEx=Sorting.sortQuestionsReg(matchedGrammarRules.keySet());
-        for(String regularEx:sortedRegularEx){
-             GrammarRule grammarRule=matchedGrammarRules.get(regularEx);
-             String sparql=grammarRule.parse(sentence, regularEx);
-              if (sparql != null) {
+        List<String> sortedRegularEx = Sorting.sortQuestionsReg(matchedGrammarRules.keySet());
+        for (String regularEx : sortedRegularEx) {
+            GrammarRule grammarRule = matchedGrammarRules.get(regularEx);
+            String sparql = grammarRule.parse(sentence, regularEx);
+            if (sparql != null) {
                 String complexSentence = grammarRule.getQaElement().getComplexSentence();
                 if (complexSentence != null) {
                     String mainSparql = sparql;
@@ -68,46 +64,7 @@ public class Grammar {
                 }
             }
         }
-        
+
         return null;
     }
-
-
-   
-
-    
-
-   
-
-    
-
-    
-    /*public static void main(String[] args) {
-        String ruleRegularEx = "Who is the editor of (.*?)?";
-        String sentence = "Who is the editor of AmerasiaJournal?";
-        List<String> results=Match.findCommonWords(sentence, ruleRegularEx);
-        for(String word:results){
-            sentence=sentence.replace(word, "");
-        }
-        System.out.println(results);
-        System.out.println(sentence.stripLeading());
-
-        Grammar grammar = new Grammar();
-        String ruleRegularEx = "Who is the editor of (.*?)?";
-        String sentence = "Who is the editor of AmerasiaJournal?";
-        Matcher matcher = grammar.isMatch(sentence, ruleRegularEx);
-        System.out.println(matcher.matches());
-
-        System.out.println(matcher.end());
-
-        String mydata = "some string with 'the data i want' inside";
-        Pattern pattern = Pattern.compile("'(.*?)'");
-        Matcher matcher = pattern.matcher(mydata);
-        if (matcher.find()) {
-            System.out.println(matcher.group(1));
-        }
-    }*/
-
-   
-
 }

@@ -72,11 +72,11 @@ public class Evalution {
             //if (!sparqlQueGG.contains("-")) {
             Map<String, String> resultQueGG = new SparqlQuery(sparqlQueGG).getEntityMap();
             Map<String, String> resultQald = new SparqlQuery(sparqlQald).getEntityMap();
-            System.out.println(id + " queGGSparql=" + sparqlQueGG + " qaldSparql=" + sparqlQald);
-            System.out.println(id + " resultQueGG=" + resultQueGG.size() + " resultQald=" + resultQald.size());
+            //System.out.println(id + " queGGSparql=" + sparqlQueGG + " qaldSparql=" + sparqlQald);
+            //System.out.println(id + " resultQueGG=" + resultQueGG.size() + " resultQald=" + resultQald.size());
             FscoreCalculation cal = new FscoreCalculation(resultQueGG.keySet(), resultQald.keySet());
-            System.out.println(cal.getTp() + " " + cal.getFn() + " " + cal.getFn());
-            System.out.println(cal.getPrecision() + " " + cal.getRecall() + " " + cal.getFscore());
+            //System.out.println(cal.getTp() + " " + cal.getFn() + " " + cal.getFn());
+            //System.out.println(cal.getPrecision() + " " + cal.getRecall() + " " + cal.getFscore());
             float tp = cal.getTp();
             float fp = cal.getFp();
             float fn = cal.getFn();
