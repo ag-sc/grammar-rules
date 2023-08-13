@@ -8,6 +8,7 @@ package utils;
 import static java.lang.System.exit;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -24,7 +25,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class JaccardSimilarity {
 
-    private Map<Double, String> entityMapJaccard = new TreeMap<Double, String>();
+    private Map<Double, String> entityMapJaccard = new TreeMap<Double, String>(Collections.reverseOrder());
     private Double score = null;
     private String bestMatch = null;
 
@@ -59,12 +60,12 @@ public class JaccardSimilarity {
                 index = index + 1;
                 double score = jaccardSimilarityManual(label, extractPart);
                 if (score>0.0) {
-                    System.out.println(index + " " + score + " " + label + " " + uri);
+                    System.out.println(index + " " + score +" "+extractPart+ " " + label + " " + uri);
                     entityMapJaccard.put(score, uri);
                 }
 
             }
-            //System.out.println(index + " " + score + " " + label + " " + uri);
+            System.out.println(entityMapJaccard.size());
 
             if (!entityMapJaccard.isEmpty()) {
                 this.score = this.entityMapJaccard.keySet().iterator().next();

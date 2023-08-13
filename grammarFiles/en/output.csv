@@ -1,2 +1,2 @@
 "ID","status","sentence","sparqlQald"
-"10","Parsed","What are the official languages of the Philippines?","SELECT ?Answer WHERE { http://dbpedia.org/resource/South_Georgia_and_the_South_Sandwich_Islands <http://dbpedia.org/ontology/officialLanguage> ?Answer .}"
+"1","Parsed","List all boardgames by GMT.","SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/publisher> http://dbpedia.org/resource/GMT_Games .}"

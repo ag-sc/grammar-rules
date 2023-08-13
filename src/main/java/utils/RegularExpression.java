@@ -52,6 +52,7 @@ public class RegularExpression {
     */
     public static List<String> isMatchWithRegEx(String sentence, String ruleRegularEx) {
         List<String> results = new ArrayList<String>();
+        Integer limit=0;
         Tuple tuple=new Tuple(Boolean.FALSE,results);
         sentence = sentence.toLowerCase();
         sentence = replaceSpaceWithSlash(sentence);
@@ -64,9 +65,10 @@ public class RegularExpression {
             for (Integer index = 1; index <= matcher.groupCount(); index++) {
                 extractPattern = matcher.group(index);
                 results.add(extractPattern);
+                //System.out.println(extractPattern);
             }
         }
-        
+       
         return results;
     }
 

@@ -212,7 +212,7 @@ public class SparqlQuery {
         }*/
         
         sparql="SELECT ?uri WHERE { ?uri <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/GMT_Games> }";
-        sparql="SELECT ?subjOfProp WHERE { ?subjOfProp <http://dbpedia.org/ontology/officialLanguage> ?Answer .}";
+        sparql="SELECT ?subjOfProp WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}";
         SparqlQuery sparqlQuery=new SparqlQuery(sparql);
         entityMap=sparqlQuery.getEntityMap();
         for(String key:entityMap.keySet()){
@@ -220,6 +220,8 @@ public class SparqlQuery {
             System.out.println(key+" "+value); 
 
         }
+        String test="atlanta_falcons";
+        System.out.println(entityMap.get(test)); 
         //FileUtils.hashMapOrgtoFile(sparqlQuery.getEntityMap(), "/home/elahi/A-Grammar/grammar-rules/resources/entity.txt");
         
     }

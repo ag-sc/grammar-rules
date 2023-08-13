@@ -932,7 +932,7 @@
     "frameType" : "NPP",
     "sentenceTemplate" : "nounPhrase",
     "sentences" : [ "the boardgame by ($x | Work_NP)?", "the boardgames by ($x | Work_NP)?" ],
-    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/publisher> ?Answer .}",
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {

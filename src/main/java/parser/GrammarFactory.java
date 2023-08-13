@@ -31,12 +31,9 @@ public class GrammarFactory {
 
     public GrammarFactory(File file, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
-        try {
-            GrammarEntries grammarEntries = mapper.readValue(file, GrammarEntries.class);
-            grammar = new Grammar(getAllGrammarRules(grammarEntries), entityRetriveOnline, numberOfEntities, language);
-        } catch (IOException ex) {
-            Logger.getLogger(GrammarFactory.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        GrammarEntries grammarEntries = mapper.readValue(file, GrammarEntries.class);
+        grammar = new Grammar(getAllGrammarRules(grammarEntries), entityRetriveOnline, numberOfEntities, language);
+
     }
 
     private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries) throws Exception {

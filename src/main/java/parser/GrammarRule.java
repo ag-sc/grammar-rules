@@ -133,9 +133,10 @@ public class GrammarRule {
             }
 
             for (String ruleRegularEx : questions) {
-                //System.out.println(ruleRegularEx);
-                List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
-                if (!extractedParts.isEmpty()) {
+                List<String> results = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
+                
+                if (!results.isEmpty()) {
+                    System.out.println("ruleRegularEx::"+ruleRegularEx);
                     return ruleRegularEx;
                 }
             }
@@ -151,8 +152,10 @@ public class GrammarRule {
                  return questionSparql;
             }
         }
-        List<String> extractedParts = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
-        if (!extractedParts.isEmpty()) {
+        List<String> results = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
+        if (!results.isEmpty()) {
+            List<String> extractedParts =this.filterMatches(this.qaElement.getBindingSparqls(),results);
+            System.out.println(extractedParts);
             Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
             for (String questionSparql : sparqls.keySet()) {
                 List<String> bindingSparqls = sparqls.get(questionSparql);
@@ -268,7 +271,7 @@ public class GrammarRule {
         String bindingVariable=findBindingVariable(returnVariable);
         if (sparql.contains(QueryType.SELECT.name())) {
             if (template != null && template.contains("superlative")) {
-                sparql = "SELECT ?Answer WHERE {  ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingTypes.get(0) + "> . } ";
+                sparql = "SELECT ?subjOfProp WHERE {  ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingTypes.get(0) + "> . } ";
             }
             else if (template != null && template.contains("HOW_MANY_THING_FORWARD")) {
                 sparql = sparql.replace("(COUNT(DISTINCT ?Answer) as ?c)", "?"+bindingVariable);
@@ -479,5 +482,21 @@ public class GrammarRule {
         }
         return null;
     }
-   
+
+    private List<String> filterMatches(List<String> bindingSparqls, List<String> results) {
+        List<String> filterResults = new ArrayList<String>();
+        if(bindingSparqls.contains("ASK")){
+           return results;  
+        }
+        else  {
+            if (results.size() > 1) {
+                filterResults.add(results.get(1));
+            } else {
+                filterResults.add(results.iterator().next());
+            }
+
+        }
+        return filterResults;
+    }
+
 }

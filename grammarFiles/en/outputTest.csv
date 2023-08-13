@@ -1,26 +1,18 @@
 ID,status,sentence,sparqlQald
 4,Not Parsed,In which U.S. state is Area 51 located?,N
 6,Not Parsed,Which countries have places with more than two caves?,N
-9,Parsed,Give me all actors starring in movies directed by and starring William Shatner.,SELECT ?Answer WHERE { http://dbpedia.org/resource/Britain's_Got_the_Pop_Factor..._and_Possibly_a_New_Celebrity_Jesus_Christ_Soapstar_Superstar_Strictly_on_Ice <http://dbpedia.org/ontology/starring> ?Answer .}
-10,Parsed,What are the official languages of the Philippines?,SELECT ?Answer WHERE { http://dbpedia.org/resource/South_Georgia_and_the_South_Sandwich_Islands <http://dbpedia.org/ontology/officialLanguage> ?Answer .}
 11,Not Parsed,Give me all Danish films.,N
 12,Not Parsed,Which movies starring Brad Pitt were directed by Guy Ritchie?,N
 13,Not Parsed,Give me the grandchildren of Bruce Lee.,N
 14,Not Parsed,Which other weapons did the designer of the Uzi develop?,N
 16,Not Parsed,Which state of the USA has the highest population density?,N
 17,Not Parsed,Which monarchs were married to a German?,N
-19,Not Parsed,Who created the comic Captain America?,N
-21,Not Parsed,Who wrote the book The pillars of the Earth?,N
 22,Not Parsed,Which state of the United States of America has the highest density?,N
 24,Not Parsed,Give me a list of all trumpet players that were bandleaders.,N
 25,Not Parsed,Which U.S. states are in the same timezone as Utah?,N
 26,Not Parsed,Which U.S. states possess gold minerals?,N
-27,Parsed,Who is the daughter of Ingrid Bergman married to?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Ingrid_Detter_de_Frankopan <http://dbpedia.org/ontology/child> ?Answer .}
 30,Not Parsed,Which caves have more than 3 entrances?,N
-31,Not Parsed,Who is the tallest player of the Atlanta Falcons?,N
 32,Not Parsed,What are the top-10 action role-playing video games according to IGN?,N
-33,Not Parsed,Give me all writers that won the Nobel Prize in literature.,N
-34,Parsed,Show me all basketball players that are higher than 2 meters.,SELECT DISTINCT ?subjOfProp WHERE { ?subjOfProp <http://dbpedia.org/ontology/height> ?Answer FILTER ( ?Answer > 2 ) }
 35,Parsed,When was the Statue of Liberty built?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Church_of_St_Cyril_of_Turau_and_All_the_Patron_Saints_of_the_Belarusian_People <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}
 39,Not Parsed,What movies does Jesse Eisenberg play in?,N
 41,Not Parsed,Give me all cosmonauts.,N

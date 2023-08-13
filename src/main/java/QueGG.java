@@ -14,13 +14,14 @@ import utils.csv.CsvUtils;
 @NoArgsConstructor
 public class QueGG {
 
-    private static String inputDir = "grammarFiles/en/";
+    //private static String inputDir = "grammarFiles/en/";
+    private static String inputDir = "/home/elahi/A-Grammar/multilingual-grammar-generator/result/en/";
     //private static String grammarFileName = "grammar_FULL_DATASET_EN.json";
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
 
     public static void main(String[] args) throws Exception {
-        args = new String[]{"en", "grammarFiles/en/grammar_FULL_DATASET_EN.json","grammarFiles/en/input.csv"};
+        args = new String[]{"en", inputDir+"grammar_FULL_DATASET_EN.json","grammarFiles/en/input.csv"};
        
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
@@ -43,9 +44,10 @@ public class QueGG {
             String sentence=row[1];
             //sentence="Where was Bach born?";
             Integer idInteger=Integer.parseInt(id);
-            if(idInteger!=10)
+            if(idInteger!=1)
                continue; 
-            System.out.println(id+" sentence::" + sentence);
+            //System.out.println(id+" sentence::" + sentence);
+            //sentence="What films does Jesse Eisenberg play in?";
             String[] result = runParser(grammar, id, sentence);
             outputs.add(result);
             System.out.println("result::"+ id+" " +result[2] + " " + result[3]+" "+result[1]);
