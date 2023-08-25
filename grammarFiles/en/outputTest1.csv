@@ -1,106 +1,54 @@
 ID,status,sentence,sparqlQald
-1,Not Parsed,List all boardgames by GMT.,N
-2,Parsed,Who developed Skype?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Skype> .}
-3,Parsed,Which people were born in Heraklion?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Heraklion> .}
 4,Not Parsed,In which U.S. state is Area 51 located?,N
-5,Parsed,Who is the mayor of New York City?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/New_York_City> <http://dbpedia.org/ontology/leaderName> ?Answer .}
 6,Not Parsed,Which countries have places with more than two caves?,N
-7,Parsed,Where did Abraham Lincoln die?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Abraham_Lincoln> <http://dbpedia.org/ontology/deathPlace> ?Answer .}
-8,Parsed,Which airports does Air China serve?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Air_China> <http://dbpedia.org/ontology/targetAirport> ?Answer .}
-9,Parsed,Give me all actors starring in movies directed by and starring William Shatner.,SELECT ?Answer WHERE { http://dbpedia.org/resource/William_and_Mary_(TV_series) <http://dbpedia.org/ontology/starring> ?Answer .}
-10,Parsed,What are the official languages of the Philippines?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Philippines> <http://dbpedia.org/ontology/officialLanguage> ?Answer .}
-11,Not Parsed,Give me all Danish films.,N
-12,Parsed,Which movies starring Brad Pitt were directed by Guy Ritchie?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Guy_Ritchie> .}
 13,Not Parsed,Give me the grandchildren of Bruce Lee.,N
-14,Parsed,Which other weapons did the designer of the Uzi develop?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/developer> http://dbpedia.org/resource/Wizards_of_the_Coast .}
-15,Not Parsed,Who is the owner of Universal Studios?,N
 16,Not Parsed,Which state of the USA has the highest population density?,N
-17,Parsed,Which monarchs were married to a German?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/spouse> http://dbpedia.org/resource/Mike_German .}
-18,Parsed,Which organizations were founded in 1950?,"SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> ""1950""^^<http://www.w3.org/2001/XMLSchema#gYear> .}"
-19,Parsed,Who created the comic Captain America?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Captain_America_(1979_film) <http://dbpedia.org/ontology/author> ?Answer .}
-20,Not Parsed,Give me the Apollo 14 astronauts.,N
-21,Parsed,Who wrote the book The pillars of the Earth?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Pillars_of_the_Earth> <http://dbpedia.org/ontology/author> ?Answer .}
 22,Not Parsed,Which state of the United States of America has the highest density?,N
-23,Parsed,Which spaceflights were launched from Baikonur?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/launchPad> http://dbpedia.org/resource/Baikonur_Cosmodrome .}
 24,Not Parsed,Give me a list of all trumpet players that were bandleaders.,N
 25,Not Parsed,Which U.S. states are in the same timezone as Utah?,N
 26,Not Parsed,Which U.S. states possess gold minerals?,N
-27,Parsed,Who is the daughter of Ingrid Bergman married to?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Ingrid_Bergman <http://dbpedia.org/ontology/child> ?Answer .}
-28,Not Parsed,How deep is Lake Placid?,N
-29,Not Parsed,Show me all museums in London.,N
 30,Not Parsed,Which caves have more than 3 entrances?,N
-31,Not Parsed,Who is the tallest player of the Atlanta Falcons?,N
 32,Not Parsed,What are the top-10 action role-playing video games according to IGN?,N
-33,Parsed,Give me all writers that won the Nobel Prize in literature.,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/award> http://dbpedia.org/resource/Nobel_Prize_in_Literature .}
-34,Not Parsed,Show me all basketball players that are higher than 2 meters.,N
-35,Parsed,When was the Statue of Liberty built?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Votive_statue_of_the_Holy_Trinity <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}
-36,Parsed,Which states border Illinois?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Illinois> <http://dbpedia.org/property/borderingstates> ?Answer .}
-37,Parsed,Who developed Minecraft?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Minecraft> .}
-38,Parsed,Where did Hillel Slovak die?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Hillel_Slovak> <http://dbpedia.org/ontology/deathPlace> ?Answer .}
 39,Not Parsed,What movies does Jesse Eisenberg play in?,N
-40,Parsed,Give all swimmers that were born in Moscow.,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> .}
 41,Not Parsed,Give me all cosmonauts.,N
-42,Not Parsed,Give me all Swiss non-profit organizations.,N
-43,Parsed,Which presidents were born in 1945?,"SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthDate> ""1945""^^<http://www.w3.org/2001/XMLSchema#gYear> .}"
 44,Not Parsed,What kind of music did Lou Reed play?,N
 45,Not Parsed,Where do the Red Sox play?,N
 46,Not Parsed,Show a list of soccer clubs that play in the Bundesliga.,N
 47,Not Parsed,Which volcanos in Japan erupted since 2000?,N
-48,Parsed,Which bridges cross the Seine?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> .}
-49,Not Parsed,What is the official color of the University of Oxford?,N
 50,Not Parsed,How many films did Hal Roach produce?,N
-51,Not Parsed,Give me all Danish movies.,N
 52,Not Parsed,What is the most frequent cause of death?,N
 53,Not Parsed,Who are the four youngest MVP basketball players?,N
 54,Not Parsed,Give me all companies in Munich.,N
 55,Not Parsed,Give me the capitals of all countries that the Himalayas run through.,N
 56,Not Parsed,How many movies did Park Chan-wook direct?,N
-57,Parsed,Which rivers flow into a German lake?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/inflow> http://dbpedia.org/resource/Wilson_Lake_(Maine) .}
 58,Not Parsed,How many airlines are there?,N
 59,Not Parsed,Give me all islands that belong to Japan.,N
 60,Not Parsed,How many inhabitants does Maribor have?,N
-61,Not Parsed,Give me all Apollo 14 astronauts.,N
 62,Not Parsed,Which companies have more than 1 million employees?,N
-63,Parsed,In which films directed by Garry Marshall was Julia Roberts starring?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Marshall_(film) <http://dbpedia.org/ontology/director> ?Answer .}
 64,Not Parsed,Give me all soccer clubs in the Premier League.,N
 65,Not Parsed,What is the highest place of the Urals?,N
 66,Not Parsed,Who is the governor of Wyoming?,N
 67,Not Parsed,Where did the architect of the Eiffel Tower study?,N
 68,Not Parsed,Give me all world heritage sites designated within the past two years.,N
-69,Parsed,Give me all actors who were born in Paris after 1950.,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> http://dbpedia.org/resource/Paris_(1924_film) .}
-70,Parsed,Which movies star both Liz Taylor and Richard Burton?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Burton_&_Taylor <http://dbpedia.org/ontology/starring> ?Answer .}
-71,Not Parsed,Give me all Australian nonprofit organizations.,N
-72,Parsed,Which pope succeeded John Paul II?,SELECT ?Answer WHERE { http://dbpedia.org/resource/John_Paul_(colonial_administrator) <http://dbpedia.org/ontology/successor> ?Answer .}
 73,Not Parsed,Give me all ESA astronauts.,N
 74,Not Parsed,Who was president of Pakistan in 1978?,N
 75,Not Parsed,Who is the owner of Rolls-Royce?,N
-76,Parsed,How many museums does Paris have?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Théâtre_de_Paris <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}
 77,Not Parsed,Where was JFK assassinated?,N
 78,Not Parsed,Give me all federal chancellors of Germany.,N
 79,Not Parsed,Show me everyone who was born on Halloween.,N
-80,Parsed,Which beer originated in Ireland?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/sourceCountry> <http://dbpedia.org/resource/Ireland> .}
 81,Not Parsed,To which countries does the Himalayan mountain system extend?,N
 82,Not Parsed,Which actors were born in Germany?,N
 83,Not Parsed,How much carbs does peanut butter have?,N
-84,Parsed,Who produced the most films?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> http://dbpedia.org/resource/Films .}
 85,Not Parsed,How many employees does Google have?,N
-86,Parsed,Give me all actors who were born in Berlin.,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Berlin> .}
 87,Not Parsed,Who created Goofy?,N
 88,Not Parsed,Which music albums contain the song Last Christmas?,N
 89,Not Parsed,When was Alberta admitted as province?,N
-90,Parsed,How many missions does the Soyuz programme have?,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_Whitebrook <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}
 91,Not Parsed,Give me all the TV shows with Neil Patrick Harris.,N
 92,Not Parsed,When were the Hells Angels founded?,N
-93,Not Parsed,What is the net income of Apple?,N
-94,Not Parsed,Give me all Swedish holidays.,N
 95,Not Parsed,In which city was the former Dutch queen Juliana buried?,N
-96,Parsed,List all the musicals with music by Leonard Bernstein.,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Leonard_Bernstein> .}
 97,Not Parsed,Give me all companies in the advertising industry.,N
 98,Not Parsed,What is the largest metropolitan area in Washington state?,N
 99,Not Parsed,Who killed John Lennon?,N
-100,Parsed,Which writers studied in Istanbul?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/education> <http://dbpedia.org/resource/Istanbul> .}
-101,Not Parsed,Give me all Australian metalcore bands.,N
-102,Parsed,Which countries adopted the Euro?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/currency> http://dbpedia.org/resource/Euro .}
 103,Not Parsed,Give me all types of eating disorders.,N
 104,Not Parsed,Was Marc Chagall a jew?,N
 105,Not Parsed,What was Brazil's lowest rank in the FIFA World Ranking?,N
@@ -117,38 +65,27 @@ ID,status,sentence,sparqlQald
 116,Not Parsed,What airlines are part of the SkyTeam alliance?,N
 117,Not Parsed,Which ships were called after Benjamin Franklin?,N
 118,Not Parsed,Give me all Methodist politicians.,N
-119,Parsed,What other books have been written by the author of The Fault in Our Stars?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Fault_in_Our_Stars> <http://dbpedia.org/ontology/author> ?Answer .}
 120,Not Parsed,What is the highest mountain?,N
-121,Parsed,Which poet wrote the most books?,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_Bachman_Books <http://dbpedia.org/ontology/author> ?Answer .}
 122,Not Parsed,Which programming languages influenced Javascript?,N
-123,Parsed,Which musician wrote the most books?,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_Bachman_Books <http://dbpedia.org/ontology/author> ?Answer .}
-124,Parsed,Which films starring Clint Eastwood did he direct himself?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Bill_Cosby:_Himself <http://dbpedia.org/ontology/director> ?Answer .}
 125,Not Parsed,Which software has been developed by organizations founded in California?,N
-126,Parsed,Which instruments does Cat Stevens play?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Cat_Stevens> <http://dbpedia.org/ontology/genre> ?Answer .}
 127,Not Parsed,How many airlines are members of the Star Alliance?,N
 128,Not Parsed,Give me all actors called Baldwin.,N
-129,Parsed,Who wrote The Hunger Games?,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_Hunger_Games_(novel) <http://dbpedia.org/ontology/author> ?Answer .}
 130,Not Parsed,For which label did Elvis record his first album?,N
 131,Not Parsed,Is Christian Bale starring in Batman Begins?,N
-132,Parsed,Where is the residence of the prime minister of Spain?,SELECT ?Answer WHERE { http://dbpedia.org/resource/My_Dad's_the_Prime_Minister <http://dbpedia.org/ontology/composer> ?Answer .}
 133,Not Parsed,Which actor was casted in the most movies?,N
 134,Not Parsed,Which countries have more than two official languages?,N
 135,Not Parsed,Which countries have more than ten caves?,N
 136,Not Parsed,Show me all songs from Bruce Springsteen released between 1980 and 1990.,N
-137,Parsed,Which television shows were created by John Cleese?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/John_Cleese> .}
 138,Not Parsed,When did Latvia join the EU?,N
 139,Not Parsed,Which soccer players were born on Malta?,N
 140,Not Parsed,How many politicians graduated from Columbia University?,N
 141,Not Parsed,Give me the birthdays of all actors of the television show Charmed.,N
-142,Parsed,Which telecommunications organizations are located in Belgium?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Belgium> .}
 143,Not Parsed,Give me a list of all lakes in Denmark.,N
-144,Parsed,How many children does Eddie Murphy have?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Murphy_Theatre <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}
 145,Not Parsed,Show me all English Gothic buildings in Kent.,N
 146,Not Parsed,Who is the manager of Real Madrid?,N
 147,Not Parsed,In which countries can you pay using the West African CFA franc?,N
 148,Not Parsed,Which holidays are celebrated around the world?,N
 149,Not Parsed,What is the longest river?,N
-150,Parsed,Which organizations were founded in 1930?,"SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> ""1930""^^<http://www.w3.org/2001/XMLSchema#gYear> .}"
 151,Not Parsed,What is the birth name of Angela Merkel?,N
 152,Not Parsed,Who has Tom Cruise been married to?,N
 153,Not Parsed,Which weapons did Heckler & Koch develop?,N
@@ -156,22 +93,16 @@ ID,status,sentence,sparqlQald
 155,Not Parsed,What is the ruling party in Lisbon?,N
 156,Not Parsed,How heavy is Jupiter's lightest moon?,N
 157,Not Parsed,How many employees does IBM have?,N
-158,Parsed,List all episodes of the first season of the HBO television series The Sopranos!,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_Sopranos_(episode) <http://dbpedia.org/ontology/seasonNumber> ?Answer .}
 159,Not Parsed,What does ICRO stand for?,N
 160,Not Parsed,Does the new Battlestar Galactica series have more episodes than the old one?,N
-161,Parsed,Give me all films produced by Hal Roach.,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> .}
-162,Parsed,Who played Agent Smith in Matrix?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Smith_(EP) <http://dbpedia.org/ontology/genre> ?Answer .}
 163,Not Parsed,Which Greek parties are pro-European?,N
 164,Not Parsed,Give me a list of all bandleaders that play trumpet.,N
 165,Not Parsed,What is the second highest mountain on Earth?,N
 166,Not Parsed,Is Egypts largest city also its capital?,N
-167,Parsed,Which rockets were launched from Baikonur?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/launchPad> http://dbpedia.org/resource/Baikonur_Cosmodrome .}
 168,Not Parsed,How many programming languages are there?,N
 169,Not Parsed,Which Chess players died in the same place they were born in?,N
-170,Not Parsed,Who is the owner of Facebook?,N
 171,Not Parsed,Give me all movies with Tom Cruise.,N
 172,Not Parsed,In which U.S. state is Fort Knox located?,N
-173,Parsed,Give me all cities in New Jersey with more than 100000 inhabitants.,"SELECT ?Answer WHERE { http://dbpedia.org/resource/Zion,_New_Jersey <http://dbpedia.org/ontology/isPartOf> ?Answer .}"
 174,Not Parsed,Which mountains are higher than the Nanga Parbat?,N
 175,Not Parsed,Give me all B-sides of the Ramones.,N
 176,Not Parsed,What are the specialities of the UNC Health Care?,N
@@ -180,7 +111,6 @@ ID,status,sentence,sparqlQald
 179,Not Parsed,Give me all people that were born in Vienna and died in Berlin.,N
 180,Not Parsed,Is Darth Vader Luke’s father?,N
 181,Not Parsed,Show me all the breweries in Australia.,N
-182,Parsed,Give me all films produced by Steven Spielberg with a budget of at least $80 million.,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/producer> http://dbpedia.org/resource/Steven_Spielberg .}
 183,Not Parsed,Give me all soccer clubs in Spain.,N
 184,Parsed,Who produced films starring Natalie Portman?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> http://dbpedia.org/resource/Films .}
 185,Not Parsed,Give me all breeds of the German Shepherd dog.,N
@@ -188,38 +118,26 @@ ID,status,sentence,sparqlQald
 187,Not Parsed,Which languages are spoken in Estonia?,N
 188,Not Parsed,What is the largest country in the world?,N
 189,Not Parsed,What is the largest city in america?,N
-190,Parsed,Who was the pope that founded the Vatican Television?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Vatican_Television_Center <http://dbpedia.org/ontology/foundedBy> ?Answer .}
-191,Parsed,Who discovered Ceres?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ceres_(dwarf_planet)> <http://dbpedia.org/ontology/discoverer> ?Answer .}
-192,Parsed,Who is the king of the Netherlands?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Netherlands> <http://dbpedia.org/ontology/leader> ?Answer .}
 193,Not Parsed,Is Cola a beverage?,N
 194,Not Parsed,What is the alma mater of the chancellor of Germany Angela Merkel?,N
-195,Parsed,Who wrote the book Les Piliers de la terre?,SELECT ?Answer WHERE { http://dbpedia.org/resource/La_Mort_de_la_Terre <http://dbpedia.org/ontology/author> ?Answer .}
-196,Parsed,Which airports does Yeti Airlines serve?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Yeti_Airlines> <http://dbpedia.org/ontology/targetAirport> ?Answer .}
 197,Parsed,Where is the birthplace of Goethe?,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_Night_Of <http://dbpedia.org/ontology/composer> ?Answer .}
 198,Not Parsed,Was the Cuban Missile Crisis earlier than the Bay of Pigs Invasion?,N
 199,Not Parsed,Which ingredients do I need for carrot cake?,N
-200,Parsed,Who created Wikipedia?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wikipedia> <http://dbpedia.org/ontology/author> ?Answer .}
 201,Not Parsed,What is the highest mountain in Saxony Germany?,N
 202,Not Parsed,Who is the current federal minister of finance in Germany?,N
 203,Not Parsed,In which country is Mecca located?,N
-204,Parsed,Who played Gus Fring in Breaking Bad?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Breaking_Bad <http://dbpedia.org/ontology/genre> ?Answer .}
 205,Parsed,In which country does the Nile start?,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_Jewel_of_the_Nile <http://dbpedia.org/ontology/starring> ?Answer .}
 206,Not Parsed,In which state Penn State University is located?,N
 207,Not Parsed,What is the biggest stadium in Spain?,N
 208,Not Parsed,Who is the coach of Ankara's ice hockey team?,N
 209,Not Parsed,How large is the area of UK?,N
-210,Parsed,Who created Batman?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Batman_Animated <http://dbpedia.org/ontology/author> ?Answer .}
 211,Not Parsed,Was Sigmund Freud married?,N
-212,Parsed,Who are the developers of DBpedia?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/DBpedia> <http://dbpedia.org/ontology/developer> ?Answer .}
 213,Not Parsed,Give me all movies directed by Francis Ford Coppola.,N
 214,Not Parsed,Are tree frogs a type of amphibian?,N
 215,Parsed,What is the location of the Houses of Parliament?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Vale_of_Avoca <http://dbpedia.org/ontology/locatedInArea> ?Answer .}
 216,Parsed,how much is the elevation of Düsseldorf Airport ?,SELECT ?Answer WHERE { http://dbpedia.org/resource/H_D_Range <http://dbpedia.org/ontology/elevation> ?Answer .}
-217,Parsed,How much is the population of mexico city ?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Mexico_City <http://dbpedia.org/ontology/populationTotal> ?Answer .}
 218,Not Parsed,when was the founding date of french fifth republic?,N
 219,Not Parsed,Who was the first King of England?,N
-220,Parsed,Who is the editor of Forbes?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Forbes> <http://dbpedia.org/ontology/editor> ?Answer .}
-221,Parsed,Which awards did Douglas Hofstadter win?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/award> http://dbpedia.org/resource/Douglas_Engelbart .}
 222,Not Parsed,Who is the youngest Darts player?,N
 223,Not Parsed,Is horse racing a sport?,N
 224,Parsed,Which river does the Brooklyn Bridge cross?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Brooklyn_Bridge <http://dbpedia.org/ontology/crosses> ?Answer .}
@@ -295,7 +213,7 @@ ID,status,sentence,sparqlQald
 299,Not Parsed,Who are the writers of the Wall album of Pink Floyd?,N
 300,Parsed,Who is the mayor of Rotterdam?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Rotterdam> <http://dbpedia.org/ontology/leaderName> ?Answer .}
 301,Not Parsed,What is the largest city in Australia?,N
-302,Parsed,Who was married to president Chirac?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/spouse> http://dbpedia.org/resource/Jacques_Chirac .}
+302,Not Parsed,Who was married to president Chirac?,N
 303,Not Parsed,What form of government is found in South Africa?,N
 304,Not Parsed,How high is the Yokohama Marine Tower?,N
 305,Not Parsed,Which holidays are celebrated around the world? ,N
@@ -391,7 +309,7 @@ ID,status,sentence,sparqlQald
 395,Parsed,In which country does the Ganges start?,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_(206) <http://dbpedia.org/ontology/starring> ?Answer .}
 396,Parsed,Who is the founder of Penguin Books?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Palladium_Books <http://dbpedia.org/ontology/foundedBy> ?Answer .}
 397,Parsed,Who wrote the Game of Thrones theme?,SELECT ?Answer WHERE { http://dbpedia.org/resource/A_Game_of_Thrones <http://dbpedia.org/ontology/author> ?Answer .}
-398,Not Parsed,Who is the president of Eritrea?,N
+398,Parsed,Who is the president of Eritrea?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/Eritrea> <http://dbpedia.org/ontology/leader> ?Answer .}
 399,Not Parsed,In which city did John F. Kennedy die?,N
 400,Not Parsed,What is the highest mountain in Australia?,N
 401,Parsed,Who writes the Farmers' Almanac?,"SELECT ?Answer WHERE { http://dbpedia.org/resource/Neanderthals,_Bandits_and_Farmers <http://dbpedia.org/ontology/author> ?Answer .}"

@@ -1,0 +1,1560 @@
+id,question,sparql
+99,¿En qué zona horaria se encuentra Salt Lake City?,"SELECT ?timezone
+WHERE {
+  dbpedia:Salt_Lake_City dbpedia-owl:utcOffset ?offset .
+  ?timezone rdfs:label ?label .
+  FILTER (regex(?label, ""^(?i).*timezone"", ""i""))
+}"
+98,¿Quién mató a César?,"La siguiente es una consulta SPARQL para DBpedia que responde a la pregunta ""¿Quién mató a César?"":
+
+```sparql
+SELECT ?asassinator WHERE
+{
+  dbpedia:Cesare_Borgia dbpedia-owl:assassinated ?asassinator .
+}
+```
+
+Esta consulta busca la propiedad ""assassinated"" de la página de DBpedia del personaje histórico Cesare Borgia para obtener al asesino de César. Cabe mencionar que hay ciertas ambigüedades en la pregunta, ya que no especifica a qué César se refiere. He asumido que se trata de César Borgia, pero puedes adaptar la consulta según requieras."
+86,Qué es el más alto montaña en ¿Alemania? ,"SELECT ?mountain
+WHERE {
+  ?mountain rdf:type dbo:Mountain ;
+            dbo:country dbr:Germany ;
+            dbo:elevation ?elevation .
+}
+ORDER BY DESC(?elevation)
+LIMIT 1"
+84,¿Qué presidentes estadounidenses estuvieron en el cargo durante la Guerra de Vietnam?,"La siguiente consulta SPARQL se puede utilizar para obtener los presidentes estadounidenses que estuvieron en el cargo durante la Guerra de Vietnam en DBPedia:
+
+```
+PREFIX dbp-owl: <http://dbpedia.org/ontology/>
+PREFIX dbp-prop: <http://dbpedia.org/property/>
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+
+SELECT DISTINCT ?presidente
+WHERE {
+    ?presidente dbp-prop:orderInOffice ?orden ;
+               dbpedia-owl:office ?cargo ;
+               dbp-prop:startYear ?inicio ;
+               dbp-prop:endYear ?fin .
+    FILTER(STR(?inicio) <= ""1955""^^xsd:gYear && STR(?fin) >= ""1975""^^xsd:gYear)
+    FILTER(CONTAINS(STR(?cargo), ""President""))
+}
+```
+
+Esta consulta SPARQL busca los presidentes que tuvieron un cargo con la palabra ""President"" en su descripción y que estuvieron en el cargo durante la Guerra de Vietnam. Se utiliza el filtro `STR(?inicio) <= ""1955""^^xsd:gYear` para asegurarse de que el inicio de su mandato sea igual o anterior a 1955, y el filtro `STR(?fin) >= ""1975""^^xsd:gYear` para verificar que el final de su mandato sea igual o posterior a 1975, que fueron los años en los que ocurrió la Guerra de Vietnam."
+81,¿De qué estado americano es Butch Otter el gobernador?,"La siguiente consulta SPARQL puede ser utilizada para obtener el estado americano en el que Butch Otter es el gobernador:
+
+```sparql
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT ?state
+WHERE {
+  ?person dbo:officeHolder dbr:Butch_Otter.
+  ?person dbp:office dbo:Governor.
+  ?person dbp:state ?state.
+  FILTER (LANG(?state) = 'en')
+}
+```
+
+Esta consulta busca la entidad ""Butch_Otter"" en DBPedia y busca la propiedad ""officeHolder"" para verificar si es un titular de cargo público. Luego, se verifica si el cargo es ""Governor"" y se recupera el estado asociado a través de la propiedad ""state"". Se utiliza el filtro `LANG(?state) = 'en'` para seleccionar solo el estado en inglés."
+73,¿Cuántas medallas de oro ganó Michael Phelps durante los juegos olímpicos de 2008?,"SELECT (COUNT(?medalla) AS ?totalMedallasOro)
+WHERE {
+  ?michaelP helps-owl:Olympian ?olympian ;
+           dbp-owl:goldmedals ?medalla .
+  ?olympian dbp-owl:games ""2008 Summer Olympics"" .
+}
+GROUP BY ?michaelP"
+66,¿Qué artistas nacieron en la misma fecha que Rachel Stevens?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?artist
+WHERE {
+  ?artist dbo:birthDate ?date .
+  ?artist foaf:name ?name .
+  FILTER(?date = ""1978-04-09"" && ?name != ""Rachel Stevens"")
+}
+LIMIT 10
+
+La consulta SPARQL busca los artistas que tienen la misma fecha de nacimiento que Rachel Stevens (1978-04-09), excluyendo a Rachel Stevens de los resultados. La consulta devuelve un máximo de 10 resultados."
+64,Qué es el profesión de Franco Herbert? ,"La consulta SPARQL para obtener información sobre la profesión de Franco Herbert en DBPedia sería la siguiente:
+
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+
+SELECT ?profesion
+WHERE {
+  <http://dbpedia.org/resource/Franco_Herbert> dbpedia-owl:occupation ?profesion .
+}
+```
+
+Esta consulta busca la propiedad de ocupación (occupation) de la entidad Franco Herbert en DBPedia."
+6,¿Es el Taiko un tipo de instrumento musical?,"Para realizar una consulta SPARQL en DBpedia para determinar si el ""taiko"" es un tipo de instrumento musical, puedes utilizar la siguiente consulta:
+
+```
+SELECT DISTINCT ?instrument WHERE {
+  dbpedia:Taiko dbo:instrument ?instrument.
+  ?instrument rdf:type dbo:MusicalInstrument.
+}
+```
+
+Esta consulta define una variable llamada `?instrument` y busca todas las instancias en DBpedia donde la entidad ""Taiko"" está relacionada con la propiedad ""instrument"". Luego, se filtra por las instancias que tienen un tipo de recurso ""MusicalInstrument"" para determinar si el ""taiko"" es un tipo de instrumento musical.
+
+Ten en cuenta que DBpedia es una base de conocimientos basada en la Wikipedia y la información puede ser limitada o no estar actualizada. Es posible que desees considerar otras fuentes de datos más especializadas para obtener una respuesta más precisa."
+56,¿Cuántos asientos tiene el estadio del FC Porto?,"La siguiente es la consulta SPARQL para obtener la cantidad de asientos en el estadio del FC Porto en DBPedia:
+
+```
+SELECT ?asientos
+WHERE {
+  <http://dbpedia.org/resource/Estadio_do_Dragão> <http://dbpedia.org/ontology/numberOfSeats> ?asientos .
+}
+```"
+49,¿Qué programa de viajero frecuente tienen la mayoría de las aerolineas? ,"La consulta SPARQL para encontrar el programa de viajero frecuente que tienen la mayoría de las aerolíneas en DBPedia sería la siguiente:
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?frequentFlyerProgram (COUNT(?airline) AS ?count)
+WHERE {
+  ?airline rdf:type dbo:Airline ;
+           dbp:frequentFlyerProgram ?frequentFlyerProgram .
+}
+GROUP BY ?frequentFlyerProgram
+ORDER BY DESC(?count)
+LIMIT 1
+```
+
+Esta consulta busca todas las aerolíneas en DBPedia que tienen un programa de viajero frecuente y cuenta cuántas aerolíneas tienen cada programa. Luego, ordena los resultados en orden descendente por cuenta y limita el resultado a 1 programa para obtener el programa de viajero frecuente más común entre las aerolíneas."
+44,¿Qué países europeos tienen una monarquía constitucional?,"SELECT ?countryLabel
+WHERE {
+  ?country wdt:P31 wd:Q3624078;
+           wdt:P17 wd:Q46.
+  ?country wdt:P122 wd:Q25291.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language ""[AUTO_LANGUAGE],en"". }
+}
+ORDER BY ?countryLabel
+LIMIT 100"
+42,¿Qué países tienen lugares con más de dos cuevas?,"SELECT ?country
+WHERE {
+  ?country a dbo:Country ;
+          dbo:hasPlace ?place .
+  ?place a dbo:Cave ;
+         dbo:numberOfCaves ?caves .
+  FILTER (?caves > 2)
+}
+ORDER BY ?country"
+4,¿Cuántos aeropuertos hay en California?,"SELECT (COUNT(?airport) as ?count)
+WHERE {
+    ?airport rdf:type dbo:Airport ;
+             dbo:location ?location .
+    ?location dbo:isPartOf dbr:California .
+}"
+37,¿Cuál es el apodo de San Francisco?,"La consulta SPARQL para obtener el apodo de San Francisco en DBPedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT ?apodo
+WHERE {
+  <http://dbpedia.org/resource/San_Francisco> dbo:nickname ?apodo.
+}
+```
+
+Esta consulta busca el recurso ""San Francisco"" en DBPedia y obtiene su apodo utilizando la propiedad ""nickname"" definida en la ontología de DBPedia (dbo:nickname). El resultado de la consulta será el apodo de San Francisco.
+
+Es importante tener en cuenta que debido a la naturaleza de los datos en DBPedia, es posible que no todos los recursos tengan el apodo especificado, por lo que el resultado podría ser vacío en algunos casos."
+32,¿Cuál es el nombre de soltera de Angela Merkel?,"La consulta SPARQL para obtener el nombre de soltera de Angela Merkel en DBPedia sería la siguiente:
+
+```
+SELECT ?nombreSoltera
+WHERE {
+  <http://dbpedia.org/resource/Angela_Merkel> <http://dbpedia.org/ontology/birthName> ?nombreSoltera .
+}
+```
+Esta consulta busca el recurso correspondiente a Angela Merkel en DBPedia y recupera el valor del atributo birthName, que representa su nombre de soltera."
+31,¿Quién es el alcalde de Berlin?,"Puede usar la siguiente consulta SPARQL para obtener información sobre el alcalde de Berlin:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT ?alcalde
+WHERE {
+  ?berlin dbo:mayor ?alcalde .
+  FILTER (LANG(?alcalde) = ""es"")
+}
+```
+
+Esta consulta busca la propiedad ""mayor"" de Berlin en DBPedia y recupera el nombre del alcalde en español (si está disponible)."
+29,¿Qué países de la unión europea han introducido el Euro?,"SELECT ?countryLabel
+WHERE {
+  ?country wdt:P463 wd:Q458.
+  ?country wdt:P31 wd:Q3624078.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language ""[AUTO_LANGUAGE],en"". }
+}
+ORDER BY ?countryLabel
+
+Esta consulta SPARQL busca todos los países de la Unión Europea que han introducido el Euro. Se utiliza la propiedad P463 (parlamento representado por) con el valor Q458 (Unión Europea) para obtener los países que son miembros de la Unión Europea, y la propiedad P31 (tipo) con el valor Q3624078 (país de la zona del euro) para obtener los países que han introducido el Euro. Luego, se utiliza el servicio de etiquetado de Wikidata para obtener los nombres de los países en varios idiomas, y se ordenan alfabéticamente por nombre."
+23,Cual software tiene estado publicado por Media Hámster ¿Software? ,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?software 
+WHERE {
+  ?software dbp:developer dbr:Media_Hamster ;
+            dbo:publishingState ?state .
+  FILTER (?state = ""Published"")
+}
+"
+68,¿En qué país nació Bill Gates?,"La siguiente consulta SPARQL se puede utilizar para obtener el país de nacimiento de Bill Gates en DBpedia:
+
+```sparql
+SELECT ?countryLabel 
+WHERE {
+  ?person rdf:type dbo:Person .
+  ?person rdfs:label ""Bill Gates""@en .
+  ?person dbp:birthPlace ?birthPlace .
+  ?birthPlace dbo:country ?country .
+  ?country rdfs:label ?countryLabel .
+  FILTER(lang(?countryLabel) = ""es"")
+}
+```
+
+Esta consulta selecciona la etiqueta del país de nacimiento de Bill Gates en español. Dependiendo del idioma deseado, se puede modificar el valor de ""es"" en la línea `FILTER(lang(?countryLabel) = ""es"")`."
+22,¿Cuántos nietos tuvo Jacques Cousteau?,"La información sobre los nietos de Jacques Cousteau no está disponible en DBpedia ya que se enfoca principalmente en la extracción de información estructurada a partir de Wikipedia. No se puede encontrar información sobre la familia específica de las personas en DBpedia. Para obtener esa información, sería recomendable buscar en otras fuentes como biografías, entrevistas u otras fuentes confiables de información."
+214,Dame todos las skateboarders profesionales de Suecia.,"SELECT ?skateboarder
+WHERE {
+  ?skateboarder rdf:type dbo:Person ;
+                 dbo:nationality dbr:Sweden ;
+                 dbo:occupation dbr:Skateboarder .
+}"
+210,¿Qué monárcas del reino unido estaban casados con una persona alemana?,"La consulta SPARQL para obtener los monarcas del Reino Unido que estaban casados con una persona alemana en DBPedia sería la siguiente:
+
+```
+SELECT ?monarca ?nombreMonarca ?personaAlemana
+WHERE {
+  ?monarca rdf:type dbo:Monarch ;
+           dbo:birthPlace dbr:United_Kingdom ;
+           dbo:spouse ?personaAlemana .
+
+  ?personaAlemana dbo:birthPlace dbr:Germany .
+  
+  ?monarca rdfs:label ?nombreMonarca .
+  FILTER (lang(?nombreMonarca) = ""es"")
+}
+```
+
+Esta consulta buscará todos los monarcas del Reino Unido que tengan una relación de ""spouse"" con una persona alemana. Retorna los URIs de los monarcas, sus nombres en español y los URIs de las personas alemanas con las que estuvieron casados."
+199,Dame todas las películas argentinas.,"SELECT ?pelicula
+WHERE {
+  ?pelicula rdf:type <http://dbpedia.org/ontology/Film> ;
+            <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Argentina> .
+}"
+203,¿Cómo murió Michael Jackson?,"La siguiente consulta SPARQL busca la causa de la muerte de Michael Jackson en DBpedia:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?deathCause
+WHERE {
+  <http://dbpedia.org/resource/Michael_Jackson> dbo:deathCause ?deathCause.
+}
+```
+
+Esta consulta busca la propiedad ""deathCause"" (Causa de muerte) asociada a la entidad ""Michael Jackson"" en DBpedia."
+197,¿Qué estado americano fué el último en ser admitido?,"SELECT ?stateLabel
+WHERE {
+  ?state rdf:type dbo:State .
+  ?state dbo:admittedDate ?date .
+  
+  FILTER NOT EXISTS {
+    ?state2 rdf:type dbo:State .
+    ?state2 dbo:admittedDate ?date2 .
+    ?date2 > ?date .
+  }
+  
+  ?state rdfs:label ?stateLabel .
+  FILTER(LANG(?stateLabel) = ""es"")
+}
+ORDER BY ASC(?date)
+LIMIT 1"
+196,Cual clase hace el milpiés pertenecer a ¿a? ,"La siguiente consulta SPARQL se puede utilizar para obtener la clase a la que pertenece el milpiés en DBpedia:
+
+```SPARQL
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?class
+WHERE {
+  dbr:Milipede dbo:wikiPageWikiLink ?class .
+}
+```
+
+Esta consulta busca la relación ""wikiPageWikiLink"" entre el recurso ""Milipede"" y la clase a la que pertenece. La respuesta devolverá la clase a la que pertenece el milpiés en DBpedia."
+188,Dame la página de web de Forbes.,"Aquí tienes una consulta SPARQL para obtener la página web de Forbes desde la base de conocimiento de DBpedia:
+
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?webpage
+WHERE {
+  ?forbes foaf:homepage ?webpage.
+  FILTER CONTAINS(str(?webpage), ""forbes"")
+}
+LIMIT 1
+```
+
+Ten en cuenta que esta consulta buscará cualquier recurso en DBpedia que tenga la palabra ""forbes"" en su URL de la página principal. La consulta utiliza el prefijo `foaf` para acceder a la propiedad `foaf:homepage`, que representa la página principal de un recurso en DBpedia.
+
+La consulta limita los resultados a 1 utilizando `LIMIT 1`, ya que solo estás solicitando una página web específica. Si deseas obtener más información sobre Forbes desde DBpedia, puedes eliminar `LIMIT 1`.
+
+Ten en cuenta que DBpedia puede estar sujeto a actualizaciones y cambios, por lo que la consulta puede devolver diferentes resultados en diferentes momentos."
+187,¿Quién es el marido de Amanda Palmer?,"La consulta SPARQL para obtener el marido de Amanda Palmer en DBPedia sería la siguiente:
+
+```
+SELECT ?maridoLabel WHERE {
+    ?amanda foaf:name ""Amanda Palmer""@en .
+    ?amanda dbp:spouse ?marido .
+    ?marido foaf:name ?maridoLabel .
+} 
+```
+
+Esta consulta busca a Amanda Palmer (`?amanda`) en DBPedia por su nombre y luego obtiene el valor de la propiedad spouse (`dbp:spouse`) que representa a su marido (`?marido`). Finalmente, extrae el nombre del marido (`?maridoLabel`) utilizando la propiedad foaf:name."
+176,¿Quién pintó el Cristo en la tormenta en el lago de Galilea?,"La consulta SPARQL para obtener información sobre el autor de la pintura ""Cristo en la tormenta en el lago de Galilea"" en DBpedia sería la siguiente:
+
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?authorLabel
+WHERE {
+  ?painting dbo:author ?author.
+  ?painting foaf:name ""Cristo en la tormenta en el lago de Galilea""@es.
+  ?author rdfs:label ?authorLabel.
+  FILTER (LANG(?authorLabel) = ""es"")
+}
+```
+
+Esta consulta busca el autor de la pintura especificada. El resultado de la consulta sería el nombre del autor de la pintura ""Cristo en la tormenta en el lago de Galilea""."
+62,¿Cuál es el punto más alto del Karakorum?,"La consulta SPARQL para encontrar el punto más alto del Karakorum en DBPEDIA sería la siguiente:
+
+SELECT ?nombre ?altura
+WHERE {
+  ?montaña rdf:type dbo:Mountain.
+  ?montaña rdfs:label ?nombre.
+  ?montaña dbo:elevation ?altura.
+  ?montaña dbo:range dbr:Karakoram.
+}
+ORDER BY DESC(?altura)
+LIMIT 1
+
+Explicación de la consulta:
+- Buscamos todas las montañas que son instancias de dbo:Mountain.
+- Obtenemos el nombre de la montaña a través de la propiedad rdfs:label.
+- Obtenemos la altura de la montaña a través de la propiedad dbo:elevation.
+- Especificamos que la montaña debe pertenecer al rango Karakoram utilizando la propiedad dbo:range con dbr:Karakoram.
+- Ordenamos los resultados en orden descendente por la altura.
+- Limitamos los resultados a 1, para obtener el punto más alto solamente."
+173,Cuando hizo Finlandia unirse el EE.UU.? ,"No es posible crear una consulta SPARQL para determinar cuándo Finlandia se unió a los Estados Unidos, ya que esto es incorrecto históricamente. Finlandia nunca se ha unido a los Estados Unidos."
+168,¿Qué actores participan en Big Bang Theory?,"La consulta SPARQL para obtener los actores que participan en la serie ""The Big Bang Theory"" en DBPedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?actor WHERE {
+  ?serie dbo:starring ?actor .
+  ?serie rdfs:label ""The Big Bang Theory""@en .
+}
+```
+
+Esta consulta busca todos los actores que participan en la propiedad ""starring"" de la serie con el nombre ""The Big Bang Theory"" en inglés. El resultado devolverá una lista de los actores que han participado en la serie."
+166,¿Qué ingeniero informático ganó un Oscar?,"SELECT ?person WHERE {
+  ?person rdf:type dbo:Person .
+  ?person dbo:field ?field .
+  ?person dbo:award ?award .
+  ?award dbo:awardCategory dbr:Academy_Award .
+  ?field dbo:wikiPageRedirects dbr:Computer_engineering .
+}"
+160,¿Quién escribió Harry Potter?,"La consulta SPARQL para obtener el autor de ""Harry Potter"" en DBPedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+
+SELECT ?autor
+WHERE {
+  res:Harry_Potter dbo:author ?autor.
+}
+```
+
+Esta consulta utiliza el prefijo ""dbo"" para la ontología de DBPedia y el prefijo ""res"" para los recursos de DBPedia.
+
+La consulta busca el recurso ""Harry_Potter"" y encuentra el autor utilizando la propiedad ""author"" de la ontología. La variable ""?autor"" recuperará el resultado de la consulta, que mostrará el autor de ""Harry Potter""."
+158,Dame todos los escritores que hayan recibido el premio nobel de literatura.,"PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?escritor
+WHERE {
+  ?escritor rdf:type dbpedia-owl:Writer .
+  ?escritor dbpedia-owl:award dbpedia-owl:Nobel_Prize_in_Literature .
+}"
+157,Dame actores Ingleses protagonizando Lovesick.,"La siguiente es una consulta SPARQL para DBpedia que responde a la pregunta ""Dame actores ingleses protagonizando Lovesick"":
+
+```
+SELECT DISTINCT ?actor
+WHERE {
+  ?actor rdf:type dbo:Actor ;
+         dbp:nationality dbr:England ;
+         dbo:starring dbr:Lovesick .
+}
+```
+
+Esta consulta selecciona todos los actores que tienen la nacionalidad inglesa y han protagonizado la serie ""Lovesick"". El resultado será una lista de actores ingleses que han protagonizado ""Lovesick""."
+155,qué es el mella nombre de ¿Bagdad? ,"La pregunta ""¿Qué es el mella nombre de Bagdad?"" no es clara. Sin embargo, si estás buscando el nombre en español de Bagdad en DBpedia, podrías usar la siguiente consulta SPARQL:
+
+```
+SELECT ?label_es
+WHERE {
+    <http://dbpedia.org/resource/Baghdad> rdfs:label ?label_es .
+    FILTER(lang(?label_es) = ""es"")
+}
+```
+
+Esta consulta buscará el nombre en español de Bagdad en DBpedia y mostrará el resultado si está disponible."
+150,¿En que ciudad nació el presidente de Montenegro?,"SELECT ?city WHERE {
+  ?president dbo:birthPlace ?city.
+  ?president dbo:presidentTitle dbr:President_of_Montenegro
+}"
+149,¿Que estado de los estados unidos de america tiene la mayor densidad de población?,"SELECT ?state ?density WHERE {
+  ?state rdf:type dbo:State ;       # seleccionar únicamente recursos de tipo ""estado""
+        rdfs:label ?state_label .   # obtener etiquetas de los estados
+  
+  ?state dbp:density ?density .      # obtener densidad de población para cada estado
+  
+  FILTER (lang(?state_label) = ""en"") # filtrar solo las etiquetas en inglés
+}
+ORDER BY DESC(?density)               # ordenar por densidad de población descendente
+LIMIT 1                               # seleccionar solo el estado con la mayor densidad
+"
+25,¿Cuál es el río más largo de China?,"La siguiente consulta SPARQL para DBpedia puede ser utilizada para encontrar el río más largo de China:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?river ?riverName ?length
+WHERE {
+  ?river a dbo:River ;
+         dbo:country dbr:China ;
+         dbo:length ?length ;
+         rdfs:label ?riverName .
+  FILTER(LANG(?riverName) = ""en"")
+}
+ORDER BY DESC(?length)
+LIMIT 1
+```
+
+Esta consulta buscará todos los ríos en DBpedia que sean de China, obtendrá su longitud y el nombre en inglés del río. A continuación, se ordenará por longitud de forma descendente (el río más largo será el primero) y se limitará el resultado a 1 para obtener solo el río más largo."
+143,¿Cuál es el prefijo de Berlin?,"Puede utilizar la siguiente consulta SPARQL para obtener el prefijo de Berlin en DBpedia:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?prefijo
+WHERE {
+  dbr:Berlin dbo:areaCode ?prefijo.
+}
+```
+
+Esta consulta busca el recurso Berlin en DBpedia y recupera el valor del atributo ""areaCode"", que representa el prefijo telefónico de la ciudad. Al ejecutar esta consulta, obtendrá el prefijo de Berlin."
+140,¿Cuántos científicos se han graduado en un Universidad de la Ivy League?,"SELECT (COUNT(DISTINCT ?scientist) AS ?countScientists)
+WHERE {
+  ?scientist rdf:type dbo:Person.
+  ?scientist dbo:almaMater ?university.
+  ?university rdf:type dbo:University.
+  ?university dbo:location ?location.
+  FILTER(?location IN (dbr:Brown_University, dbr:Columbia_University, dbr:Cornell_University, dbr:Dartmouth_College, dbr:Harvard_University, dbr:Princeton_University, dbr:University_of_Pennsylvania, dbr:Yale_University)).
+}"
+139,¿Qué surfistas profesionales nacieron en Australia?,"SELECT ?surfer
+WHERE {
+  ?surfer rdf:type dbc:Australian_surfers .
+}"
+137,Dame todos los partidos políticos holandeses,"PREFIX dbpedia-owl:<http://dbpedia.org/ontology/>
+PREFIX dbpprop:<http://dbpedia.org/property/>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?party
+WHERE {
+  ?party a dbpedia-owl:PoliticalParty ;
+         rdfs:label ?label .
+  FILTER (LANG(?label) = ""es"" && ?label != """")
+  FILTER regex(?label, ""Partido"", ""i"") 
+  FILTER regex(?label, ""Holanda"", ""i"")
+}
+LIMIT 100"
+136,¿Cuántas lunas tiene Marte?,"Una posible consulta SPARQL para buscar la cantidad de lunas que tiene Marte en DBPedia es la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?count
+WHERE {
+  <http://dbpedia.org/resource/Mars> dbo:numberOfMoons ?count .
+}
+```
+Esta consulta utiliza el prefijo `dbo` para acceder a la propiedad `numberOfMoons` (cantidad de lunas) de la página de Marte en DBPedia. El resultado de la consulta será el número de lunas que tiene Marte."
+134,¿Cuál es el verdadero nombre de Batman?,"La consulta SPARQL para obtener el verdadero nombre de Batman en DBPedia podría ser la siguiente:
+
+```
+SELECT ?nombre
+WHERE {
+  dbpedia:Batman dbpedia-owl:birthName ?nombre .
+}
+```
+
+Esta consulta busca el recurso de DBPedia asociado a Batman y obtiene el valor de la propiedad `dbpedia-owl:birthName`, que representa el nombre de nacimiento del personaje."
+132,¿Por que es famoso Elon Musk?,"La consulta SPARQL para obtener la información sobre por qué es famoso Elon Musk en DBpedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?description
+WHERE {
+  dbr:Elon_Musk dbo:description ?description .
+  FILTER(langMatches(lang(?description), ""en""))
+}
+```
+
+Esta consulta devuelve la descripción de Elon Musk indicando la razón por la cual es famoso."
+128,Quien es el autor de WikiLeaks? ,"SELECT ?author
+WHERE {
+  <http://dbpedia.org/resource/WikiLeaks> <http://dbpedia.org/ontology/author> ?author.
+}"
+126,Sean Parnell fue el gobernador de Estados Unidos?,"No se puede afirmar que Sean Parnell fue el gobernador de Estados Unidos en DBPedia, ya que DBPedia contiene información extraída de Wikipedia y no incluye la lista completa y actualizada de todos los gobernadores de los estados de Estados Unidos. Sin embargo, se puede consultar si Sean Parnell fue gobernador de algún estado. Aquí está la consulta SPARQL correspondiente:
+
+SELECT ?gobernador
+WHERE {
+  ?gobernador dbo:officeHolder dbr:Sean_Parnell .
+  ?gobernador dbo:office dbr:Governor .
+}"
+125,¿Cuántos años se fabricó el Ford Modelo T?,"La consulta SPARQL para la pregunta ""¿Cuántos años se fabricó el Ford Modelo T?"" en DBPedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX prop: <http://dbpedia.org/property/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT (MIN(?year) as ?inicio) (MAX(?year) as ?fin)
+WHERE {
+  ?modelo a dbo:Automobile ;
+          foaf:name ""Ford Modelo T""@en ;
+          prop:productionStartYear ?inicio ;
+          prop:productionEndYear ?fin .
+}
+```
+
+Esta consulta busca la propiedad `productionStartYear` (año de inicio de producción) y `productionEndYear` (año de fin de producción) del recurso correspondiente al ""Ford Modelo T"". Luego, se selecciona el año mínimo como el inicio de fabricación y el año máximo como el fin de fabricación.
+
+Este SPARQL devolverá los años de inicio y fin de fabricación del Ford Modelo T."
+124,¿Cuándo fue disparado Carlo Giuliani?,"La consulta SPARQL para obtener información sobre cuándo fue disparado Carlo Giuliani se puede formular de la siguiente manera:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?date
+WHERE {
+    ?person foaf:name ""Carlo Giuliani"" .
+    ?person dbo:deathDate ?date .
+}
+```
+
+Esta consulta busca la información sobre la fecha de muerte de una persona llamada ""Carlo Giuliani"" en DBPedia. Por lo tanto, la respuesta a esta consulta proporcionará la fecha en la que Carlo Giuliani fue disparado."
+123,Dame todos los animales extintos,"SELECT ?animal WHERE {
+  ?animal rdf:type dbo:Species ;
+         dbo:extinct true .
+}
+"
+122,Quien estaba el esposa de presidente Lincoln? ,"SELECT ?esposa
+WHERE {
+  ?presidente dbpedia-owl:presidentNumber ""16"" .
+  ?presidente dbpedia-owl:spouse ?esposa .
+  FILTER(?presidente = dbpedia-owl:Abraham_Lincoln)
+}"
+111,cómo muchos premios tiene Bertrand Russell? ,"SELECT (COUNT(?award) AS ?numAwards)
+WHERE {
+  dbpedia:Bertrand_Russell dbpedia-owl:award ?award
+}"
+117,¿Es Pamela Anderson vegana?,"SELECT ?isVegan
+WHERE {
+  dbpedia:Pamela_Anderson dbpedia-owl:isVegan ?isVegan
+}"
+59,¿Qué sondas espaciales fueron enviadas en órbita alrededor del sol?,"La siguiente consulta SPARQL se puede utilizar para obtener una lista de sondas espaciales que han sido enviadas en órbita alrededor del sol:
+
+```
+SELECT ?probe
+WHERE {
+  ?probe rdf:type <http://dbpedia.org/class/yago/SpaceProbesSentToOrbitRoundTheSun>.
+}
+```
+
+Esta consulta busca objetos de tipo `http://dbpedia.org/class/yago/SpaceProbesSentToOrbitRoundTheSun` y los muestra como resultados. Los resultados serán los nombres de las sondas espaciales que han sido enviadas en órbita alrededor del sol disponibles en DBPedia."
+113,¿Qué ciudades alemanas tienen más de 250000 habitantes?,"SELECT ?ciudad
+WHERE {
+  ?ciudad rdf:type dbpedia-owl:Place;
+          dbpedia-owl:country dbpedia:Germany;
+          dbpedia-owl:populationTotal ?poblacion.
+  FILTER (?poblacion > 250000)
+}"
+104,¿Con quién está casada la hija de Robert Kennedy?,"SELECT ?spouse WHERE {
+  ?daughter dbp:name ""Kathleen Kennedy"" .
+  ?daughter dbp:parent ?parent .
+  ?parent dbp:name ""Robert F. Kennedy"" .
+  ?daughter dbp:spouse ?spouse .
+}"
+10,¿Cuántos estudiantes tiene la Universidad Libre de Amsterdam?,"La pregunta ""¿Cuántos estudiantes tiene la Universidad Libre de Amsterdam?"" puede ser respondida utilizando la siguiente consulta SPARQL para DBpedia:
+
+```
+PREFIX dbp-ont: <http://dbpedia.org/ontology/>
+SELECT ?estudiantes
+WHERE {
+  <http://dbpedia.org/resource/University_of_Amsterdam> dbp-ont:numberOfStudents ?estudiantes .
+}
+```
+
+Esta consulta busca el número de estudiantes de la Universidad de Amsterdam utilizando la propiedad `numberOfStudents` de la ontología DBpedia. El resultado de esta consulta será el número de estudiantes de dicha universidad."
+1,Qué es el ingresos de IBM? ,"La consulta SPARQL para obtener los ingresos de IBM en DBpedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT ?ingresos
+WHERE {
+  <http://dbpedia.org/resource/IBM> dbo:revenue ?ingresos .
+}
+```
+
+Esta consulta utiliza la ontología dbo (DBpedia Ontology) y busca la propiedad ""revenue"" (ingresos) de la entidad IBM en DBpedia. El resultado será el valor de los ingresos de IBM."
+178,¿Cuántas películas de James Bond existen?,"SELECT (COUNT(?movie) AS ?cantidad_peliculas)
+WHERE {
+  ?movie rdf:type dbo:Film .
+  ?movie dbo:wikiPageWikiLink dbr:James_Bond_film_series .
+}"
+129,¿Quién interpreta la voz de Bart Simpson?,"SELECT ?actor WHERE {
+  ?person rdfs:label ""Bart Simpson""@en ;
+          dbo:voiceActor ?actor.
+  FILTER(langMatches(lang(?actor), ""en""))
+}"
+183,Quien estaba Tom Hanks casado ¿a? ,"Aquí tienes una consulta SPARQL para obtener información sobre el matrimonio de Tom Hanks en DBpedia:
+
+```
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?esposa
+WHERE {
+  <http://dbpedia.org/resource/Tom_Hanks> dbp:spouse ?esposaResource .
+  ?esposaResource foaf:name ?esposa .
+}
+```
+
+Esta consulta busca la propiedad ""spouse"" (cónyuge) de la página de Tom Hanks en DBpedia y devuelve el nombre de su esposa."
+181,¿Por qué países fluye el río Yenisei?,"Puede utilizar la siguiente consulta SPARQL:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT DISTINCT ?country 
+WHERE {
+  ?river dbo:riverName dbr:Yenisei .
+  ?river dbo:country ?country .
+}
+```
+
+Esta consulta busca todos los países donde fluye el río Yenisei utilizando las propiedades `dbo:riverName` y `dbo:country` de DBPedia."
+7,Dame todos los coches producidos en Alemania.,"SELECT ?car
+WHERE {
+  ?car rdf:type dbo:Automobile .
+  ?car dbo:country dbr:Germany .
+}"
+135,¿Cuándo murió Michael Jackson?,"La consulta SPARQL para obtener la fecha de la muerte de Michael Jackson en DBpedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?deathDate
+WHERE {
+  ?person foaf:name ""Michael Jackson""@en ;
+          dbo:deathDate ?deathDate .
+}
+```
+
+El resultado de esta consulta te dará la fecha de muerte de Michael Jackson en el formato yyyy-mm-dd."
+50,¿Cuál es el volcán mas alto en África?,"La consulta SPARQL para DBpedia para obtener el nombre del volcán más alto en África sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT ?volcán
+WHERE {
+  ?volcán dbo:isPartOf <http://dbpedia.org/resource/Africa> ;
+          dbo:elevation ?elevación .
+}
+ORDER BY DESC(?elevación)
+LIMIT 1
+```
+
+Esta consulta busca los volcanes que son parte de África y recupera su elevación. Luego ordena los resultados en orden descendente por la elevación y limita el resultado a 1 para obtener el volcán más alto. El resultado se devolverá en la variable ""?volcán""."
+39,¿Que poeta ha escrito el mayor número de libros?,"SELECT ?poet 
+WHERE {
+  ?poet a <http://dbpedia.org/ontology/Person> ;
+        <http://dbpedia.org/ontology/author> ?book.
+}
+GROUP BY ?poet
+ORDER BY DESC(COUNT(?book))
+LIMIT 1"
+83,Dame todos los mafiosos de la era de la prohibición.,"La consulta SPARQL para obtener todos los mafiosos de la era de la prohibición utilizando DBpedia puede ser la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?mafioso
+WHERE {
+  ?mafioso dct:subject dbc:American_mafia during dbc:Prohibition_in_the_United_States .
+}
+```
+
+En esta consulta, se utiliza la propiedad `dct:subject` para filtrar los recursos que pertenecen a la categoría ""American_mafia"" y que también estuvieron activos durante la categoría ""Prohibition_in_the_United_States"". El resultado devolverá una lista de mafiosos que cumplen con estos criterios."
+71,Dame todas las naves espaciales que han volado a Marte,"SELECT DISTINCT ?spacecraft
+WHERE {
+  ?spacecraft rdf:type dbo:Spacecraft ;
+              dbo:launchSite ?launchSite ;
+              dbo:destination ?destination .
+  FILTER(?destination = dbr:Mars)
+}
+"
+213,Muestrame todas las películas checas,"SELECT ?movie
+WHERE {
+  ?movie rdf:type dbo:Film .
+  ?movie dbo:country dbr:Czech_Republic .
+}
+LIMIT 100"
+209,Dame todas las taikonautas.,"SELECT ?taikonaut
+WHERE {
+ ?taikonaut rdf:type dbo:Person .
+ ?taikonaut dbo:occupation dbr:Taikonaut .
+}"
+105,¿Qué países tienen más de diez volcanes?,"SELECT ?country ?count
+WHERE {
+  ?country rdf:type dbo:Country ;
+           dbo:volcano ?volcano .
+  
+  {
+    SELECT ?country (COUNT(?volcano) AS ?count)
+    WHERE {
+      ?country rdf:type dbo:Country ;
+               dbo:volcano ?volcano .
+    }
+    GROUP BY ?country
+    HAVING (COUNT(?volcano) > 10)
+  }
+}
+ORDER BY DESC(?count)"
+52,Dar yo todas películas con Tom Cruise.,"La consulta SPARQL para obtener todas las películas en las que Tom Cruise ha participado en DBpedia es la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?pelicula
+WHERE {
+  ?pelicula dbo:starring dbr:Tom_Cruise .
+}
+```
+
+Esta consulta selecciona todas las películas donde la propiedad ""starring"" (protagonizada) contiene a la entidad de Tom Cruise. El resultado de la consulta serán todas las películas en las que Tom Cruise ha participado."
+102,¿Cuando murió el creador de Drácula?,"La consulta SPARQL para obtener la fecha de muerte del creador de Drácula sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?fechaMuerte WHERE {
+  ?autor foaf:name ""Bram Stoker"" .
+  ?autor dbo:deathDate ?fechaMuerte .
+}
+```
+
+Esta consulta busca el autor con el nombre ""Bram Stoker"" en DBpedia y obtiene su fecha de muerte utilizando la propiedad `dbo:deathDate`."
+21,Quien creado Inglés Wikipedia? ,"SELECT ?creator
+WHERE {
+    <http://dbpedia.org/resource/English_Wikipedia> dbpedia-owl:creator ?creator
+}"
+34,Dame todas las cancilleres alemanas.,"SELECT ?canciller
+WHERE {
+  ?canciller a dbpedia-owl:Chancellor ;
+             dbpedia-owl:nationality dbpedia:Germany .
+}"
+145,¿A quién pertenece Aldi?,"La consulta SPARQL para la pregunta ""¿A quién pertenece Aldi?"" en DBpedia sería la siguiente:
+
+```
+SELECT ?ownerLabel
+WHERE {
+  ?aldi dbp-ont:owner ?owner.
+  ?owner rdfs:label ?ownerLabel.
+  FILTER(LANG(?ownerLabel) = 'es')
+  FILTER(REGEX(?ownerLabel, 'Aldi', 'i'))
+}
+```
+
+Esta consulta busca la propiedad ""owner"" en la página de Aldi en DBpedia y obtiene el nombre del propietario. El `FILTER` se utiliza para buscar la etiqueta del propietario en español y filtrar solo los que contienen ""Aldi"" en su nombre. Sin embargo, es importante tener en cuenta que SPARQL puede tener diferentes resultados dependiendo del estado actual de la base de datos."
+154,Cual libros fueron escrito por Danielle ¿Acero? ,"SELECT ?book
+WHERE {
+  ?author dbo:author dbo:acero .
+  ?book dbo:author ?author .
+}"
+198,¿Quién fue influenciado por Socrates?,"Para encontrar quién fue influenciado por Sócrates en DBpedia, puedes utilizar la siguiente consulta SPARQL:
+
+```
+SELECT DISTINCT ?person
+WHERE {
+  ?person dbpedia-owl:influencedBy dbpedia:Socrates .
+}
+```
+
+Esta consulta busca todas las personas (`?person`) que tienen la propiedad `dbpedia-owl:influencedBy` con el objeto `dbpedia:Socrates`, lo que significa que fueron influenciados por Sócrates. El uso de `DISTINCT` asegura que solo se devuelvan resultados únicos.
+
+Puedes ejecutar esta consulta en el endpoint de DBpedia o utilizar una biblioteca o herramienta SPARQL para obtener los resultados."
+162,Cómo de hondo es el Chiemsee?,"La consulta SPARQL para obtener la profundidad del Lago Chiemsee en DBPedia sería la siguiente:
+
+```
+SELECT ?depth WHERE {
+    dbr:Chiemsee dbo:depth ?depth.
+}
+```
+
+Esta consulta recupera el valor de la propiedad `dbo:depth` para el recurso `dbr:Chiemsee` (que representa el Lago Chiemsee) en DBPedia. El resultado te dará la profundidad del lago en metros."
+212,¿Qué empresas aerospaciales trabajar también en en medicina?,"La siguiente consulta SPARQL puede ser utilizada para buscar empresas aeroespaciales que también trabajen en medicina:
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+
+SELECT DISTINCT ?empresa
+WHERE {
+  ?empresa rdf:type dbpedia-owl:Company ;
+           dbpedia-owl:industry <http://dbpedia.org/resource/Aerospace> ;
+           dbpedia-owl:product <http://dbpedia.org/resource/Medicine> .
+}
+```
+
+Esta consulta SPARQL buscará todas las empresas que tengan un tipo de compañía, una industria asociada a la aeroespacial y produzcan medicina según lo definido en la ontología de DBpedia."
+96,¿Qué surfistas profesionales nacieron en las Filipinas?,"SELECT ?surfer
+WHERE {
+  ?surfer a dbpedia-owl:Surfer ;
+          dbpedia-owl:birthPlace ?place .
+  ?place dbpedia-owl:country dbpedia:Philippines .
+}"
+40,¿Quiénes fueron los padres de la reina Victoria?,"PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT ?father ?mother 
+WHERE {
+    ?queen a dbo:Monarch ;
+           dbo:spouse ?father ;
+           dbo:spouse ?mother .
+    FILTER(?father != ?mother)
+}
+
+LIMIT 10"
+79,¿Hay castillos en los Estados Unidos?,"SELECT DISTINCT ?castillo
+WHERE {
+  ?castillo rdf:type dbo:Castle .
+  ?castillo dbo:country dbr:United_States .
+}
+"
+141,¿Qué idiomas se hablan en Estonia?,"SELECT ?idioma WHERE {
+  dbr:Estonia dbo:language ?idioma .
+}"
+80,Dame una lista de todas las aves en peligro de extinción.,"La consulta SPARQL para obtener una lista de todas las aves en peligro de extinción en DBPedia es la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?ave
+WHERE {
+  ?ave rdf:type dbo:Bird ;
+       dbo:conservationStatus dbr:Endangered .
+}
+```
+
+Esta consulta utiliza los prefijos `dbo` y `dbr` para abreviar las URIs de los recursos de DBPedia. Luego, se busca por todas las aves (`dbo:Bird`) que tienen un estado de conservación de `dbr:Endangered`, que indica que están en peligro de extinción. El resultado de la consulta será una lista de aves en peligro de extinción."
+159,¿Qué países une el Rhin?,"Según mi conocimiento, la DBpedia no tiene información sobre los ríos que unen países, por lo que no puedo crear una consulta específica para esa pregunta. Sin embargo, puedo mostrarte cómo realizar una búsqueda general sobre los países que bordea el río Rhin. Aquí tienes un ejemplo de consulta SPARQL para obtener los países que tienen al río Rhin pasando por ellos:
+
+```sparql
+SELECT DISTINCT ?country WHERE {
+  ?river a dbo:River .
+  ?river dbo:name ""Rhin"" .
+  ?country dbo:country ?river .
+} 
+```
+
+Esta consulta busca entidades de río en la DBpedia con el nombre ""Rhin"" y obtiene los países relacionados a través de la propiedad ""dbo:country"". Ten en cuenta que la DBpedia no siempre tiene información completa o actualizada, por lo que la respuesta puede no incluir todos los países que bordea el río Rhin."
+107,¿Quién fue el padre de la reina Isabel II?,"SELECT ?fatherLabel WHERE {
+  ?queen dbpedia-owl:spouse ?spouse .
+  ?spouse dbpedia-owl:father ?father .
+  ?father rdfs:label ?fatherLabel .
+  FILTER(LANG(?fatherLabel) = ""es"")
+  FILTER(?queen = dbpedia:Queen_Isabel_II)
+}"
+163,Dame todos los elementos químicos.,"SELECT ?elemento WHERE {
+  ?elemento rdf:type dbo:ChemicalElement .
+}
+"
+211,Dame todos los presidentes estadounidenses en los últimos 20 años.,"SELECT ?presidente WHERE {
+  ?presidente rdf:type dbo:President ;
+              dbo:birthPlace dbr:United_States .
+  FILTER(?presidente < dbo:officeStartDate +20Years)
+}"
+51,¿Cuándo se estrena la película Worst Case Scenario en los países bajos?,"La consulta SPARQL para obtener la fecha de estreno de la película ""Worst Case Scenario"" en los Países Bajos en DBpedia sería la siguiente:
+
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+
+SELECT ?date
+WHERE {
+  ?film dbpedia-owl:abstract ""Worst Case Scenario""@en .
+  ?film dbpedia-owl:country dbpedia:Netherlands .
+  ?film dbpedia-owl:releaseDate ?date .
+}
+```
+
+Esta consulta busca el abstracto de la película ""Worst Case Scenario"" en inglés, luego busca la relación de país con ""Netherlands"" y finalmente recupera la propiedad de fecha de lanzamiento."
+144,¿Con quien se casó Lance Bass?,"La consulta SPARQL para obtener información sobre el matrimonio de Lance Bass sería la siguiente:
+
+```sparql
+SELECT ?spouse
+WHERE {
+  ?person dbo:spouse ?spouse .
+  ?person foaf:name ""Lance Bass""@en .
+}
+```
+
+Esta consulta buscará en DBPedia el nombre ""Lance Bass"" y obtendrá la información sobre su cónyuge."
+167,¿Qué subsidiario de TUI Travel vuela en Glasgow y en Dublin?,"La siguiente consulta SPARQL realiza una búsqueda en DBpedia para encontrar todas las subsidiarias de TUI Travel que vuelan tanto en Glasgow como en Dublin:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?subsidiary
+WHERE {
+  ?subsidiary dbo:subsidiaryOf dbo:TUI_Travel .
+  ?subsidiary dbp:cityServed/rdfs:label ?city .
+  FILTER (regex(?city, ""Glasgow"", ""i"") && regex(?city, ""Dublin"", ""i""))
+} 
+```
+
+Esta consulta busca todas las entidades que pertenecen a la clase `dbo:subsidiary`, que son subsidiarias de `dbo:TUI_Travel`. Luego, filtra las entidades según las propiedades `dbp:cityServed` y `rdfs:label` para obtener las ciudades que sirven. Finalmente, se aplica un filtro para encontrar las entidades que tienen tanto ""Glasgow"" como ""Dublin"" en el nombre de la ciudad.
+
+Espero que esta consulta sea de ayuda. Si tienes alguna otra pregunta, no dudes en hacerla."
+131,¿Qué idiomas se hablan en Pakistán?,"La consulta SPARQL para obtener los idiomas que se hablan en Pakistán en DBpedia es la siguiente:
+
+```
+SELECT DISTINCT ?languageLabel
+WHERE {
+  <http://dbpedia.org/resource/Pakistan> dbo:officialLanguage ?language.
+  ?language rdfs:label ?languageLabel.
+  FILTER(LANG(?languageLabel) = ""en"")
+}
+```
+
+Esta consulta obtiene todos los idiomas oficiales de Pakistán y muestra su etiqueta en inglés. Puedes ejecutar esta consulta en el endpoint de DBpedia para obtener los resultados."
+120,Quien es el hija de Cuenta Clinton casado ¿a? ,"Aquí tienes una consulta SPARQL para obtener el nombre de la hija de Bill Clinton, presidente de Estados Unidos, casado con Hillary Clinton:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?hija
+WHERE {
+  <http://dbpedia.org/resource/Bill_Clinton> dbo:spouse ?esposa .
+  ?esposa dbo:child ?hija .
+}
+```
+
+Esta consulta busca la relación `spouse` (esposo/esposa) con Bill Clinton, luego encuentra la propiedad `child` (hijo/hija) con la variable `hija` como resultado."
+164,¿Quién estuvo en la misión Apollo 11?,"La siguiente consulta SPARQL se puede utilizar para encontrar información sobre las personas que estuvieron en la misión Apollo 11:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?person
+WHERE {
+   ?person dbo:associatedMusicalArtist <http://dbpedia.org/resource/Apollo_11>.
+}
+```
+
+Esta consulta busca todas las personas que están asociadas con la entidad de Apollo 11 en DBPedia y las muestra como resultados."
+88,¿Cuál es la longitud de onda de Indigo?,"Aquí está la consulta SPARQL para obtener la longitud de onda de Indigo desde DBpedia:
+
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?longitudDeOnda
+WHERE {
+  dbpedia:Indigo dbpedia-owl:wavelength ?longitudDeOnda.
+}
+```
+
+La consulta busca la propiedad `wavelength` (longitud de onda) de la entidad `Indigo` en DBpedia y devuelve su valor."
+151,Dame todas las caras B de los Ramones.,"La consulta SPARQL para obtener todas las caras B de los Ramones en DBpedia sería la siguiente:
+
+```
+SELECT ?carasB
+WHERE {
+  ?ramones rdf:type dbo:MusicalArtist .
+  ?ramones dbp:name ""Ramones""@en .
+  ?ramones dbo:album ?album .
+  ?album dbo:producedBy ?productor .
+  ?album dbo:recordLabel ?discografica .
+  ?carasB dbo:product ?album .
+  ?carasB rdf:type dbo:Song .
+}
+```
+
+Esta consulta busca todas las canciones (""Song"") que son caras B (""product"") de álbumes (""album"") de los Ramones. La variable ""?carasB"" representa las canciones caras B que cumplan con estas condiciones."
+63,¿Quién era llamado Scarface?,"SELECT ?person WHERE {
+  ?person dbpedia-owl:nick ""Scarface"" .
+}"
+27,¿Qué ríos desembocan en el Mar del Norte?,"La siguiente consulta SPARQL obtiene los ríos que desembocan en el Mar del Norte desde DBPedia:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dct: <http://purl.org/dc/terms/>
+SELECT ?rio
+WHERE {
+  ?rio dct:subject dbc:Rivers_of_the_North_Sea.
+}
+```
+
+Esta consulta SPARQL utiliza la propiedad `dct:subject` para obtener todos los ríos que pertenecen a la categoría ""Rivers of the North Sea"" (Ríos del Mar del Norte) de DBPedia. El prefijo `dbo:` se utiliza para referirse a la ontología de DBPedia y el prefijo `dct:` se utiliza para referirse a los términos Dublin Core de la ontología de DBPedia. La variable `?rio` representa el río que queremos obtener en el resultado de la consulta."
+156,¿Donde se encuentra el Fort Knox?,"SELECT ?ubicacion
+WHERE {
+  <http://dbpedia.org/resource/Fort_Knox> dbpedia-owl:location ?ubicacion .
+}"
+207,¿Qué hijas de condes ingleses murieron en sus lugares de nacimiento?,"La consulta SPARQL para obtener información sobre las hijas de condes ingleses que murieron en sus lugares de nacimiento sería la siguiente:
+
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX dbpprop: <http://dbpedia.org/property/>
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+
+SELECT ?hija ?lugarNacimiento
+WHERE {
+  ?hija dbpedia-owl:parent ?conde ;
+        dbpedia-owl:deathPlace ?lugarMuerte ;
+        dbpedia-owl:birthPlace ?lugarNacimiento .
+  
+  ?conde rdf:type dbpedia-owl:Noble .
+  
+  FILTER regex(str(?lugarNacimiento), ""England"", ""i"") .
+  FILTER regex(str(?lugarMuerte), str(?lugarNacimiento), ""i"") .
+}
+```
+
+Esta consulta buscará las hijas (`?hija`) de condes ingleses que tienen información registrada sobre su lugar de nacimiento (`dbpedia-owl:birthPlace`) y lugar de muerte (`dbpedia-owl:deathPlace`). Los resultados se filtrarán para mostrar solo aquellas hijas que nacieron en algún lugar de Inglaterra (`FILTER regex(str(?lugarNacimiento), ""England"", ""i"")`) y que murieron en el mismo lugar de nacimiento (`FILTER regex(str(?lugarMuerte), str(?lugarNacimiento), ""i"")`)."
+24,¿Cuántos emperadores tuvo China?,"SELECT (COUNT(?emperor) as ?count)
+WHERE {
+  ?emperor rdf:type dbo:Emperor.
+  ?emperor dbo:nationality dbr:China.
+}"
+133,¿Cuáles son los nombres de las Tortugas Ninja Mutantes Adolescentes?,"Para obtener los nombres de las Tortugas Ninja Mutantes Adolescentes de DBpedia, puedes utilizar la siguiente consulta SPARQL:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?name
+WHERE {
+  ?turtle dbo:species <http://dbpedia.org/resource/Turtle>. 
+  ?turtle dbo:team <http://dbpedia.org/resource/Teenage_Mutant_Ninja_Turtles>.
+  ?turtle rdfs:label ?name.
+  FILTER(LANG(?name) = ""es"")
+}
+```
+
+Esta consulta busca todas las entidades que tienen la propiedad ""team"" con el valor ""Teenage Mutant Ninja Turtles"" y la propiedad ""species"" con el valor ""Turtle"". Luego, recupera los nombres de las tortugas en español usando la propiedad ""rdfs:label"". La cláusula `FILTER(LANG(?name) = ""es"")` filtra los resultados para obtener solo los nombres en español."
+103,¿Dónde empieza Piccadilly?,"Según mi conocimiento, DBPEDIA no ofrece un punto de datos específico que indique dónde exactamente comienza Piccadilly. Sin embargo, podemos utilizar la información de DBPEDIA para obtener la ubicación general de Piccadilly en Londres. A continuación, se muestra una consulta SPARQL que puede proporcionar detalles sobre la ubicación general de Piccadilly:
+
+```
+SELECT DISTINCT ?place ?placeLabel ?lat ?long WHERE {
+  ?place dbp:name ?placeLabel ;
+         dbp:location ?location.
+  ?location geo:lat ?lat ;
+            geo:long ?long.
+  FILTER(CONTAINS(LCASE(?placeLabel), ""piccadilly""))
+  SERVICE wikibase:label { bd:serviceParam wikibase:language ""[AUTO_LANGUAGE],en"". }
+}
+```
+
+Esta consulta busca en DBPEDIA cualquier lugar cuyo nombre contenga la palabra ""piccadilly"" y recupera su ubicación geográfica (latitud y longitud)."
+165,¿Cuál es el nombre de la escuela donde la esposa de Obama estudió?,"Para encontrar el nombre de la escuela donde la esposa de Obama, Michelle Obama, estudió, puedes utilizar la siguiente consulta SPARQL en DBPedia:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?schoolName
+WHERE {
+  dbr:Michelle_Obama dbo:almaMater ?school.
+  ?school dbo:name ?schoolName.
+}
+```
+
+Esta consulta busca el recurso correspondiente a Michelle Obama en DBPedia y recupera la propiedad ""almaMater"" (que representa la escuela/universidad donde estudió). Luego, obtiene el nombre de la escuela utilizando la propiedad ""name"" de ese recurso.
+
+El resultado de esta consulta devolverá el nombre de la escuela donde Michelle Obama estudió."
+108,¿Cuándo proclamó el Paraguay su independencia?,"SELECT ?fechaIndependencia
+WHERE {
+  <http://dbpedia.org/resource/Paraguay> <http://dbpedia.org/ontology/independenceDate> ?fechaIndependencia
+}"
+15,¿Como de bajo es el jugador activo mas bajo de la NBA?,"SELECT ?player ?height WHERE {
+  ?player rdf:type dbo:BasketballPlayer ;
+          dbp:league dbo:NBA ;
+          dbo:height ?height .
+  FILTER (LANG(?player) = 'en')
+}
+ORDER BY ASC(?height)
+LIMIT 1"
+45,Dónde hizo Abrahán Lincoln el? ,"No está claro qué se supone que deba completar la pregunta después de ""el"". Sin embargo, si asumimos que se trata de ""Dónde hizo Abrahán Lincoln el juramento"", aquí está la consulta SPARQL para obtener la respuesta desde DBpedia:
+
+```
+SELECT ?place WHERE {
+  dbpedia:Abraham_Lincoln dbpedia-owl:birthPlace ?birthPlace.
+  ?place dbpedia-owl:location ?birthPlace;
+         dbpedia-owl:leaderName dbpedia:Abraham_Lincoln.
+}
+```
+
+Esta consulta buscará el lugar donde Abrahán Lincoln hizo el juramento en DBpedia."
+82,¿Cúando se fundó Jack Wolfskin?,"La consulta SPARQL para obtener la fecha de fundación de Jack Wolfskin en DBPedia sería la siguiente:
+
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+SELECT ?fechaFundacion
+WHERE {
+  <http://dbpedia.org/resource/Jack_Wolfskin> dbpedia-owl:foundingYear ?fechaFundacion .
+}
+```
+
+Esta consulta busca la propiedad ""foundingYear"" (año de fundación) del recurso ""Jack Wolfskin"" en DBPedia y devuelve el valor de la fecha de fundación."
+9,¿En que ciudad esta la sede de Air China?,"SELECT ?city WHERE {
+  ?company a dbo:Company;
+           foaf:name ""Air China""@en;
+           dbo:city ?city.
+}"
+201,¿En qué año fue fundada la cervecería que produce Pilsner Urquell?,"SELECT ?year 
+WHERE {
+  ?brewery dbo:product dbr:Pilsner_Urquell ;
+           dbo:formationYear ?year .
+}"
+171,¿Cuándo tiene lugar el Boston Tea Party?,"La siguiente es una consulta SPARQL para obtener la fecha en la que tuvo lugar el Boston Tea Party:
+
+```
+SELECT ?fecha
+WHERE
+{
+   dbpedia:Boston_Tea_Party dbo:dateTime ?fecha
+}
+```"
+182,¿Que animales están en peligro de extinción?,"SELECT ?animal ?label 
+WHERE {
+  ?animal rdf:type dbo:Species ;
+          rdfs:label ?label ;
+          dbo:status dbo:Endangered .
+  FILTER (LANG(?label) = 'es')
+}
+ORDER BY ?label"
+13,¿Qué monárcas estaban casados con una persona alemana?,"SELECT ?monarca
+WHERE {
+  ?monarca a dbpedia-owl:Monarch ;
+           dbpedia-owl:spouse ?esposa .
+  ?esposa dbpedia-owl:nationality dbpedia:Germany .
+}
+"
+114,¿Qué tan grande es el diámetro de la tierra?,"Para obtener el diámetro de la tierra en DBpedia, podemos utilizar la siguiente consulta SPARQL:
+
+```
+SELECT ?diameter
+WHERE {
+  <http://dbpedia.org/resource/Earth> <http://dbpedia.org/ontology/diameter> ?diameter.
+}
+```
+
+Esta consulta busca la propiedad ""diameter"" (diámetro) de la entidad del recurso ""Earth"" (Tierra) en DBpedia. La respuesta será el valor del diámetro de la Tierra en la unidad proporcionada por DBpedia."
+92,Es el esposa de presidente Obama llamado Michelle? ,"La consulta SPARQL para DBPedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?president
+WHERE {
+  ?president dbo:spouse ?spouse .
+  ?spouse foaf:name ""Michelle Obama"" .
+}
+```
+
+Esta consulta busca si existe alguna persona que sea el/la cónyuge de un presidente y que tenga el nombre ""Michelle Obama"". En caso de que exista, la variable ?president mostrará el/la presidente correspondiente a esa relación."
+194,¿Qué estado americano tiene la abreviación MN?,"La consulta SPARQL para DBpedia para encontrar el estado americano con la abreviación ""MN"" sería la siguiente:
+
+```
+SELECT ?stateLabel
+WHERE {
+  ?state dbo:abbreviation ""MN""@en.
+  ?state rdfs:label ?stateLabel.
+  FILTER (LANG(?stateLabel) = ""en"").
+  ?state dbo:country <http://dbpedia.org/resource/United_States>.
+}
+```
+
+Esta consulta busca el estado (representado por la variable `?stateLabel`) que tenga la propiedad `dbo:abbreviation` con el valor ""MN"" en inglés. Además, se filtra para obtener solo los resultados en inglés y se asegura que el país asociado sea los Estados Unidos (`<http://dbpedia.org/resource/United_States>`)."
+175,¿Cuándo murió Muhammad?,"La consulta SPARQL para obtener la fecha de fallecimiento de Muhammad en DBPedia sería la siguiente:
+
+```
+SELECT ?deathDate WHERE {
+  <http://dbpedia.org/resource/Muhammad> <http://dbpedia.org/ontology/deathDate> ?deathDate.
+}
+```
+
+En esta consulta se busca la propiedad `deathDate` que se encuentra en la ontología de DBPedia y se relaciona con el recurso `Muhammad`."
+26,¿De que se compone la atmósfera de la Luna?,"SELECT ?componente
+WHERE {
+  dbpedia:Lunar_atmosphere dbo:component ?componente.
+}"
+60,Quien es el gobernador de ¿Texas? ,"SELECT ?governorLabel
+WHERE {
+  <http://dbpedia.org/resource/Texas> <http://dbpedia.org/ontology/governor> ?governor.
+  ?governor <http://www.w3.org/2000/01/rdf-schema#label> ?governorLabel.
+  FILTER(langMatches(lang(?governorLabel), ""EN""))
+}"
+110,¿Qué películas ha rodado Kurosawa?,"SELECT ?pelicula
+WHERE {
+   ?kurosawa foaf:name ""Kurosawa"".
+   ?pelicula dbo:director ?kurosawa.
+   ?pelicula rdf:type dbo:Film.
+}
+"
+206,¿Cuál fue el nombre de la famosa batalla en 1836 en San Antonio?,"La consulta SPARQL para obtener el nombre de la famosa batalla en 1836 en San Antonio en DBpedia sería la siguiente:
+
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+
+SELECT DISTINCT ?nombreBatalla
+WHERE {
+  ?batalla dbpedia-owl:year ""1836"" ;
+           dbpedia-owl:place ?lugar ;
+           rdfs:label ?nombreBatalla .
+  FILTER (langMatches(lang(?nombreBatalla), ""es""))
+  FILTER regex(?lugar, ""San Antonio"", ""i"")
+}
+```
+Esta consulta buscará todas las batallas que ocurrieron en 1836 en el lugar de San Antonio y seleccionará el nombre de la batalla en español mediante el uso del filtro `langMatches(lang(?nombreBatalla), ""es"")`. La respuesta obtenida será el nombre de la famosa batalla en San Antonio en 1836."
+97,Dar yo el oficial sitios web de actores de el televisión espectáculo Encantado. ,"La siguiente es una consulta SPARQL para obtener los sitios web oficiales de los actores del programa de televisión ""Encantado"" en DBpedia:
+
+```sparql
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+SELECT ?actor ?sitioWeb
+WHERE {
+  ?actor dbo:starring dbr:Encantado ;
+        foaf:isPrimaryTopicOf ?sitioWeb .
+  FILTER(REGEX(?sitioWeb, ""^https?://"", ""i""))
+}
+```
+
+Esta consulta obtiene todas las tripletas donde los actores están etiquetados como protagonistas (""starring"") del programa de televisión ""Encantado"". Luego, se seleccionan los enlaces primarios de los actores que son sitios web oficiales y se filtran para asegurarse de que los enlaces sean URLs válidas.
+
+Ten en cuenta que esta consulta asume que la información sobre el programa de televisión ""Encantado"" y los sitios web oficiales de los actores está disponible en DBpedia. En ocasiones, la información puede estar incompleta o no tener el formato esperado."
+20,¿Cuántas calorías tiene una baguette?,"SELECT ?calories
+WHERE {
+  <http://dbpedia.org/resource/Baguette> <http://dbpedia.org/ontology/calories> ?calories.
+}"
+169,Dame todas las bibliotecas que fueron establecidas antes de 1400.,"SELECT DISTINCT ?library 
+WHERE {
+  ?library rdf:type dbo:Library .
+  ?library dbo:established ?date .
+  FILTER(?date < ""1400-01-01""^^xsd:date)
+}
+ORDER BY ?library"
+38,Dame todas la islas frisias que pertenezcan a los Países Bajos.,"SELECT ?islaFrísia WHERE {
+  ?islaFrísia a dbo:Island;
+    dbo:country dbr:Netherlands.
+}"
+192,¿En qué museo está expuesto el Grito de Munch?,"La consulta SPARQL para DBPedia para la pregunta ""¿En qué museo está expuesto el Grito de Munch?"" sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?museum
+WHERE {
+  ?artwork dbo:author <http://dbpedia.org/resource/Edvard_Munch> .
+  ?artwork dbp:title ""El Grito"" .
+  ?artwork dbo:museum ?museum .
+}
+```
+
+Esta consulta busca la obra de arte que coincide con el autor Edvard Munch y el título ""El Grito"", y luego recupera el museo donde está expuesto mediante la propiedad dbo:museum."
+78,¿Cuándo se fundó la empresa De Beers?,"SELECT ?dateFounded
+WHERE {
+  dbpedia:De_Beers dbo:foundingDate ?dateFounded
+}"
+19,Quien se convirtió en presidente después de la muerte de JFK?,"La consulta SPARQL para encontrar quién se convirtió en presidente después de la muerte de JFK en DBpedia es la siguiente:
+
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+
+SELECT ?presidente
+WHERE {
+    dbpedia:John_F._Kennedy dbpedia-owl:successor ?sucesor.
+    ?sucesor dbpedia-owl:occupation dbpedia-owl:President .
+    ?sucesor rdfs:label ?presidente
+    FILTER (lang(?presidente) = ""es"" && ?presidente != ""Richard Nixon"")
+}
+
+En esta consulta, buscamos la propiedad ""successor"" de John F. Kennedy (representado por el recurso ""John_F._Kennedy"") y encontramos el sucesor que tiene la ocupación de ""President"" (presidente). Luego, filtramos los resultados para garantizar que obtengamos el nombre del presidente en español y excluimos a Richard Nixon, quien no fue el sucesor directo de JFK y asumió la presidencia después de Lyndon B. Johnson. Esto se logra mediante el filtro lang(?presidente) = ""es"", que asegura que solo se devuelvan los nombres en español y el filtro ?presidente != ""Richard Nixon"" excluye los resultados que coinciden con ""Richard Nixon"".
+
+La consulta devolverá el nombre del presidente que asumió después de la muerte de JFK en español."
+190,¿Quién son los padres de la esposa de Juan Carlos I?,"La consulta SPARQL para encontrar los padres de la esposa de Juan Carlos I, cuyo nombre es Sofía de Grecia y Dinamarca, se puede hacer de la siguiente manera:
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT DISTINCT ?padre ?madre
+WHERE {
+  ?esposa dbo:spouse dbr:Juan_Carlos_I_of_Spain .
+  ?esposa dbo:father ?padre .
+  ?esposa dbo:mother ?madre .
+}
+```
+
+En esta consulta, se utiliza el prefijo `dbo` para referirse a la ontología de DBPedia y el prefijo `dbr` para referirse a los recursos de DBPedia. Se seleccionan los campos `?padre` y `?madre`, que representarán los padres de la esposa de Juan Carlos I. Luego, se especifica que la esposa del Rey Juan Carlos I es el objeto de la propiedad `dbo:spouse`. Finalmente, se relaciona a la esposa con sus padres mediante las propiedades `dbo:father` y `dbo:mother`.
+
+Ten en cuenta que esta consulta podría no devolver resultados si no hay información disponible en DBPedia sobre los padres de la esposa de Juan Carlos I."
+174,Quien es el novelista de el trabajo un canción de hielo y ¿fuego? ,"La consulta SPARQL para obtener el nombre del novelista de ""Canción de Hielo y Fuego"" en DBpedia sería la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?novelista
+WHERE {
+  dbr:Canción_de_hielo_y_fuego dbo:author ?novelista.
+}
+```
+
+Esta consulta buscará en DBpedia el recurso ""Canción_de_hielo_y_fuego"" y recuperará el novelista asociado a dicho recurso."
+189,¿En qué estudio grabaron los Beatles su primer album?,"La siguiente consulta SPARQL puede ser utilizada para obtener la respuesta a la pregunta ""¿En qué estudio grabaron los Beatles su primer álbum?"" utilizando DBpedia:
+
+```sparql
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?studio
+WHERE {
+  ?beatles dbo:artist dbpedia:The_Beatles.
+  ?beatles dbo:associatedMusicalArtist ?associatedArtist.
+  ?associatedArtist dbo:associatedBand ?band.
+  ?band dbo:background dbpedia:The_Beatles.
+  ?album dbo:artist ?associatedArtist.
+  ?album dbo:recordedIn ?studio.
+  ?album dbo:genre ?genre.
+  FILTER(CONTAINS(LCASE(STR(?genre)), ""rock"")).
+}
+LIMIT 1
+```
+
+Esta consulta SPARQL busca el estudio en el que los Beatles grabaron su primer álbum filtrando los álbumes que tienen un género que contiene la palabra ""rock"". La variable `?studio` representa el estudio de grabación en el que se realizó la grabación.
+
+Cabe destacar que la respuesta puede variar dependiendo de la información disponible en DBpedia y de cómo esté estructurada dicha información."
+152,Cual cerveza fabricación de cerveza compañías son situado en Renania del Norte Westfalia? ,"SELECT distinct ?beerCompany
+WHERE {
+ ?beerCompany rdf:type dbo:Company ;
+              dbo:industry dbr:Brewery ;
+              dbo:location dbr:North_Rhine-Westphalia .
+}"
+94,¿Cuándo murió la princesa Diana?,"La siguiente es una consulta SPARQL para encontrar la fecha de fallecimiento de la princesa Diana en DBPedia:
+
+```
+SELECT ?fechaMuerte
+WHERE {
+  <http://dbpedia.org/resource/Princess_Diana> <http://dbpedia.org/ontology/deathDate> ?fechaMuerte .
+}
+```
+
+En esta consulta, seleccionamos la variable ?fechaMuerte que representa la fecha de fallecimiento. La consulta busca la propiedad ""deathDate"" (fecha de fallecimiento) de la entidad ""Princess Diana"" en DBPedia."
+8,¿Quién fundó Intel?,"SELECT ?founder WHERE {
+  dbr:Intel dbo:foaf:maker ?founder.
+}"
+95,¿Quién es el jugador más jóven de la Premier League?,"La siguiente consulta SPARQL puede ser utilizada para encontrar al jugador más joven de la Premier League:
+
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+PREFIX dbpprop: <http://dbpedia.org/property/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?jugador ?nombre ?fechaNacimiento
+WHERE {
+  ?jugador dbpedia-owl:league dbo:Premier_League .
+  ?jugador dbpprop:name ?nombre .
+  ?jugador dbpedia-owl:birthDate ?fechaNacimiento .
+}
+ORDER BY ?fechaNacimiento
+LIMIT 1
+```
+
+Esta consulta obtiene los jugadores que participan en la Premier League, su nombre y fecha de nacimiento. Luego, se ordena por fecha de nacimiento de forma ascendente y se selecciona el primer resultado, que será el jugador más joven. La variable `?jugador` se utiliza para obtener la URI del jugador, `?nombre` para obtener su nombre y `?fechaNacimiento` para obtener su fecha de nacimiento.
+
+Es importante destacar que la Base de Conocimiento de DBPedia está en constante actualización, por lo que los resultados pueden variar con el tiempo."
+119,¿Qué instrumentos tocaba Cat Stevens?,"La consulta SPARQL para obtener información sobre los instrumentos que tocaba Cat Stevens (también conocido como Yusuf Islam) en DBPEDIA sería la siguiente:
+
+```
+SELECT ?instrument
+WHERE {
+  dbr:Cat_Stevens dbo:instrument ?instrument.
+}
+```
+
+Esta consulta obtendrá todos los instrumentos que aparecen en la propiedad ""instrument"" del recurso ""Cat_Stevens"" en DBPEDIA."
+115,¿Cuántos ríos y lagos hay en Carolina del Sur?,"SELECT (COUNT(?river) AS ?num_rivers) (COUNT(?lake) AS ?num_lakes)
+WHERE {
+  ?river a dbo:River ;
+         dbo:locatedIn dbr:South_Carolina .
+  ?lake a dbo:Lake ;
+        dbo:locatedIn dbr:South_Carolina .
+}"
+116,¿Quien se llamaba Rodzilla?,"La consulta SPARQL para obtener información sobre quién se llamaba Rodzilla en DBpedia es la siguiente:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?nombre
+WHERE {
+  ?persona foaf:name ""Rodzilla""@en ;
+           dbo:birthName ?nombre .
+}
+```
+
+Esta consulta busca una persona con el nombre ""Rodzilla"" en DBpedia y recupera su nombre real o de nacimiento (?nombre)."
+138,Dame las capitales de todos los países africanos.,"SELECT ?capital WHERE {
+  ?country a dbo:Country ;
+           dbo:continent dbr:Africa ;
+           dbo:capital ?capital .
+}"
+177,¿Qué puentes son del mismo tipo que el puente de Manhattan?,"La consulta SPARQL para obtener los puentes del mismo tipo que el puente de Manhattan en DBpedia sería la siguiente:
+
+```
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+PREFIX dbp-ont: <http://dbpedia.org/ontology/>
+PREFIX dbp-prop: <http://dbpedia.org/property/>
+
+SELECT ?bridge
+WHERE {
+  dbpedia:Manhattan_Bridge dbp-ont:type ?type .
+  ?bridge dbp-ont:type ?type .
+  FILTER(?bridge != dbpedia:Manhattan_Bridge)
+}
+```
+Esta consulta busca todos los puentes que tienen el mismo tipo que el puente de Manhattan, excluyendo al propio puente de Manhattan de los resultados."
+101,¿Cuantas compañías han sido fundadas por el fundador de Facebook?,"SELECT (COUNT(?company) as ?count)
+WHERE {
+  ?company dbpedia-owl:wikiPageWikiLink dbr:Mark_Zuckerberg .
+  ?company rdf:type dbpedia-owl:Company .
+}"
+14,Muéstrame rutas de senderismo en el Gran Cañón donde no hay peligro de inundaciones repentinas.,"Aquí tienes una consulta SPARQL que cumple con los criterios de tu pregunta:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX geop: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+
+SELECT ?route ?name ?abstract ?location
+WHERE {
+  ?route a dbo:HikingTrail ;
+         dbo:abstract ?abstract ;
+         rdfs:label ?name ;
+         dbp:location dbr:Grand_Canyon_National_Park ;
+         geop:lat ?lat ;
+         geop:long ?long .
+  FILTER (strStarts(str(?name), ""Grand Canyon"") && 
+    !regex(str(?abstract), ""flood|flash flood"", ""i""))
+} 
+LIMIT 10
+```
+
+Esta consulta SPARQL busca rutas de senderismo en el Gran Cañón que no presenten peligro de inundaciones repentinas. Los resultados incluirán el nombre de la ruta, una descripción breve y la ubicación (latitud y longitud) de cada ruta.
+
+Nota: La consulta está limitada a 10 resultados (`LIMIT 10`), por lo que puedes ajustar este número según tus necesidades."
+87,¿Que libro tiene el mayor numero de paginas?,"SELECT ?book ?title ?pages
+WHERE {
+  ?book rdf:type dbo:Book.
+  ?book dbp:genre ?genre.
+  ?book dbp:pages ?pages.
+  ?book rdfs:label ?title.
+  
+  FILTER (LANG(?title) = 'en').
+}
+ORDER BY DESC(?pages)
+LIMIT 1"
+148,¿Cuál es el estado más grande de los Estados Unidos?,"Puede utilizar la siguiente consulta SPARQL para obtener el estado más grande de los Estados Unidos a partir de DBPedia:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT ?state ?area
+WHERE {
+  ?state a dbo:State .
+  ?state dbo:country <http://dbpedia.org/resource/United_States> .
+  ?state dbo:areaTotal ?area .
+}
+ORDER BY DESC(?area)
+LIMIT 1
+```
+
+Esta consulta recupera todas las entidades de tipo ""State"" que pertenecen a Estados Unidos y obtiene su área total utilizando la propiedad ""dbo:areaTotal"". Luego, ordena los resultados de manera descendente según el área y limita los resultados a 1 para obtener el estado más grande."
+43,Dame todas las páginas de Web de empresas con más de 500000 empleados.,"SELECT DISTINCT ?empresa ?nombre ?empleados
+WHERE {
+  ?empresa rdf:type dbo:Company ;
+          foaf:homepage ?nombre ;
+          dbo:numberOfEmployees ?empleados .
+  FILTER (?empleados > 500000)
+}
+ORDER BY DESC(?empleados)"
+179,¿Cuáles fueron los nombres de las tres naves utilizadas por Colón?,"La consulta SPARQL para obtener los nombres de las tres naves utilizadas por Colón en DBpedia sería la siguiente:
+
+```
+SELECT ?nombre WHERE {
+  ?colon dbp:name ""Christopher Columbus"" .
+  ?colon dbp:ship ?ship .
+  ?ship rdfs:label ?nombre .
+  FILTER (LANG(?nombre) = 'es')
+} LIMIT 3
+```
+
+Esta consulta busca la entidad correspondiente a ""Christopher Columbus"" en DBpedia, luego obtiene las naves asociadas a él utilizando la propiedad ""dbp:ship"" y finalmente obtiene el nombre de cada nave en español utilizando la propiedad ""rdfs:label"".
+
+El resultado será una lista con los nombres de las tres naves utilizadas por Colón."

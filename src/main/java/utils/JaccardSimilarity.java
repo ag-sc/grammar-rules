@@ -265,7 +265,8 @@ public class JaccardSimilarity {
                 "John F. Kennedy"));
         System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("the_philippines",
                 "history_of_the_philippines"));
-        
+        System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("JFK",
+                "John F. Kennedy"));
         
 
         /*System.out.println("s13 and s14:::" + jaccardSimilarityManual("Give me all professional skateboarders from Sweden.", 
