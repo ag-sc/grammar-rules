@@ -21,7 +21,7 @@ public class QueGG {
     private static Integer numberOfEntities = -1;
 
     public static void main(String[] args) throws Exception {
-        //args = new String[]{"de", inputDir+"grammar_FULL_DATASET_DE.json","grammarFiles/de/input.csv"};
+        args = new String[]{"de", inputDir+"grammar_FULL_DATASET_DE.json","grammarFiles/de/input.csv"};
        
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
