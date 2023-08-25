@@ -14,14 +14,14 @@ import utils.csv.CsvUtils;
 @NoArgsConstructor
 public class QueGG {
 
-    //private static String inputDir = "grammarFiles/en/";
+    private static String inputDir = "grammarFiles/de/";
     //private static String inputDir = "/home/elahi/A-Grammar/multilingual-grammar-generator/result/en/";
     //private static String grammarFileName = "grammar_FULL_DATASET_EN.json";
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
 
     public static void main(String[] args) throws Exception {
-        //args = new String[]{"en", inputDir+"grammar_FULL_DATASET_EN.json","grammarFiles/en/input.csv"};
+        //args = new String[]{"de", inputDir+"grammar_FULL_DATASET_DE.json","grammarFiles/de/input.csv"};
        
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
