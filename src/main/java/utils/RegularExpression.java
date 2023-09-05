@@ -60,12 +60,12 @@ public class RegularExpression {
         Pattern pattern = Pattern.compile(ruleRegularEx);
         Matcher matcher = pattern.matcher(sentence);
         String extractPattern = null;
+        //System.out.println("sentence::"+sentence+" "+ruleRegularEx);
         
         if (matcher.find()) {
             for (Integer index = 1; index <= matcher.groupCount(); index++) {
                 extractPattern = matcher.group(index);
                 results.add(extractPattern);
-                //System.out.println(extractPattern);
             }
         }
        
@@ -83,8 +83,8 @@ public class RegularExpression {
     }
     
      public static void main(String[] args) {
-         String ruleRegularEx="in_which_city_did_([A-Za-z0-9]*)_die?";
-         String sentence="in_which_city_did_john_f._kennedy_die?";
+         String ruleRegularEx="give_me_all_danish([A-Za-z0-9]*).";
+         String sentence="give_me_all_danish_films.";
          sentence=sentence.replace(".", "");
          List<String> results =isMatchWithRegEx(sentence,ruleRegularEx);
          System.out.println(results);

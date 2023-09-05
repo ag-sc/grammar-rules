@@ -5,6 +5,10 @@
  */
 package utils;
 
+import com.opencsv.exceptions.CsvException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import static java.lang.System.exit;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,8 +20,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
+import utils.csv.CsvFile;
 
 /**
  *
@@ -28,15 +35,68 @@ public class JaccardSimilarity {
     private Map<Double, String> entityMapJaccard = new TreeMap<Double, String>(Collections.reverseOrder());
     private Double score = null;
     private String bestMatch = null;
+    //public static String classFileName = "src/main/resources/LexicalEntryForClass.csv";
+    //private  static Map<String, String> classDictionary = new TreeMap<String, String>(Collections.reverseOrder());
+    
+    
+    /*static {
+        try {
+            CsvFile csvFile = new CsvFile();
+            List<String[]> rows = csvFile.getRows(new File(classFileName));
+            for (String[] row : rows) {
+                String className=null;
+                String wordSingular = row[1].strip().stripLeading().stripTrailing().trim();
+                String wordPlural = row[2].strip().stripLeading().stripTrailing().trim();
+                wordSingular = wordSingular.toLowerCase().replace(" ", "_");
+                wordPlural= wordPlural.toLowerCase().replace(" ", "_");
+                //String sparql = SparqlQuery.rdfType(row[9]);
+                if (row[3].contains(":")) {
+                    className = row[3].split(":")[1];
+                }
+                //entityMapClass.put(word, className);
+                entityMapClass.put(wordSingular , className);
+                entityMapClass.put(wordSingular , className);
+                //System.out.println(word + " " + className);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(JaccardSimilarity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CsvException ex) {
+            Logger.getLogger(JaccardSimilarity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }*/
+
+    /*static {
+        try {
+            CsvFile csvFile = new CsvFile();
+            List<String[]> rows = csvFile.getRows(new File(classFileName));
+            for (String[] row : rows) {
+                String className=null;
+                String word = row[2].strip().stripLeading().stripTrailing().trim();
+                word = word.toLowerCase().replace(" ", "_");
+                //String sparql = SparqlQuery.rdfType(row[9]);
+                if (row[9].contains(":")) {
+                    className = row[9].split(":")[1];
+                }
+                entityMapClass.put(word, className);
+                entityMapClass.put(word + "s", className);
+                entityMapClass.put(word + "es", className);
+                //System.out.println(word + " " + className);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(JaccardSimilarity.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CsvException ex) {
+            Logger.getLogger(JaccardSimilarity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }*/
 
     public JaccardSimilarity() {
         //"\""+"1991"+"\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
 
     }
-    
+
     public JaccardSimilarity(String extractPart, Map<String, String> entityMap) throws Exception {
         Integer index = 0;
-        //System.out.println("keys::" + extractPart);
+         System.out.println("extractPart::" + extractPart+" size::"+entityMap.size());
         if (StringModifier.isNumeric(extractPart)) {
             this.bestMatch = "\"" + extractPart + "\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
         } else if (entityMap.containsKey(extractPart)) {
@@ -49,18 +109,16 @@ public class JaccardSimilarity {
                 this.bestMatch = "<" + value + ">";
             }
 
-        }
-        else {
+        } else {
             /*if(entityMap.isEmpty()){
                 throw new Exception("No entites is found!!");
             }*/
-            //System.out.println(entityMap.keySet());
             for (String label : entityMap.keySet()) {
                 String uri = entityMap.get(label);
                 index = index + 1;
                 double score = jaccardSimilarityManual(label, extractPart);
-                if (score>0.0) {
-                    System.out.println(index + " " + score +" "+extractPart+ " " + label + " " + uri);
+                if (score > 0.0) {
+                    System.out.println(index + " " + score + " " + extractPart + " " + label + " " + uri);
                     entityMapJaccard.put(score, uri);
                 }
 
@@ -166,7 +224,6 @@ public class JaccardSimilarity {
 
 
     }*/
-
     public double jaccardSimilarityManual(String string1, String string2) {
         string1 = process(string1).toLowerCase().toLowerCase().replace("_", " ");
         string2 = process(string2).toLowerCase().toLowerCase().replace("_", " ");;
@@ -187,6 +244,7 @@ public class JaccardSimilarity {
         return (double) (inter) / (double) (union);
     }
 
+   
     public String process(String string) {
         string = string.replace("?", " ?");
         return string = string.replace(".", " .");
@@ -200,8 +258,7 @@ public class JaccardSimilarity {
         return bestMatch;
     }
 
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, FileNotFoundException, CsvException {
         JaccardSimilarity ja = new JaccardSimilarity();
         String s1 = "What is the ingredient of a Chocolate chip cookie?";
         String s2 = "What is in a chocolate chip cookie?";
@@ -267,10 +324,39 @@ public class JaccardSimilarity {
                 "history_of_the_philippines"));
         System.out.println("s13 and s14:::" + ja.jaccardSimilarityManual("JFK",
                 "John F. Kennedy"));
-        
 
         /*System.out.println("s13 and s14:::" + jaccardSimilarityManual("Give me all professional skateboarders from Sweden.", 
-                                                                         "Give me all professional Swedish skateboarders."));*/
+                                                                        "Give me all professional Swedish skateboarders."));*/
+        String classFileName = "src/main/resources/LexicalEntryForClass.csv";
+        Map<String, String> classDictionary = new TreeMap<String, String>(Collections.reverseOrder());
+
+        CsvFile csvFile = new CsvFile();
+            List<String[]> rows = csvFile.getRows(new File(classFileName));
+            for (String[] row : rows) {
+                String className=null;
+                String wordSingular = row[1].strip().stripLeading().stripTrailing().trim();
+                String wordPlural = row[2].strip().stripLeading().stripTrailing().trim();
+                wordSingular = wordSingular.toLowerCase().replace(" ", "_");
+                wordPlural= wordPlural.toLowerCase().replace(" ", "_");
+                //String sparql = SparqlQuery.rdfType(row[9]);
+                className = row[3];
+                //className =className.replace("dbo:", "http://dbpedia.org/ontology/");
+                //entityMapClass.put(word, className);
+                classDictionary.put(wordSingular , className);
+                classDictionary.put(wordPlural , className);
+                //System.out.println(wordSingular + " " + wordPlural+" "+className);
+            }
+            String givenSparql="";
+            if(classDictionary.containsKey("actors")){
+               String className= classDictionary.get("actors");  
+               
+               if(className.contains(":")){
+                  className=className.split(":")[1];
+               }
+               String sparql="SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> .}";
+               sparql=sparql.replace("}", " ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   "+"<http://dbpedia.org/ontology/"+className+">"+".}");
+               System.out.println(sparql);
+            }
     }
 
 }

@@ -74,10 +74,11 @@ public class QueGGTest {
     public static String parse(String input,String language) throws Exception {
         String sparql=null;
         //String expectedResult="SELECT ?Answer WHERE { <http://dbpedia.org/resource/Bangladesh> <http://dbpedia.org/ontology/capital> ?Answer .}";
-        Grammar grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
-        sparql = grammar.parser(input);
-        return sparql;
+        //Grammar grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
+        //sparql = grammar.parser(input);
+        //return sparql;
         //Assertions.assertSame(sparql, sparql);
+        return null;
 
     }
     

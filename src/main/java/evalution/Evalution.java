@@ -70,8 +70,9 @@ public class Evalution {
             }
             //if (sparqlQueGG != null) {
             //if (!sparqlQueGG.contains("-")) {
-            Map<String, String> resultQueGG = new SparqlQuery(sparqlQueGG).getEntityMap();
             Map<String, String> resultQald = new SparqlQuery(sparqlQald).getEntityMap();
+            Map<String, String> resultQueGG = new SparqlQuery(sparqlQueGG).getEntityMap();
+
             //System.out.println(id + " queGGSparql=" + sparqlQueGG + " qaldSparql=" + sparqlQald);
             //System.out.println(id + " resultQueGG=" + resultQueGG.size() + " resultQald=" + resultQald.size());
             FscoreCalculation cal = new FscoreCalculation(resultQueGG.keySet(), resultQald.keySet());

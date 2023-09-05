@@ -1,0 +1,76 @@
+ID,status,sentence,sparqlQald
+4,Not Parsed,In which U.S. state is Area 51 located?,N
+6,Not Parsed,Which countries have places with more than two caves?,N
+9,Parsed,Give me all actors starring in movies directed by and starring William Shatner.,SELECT ?Answer WHERE { http://dbpedia.org/resource/Lee_In_(actor) <http://dbpedia.org/ontology/alias> ?Answer .}
+12,Parsed,Which movies starring Brad Pitt were directed by Guy Ritchie?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Guy_Ritchie> .}
+13,Not Parsed,Give me the grandchildren of Bruce Lee.,N
+14,Parsed,Which other weapons did the designer of the Uzi develop?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/developer> http://dbpedia.org/resource/Wizards_of_the_Coast .}
+16,Not Parsed,Which state of the USA has the highest population density?,N
+17,Parsed,Which monarchs were married to a German?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/spouse> http://dbpedia.org/resource/Mike_German .}
+21,Parsed,Who wrote the book The pillars of the Earth?,SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Pillars_of_the_Earth> <http://dbpedia.org/ontology/author> ?Answer .}
+22,Not Parsed,Which state of the United States of America has the highest density?,N
+23,Not Parsed,Which spaceflights were launched from Baikonur?,N
+24,Not Parsed,Give me a list of all trumpet players that were bandleaders.,N
+25,Not Parsed,Which U.S. states are in the same timezone as Utah?,N
+26,Not Parsed,Which U.S. states possess gold minerals?,N
+27,Parsed,Who is the daughter of Ingrid Bergman married to?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Ingrid_Bergman <http://dbpedia.org/ontology/child> ?Answer .}
+29,Parsed,Show me all museums in London.,SELECT ?Answer WHERE { http://dbpedia.org/resource/Westfield_London <http://dbpedia.org/ontology/location> ?Answer .}
+30,Not Parsed,Which caves have more than 3 entrances?,N
+32,Not Parsed,What are the top-10 action role-playing video games according to IGN?,N
+34,Not Parsed,Show me all basketball players that are higher than 2 meters.,N
+35,Not Parsed,When was the Statue of Liberty built?,N
+40,Parsed,Give all swimmers that were born in Moscow.,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> .}
+41,Not Parsed,Give me all cosmonauts.,N
+44,Not Parsed,What kind of music did Lou Reed play?,N
+45,Not Parsed,Where do the Red Sox play?,N
+46,Not Parsed,Show a list of soccer clubs that play in the Bundesliga.,N
+47,Not Parsed,Which volcanos in Japan erupted since 2000?,N
+50,Not Parsed,How many films did Hal Roach produce?,N
+51,Parsed,Give me all Danish movies.,SELECT ?Answer WHERE { http://dbpedia.org/resource/Nora_Danish <http://dbpedia.org/ontology/alias> ?Answer .}
+52,Not Parsed,What is the most frequent cause of death?,N
+53,Not Parsed,Who are the four youngest MVP basketball players?,N
+54,Not Parsed,Give me all companies in Munich.,N
+55,Parsed,Give me the capitals of all countries that the Himalayas run through.,SELECT ?Answer WHERE { http://dbpedia.org/resource/Voice_of_Music <http://dbpedia.org/ontology/foundationPlace> ?Answer .}
+56,Not Parsed,How many movies did Park Chan-wook direct?,N
+57,Parsed,Which rivers flow into a German lake?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/inflow> http://dbpedia.org/resource/Wilson_Lake_(Maine) .}
+58,Not Parsed,How many airlines are there?,N
+59,Not Parsed,Give me all islands that belong to Japan.,N
+60,Not Parsed,How many inhabitants does Maribor have?,N
+61,Not Parsed,Give me all Apollo 14 astronauts.,N
+62,Not Parsed,Which companies have more than 1 million employees?,N
+63,Parsed,In which films directed by Garry Marshall was Julia Roberts starring?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Marshall_(film) <http://dbpedia.org/ontology/director> ?Answer .}
+64,Not Parsed,Give me all soccer clubs in the Premier League.,N
+65,Not Parsed,What is the highest place of the Urals?,N
+66,Not Parsed,Who is the governor of Wyoming?,N
+68,Not Parsed,Give me all world heritage sites designated within the past two years.,N
+69,Not Parsed,Give me all actors who were born in Paris after 1950.,N
+70,Not Parsed,Which movies star both Liz Taylor and Richard Burton?,N
+71,Not Parsed,Give me all Australian nonprofit organizations.,N
+73,Not Parsed,Give me all ESA astronauts.,N
+74,Not Parsed,Who was president of Pakistan in 1978?,N
+75,Not Parsed,Who is the owner of Rolls-Royce?,N
+76,Parsed,How many museums does Paris have?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Théâtre_de_Paris <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}
+77,Not Parsed,Where was JFK assassinated?,N
+78,Not Parsed,Give me all federal chancellors of Germany.,N
+79,Not Parsed,Show me everyone who was born on Halloween.,N
+80,Parsed,Which beer originated in Ireland?,SELECT ?Answer WHERE { http://dbpedia.org/resource/Ireland_Brook_(New_Jersey) <http://dbpedia.org/ontology/sourceCountry> ?Answer .}
+81,Not Parsed,To which countries does the Himalayan mountain system extend?,N
+82,Parsed,Which actors were born in Germany?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany_(European_Parliament_constituency)> .}
+83,Not Parsed,How much carbs does peanut butter have?,N
+84,Parsed,Who produced the most films?,SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> http://dbpedia.org/resource/Films .}
+85,Not Parsed,How many employees does Google have?,N
+86,Not Parsed,Give me all actors who were born in Berlin.,N
+87,Not Parsed,Who created Goofy?,N
+88,Not Parsed,Which music albums contain the song Last Christmas?,N
+89,Not Parsed,When was Alberta admitted as province?,N
+90,Parsed,How many missions does the Soyuz programme have?,SELECT ?Answer WHERE { http://dbpedia.org/resource/The_Whitebrook <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}
+91,Parsed,Give me all the TV shows with Neil Patrick Harris.,SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_(206)> <http://dbpedia.org/ontology/starring> ?Answer .}
+92,Not Parsed,When were the Hells Angels founded?,N
+94,Not Parsed,Give me all Swedish holidays.,N
+95,Not Parsed,In which city was the former Dutch queen Juliana buried?,N
+96,Not Parsed,List all the musicals with music by Leonard Bernstein.,N
+97,Not Parsed,Give me all companies in the advertising industry.,N
+98,Not Parsed,What is the largest metropolitan area in Washington state?,N
+99,Not Parsed,Who killed John Lennon?,N
+100,Not Parsed,Which writers studied in Istanbul?,N
+101,Not Parsed,Give me all Australian metalcore bands.,N

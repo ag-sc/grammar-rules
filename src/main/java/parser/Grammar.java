@@ -2,13 +2,17 @@ package parser;
 
 import utils.RegularExpression;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
+import utils.Dictionary;
 import utils.QAElement;
 import utils.Sorting;
 import utils.StringModifier;
@@ -28,12 +32,15 @@ public class Grammar {
     private Boolean entityRetriveOnline = false;
     private Integer numberOfEntities = -1;
     private String language = "en";
+    private static  String classFileName =null;
 
-    public Grammar(List<GrammarRule> grammarRules, Boolean retriveType, Integer numberofEntities, String language) {
+
+    public Grammar(List<GrammarRule> grammarRules, Boolean retriveType, Integer numberofEntities, String language,String classFileNameT) {
         this.grammarRules = grammarRules;
         this.entityRetriveOnline = retriveType;
         this.numberOfEntities = numberofEntities;
         this.language = language;
+        classFileName=classFileNameT;
     }
 
     //The methods return a SPARQL query or „null“ if there is no parse.

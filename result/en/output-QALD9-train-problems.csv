@@ -1,0 +1,2 @@
+"ID","status","sentence","sparqlQald"
+"3","WORK","Which people were born in Heraklion?","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Person ; onto:birthPlace <http://dbpedia.org/resource/Heraklion>. }","SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> ?Arg .}"

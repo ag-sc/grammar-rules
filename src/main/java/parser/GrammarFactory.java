@@ -11,10 +11,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.query.QueryType;
+import utils.Dictionary;
 import utils.GrammarEntries;
 import utils.GrammarEntryUnit;
 import utils.Sorting;
@@ -29,14 +31,14 @@ public class GrammarFactory {
 
     private Grammar grammar = null;
 
-    public GrammarFactory(File file, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
+    public GrammarFactory(File file, Boolean entityRetriveOnline, Integer numberOfEntities, String language, String classFileName) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         GrammarEntries grammarEntries = mapper.readValue(file, GrammarEntries.class);
-        grammar = new Grammar(getAllGrammarRules(grammarEntries), entityRetriveOnline, numberOfEntities, language);
+        grammar = new Grammar(getAllGrammarRules(grammarEntries,classFileName), entityRetriveOnline, numberOfEntities, language, classFileName);
 
     }
 
-    private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries) throws Exception {
+    private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries,String classFileName) throws Exception {
         List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
         for (GrammarEntryUnit grammarEntryUnit : grammarEntries.getGrammarEntries()) {
             List<String[]> questions = ruletoRegExConversion(grammarEntryUnit.getSentences());
@@ -47,7 +49,7 @@ public class GrammarFactory {
                     if (grammarEntryUnit.getReturnVariable() != null) {
                         GrammarRule grammarRule = new GrammarRule(sorttedQuestions, sparql, grammarEntryUnit.getBindingType(),
                                 grammarEntryUnit.getReturnVariable(),
-                                grammarEntryUnit.getSentenceTemplate());
+                                grammarEntryUnit.getSentenceTemplate(),classFileName);
                         grammarRules.add(grammarRule);
                     }
                     else{

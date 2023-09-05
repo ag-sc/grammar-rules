@@ -58,14 +58,15 @@ public class StringModifier {
     public static String makeLabel(String entity, String language) {
         String label = StringModifier.cleanHttp(entity, language);
         //label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
-        label = label.strip().stripLeading().stripTrailing().trim();
+        label = label.strip().stripLeading().stripTrailing().trim().replace("_", " ");
+        //System.out.println("label::"+label);
         
         /*if(entity.contains("Slack")){
             System.out.println(label);
         }
         System.out.println(entity+ " label::"+label);
         */
-        if (label.contains("(") && label.contains(")")) {
+        /*if (label.contains("(") && label.contains(")")) {
             String insideStr = StringUtils.substringBetween(label, "(", ")");
             if (insideStr!=null) {
                 label = label.replace(insideStr, "").replace("_(", "").replace(")", "");
@@ -75,7 +76,7 @@ public class StringModifier {
                 label = label.replace("(", "").replace(")", "");
             }
 
-        }
+        }*/
         return label.toLowerCase();
     }
     
