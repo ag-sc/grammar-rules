@@ -20,7 +20,7 @@ import utils.csv.CsvUtils;
 public class QueGG {
 
     //private static String inputDir = "grammarFiles/en/";
-    private static String inputDir ="/home/elahi/A-Grammar/dudes/multilingual-grammar-generator/result/en/";
+    private static String inputDir ="result/en/";
     private static String classFileName = "src/main/resources/LexicalEntryForClass.csv";
     //private static String grammarFileName = "grammar_FULL_DATASET_EN.json";
     private static Boolean entityRetriveOnline = true;
@@ -28,8 +28,8 @@ public class QueGG {
 
     public static void main(String[] args) throws Exception {
         Boolean parseFlag=false,evaluationFlag=true;
-        args = new String[]{"en", inputDir+"grammar_FULL_DATASET_EN.json","result/en/input-QALD9-train-inductive.csv"};
-       
+        //args = new String[]{"en", inputDir+"grammar_FULL_DATASET_EN_LAST_Test.json","grammarFiles/en/input-QALD9-train-inductive.csv"};
+        //System.out.println(inputDir+"grammar_FULL_DATASET_EN_LAST_Test.json");
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
             throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
@@ -54,9 +54,9 @@ public class QueGG {
             if(row.length>=3){
                givenSparql=row[2]; 
             }
-            /*if(idInteger!=34)
-               continue; 
-            */
+            /*if(idInteger!=118)
+               continue;*/ 
+            
             System.out.println(id+" sentence::" + sentence+" row.length::"+row.length);
             if (parseFlag) {
                 String[] result = runParser(grammar, id, sentence);
@@ -74,8 +74,8 @@ public class QueGG {
             
             System.out.println();
             
-            if(index>100)
-                break;
+            /*if(index>120)
+                break;*/
             
         }
         try {

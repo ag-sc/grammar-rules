@@ -259,7 +259,10 @@ public class GrammarRule {
     }
 
     private String prepareSparql(String sparql, String uri) {
-        return sparql.replace("?Arg",  uri );
+        if(uri.contains("<"))
+            return sparql.replace("?Arg",   uri  );
+        else 
+         return sparql.replace("?Arg",  "<" + uri + ">" );
     }
 
     private String prepareSparql(String sparql, LinkedHashSet<String> uris) {

@@ -19,7 +19,7 @@ id	question
 
 run the command
 ````
-java -jar target/grammar-rules.jar "en" "grammarFiles/en/grammar_FULL_DATASET_EN.json" "grammarFiles/en/input.csv"
+java -jar target/grammar-rules.jar en grammarFiles/en/grammar_FULL_DATASET_EN_LAST_Test.json grammarFiles/en/input-QALD9-train-inductive.csv
 ````  
 
 output [output.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/output.csv)
