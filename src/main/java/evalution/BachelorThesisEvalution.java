@@ -20,7 +20,7 @@ import utils.csv.CsvFile;
 import utils.csv.CsvUtils;
 
 @NoArgsConstructor
-public class InterestingneessMain {
+public class BachelorThesisEvalution {
 
     //private static String inputDir = "grammarFiles/en/";
     private static String inputDir ="/media/elahi/Elements/BachelorThesis/results_csv/";
@@ -103,7 +103,7 @@ public class InterestingneessMain {
         try {
             CsvUtils.writeDataAtOnce(outputFile, outputs);
         } catch (Exception ex) {
-            Logger.getLogger(InterestingneessMain.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
             ex.getMessage();
         }
 
@@ -122,7 +122,7 @@ public class InterestingneessMain {
                 return new String[]{id, "N", sentence, "N"};
             }
         } catch (Exception ex) {
-            Logger.getLogger(InterestingneessMain.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception("Parsing failed for the text:"+sentence);
 
         }
@@ -142,7 +142,7 @@ public class InterestingneessMain {
                 return new String[]{id, "N", sentence, givenSparql,"N"};
             }
         } catch (Exception ex) {
-            Logger.getLogger(InterestingneessMain.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception("Parsing failed for the text:" + sentence);
 
         }
@@ -152,7 +152,7 @@ public class InterestingneessMain {
          try {
             return new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language,classFileName).getGrammar();
         } catch (Exception ex) {
-            Logger.getLogger(InterestingneessMain.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception("Grammar loading fail!!!!");
         }
         
