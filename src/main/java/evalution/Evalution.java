@@ -31,6 +31,7 @@ public class Evalution {
     public void evalute(String inputDir, String qaldDataType, String dataSetType, String inductive) {
          File[] files = new File(inputDir).listFiles();
         for (File file : files) {
+            System.out.println(file.getName());
             if (file.getName().contains("output-") && file.getName().contains(qaldDataType)
                     && file.getName().contains(dataSetType) && file.getName().contains(inductive)) {
                 List<String[]> rows = CsvUtils.readAllDataAtOnce(file);

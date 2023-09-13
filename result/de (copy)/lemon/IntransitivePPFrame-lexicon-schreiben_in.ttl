@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :schreiben_in ;
+  lemon:entry    :form_schreiben_in_present_preposition .
+
+:schreiben_in a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_schreiben_in_present ;
+  lemon:otherForm      :schreiben_in_present3rd ;
+  lemon:otherForm      :schreiben_in_past ;
+  lemon:otherForm      :schreiben_in_perfect ;
+  lemon:sense          :schreiben_in_sense_1 ;
+  lemon:synBehavior    :schreiben_in_frame .
+
+:form_schreiben_in_present a           lemon:Form ;
+  lemon:writtenRep     "schreiben"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:schreiben_in_present3rd a      lemon:Form ;
+  lemon:writtenRep "schreibt"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:schreiben_in_past a lemon:Form ;
+  lemon:writtenRep  "schrieb"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:schreiben_in_perfect a lemon:Form ;
+  lemon:writtenRep  "geschrieben"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:schreiben_in_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :schreiben_in_subj ;
+  lexinfo:prepositionalAdjunct :schreiben_in_obj .
+
+:schreiben_in_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :schreiben_in_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/programmingLanguage> ;
+  lemon:subjOfProp  :schreiben_in_obj ;
+  lemon:objOfProp   :schreiben_in_subj ;
+  lemon:condition   :schreiben_in_sense_1_condition .
+
+:schreiben_in_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Software> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Language> .
+
+
+:schreiben_in_obj lemon:marker :in .
+
+:arg2 lemon:marker :form_schreiben_in_present_preposition .
+
+## Prepositions ##
+
+:form_schreiben_in_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

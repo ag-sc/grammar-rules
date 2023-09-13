@@ -1,0 +1,91 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :to_beeinflussen ;
+  lemon:entry    :beeinflussened ;
+  lemon:entry    :form_beeinflussen_preposition .
+
+:to_beeinflussen a           lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_beeinflussen ;
+  lemon:otherForm      :form_beeinflussens ;
+  lemon:otherForm      :form_beeinflussened ;
+  lemon:sense          :beeinflussen_sense_1 ;
+  lemon:synBehavior    :beeinflussen_frame_transitive .
+
+:form_beeinflussen a         lemon:Form ;
+  lemon:writtenRep     "beeinflussen"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+:form_beeinflussens a    lemon:Form ;
+  lemon:writtenRep "beeinflusst"@de ;
+  lexinfo:tense    lexinfo:past ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+
+:form_beeinflussens a    lemon:Form ;
+  lemon:writtenRep "beeinflusste"@de ;
+  lexinfo:tense    lexinfo:past ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:form_beeinflussened a   lemon:Form ;
+  lemon:writtenRep "beeinflusst"@de ;
+  lexinfo:tense    lexinfo:perfect ;
+  lexinfo:person   lexinfo:thirdPerson .
+
+:beeinflussen_frame_transitive a lexinfo:TransitiveFrame ;
+  lexinfo:subject          :beeinflussen_subj ;
+  lexinfo:directObject     :beeinflussen_obj .
+
+:beeinflussen_sense_1 a   lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :beeinflussen_sense_1 ;
+  lemon:reference   <http://dbpedia.org/ontology/influencedBy> ;
+  lemon:subjOfProp  :beeinflussen_obj ;
+  lemon:objOfProp   :beeinflussen_subj ;
+  lemon:condition   :beeinflussen_sense_1_condition .
+
+
+:beeinflussen_sense_1_condition a    lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Person> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Person> .
+
+:beeinflussened a            lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:adjective ;
+  lemon:canonicalForm  :form_beeinflussened_canonical ;
+  lemon:otherForm      :form_beeinflussened_by ;
+  lemon:synBehavior    :beeinflussened_frame_adjectivepp ;
+  lemon:sense          :beeinflussened_ontomap .
+
+:form_beeinflussened_canonical a lemon:Form ;
+  lemon:writtenRep         "beeinflussen"@de .
+
+:form_beeinflussened_by a    lemon:Form ;
+  lemon:writtenRep     "beeinflussen"@de ;
+  lexinfo:verbFormMood lexinfo:participle .
+
+
+:beeinflussened_frame_adjectivepp a  lexinfo:AdjectivePPFrame ;
+  lexinfo:copulativeSubject    :beeinflussened_subj ;
+  lexinfo:prepositionalAdjunct :beeinflussened_obj .
+
+:beeinflussened_ontomap a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :beeinflussened_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/influencedBy> ;
+  lemon:subjOfProp  :beeinflussened_subj ;
+  lemon:objOfProp   :beeinflussened_obj ;
+  lemon:condition   :beeinflussen_sense_1_condition .
+:beeinflussened_obj lemon:marker :von .
+
+:arg2 lemon:marker :form_beeinflussen_form_preposition .
+
+## Prepositions ##
+
+:form_beeinflussen_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

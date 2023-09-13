@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :HeimStadion_von ;
+  lemon:entry    :HeimStadion_von_form_preposition .
+
+:HeimStadion_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :HeimStadion_von_form ;
+  lemon:otherForm      :HeimStadion_von_plural_form ;
+  lemon:otherForm      :HeimStadion_von_accusative_form ;
+  lemon:otherForm      :HeimStadion_von_dative_form ;
+  lemon:otherForm      :HeimStadion_von_genitive_form ;
+  lemon:otherForm      :HeimStadion_von_plural_form ;
+  lemon:sense          :HeimStadion_von_sense_1 ;
+  lemon:synBehavior    :HeimStadion_von_nounpp .
+
+:HeimStadion_von_form a lemon:Form ;
+  lemon:writtenRep "HeimStadion"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:HeimStadion_von_plural_form a lemon:Form ;
+  lemon:writtenRep "HeimStadien"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:HeimStadion_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "HeimStadion"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:HeimStadion_von_dative_form a lemon:Form ;
+  lemon:writtenRep "HeimStadion"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:HeimStadion_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "HeimStadion"@de ;
+  lexinfo:gender   lexinfo:neuter ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:HeimStadion_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:HeimStadion_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :HeimStadion_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/ground> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :HeimStadion_von_sense_1_condition .
+
+:HeimStadion_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/SportsClub> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/Stadium> .
+
+:arg2 lemon:marker :HeimStadion_von_form_preposition .
+
+## Prepositions ##
+
+:HeimStadion_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

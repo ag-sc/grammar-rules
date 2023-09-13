@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :durchführen ;
+  lemon:entry    :form_durchführen_present_preposition .
+
+:durchführen a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_durchführen_present ;
+  lemon:otherForm      :durchführen_present3rd ;
+  lemon:otherForm      :durchführen_past ;
+  lemon:otherForm      :durchführen_perfect ;
+  lemon:sense          :durchführen_sense_1 ;
+  lemon:synBehavior    :durchführen_frame .
+
+:form_durchführen_present a           lemon:Form ;
+  lemon:writtenRep     "durchführen"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:durchführen_present3rd a      lemon:Form ;
+  lemon:writtenRep "führt durch"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:durchführen_past a lemon:Form ;
+  lemon:writtenRep  "führte durch"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:durchführen_perfect a lemon:Form ;
+  lemon:writtenRep  "durchgeführt"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:durchführen_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :durchführen_subj ;
+  lexinfo:prepositionalAdjunct :durchführen_obj .
+
+:durchführen_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :durchführen_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/date> ;
+  lemon:subjOfProp  :durchführen_obj ;
+  lemon:objOfProp   :durchführen_subj ;
+  lemon:condition   :durchführen_sense_1_condition .
+
+:durchführen_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/MilitaryConflict> ;
+  lemon:propertyRange  <http://www.w3.org/2001/XMLSchema#date> .
+
+
+:durchführen_obj lemon:marker :am .
+
+:arg2 lemon:marker :form_durchführen_present_preposition .
+
+## Prepositions ##
+
+:form_durchführen_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "am"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

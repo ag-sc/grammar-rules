@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :Trainer_von ;
+  lemon:entry    :Trainer_von_form_preposition .
+
+:Trainer_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :Trainer_von_form ;
+  lemon:otherForm      :Trainer_von_plural_form ;
+  lemon:otherForm      :Trainer_von_accusative_form ;
+  lemon:otherForm      :Trainer_von_dative_form ;
+  lemon:otherForm      :Trainer_von_genitive_form ;
+  lemon:otherForm      :Trainer_von_plural_form ;
+  lemon:sense          :Trainer_von_sense_1 ;
+  lemon:synBehavior    :Trainer_von_nounpp .
+
+:Trainer_von_form a lemon:Form ;
+  lemon:writtenRep "Trainer"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Trainer_von_plural_form a lemon:Form ;
+  lemon:writtenRep "Trainer"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:Trainer_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "Trainer"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:Trainer_von_dative_form a lemon:Form ;
+  lemon:writtenRep "Trainer"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:Trainer_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "Trainers"@de ;
+  lexinfo:gender   lexinfo:masculine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:Trainer_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:Trainer_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :Trainer_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/coach> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :Trainer_von_sense_1_condition .
+
+:Trainer_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/IceHockeyLeague> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/CollegeCoach> .
+
+:arg2 lemon:marker :Trainer_von_form_preposition .
+
+## Prepositions ##
+
+:Trainer_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

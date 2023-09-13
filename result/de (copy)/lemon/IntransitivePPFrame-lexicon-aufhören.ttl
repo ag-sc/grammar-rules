@@ -1,0 +1,69 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :aufhören ;
+  lemon:entry    :form_aufhören_present_preposition .
+
+:aufhören a             lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm  :form_aufhören_present ;
+  lemon:otherForm      :aufhören_present3rd ;
+  lemon:otherForm      :aufhören_past ;
+  lemon:otherForm      :aufhören_perfect ;
+  lemon:sense          :aufhören_sense_1 ;
+  lemon:synBehavior    :aufhören_frame .
+
+:form_aufhören_present a           lemon:Form ;
+  lemon:writtenRep     "aufhören"@de ;
+  lexinfo:verbFormMood lexinfo:infinitive .
+
+
+:aufhören_present3rd a      lemon:Form ;
+  lemon:writtenRep "hört auf"@de ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:person   lexinfo:thirdPerson ;
+  lexinfo:tense    lexinfo:present .
+
+:aufhören_past a lemon:Form ;
+  lemon:writtenRep  "hörte auf"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:past .
+
+:aufhören_perfect a lemon:Form ;
+  lemon:writtenRep  "aufgehört"@de ;
+  lexinfo:number    lexinfo:singular ;
+  lexinfo:person    lexinfo:thirdPerson ;
+  lexinfo:tense     lexinfo:perfect .
+
+:aufhören_frame a  lexinfo:IntransitivePPFrame ;
+  lexinfo:subject              :aufhören_subj ;
+  lexinfo:prepositionalAdjunct :aufhören_obj .
+
+:aufhören_sense_1 a     lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping :aufhören_ontomap ;
+  lemon:reference   <http://dbpedia.org/ontology/routeEnd> ;
+  lemon:subjOfProp  :aufhören_obj ;
+  lemon:objOfProp   :aufhören_subj ;
+  lemon:condition   :aufhören_sense_1_condition .
+
+:aufhören_sense_1_condition a      lemon:condition ;
+  lemon:propertyDomain <http://dbpedia.org/ontology/Road> ;
+  lemon:propertyRange  <http://dbpedia.org/ontology/Location> .
+
+
+:aufhören_obj lemon:marker :in .
+
+:arg2 lemon:marker :form_aufhören_present_preposition .
+
+## Prepositions ##
+
+:form_aufhören_present_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

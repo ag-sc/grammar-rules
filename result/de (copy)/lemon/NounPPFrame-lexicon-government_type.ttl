@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :government_type ;
+  lemon:entry    :government_type_form_preposition .
+
+:government_type a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :government_type_form ;
+  lemon:otherForm      :government_type_plural_form ;
+  lemon:otherForm      :government_type_accusative_form ;
+  lemon:otherForm      :government_type_dative_form ;
+  lemon:otherForm      :government_type_genitive_form ;
+  lemon:otherForm      :government_type_plural_form ;
+  lemon:sense          :government_type_sense_1 ;
+  lemon:synBehavior    :government_type_nounpp .
+
+:government_type_form a lemon:Form ;
+  lemon:writtenRep "Regierungsform"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:government_type_plural_form a lemon:Form ;
+  lemon:writtenRep "Regierungsform"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:government_type_accusative_form a lemon:Form ;
+  lemon:writtenRep "Regierungsform"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:government_type_dative_form a lemon:Form ;
+  lemon:writtenRep "Regierungsform"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:government_type_genitive_form a lemon:Form ;
+  lemon:writtenRep "Regierungsform"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:government_type_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:government_type_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :government_type_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/governmentType> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :government_type_sense_1_condition .
+
+:government_type_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/GovernmentType> .
+
+:arg2 lemon:marker :government_type_form_preposition .
+
+## Prepositions ##
+
+:government_type_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "von"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .

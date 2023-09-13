@@ -1,162 +1,372 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package evalution;
-
 
 import java.io.File;
 import static java.lang.System.exit;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.fest.util.Arrays;
 import parser.Grammar;
 import parser.GrammarFactory;
 import utils.Dictionary;
 import utils.StringModifier;
-import utils.StringModifier;
-import utils.csv.CsvFile;
 import utils.csv.CsvUtils;
 
-@NoArgsConstructor
+/**
+ *
+ * @author elahi
+ */
 public class BachelorThesisEvalution {
 
-    //private static String inputDir = "grammarFiles/en/";
-    private static String inputDir ="/media/elahi/Elements/BachelorThesis/results_csv/";
-    private static String classFileName = "src/main/resources/LexicalEntryForClass.csv";
-    //private static String grammarFileName = "grammar_FULL_DATASET_EN.json";
+    private static String grammarFileName = "grammarFiles/en/grammar_FULL_DATASET_EN.json";
+    private static String inputDir = "result/de/";
+    private static String qaldFileName = "";
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
-    
-    public static void main(String[] args) throws Exception {
-        args = new String[]{"de", "grammar_FULL_DATASET_DE.json", "grammarFiles/de/input-QALD9-train-inductive.csv"};
+
+    private static String[] runParser(Grammar grammar, String id, String status, String sentence, String sparqlGold) {
+        try {
+            id = StringModifier.deleteQuote(id);
+            sentence = StringModifier.deleteQuote(sentence);
+            sparqlGold = StringModifier.deleteQuote(sparqlGold).replace("\n", "");
+            String sparql = grammar.parser(sentence);
+            String line = null;
+            if (sparql != null) {
+                //line = id + "," + "WORKS" + "," + sentence + "," + sparql + "," + sparqlGold;
+                return new String[]{id, status, sentence, sparql, sparqlGold};
+            } else {
+                return new String[]{id, status, sentence, "N", sparqlGold};
+            }
+
+            //str += line + "\n";
+        } catch (Exception ex) {
+            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+        return new String[]{};
+    }
+
+    private static String[] runParserOffLine(String id, String status, String sentence, String sparqlGold) {
+        try {
+            id = StringModifier.deleteQuote(id);
+            sentence = StringModifier.deleteQuote(sentence);
+            String sparql = StringModifier.deleteQuote(sparqlGold).replace("\n", "");
+            if (sparql != null) {
+                if (status.contains("WORK")) {
+                    return new String[]{id, status, sentence, sparqlGold, sparql};
+                } else {
+                    return new String[]{id, status, sentence, sparqlGold, "N"};
+                }
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+        return new String[]{};
+    }
+
+    private static List<String[]> parseOffLine(List<String[]> inputRows, String[] header) {
+        List<String[]> outputs = new ArrayList<String[]>();
+        Integer limit = -1;
+        Integer index = 0, countWork = 1;
+        for (String[] row : inputRows) {
+            /*if(!row[0].equals("44")){
+                    continue;
+                    }*/
+            System.out.println(row[0] + " " + row[1] + " " + row[2] + " " + row[3]);
+            //String[] result = runParser(grammar, row[0], row[1], row[2], row[3]);
+            String[] result = runParserOffLine(row[0], row[1], row[2], row[3]);
+            outputs.add(result);
+            System.out.println("result::" + result[0] + " " + result[1] + " " + result[2] + " " + result[3]);
+            /*if (row[1].contains("WORK")) {
+                    countWork = countWork + 1;
+                    }*/
+
+            index = index + 1;
+            if (limit == -1)
+                        ; else if (index >= limit) {
+                break;
+            }
+
+            //}
+            if (limit == -1)
+                        ; else if (index >= limit) {
+                break;
+            }
+
+        }
+        return outputs;
+
+    }
+
+    /*public static void main(String[] args) {
+        String inputDir = "result/en/";
+        args = new String[]{"", inputDir, "QALD9"};
+        String language = args[0];
+        Grammar grammar = null;
+        try {
+            grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language).getGrammar();
+        } catch (Exception ex) {
+            Logger.getLogger(QaldParse.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+        Boolean parseFlag = false, evaluateFlag = false, incrementalFlag = true;
+        String qaldDataType = "QALD9";
+        String dataSetType = "test";
+        String inductive = "incremental";
+        //inductive = "inductive";
+        File[] files = new File(inputDir).listFiles();
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
-            throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
+            //throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
+            exit(1);
         }
-        String language=args[0];
-        String inputFileName=args[1];
-        String[] dirs = new File(inputDir).list();
-        String[] folders = new String[]{"Conviction","Cosine","Leverage","Lift"};
-
-        for (String dir : dirs) {
-            for (String folder : folders) {
-                if (dir.contains(folder)) {
-                    String grammarFileName=inputDir+dir+File.separator+"grammar_FULL_DATASET_DE.json";
-                    String outputFileName= inputFileName.replace("input", folder+"-output");
-                    runParse(language,grammarFileName,inputFileName,outputFileName);
-                    break;
+        //"In which countries do people speak Japanese?"
+        String[] header = new String[]{"ID", "status", "sentence", "sparqlQald", "sparqlQueGG"};
+        if (parseFlag) {
+            System.out.println("Grammar Parser!!!");
+            for (File file : files) {
+                if (file.getName().contains("input-") && file.getName().contains(qaldDataType)
+                        && file.getName().contains(dataSetType)
+                        && file.getName().contains(inductive)) {
+                    File outputFile = new File(inputDir + file.getName().replace("input-", "output-"));
+                    List<String[]> inputRows = CsvUtils.readAllDataAtOnce(file);
+                    List<String[]> outputs = parseOffLine(inputRows, header);
+                    try {
+                        //System.out.println("countWork::" + countWork + " row:Size::" + inputRows.size());
+                        CsvUtils.writeDataAtOnce(outputFile, outputs);
+                    } catch (Exception ex) {
+                        Logger.getLogger(QaldParse.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.getMessage();
+                    }
                 }
             }
         }
-        /*String language = "de";
-        String grammarFile = grammarDir + "grammar_FULL_DATASET_DE.json";
-        String inputFileName = "grammarFiles/de/input-QALD9-train-inductive.csv";*/
+        if (evaluateFlag) {
+            Evalution evalution = new Evalution();
+            evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+        }
+        if (incrementalFlag) {
+            String[] languages = new String[]{"en"};
+            qaldDataType = "QALD9";
+            dataSetType = "train";
+            inductive = "inductive";
+            String incremental="incremental";
+            
+            for (String languageT : languages) {
+                inputDir = "result/" + languageT + "/";
+                
+                File inductiveFile = new File(inputDir + "output-"+qaldDataType+"-"+dataSetType+"-"+inductive+".csv");
+                File incrementalFile = new File(inputDir + "output-"+qaldDataType+"-"+dataSetType+"-"+incremental+".csv");
+                List<String[]> newLexicalEntries = findNewEntries(incrementalFile,dataSetType);
+                List<String[]> inputRows = CsvUtils.readAllDataAtOnce(inductiveFile);
+                List<String[]> results = new ArrayList<String[]>();
+                String[] resultHead = new String[]{"id", "lexicalEntry", "macro P", "macro R", "macro F", "micro-P", "micro-R", "micro-F"};
+                results.add(resultHead);
+                if(dataSetType.contains("test")){
+                    if(languageT.contains("en"))
+                       results.add(new String[]{"inductive", "en","0.988924", "0.14705883", "0.25604263", "0.24", "0.2358013", "0.23693568"});  
+                    else if(languageT.contains("de"))
+                       results.add(new String[]{"inductive", "de","0.9912892", "0.13388236", "0.23590383", "0.19333333", "0.18913463", "0.19026901"});  
 
-    }
+                }
+                Integer index = 1;
+                for (String[] newLexicalEntry : newLexicalEntries) {
+                    Integer microIndex=0,macroindex=0;
+                    String newLexicalEntryID = newLexicalEntry[0];
+                    String question = newLexicalEntry[2];
+                    File outputFile = new File(inputDir + incrementalFile.getName().replace("output-", index+"-" + "output-"+newLexicalEntryID+"-" ));
+                    String[]head=new String[]{"ID","status","sentence","sparqlQueGG","sparqlQald"};
+                    List<String[]> inputNewRows =new ArrayList<String[]>();
+                    inputNewRows.add(head);
+                    inputNewRows = addLexicalEntryToFile(newLexicalEntry, inputRows);
+                   
+                    Evalution evalution = new Evalution();
+                    List<String[]> outputs = evalution.evalute(inputNewRows);
+                    if(dataSetType.contains("test")){
+                       microIndex=151;
+                       macroindex=152;  
+                    }
+                    else{
+                         microIndex=409;
+                         macroindex=410;  
+                    }
+                    String[] result_1 = outputs.get(microIndex);
+                    String[] result_2 = outputs.get(macroindex);
+                    System.out.println(newLexicalEntry.length + " now::" + index + " id::" + newLexicalEntryID + " ques::" + question);
+                    System.out.println(result_1[8] + " " + result_1[9] + " " + result_1[10]);
+                    System.out.println(result_2[8] + " " + result_2[9] + " " + result_2[10]);
+                    results.add(new String[]{newLexicalEntryID, question, result_1[8], result_1[9], result_1[10], result_2[8], result_2[9], result_2[10]});
+                    
+                    CsvUtils.writeDataAtOnce(outputFile, outputs);
+                   
+                    index = index + 1;
+                    
+                    inputRows =new ArrayList<String[]>();
+                    inputRows.addAll(inputNewRows);
 
-    public static void runParse(String language,String grammarFileName,String inputFileName,String outputFileName) throws Exception {
-        Boolean parseFlag=false,evaluationFlag=true;
-        //System.out.println(inputDir+"grammar_FULL_DATASET_EN_LAST_Test.json");
-        Grammar grammar = loadGrammar(grammarFileName,language,classFileName);
-        File outputFile = new File(outputFileName);
-        String[] header = new String[]{"ID", "status", "sentence", "sparqlQald"};
-        System.out.println("Grammar Parser!!!");
-        File file = new File(inputFileName);
-        List<String[]> rows = CsvUtils.readAllDataAtOnce(file);
-       
+                     
+                }
+                CsvUtils.writeDataAtOnce(new File(inputDir + "9000" + "-output-"+dataSetType+"-"+"incremental.csv"), results);
+
+            }
+
+        }
+
+    }*/
+    private static List<String[]> addLexicalEntryToFile(List<String[]> newLexicalEntriesRows, List<String[]> inputRows) {
         List<String[]> outputs = new ArrayList<String[]>();
-        outputs.add(header);
-        Integer index=0;
-        for (String[] row : rows) {
-            String id=null,sentence=null,givenSparql=null;
-            id=row[0];sentence=row[1];
-            Integer idInteger=Integer.parseInt(id);
-            if(row.length>=3){
-               givenSparql=row[2]; 
-            }
-            /*if(idInteger!=118)
-               continue;*/ 
-            
-            System.out.println(id+" sentence::" + sentence+" row.length::"+row.length);
-            if (parseFlag) {
-                String[] result = runParser(grammar, id, sentence);
-                System.out.println("result::"+ id+" " +result[2] + " \n" + result[3]+" "+result[1]);
-                outputs.add(result);
-            }
-            else{
-                String[] result = runParserEvaluate(grammar, id, sentence,givenSparql);
-                if(idInteger!=94)
-                  System.out.println("result::"+ id+" " +result[2] + " " + result[4]+" "+result[1]);
-                outputs.add(result); 
-            }
-
-            index=index+1;
-            
-            System.out.println();
-            
-            /*if(index>20)
-                break;*/
-            
-        }
-        try {
-            CsvUtils.writeDataAtOnce(outputFile, outputs);
-        } catch (Exception ex) {
-            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
-            ex.getMessage();
+        Map<String, String[]> newLexicalEntriesMap = new TreeMap<String, String[]>();
+        for (String[] newRow : newLexicalEntriesRows) {
+            newLexicalEntriesMap.put(newRow[0], newRow);
         }
 
-    }
-
-    private static String[] runParser(Grammar grammar, String id,  String sentence) throws Exception {
-        try {
-            if(id.equals("94"))
-               return new String[]{id, "N", sentence, "N"};
-            id = StringModifier.deleteQuote(id);
-            sentence = StringModifier.deleteQuote(sentence);
-            String sparql = grammar.parser(sentence);
-            if (sparql != null) {
-                return new String[]{id, "WORK", sentence, sparql};
+        for (String[] row : inputRows) {
+            String id = row[0];
+            if (newLexicalEntriesMap.containsKey(id)) {
+                String[] rowNew = newLexicalEntriesMap.get(id);
+                //System.out.println(row[0]+" id:" + rowNew[0]);
+                //System.out.println(row[1]+" status:" + rowNew[1]);
+                //System.out.println(row[3]+" sparql_1:" + rowNew[3]);
+                //System.out.println(row[4]+" sparql_2:" + rowNew[4]);
+                outputs.add(rowNew);
             } else {
-                return new String[]{id, "N", sentence, "N"};
+                outputs.add(row);
             }
-        } catch (Exception ex) {
-            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
-            throw new Exception("Parsing failed for the text:"+sentence);
-
         }
-    }
-    
-    private static String[] runParserEvaluate(Grammar grammar, String id, String sentence, String givenSparql) throws Exception {
-        try {
-            if (id.equals("94")) {
-                return new String[]{id, "N", sentence, "N"};
-            }
-            id = StringModifier.deleteQuote(id);
-            sentence = StringModifier.deleteQuote(sentence);
-            String sparql = grammar.parser(sentence);
-            if (sparql != null) {
-                return new String[]{id, "WORK", sentence, givenSparql,sparql};
-            } else {
-                return new String[]{id, "N", sentence, givenSparql,"N"};
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
-            throw new Exception("Parsing failed for the text:" + sentence);
-
-        }
+        return outputs;
     }
 
-    private static Grammar loadGrammar(String grammarFileName, String language,String classFileName) throws Exception {
-         try {
-            return new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language,classFileName).getGrammar();
-        } catch (Exception ex) {
-            Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
-            throw new Exception("Grammar loading fail!!!!");
+    private static Map<String, List<String[]>> findNewEntries(File incrementalFile, String dataType) {
+        Map<String, List<String[]>> outputs = new TreeMap<String, List<String[]>>();
+        List<String[]> incrementalRows = CsvUtils.readAllDataAtOnce(incrementalFile);
+        for (String[] row : incrementalRows) {
+            String status = row[1];
+            status = status.toLowerCase();
+            Boolean flag = false;
+            if (dataType.contains("test") && status.equals("worknew")) {
+                flag = true;
+            } else if (dataType.contains("train") && NumberUtils.isDigits(status)) {
+                flag = true;
+            }
+            List<String[]> existRows = new ArrayList<String[]>();
+            if (flag) {
+                if (outputs.containsKey(status)) {
+                    existRows = outputs.get(status);
+                }
+                existRows.add(row);
+                outputs.put(status, existRows);
+
+            }
+
         }
-        
+        return outputs;
     }
-     
+
+    public static void onlineEvalution(String language, String classFileName) {
+
+        Boolean parseFlag = false, evaluateFlag = true, incrementalFlag = false;
+        String qaldDataType = "QALD7";
+        String dataSetType = "train";
+        String inductive = "inductive";
+        File[] files = new File(inputDir).listFiles();
+        String[] header = new String[]{"ID", "status", "sentence", "sparqlQald", "sparqlQueGG"};
+        /*if (parseFlag) {
+            Grammar grammar = null;
+            try {
+                grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language, classFileName).getGrammar();
+            } catch (Exception ex) {
+                Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
+            }
+            System.out.println("Grammar Parser!!!");
+            for (File file : files) {
+                if (file.getName().contains("input-") && file.getName().contains(qaldDataType)
+                        && file.getName().contains(dataSetType)
+                        && file.getName().contains(inductive)) {
+                    File outputFile = new File(inputDir + file.getName().replace("input-", "output-"));
+                    List<String[]> inputRows = CsvUtils.readAllDataAtOnce(file);
+                    List<String[]> outputs = parseOffLine(inputRows, header);
+                    try {
+                        //System.out.println("countWork::" + countWork + " row:Size::" + inputRows.size());
+                        CsvUtils.writeDataAtOnce(outputFile, outputs);
+                    } catch (Exception ex) {
+                        Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.getMessage();
+                    }
+                }
+            }
+        }*/
+        if (evaluateFlag) {
+            Evalution evalution = new Evalution();
+            evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+        }
+        if (incrementalFlag) {
+            String[] languages = new String[]{"en"};
+            qaldDataType = "QALD9";
+            dataSetType = "train";
+            inductive = "inductive";
+            String incremental = "incremental";
+
+            for (String languageT : languages) {
+                inputDir = "result/" + languageT + "/";
+
+                File inductiveFile = new File(inputDir + "output-" + qaldDataType + "-" + dataSetType + "-" + inductive + ".csv");
+                File incrementalFile = new File(inputDir + "output-" + qaldDataType + "-" + dataSetType + "-" + incremental + ".csv");
+                Map<String, List<String[]>> newLexicalEntries = findNewEntries(incrementalFile, dataSetType);
+                List<String[]> inputRows = CsvUtils.readAllDataAtOnce(inductiveFile);
+                List<String[]> results = new ArrayList<String[]>();
+                String[] resultHead = new String[]{"id", "lexicalEntry", "macro P", "macro R", "macro F", "micro-P", "micro-R", "micro-F"};
+                results.add(resultHead);
+                Integer index = 1;
+                for (String newLexicalEntryID : newLexicalEntries.keySet()) {
+                    Integer microIndex = 0, macroindex = 0;
+                    List<String[]> newLexicalRows = newLexicalEntries.get(newLexicalEntryID);
+                    File outputFile = new File(inputDir + incrementalFile.getName().replace("output-", index + "-" + "output-" + newLexicalEntryID + "-"));
+                    String[] head = new String[]{"ID", "status", "sentence", "sparqlQueGG", "sparqlQald"};
+                    List<String[]> inputNewRows = new ArrayList<String[]>();
+                    inputNewRows.add(head);
+                    inputNewRows = addLexicalEntryToFile(newLexicalRows, inputRows);
+                    Evalution evalution = new Evalution();
+                    List<String[]> outputs = evalution.evalute(inputNewRows);
+                    String[] result_1 = outputs.get(microIndex);
+                    String[] result_2 = outputs.get(macroindex);
+                    System.out.println(newLexicalEntries.size() + " now::" + index + " id::" + newLexicalEntryID);
+                    System.out.println(result_1[8] + " " + result_1[9] + " " + result_1[10]);
+                    System.out.println(result_2[8] + " " + result_2[9] + " " + result_2[10]);
+                    results.add(new String[]{newLexicalEntryID, newLexicalEntryID, result_1[8], result_1[9], result_1[10], result_2[8], result_2[9], result_2[10]});
+
+                    CsvUtils.writeDataAtOnce(outputFile, outputs);
+
+                    index = index + 1;
+
+                    inputRows = new ArrayList<String[]>();
+                    inputRows.addAll(inputNewRows);
+
+                }
+                CsvUtils.writeDataAtOnce(new File(inputDir + "9000" + "-output-" + dataSetType + "-" + "incremental.csv"), results);
+
+            }
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+        String language = "de";
+        Grammar grammar = null;
+        String inputDir = "result/de/";
+        String classFileName = "src/main/resources/LexicalEntryForClass.csv";
+        onlineEvalution(language, classFileName);
+    }
 
 }

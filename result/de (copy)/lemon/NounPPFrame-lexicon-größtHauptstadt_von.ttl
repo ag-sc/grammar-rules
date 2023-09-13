@@ -1,0 +1,75 @@
+@prefix :        <http://localhost:8080/lexicon#> .
+
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix lemon:   <http://lemon-model.net/lemon#> .
+
+@base            <http://localhost:8080#> .
+
+:lexicon_en a    lemon:Lexicon ;
+  lemon:language "de" ;
+  lemon:entry    :größtHauptstadt_von ;
+  lemon:entry    :größtHauptstadt_von_form_preposition .
+
+:größtHauptstadt_von a       lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm  :größtHauptstadt_von_form ;
+  lemon:otherForm      :größtHauptstadt_von_plural_form ;
+  lemon:otherForm      :größtHauptstadt_von_accusative_form ;
+  lemon:otherForm      :größtHauptstadt_von_dative_form ;
+  lemon:otherForm      :größtHauptstadt_von_genitive_form ;
+  lemon:otherForm      :größtHauptstadt_von_plural_form ;
+  lemon:sense          :größtHauptstadt_von_sense_1 ;
+  lemon:synBehavior    :größtHauptstadt_von_nounpp .
+
+:größtHauptstadt_von_form a lemon:Form ;
+  lemon:writtenRep "größte Stadt"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:größtHauptstadt_von_plural_form a lemon:Form ;
+  lemon:writtenRep "größte Städte"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:plural ;
+  lexinfo:case     lexinfo:nominativeCase .
+
+:größtHauptstadt_von_accusative_form a lemon:Form ;
+  lemon:writtenRep "größte Stadt"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:accusativeCase .
+
+:größtHauptstadt_von_dative_form a lemon:Form ;
+  lemon:writtenRep "größte Stadt"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:dativeCase .
+
+:größtHauptstadt_von_genitive_form a lemon:Form ;
+  lemon:writtenRep "größte Stadt"@de ;
+  lexinfo:gender   lexinfo:feminine ;
+  lexinfo:number   lexinfo:singular ;
+  lexinfo:case     lexinfo:genitiveCase .
+
+:größtHauptstadt_von_nounpp a        lexinfo:NounPPFrame ;
+  lexinfo:copulativeArg        :arg1 ;
+  lexinfo:prepositionalAdjunct :arg2 .
+
+:größtHauptstadt_von_sense_1 a lemon:OntoMap, lemon:LexicalSense ;
+  lemon:ontoMapping         :größtHauptstadt_von_sense_1 ;
+  lemon:reference           <http://dbpedia.org/ontology/largestCity> ;
+  lemon:subjOfProp          :arg2 ;
+  lemon:objOfProp           :arg1 ;
+  lemon:condition           :größtHauptstadt_von_sense_1_condition .
+
+:größtHauptstadt_von_sense_1_condition a lemon:condition ;
+  lemon:propertyDomain  <http://dbpedia.org/ontology/Country> ;
+  lemon:propertyRange   <http://dbpedia.org/ontology/City> .
+
+:arg2 lemon:marker :größtHauptstadt_von_form_preposition .
+
+## Prepositions ##
+
+:größtHauptstadt_von_form_preposition a                  lemon:SynRoleMarker ;
+  lemon:canonicalForm  [ lemon:writtenRep "in"@en ] ;
+  lexinfo:partOfSpeech lexinfo:preposition .
