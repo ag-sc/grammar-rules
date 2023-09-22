@@ -38,12 +38,15 @@ public class BachelorThesisParse {
         String language=args[0];
         String inputFileName=args[2];
         String[] dirs = new File(inputDir).list();
-        String[] folders = new String[]{"AllConf","Cosine","Coherence","Kulczynski","MaxConf","IR","Conviction","Lift","Leverage"};
+        //String[] folders = new String[]{"AllConf","Cosine","Coherence","Kulczynski","MaxConf","IR","Conviction","Lift","Leverage","all"};
+        String[] folders = new String[]{"_all_"};
 
+        
         for (String dir : dirs) {
-            if(!dir.contains("_100_")){
+            /*if(!dir.contains("_100_")){
                 continue;
-            }
+            }*/
+            
    
             System.out.println(dir);
             for (String folder : folders) {
@@ -121,9 +124,9 @@ public class BachelorThesisParse {
                return new String[]{id, "N", sentence, "N"};
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
-            String sparql = grammar.parser(sentence);
-            if (sparql != null) {
-                return new String[]{id, "WORK", sentence, sparql};
+            List<String> sparqls = grammar.parser(sentence);
+            if (!sparqls.isEmpty()) {
+                return new String[]{id, "WORK", sentence, sparqls.toString()};
             } else {
                 return new String[]{id, "N", sentence, "N"};
             }
@@ -141,9 +144,9 @@ public class BachelorThesisParse {
             }
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
-            String sparql = grammar.parser(sentence);
-            if (sparql != null) {
-                return new String[]{id, "WORK", sentence, givenSparql,sparql};
+            List<String> sparqls = grammar.parser(sentence);
+            if (!sparqls.isEmpty()) {
+                return new String[]{id, "WORK", sentence, givenSparql,sparqls.toString()};
             } else {
                 return new String[]{id, "N", sentence, givenSparql,"N"};
             }

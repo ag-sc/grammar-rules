@@ -59,7 +59,7 @@ public class SparqlQuery {
         if (!this.isValid(sparqlQuery)) {
             return;
         }
-        //System.out.println(sparqlQuery);
+        System.out.println(sparqlQuery);
         String resultSparql = executeSparqlQuery(sparqlQuery);
         this.parseResult(resultSparql);
     }

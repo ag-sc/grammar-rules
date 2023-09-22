@@ -92,51 +92,52 @@ public class GrammarRule {
         }
         return null;
     }
-    
-    public String parse(String sentence, String ruleRegularEx) throws Exception {
+
+    public List<String> parse(String sentence, String ruleRegularEx) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
+        List<String> questionSparqls = new ArrayList<String>();
+
         if (!isPlaceHolder(this.template)) {
             Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
             for (String questionSparql : sparqls.keySet()) {
-                 return questionSparql;
+                questionSparqls.add(questionSparql);
             }
         }
         List<String> results = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
         if (!results.isEmpty()) {
             //List<String> extractedParts =this.filterMatches(this.qaElement.getBindingSparqls(),results);
-            ExtractPart extractPartInfor=new ExtractPart(this.filterMatches(this.qaElement.getBindingSparqls(),results));
+            ExtractPart extractPartInfor = new ExtractPart(this.filterMatches(this.qaElement.getBindingSparqls(), results));
             System.out.println(extractPartInfor);
-            
+
             Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
             for (String questionSparql : sparqls.keySet()) {
                 List<String> bindingSparqls = sparqls.get(questionSparql);
-                //String selecttedSparql = isSparqlMatch(bindingSparqls, goldSparql);
-                //if(selecttedSparql!=null){
                 for (String bindingSparql : bindingSparqls) {
                     //questionSparql=addRestriction(extractedParts,questionSparql);
-                    String sparql=isExceptional(extractPartInfor,bindingSparql);
+                    String sparql = isExceptional(extractPartInfor, bindingSparql);
                     if (sparql != null) {
-                        questionSparql=isExceptional(extractPartInfor,bindingSparql);
+                        questionSparql = isExceptional(extractPartInfor, bindingSparql);
                         if (extractPartInfor.getRestrictionClassVariable() != null) {
                             questionSparql = addRestriction(extractPartInfor.getRestrictionClassVariable(), questionSparql);
                         }
-                        //System.out.println(questionSparql);
-                        return questionSparql;
-                    }
-                    List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
-                    entityMaps = this.findEntityMapEndpoint(bindingSparql);
-                    if (!entityMaps.isEmpty()) {
-                         questionSparql=this.findEntity(questions, entityMaps, extractPartInfor.getEntities(), bindingSparqls, questionSparql);
-                         if(extractPartInfor.getRestrictionClassVariable()!=null)
-                            questionSparql=addRestriction(extractPartInfor.getRestrictionClassVariable(),questionSparql);
-                         return questionSparql;
+                        questionSparqls.add(questionSparql);
+                    } else {
+                        List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
+                        entityMaps = this.findEntityMapEndpoint(bindingSparql);
+                        if (!entityMaps.isEmpty()) {
+                            questionSparql = this.findEntity(questions, entityMaps, extractPartInfor.getEntities(), bindingSparqls, questionSparql);
+                            if (extractPartInfor.getRestrictionClassVariable() != null) {
+                                questionSparql = addRestriction(extractPartInfor.getRestrictionClassVariable(), questionSparql);
+                            }
+                            questionSparqls.add(questionSparql);
+                        }
                     }
 
                 }
             }
         }
 
-        return null;
+        return questionSparqls;
     }
 
    

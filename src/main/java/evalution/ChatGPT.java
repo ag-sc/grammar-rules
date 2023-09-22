@@ -6,6 +6,7 @@
 package evalution;
 
 import java.io.File;
+import java.io.IOException;
 import static java.lang.System.exit;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,11 @@ public class ChatGPT {
         String[] header = new String[]{"ID", "status", "sentence", "sparqlQald", "sparqlQueGG"};
 
         Evalution evalution = new Evalution();
-        evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+        try {
+            evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+        } catch (IOException ex) {
+            Logger.getLogger(ChatGPT.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 

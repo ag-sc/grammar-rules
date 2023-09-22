@@ -32,19 +32,18 @@ public class Grammar {
     private Boolean entityRetriveOnline = false;
     private Integer numberOfEntities = -1;
     private String language = "en";
-    private static  String classFileName =null;
+    private static String classFileName = null;
 
-
-    public Grammar(List<GrammarRule> grammarRules, Boolean retriveType, Integer numberofEntities, String language,String classFileNameT) {
+    public Grammar(List<GrammarRule> grammarRules, Boolean retriveType, Integer numberofEntities, String language, String classFileNameT) {
         this.grammarRules = grammarRules;
         this.entityRetriveOnline = retriveType;
         this.numberOfEntities = numberofEntities;
         this.language = language;
-        classFileName=classFileNameT;
+        classFileName = classFileNameT;
     }
 
     //The methods return a SPARQL query or „null“ if there is no parse.
-    public String parser(String sentence) throws Exception {
+    /*public String parser(String sentence) throws Exception {
         Map<String, GrammarRule> matchedGrammarRules = new HashMap<String, GrammarRule>();
         for (GrammarRule grammarRule : grammarRules) {
             String regEx = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language);
@@ -73,5 +72,45 @@ public class Grammar {
         }
 
         return null;
+    }*/
+    public List<String> parser(String sentence) throws Exception {
+        Map<String, GrammarRule> matchedGrammarRules = new HashMap<String, GrammarRule>();
+        for (GrammarRule grammarRule : grammarRules) {
+            String regEx = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language);
+            if (regEx != null) {
+                matchedGrammarRules.put(regEx, grammarRule);
+            }
+        }
+        List<String> sortedRegularEx = Sorting.sortQuestionsReg(matchedGrammarRules.keySet());
+        List<String> resultSparqls = new ArrayList<String>();
+            for (String regularEx : sortedRegularEx) {
+                GrammarRule grammarRule = matchedGrammarRules.get(regularEx);
+                List<String> sparqls = grammarRule.parse(sentence, regularEx);
+                if (sparqls.size() == 1) {
+                    String sparql = sparqls.iterator().next();
+                    if (sparql != null) {
+                        String complexSentence = grammarRule.getQaElement().getComplexSentence();
+                        if (complexSentence != null) {
+                            String mainSparql = sparql;
+                            List<String> partSparqls = parser(complexSentence);
+                            if (partSparqls.isEmpty()) {
+                                for (String partSparql : partSparqls) {
+                                    String resultSparql = grammarRule.joinSparql(mainSparql, partSparql);
+                                    resultSparqls.add(resultSparql);
+                                }
+                            } else {
+                                return null;
+                            }
+                        } else {
+                            return sparqls;
+                        }
+                    }
+                } else if (sparqls.size() > 1) {
+                    return sparqls;
+                }
+
+            }
+       
+        return resultSparqls;
     }
 }

@@ -6,6 +6,7 @@
 package evalution;
 
 import java.io.File;
+import java.io.IOException;
 import static java.lang.System.exit;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class BachelorThesisEvalution {
     private static Integer numberOfEntities = -1;
 
     private static String[] runParser(Grammar grammar, String id, String status, String sentence, String sparqlGold) {
-        try {
+       /* try {
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
             sparqlGold = StringModifier.deleteQuote(sparqlGold).replace("\n", "");
@@ -51,7 +52,7 @@ public class BachelorThesisEvalution {
         } catch (Exception ex) {
             Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
-        }
+        }*/
         return new String[]{};
     }
 
@@ -308,10 +309,14 @@ public class BachelorThesisEvalution {
         }*/
         if (evaluateFlag) {
             Evalution evalution = new Evalution();
-            evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+            try {
+                evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+            } catch (IOException ex) {
+                Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (incrementalFlag) {
-            String[] languages = new String[]{"en"};
+        /*    String[] languages = new String[]{"en"};
             qaldDataType = "QALD9";
             dataSetType = "train";
             inductive = "inductive";
@@ -356,7 +361,7 @@ public class BachelorThesisEvalution {
                 CsvUtils.writeDataAtOnce(new File(inputDir + "9000" + "-output-" + dataSetType + "-" + "incremental.csv"), results);
 
             }
-
+        */
         }
 
     }

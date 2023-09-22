@@ -6,6 +6,7 @@
 package evalution;
 
 import java.io.File;
+import java.io.IOException;
 import static java.lang.System.exit;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,22 +28,29 @@ import utils.csv.CsvUtils;
  */
 public class QaldParse {
 
-    private static String grammarFileName = "grammarFiles/en/grammar_FULL_DATASET_EN.json";
-    private static String inputDir = "result/en/";
-    private static String qaldFileName = "";
-    private static Boolean entityRetriveOnline = true;
-    private static Integer numberOfEntities = -1;
+    
+    private  String qaldFileName = "";
+    private  Boolean entityRetriveOnline = true;
+    private  Integer numberOfEntities = -1;
+    private  String grammarFileName = null;
+    private  String inputDir =null;
+    
+    public QaldParse(String inputDirT, String grammarFileNameT) {
+        this.inputDir = inputDirT;
+        this.grammarFileName = grammarFileNameT;
+
+    }
 
     private static String[] runParser(Grammar grammar, String id, String status, String sentence, String sparqlGold) {
         try {
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
             sparqlGold = StringModifier.deleteQuote(sparqlGold).replace("\n", "");
-            String sparql = grammar.parser(sentence);
+            List<String> sparqls = grammar.parser(sentence);
             String line = null;
-            if (sparql != null) {
+            if (!sparqls.isEmpty()) {
                 //line = id + "," + "WORKS" + "," + sentence + "," + sparql + "," + sparqlGold;
-                return new String[]{id, status, sentence, sparql, sparqlGold};
+                return new String[]{id, status, sentence, sparqls.toString(), sparqlGold};
             } else {
                 return new String[]{id, status, sentence, "N", sparqlGold};
             }
@@ -409,7 +417,7 @@ public class QaldParse {
     
     
     
-    public static void onlineEvalution(String language,String classFileName) {
+    public  void onlineEvalution(String language,String classFileName) {
         
         Grammar grammar = null;
         try {
@@ -446,7 +454,12 @@ public class QaldParse {
         }
         if (evaluateFlag) {
             Evalution evalution = new Evalution();
-            evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+            try {
+                evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+            } catch (IOException ex) {
+                Logger.getLogger(QaldParse.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
+            }
         }
         if (incrementalFlag) {
             String[] languages = new String[]{"en"};
@@ -500,11 +513,12 @@ public class QaldParse {
     }
     
     public static void main(String[] args) {
+        String grammarFileName = "grammarFiles/en/grammar_FULL_DATASET_EN.json";
+        String inputDir = "grammarFiles/en/";
         String language ="en";
-        Grammar grammar = null;
-        String inputDir = "result/en/";
         String classFileName = "src/main/resources/LexicalEntryForClass.csv";
-        onlineEvalution(language,classFileName);
+        QaldParse qaldParse=new QaldParse(inputDir,grammarFileName);
+        qaldParse.onlineEvalution(language,classFileName);
     }
 
 }

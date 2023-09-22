@@ -1,12 +1,16 @@
 package evalution;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.FscoreCalculation;
+import utils.Result;
+import utils.Results;
 import utils.SparqlQuery;
 import utils.csv.CsvUtils;
 
@@ -28,15 +32,14 @@ public class Evalution {
        
 
     }
-    public void evalute(String inputDir, String qaldDataType, String dataSetType, String inductive) {
+    public void evalute(String inputDir, String qaldDataType, String dataSetType, String inductive) throws IOException {
          File[] files = new File(inputDir).listFiles();
         for (File file : files) {
-            System.out.println(file.getName());
             if (file.getName().contains("output-") && file.getName().contains(qaldDataType)
                     && file.getName().contains(dataSetType) && file.getName().contains(inductive)) {
-                List<String[]> rows = CsvUtils.readAllDataAtOnce(file);
-                File outputFile = new File(inputDir + file.getName().replace("output-", "evaluation-"));
-                List<String[]> outputs = evalute(rows);
+                List<String[]> rows = this.getParseResults(file);
+                File outputFile = new File(inputDir + file.getName().replace("output-", "evaluation-").replace(".json", ".csv"));
+                List<String[]> outputs = this.evalute(rows);
                 CsvUtils.writeDataAtOnce(outputFile, outputs);
             }
 
@@ -120,6 +123,26 @@ public class Evalution {
             ex.getMessage();
         }
         return outputs;
+    }
+
+    private List<String[]> getParseResults(File outputFile) throws IOException {
+        List<String[]> rows = new ArrayList<String[]>();
+        ObjectMapper mapper = new ObjectMapper();
+        Results results = mapper.readValue(outputFile, Results.class);
+        for (Result result : results.getResults()) {
+            System.out.println(result);
+            String id = result.getId();
+            String status = result.getStatus();
+            String sentence = result.getSentence();
+            String givenSparql = result.getGivenSparql();
+            String queGGSParql="N";
+            if(!result.getSparqls().isEmpty()){
+               queGGSParql = result.getSparqls().iterator().next();
+ 
+            }
+            rows.add(new String[]{id, status, sentence,givenSparql, queGGSParql});
+        }
+       return rows;
     }
 
 }
