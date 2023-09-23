@@ -70,13 +70,15 @@ public class QueGG {
                 //outputs.add(result);
             }
             else {
-                parseResult = runParserForQald(grammar, id, sentence, givenSparql);
-                if (idInteger != 94) {
-                    //System.out.println("result::"+ id+" " +result[2] + " " + result[4]+" "+result[1]);
-                    
-                    //outputs.add(result);  
+                
+                if (idInteger == 94||idInteger == 310) 
+                   parseResult=new Result(id, "N", sentence, givenSparql,new ArrayList<String>());
+                else 
+                   parseResult = runParserForQald(grammar, id, sentence, givenSparql);
+            
+                
                     parseResults.add(parseResult);
-                }
+                
                
 
             }
@@ -85,8 +87,8 @@ public class QueGG {
             
             System.out.println();
             
-            if(index>100)
-                break;
+            /*if(index>100)
+                break;*/
             
         }
         try {
@@ -122,9 +124,7 @@ public class QueGG {
     
     private static Result runParserForQald(Grammar grammar, String id, String sentence, String givenSparql) throws Exception {
         try {
-            if (id.equals("94")) {
-                return new Result(id, "N", sentence, givenSparql,new ArrayList<String>());
-            }
+            
             id = StringModifier.deleteQuote(id);
             sentence = StringModifier.deleteQuote(sentence);
             List<String> sparqls = grammar.parser(sentence);

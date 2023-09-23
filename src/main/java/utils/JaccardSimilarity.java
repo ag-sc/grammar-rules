@@ -118,7 +118,7 @@ public class JaccardSimilarity {
                 index = index + 1;
                 double score = jaccardSimilarityManual(label, extractPart);
                 if (score > 0.0) {
-                    System.out.println(index + " " + score + " " + extractPart + " " + label + " " + uri);
+                    //System.out.println(index + " " + score + " " + extractPart + " " + label + " " + uri);
                     entityMapJaccard.put(score, uri);
                 }
 

@@ -190,7 +190,6 @@ public class GrammarRule {
     }
     
     public List<Map<String, String>> findEntityMapEndpoint(String bindingSparql) {
-        System.out.println(bindingSparql);
         List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
         entityMaps.add(new SparqlQuery(bindingSparql).getEntityMap());
         return entityMaps;
