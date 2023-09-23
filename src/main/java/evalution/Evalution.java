@@ -6,8 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.commons.lang3.StringUtils;
 import utils.FscoreCalculation;
 import utils.Result;
 import utils.Results;
@@ -135,14 +137,55 @@ public class Evalution {
             String status = result.getStatus();
             String sentence = result.getSentence();
             String givenSparql = result.getGivenSparql();
-            String queGGSParql="N";
-            if(!result.getSparqls().isEmpty()){
-               queGGSParql = result.getSparqls().iterator().next();
- 
+            String queGGSParql = "N";
+            if (result.getSparqls().size() > 1) {
+                 Map<String,String> propertySparqls = findPropertySparql( result.getSparqls());
+                 if(!propertySparqls.isEmpty())
+                    queGGSParql =this.match(givenSparql,propertySparqls);
+            } else if(result.getSparqls().size() == 1) {
+                queGGSParql = result.getSparqls().iterator().next();
             }
-            rows.add(new String[]{id, status, sentence,givenSparql, queGGSParql});
+            rows.add(new String[]{id, status, sentence, givenSparql, queGGSParql});
         }
-       return rows;
+        return rows;
+    }
+
+    private Map<String,String> findPropertySparql(List<String> sparqls) {
+        Map<String,String> propertySparqls=new TreeMap<String,String>();
+        for(String sparql:sparqls){
+            if(sparql.contains("?Arg")){
+              continue;   
+            }
+            String []info=sparql.split(" ");
+            for(String string:info){
+                if(string.contains("http:")){
+                    if(!string.contains("http://dbpedia.org/resource/")){
+                       string=string.replace("<", "").replace(">","").replace("http://dbpedia.org/ontology/", "dbo:");
+                       propertySparqls.put(string, sparql);
+                    }
+   
+                }
+            }
+        }
+        return propertySparqls;
+    }
+
+    private String match(String sparql, Map<String, String> propertySparqls) {
+        String[] info = sparql.split(" ");
+        String property = null;
+        for (String string : info) {
+             string=StringUtils.substringBetween(sparql, "{", "}");
+             String [] elements=string.split(" ");
+             Integer index=0;
+             for (String element : elements) {
+                  if(propertySparqls.containsKey(element)){
+                      return propertySparqls.get(element);
+                  }
+                  index=index+1;
+             }
+        }
+        return propertySparqls.values().iterator().next();
+
     }
 
 }
