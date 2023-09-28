@@ -99,7 +99,11 @@ public class JaccardSimilarity {
          System.out.println("extractPart::" + extractPart+" size::"+entityMap.size());
         if (StringModifier.isNumeric(extractPart)) {
             this.bestMatch = "\"" + extractPart + "\"^^<http://www.w3.org/2001/XMLSchema#gYear>";
-        } else if (entityMap.containsKey(extractPart)) {
+        } 
+        else if (extractPart.contains("iycm")) {
+         this.bestMatch = "\"" + "IYCM"+ "\"";
+        }
+        else if (entityMap.containsKey(extractPart)) {
             String value = entityMap.get(extractPart);
             this.score = 1.0;
             try {
@@ -117,6 +121,7 @@ public class JaccardSimilarity {
                 String uri = entityMap.get(label);
                 index = index + 1;
                 double score = jaccardSimilarityManual(label, extractPart);
+                //System.out.println(index + " " + score + " " + extractPart + " " + label + " " + uri);
                 if (score > 0.0) {
                     //System.out.println(index + " " + score + " " + extractPart + " " + label + " " + uri);
                     entityMapJaccard.put(score, uri);

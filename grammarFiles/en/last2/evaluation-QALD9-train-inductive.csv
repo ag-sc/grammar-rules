@@ -1,0 +1,4 @@
+"ID","status","sentence","sparqlQueGG","sparqlQald","TP","FP","FN","Precision","Recall","Fscore","Status"
+"307","WORK","How many languages are spoken in Turkmenistan?","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?x) AS ?c) WHERE { res:Turkmenistan dbo:language ?x }","SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Language>. <http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/language> ?Answer .}","1.0","0.0","0.0","1.0","1.0","1.0","WORK"
+"","","","","","1.0","0.0","0.0","1.0","1.0","1.0"
+"","","","","","","","","1.0","1.0","1.0"

@@ -21,7 +21,7 @@ public class RegularExpression {
 
     private static String PLACE_HOLDER = "$Arg";
     private static String REGULAR_EXPRESSION_END ="(.*?)";
-     private static String REGULAR_EXPRESSION_MIDDLE = "([A-Za-z0-9]*)";
+     private static String REGULAR_EXPRESSION_MIDDLE = "([A-Za-z0-9_-]*)";
    
     
     public static String ruleToRegEx(String ruleWithVariable) {
@@ -30,7 +30,7 @@ public class RegularExpression {
             String result = StringUtils.substringBetween(ruleWithVariable, "(", ")");
             ruleWithVariable = ruleWithVariable.replace(result, PLACE_HOLDER);
             ruleWithVariable = ruleWithVariable.replace("(", "").replace(")", "");
-            ruleWithVariable = ruleWithVariable.replace(PLACE_HOLDER, "([A-Za-z0-9_]*)");
+            ruleWithVariable = ruleWithVariable.replace(PLACE_HOLDER, "([A-Za-z0-9_-]*)");
             //ruleWithVariable = ruleWithVariable.replace(REGULAR_EXPRESSION_END, "([A-Za-z0-9_]*)");
             ruleWithVariable = replaceSpaceWithSlash(ruleWithVariable);
 
@@ -61,11 +61,14 @@ public class RegularExpression {
         Matcher matcher = pattern.matcher(sentence);
         String extractPattern = null;
         //System.out.println("sentence::"+sentence+" "+ruleRegularEx);
+        //sentence=sentence.replace("?", "_?");
+        //ruleRegularEx=ruleRegularEx.replace("?", "_?");
         
         if (matcher.find()) {
             for (Integer index = 1; index <= matcher.groupCount(); index++) {
                 extractPattern = matcher.group(index);
                 results.add(extractPattern);
+                System.out.println("sentence::"+sentence+" "+ruleRegularEx);
             }
         }
        

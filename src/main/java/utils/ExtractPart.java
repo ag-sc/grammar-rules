@@ -17,13 +17,17 @@ public class ExtractPart {
     private String restrictionClassVariable = null;
     private List<String> entities = new ArrayList<String>();
 
-    public ExtractPart(List<String> extractParts) {
-        if (extractParts.size() == 2) {
+    public ExtractPart(List<String> extractParts, String template) {
+        if (template.contains("predicateAdjectiveBaseForm")) {
             this.restrictionClassVariable = extractParts.get(0);
-            this.entities.add(extractParts.get(1));
-        }
-        if (extractParts.size() == 1) {
-            this.entities.add(extractParts.get(0));
+        } else {
+            if (extractParts.size() == 2) {
+                this.restrictionClassVariable = extractParts.get(0);
+                this.entities.add(extractParts.get(1));
+            }
+            if (extractParts.size() == 1) {
+                this.entities.add(extractParts.get(0));
+            }
         }
 
     }

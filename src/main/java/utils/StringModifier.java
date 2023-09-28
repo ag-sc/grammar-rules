@@ -84,7 +84,7 @@ public class StringModifier {
         return sentence.replace("\"", "");
     }
     
-     public static void main(String []args) {
+   public static void main(String []args) {
          String entity="http://dbpedia.org/resource/Slack_(software)";
          entity="http://dbpedia.org/resource/IT_infrastructure_management)_(cloud_services";
          String label=makeLabel( entity,  "en");
@@ -92,6 +92,12 @@ public class StringModifier {
          
      }
      
+    public static String shortUri(String string) {
+        string = string.replace("http://dbpedia.org/property/", "dbp:");
+        string = string.replace("http://dbpedia.org/ontology/", "dbo:");
+        return string.replace("<", "").replace(">", "");
+
+    }
      
     public static boolean isNumeric(String strNum) {
         Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");

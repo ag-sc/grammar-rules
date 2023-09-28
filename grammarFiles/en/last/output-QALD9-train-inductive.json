@@ -1,10 +1,10 @@
 {
   "results" : [ {
     "id" : "1",
-    "status" : "N",
-    "sentence" : "List all boardgames by GMT",
+    "status" : "WORK",
+    "sentence" : "List all boardgames by GMT.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/GMT_Games> .}" ]
   }, {
     "id" : "2",
     "status" : "WORK",
@@ -16,13 +16,13 @@
     "status" : "WORK",
     "sentence" : "Which people were born in Heraklion?",
     "givenSparql" : "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Person ; onto:birthPlace <http://dbpedia.org/resource/Heraklion>. }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Answer <http://dbpedia.org/ontology/activeYearsEndDate> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Answer <http://dbpedia.org/ontology/birthDate> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Heraklion> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Answer <http://dbpedia.org/ontology/birthYear> ?Arg .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Heraklion> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Arg <http://dbpedia.org/ontology/birthDate> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Arg <http://dbpedia.org/ontology/birthYear> ?Answer .}" ]
   }, {
     "id" : "4",
-    "status" : "WORK",
-    "sentence" : "In which US state is Area 51 located?",
+    "status" : "N",
+    "sentence" : "In which U.S. state is Area 51 located?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Area_51 dbo:location ?uri . ?uri dbo:country res:United_States. }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Urban_area> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Stirling_council_area> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Stirling_council_area> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Western_Area> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "5",
     "status" : "WORK",
@@ -50,7 +50,7 @@
   }, {
     "id" : "9",
     "status" : "WORK",
-    "sentence" : "Give me all actors starring in movies directed by and starring William Shatner",
+    "sentence" : "Give me all actors starring in movies directed by and starring William Shatner.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. <http://dbpedia.org/resource/Roast_Beef_and_Movies> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {
@@ -61,10 +61,10 @@
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/officialLanguage> <http://dbpedia.org/resource/Federal_government_of_the_United_States> .}" ]
   }, {
     "id" : "11",
-    "status" : "WORK",
-    "sentence" : "Give me all Danish films",
+    "status" : "N",
+    "sentence" : "Give me all Danish films.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:country res:Denmark }",
-    "sparqls" : [ "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }", "SELECT DISTINCT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }" ]
+    "sparqls" : [ ]
   }, {
     "id" : "12",
     "status" : "WORK",
@@ -74,7 +74,7 @@
   }, {
     "id" : "13",
     "status" : "N",
-    "sentence" : "Give me the grandchildren of Bruce Lee",
+    "sentence" : "Give me the grandchildren of Bruce Lee.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }",
     "sparqls" : [ ]
   }, {
@@ -82,7 +82,7 @@
     "status" : "WORK",
     "sentence" : "Which other weapons did the designer of the Uzi develop?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon ; dbp:designer ?x . res:Uzi dbp:designer ?x FILTER ( ?uri != res:Uzi ) }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/developer> <http://dbpedia.org/resource/Wizards_of_the_Coast> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wizards_of_the_Coast> <http://dbpedia.org/ontology/product> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/developer> <http://dbpedia.org/resource/Wizards_of_the_Coast> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/The_Typing_of_the_Dead> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Yvon_of_the_Yukon> <http://dbpedia.org/ontology/developer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wizards_of_the_Coast> <http://dbpedia.org/ontology/product> ?Answer .}" ]
   }, {
     "id" : "15",
     "status" : "WORK",
@@ -106,17 +106,17 @@
     "status" : "WORK",
     "sentence" : "Which organizations were founded in 1950?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Organisation { ?uri dbo:formationYear ?date } UNION { ?uri dbo:foundingYear ?date } UNION { ?uri dbp:foundation ?date } UNION { ?uri dbp:formation ?date } FILTER regex(?date, \"^1950\") }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundingYear> \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/founded> \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/founded> \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> <http://dbpedia.org/ontology/formationYear> ?Answer .}", "SELECT ?Answer WHERE { \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> <http://dbpedia.org/ontology/founded> ?Answer .}", "SELECT ?Answer WHERE { \"1950\"^^<http://www.w3.org/2001/XMLSchema#gYear> <http://dbpedia.org/ontology/foundingYear> ?Answer .}" ]
   }, {
     "id" : "19",
     "status" : "WORK",
     "sentence" : "Who created the comic Captain America?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Captain_America dbo:creator ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Thor_Meets_Captain_America> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Captain_America> <http://dbpedia.org/ontology/creator> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/notableWork> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Unscientific_America> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Invasion_America> <http://dbpedia.org/ontology/creator> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/notableWork> ?Answer .}" ]
   }, {
     "id" : "20",
     "status" : "WORK",
-    "sentence" : "Give me the Apollo 14 astronauts",
+    "sentence" : "Give me the Apollo 14 astronauts.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> .}" ]
   }, {
@@ -124,7 +124,7 @@
     "status" : "WORK",
     "sentence" : "Who wrote the book The pillars of the Earth?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Pillars_of_the_Earth> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Pillars_of_the_Earth_(miniseries)> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Book_of_Zombie> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wrath_of_the_Tyrant> <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Book_of_Other_People> <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Edge_of_the_Earth> <http://dbpedia.org/property/writer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Unaccustomed_Earth> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Earth_Seeker> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Yellow_Earth> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Target_Earth_(album)> <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Batman:_Earth_One> <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/New_Earth> <http://dbpedia.org/property/writer> ?Answer .}" ]
   }, {
     "id" : "22",
     "status" : "N",
@@ -140,19 +140,19 @@
   }, {
     "id" : "24",
     "status" : "N",
-    "sentence" : "Give me a list of all trumpet players that were bandleaders",
+    "sentence" : "Give me a list of all trumpet players that were bandleaders.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Bandleader ; dbo:instrument res:Trumpet }",
     "sparqls" : [ ]
   }, {
     "id" : "25",
     "status" : "N",
-    "sentence" : "Which US states are in the same timezone as Utah?",
+    "sentence" : "Which U.S. states are in the same timezone as Utah?",
     "givenSparql" : "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:timezone ?x FILTER ( ?uri != res:Utah ) }",
     "sparqls" : [ ]
   }, {
     "id" : "26",
     "status" : "N",
-    "sentence" : "Which US states possess gold minerals?",
+    "sentence" : "Which U.S. states possess gold minerals?",
     "givenSparql" : "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:mineral ?mineral FILTER regex(?mineral, \"gold\", \"i\") }",
     "sparqls" : [ ]
   }, {
@@ -170,9 +170,9 @@
   }, {
     "id" : "29",
     "status" : "WORK",
-    "sentence" : "Show me all museums in London",
+    "sentence" : "Show me all museums in London.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/London> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/museum> ?Arg .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/London> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/museum> ?Arg .}" ]
   }, {
     "id" : "30",
     "status" : "N",
@@ -194,21 +194,21 @@
   }, {
     "id" : "33",
     "status" : "WORK",
-    "sentence" : "Give me all writers that won the Nobel Prize in literature",
+    "sentence" : "Give me all writers that won the Nobel Prize in literature.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Writer>. ?Answer <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> .}" ]
   }, {
     "id" : "34",
     "status" : "WORK",
-    "sentence" : "Show me all basketball players that are higher than 2 meters",
+    "sentence" : "Show me all basketball players that are higher than 2 meters.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }",
-    "sparqls" : [ "SELECT DISTINCT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/BasketballPlayer>. ?Answer <http://dbpedia.org/ontology/elevation> ?n FILTER ( ?n > 2 ) }", "SELECT DISTINCT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/BasketballPlayer>. ?Answer <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2 ) }" ]
+    "sparqls" : [ "SELECT DISTINCT ?subjOfProp WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/BasketballPlayer>. ?subjOfProp <http://dbpedia.org/ontology/elevation> ?Answer FILTER ( ?Answer > 2 ) }", "SELECT DISTINCT ?subjOfProp WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/BasketballPlayer>. ?subjOfProp <http://dbpedia.org/ontology/height> ?Answer FILTER ( ?Answer > 2 ) }" ]
   }, {
     "id" : "35",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "When was the Statue of Liberty built?",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Statue_of_Liberty> <http://dbpedia.org/property/beginningDate> ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Votive_statue_of_the_Holy_Trinity> <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Statue_of_Liberty> <http://dbpedia.org/property/beginningDate> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "36",
     "status" : "WORK",
@@ -232,31 +232,31 @@
     "status" : "WORK",
     "sentence" : "What movies does Jesse Eisenberg play in?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Arg <http://dbpedia.org/ontology/member> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Mike_Jesse> <http://dbpedia.org/ontology/position> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> .}" ]
   }, {
     "id" : "40",
     "status" : "WORK",
-    "sentence" : "Give all swimmers that were born in Moscow",
+    "sentence" : "Give all swimmers that were born in Moscow.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Swimmer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Swimmer>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> .}" ]
   }, {
     "id" : "41",
     "status" : "N",
-    "sentence" : "Give me all cosmonauts",
+    "sentence" : "Give me all cosmonauts.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Russia> } UNION { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Soviet_Union> } }",
     "sparqls" : [ ]
   }, {
     "id" : "42",
-    "status" : "WORK",
-    "sentence" : "Give me all Swiss non-profit organizations",
+    "status" : "N",
+    "sentence" : "Give me all Swiss non-profit organizations.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Switzerland> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> } }",
-    "sparqls" : [ "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> }", "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> }", "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/type>   <http://dbpedia.org/resource/Nonprofit_organization>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> }", "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/type>   <http://dbpedia.org/resource/Nonprofit_organization>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> }" ]
+    "sparqls" : [ ]
   }, {
     "id" : "43",
     "status" : "WORK",
     "sentence" : "Which presidents were born in 1945?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/President> ; <http://dbpedia.org/ontology/birthDate> ?date FILTER regex(?date, \"^1945\") }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/President>. ?Answer <http://dbpedia.org/ontology/activeYearsEndDate> \"1945\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/President>. ?Answer <http://dbpedia.org/ontology/birthDate> \"1945\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/President>. ?Answer <http://dbpedia.org/ontology/birthPlace> \"1945\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/President>. ?Answer <http://dbpedia.org/ontology/birthYear> \"1945\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/President>. ?Answer <http://dbpedia.org/ontology/birthPlace> \"1945\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/President>. \"1945\"^^<http://www.w3.org/2001/XMLSchema#gYear> <http://dbpedia.org/ontology/birthDate> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/President>. \"1945\"^^<http://www.w3.org/2001/XMLSchema#gYear> <http://dbpedia.org/ontology/birthYear> ?Answer .}" ]
   }, {
     "id" : "44",
     "status" : "WORK",
@@ -272,7 +272,7 @@
   }, {
     "id" : "46",
     "status" : "N",
-    "sentence" : "Show a list of soccer clubs that play in the Bundesliga",
+    "sentence" : "Show a list of soccer clubs that play in the Bundesliga.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Bundesliga> }",
     "sparqls" : [ ]
   }, {
@@ -286,7 +286,7 @@
     "status" : "WORK",
     "sentence" : "Which bridges cross the Seine?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Bridge> ; <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Bridge>. ?Answer <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Bridge>. ?Answer <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Bridge>. ?Arg <http://dbpedia.org/ontology/crosses> ?Answer .}" ]
   }, {
     "id" : "49",
     "status" : "N",
@@ -295,16 +295,16 @@
     "sparqls" : [ ]
   }, {
     "id" : "50",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "How many films did Hal Roach produce?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/executiveProducer> <http://dbpedia.org/resource/Hal_Roach> .}", "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/manufacturer> ?Arg .}", "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> .}", "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Shallow_Hal> <http://dbpedia.org/ontology/director> ?Answer .}", "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/HAL_Laboratory> <http://dbpedia.org/ontology/product> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "51",
     "status" : "WORK",
-    "sentence" : "Give me all Danish movies",
+    "sentence" : "Give me all Danish movies.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }",
-    "sparqls" : [ "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }", "SELECT DISTINCT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/starring> <Nora Danish> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Nora_Danish> .}" ]
   }, {
     "id" : "52",
     "status" : "N",
@@ -320,21 +320,21 @@
   }, {
     "id" : "54",
     "status" : "N",
-    "sentence" : "Give me all companies in Munich",
+    "sentence" : "Give me all companies in Munich.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }",
     "sparqls" : [ ]
   }, {
     "id" : "55",
     "status" : "WORK",
-    "sentence" : "Give me the capitals of all countries that the Himalayas run through",
+    "sentence" : "Give me the capitals of all countries that the Himalayas run through.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?country . ?country <http://dbpedia.org/ontology/capital> ?uri }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/University_of_Nottingham> .}" ]
   }, {
     "id" : "56",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "How many movies did Park Chan-wook direct?",
     "givenSparql" : "SELECT COUNT(DISTINCT ?uri AS ?uri) WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Park_Chan-wook> . }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Park_Chan-wook> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "57",
     "status" : "WORK",
@@ -349,10 +349,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "59",
-    "status" : "WORK",
-    "sentence" : "Give me all islands that belong to Japan",
+    "status" : "N",
+    "sentence" : "Give me all islands that belong to Japan.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/ontology/architecturalStyle> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/ontology/bandMember> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/ontology/formerTeam> <http://dbpedia.org/resource/Japan_Ice_Hockey_League> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/ontology/genre> <http://dbpedia.org/resource/Japan> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/ontology/literaryGenre> <http://dbpedia.org/resource/Japan> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/ontology/mountainRange> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/ontology/series> <http://dbpedia.org/resource/Japan> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/ontology/subdivision> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/property/album> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/property/genre> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Answer <http://dbpedia.org/property/party> <http://dbpedia.org/resource/Greens_Japan> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Arg <http://dbpedia.org/ontology/architecturalStyle> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. <http://dbpedia.org/resource/X_Japan> <http://dbpedia.org/ontology/bandMember> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Arg <http://dbpedia.org/ontology/formerTeam> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. <http://dbpedia.org/resource/X_Japan> <http://dbpedia.org/ontology/genre> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. <http://dbpedia.org/resource/Lost_Japan> <http://dbpedia.org/ontology/literaryGenre> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Arg <http://dbpedia.org/ontology/mountainRange> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. <http://dbpedia.org/resource/IGo_to_Japan> <http://dbpedia.org/ontology/series> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Arg <http://dbpedia.org/ontology/subdivision> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. <http://dbpedia.org/resource/Made_in_Japan_(EP)> <http://dbpedia.org/property/album> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. <http://dbpedia.org/resource/Yakitate!!_Japan> <http://dbpedia.org/property/genre> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Island>. ?Arg <http://dbpedia.org/property/party> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "60",
     "status" : "N",
@@ -361,10 +361,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "61",
-    "status" : "N",
-    "sentence" : "Give me all Apollo 14 astronauts",
+    "status" : "WORK",
+    "sentence" : "Give me all Apollo 14 astronauts.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> .}" ]
   }, {
     "id" : "62",
     "status" : "N",
@@ -380,7 +380,7 @@
   }, {
     "id" : "64",
     "status" : "N",
-    "sentence" : "Give me all soccer clubs in the Premier League",
+    "sentence" : "Give me all soccer clubs in the Premier League.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }",
     "sparqls" : [ ]
   }, {
@@ -404,15 +404,15 @@
   }, {
     "id" : "68",
     "status" : "N",
-    "sentence" : "Give me all world heritage sites designated within the past two years",
+    "sentence" : "Give me all world heritage sites designated within the past two years.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/WorldHeritageSite> . { ?uri <http://dbpedia.org/property/year> '2013'^^xsd:integer . } UNION { ?uri <http://dbpedia.org/property/year> '2014'^^xsd:integer . } }",
     "sparqls" : [ ]
   }, {
     "id" : "69",
-    "status" : "WORK",
-    "sentence" : "Give me all actors who were born in Paris after 1950",
+    "status" : "N",
+    "sentence" : "Give me all actors who were born in Paris after 1950.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> . ?uri <http://dbpedia.org/ontology/birthDate> ?date . FILTER ( ?date >= xsd:dateTime('1950-12-31T00:00:00Z')) }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "70",
     "status" : "WORK",
@@ -421,10 +421,10 @@
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Burton_&_Taylor> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {
     "id" : "71",
-    "status" : "WORK",
-    "sentence" : "Give me all Australian nonprofit organizations",
+    "status" : "N",
+    "sentence" : "Give me all Australian nonprofit organizations.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/locationCountry> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
-    "sparqls" : [ "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> }", "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/type>   <http://dbpedia.org/resource/Nonprofit_organization>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> }" ]
+    "sparqls" : [ ]
   }, {
     "id" : "72",
     "status" : "WORK",
@@ -434,7 +434,7 @@
   }, {
     "id" : "73",
     "status" : "N",
-    "sentence" : "Give me all ESA astronauts",
+    "sentence" : "Give me all ESA astronauts.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> ; <http://dbpedia.org/property/type> <http://dbpedia.org/resource/European_Space_Agency> }",
     "sparqls" : [ ]
   }, {
@@ -451,10 +451,10 @@
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/owner> <http://dbpedia.org/resource/Rolls-Royce_Holdings> .}" ]
   }, {
     "id" : "76",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "How many museums does Paris have?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Museum>. <http://dbpedia.org/resource/Théâtre_de_Paris> <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}" ]
   }, {
     "id" : "77",
     "status" : "N",
@@ -464,13 +464,13 @@
   }, {
     "id" : "78",
     "status" : "WORK",
-    "sentence" : "Give me all federal chancellors of Germany",
+    "sentence" : "Give me all federal chancellors of Germany.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/office> \"Chancellor of Germany\" } UNION { ?uri <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Chancellor_of_Germany> } }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Member_of_the_German_Bundestag> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Germany> .}" ]
   }, {
     "id" : "79",
     "status" : "N",
-    "sentence" : "Show me everyone who was born on Halloween",
+    "sentence" : "Show me everyone who was born on Halloween.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/birthDate> ?date } UNION { ?uri <http://dbpedia.org/property/birthDate> ?date } <http://dbpedia.org/resource/Halloween> <http://dbpedia.org/property/date> ?date }",
     "sparqls" : [ ]
   }, {
@@ -490,7 +490,7 @@
     "status" : "WORK",
     "sentence" : "Which actors were born in Germany?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> { ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> } UNION { ?uri <http://dbpedia.org/ontology/birthPlace> ?place . ?place <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> } }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. ?Answer <http://dbpedia.org/ontology/activeYearsEndDate> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. ?Answer <http://dbpedia.org/ontology/birthDate> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. ?Answer <http://dbpedia.org/ontology/birthYear> ?Arg .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. <http://dbpedia.org/resource/Willie_Germany> <http://dbpedia.org/ontology/birthDate> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. ?Arg <http://dbpedia.org/ontology/birthYear> ?Answer .}" ]
   }, {
     "id" : "83",
     "status" : "N",
@@ -502,7 +502,7 @@
     "status" : "WORK",
     "sentence" : "Who produced the most films?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/producer> ?uri . } ORDER BY DESC(COUNT(?film)) OFFSET 0 LIMIT 1",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Films> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Most_Shocking> <http://dbpedia.org/ontology/executiveProducer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/manufacturer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Most_Welcome> <http://dbpedia.org/ontology/producer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/executiveProducer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/manufacturer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Music_for_Films> <http://dbpedia.org/ontology/producer> ?Answer .}" ]
   }, {
     "id" : "85",
     "status" : "N",
@@ -511,10 +511,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "86",
-    "status" : "WORK",
-    "sentence" : "Give me all actors who were born in Berlin",
+    "status" : "N",
+    "sentence" : "Give me all actors who were born in Berlin.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Berlin> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Berlin> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "87",
     "status" : "WORK",
@@ -535,14 +535,14 @@
     "sparqls" : [ ]
   }, {
     "id" : "90",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "How many missions does the Soyuz programme have?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/property/programme> <http://dbpedia.org/resource/Soyuz_programme> }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Whitebrook> <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}" ]
   }, {
     "id" : "91",
     "status" : "WORK",
-    "sentence" : "Give me all the TV shows with Neil Patrick Harris",
+    "sentence" : "Give me all the TV shows with Neil Patrick Harris.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Neil_Patrick_Harris> }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/The_Wiggles> .}" ]
   }, {
@@ -550,7 +550,7 @@
     "status" : "WORK",
     "sentence" : "When were the Hells Angels founded?",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/formationDate> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Angels_Camp,_California> <http://dbpedia.org/ontology/foundingDate> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/formationDate> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundingDate> ?Arg .}" ]
   }, {
     "id" : "93",
     "status" : "N",
@@ -560,7 +560,7 @@
   }, {
     "id" : "94",
     "status" : "N",
-    "sentence" : "Give me all Swedish holidays",
+    "sentence" : "Give me all Swedish holidays.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Holiday> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Sweden> }",
     "sparqls" : [ ]
   }, {
@@ -572,13 +572,13 @@
   }, {
     "id" : "96",
     "status" : "WORK",
-    "sentence" : "List all the musicals with music by Leonard Bernstein",
+    "sentence" : "List all the musicals with music by Leonard Bernstein.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Musical> ; <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Leonard_Bernstein> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Patrick_Leonard> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Leonard_Bernstein> .}" ]
   }, {
     "id" : "97",
     "status" : "N",
-    "sentence" : "Give me all companies in the advertising industry",
+    "sentence" : "Give me all companies in the advertising industry.",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Advertising> } UNION { ?uri <http://dbpedia.org/ontology/industry> ?industry FILTER regex(?industry, \"advertising\", \"i\") } }",
     "sparqls" : [ ]
   }, {
@@ -602,7 +602,7 @@
   }, {
     "id" : "101",
     "status" : "N",
-    "sentence" : "Give me all Australian metalcore bands",
+    "sentence" : "Give me all Australian metalcore bands.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Band> ; <http://dbpedia.org/ontology/genre> <http://dbpedia.org/resource/Metalcore> { ?uri <http://dbpedia.org/ontology/hometown> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/hometown> ?h . ?h <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
     "sparqls" : [ ]
   }, {
@@ -614,7 +614,7 @@
   }, {
     "id" : "103",
     "status" : "N",
-    "sentence" : "Give me all types of eating disorders",
+    "sentence" : "Give me all types of eating disorders.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/class/yago/WikicatEatingDisorders> }",
     "sparqls" : [ ]
   }, {
@@ -631,10 +631,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "106",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "How many films did Leonardo DiCaprio star in?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Leonardo_DiCaprio> }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Leonardo_(TV_series)> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "107",
     "status" : "N",
@@ -644,15 +644,15 @@
   }, {
     "id" : "108",
     "status" : "N",
-    "sentence" : "Which US states are in the same time zone as Utah?",
+    "sentence" : "Which U.S. states are in the same time zone as Utah?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Utah> <http://dbpedia.org/property/timezone> ?x . ?uri a <http://dbpedia.org/class/yago/WikicatStatesOfTheUnitedStates> ; <http://dbpedia.org/property/timezone> ?x FILTER ( ?uri != <http://dbpedia.org/resource/Utah> ) }",
     "sparqls" : [ ]
   }, {
     "id" : "109",
-    "status" : "WORK",
-    "sentence" : "Give me all books written by Danielle Steel",
+    "status" : "N",
+    "sentence" : "Give me all books written by Danielle Steel.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Book> ; <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Danielle_Steel> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Danielle_Steel> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/ontology/composer> <http://dbpedia.org/resource/Steel_Panther> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/ontology/writer> <http://dbpedia.org/resource/Danielle_Steel> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/property/allLyrics> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/property/editor> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/property/writer> <http://dbpedia.org/resource/Trevor_Steel> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "110",
     "status" : "N",
@@ -674,7 +674,7 @@
   }, {
     "id" : "113",
     "status" : "N",
-    "sentence" : "Give me all libraries established earlier than 1400",
+    "sentence" : "Give me all libraries established earlier than 1400.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Library> ; <http://dbpedia.org/property/established> ?year FILTER ( ?year < 1400 ) }",
     "sparqls" : [ ]
   }, {
@@ -685,10 +685,10 @@
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/ProgrammingLanguage>. ?Answer <http://dbpedia.org/ontology/influencedBy> <http://dbpedia.org/resource/Perl> .}" ]
   }, {
     "id" : "115",
-    "status" : "WORK",
-    "sentence" : "In which US state is Mount McKinley located?",
+    "status" : "N",
+    "sentence" : "In which U.S. state is Mount McKinley located?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Mount_McKinley> dbo:wikiPageRedirects ?x . ?x <http://dbpedia.org/ontology/locatedInArea> ?uri. ?uri rdf:type yago:WikicatStatesOfTheUnitedStates }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Mount_Vernon> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Mount_Roskill> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Mount_Simeon> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/William_McKinley> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "116",
     "status" : "N",
@@ -703,10 +703,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "118",
-    "status" : "WORK",
-    "sentence" : "Give me all Methodist politicians",
+    "status" : "N",
+    "sentence" : "Give me all Methodist politicians.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Politician> ; <http://dbpedia.org/ontology/religion> <http://dbpedia.org/resource/Methodism> }",
-    "sparqls" : [ "SELECT DISTINCT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/religion> <http://dbpedia.org/resource/Methodism> }", "SELECT DISTINCT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Politician>. ?Answer <http://dbpedia.org/ontology/religion> <http://dbpedia.org/resource/Methodism> }" ]
+    "sparqls" : [ ]
   }, {
     "id" : "119",
     "status" : "WORK",
@@ -748,13 +748,13 @@
     "status" : "WORK",
     "sentence" : "Which software has been developed by organizations founded in California?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Software> . ?company a <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/developer> ?company . ?company <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/California> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> ?Arg .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/govermentType> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/formationYear> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/founded> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> ?Arg .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/California_Trout> <http://dbpedia.org/ontology/formationYear> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/founded> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/govermentType> ?Answer .}" ]
   }, {
     "id" : "126",
     "status" : "WORK",
     "sentence" : "Which instruments does Cat Stevens play?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Cat_Stevens> <http://dbpedia.org/ontology/instrument> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/portrayer> <http://dbpedia.org/resource/Rusty_Stevens> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Warren_Stevens> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Cat_Stevens> <http://dbpedia.org/ontology/genre> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Zach_Stevens> <http://dbpedia.org/ontology/portrayer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/genre> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/portrayer> <http://dbpedia.org/resource/Rusty_Stevens> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Zach_Stevens> <http://dbpedia.org/ontology/portrayer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Miss_Stevens> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {
     "id" : "127",
     "status" : "N",
@@ -764,7 +764,7 @@
   }, {
     "id" : "128",
     "status" : "N",
-    "sentence" : "Give me all actors called Baldwin",
+    "sentence" : "Give me all actors called Baldwin.",
     "givenSparql" : "PREFIX foaf:<http://xmlns.com/foaf/0.1/> SELECT DISTINCT ?uri WHERE { ?uri foaf:surname 'Baldwin'@en . { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Actor> . } UNION { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . } }",
     "sparqls" : [ ]
   }, {
@@ -772,7 +772,7 @@
     "status" : "WORK",
     "sentence" : "Who wrote The Hunger Games?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Hunger_Games> <http://dbpedia.org/property/author> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Hunger_Games_(novel)> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Deadly_Games> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Hunger_Games_(film)> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wicked_Games> <http://dbpedia.org/property/writer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Yahoo!_Games> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Deadly_Games> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Women's_Games> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wicked_Games> <http://dbpedia.org/property/writer> ?Answer .}" ]
   }, {
     "id" : "130",
     "status" : "N",
@@ -812,7 +812,7 @@
   }, {
     "id" : "136",
     "status" : "N",
-    "sentence" : "Show me all songs from Bruce Springsteen released between 1980 and 1990",
+    "sentence" : "Show me all songs from Bruce Springsteen released between 1980 and 1990.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Song> . ?uri <http://dbpedia.org/ontology/artist> <http://dbpedia.org/resource/Bruce_Springsteen> . ?uri <http://dbpedia.org/ontology/releaseDate> ?date . FILTER (?date >= '1980-01-01'^^xsd:date && ?date <= '1990-12-31'^^xsd:date) }",
     "sparqls" : [ ]
   }, {
@@ -829,10 +829,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "139",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "Which soccer players were born on Malta?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerPlayer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Malta> }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/SoccerPlayer>. <http://dbpedia.org/resource/Wenceslau_Malta> <http://dbpedia.org/ontology/birthDate> ?Answer .}" ]
   }, {
     "id" : "140",
     "status" : "N",
@@ -842,7 +842,7 @@
   }, {
     "id" : "141",
     "status" : "N",
-    "sentence" : "Give me the birthdays of all actors of the television show Charmed",
+    "sentence" : "Give me the birthdays of all actors of the television show Charmed.",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Charmed> <http://dbpedia.org/ontology/starring> ?actor . ?actor <http://dbpedia.org/ontology/birthDate> ?date }",
     "sparqls" : [ ]
   }, {
@@ -850,23 +850,23 @@
     "status" : "WORK",
     "sentence" : "Which telecommunications organizations are located in Belgium?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Organisation> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Telecommunication> } UNION { ?uri <http://dbpedia.org/property/industry> ?industry FILTER regex(?industry, \"Telecommunications\") } { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Belgium> } UNION { ?uri <http://dbpedia.org/property/locationCountry> \"Belgium\"@en } }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Belgium> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Belgium> .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/city> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Walibi_Belgium> <http://dbpedia.org/property/location> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Belgium> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Belgium> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Belgium> .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/city> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Miss_Belgium> <http://dbpedia.org/ontology/location> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Walibi_Belgium> <http://dbpedia.org/property/location> ?Answer .}" ]
   }, {
     "id" : "143",
     "status" : "N",
-    "sentence" : "Give me a list of all lakes in Denmark",
+    "sentence" : "Give me a list of all lakes in Denmark.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { { ?uri a <http://dbpedia.org/ontology/Lake> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> } UNION { ?uri a <http://dbpedia.org/class/yago/LakesOfDenmark> } }",
     "sparqls" : [ ]
   }, {
     "id" : "144",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "How many children does Eddie Murphy have?",
     "givenSparql" : "SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Eddie_Murphy> <http://dbpedia.org/property/children> ?n }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Murphy_Theatre> <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}" ]
   }, {
     "id" : "145",
     "status" : "N",
-    "sentence" : "Show me all English Gothic buildings in Kent",
+    "sentence" : "Show me all English Gothic buildings in Kent.",
     "givenSparql" : "SELECT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Building> ; <http://dbpedia.org/ontology/architecturalStyle> <http://dbpedia.org/resource/English_Gothic_architecture> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Kent> }",
     "sparqls" : [ ]
   }, {
@@ -898,13 +898,13 @@
     "status" : "WORK",
     "sentence" : "Which organizations were founded in 1930?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Organisation> { ?uri <http://dbpedia.org/ontology/formationYear> ?date } UNION { ?uri <http://dbpedia.org/ontology/foundingYear> ?date } FILTER regex(?date, \"^1930\") }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundingYear> \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/founded> \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/founded> \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> .}", "SELECT ?Answer WHERE { \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> <http://dbpedia.org/ontology/formationYear> ?Answer .}", "SELECT ?Answer WHERE { \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> <http://dbpedia.org/ontology/founded> ?Answer .}", "SELECT ?Answer WHERE { \"1930\"^^<http://www.w3.org/2001/XMLSchema#gYear> <http://dbpedia.org/ontology/foundingYear> ?Answer .}" ]
   }, {
     "id" : "151",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "What is the birth name of Angela Merkel?",
     "givenSparql" : "SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/Angela_Merkel> <http://dbpedia.org/property/birthName> ?string }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthName> <Angela Yee> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/birthName> ?Arg .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "152",
     "status" : "N",
@@ -962,7 +962,7 @@
   }, {
     "id" : "161",
     "status" : "WORK",
-    "sentence" : "Give me all films produced by Hal Roach",
+    "sentence" : "Give me all films produced by Hal Roach.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/executiveProducer> <http://dbpedia.org/resource/Hal_Roach> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/manufacturer> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Shallow_Hal> <http://dbpedia.org/ontology/director> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/HAL_Laboratory> <http://dbpedia.org/ontology/product> ?Answer .}" ]
   }, {
@@ -980,7 +980,7 @@
   }, {
     "id" : "164",
     "status" : "N",
-    "sentence" : "Give me a list of all bandleaders that play trumpet",
+    "sentence" : "Give me a list of all bandleaders that play trumpet.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> }",
     "sparqls" : [ ]
   }, {
@@ -1022,19 +1022,19 @@
   }, {
     "id" : "171",
     "status" : "WORK",
-    "sentence" : "Give me all movies with Tom Cruise",
+    "sentence" : "Give me all movies with Tom Cruise.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Tom_Cruise> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Tom_Wyner> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Tom_Cruise> .}" ]
   }, {
     "id" : "172",
-    "status" : "WORK",
-    "sentence" : "In which US state is Fort Knox located?",
+    "status" : "N",
+    "sentence" : "In which U.S. state is Fort Knox located?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Fort_Knox dbo:location ?uri . ?uri dbo:country res:United_States }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Fort_Knox> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Fort_Providence> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Fort> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Vanadurga_Fort> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "173",
     "status" : "WORK",
-    "sentence" : "Give me all cities in New Jersey with more than 100000 inhabitants",
+    "sentence" : "Give me all cities in New Jersey with more than 100000 inhabitants.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/isPartOf> <http://dbpedia.org/resource/New_Jersey> .}" ]
   }, {
@@ -1046,7 +1046,7 @@
   }, {
     "id" : "175",
     "status" : "N",
-    "sentence" : "Give me all B-sides of the Ramones",
+    "sentence" : "Give me all B-sides of the Ramones.",
     "givenSparql" : "SELECT DISTINCT ?string WHERE { ?x <http://dbpedia.org/ontology/musicalArtist> <http://dbpedia.org/resource/Ramones> ; <http://dbpedia.org/ontology/bSide> ?string }",
     "sparqls" : [ ]
   }, {
@@ -1057,20 +1057,20 @@
     "sparqls" : [ ]
   }, {
     "id" : "177",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "When was Olof Palme shot?",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Olof_Palme> <http://dbpedia.org/ontology/deathDate> ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Olof_Palme> <http://dbpedia.org/ontology/deathDate> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "178",
     "status" : "N",
-    "sentence" : "List the seven kings of Rome",
+    "sentence" : "List the seven kings of Rome.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/King_of_Rome> }",
     "sparqls" : [ ]
   }, {
     "id" : "179",
     "status" : "N",
-    "sentence" : "Give me all people that were born in Vienna and died in Berlin",
+    "sentence" : "Give me all people that were born in Vienna and died in Berlin.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Vienna> ; <http://dbpedia.org/ontology/deathPlace> <http://dbpedia.org/resource/Berlin> }",
     "sparqls" : [ ]
   }, {
@@ -1082,19 +1082,19 @@
   }, {
     "id" : "181",
     "status" : "N",
-    "sentence" : "Show me all the breweries in Australia",
+    "sentence" : "Show me all the breweries in Australia.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Brewery> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
     "sparqls" : [ ]
   }, {
     "id" : "182",
     "status" : "WORK",
-    "sentence" : "Give me all films produced by Steven Spielberg with a budget of at least $80 million",
+    "sentence" : "Give me all films produced by Steven Spielberg with a budget of at least $80 million.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Steven_Spielberg> . ?uri <http://dbpedia.org/ontology/budget> ?b . FILTER( xsd:double(?b) >= 8.0E7 ) }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/executiveProducer> <http://dbpedia.org/resource/Steven_Spielberg> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/manufacturer> <http://dbpedia.org/resource/Wings_Of_Freedom> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Steven_Spielberg> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/A_Woman_with_Power_of_Attorney> <http://dbpedia.org/ontology/director> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Budget_Direct> <http://dbpedia.org/ontology/product> ?Answer .}" ]
   }, {
     "id" : "183",
     "status" : "N",
-    "sentence" : "Give me all soccer clubs in Spain",
+    "sentence" : "Give me all soccer clubs in Spain.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> { ?uri <http://dbpedia.org/ontology/ground> <http://dbpedia.org/resource/Spain> } UNION { ?uri <http://dbpedia.org/property/ground> ?ground FILTER regex(?ground, \"Spain\") } }",
     "sparqls" : [ ]
   }, {
@@ -1106,7 +1106,7 @@
   }, {
     "id" : "185",
     "status" : "N",
-    "sentence" : "Give me all breeds of the German Shepherd dog",
+    "sentence" : "Give me all breeds of the German Shepherd dog.",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/breed> <http://dbpedia.org/resource/German_Shepherd> }",
     "sparqls" : [ ]
   }, {
@@ -1117,10 +1117,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "187",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "Which languages are spoken in Estonia?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spokenIn> <http://dbpedia.org/resource/Estonia> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/language> <http://dbpedia.org/resource/Cinema_of_Estonia> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/officialLanguage> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/spokenIn> <http://dbpedia.org/resource/Estonia> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Estonia> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Estonia> <http://dbpedia.org/ontology/officialLanguage> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/spokenIn> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "188",
     "status" : "N",
@@ -1168,7 +1168,7 @@
     "status" : "WORK",
     "sentence" : "Who wrote the book Les Piliers de la terre?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/La_Mort_de_la_Terre> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mariana_de_la_Noche> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Les_yeux_de_la_mama> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sono_Speed_De> <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/La_Vuelta_de_Martín_Fierro> <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/La_Profecía_de_Urayoán> <http://dbpedia.org/property/writer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/La_Terre> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Rendez-vous_en_terre_inconnue> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/La_Vie_Sur_Terre> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/writer> ?Answer .}" ]
   }, {
     "id" : "196",
     "status" : "WORK",
@@ -1216,7 +1216,7 @@
     "status" : "WORK",
     "sentence" : "In which country is Mecca located?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Mecca dbo:country ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Mecca> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Mecca> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Mecca> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. <http://dbpedia.org/resource/Mecca> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Mecca> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Hussein_bin_Ali,_Sharif_of_Mecca> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Mecca> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Mecca> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Mecca> .}" ]
   }, {
     "id" : "204",
     "status" : "WORK",
@@ -1228,7 +1228,7 @@
     "status" : "WORK",
     "sentence" : "In which country does the Nile start?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Nile dbo:sourceCountry ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/The_Wiggles> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. <http://dbpedia.org/resource/The_Jewel_of_the_Nile> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {
     "id" : "206",
     "status" : "N",
@@ -1274,7 +1274,7 @@
   }, {
     "id" : "213",
     "status" : "WORK",
-    "sentence" : "Give me all movies directed by Francis Ford Coppola",
+    "sentence" : "Give me all movies directed by Francis Ford Coppola.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:director res:Francis_Ford_Coppola }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Francis_Ford_Coppola> .}" ]
   }, {
@@ -1324,7 +1324,7 @@
     "status" : "WORK",
     "sentence" : "Which awards did Douglas Hofstadter win?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Douglas_Hofstadter dbo:award ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Award>. <http://dbpedia.org/resource/Douglas_Hofstadter> <http://dbpedia.org/ontology/award> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Award>. ?Answer <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Douglas_Engelbart> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Award>. <http://dbpedia.org/resource/Douglas_Hofstadter> <http://dbpedia.org/ontology/award> ?Answer .}" ]
   }, {
     "id" : "222",
     "status" : "WORK",
@@ -1342,13 +1342,13 @@
     "status" : "WORK",
     "sentence" : "Which river does the Brooklyn Bridge cross?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbo:crosses ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/River>. <http://dbpedia.org/resource/Brooklyn_Bridge> <http://dbpedia.org/ontology/crosses> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/River>. ?Answer <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/The_Swale> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/River>. <http://dbpedia.org/resource/Brooklyn_Bridge> <http://dbpedia.org/ontology/crosses> ?Answer .}" ]
   }, {
     "id" : "225",
     "status" : "WORK",
     "sentence" : "How many people live in Poland?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Poland dbo:populationTotal ?uri }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Answer <http://dbpedia.org/ontology/ethnicGroup> <http://dbpedia.org/resource/Ukrainians_in_Poland> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Poland> <http://dbpedia.org/ontology/populationTotal> ?Answer .}" ]
   }, {
     "id" : "226",
     "status" : "N",
@@ -1376,7 +1376,7 @@
   }, {
     "id" : "231",
     "status" : "WORK",
-    "sentence" : "Give me all launch pads operated by NASA",
+    "sentence" : "Give me all launch pads operated by NASA.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:LaunchPad ; dbo:operator res:NASA }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/LaunchPad>. ?Answer <http://dbpedia.org/ontology/operator> <http://dbpedia.org/resource/NASA> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/LaunchPad>. ?Answer <http://dbpedia.org/property/operator> <http://dbpedia.org/resource/NASA> .}" ]
   }, {
@@ -1384,13 +1384,13 @@
     "status" : "WORK",
     "sentence" : "Who developed the video game World of Warcraft?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:World_of_Warcraft dbo:developer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Video_Game> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/World_of_Warcraft> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/World_of_Warcraft> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
   }, {
     "id" : "233",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "What is the birth name of Adele?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?bn WHERE { dbr:Adele dbo:birthName ?bn }",
-    "sparqls" : [ "No Sparql!!!!", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/birthName> ?Arg .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "234",
     "status" : "N",
@@ -1444,13 +1444,13 @@
     "status" : "WORK",
     "sentence" : "In which year was Rachel Stevens born?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Rachel_Stevens dbo:birthYear ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Rachel_Stevens> <http://dbpedia.org/ontology/birthDate> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Rachel_Stevens> <http://dbpedia.org/ontology/birthYear> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Year>. ?Answer <http://dbpedia.org/ontology/birthDate> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Year>. ?Answer <http://dbpedia.org/ontology/birthYear> ?Arg .}" ]
   }, {
     "id" : "244",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "How often did Jane Fonda marry?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Jane_Fonda dbo:spouse ?uri }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Jane_Fonda> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "245",
     "status" : "WORK",
@@ -1462,7 +1462,7 @@
     "status" : "WORK",
     "sentence" : "Which cities does the Weser flow through?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Weser dbo:city ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Weser> <http://dbpedia.org/ontology/city> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/country> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> ?Arg .}" ]
   }, {
     "id" : "247",
     "status" : "N",
@@ -1478,7 +1478,7 @@
   }, {
     "id" : "249",
     "status" : "WORK",
-    "sentence" : "List all the musicals with music by Elton John",
+    "sentence" : "List all the musicals with music by Elton John.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Musical ; dbo:musicBy res:Elton_John }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Elton_John> .}" ]
   }, {
@@ -1498,19 +1498,19 @@
     "status" : "WORK",
     "sentence" : "When was John Adams born?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:John_Adams dbo:birthDate ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/John_Adams> <http://dbpedia.org/ontology/birthDate> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/John_Bodkin_Adams> <http://dbpedia.org/ontology/birthYear> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthDate> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthYear> ?Arg .}" ]
   }, {
     "id" : "253",
     "status" : "WORK",
     "sentence" : "Which companies produce hovercrafts?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:product res:Hovercraft }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/director> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> ?Arg .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/executiveProducer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/manufacturer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/producer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/director> ?Arg .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/executiveProducer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/manufacturer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/producer> ?Answer .}" ]
   }, {
     "id" : "254",
     "status" : "WORK",
-    "sentence" : "Who was the wife of US president Lincoln?",
+    "sentence" : "Who was the wife of U.S. president Lincoln?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:spouse ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/US_Senate> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Mi_Saw_U> .}" ]
   }, {
     "id" : "255",
     "status" : "N",
@@ -1522,7 +1522,7 @@
     "status" : "WORK",
     "sentence" : "How many people live in the capital of Australia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Australia dbo:capital ?x . ?x dbo:populationTotal ?num }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Person>. ?Answer <http://dbpedia.org/ontology/ethnicGroup> <http://dbpedia.org/resource/Indigenous_peoples_of_the_Americas> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Triangle_of_the_Sun> <http://dbpedia.org/ontology/populationTotal> ?Answer .}" ]
   }, {
     "id" : "257",
     "status" : "WORK",
@@ -1531,20 +1531,20 @@
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Cocoa_bean> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Croatia_in_the_union_with_Hungary> <http://dbpedia.org/ontology/currency> ?Answer .}" ]
   }, {
     "id" : "258",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "How many theories did Albert Einstein come up with?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT (COUNT(?uri) AS ?count) WHERE { dbr:Albert_Einstein dbo:knownFor ?uri }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { <http://dbpedia.org/resource/Albert_Einstein> <http://dbpedia.org/ontology/award> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "259",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "Who composed the soundtrack for Cameron's Titanic?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Titanic_(1997_film)> dbo:musicComposer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Soundtrack_for_a_Revolution> <http://dbpedia.org/ontology/musicComposer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "260",
     "status" : "N",
-    "sentence" : "Give me the runtime of Toy Story",
+    "sentence" : "Give me the runtime of Toy Story.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?runtime WHERE { res:Toy_Story dbo:runtime ?runtime }",
     "sparqls" : [ ]
   }, {
@@ -1558,13 +1558,13 @@
     "status" : "WORK",
     "sentence" : "Which electronics companies were founded in Beijing?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:industry res:Electronics ; dbo:foundationPlace res:Beijing }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/Beijing> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundingYear> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/founded> ?Arg .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/Beijing> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/founded> ?Arg .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Beijing_E-Town> <http://dbpedia.org/ontology/formationYear> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/founded> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Beijing_Olympians> <http://dbpedia.org/ontology/foundingYear> ?Answer .}" ]
   }, {
     "id" : "264",
     "status" : "WORK",
-    "sentence" : "Who was the successor of John F Kennedy?",
+    "sentence" : "Who was the successor of John F. Kennedy?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:successor ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/successor> <http://dbpedia.org/resource/John_F._Kennedy> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/successor> <http://dbpedia.org/resource/John_F._Wright> .}" ]
   }, {
     "id" : "265",
     "status" : "WORK",
@@ -1598,7 +1598,7 @@
   }, {
     "id" : "270",
     "status" : "N",
-    "sentence" : "Who was John F Kennedy's vice president?",
+    "sentence" : "Who was John F. Kennedy's vice president?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:vicePresident ?uri }",
     "sparqls" : [ ]
   }, {
@@ -1606,7 +1606,7 @@
     "status" : "WORK",
     "sentence" : "Which country does the creator of Miffy come from?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Miffy dbo:creator ?x . ?x dbo:nationality ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/The_Vestibules> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/creator> <http://dbpedia.org/resource/The_Wiggles> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/notableWork> <http://dbpedia.org/resource/The_Yeshiva> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. <http://dbpedia.org/resource/The_Zouave> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. <http://dbpedia.org/resource/The_Xtacles> <http://dbpedia.org/ontology/creator> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Arg <http://dbpedia.org/ontology/notableWork> ?Answer .}" ]
   }, {
     "id" : "273",
     "status" : "N",
@@ -1622,7 +1622,7 @@
   }, {
     "id" : "275",
     "status" : "WORK",
-    "sentence" : "List the children of Margaret Thatcher",
+    "sentence" : "List the children of Margaret Thatcher.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Margaret_Thatcher dbo:child ?uri }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/child> <http://dbpedia.org/resource/Margaret_Thatcher> .}" ]
   }, {
@@ -1660,7 +1660,7 @@
     "status" : "WORK",
     "sentence" : "Which films did Stanley Kubrick direct?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Stanley_Kubrick }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Stanley_Kubrick> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Stanley_Kubrick> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Stanley_Kubrick's_Boxes> <http://dbpedia.org/ontology/director> ?Answer .}" ]
   }, {
     "id" : "283",
     "status" : "N",
@@ -1669,10 +1669,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "284",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "How many inhabitants does the largest city in Canada have?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Canada dbo:largestCity ?city . ?city dbo:populationTotal ?num }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Centre_In_The_Square> <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}" ]
   }, {
     "id" : "285",
     "status" : "WORK",
@@ -1682,7 +1682,7 @@
   }, {
     "id" : "286",
     "status" : "WORK",
-    "sentence" : "Give me all actors starring in movies directed by William Shatner",
+    "sentence" : "Give me all actors starring in movies directed by William Shatner.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring ?uri }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. <http://dbpedia.org/resource/Directed_by_John_Ford> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {
@@ -1705,10 +1705,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "290",
-    "status" : "N",
-    "sentence" : "List all games by GMT",
+    "status" : "WORK",
+    "sentence" : "List all games by GMT.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/GMT_Games> .}" ]
   }, {
     "id" : "291",
     "status" : "N",
@@ -1732,19 +1732,19 @@
     "status" : "WORK",
     "sentence" : "In which country is the Limerick Lake?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Limerick_Lake dbo:country ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Lake_Eyre_Basin> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Yulton_Lake> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. <http://dbpedia.org/resource/Limerick_Lake> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Limerick> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Lake_Eyre_Basin> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Yulton_Lake> .}" ]
   }, {
     "id" : "295",
     "status" : "WORK",
-    "sentence" : "Give me all video games published by Mean Hamster Software",
+    "sentence" : "Give me all video games published by Mean Hamster Software.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:VideoGame ; dbo:publisher res:Mean_Hamster_Software }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/VideoGame>. ?Answer <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/Mean_Hamster_Software> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/VideoGame>. ?Answer <http://dbpedia.org/property/publisher> <http://dbpedia.org/resource/Wizipple_Software> .}" ]
   }, {
     "id" : "296",
     "status" : "WORK",
-    "sentence" : "Give me all members of Prodigy",
+    "sentence" : "Give me all members of Prodigy.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Prodigy dbo:bandMember ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/alliance> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/bandMember> ?Arg .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/alliance> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/bandMember> <http://dbpedia.org/resource/Prodigy_(rapper)> .}" ]
   }, {
     "id" : "297",
     "status" : "N",
@@ -1786,7 +1786,7 @@
     "status" : "WORK",
     "sentence" : "What form of government is found in South Africa?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { dbr:South_Africa dbo:governmentType ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/country> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/locatedInArea> ?Arg .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Atlantis_Found> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/country> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/locatedInArea> ?Arg .}" ]
   }, {
     "id" : "304",
     "status" : "WORK",
@@ -1807,10 +1807,10 @@
     "sparqls" : [ "SELECT DISTINCT ?subjOfProp WHERE { ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/BasketballPlayer> . ?subjOfProp <http://dbpedia.org/ontology/height> ?num . } ORDER BY DESC(?num) LIMIT 1", "SELECT DISTINCT ?subjOfProp WHERE { ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Model> . ?subjOfProp <http://dbpedia.org/ontology/height> ?num . } ORDER BY DESC(?num) LIMIT 1", "SELECT DISTINCT ?subjOfProp WHERE { ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/BasketballPlayer> . ?subjOfProp <http://dbpedia.org/ontology/height> ?num . } ORDER BY DESC(?num) LIMIT 1", "SELECT DISTINCT ?subjOfProp WHERE { ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Model> . ?subjOfProp <http://dbpedia.org/ontology/height> ?num . } ORDER BY DESC(?num) LIMIT 1" ]
   }, {
     "id" : "307",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "How many languages are spoken in Turkmenistan?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?x) AS ?c) WHERE { res:Turkmenistan dbo:language ?x }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Language>. <http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Language>. <http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/officialLanguage> ?Answer .}", "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Language>. ?Arg <http://dbpedia.org/ontology/spokenIn> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "308",
     "status" : "N",
@@ -1844,7 +1844,7 @@
   }, {
     "id" : "313",
     "status" : "N",
-    "sentence" : "Give me the birth place of Frank Sinatra",
+    "sentence" : "Give me the birth place of Frank Sinatra.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?place WHERE { res:Frank_Sinatra dbo:birthPlace ?place }",
     "sparqls" : [ ]
   }, {
@@ -1864,7 +1864,7 @@
     "status" : "WORK",
     "sentence" : "How many ethnic groups live in Slovenia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Slovenia dbo:ethnicGroup ?uri }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/EthnicGroup>. ?Answer <http://dbpedia.org/ontology/ethnicGroup> <http://dbpedia.org/resource/Serbs_in_Slovenia> .}" ]
+    "sparqls" : [ "SELECT COUNT(?Answer ) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/EthnicGroup>. ?Answer <http://dbpedia.org/ontology/ethnicGroup> ?Arg .}", "SELECT COUNT(?Answer ) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/EthnicGroup>. ?Arg <http://dbpedia.org/ontology/residence> ?Answer .}" ]
   }, {
     "id" : "317",
     "status" : "N",
@@ -1879,10 +1879,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "319",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "How many pages does War and Peace have?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?n WHERE { res:War_and_Peace dbo:numberOfPages ?n }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/War_Heroes_Stadium> <http://dbpedia.org/ontology/seatingCapacity> ?Answer .}" ]
   }, {
     "id" : "320",
     "status" : "N",
@@ -1910,7 +1910,7 @@
   }, {
     "id" : "324",
     "status" : "N",
-    "sentence" : "Was US president Jackson involved in a war?",
+    "sentence" : "Was U.S. president Jackson involved in a war?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Andrew_Jackson dbo:battle ?battle }",
     "sparqls" : [ ]
   }, {
@@ -1918,7 +1918,7 @@
     "status" : "WORK",
     "sentence" : "When was the Titanic completed?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:RMS_Titanic dbo:completionDate ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/buildingEndDate> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/RMS_Titanic> <http://dbpedia.org/ontology/completionDate> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/buildingEndDate> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/completionDate> ?Arg .}" ]
   }, {
     "id" : "326",
     "status" : "N",
@@ -1948,11 +1948,11 @@
     "status" : "WORK",
     "sentence" : "Who composed the music for Harold and Maude?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Harold_and_Maude> <http://dbpedia.org/ontology/musicComposer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Micki_&_Maude> <http://dbpedia.org/ontology/musicComposer> ?Answer .}" ]
   }, {
     "id" : "331",
     "status" : "N",
-    "sentence" : "List all episodes of the first season of the HBO television series The Sopranos",
+    "sentence" : "List all episodes of the first season of the HBO television series The Sopranos.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:The_Sopranos ; dbo:seasonNumber 1 }",
     "sparqls" : [ ]
   }, {
@@ -1978,7 +1978,7 @@
     "status" : "WORK",
     "sentence" : "Who wrote the book The Pillars of the Earth?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Pillars_of_the_Earth> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Pillars_of_the_Earth_(miniseries)> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Book_of_Zombie> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wrath_of_the_Tyrant> <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Book_of_Other_People> <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Edge_of_the_Earth> <http://dbpedia.org/property/writer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Unaccustomed_Earth> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Earth_Seeker> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Yellow_Earth> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Target_Earth_(album)> <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Batman:_Earth_One> <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/New_Earth> <http://dbpedia.org/property/writer> ?Answer .}" ]
   }, {
     "id" : "336",
     "status" : "N",
@@ -2048,7 +2048,7 @@
   }, {
     "id" : "347",
     "status" : "N",
-    "sentence" : "Show me all books in Asimov's Foundation series",
+    "sentence" : "Show me all books in Asimov's Foundation series.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series }",
     "sparqls" : [ ]
   }, {
@@ -2068,13 +2068,13 @@
     "status" : "WORK",
     "sentence" : "Who designed the Brooklyn Bridge?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbo:architect ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Brooklyn_Bridge> <http://dbpedia.org/ontology/architect> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Vojinović_Bridge> <http://dbpedia.org/ontology/designer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Yair_Bridge> <http://dbpedia.org/ontology/architect> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Vojinović_Bridge> <http://dbpedia.org/ontology/designer> ?Answer .}" ]
   }, {
     "id" : "351",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "How many people live in Eurasia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?population WHERE { res:Eurasia dbo:populationTotal ?population }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Eurasia> <http://dbpedia.org/ontology/populationTotal> ?Answer .}" ]
   }, {
     "id" : "352",
     "status" : "WORK",
@@ -2092,7 +2092,7 @@
     "status" : "WORK",
     "sentence" : "What country is Mount Everest in?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Mount_Everest dbo:locatedInArea ?uri . ?uri rdf:type dbo:Country }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Mount_Emei> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Mount_Everest> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. <http://dbpedia.org/resource/Tolgus_Mount> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Mount_Vernon> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Mount_Emei> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Mount_Everest> .}" ]
   }, {
     "id" : "355",
     "status" : "WORK",
@@ -2104,7 +2104,7 @@
     "status" : "WORK",
     "sentence" : "When did Operation Overlord commence?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?d WHERE { res:Operation_Overlord dbo:date ?d }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Operation_Overlord> <http://dbpedia.org/ontology/date> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Swatow_Operation> <http://dbpedia.org/property/date> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/date> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/date> ?Arg .}" ]
   }, {
     "id" : "357",
     "status" : "N",
@@ -2152,7 +2152,7 @@
     "status" : "WORK",
     "sentence" : "In which UK city are the headquarters of the MI6?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Secret_Intelligence_Service dbo:headquarter ?uri . ?uri dbo:country res:United_Kingdom }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Willem-Alexander_of_the_Netherlands> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Republic_of_the_Congo> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Headquarters_of_the_Provincial_Bank_of_Córdoba> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/alias> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> ?Arg .}" ]
   }, {
     "id" : "365",
     "status" : "WORK",
@@ -2168,15 +2168,15 @@
   }, {
     "id" : "367",
     "status" : "N",
-    "sentence" : "Give me the grandchildren of Elvis Presley",
+    "sentence" : "Give me the grandchildren of Elvis Presley.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Elvis_Presley dbo:child ?child . ?child dbo:child ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "368",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "When did the Ming dynasty dissolve?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Ming_dynasty dbo:dissolutionDate ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ming_dynasty> <http://dbpedia.org/ontology/dissolutionDate> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "369",
     "status" : "WORK",
@@ -2185,14 +2185,14 @@
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/MilitaryConflict>. ?Answer <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Price_of_oil> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/MilitaryConflict>. <http://dbpedia.org/resource/Protectorate_of_South_Arabia> <http://dbpedia.org/ontology/currency> ?Answer .}" ]
   }, {
     "id" : "370",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "What is the timezone in San Pedro de Atacama?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:San_Pedro_de_Atacama dbo:timeZone ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/timeZone> <http://dbpedia.org/resource/De_jure> .}" ]
   }, {
     "id" : "371",
     "status" : "WORK",
-    "sentence" : "Give me all books by William Goldman with more than 300 pages",
+    "sentence" : "Give me all books by William Goldman with more than 300 pages.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:author res:William_Goldman ; dbo:numberOfPages ?x FILTER ( ?x > 300 ) }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/William_Goldman> .}" ]
   }, {
@@ -2206,7 +2206,7 @@
     "status" : "WORK",
     "sentence" : "Which subsidiary of Lufthansa serves both Dortmund and Berlin Tegel?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Lufthansa dbo:subsidiary ?uri . ?uri dbo:targetAirport res:Dortmund_Airport ; dbo:targetAirport res:Berlin_Tegel_Airport }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Air_Berlin> <http://dbpedia.org/ontology/targetAirport> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/Berlin_Tegel_Airport> .}" ]
   }, {
     "id" : "374",
     "status" : "N",
@@ -2230,7 +2230,7 @@
     "status" : "WORK",
     "sentence" : "In which city does Sylvester Stallone live?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . res:Sylvester_Stallone dbo:residence ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/City>. ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/William_Sylvester> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/City>. <http://dbpedia.org/resource/Sylvester_(film)> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {
     "id" : "378",
     "status" : "WORK",
@@ -2242,7 +2242,7 @@
     "status" : "WORK",
     "sentence" : "Who wrote the song Hotel California?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Hotel_California dbo:writer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wind-Rain_Song> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wind_Song> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Hotel_California> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/True_Song> <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Hotel_Beautifool> <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Hotel_California_(Eagles_album)> <http://dbpedia.org/property/writer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Goodbye_California> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/California_Games> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Maybe_California> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/California_Sunrise> <http://dbpedia.org/property/writer> ?Answer .}" ]
   }, {
     "id" : "380",
     "status" : "WORK",
@@ -2264,9 +2264,9 @@
   }, {
     "id" : "383",
     "status" : "WORK",
-    "sentence" : "Show me the book that Muhammad Ali wrote",
+    "sentence" : "Show me the book that Muhammad Ali wrote.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:author res:Muhammad_Ali }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Muhammad_Ali> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/ontology/composer> <http://dbpedia.org/resource/Queen_Muhammad_Ali> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/ontology/writer> <http://dbpedia.org/resource/Muhammad_Ali> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/property/allLyrics> <http://dbpedia.org/resource/Yusuf_Ali_Kechery> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/property/editor> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Book>. ?Answer <http://dbpedia.org/property/writer> <http://dbpedia.org/resource/Ali_Shaheed_Muhammad> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Muhammad_Ali> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/composer> <http://dbpedia.org/resource/Queen_Muhammad_Ali> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/writer> <http://dbpedia.org/resource/Muhammad_Ali> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/allLyrics> <http://dbpedia.org/resource/Yusuf_Ali_Kechery> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/editor> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/writer> <http://dbpedia.org/resource/Ali_Shaheed_Muhammad> .}" ]
   }, {
     "id" : "384",
     "status" : "N",
@@ -2275,10 +2275,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "385",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "How many languages are spoken in Colombia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri rdf:type dbo:Language . res:Colombia dbo:language ?uri }",
-    "sparqls" : [ "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Language>. <http://dbpedia.org/resource/Colombia> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Language>. <http://dbpedia.org/resource/Colombia> <http://dbpedia.org/ontology/officialLanguage> ?Answer .}", "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Language>. ?Arg <http://dbpedia.org/ontology/spokenIn> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "386",
     "status" : "WORK",
@@ -2293,10 +2293,10 @@
     "sparqls" : [ ]
   }, {
     "id" : "388",
-    "status" : "WORK",
+    "status" : "N",
     "sentence" : "When did Boris Becker end his active career?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?d WHERE { res:Boris_Becker dbo:activeYearsEndDate ?d }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Boris_Becker> <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "389",
     "status" : "WORK",
@@ -2308,11 +2308,11 @@
     "status" : "WORK",
     "sentence" : "In which films did Julia Roberts as well as Richard Gere play?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/portrayer> <http://dbpedia.org/resource/Wendy_Richard> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Gere> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/It_Might_as_Well_Be_Swing> <http://dbpedia.org/ontology/genre> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Summer_Roberts> <http://dbpedia.org/ontology/portrayer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/genre> <http://dbpedia.org/resource/Richard_Wagner> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/portrayer> <http://dbpedia.org/resource/Wendy_Richard> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Gere> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/It_Might_as_Well_Be_Swing> <http://dbpedia.org/ontology/genre> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/Summer_Roberts> <http://dbpedia.org/ontology/portrayer> ?Answer .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Film>. <http://dbpedia.org/resource/You_Might_as_Well_Live> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {
     "id" : "391",
     "status" : "N",
-    "sentence" : "Show me Hemingway's autobiography",
+    "sentence" : "Show me Hemingway's autobiography.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:author res:Ernest_Hemingway ; dbo:literaryGenre res:Autobiography }",
     "sparqls" : [ ]
   }, {
@@ -2330,7 +2330,7 @@
   }, {
     "id" : "394",
     "status" : "N",
-    "sentence" : "Give me all Canadian Grunge record labels",
+    "sentence" : "Give me all Canadian Grunge record labels.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:RecordLabel ; dbo:genre res:Grunge ; dbo:country res:Canada }",
     "sparqls" : [ ]
   }, {
@@ -2338,7 +2338,7 @@
     "status" : "WORK",
     "sentence" : "In which country does the Ganges start?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ganges dbo:sourceCountry ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/The_Wiggles> .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Country>. <http://dbpedia.org/resource/Walk_the_Walk> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {
     "id" : "396",
     "status" : "WORK",
@@ -2350,7 +2350,7 @@
     "status" : "WORK",
     "sentence" : "Who wrote the Game of Thrones theme?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Game_of_Thrones dbo:composer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/A_Game_of_Thrones> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Game_of_Thrones> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Game_of_Thrones_Theme> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Weekends_of_Sound> <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/South_of_Caliente> <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Game_of_Thrones_(season_6)> <http://dbpedia.org/property/writer> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Theme_of_the_Traitor_and_the_Hero> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Theme_Hospital> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Theme> <http://dbpedia.org/ontology/writer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Variations_on_a_Theme_(David_Thomas_album)> <http://dbpedia.org/property/allLyrics> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/editor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Theme_for_a_Trucker> <http://dbpedia.org/property/writer> ?Answer .}" ]
   }, {
     "id" : "398",
     "status" : "WORK",
@@ -2359,10 +2359,10 @@
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/leader> ?Arg .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/leaderTitle> ?Arg .}", "No Sparql!!!!", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/title> <http://dbpedia.org/resource/Italian_Governors_of_Eritrea> .}" ]
   }, {
     "id" : "399",
-    "status" : "WORK",
-    "sentence" : "In which city did John F Kennedy die?",
+    "status" : "N",
+    "sentence" : "In which city did John F. Kennedy die?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:deathPlace ?uri . ?uri rdf:type dbo:City }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/City>. <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "400",
     "status" : "N",
@@ -2378,13 +2378,13 @@
   }, {
     "id" : "402",
     "status" : "N",
-    "sentence" : "Give me the currency of China",
+    "sentence" : "Give me the currency of China.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:China dbo:currency ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "403",
     "status" : "N",
-    "sentence" : "Give me all Swedish oceanographers",
+    "sentence" : "Give me all Swedish oceanographers.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:field res:Oceanography ; dbo:birthPlace res:Sweden }",
     "sparqls" : [ ]
   }, {
@@ -2392,7 +2392,7 @@
     "status" : "WORK",
     "sentence" : "In which city are the headquarters of the United Nations?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/City>. ?Answer <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/The_United_Nations> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/City>. ?Answer <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/United_States_of_America> .}", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/City>. <http://dbpedia.org/resource/United_Nations_Training_Center_of_the_Bundeswehr> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ "No Sparql!!!!", "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/City>. ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/United_Nations> .}" ]
   }, {
     "id" : "405",
     "status" : "WORK",
@@ -2401,10 +2401,10 @@
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Tom_Hanks> .}" ]
   }, {
     "id" : "406",
-    "status" : "N",
+    "status" : "WORK",
     "sentence" : "In which countries do people speak Japanese?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country ; dbo:language res:Japanese_language }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Japanese_Wikipedia> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/officialLanguage> ?Answer .}" ]
   }, {
     "id" : "407",
     "status" : "N",
@@ -2438,7 +2438,7 @@
   }, {
     "id" : "412",
     "status" : "WORK",
-    "sentence" : "Give me all actors starring in Last Action Hero",
+    "sentence" : "Give me all actors starring in Last Action Hero.",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Last_Action_Hero dbo:starring ?uri }",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Actor>. <http://dbpedia.org/resource/Last_Action_Hero> <http://dbpedia.org/ontology/starring> ?Answer .}" ]
   }, {

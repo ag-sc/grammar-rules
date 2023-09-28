@@ -26,13 +26,14 @@ public class QueGG {
     //private static String inputDir = "grammarFiles/en/";
     private static String inputDir ="result/en/";
     private static String classFileName = "src/main/resources/LexicalEntryForClass.csv";
-    //private static String grammarFileName = "grammar_FULL_DATASET_EN.json";
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
 
     public static void main(String[] args) throws Exception {
         Boolean parseFlag=false,evaluationFlag=true;
-        args = new String[]{"en", "grammarFiles/en/grammar_FULL_DATASET_EN.json","grammarFiles/en/input-QALD9-train-inductive.csv"};
+        //"grammarFiles/en/grammar_FULL_DATASET_EN.json";
+        args = new String[]{"en", "/home/elahi/A-Grammar/journal/multilingual-grammar-generator/result/en/grammar_FULL_DATASET_EN.json",
+            "grammarFiles/en/input-QALD9-train-inductive.csv"};
         //System.out.println(inputDir+"grammar_FULL_DATASET_EN_LAST_Test.json");
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
@@ -60,9 +61,12 @@ public class QueGG {
             if(row.length>=3){
                givenSparql=row[2]; 
             }
-            //if(idInteger!=34)
-            //   continue; 
+            //if((idInteger!=18)||(idInteger!=43)||(idInteger!=47)
+            //        ||(idInteger!=69)||(idInteger!=89)||(idInteger!=113)||(idInteger!=150))
+            //if(idInteger!=153)
+             //  continue; 
             
+            sentence=sentence.replace(".", "");
             System.out.println(id+" sentence::" + sentence+" row.length::"+row.length);
             if (parseFlag) {
                  parseResult = runParser(grammar, id, sentence);
@@ -71,7 +75,7 @@ public class QueGG {
             }
             else {
                 
-                if (idInteger == 94||idInteger == 310) 
+                if (idInteger == 310||idInteger == 117||idInteger == 101||idInteger == 394||idInteger == 94) 
                    parseResult=new Result(id, "N", sentence, givenSparql,new ArrayList<String>());
                 else 
                    parseResult = runParserForQald(grammar, id, sentence, givenSparql);
@@ -87,9 +91,9 @@ public class QueGG {
             
             System.out.println();
             
-            /*if(index>100)
-                break;*/
-            
+            /*if(index>200)
+                break;
+            */
         }
         try {
              ObjectMapper mapper = new ObjectMapper();

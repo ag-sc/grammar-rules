@@ -1,0 +1,379 @@
+lemon,partOfSpeech,writtenForm (singular),SyntacticFrame,copulativeSubject,attributiveArg,sense,reference,owl:onProperty,owl:hasValue
+academic journal_of,noun,academic journal,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AcademicJournal
+actor_of,noun,actor,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Actor
+administrative_region_of,noun,administrative region,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AdministrativeRegion
+adultactor_of,noun,Adult Actor,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AdultActor
+agent_of,noun,agent,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Agent
+aircraft_of,noun,Aircraft,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Aircraft
+airline_of,noun,airline,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Airline
+airport_of,noun,airport,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Airport
+album_of,noun,album,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Album
+amateurboxer_of,noun,Amateur Boxer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AmateurBoxer
+ambassador_of,noun,Ambassador,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Ambassador
+americanfootballleague_of,noun,American Football League,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AmericanFootballLeague
+american football player_of,noun,american football player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AmericanFootballPlayer
+amphibian_of,noun,Amphibian,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Amphibian
+amusementparkattraction_of,noun,Amusement Park Attraction,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AmusementParkAttraction
+anatomicalstructure_of,noun,Anatomical Structure,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AnatomicalStructure
+animal_of,noun,animal,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Animal
+anime_of,noun,Anime,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Anime
+arachnid_of,noun,Arachnid,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Arachnid
+archaea_of,noun,Archaea,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Archaea
+archbishop_of,noun,Archbishop,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Archbishop
+architect_of,noun,architect,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Architect
+architecturalstructure_of,noun,Architectural Structure,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ArchitecturalStructure
+artery_of,noun,Artery,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Artery
+article_of,noun,article,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Article
+artist_of,noun,artist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Artist
+artistdiscography_of,noun,Artist Discography,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ArtistDiscography
+artwork_of,noun,artwork,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Artwork
+astronaut_of,noun,Astronaut,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Astronaut
+athlete_of,noun,athlete,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Athlete
+australianfootballteam_of,noun,Australian Football Team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AustralianFootballTeam
+australianrulesfootballplayer_of,noun,Australian Rules Football Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AustralianRulesFootballPlayer
+author_of,noun,author,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Author
+autobiography_of,noun,autobiography,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Autobiography
+automobile_of,noun,Automobile,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Automobile
+automobileengine_of,noun,Automobile Engine,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:AutomobileEngine
+award_of,noun,award,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Award
+bacteria_of,noun,Bacteria,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Bacteria
+badmintonplayer_of,noun,Badminton Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BadmintonPlayer
+band_of,noun,band,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Band
+bank_of,noun,Bank,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Bank
+baronet_of,noun,Baronet,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Baronet
+baseballleague_of,noun,Baseball League,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BaseballLeague
+baseballplayer_of,noun,Baseball Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BaseballPlayer
+baseballseason_of,noun,Baseball Season,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BaseballSeason
+basketballleague_of,noun,Basketball League,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BasketballLeague
+basketball player_of,noun,basketball player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BasketballPlayer
+basketballteam_of,noun,Basketball Team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BasketballTeam
+beachvolleyballplayer_of,noun,Beach Volleyball Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BeachVolleyballPlayer
+beautyqueen_of,noun,Beauty Queen,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BeautyQueen
+beverage_of,noun,beverage,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Beverage
+biologicaldatabase_of,noun,Biological Database,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BiologicalDatabase
+bird_of,noun,Bird,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Bird
+river_of,noun,river,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BodyOfWater
+bodybuilder_of,noun,Bodybuilder,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Bodybuilder
+bone_of,noun,Bone,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Bone
+book_of,noun,book,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Book
+boxer_of,noun,Boxer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Boxer
+brain_of,noun,Brain,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Brain
+brewery_of,noun,Brewery,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Brewery
+bridge_of,noun,Bridge,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Bridge
+broadcast network_of,noun,broadcast network,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BroadcastNetwork
+broadcaster_of,noun,broadcaster,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Broadcaster
+building_of,noun,Building,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Building
+buscompany_of,noun,Bus Company,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BusCompany
+businessperson_of,noun,Business Person,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:BusinessPerson
+canadianfootballteam_of,noun,Canadian Football Team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CanadianFootballTeam
+canal_of,noun,Canal,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Canal
+canoeist_of,noun,Canoeist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Canoeist
+cardinal_of,noun,Cardinal,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Cardinal
+castle_of,noun,Castle,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Castle
+cave_of,noun,Cave,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Cave
+cheese_of,noun,Cheese,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Cheese
+chef_of,noun,Chef,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Chef
+chemicalcompound_of,noun,Chemical Compound,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ChemicalCompound
+chessplayer_of,noun,Chess Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ChessPlayer
+christianbishop_of,noun,Christian Bishop,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ChristianBishop
+cinema_of,noun,Cinema,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Cinema
+city_of,noun,city,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:City
+citydistrict_of,noun,City District,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CityDistrict
+classicalmusicartist_of,noun,Classical Music Artist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ClassicalMusicArtist
+classicalmusiccomposition_of,noun,Classical Music Composition,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ClassicalMusicComposition
+cleric_of,noun,Cleric,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Cleric
+college_of,noun,College,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:College
+collegecoach_of,noun,College Coach,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CollegeCoach
+color_of,noun,color,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Color
+color_of,noun,color,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Colour
+combinationdrug_of,noun,Combination Drug,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CombinationDrug
+comedian_of,noun,Comedian,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Comedian
+comedygroup_of,noun,Comedy Group,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ComedyGroup
+comic_of,noun,Comic,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Comic
+comicstrip_of,noun,Comic Strip,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ComicStrip
+comic character_of,noun,comic character,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ComicsCharacter
+comicscreator_of,noun,Comics Creator,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ComicsCreator
+company_of,noun,company,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Company
+concentrationcamp_of,noun,Concentration Camp,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ConcentrationCamp
+congressman_of,noun,Congressman,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Congressman
+convention_of,noun,Convention,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Convention
+country_of,noun,country,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Country
+crater_of,noun,Crater,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Crater
+cricketground_of,noun,Cricket Ground,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CricketGround
+cricketteam_of,noun,Cricket Team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CricketTeam
+cricketer_of,noun,Cricketer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Cricketer
+criminal_of,noun,Criminal,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Criminal
+crustacean_of,noun,Crustacean,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Crustacean
+cultivatedvariety_of,noun,Cultivated Variety,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CultivatedVariety
+curler_of,noun,Curler,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Curler
+currency_of,noun,currency,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Currency
+cyclingrace_of,noun,Cycling Race,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CyclingRace
+cyclingteam_of,noun,Cycling Team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:CyclingTeam
+cyclist_of,noun,Cyclist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Cyclist
+dam_of,noun,Dam,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Dam
+dartsplayer_of,noun,DartsPlayer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:DartsPlayer
+device_of,noun,Device,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Device
+diocese_of,noun,Diocese,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Diocese
+disease_of,noun,disease,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Disease
+drug_of,noun,Drug,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Drug
+earthquake_of,noun,Earthquake,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Earthquake
+economist_of,noun,Economist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Economist
+educational institution_of,noun,educational institution,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:EducationalInstitution
+election_of,noun,Election,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Election
+embryology_of,noun,Embryology,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Embryology
+engineer_of,noun,Engineer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Engineer
+entomologist_of,noun,Entomologist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Entomologist
+enzyme_of,noun,Enzyme,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Enzyme
+ethnic group_of,noun,ethnic group,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:EthnicGroup
+eukaryote_of,noun,Eukaryote,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Eukaryote
+eurovisionsongcontestentry_of,noun,Eurovision Song Contest Entry,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:EurovisionSongContestEntry
+event_of,noun,event,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Event
+fashion_of,noun,Fashion,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Fashion
+fashiondesigner_of,noun,Fashion Designer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FashionDesigner
+fictional character_of,noun,fictional character,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FictionalCharacter
+figureskater_of,noun,Figure Skater,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FigureSkater
+film_of,noun,film,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Film
+filmfestival_of,noun,Film Festival,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FilmFestival
+fish_of,noun,Fish,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Fish
+food_of,noun,food,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Food
+footballleagueseason_of,noun,Football League Season,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FootballLeagueSeason
+footballmatch_of,noun,Football Match,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FootballMatch
+formermunicipality_of,noun,Former Municipality,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FormerMunicipality
+formulaoneracer_of,noun,Formula One Racer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FormulaOneRacer
+formulaoneteam_of,noun,Formula OneTeam,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:FormulaOneTeam
+book_of,noun,book,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Foundation_series
+fungus_of,noun,Fungus,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Fungus
+gaelicgamesplayer_of,noun,Gaelic Games Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:GaelicGamesPlayer
+galaxy_of,noun,Galaxy,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Galaxy
+game_of,noun,Game,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Game
+garden_of,noun,Garden,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Garden
+genre_of,noun,genre,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Genre
+givenname_of,noun,Given Name,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:GivenName
+glacier_of,noun,Glacier,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Glacier
+golfcourse_of,noun,Golf Course,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:GolfCourse
+golfplayer_of,noun,Golf Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:GolfPlayer
+golftournament_of,noun,Golf Tournament,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:GolfTournament
+governmentagency_of,noun,Government Agency,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:GovernmentAgency
+governor_of,noun,Governor,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Governor
+grandprix_of,noun,Grand Prix,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:GrandPrix
+grape_of,noun,grape,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Grape
+greenalga_of,noun,Green Alga,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:GreenAlga
+guitarist_of,noun,Guitarist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Guitarist
+gymnast_of,noun,Gymnast,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Gymnast
+handballplayer_of,noun,Handball Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HandballPlayer
+handballteam_of,noun,Handball Team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HandballTeam
+historian_of,noun,Historian,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Historian
+historicbuilding_of,noun,Historic Building,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HistoricBuilding
+historicplace_of,noun,Historic Place,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HistoricPlace
+hockeyteam_of,noun,Hockey Team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HockeyTeam
+holiday_of,noun,Holiday,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Holiday
+hollywoodcartoon_of,noun,Hollywood Cartoon,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HollywoodCartoon
+horse_of,noun,Horse,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Horse
+horserace_of,noun,Horse Race,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HorseRace
+horsetrainer_of,noun,Horse Trainer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HorseTrainer
+hospital_of,noun,Hospital,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Hospital
+hotel_of,noun,Hotel,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Hotel
+humangene_of,noun,Human Gene,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:HumanGene
+ice hockey league_of,noun,Ice Hockey League,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:IceHockeyLeague
+icehockeyplayer_of,noun,Ice Hockey Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:IceHockeyPlayer
+ideology_of,noun,ideology,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Ideology
+informationappliance_of,noun,Information Appliance,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:InformationAppliance
+infrastructure_of,noun,infrastructure,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Infrastructure
+insect_of,noun,Insect,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Insect
+island_of,noun,Island,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Island
+jockey_of,noun,Jockey,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Jockey
+journalist_of,noun,Journalist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Journalist
+lacrosseplayer_of,noun,Lacrosse Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:LacrossePlayer
+lake_of,noun,lake,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Lake
+language_of,noun,language,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Language
+launch pad_of,noun,launch pad,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:LaunchPad
+lawfirm_of,noun,Law Firm,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:LawFirm
+legislature_of,noun,legislature,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Legislature
+library_of,noun,Library,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Library
+ligament_of,noun,Ligament,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Ligament
+lighthouse_of,noun,Lighthouse,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Lighthouse
+location_of,noun,location,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Location
+locomotive_of,noun,Locomotive,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Locomotive
+loyality_of,noun,loyality,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Loyalty
+magazine_of,noun,Magazine,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Magazine
+mammal_of,noun,Mammal,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Mammal
+manga_of,noun,Manga,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Manga
+martialartist_of,noun,Martial Artist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MartialArtist
+mayor_of,noun,Mayor,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Mayor
+medician_of,noun,Medician,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Medician
+memberofparliament_of,noun,Member of Parliament,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MemberOfParliament
+military conflict_of,noun,military conflict,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MilitaryConflict
+person_of,noun,person,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MilitaryPerson
+militarystructure_of,noun,Military Structure,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MilitaryStructure
+military unit_of,noun,military unit,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MilitaryUnit
+mineral_of,noun,Mineral,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Mineral
+mixedmartialartsevent_of,noun,Mixed Martial Arts Event,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MixedMartialArtsEvent
+model_of,noun,model,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Model
+mollusca_of,noun,Mollusca,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Mollusca
+monoclonalantibody_of,noun,Monoclonal Antibody,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MonoclonalAntibody
+monument_of,noun,Monument,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Monument
+moss_of,noun,Moss,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Moss
+motorcycle_of,noun,Motorcycle,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Motorcycle
+motorcyclerider_of,noun,Motorcycle Rider,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MotorcycleRider
+motorsportseason_of,noun,Motorsport Season,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MotorsportSeason
+mountain_of,noun,mountain,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Mountain
+mountainpass_of,noun,Mountain Pass,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MountainPass
+mountain range_of,noun,mountain range,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MountainRange
+muscle_of,noun,Muscle,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Muscle
+museum_of,noun,museum,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Museum
+musicfestival_of,noun,Music Festival,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MusicFestival
+musicgenre_of,noun,MusicGenre,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MusicGenre
+musical_of,noun,musical,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Musical
+musical artist_of,noun,musical artist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MusicalArtist
+music_of,noun,music,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MusicalWork
+mythologicalfigure_of,noun,Mythological Figure,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:MythologicalFigure
+ncaateamseason_of,noun,NCAATeamSeason,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:NCAATeamSeason
+nascardriver_of,noun,Nascar Driver,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:NascarDriver
+nationalcollegiateathleticassociationathlete_of,noun,National Collegiate Athletic Association Athlete,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:NationalCollegiateAthleticAssociationAthlete
+nationalfootballleagueseason_of,noun,NationalFootballLeagueSeason,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:NationalFootballLeagueSeason
+nerve_of,noun,Nerve,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Nerve
+netballplayer_of,noun,Netball Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:NetballPlayer
+newspaper_of,noun,Newspaper,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Newspaper
+noble_of,noun,Noble,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Noble
+olympicevent_of,noun,Olympic Event,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:OlympicEvent
+olympics_of,noun,Olympics,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Olympics
+organization_of,noun,organization,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Organisation
+outbreak_of,noun,Outbreak,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Outbreak
+painter_of,noun,Painter,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Painter
+park_of,noun,Park,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Park
+periodical literature_of,noun,periodical literature,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:PeriodicalLiterature
+person_of,noun,person,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Person
+philosopher_of,noun,Philosopher,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Philosopher
+photographer_of,noun,Photographer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Photographer
+place_of,noun,place,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Place
+plant_of,noun,plant,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Planet
+plant_of,noun,Plant,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Plant
+play_of,noun,play,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Play
+playboyplaymate_of,noun,Playboy Playmate,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:PlayboyPlaymate
+poem_of,noun,Poem,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Poem
+poet_of,noun,Poet,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Poet
+pokerplayer_of,noun,Poker Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:PokerPlayer
+politicalparty_of,noun,political Party,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:PoliticalParty
+politician_of,noun,politician,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Politician
+pope_of,noun,pope,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Pope
+populated place_of,noun,populated place,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:PopulatedPlace
+powerstation_of,noun,Power Station,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:PowerStation
+presenter_of,noun,Presenter,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Presenter
+president_of,noun,president,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:President
+priest_of,noun,Priest,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Priest
+primeminister_of,noun,Prime Minister,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:PrimeMinister
+prison_of,noun,Prison,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Prison
+programming language_of,noun,programming language,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ProgrammingLanguage
+protectedarea_of,noun,Protected Area,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ProtectedArea
+protein_of,noun,Protein,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Protein
+publictransitsystem_of,noun,Public Transit System,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:PublicTransitSystem
+publisher_of,noun,publisher,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Publisher
+racecourse_of,noun,Racecourse,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Racecourse
+racingdriver_of,noun,Racing Driver,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RacingDriver
+radiohost_of,noun,Radio Host,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RadioHost
+radioprogram_of,noun,Radio Program,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RadioProgram
+radiostation_of,noun,Radio Station,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RadioStation
+railwayline_of,noun,Railway Line,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RailwayLine
+railwaystation_of,noun,Railway Station,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RailwayStation
+railwaytunnel_of,noun,Railway Tunnel,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RailwayTunnel
+recordlabel_of,noun,RecordLabel,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RecordLabel
+religious_of,noun,Religious,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Religious
+religiousbuilding_of,noun,Religious Building,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ReligiousBuilding
+reptile_of,noun,Reptile,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Reptile
+restaurant_of,noun,Restaurant,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Restaurant
+river_of,noun,river,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:River
+road_of,noun,road,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Road
+roadjunction_of,noun,Road Junction,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RoadJunction
+roadtunnel_of,noun,Road Tunnel,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RoadTunnel
+rocket_of,noun,Rocket,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Rocket
+rollercoaster_of,noun,Roller Coaster,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RollerCoaster
+route of transportation_of,noun,route of transportation,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RouteOfTransportation
+rower_of,noun,Rower,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Rower
+royalty_of,noun,Royalty,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Royalty
+rugbyclub_of,noun,Rugby Club,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RugbyClub
+rugbyleague_of,noun,Rugby League,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RugbyLeague
+rugbyplayer_of,noun,Rugby Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:RugbyPlayer
+saint_of,noun,Saint,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Saint
+school_of,noun,School,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:School
+scientist_of,noun,scientist,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Scientist
+screenwriter_of,noun,Screen Writer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ScreenWriter
+sea_of,noun,Sea,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Sea
+senator_of,noun,Senator,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Senator
+settlement_of,noun,settlement,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Settlement
+work_of,noun,work,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Ship
+shoppingmall_of,noun,Shopping Mall,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:ShoppingMall
+person_of,noun,person,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Single
+siteofspecialscientificinterest_of,noun,Site of Special Scientific Interest,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SiteOfSpecialScientificInterest
+skater_of,noun,Skater,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Skater
+skiarea_of,noun,Ski Area,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SkiArea
+skier_of,noun,Skier,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Skier
+snookerplayer_of,noun,Snooker Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SnookerPlayer
+soapcharacter_of,noun,Soap Character,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SoapCharacter
+soccerclub_of,noun,Soccer Club,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SoccerClub
+soccerclubseason_of,noun,Soccer Club Season,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SoccerClubSeason
+soccerleague_of,noun,Soccer League,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SoccerLeague
+soccermanager_of,noun,Soccer Manager,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SoccerManager
+soccerplayer_of,noun,Soccer Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SoccerPlayer
+soccertournament_of,noun,SoccerTournament,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SoccerTournament
+software_of,noun,software,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Software
+solareclipse_of,noun,Solar Eclipse,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SolarEclipse
+song_of,noun,song,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Song
+space mission_of,noun,space mission,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SpaceMission
+spaceflight_of,noun,spaceflight,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SpaceStation
+species_of,noun,Species,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Species
+speedwayrider_of,noun,Speedway Rider,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SpeedwayRider
+speedwayteam_of,noun,Speedway Team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SpeedwayTeam
+sport_of,noun,Sport,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Sport
+sportsclub_of,noun,Sports Club,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SportsClub
+sportsevent_of,noun,Sports Event,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SportsEvent
+sportsleague_of,noun,Sports League,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SportsLeague
+sports team_of,noun,sports team,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SportsTeam
+sportsteammember_of,noun,Sports Team Member,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SportsTeamMember
+squashplayer_of,noun,SquashPlayer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SquashPlayer
+stadium_of,noun,stadium,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Stadium
+star_of,noun,Star,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Star
+state_of,noun,state,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:State
+station_of,noun,Station,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Station
+stream_of,noun,stream,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Stream
+sumowrestler_of,noun,Sumo Wrestler,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SumoWrestler
+supremecourtoftheunitedstatescase_of,noun,Supreme Court of the United States Case,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:SupremeCourtOfTheUnitedStatesCase
+surname_of,noun,Surname,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Surname
+swimmer_of,noun,swimmer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Swimmer
+tabletennisplayer_of,noun,Table Tennis Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TableTennisPlayer
+televisionepisode_of,noun,Television Episode,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TelevisionEpisode
+televisionseason_of,noun,Television Season,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TelevisionSeason
+television show_of,noun,television show,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TelevisionShow
+televisionstation_of,noun,Television Station,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TelevisionStation
+tennisplayer_of,noun,Tennis Player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TennisPlayer
+tennistournament_of,noun,TennisTournament,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TennisTournament
+theatre_of,noun,Theatre,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Theatre
+topleveldomain_of,noun,Top Level Domain,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TopLevelDomain
+tower_of,noun,tower,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Tower
+city_of,noun,city,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Town
+tradeunion_of,noun,Trade Union,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:TradeUnion
+train_of,noun,Train,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Train
+tunnel_of,noun,Tunnel,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Tunnel
+university_of,noun,University,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:University
+vein_of,noun,Vein,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Vein
+venue_of,noun,Venue,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Venue
+video game_of,noun,video game,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:VideoGame
+village_of,noun,Village,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Village
+voiceactor_of,noun,VoiceActor,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:VoiceActor
+volcano_of,noun,Volcano,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Volcano
+volleyballcoach_of,noun,Volleyball Coach,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:VolleyballCoach
+volleyballleague_of,noun,Volleyball League,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:VolleyballLeague
+player_of,noun,player,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:VolleyballPlayer
+weapon_of,noun,Weapon,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Weapon
+website_of,noun,Website,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Website
+wine region_of,noun,wine region,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:WineRegion
+winery_of,noun,Winery,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Winery
+womenstennisassociationtournament_of,noun,Womens Tennis Association Tournament,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:WomensTennisAssociationTournament
+work_of,noun,work,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Work
+worldheritagesite_of,noun,World Heritage Site,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:WorldHeritageSite
+wrestler_of,noun,Wrestler,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Wrestler
+wrestlingevent_of,noun,Wrestling Event,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:WrestlingEvent
+writer_of,noun,writer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Writer
+written work_of,noun,written work,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:WrittenWork
+year_of,noun,Year,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,dbo:Year
+world_of,noun,world,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,owl:Thing
+surfer_of,noun,surfer,AdjectiveAttributiveFrame,PredSynArg,AttrSynArg,1,owl:Restriction,rdf:type,res:Surfing

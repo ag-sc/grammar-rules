@@ -870,33 +870,7 @@
     "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/bSide> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
-  }, {
-    "id" : "160",
-    "lexicalEntryUri" : "http://localhost:8080#museum_in_358",
-    "language" : "EN",
-    "type" : "SENTENCE",
-    "bindingType" : [ "Building" ],
-    "returnType" : [ "City" ],
-    "frameType" : "NPP",
-    "sentenceTemplate" : "forward",
-    "sentences" : [ "Give me all (X) museums.", "Give me all museums in (X).", "Give me the (X) museum.", "Give me the (X) museums.", "List all museums in (X).", "List all the cities with museum in (X).", "List all the museums in (X).", "show me all museums in (X).", "What (X) are the museums in the (X)?", "What (X) is (X) 's museum?", "What (X) is the museum in (X)?", "What (X) is the museum in the (X)?", "What (X) was (X) 's museum?", "What (X) was the museum in (X)?", "What (X) was the museum in the (X)?", "What (X) were the museums in the (X)?", "What are the museums in (X)?", "What are the museums in the (X)?", "What is the museum in (X)?", "What is the museum in the (X)?", "What was the museum in (X)?", "What was the museum in the (X)?", "What were the museums in (X)?", "What were the museums in the (X)?", "which (X) are the museums in (X)?", "which (X) are the museums in the (X)?", "which (X) is the museum in (X)?", "which (X) is the museum in the (X)?", "which (X) was the museum in (X)?", "which (X) was the museum in the (X)?", "which (X) were the museums in (X)?", "which (X) were the museums in the (X)?" ],
-    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> ?objOfProp .}",
-    "returnVariable" : "subjOfProp",
-    "combination" : false
-  }, {
-    "id" : "164",
-    "lexicalEntryUri" : "http://localhost:8080#museum_in_358",
-    "language" : "EN",
-    "type" : "NP",
-    "bindingType" : [ "Building" ],
-    "returnType" : [ "City" ],
-    "frameType" : "NPP",
-    "sentenceTemplate" : "nounPhrase",
-    "sentences" : [ "the museum in (X)?", "the museums in (X)?" ],
-    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> ?objOfProp .}",
-    "returnVariable" : "subjOfProp",
-    "combination" : false
-  }, {
+  },  {
     "id" : "165",
     "lexicalEntryUri" : "http://localhost:8080#leader-of-1_254",
     "language" : "EN",
@@ -5586,7 +5560,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are rented by (X)?", "How often did (X) rent?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/tenant> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/tenant> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5625,7 +5599,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are illustrated by (X)?", "How often did (X) illustrate?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/illustrator> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/illustrator> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5664,7 +5638,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are bred by (X)?", "How often did (X) breed?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/breeder> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/breeder> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5703,7 +5677,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are preceded by (X)?", "How often did (X) precede?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/predecessor> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/predecessor> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5742,7 +5716,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are owned by (X)?", "How often did (X) own?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/owner> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/owner> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5781,7 +5755,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are published by (X)?", "How often did (X) publish?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5820,7 +5794,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are performed by (X)?", "How often did (X) perform?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/artist> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/artist> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5859,7 +5833,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are succeeded by (X)?", "How often did (X) succeed?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/successor> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/successor> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5898,7 +5872,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are supported by (X)?", "How often did (X) support?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/ideology> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/ideology> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5937,7 +5911,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are adopted by (X)?", "How often did (X) adopt?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/currency> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/currency> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -5976,7 +5950,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are produced by (X)?", "How often did (X) produce?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/producer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/producer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6015,7 +5989,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are created by (X)?", "How often did (X) create?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/author> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/author> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6054,7 +6028,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are won by (X)?", "How often did (X) win?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/award> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/award> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6093,7 +6067,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are won by (X)?", "How often did (X) win?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/award> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/award> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6132,7 +6106,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are spoken by (X)?", "How often did (X) speak?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/officialLanguage> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/officialLanguage> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6171,7 +6145,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are spoken by (X)?", "How often did (X) speak?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/officialLanguage> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/officialLanguage> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6210,7 +6184,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are operated by (X)?", "How often did (X) operate?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/operator> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/operator> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6249,7 +6223,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are followed by (X)?", "How often did (X) follow?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/subsequentWork> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/subsequentWork> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6288,7 +6262,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are won by (X)?", "How often did (X) win?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/award> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/award> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6327,7 +6301,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are founded by (X)?", "How often did (X) found?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/foundedBy> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/foundedBy> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6366,7 +6340,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are played by (X)?", "How often did (X) play?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6405,7 +6379,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are wrote by (X)?", "How often did (X) write?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/writer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/writer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6444,7 +6418,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are founded by (X)?", "How often did (X) found?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/founder> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/founder> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6457,7 +6431,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_TOTAL",
     "sentences" : [ "How much did (X) cost?", "How much does (X) cost?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/budget> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/budget> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -6470,7 +6444,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_TOTAL",
     "sentences" : [ "which (X) costed by (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/budget> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/budget> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6483,7 +6457,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are costed by (X)?", "How often did (X) cost?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/budget> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/budget> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6522,7 +6496,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are directed by (X)?", "How often did (X) direct?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/director> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/director> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6561,7 +6535,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are starred_in by (X)?", "How often did (X) starring in?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6600,7 +6574,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are published by (X)?", "How often did (X) publish?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6639,7 +6613,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are designed by (X)?", "How often did (X) design?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/designer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/designer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6678,7 +6652,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are served by (X)?", "How often did (X) serve?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/targetAirport> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/targetAirport> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -6717,7 +6691,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are developed by (X)?", "How often did (X) develop?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -6756,7 +6730,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are discovered by (X)?", "How often did (X) discover?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/discoverer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/discoverer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6795,7 +6769,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are lived in (X)?", "How often did (X) live?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/ethnicGroup> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/ethnicGroup> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6834,7 +6808,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are presented by (X)?", "How often did (X) present?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/presenter> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/presenter> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6873,7 +6847,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are distributed by (X)?", "How often did (X) distribute?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/distributor> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/distributor> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6912,7 +6886,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are distributed by (X)?", "How often did (X) distribute?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/distributor> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/distributor> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6951,7 +6925,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/influenced> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/influenced> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -6990,7 +6964,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are discovered by (X)?", "How often did (X) discover?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/discoverer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/discoverer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7029,7 +7003,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are wrote by (X)?", "How often did (X) write?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/writer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/writer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7068,7 +7042,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are designed by (X)?", "How often did (X) design?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/designer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/designer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7107,7 +7081,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are called by (X)?", "How often did (X) call?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/nickname> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/nickname> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7146,7 +7120,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are developed by (X)?", "How often did (X) develop?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -7185,7 +7159,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are developed by (X)?", "How often did (X) develop?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -7224,7 +7198,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are followed by (X)?", "How often did (X) follow?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/successor> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/successor> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7263,7 +7237,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are followed by (X)?", "How often did (X) follow?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/nextTitle> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/nextTitle> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7302,7 +7276,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are produced by (X)?", "How often did (X) marry to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -7341,7 +7315,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are led by (X)?", "How often did (X) lead?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/leaderName> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/leaderName> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7380,7 +7354,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are designed by (X)?", "How often did (X) design?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/architect> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/architect> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7419,7 +7393,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are founded by (X)?", "How often did (X) found?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/foundedBy> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/foundedBy> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7458,7 +7432,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are preceded by (X)?", "How often did (X) precede?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/prevTitle> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/prevTitle> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7497,7 +7471,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are produced by (X)?", "How often did (X) produce?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/producer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/producer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7536,7 +7510,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are trained by (X)?", "How often did (X) train?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/trainer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/trainer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7575,7 +7549,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are crossed by (X)?", "How often did (X) cross?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/crosses> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/crosses> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7614,7 +7588,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are managed by (X)?", "How often did (X) manage?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/managerClub> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/managerClub> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7653,7 +7627,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are composed by (X)?", "How often did (X) compose?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/musicComposer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/musicComposer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7692,7 +7666,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are expressed by (X)?", "How often did (X) express?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/connotation> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/connotation> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -7731,7 +7705,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are developed by (X)?", "How often did (X) develop?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/developer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/developer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7770,7 +7744,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are developed by (X)?", "How often did (X) develop?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/product> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/product> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7809,7 +7783,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are controlled by (X)?", "How often did (X) control?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/controlledby> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/controlledby> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7848,7 +7822,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are joined by (X)?", "How often did (X) join?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/riverMouth> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/riverMouth> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7887,7 +7861,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are played by (X)?", "How often did (X) play?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/portrayer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/portrayer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7926,7 +7900,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are created by (X)?", "How often did (X) create?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/creator> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/creator> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -7965,7 +7939,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are created by (X)?", "How often did (X) create?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/author> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/author> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8004,7 +7978,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are published by (X)?", "How often did (X) publish?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/publisher> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8043,7 +8017,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/album> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/album> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8082,7 +8056,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are inspired by (X)?", "How often did (X) inspire?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/influenced> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/influenced> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8121,7 +8095,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are aired by (X)?", "How often did (X) air?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/network> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/network> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8160,7 +8134,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are edited by (X)?", "How often did (X) edit?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/editor> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/editor> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8199,7 +8173,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are bordered by (X)?", "How often did (X) border?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/borderingstates> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/borderingstates> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8238,7 +8212,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are starred by (X)?", "How often did (X) star?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8277,7 +8251,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are wrote by (X)?", "How often did (X) write?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/editor> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/editor> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8316,7 +8290,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are married to (X)?", "How often did (X) marry?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/spouse> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/spouse> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8355,7 +8329,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are wrote by (X)?", "How often did (X) write?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/author> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/author> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8394,7 +8368,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are published by (X)?", "How often did (X) publish?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/publisher> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/publisher> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8433,7 +8407,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are followed by (X)?", "How often did (X) follow?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/before> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/before> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8472,7 +8446,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are wrote by (X)?", "How often did (X) write?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/writer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/writer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8511,7 +8485,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are maintained by (X)?", "How often did (X) maintain?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/maintainedBy> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/maintainedBy> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8550,7 +8524,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are exhibited by (X)?", "How often did (X) exhibit?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/museum> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/museum> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8589,7 +8563,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are directed by (X)?", "How often did (X) direct?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/director> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/director> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8628,7 +8602,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are programmed by (X)?", "How often did (X) program?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/programmer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/programmer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8667,7 +8641,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are wrote by (X)?", "How often did (X) write?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/writer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/writer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8706,7 +8680,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are covered by (X)?", "How often did (X) cover?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/academicDiscipline> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/academicDiscipline> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8745,7 +8719,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are preceded by (X)?", "How often did (X) precede?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/after> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/after> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8784,7 +8758,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are founded by (X)?", "How often did (X) found?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/foundedBy> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/foundedBy> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8823,7 +8797,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8862,7 +8836,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are starred_in by (X)?", "How often did (X) starring in?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8901,7 +8875,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are left by (X)?", "How often did (X) leave?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/formerBandMember> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/formerBandMember> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8940,7 +8914,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are wrote by (X)?", "How often did (X) write?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/composer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/composer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -8979,7 +8953,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are wrote by (X)?", "How often did (X) write?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/author> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/author> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9018,7 +8992,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are created by (X)?", "How often did (X) create?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/notableWork> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/notableWork> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9057,7 +9031,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are operated by (X)?", "How often did (X) operate?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/operator> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/operator> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9096,7 +9070,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are operated by (X)?", "How often did (X) operate?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/operator> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/operator> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9135,7 +9109,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are drained by (X)?", "How often did (X) drain?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/outflow> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/outflow> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9174,7 +9148,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are painted by (X)?", "How often did (X) paint?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/artist> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/artist> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9213,7 +9187,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are played by (X)?", "How often did (X) play?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/portrayer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/portrayer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9252,7 +9226,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are developed by (X)?", "How often did (X) develop?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/developer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/developer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9291,7 +9265,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are painted by (X)?", "How often did (X) paint?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/artist> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/artist> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9330,7 +9304,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are played by (X)?", "How often did (X) play?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/genre> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/genre> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9369,7 +9343,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are produced by (X)?", "How often did (X) produce?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/manufacturer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/manufacturer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9408,7 +9382,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are created by (X)?", "How often did (X) create?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/creator> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/creator> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9447,7 +9421,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are won by (X)?", "How often did (X) win?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/award> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/award> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9486,7 +9460,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are owned by (X)?", "How often did (X) own?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/owner> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/owner> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9525,7 +9499,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are produced by (X)?", "How often did (X) produce?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/executiveProducer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/executiveProducer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9564,7 +9538,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are spoken in (X)?", "How often did (X) speak?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/language> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/language> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -9603,7 +9577,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are preceded by (X)?", "How often did (X) precede?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/previousWork> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/previousWork> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -10422,7 +10396,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) play for?", "How many (X) play for (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/debutTeam> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/debutTeam> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10461,7 +10435,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/published> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/published> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10500,7 +10474,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) associate with (X)?", "How many (X) did (X) associate with?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/movement> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/movement> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10539,7 +10513,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) flow through?", "How many (X) flow through (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/city> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/city> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10578,7 +10552,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/locatedInArea> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/locatedInArea> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10617,7 +10591,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) locate in?", "How many (X) locate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10656,7 +10630,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) begin at (X)?", "How many (X) did (X) begin at?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/source2Location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/source2Location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10695,7 +10669,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/state> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/state> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10734,7 +10708,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/introduced> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/introduced> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10773,7 +10747,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) begin at (X)?", "How many (X) did (X) begin at?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/source1Location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/source1Location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10812,7 +10786,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/demolitionDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/demolitionDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10851,7 +10825,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) border in (X)?", "How many (X) did (X) border in?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/borderingstates> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/borderingstates> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10890,7 +10864,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) play in?", "How many (X) play in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/starring> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/starring> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10929,7 +10903,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) study at?", "How many (X) study at (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/education> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/education> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -10968,7 +10942,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) study at?", "How many (X) study at (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/education> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/education> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11007,7 +10981,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) associate with (X)?", "How many (X) did (X) associate with?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/associatedBand> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/associatedBand> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11046,7 +11020,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11085,7 +11059,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/genre> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/genre> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11124,7 +11098,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) play in?", "How many (X) play in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/member> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/member> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11163,7 +11137,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11202,7 +11176,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mouthPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mouthPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11241,7 +11215,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/discontinued> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/discontinued> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11280,7 +11254,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11319,7 +11293,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11358,7 +11332,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) live in?", "How many (X) live in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/residence> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/residence> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11397,7 +11371,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/date> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/date> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11436,7 +11410,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) compose for (X)?", "How many (X) did (X) compose for?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/music> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/music> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11475,7 +11449,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsStartYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsStartYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11514,7 +11488,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/draftYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/draftYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11554,7 +11528,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11593,7 +11567,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11632,7 +11606,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11658,7 +11632,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_TOTAL",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/seatingCapacity> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/seatingCapacity> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -11671,7 +11645,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/seatingCapacity> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/seatingCapacity> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -11710,7 +11684,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) flow through?", "How many (X) flow through (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11749,7 +11723,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11788,7 +11762,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/party> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/party> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11827,7 +11801,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/album> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/album> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11866,7 +11840,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/formationDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/formationDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11905,7 +11879,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/locatedInArea> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/locatedInArea> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11944,7 +11918,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) start in?", "How many (X) start in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/mouthLocation> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/mouthLocation> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -11983,7 +11957,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12022,7 +11996,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12061,7 +12035,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mouthCountry> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mouthCountry> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12100,7 +12074,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/genre> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/genre> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12139,7 +12113,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/dissolutionDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/dissolutionDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12178,7 +12152,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/knownFor> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/knownFor> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12217,7 +12191,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) compose for (X)?", "How many (X) did (X) compose for?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/composer> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/composer> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12256,7 +12230,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12282,7 +12256,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_TOTAL",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/populationTotal> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/populationTotal> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -12295,7 +12269,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/populationTotal> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/populationTotal> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -12334,7 +12308,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) record in?", "How many (X) record in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/recordedIn> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/recordedIn> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12373,7 +12347,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/wineProduced> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/wineProduced> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12412,7 +12386,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12451,7 +12425,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12490,7 +12464,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) stand for?", "How many (X) stand for (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/abbreviation> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/abbreviation> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12529,7 +12503,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/productionDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/productionDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12568,7 +12542,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12607,7 +12581,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12646,7 +12620,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/series> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/series> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12685,7 +12659,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12724,7 +12698,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12763,7 +12737,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mountainRange> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mountainRange> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12802,7 +12776,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) currently use for (X)?", "How many (X) did (X) currently use for?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/currentlyUsedFor> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/currentlyUsedFor> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12841,7 +12815,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingEndDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingEndDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12880,7 +12854,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/formationDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/formationDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12919,7 +12893,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12958,7 +12932,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) play in?", "How many (X) play in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/member> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/member> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -12997,7 +12971,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/published> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/published> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13036,7 +13010,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/completionDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/completionDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13075,7 +13049,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/firstPublicationYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/firstPublicationYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13114,7 +13088,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) study in?", "How many (X) study in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/education> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/education> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13153,7 +13127,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) locate in?", "How many (X) locate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13192,7 +13166,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) locate in?", "How many (X) locate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13231,7 +13205,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/releaseDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/releaseDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13270,7 +13244,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/genre> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/genre> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13309,7 +13283,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) locate in?", "How many (X) locate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13348,7 +13322,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/bandMember> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/bandMember> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13387,7 +13361,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13426,7 +13400,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13465,7 +13439,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13504,7 +13478,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) locate in?", "How many (X) locate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13543,7 +13517,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) release on?", "How many (X) release on (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/computingPlatform> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/computingPlatform> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13582,7 +13556,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/team> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/team> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13621,7 +13595,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13660,7 +13634,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mouthCountry> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mouthCountry> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13699,7 +13673,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/knownFor> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/knownFor> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13738,7 +13712,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/rebuildingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/rebuildingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13777,7 +13751,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/demolitionDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/demolitionDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13816,7 +13790,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/productionDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/productionDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13855,7 +13829,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13894,7 +13868,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13933,7 +13907,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -13972,7 +13946,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14011,7 +13985,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingEndDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingEndDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14050,7 +14024,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/residence> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/residence> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14089,7 +14063,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/architecturalStyle> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/architecturalStyle> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14128,7 +14102,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/nationality> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/nationality> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14167,7 +14141,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14206,7 +14180,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14245,7 +14219,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14284,7 +14258,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14323,7 +14297,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/reopeningDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/reopeningDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14362,7 +14336,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/discontinued> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/discontinued> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14401,7 +14375,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/publicationDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/publicationDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14440,7 +14414,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/literaryGenre> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/literaryGenre> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14479,7 +14453,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/published> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/published> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14518,7 +14492,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14557,7 +14531,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/publicationDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/publicationDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14596,7 +14570,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14635,7 +14609,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/burialPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/burialPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14674,7 +14648,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14713,7 +14687,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/completionDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/completionDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14752,7 +14726,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14791,7 +14765,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/date> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/date> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14830,7 +14804,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/subdivision> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/subdivision> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14869,7 +14843,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/releaseDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/releaseDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14908,7 +14882,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/musicComposer> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/musicComposer> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14947,7 +14921,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingStartDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -14986,7 +14960,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15025,7 +14999,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15064,7 +15038,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundationPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundationPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15103,7 +15077,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) found in?", "How many (X) found in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/founded> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/founded> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15142,7 +15116,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/reopeningDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/reopeningDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15181,7 +15155,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) flow into?", "How many (X) flow into (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/inflow> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/inflow> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -15220,7 +15194,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) star in?", "How many (X) star in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/starring> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -15259,7 +15233,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingEndDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/buildingEndDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15298,7 +15272,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/foundingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15337,7 +15311,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/growingGrape> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/growingGrape> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -15376,7 +15350,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/genre> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/genre> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15415,7 +15389,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/nickname> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/nickname> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15454,7 +15428,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15493,7 +15467,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/growingGrape> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/growingGrape> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -15532,7 +15506,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/restingPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/restingPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15571,7 +15545,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15610,7 +15584,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) name after?", "How many (X) name after (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/namedAfter> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/namedAfter> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15649,7 +15623,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15688,7 +15662,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) end in?", "How many (X) end in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mouthPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/mouthPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15727,7 +15701,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) flow into?", "How many (X) flow into (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/inflow> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/inflow> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   },  {
@@ -15766,7 +15740,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) associate with (X)?", "How many (X) did (X) associate with?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/associatedMusicalArtist> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/associatedMusicalArtist> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15805,7 +15779,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/published> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/published> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15844,7 +15818,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) flow into?", "How many (X) flow into (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/inflow> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/inflow> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15883,7 +15857,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) relate to?", "How many (X) relate to (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/related> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/related> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15922,7 +15896,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) launch from?", "How many (X) launch from (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/launchPad> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/launchPad> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -15961,7 +15935,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/birthPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16000,7 +15974,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/genre> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/genre> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16039,7 +16013,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) fight in?", "How many (X) fight in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/combatant> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/combatant> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -16078,7 +16052,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/keyPeople> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/keyPeople> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16117,7 +16091,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathCause> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathCause> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16156,7 +16130,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathCause> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathCause> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16195,7 +16169,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/productionDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/productionDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16234,7 +16208,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/rebuildingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/rebuildingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16273,7 +16247,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/keyPerson> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/keyPerson> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16312,7 +16286,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) participate in?", "How many (X) participate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/battle> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/battle> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -16351,7 +16325,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) locate in?", "How many (X) locate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/city> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/city> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16390,7 +16364,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/party> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/party> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16429,7 +16403,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) play in?", "How many (X) play in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/position> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/position> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16468,7 +16442,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16507,7 +16481,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) locate in?", "How many (X) locate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16546,7 +16520,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) locate in?", "How many (X) locate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/location> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/location> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16585,7 +16559,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/releaseDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/releaseDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16624,7 +16598,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/openingDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16663,7 +16637,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) die from?", "How many (X) die from (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/deathCause> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/deathCause> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16702,7 +16676,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/introduced> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/introduced> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16741,7 +16715,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) initially use for?", "How many (X) initially use for (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/initiallyUsedFor> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/initiallyUsedFor> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16780,7 +16754,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) start in?", "How many (X) start in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeStart> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeStart> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16819,7 +16793,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16858,7 +16832,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16897,7 +16871,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) write in?", "How many (X) write in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/programmingLanguage> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/programmingLanguage> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16936,7 +16910,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) belong to (X)?", "How many (X) did (X) belong to?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/formerTeam> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/formerTeam> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -16975,7 +16949,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/date> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/date> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -17001,7 +16975,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_TOTAL",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/populationTotal> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/populationTotal> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -17014,7 +16988,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/populationTotal> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/populationTotal> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -17053,7 +17027,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsStartYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsStartYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -17145,7 +17119,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/developer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/developer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -17184,7 +17158,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   },  {
@@ -17223,7 +17197,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -17262,7 +17236,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/routeEnd> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -17301,7 +17275,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18550,7 +18524,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are graduated by (X)?", "How often did (X) graduate?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/almaMater> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/almaMater> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18589,7 +18563,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are Influenced by (X)?", "How often did (X) Influence?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/influencedBy> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/influencedBy> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -18628,7 +18602,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are erupted by (X)?", "How often did (X) erupt?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/eruptionYear> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/eruptionYear> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18667,7 +18641,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are developed by (X)?", "How often did (X) develop?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/product> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18706,7 +18680,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are possessed by (X)?", "How often did (X) poss?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/mineral> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/mineral> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -18745,7 +18719,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are called by (X)?", "How often did (X) call?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/shipNamesake> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/shipNamesake> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18784,7 +18758,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are played by (X)?", "How often did (X) play?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/instrument> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/instrument> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18823,7 +18797,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are attended by (X)?", "How often did (X) attend?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/almaMater> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/almaMater> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18862,7 +18836,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are crossed by (X)?", "How often did (X) cross?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/crosses> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/crosses> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18901,7 +18875,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are called by (X)?", "How often did (X) call?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://www.w3.org/2000/01/rdf-schema#label> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://www.w3.org/2000/01/rdf-schema#label> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18940,7 +18914,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are joined by (X)?", "How often did (X) join?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/accessioneudate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/accessioneudate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -18979,7 +18953,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are killed by (X)?", "How often did (X) kill?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/conviction> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/conviction> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19018,7 +18992,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are   by (X)?", "How often did (X) first to climb?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/firstAscentPerson> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/firstAscentPerson> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19057,7 +19031,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are played by (X)?", "How often did (X) play?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/portrayer> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/portrayer> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19096,7 +19070,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are payed by (X)?", "How often did (X) pay?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/currency> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/currency> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19135,7 +19109,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are developed by (X)?", "How often did (X) develop?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/developer> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/developer> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -19174,7 +19148,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are produced by (X)?", "How often did (X) produce?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/director> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/director> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19213,7 +19187,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19252,7 +19226,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) establish in?", "How many (X) establish in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/established> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/established> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19291,7 +19265,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   },  {
@@ -19330,7 +19304,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19368,8 +19342,8 @@
     "returnType" : [ "Language" ],
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
-    "sentences" : [ "How many (X) did (X) speak in?", "How many (X) speak in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/language> ?Answer .}",
+    "sentences" : [ "How many (X) did (X) speak in?", "How many (X) speak in (X)?","How many (X) are spoken in (X)?" ],
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/language> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19408,7 +19382,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/country> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19447,7 +19421,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) start in?", "How many (X) start in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/sourceCountry> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/sourceCountry> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19486,7 +19460,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/releaseDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/releaseDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19525,7 +19499,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19564,7 +19538,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) designate at (X)?", "How many (X) did (X) designate at?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/year> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/year> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19603,7 +19577,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) record for?", "How many (X) record for (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/recordLabel> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/recordLabel> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19642,7 +19616,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/date> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/date> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19681,7 +19655,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) start in?", "How many (X) start in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/sourceCountry> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/sourceCountry> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19720,7 +19694,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) play for?", "How many (X) play for (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/team> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/team> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   },  
@@ -19760,7 +19734,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/activeYearsEndDate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19799,7 +19773,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) admit as (X)?", "How many (X) did (X) admit as?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/property/admittancedate> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/property/admittancedate> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19838,7 +19812,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) speak in?", "How many (X) speak in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/spokenIn> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/spokenIn> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, {
@@ -19891,7 +19865,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/beginningDate> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/beginningDate> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   },
@@ -19931,7 +19905,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/foundingYear> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/foundingYear> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   }, {
@@ -19970,7 +19944,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) found in?", "How many (X) found in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/ontology/formationYear> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/formationYear> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   },
@@ -20010,7 +19984,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) play in?", "How many (X) play in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/league> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/league> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   },
@@ -20118,7 +20092,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) did (X) originate in?", "How many (X) originate in (X)?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?subjOfProp <http://dbpedia.org/ontology/origin> ?Answer .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/origin> ?Answer .}",
     "returnVariable" : "objOfProp",
     "combination" : false
   }, 
@@ -20185,7 +20159,7 @@
     "frameType" : "VP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ "How many (X) are succeeded by (X)?", "How often did (X) succeed?" ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/successor> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/successor> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   },
@@ -20251,7 +20225,7 @@
     "frameType" : "IPP",
     "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
     "sentences" : [ ],
-    "sparqlQuery" : "SELECT COUNT(?Answer ) WHERE { ?Answer <http://dbpedia.org/property/founded> ?objOfProp .}",
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/property/founded> ?objOfProp .}",
     "returnVariable" : "subjOfProp",
     "combination" : false
   },
@@ -20892,6 +20866,153 @@
     "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <null> ?objOfProp .}",
     "returnVariable" : null,
     "combination" : false
-  } 
+  },
+{
+    "id" : "225",
+    "lexicalEntryUri" : "http://localhost:8080#museums-in_38",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Settlement" ],
+    "returnType" : [ "Organisation" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : "forward",
+    "sentences" : [ "Give me all (X) museums.", "Give me all museums in (X).", "Give me the (X) museum.", "Give me the (X) museums.", "List all museums in (X).", "List all the museums in (X).", "List all the settlements with museum in (X).", "show me all museums in (X).", "What are the museums in (X)?", "What are the museums in the (X)?", "What is the museum in (X)?", "What is the museum in the (X)?", "What was the museum in (X)?", "What was the museum in the (X)?", "What were the museums in (X)?", "What were the museums in the (X)?", "which (X) are the museums in (X)?", "which (X) are the museums in the (X)?", "which (X) is the museum in (X)?", "which (X) is the museum in the (X)?", "which (X) was the museum in (X)?", "which (X) was the museum in the (X)?", "which (X) were the museums in (X)?", "which (X) were the museums in the (X)?", "Who are the museums in the (X)?", "Who is (X) 's museum?", "Who is the museum in (X)?", "Who is the museum in the (X)?", "Who was (X) 's museum?", "Who was the museum in (X)?", "Who was the museum in the (X)?", "Who were the museums in the (X)?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/museum> ?objOfProp .}",
+    "returnVariable" : "subjOfProp",
+    "combination" : false
+  }, {
+    "id" : "229",
+    "lexicalEntryUri" : "http://localhost:8080#museums-in_38",
+    "language" : "EN",
+    "type" : "NP",
+    "bindingType" : [ "Settlement" ],
+    "returnType" : [ "Organisation" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : "nounPhrase",
+    "sentences" : [ "the museum in (X)?", "the museums in (X)?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/museum> ?objOfProp .}",
+    "returnVariable" : "subjOfProp",
+    "combination" : false
+  },
+{
+    "id" : "125",
+    "lexicalEntryUri" : "http://localhost:8080#largestcity_in_74",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "City" ],
+    "returnType" : [ "Country" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : "forward",
+    "sentences" : [ "Give me the (X) largest city.", "List all the cities with largest city in (X).", "What (X) is (X) 's largest city?", "What (X) is the largest city in (X)?", "What (X) is the largest city in the (X)?", "What (X) was (X) 's largest city?", "What (X) was the largest city in (X)?", "What (X) was the largest city in the (X)?", "What is the largest city in (X)?", "What is the largest city in the (X)?", "What was the largest city in (X)?", "What was the largest city in the (X)?", "which (X) is the largest city in (X)?", "which (X) is the largest city in the (X)?", "which (X) was the largest city in (X)?", "which (X) was the largest city in the (X)?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/largestCity> ?objOfProp .}",
+    "returnVariable" : "subjOfProp",
+    "combination" : false
+  }, {
+    "id" : "128",
+    "lexicalEntryUri" : "http://localhost:8080#largestcity_in_74",
+    "language" : "EN",
+    "type" : "NP",
+    "bindingType" : [ "City" ],
+    "returnType" : [ "Country" ],
+    "frameType" : "NPP",
+    "sentenceTemplate" : "nounPhrase",
+    "sentences" : [ "the largest city in (X)?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/largestCity> ?objOfProp .}",
+    "returnVariable" : "subjOfProp",
+    "combination" : false
+  },
+{
+    "id" : "549",
+    "lexicalEntryUri" : "http://localhost:8080#found_in_1_8",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Organisation" ],
+    "returnType" : [ "Thing" ],
+    "frameType" : "IPP",
+    "sentenceTemplate" : "forward",
+    "sentences" : [ "What (X) does (X) found in?", "Where is (X) founded?", "in which (X)  (X) found?", "in which (X) are (X) founded?", "in which (X) does (X) found?", "in which (X) does found (X)?", "in which (X) is (X) founded?", "which (X) does (X) found in?", "which (X) does the (X) found in?", "which (X) found in (X)?", "which (X) founded in (X)?", "What (X) is found in (X)?","What (X) are found in (X)?"],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/govermentType> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }, {
+    "id" : "550",
+    "lexicalEntryUri" : "http://localhost:8080#found_in_1_8",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Thing" ],
+    "returnType" : [ "Organisation" ],
+    "frameType" : "IPP",
+    "sentenceTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+    "sentences" : [ "Where does (X) found?", "Who does (X) found in?", "Who founded in (X)?", "Who founds in (X)?", "which (X) found in (X)?", "which (X) founded in (X)?", "which (X) founds in (X)?", "which (X) was founded in (X)?", "which (X) were founded in (X)?","what (X) is found in (X)?","what (X) are found in (X)?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> ?objOfProp .}",
+    "returnVariable" : "subjOfProp",
+    "combination" : false
+  }, {
+    "id" : "551",
+    "lexicalEntryUri" : "http://localhost:8080#found_in_1_8",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Thing" ],
+    "returnType" : [ "Organisation" ],
+    "frameType" : "IPP",
+    "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
+    "sentences" : [ "How many (X) did (X) found in?", "How many (X) found in (X)?" ],
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?Answer <http://dbpedia.org/ontology/govermentType> ?objOfProp .}",
+    "returnVariable" : "subjOfProp",
+    "combination" : false
+  },
+{
+    "id" : "304",
+    "lexicalEntryUri" : "http://localhost:8080#assassinate_in_3",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Person" ],
+    "returnType" : [ "Place" ],
+    "frameType" : "IPP",
+    "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
+    "sentences" : [ ],
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/deathPlace> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }, {
+    "id" : "305",
+    "lexicalEntryUri" : "http://localhost:8080#speak_in_2_5",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Language" ],
+    "returnType" : [ "Work" ],
+    "frameType" : "IPP",
+    "sentenceTemplate" : "forward",
+    "sentences" : [ "What (X) does (X) speak in?", "Where is (X) spoken?", "in which (X)  (X) speak?", "in which (X) are (X) spoken?", "in which (X) does (X) speak?", "in which (X) does speak (X)?", "in which (X) is (X) spoken?", "which (X) does (X) speak in?", "which (X) does the (X) speak in?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/language> ?objOfProp .}",
+    "returnVariable" : "subjOfProp",
+    "combination" : false
+  }, {
+    "id" : "306",
+    "lexicalEntryUri" : "http://localhost:8080#speak_in_2_5",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Work" ],
+    "returnType" : [ "Language" ],
+    "frameType" : "IPP",
+    "sentenceTemplate" : "WHAT_WHICH_PRESENT_THING_1",
+    "sentences" : [ "What does (X) speak in?", "What speaks in (X)?", "What spoken in (X)?", "Where does (X) speak?", "which (X) speak in (X)?", "which (X) speaks in (X)?", "which (X) spoken in (X)?", "which (X) was spoken in (X)?", "which (X) were spoken in (X)?","How many (X) are spoken in (X)?" ],
+    "sparqlQuery" : "SELECT ?Answer WHERE { ?subjOfProp <http://dbpedia.org/ontology/language> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }, {
+    "id" : "307",
+    "lexicalEntryUri" : "http://localhost:8080#speak_in_2_5",
+    "language" : "EN",
+    "type" : "SENTENCE",
+    "bindingType" : [ "Work" ],
+    "returnType" : [ "Language" ],
+    "frameType" : "IPP",
+    "sentenceTemplate" : "HOW_MANY_THING_BACKWARD",
+    "sentences" : [ "How many (X) did (X) speak in?", "How many (X) speak in (X)?","How many (X) are spoken in (X)?" ],
+    "sparqlQuery" : "SELECT (COUNT(DISTINCT ?Answer) AS ?c) WHERE { ?subjOfProp <http://dbpedia.org/ontology/language> ?Answer .}",
+    "returnVariable" : "objOfProp",
+    "combination" : false
+  }
 ]
 }

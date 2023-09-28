@@ -83,9 +83,7 @@ public class GrammarRule {
 
             for (String ruleRegularEx : questions) {
                 List<String> results = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
-                
                 if (!results.isEmpty()) {
-                    System.out.println("ruleRegularEx::"+ruleRegularEx);
                     return ruleRegularEx;
                 }
             }
@@ -106,7 +104,8 @@ public class GrammarRule {
         List<String> results = RegularExpression.isMatchWithRegEx(sentence, ruleRegularEx);
         if (!results.isEmpty()) {
             //List<String> extractedParts =this.filterMatches(this.qaElement.getBindingSparqls(),results);
-            ExtractPart extractPartInfor = new ExtractPart(this.filterMatches(this.qaElement.getBindingSparqls(), results));
+            System.out.println(results);
+            ExtractPart extractPartInfor = new ExtractPart(results,this.template);
             System.out.println(extractPartInfor);
 
             Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
@@ -124,8 +123,10 @@ public class GrammarRule {
                     } else {
                         List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
                         entityMaps = this.findEntityMapEndpoint(bindingSparql);
+                        System.out.println("bindingSparql::"+bindingSparql);
                         if (!entityMaps.isEmpty()) {
                             questionSparql = this.findEntity(questions, entityMaps, extractPartInfor.getEntities(), bindingSparqls, questionSparql);
+                             System.out.println("questionSparql::"+questionSparql);
                             if (extractPartInfor.getRestrictionClassVariable() != null) {
                                 questionSparql = addRestriction(extractPartInfor.getRestrictionClassVariable(), questionSparql);
                             }
@@ -234,8 +235,8 @@ public class GrammarRule {
             if (template != null && template.contains("superlative")) {
                 sparql = "SELECT ?subjOfProp WHERE {  ?subjOfProp <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/" + bindingTypes.get(0) + "> . } ";
             }
-            else if (template != null && template.contains("HOW_MANY_THING_FORWARD")) {
-                sparql = sparql.replace("(COUNT(DISTINCT ?Answer) as ?c)", "?"+bindingVariable);
+            else if (template != null && template.contains("HOW_MANY_THING_FORWARD")||template.contains("HOW_MANY_THING_BACKWARD")) {
+                sparql = sparql.replace("(COUNT(DISTINCT ?Answer) AS ?c)", "?"+bindingVariable);
             }
             else  {
                 sparql = sparql.replace("SELECT ?Answer", "SELECT ?"+bindingVariable);
@@ -453,7 +454,9 @@ public class GrammarRule {
             value = checkMeasure(value);
             return  bindingSparql.replace("VARIABLE", value);
         }
-
+        if (this.template != null && this.template.contains("predicateAdjectiveBaseForm")) {
+            return  bindingSparql;
+        }
         return null;
     }
 
@@ -473,9 +476,7 @@ public class GrammarRule {
         return filterResults;
     }*/
     
-    private List<String> filterMatches(List<String> bindingSparqls, List<String> results) {
-        return results;
-    }
+    
     
     public static void setDictionary(Map<String, String> classDictionary){
         

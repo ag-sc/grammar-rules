@@ -32,12 +32,12 @@ public class QaldParse {
     private  String qaldFileName = "";
     private  Boolean entityRetriveOnline = true;
     private  Integer numberOfEntities = -1;
-    private  String grammarFileName = null;
+    private  String grammarFileNameParsing = null;
     private  String inputDir =null;
     
     public QaldParse(String inputDirT, String grammarFileNameT) {
         this.inputDir = inputDirT;
-        this.grammarFileName = grammarFileNameT;
+        this.grammarFileNameParsing = grammarFileNameT;
 
     }
 
@@ -421,7 +421,7 @@ public class QaldParse {
         
         Grammar grammar = null;
         try {
-            grammar = new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language,classFileName).getGrammar();
+            grammar = new GrammarFactory(new File(grammarFileNameParsing), entityRetriveOnline, numberOfEntities, language,classFileName).getGrammar();
         } catch (Exception ex) {
             Logger.getLogger(QaldParse.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
@@ -513,7 +513,7 @@ public class QaldParse {
     }
     
     public static void main(String[] args) {
-        String grammarFileName = "grammarFiles/en/grammar_FULL_DATASET_EN.json";
+        String grammarFileName = "/home/elahi/A-Grammar/dudes/multilingual-grammar-generator/result/en/grammar_FULL_DATASET_EN.json";
         String inputDir = "grammarFiles/en/";
         String language ="en";
         String classFileName = "src/main/resources/LexicalEntryForClass.csv";

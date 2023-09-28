@@ -14,6 +14,7 @@ import utils.FscoreCalculation;
 import utils.Result;
 import utils.Results;
 import utils.SparqlQuery;
+import utils.StringModifier;
 import utils.csv.CsvUtils;
 
 /*
@@ -160,7 +161,8 @@ public class Evalution {
             for(String string:info){
                 if(string.contains("http:")){
                     if(!string.contains("http://dbpedia.org/resource/")){
-                       string=string.replace("<", "").replace(">","").replace("http://dbpedia.org/ontology/", "dbo:");
+                       string=StringModifier.shortUri(string);
+                       //string=string.replace("<", "").replace(">","").replace("http://dbpedia.org/ontology/", "dbo:");
                        propertySparqls.put(string, sparql);
                     }
    
@@ -178,6 +180,7 @@ public class Evalution {
              String [] elements=string.split(" ");
              Integer index=0;
              for (String element : elements) {
+                  element=StringModifier.shortUri(element);
                   if(propertySparqls.containsKey(element)){
                       return propertySparqls.get(element);
                   }
@@ -187,5 +190,7 @@ public class Evalution {
         return propertySparqls.values().iterator().next();
 
     }
+    
+   
 
 }
