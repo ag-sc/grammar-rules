@@ -495,3 +495,5 @@
 "494","nonprofit organization","nonprofit organizations","res:Nonprofit_organization"
 "495","oceanographer","oceanographers","res:Oceanography"
 "496","film","films","dbo:Film"
+"497","Person","Personen","dbo:Person"
+"498","Mensch","Menschen","dbo:Person"

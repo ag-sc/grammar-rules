@@ -35,6 +35,7 @@ public class QaldParse {
     private  String grammarFileNameParsing = null;
     private  String inputDir =null;
     
+    
     public QaldParse(String inputDirT, String grammarFileNameT) {
         this.inputDir = inputDirT;
         this.grammarFileNameParsing = grammarFileNameT;
@@ -421,7 +422,7 @@ public class QaldParse {
         
         Grammar grammar = null;
         try {
-            grammar = new GrammarFactory(new File(grammarFileNameParsing), entityRetriveOnline, numberOfEntities, language,classFileName).getGrammar();
+            grammar = new GrammarFactory(new File(grammarFileNameParsing), entityRetriveOnline, numberOfEntities, language,classFileName,entityRetriveOnline).getGrammar();
         } catch (Exception ex) {
             Logger.getLogger(QaldParse.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
@@ -455,7 +456,7 @@ public class QaldParse {
         if (evaluateFlag) {
             Evalution evalution = new Evalution();
             try {
-                evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+                evalution.evalute(inputDir, qaldDataType, dataSetType, inductive,language);
             } catch (IOException ex) {
                 Logger.getLogger(QaldParse.class.getName()).log(Level.SEVERE, null, ex);
                 ex.printStackTrace();
@@ -488,7 +489,7 @@ public class QaldParse {
                     inputNewRows.add(head);
                     inputNewRows = addLexicalEntryToFile(newLexicalRows, inputRows);
                     Evalution evalution = new Evalution();
-                    List<String[]> outputs = evalution.evalute(inputNewRows);
+                    List<String[]> outputs = evalution.evalute(inputNewRows,language);
                     String[] result_1 = outputs.get(microIndex);
                     String[] result_2 = outputs.get(macroindex);
                     System.out.println(newLexicalEntries.size() + " now::" + index + " id::" + newLexicalEntryID);
@@ -513,9 +514,9 @@ public class QaldParse {
     }
     
     public static void main(String[] args) {
-        String grammarFileName = "/home/elahi/A-Grammar/dudes/multilingual-grammar-generator/result/en/grammar_FULL_DATASET_EN.json";
-        String inputDir = "grammarFiles/en/";
-        String language ="en";
+        String grammarFileName = "/home/elahi/A-Grammar/dudes/multilingual-grammar-generator/result/de/grammar_FULL_DATASET_EN.json";
+        String inputDir = "grammarFiles/de/";
+        String language ="de";
         String classFileName = "src/main/resources/LexicalEntryForClass.csv";
         QaldParse qaldParse=new QaldParse(inputDir,grammarFileName);
         qaldParse.onlineEvalution(language,classFileName);

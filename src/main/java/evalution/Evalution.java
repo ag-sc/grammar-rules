@@ -27,6 +27,7 @@ import utils.csv.CsvUtils;
  * @author elahi evaluate qald questions
  */
 public class Evalution {
+    private static Boolean online=false;
 
     private String[] head = new String[]{"ID", "status", "sentence", "sparqlQueGG", "sparqlQald",
         "TP", "FP", "FN", "Precision", "Recall", "Fscore", "Status"};
@@ -35,21 +36,21 @@ public class Evalution {
        
 
     }
-    public void evalute(String inputDir, String qaldDataType, String dataSetType, String inductive) throws IOException {
+    public void evalute(String inputDir, String qaldDataType, String dataSetType, String inductive,String language) throws IOException {
          File[] files = new File(inputDir).listFiles();
         for (File file : files) {
             if (file.getName().contains("output-") && file.getName().contains(qaldDataType)
                     && file.getName().contains(dataSetType) && file.getName().contains(inductive)) {
                 List<String[]> rows = this.getParseResults(file);
                 File outputFile = new File(inputDir + file.getName().replace("output-", "evaluation-").replace(".json", ".csv"));
-                List<String[]> outputs = this.evalute(rows);
+                List<String[]> outputs = this.evalute(rows,language);
                 CsvUtils.writeDataAtOnce(outputFile, outputs);
             }
 
         }
     }
 
-    public List<String[]> evalute(List<String[]> rows) {
+    public List<String[]> evalute(List<String[]> rows,String language) {
         List<String[]> outputs = new ArrayList<String[]>();
         outputs.add(head);
 
@@ -77,11 +78,11 @@ public class Evalution {
             }
             //if (sparqlQueGG != null) {
             //if (!sparqlQueGG.contains("-")) {
-            Map<String, String> resultQald = new SparqlQuery(sparqlQald).getEntityMap();
-            Map<String, String> resultQueGG = new SparqlQuery(sparqlQueGG).getEntityMap();
+            Map<String, String> resultQald = new SparqlQuery(sparqlQald,language,false).getEntityMap();
+            Map<String, String> resultQueGG = new SparqlQuery(sparqlQueGG,language,false).getEntityMap();
 
-            //System.out.println(id + " queGGSparql=" + sparqlQueGG + " qaldSparql=" + sparqlQald);
-            //System.out.println(id + " resultQueGG=" + resultQueGG.size() + " resultQald=" + resultQald.size());
+            System.out.println(id + " queGGSparql=" + sparqlQueGG + " qaldSparql=" + sparqlQald);
+            System.out.println(id + " resultQueGG=" + resultQueGG.size() + " resultQald=" + resultQald.size());
             FscoreCalculation cal = new FscoreCalculation(resultQueGG.keySet(), resultQald.keySet());
             //System.out.println(cal.getTp() + " " + cal.getFn() + " " + cal.getFn());
             //System.out.println(cal.getPrecision() + " " + cal.getRecall() + " " + cal.getFscore());

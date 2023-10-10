@@ -8,6 +8,7 @@ package utils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
@@ -54,19 +55,29 @@ public class StringModifier {
         value = value.trim().strip().stripLeading().stripTrailing();
         return value;
     }
+    
+    public static List<String> makeManualLabel(Set<String> labels) {
+        List<String> results=new ArrayList<String>();
+        for(String label:labels){
+           label = label.strip().stripLeading().stripTrailing().trim().replace(" ", "_").toLowerCase(); 
+           results.add(label);
+        }
+        return results;
+    }
 
-    public static String makeLabel(String entity, String language) {
+
+    public static String makeManualLabel(String entity, String language) {
         String label = StringModifier.cleanHttp(entity, language);
         //label = label.replace("_", " ").strip().stripLeading().stripTrailing().trim();
         label = label.strip().stripLeading().stripTrailing().trim().replace("_", " ");
         //System.out.println("label::"+label);
-        
+
         /*if(entity.contains("Slack")){
             System.out.println(label);
         }
         System.out.println(entity+ " label::"+label);
-        */
-        /*if (label.contains("(") && label.contains(")")) {
+         */
+  /*if (label.contains("(") && label.contains(")")) {
             String insideStr = StringUtils.substringBetween(label, "(", ")");
             if (insideStr!=null) {
                 label = label.replace(insideStr, "").replace("_(", "").replace(")", "");
@@ -77,28 +88,24 @@ public class StringModifier {
             }
 
         }*/
-        return label.toLowerCase();
+        return label;
     }
-    
+
     public static String deleteQuote(String sentence) {
         return sentence.replace("\"", "");
     }
-    
-   public static void main(String []args) {
-         String entity="http://dbpedia.org/resource/Slack_(software)";
-         entity="http://dbpedia.org/resource/IT_infrastructure_management)_(cloud_services";
-         String label=makeLabel( entity,  "en");
-         System.out.println(label);
-         
-     }
-     
+
+    /*public static String makeOnlineLabel(String uri, String language) {
+            return "SELECT ?label WHERE { "+uri+" <http://www.w3.org/2000/01/rdf-schema#label> ?label }";
+    }*/
+
     public static String shortUri(String string) {
         string = string.replace("http://dbpedia.org/property/", "dbp:");
         string = string.replace("http://dbpedia.org/ontology/", "dbo:");
         return string.replace("<", "").replace(">", "");
 
     }
-     
+
     public static boolean isNumeric(String strNum) {
         Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
         if (strNum == null) {
@@ -107,5 +114,32 @@ public class StringModifier {
         return pattern.matcher(strNum).matches();
     }
 
+    public static void main(String[] args) {
+        String entity = "http://dbpedia.org/resource/Slack_(software)";
+        entity = "http://dbpedia.org/resource/IT_infrastructure_management)_(cloud_services";
+        String label = makeManualLabel(entity, "en");
+        System.out.println(label);
 
+    }
+
+    public static String makeURI(String string) {
+        return string.replace("<", "").replace(">", "");
+    }
+    
+     static String makeLabel(String label) {
+        label= label.strip().stripLeading().stripTrailing().trim();
+        label= label.replace(" ", "_").toLowerCase(); 
+        label = label.replace("\"", "");
+        return label;
+    }
+
+    static String makeLabelManual(String object) {
+        String label=object.split("@")[0];
+        label= label.strip().stripLeading().stripTrailing().trim();
+        label= label.replace(" ", "_").toLowerCase(); 
+        label = label.replace("\"", "");
+        return label;
+    }
+
+    
 }

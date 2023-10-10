@@ -76,7 +76,7 @@ public class Grammar {
     public List<String> parser(String sentence) throws Exception {
         Map<String, GrammarRule> matchedGrammarRules = new HashMap<String, GrammarRule>();
         for (GrammarRule grammarRule : grammarRules) {
-            String regEx = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities, language);
+            String regEx = grammarRule.parse(sentence, entityRetriveOnline, numberOfEntities);
             if (regEx != null) {
                 matchedGrammarRules.put(regEx, grammarRule);
             }
@@ -85,7 +85,7 @@ public class Grammar {
         List<String> resultSparqls = new ArrayList<String>();
             for (String regularEx : sortedRegularEx) {
                 GrammarRule grammarRule = matchedGrammarRules.get(regularEx);
-                List<String> sparqls = grammarRule.parse(sentence, regularEx);
+                List<String> sparqls = grammarRule.parse(sentence, regularEx,this.language);
                 if (sparqls.size() == 1) {
                     String sparql = sparqls.iterator().next();
                     if (sparql != null) {

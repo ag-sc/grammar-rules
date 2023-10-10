@@ -159,7 +159,7 @@ public class BachelorThesisParse {
 
     private static Grammar loadGrammar(String grammarFileName, String language,String classFileName) throws Exception {
          try {
-            return new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language,classFileName).getGrammar();
+            return new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language,classFileName,false).getGrammar();
         } catch (Exception ex) {
             Logger.getLogger(BachelorThesisParse.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception("Grammar loading fail!!!!");

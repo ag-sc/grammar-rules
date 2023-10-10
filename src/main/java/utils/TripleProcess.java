@@ -121,13 +121,13 @@ public class TripleProcess {
                         index = index + 1;
                         if (index == 2) {
                             subject = StringModifier.clean(value, language);
-                            label=StringModifier.makeLabel(subject, language);
+                            label=StringModifier.makeManualLabel(subject, language);
                         } else if (index == 6) {
                             object = StringModifier.clean(value, language);
-                            label=StringModifier.makeLabel(object, language);
+                            label=StringModifier.makeManualLabel(object, language);
                         } else if (index == 4) {
                             property = StringModifier.clean(value, language);
-                            label=StringModifier.makeLabel(property, language);
+                            label=StringModifier.makeManualLabel(property, language);
                         }
                     }
 

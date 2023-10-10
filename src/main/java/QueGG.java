@@ -1,5 +1,6 @@
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import evalution.QaldParse;
 import java.io.File;
 import static java.lang.System.exit;
 import java.util.ArrayList;
@@ -24,17 +25,15 @@ import utils.csv.CsvUtils;
 public class QueGG {
 
     //private static String inputDir = "grammarFiles/en/";
-    private static String inputDir ="result/en/";
+    private static String inputDir ="result/de/";
     private static String classFileName = "src/main/resources/LexicalEntryForClass.csv";
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
 
     public static void main(String[] args) throws Exception {
         Boolean parseFlag=false,evaluationFlag=true;
-        //"grammarFiles/en/grammar_FULL_DATASET_EN.json";
-        args = new String[]{"en", "/home/elahi/A-Grammar/journal/multilingual-grammar-generator/result/en/grammar_FULL_DATASET_EN.json",
-            "grammarFiles/en/input-QALD9-train-inductive.csv"};
-        //System.out.println(inputDir+"grammar_FULL_DATASET_EN_LAST_Test.json");
+        args = new String[]{"de", "/home/elahi/A-Grammar/journal/multilingual-grammar-generator/result/de/grammar_FULL_DATASET_DE.json",
+            "grammarFiles/de/input-QALD9-train-inductive.csv"};
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
             throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
@@ -44,13 +43,10 @@ public class QueGG {
         String inputFileName = args[2];
         Grammar grammar = loadGrammar(grammarFileName,language,classFileName);
         
-        //String[] header = new String[]{"ID", "status", "sentence", "sparqlQald"};
         System.out.println("Grammar Parser!!!");
         File file = new File(inputFileName);
         List<String[]> rows = CsvUtils.readAllDataAtOnce(file);
         File outputFile = new File(inputFileName.replace("input", "output").replace(".csv", ".json"));
-        //List<String[]> outputs = new ArrayList<String[]>();
-        //outputs.add(header);
         Integer index=0;
         List<Result> parseResults=new ArrayList<Result>();
         for (String[] row : rows) {
@@ -63,10 +59,13 @@ public class QueGG {
             }
             //if((idInteger!=18)||(idInteger!=43)||(idInteger!=47)
             //        ||(idInteger!=69)||(idInteger!=89)||(idInteger!=113)||(idInteger!=150))
-            //if(idInteger!=153)
-             //  continue; 
+            //if(idInteger!=1)
+            //  continue; 
             
             sentence=sentence.replace(".", "");
+            if(language.contains("de")){
+               sentence=sentence.replace("ü", "ue").replace("ä", "ae").replace("ö", "oe"); 
+            }
             System.out.println(id+" sentence::" + sentence+" row.length::"+row.length);
             if (parseFlag) {
                  parseResult = runParser(grammar, id, sentence);
@@ -75,25 +74,19 @@ public class QueGG {
             }
             else {
                 
-                if (idInteger == 310||idInteger == 117||idInteger == 101||idInteger == 394||idInteger == 94) 
+                if (idInteger == 108||idInteger == 25||idInteger == 310||idInteger == 117||idInteger == 101||idInteger == 394||idInteger == 94) 
                    parseResult=new Result(id, "N", sentence, givenSparql,new ArrayList<String>());
                 else 
                    parseResult = runParserForQald(grammar, id, sentence, givenSparql);
-            
-                
                     parseResults.add(parseResult);
-                
-               
-
             }
-
             index=index+1;
-            
+          
             System.out.println();
             
-            /*if(index>200)
-                break;
-            */
+            if(index>200)
+                 break;
+            
         }
         try {
              ObjectMapper mapper = new ObjectMapper();
@@ -104,6 +97,11 @@ public class QueGG {
             Logger.getLogger(QueGG.class.getName()).log(Level.SEVERE, null, ex);
             ex.getMessage();
         }
+        
+        /*String inputDir = "grammarFiles/de/";
+        String classFileName = "src/main/resources/LexicalEntryForClass.csv";
+        QaldParse qaldParse=new QaldParse(inputDir,grammarFileName);
+        qaldParse.onlineEvalution(language,classFileName);*/
 
     }
 
@@ -146,7 +144,7 @@ public class QueGG {
 
     private static Grammar loadGrammar(String grammarFileName, String language,String classFileName) throws Exception {
          try {
-            return new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language,classFileName).getGrammar();
+            return new GrammarFactory(new File(grammarFileName), entityRetriveOnline, numberOfEntities, language,classFileName,entityRetriveOnline).getGrammar();
         } catch (Exception ex) {
             Logger.getLogger(QueGG.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception("Grammar loading fail!!!!");

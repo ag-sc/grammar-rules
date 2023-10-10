@@ -47,11 +47,14 @@ public class GrammarRule {
     public static String ENTITY_DIR = "../resources/en/turtle/";
     private QAElement qaElement = null;
     private String template = null;
+    private Boolean online = true;
+    
+
     public static Map<String, Map<String, List<String>>> regularExpreMap = new TreeMap<String, Map<String, List<String>>>();
     private Dictionary dictionary=null;
     // write parse in 
     
-    public GrammarRule(List<String> questions, String sparql, List<String> bindingType,  String returnVariable, String sentenceTemplate,String classFileName) {
+    public GrammarRule(List<String> questions, String sparql, List<String> bindingType,  String returnVariable, String sentenceTemplate,String classFileName,Boolean online) {
         this.template=sentenceTemplate;
         this.dictionary=new Dictionary(classFileName);
         sparql=sparql.replace("WHERE { Answer", "WHERE { ?Answer");
@@ -70,7 +73,7 @@ public class GrammarRule {
     }
 
   
-    public String parse(String sentence, Boolean entityRetriveOnline, Integer numberOfEntities, String language) throws Exception {
+    public String parse(String sentence, Boolean entityRetriveOnline, Integer numberOfEntities) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
         if (!questions.isEmpty()) {
             if (!isPlaceHolder(this.template)) {
@@ -91,7 +94,7 @@ public class GrammarRule {
         return null;
     }
 
-    public List<String> parse(String sentence, String ruleRegularEx) throws Exception {
+    public List<String> parse(String sentence, String ruleRegularEx,String language) throws Exception {
         List<String> questions = this.qaElement.getQuestion();
         List<String> questionSparqls = new ArrayList<String>();
 
@@ -122,7 +125,7 @@ public class GrammarRule {
                         questionSparqls.add(questionSparql);
                     } else {
                         List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
-                        entityMaps = this.findEntityMapEndpoint(bindingSparql);
+                        entityMaps = this.findEntityMapEndpoint(bindingSparql,language,extractPartInfor.getEntities());
                         System.out.println("bindingSparql::"+bindingSparql);
                         if (!entityMaps.isEmpty()) {
                             questionSparql = this.findEntity(questions, entityMaps, extractPartInfor.getEntities(), bindingSparqls, questionSparql);
@@ -181,35 +184,37 @@ public class GrammarRule {
 
         return null;
     }
+    
+    
 
-    public List<Map<String, String>> findEntityMapEndpoint(List<String> bindingSparqls) {
+    public List<Map<String, String>> findEntityMapEndpoint(List<String> bindingSparqls, String language, List<String> patterns) {
         List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
         for (String bindingSparql : bindingSparqls) {
-            entityMaps.add(new SparqlQuery(bindingSparql).getEntityMap());
+            Map<String, String> map = new LinkedHashMap<String, String>();
+            if (online) {
+                map = new SparqlQuery(bindingSparql, language,true).getEntityMap();
+                entityMaps.add(map);
+            } else {
+                map = new SparqlQuery(patterns, language).getEntityMap();
+                entityMaps.add(map);
+            }
         }
-        return entityMaps;
-    }
-    
-    public List<Map<String, String>> findEntityMapEndpoint(String bindingSparql) {
-        List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
-        entityMaps.add(new SparqlQuery(bindingSparql).getEntityMap());
         return entityMaps;
     }
 
-    /*public Map<String, String> findBindingTypeOffline(Integer numberOfEntities, String language) throws Exception {
-        Map<String, String> entityMap = new TreeMap<String, String>();
-        TripleProcess tripleProcess = new TripleProcess();
-        String fileName = ENTITY_DIR + File.separator + this.bindingType + ".ttl";
-        Set<String> entities = tripleProcess.findSubjObjPropOffLine(fileName, numberOfEntities, "subject", language);
-        if (entities.isEmpty()) {
-            throw new Exception("no entity found for the binding type!!!");
+    public List<Map<String, String>> findEntityMapEndpoint(String bindingSparql, String language, List<String> patterns) {
+        List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
+        Map<String, String> map = new LinkedHashMap<String, String>();
+        if (online) {
+            map = new SparqlQuery(bindingSparql, language,true).getEntityMap();
+            entityMaps.add(map);
+        } else {
+            map = new SparqlQuery(patterns, language).getEntityMap();
+            entityMaps.add(map);
         }
-        for (String entity : entities) {
-            String label = StringModifier.makeLabel(entity, language);
-            entityMap.put(label, entity);
-        }
-        return entityMap;
-    }*/
+        return entityMaps;
+    }
+
 
     private String modifyQuestionSparql(String template, String returnVariable, String sparql) {
         if (sparql.contains(QueryType.SELECT.name())) {
@@ -289,7 +294,7 @@ public class GrammarRule {
     private LinkedHashSet<String> findUriGivenEntity(List<String> extractedParts, List<Map<String, String>> entityMaps) throws Exception {
         LinkedHashSet<String> entities = new LinkedHashSet<String>();
         for (String extractedPart : extractedParts) {
-            extractedPart = StringModifier.makeLabel(extractedPart, "en");
+            extractedPart = StringModifier.makeManualLabel(extractedPart, "en");
             for (Map<String, String> entityMap : entityMaps) {
                 JaccardSimilarity jac = new JaccardSimilarity(extractedPart, entityMap);
                 Double score=jac.getScore();

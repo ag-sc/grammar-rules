@@ -29,6 +29,7 @@ public class ChatGPT {
         String qaldDataType = "QALD9";
         String dataSetType = "test";
         String inductive = "chatGpt";
+        String language="en";
         //inductive = "inductive";
         File[] files = new File(inputDir).listFiles();
         if (args.length < 3) {
@@ -41,7 +42,7 @@ public class ChatGPT {
 
         Evalution evalution = new Evalution();
         try {
-            evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+            evalution.evalute(inputDir, qaldDataType, dataSetType, inductive,language);
         } catch (IOException ex) {
             Logger.getLogger(ChatGPT.class.getName()).log(Level.SEVERE, null, ex);
         }

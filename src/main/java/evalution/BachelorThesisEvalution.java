@@ -310,7 +310,7 @@ public class BachelorThesisEvalution {
         if (evaluateFlag) {
             Evalution evalution = new Evalution();
             try {
-                evalution.evalute(inputDir, qaldDataType, dataSetType, inductive);
+                evalution.evalute(inputDir, qaldDataType, dataSetType, inductive,language);
             } catch (IOException ex) {
                 Logger.getLogger(BachelorThesisEvalution.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -111,7 +111,7 @@ public class SparqlQueryT {
                         String url= childList.item(j).getTextContent().trim();
                         System.out.println(url);
                         //String label= url.replace("http://dbpedia.org/resource/", "");
-                        String label= StringModifier.makeLabel(url, "en");
+                        String label= StringModifier.makeManualLabel(url, "en");
                         this.entityMap.put(label, url);
                     }
                 }

@@ -25,7 +25,7 @@ public class RegularExpression {
    
     
     public static String ruleToRegEx(String ruleWithVariable) {
-        if (ruleWithVariable.contains("(") && ruleWithVariable.contains(")")) {
+        /*if (ruleWithVariable.contains("(") && ruleWithVariable.contains(")")) {
             ruleWithVariable=ruleWithVariable.toLowerCase();
             String result = StringUtils.substringBetween(ruleWithVariable, "(", ")");
             ruleWithVariable = ruleWithVariable.replace(result, PLACE_HOLDER);
@@ -35,9 +35,11 @@ public class RegularExpression {
             ruleWithVariable = replaceSpaceWithSlash(ruleWithVariable);
 
         }else{
-            ruleWithVariable=ruleWithVariable.toLowerCase();
-            ruleWithVariable=replaceSpaceWithSlash(ruleWithVariable);
-        }
+        */
+        ruleWithVariable = ruleWithVariable.replace("(X)", REGULAR_EXPRESSION_MIDDLE);
+        ruleWithVariable = ruleWithVariable.replace("(Y)", REGULAR_EXPRESSION_MIDDLE);
+        ruleWithVariable=ruleWithVariable.toLowerCase();
+        ruleWithVariable=replaceSpaceWithSlash(ruleWithVariable);
 
         return ruleWithVariable;
 

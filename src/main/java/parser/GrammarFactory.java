@@ -30,15 +30,16 @@ import utils.UriLabel;
 public class GrammarFactory {
 
     private Grammar grammar = null;
+    private String language=null;
 
-    public GrammarFactory(File file, Boolean entityRetriveOnline, Integer numberOfEntities, String language, String classFileName) throws Exception {
+    public GrammarFactory(File file, Boolean entityRetriveOnline, Integer numberOfEntities, String language, String classFileName,Boolean online) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         GrammarEntries grammarEntries = mapper.readValue(file, GrammarEntries.class);
-        grammar = new Grammar(getAllGrammarRules(grammarEntries,classFileName), entityRetriveOnline, numberOfEntities, language, classFileName);
+        grammar = new Grammar(getAllGrammarRules(grammarEntries,classFileName,online), entityRetriveOnline, numberOfEntities, language, classFileName);
 
     }
 
-    private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries,String classFileName) throws Exception {
+    private List<GrammarRule> getAllGrammarRules(GrammarEntries grammarEntries,String classFileName,Boolean online) throws Exception {
         List<GrammarRule> grammarRules = new ArrayList<GrammarRule>();
         for (GrammarEntryUnit grammarEntryUnit : grammarEntries.getGrammarEntries()) {
             List<String[]> questions = ruletoRegExConversion(grammarEntryUnit.getSentences());
@@ -49,7 +50,7 @@ public class GrammarFactory {
                     if (grammarEntryUnit.getReturnVariable() != null) {
                         GrammarRule grammarRule = new GrammarRule(sorttedQuestions, sparql, grammarEntryUnit.getBindingType(),
                                 grammarEntryUnit.getReturnVariable(),
-                                grammarEntryUnit.getSentenceTemplate(),classFileName);
+                                grammarEntryUnit.getSentenceTemplate(),classFileName,online);
                         grammarRules.add(grammarRule);
                     }
                     else{
