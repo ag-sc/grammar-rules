@@ -26,7 +26,8 @@ public class ExtractPart {
                 this.entities.add(extractParts.get(1));
             }
             if (extractParts.size() == 1) {
-                this.entities.add(extractParts.get(0));
+                if(extractParts.get(0)!=null)
+                  this.entities.add(extractParts.get(0));
             }
         }
 

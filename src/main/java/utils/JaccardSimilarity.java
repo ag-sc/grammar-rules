@@ -120,8 +120,13 @@ public class JaccardSimilarity {
             for (String label : entityMap.keySet()) {
                 String uri = entityMap.get(label);
                 index = index + 1;
-                double score = jaccardSimilarityManual(label, extractPart);
                 System.out.println(index + " " + score + " " + extractPart + " " + label + " " + uri);
+                if(label!=null){
+                    ; 
+                }
+                else
+                    continue;
+                double score = jaccardSimilarityManual(label, extractPart);
                 if (score > 0.0) {
                     System.out.println(index + " " + score + " " + extractPart + " " + label + " " + uri);
                     entityMapJaccard.put(score, uri);

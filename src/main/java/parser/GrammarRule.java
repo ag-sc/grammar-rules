@@ -109,7 +109,9 @@ public class GrammarRule {
             //List<String> extractedParts =this.filterMatches(this.qaElement.getBindingSparqls(),results);
             System.out.println(results);
             ExtractPart extractPartInfor = new ExtractPart(results,this.template);
+            
             System.out.println(extractPartInfor);
+           
 
             Map<String, List<String>> sparqls = regularExpreMap.get(ruleRegularEx);
             for (String questionSparql : sparqls.keySet()) {

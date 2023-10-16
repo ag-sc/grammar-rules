@@ -32,8 +32,9 @@ public class QueGG {
 
     public static void main(String[] args) throws Exception {
         Boolean parseFlag=false,evaluationFlag=true;
-        args = new String[]{"de", "/home/elahi/A-Grammar/journal/multilingual-grammar-generator/result/de/grammar_FULL_DATASET_DE.json",
-            "grammarFiles/de/input-QALD9-train-inductive.csv"};
+        String languageT="it",LangCapital="IT";
+        args = new String[]{languageT, "grammarFiles/"+languageT+"/"+"grammar_FULL_DATASET_"+LangCapital+".json",
+            "grammarFiles/"+languageT+"/input-QALD9-train-inductive.csv"};
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
             throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
@@ -59,7 +60,7 @@ public class QueGG {
             }
             //if((idInteger!=18)||(idInteger!=43)||(idInteger!=47)
             //        ||(idInteger!=69)||(idInteger!=89)||(idInteger!=113)||(idInteger!=150))
-            //if(idInteger!=1)
+            //if(idInteger<109)
             //  continue; 
             
             sentence=sentence.replace(".", "");
@@ -84,8 +85,8 @@ public class QueGG {
           
             System.out.println();
             
-            if(index>200)
-                 break;
+            //if(index>200)
+            //     break;
             
         }
         try {

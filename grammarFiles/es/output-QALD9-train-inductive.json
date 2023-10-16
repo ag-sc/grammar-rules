@@ -1,2451 +1,2451 @@
 {
   "results" : [ {
     "id" : "1",
-    "status" : "WORK",
-    "sentence" : "Liste alle Brettspiele von GMT ",
+    "status" : "N",
+    "sentence" : "Lista todas juegos de mesa por GMT ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/GMT_Games> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "2",
-    "status" : "WORK",
-    "sentence" : "Wer entwickelt Skype? ",
+    "status" : "N",
+    "sentence" : "Quien desarrollado Skype? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Skype dbo:developer ?uri. }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Skype> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "3",
     "status" : "N",
-    "sentence" : "Welche Menschen wurden geboren im Heraklion?",
+    "sentence" : "Cual gente fueron nacido en Heraklion? ",
     "givenSparql" : "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Person ; onto:birthPlace <http://dbpedia.org/resource/Heraklion>. }",
     "sparqls" : [ ]
   }, {
     "id" : "4",
     "status" : "N",
-    "sentence" : "Im welche US Zustand ist Bereich 51 gelegen? ",
+    "sentence" : "En cual Nosotros estado es Zona 51 ¿situado? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Area_51 dbo:location ?uri . ?uri dbo:country res:United_States. }",
     "sparqls" : [ ]
   }, {
     "id" : "5",
-    "status" : "WORK",
-    "sentence" : "Wer ist der Buergermeister von New York City?",
+    "status" : "N",
+    "sentence" : "¿Quién es el alcalde de la cuidad de Nueva York?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:New_York_City dbo:leaderName ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/New_York_City> <http://dbpedia.org/ontology/leaderName> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/New_Lenox,_Illinois> <http://dbpedia.org/ontology/mayor> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "6",
     "status" : "N",
-    "sentence" : "In welchen Laendern gibt es Orte mit mehr als zwei Hoehlen?",
+    "sentence" : "¿Qué países tienen lugares con más de dos cuevas?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?cave rdf:type dbo:Cave ; dbo:location ?uri . ?uri rdf:type dbo:Country } GROUP BY ?uri HAVING ( COUNT(?cave) > 2 )",
     "sparqls" : [ ]
   }, {
     "id" : "7",
     "status" : "N",
-    "sentence" : "Woher hat getan Abraham Lincoln die? ",
+    "sentence" : "Dónde hizo Abrahán Lincoln el? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:deathPlace ?uri. }",
     "sparqls" : [ ]
   }, {
     "id" : "8",
     "status" : "N",
-    "sentence" : "Welche Flughaefen fliegt Air China an?",
+    "sentence" : "¿Qué aeropuertos sirve Air China?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Air_China dbo:targetAirport ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "9",
     "status" : "N",
-    "sentence" : "Gib mir alle Schauspieler von Filmen, in denen William Shatner sowohl Regie gefuehrt als auch selber mitgespielt hat",
+    "sentence" : "Dame todos los actores de películas dirigidas por William Shatner en las qué también haya actúado el mismo",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }",
     "sparqls" : [ ]
   }, {
     "id" : "10",
-    "status" : "WORK",
-    "sentence" : "Was sind die Amtssprachen der Philippinen?",
+    "status" : "N",
+    "sentence" : "¿Cuáles son los idiomas oficiales de Las Philipinas?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Philippines> <http://dbpedia.org/ontology/officialLanguage> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "11",
     "status" : "N",
-    "sentence" : "Gib mir alle daenischen Filme",
+    "sentence" : "Dame todas las películas danesas",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:country res:Denmark }",
     "sparqls" : [ ]
   }, {
     "id" : "12",
     "status" : "N",
-    "sentence" : "Bei welchen Filmen, in denen Brad Pitt mitspielt, hat Guy Ritchie Regie gefuehrt?",
+    "sentence" : "¿Que peliculas protagonizadas por Brad Pitt han sido dirigidas por Guy Ritchie?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }",
     "sparqls" : [ ]
   }, {
     "id" : "13",
-    "status" : "WORK",
-    "sentence" : "Gib mir die Enkel von Bruce Lee",
+    "status" : "N",
+    "sentence" : "Dame todos los nietos de Bruce Lee",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Isabel_Bruce> <http://dbpedia.org/ontology/parent> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "14",
-    "status" : "N",
-    "sentence" : "Welche anderen Waffen hat der Erfinder der Uzi entwickelt?",
+    "status" : "WORK",
+    "sentence" : "¿Qué otras armas desarrolló el inventor del Uzi?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon ; dbp:designer ?x . res:Uzi dbp:designer ?x FILTER ( ?uri != res:Uzi ) }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/developer> <http://dbpedia.org/resource/El_Hijo_del_Santo> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Del_Rey_Books> <http://dbpedia.org/ontology/product> ?Answer .}" ]
   }, {
     "id" : "15",
     "status" : "N",
-    "sentence" : "Wem gehoeren die Universal Studios?",
+    "sentence" : "¿A quién le pertenecen los Universal Studios?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Universal_Studios dbo:owner ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "16",
     "status" : "N",
-    "sentence" : "Welcher Staat in den USA hat die hoechste Bevoelkerungsdichte?",
+    "sentence" : "¿Que estado de los estados unidos de america tiene la mayor densidad de población?",
     "givenSparql" : "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:densityrank ?rank } ORDER BY ASC(?rank) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "17",
     "status" : "N",
-    "sentence" : "Welche Monarchen waren mit jemand deutschem verheiratet?",
+    "sentence" : "¿Qué monárcas estaban casados con una persona alemana?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch ; dbo:spouse ?spouse { ?spouse dbo:birthPlace res:Germany } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany } }",
     "sparqls" : [ ]
   }, {
     "id" : "18",
     "status" : "N",
-    "sentence" : "Welche Unternehmen wurden 1950 gegruendet?",
+    "sentence" : "¿Qué empresas fueron fundadas en 1950?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Organisation { ?uri dbo:formationYear ?date } UNION { ?uri dbo:foundingYear ?date } UNION { ?uri dbp:foundation ?date } UNION { ?uri dbp:formation ?date } FILTER regex(?date, \"^1950\") }",
     "sparqls" : [ ]
   }, {
     "id" : "19",
-    "status" : "WORK",
-    "sentence" : "Wer hat den Comic Captain America erfunden?",
+    "status" : "N",
+    "sentence" : "¿Quién creó el comic Capitán América?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Captain_America dbo:creator ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Captain_America> <http://dbpedia.org/ontology/creator> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "20",
     "status" : "N",
-    "sentence" : "Gib mir alle Apollo-14-Astronauten",
+    "sentence" : "Dame todos los astronautas de Apolo 14?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 }",
     "sparqls" : [ ]
   }, {
     "id" : "21",
     "status" : "N",
-    "sentence" : "Wer schrieb das Buch Das Saeulen von das Erde? ",
+    "sentence" : "Quien escribió el libro los pilares de el ¿Tierra? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "22",
     "status" : "N",
-    "sentence" : "Welche Zustand von das Vereinigt Zustaende von Amerika hat das hoechste Dichte? ",
+    "sentence" : "Cual estado de el Unido Estados de America tiene el más alto ¿densidad? ",
     "givenSparql" : "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri dbp:densityrank ?density } ORDER BY ASC(?density) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "23",
     "status" : "N",
-    "sentence" : "Welche Raumfluege sind von Baikonur gestartet?",
+    "sentence" : "¿Qué misiones espaciales partieron desde Baionur?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/launchPad> res:Baikonur_Cosmodrome }",
     "sparqls" : [ ]
   }, {
     "id" : "24",
     "status" : "N",
-    "sentence" : "Gib mit eine Liste aller Trompeter, die Bandleader waren",
+    "sentence" : "Dame una lista de todos los trompeteros que fueron líderes de un grupo",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Bandleader ; dbo:instrument res:Trumpet }",
     "sparqls" : [ ]
   }, {
     "id" : "25",
     "status" : "N",
-    "sentence" : "Welche US-Bundesstaaten liegen in derselben Zeitzone wie Utah?",
+    "sentence" : "¿Qué estados americanos se encuentran en la misma zona que Utah?",
     "givenSparql" : "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:timezone ?x FILTER ( ?uri != res:Utah ) }",
     "sparqls" : [ ]
   }, {
     "id" : "26",
     "status" : "N",
-    "sentence" : "In welchen US-Staaten gibt es Goldvorkommen?",
+    "sentence" : "¿En qué estados de los estados unidos de américa hay oro?",
     "givenSparql" : "PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:mineral ?mineral FILTER regex(?mineral, \"gold\", \"i\") }",
     "sparqls" : [ ]
   }, {
     "id" : "27",
-    "status" : "WORK",
-    "sentence" : "Mit wem ist die Tochter von Ingrid Bergman verheiratet?",
+    "status" : "N",
+    "sentence" : "¿Con quién está casada la hija de Ingrid Bergman?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ingrid_Bergman dbo:child ?child . ?child <http://dbpedia.org/property/spouse> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ingrid_Bergman> <http://dbpedia.org/ontology/child> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "28",
     "status" : "N",
-    "sentence" : "Wie tief ist Lake Placid?",
+    "sentence" : "Cómo de hondo es el Lago Placid?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Lake_Placid_(Texas)> dbo:maximumDepth ?n }",
     "sparqls" : [ ]
   }, {
     "id" : "29",
     "status" : "N",
-    "sentence" : "Zeig mir alle Museen in London",
+    "sentence" : "Muéstrame todos los museos en Londres",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/London> }",
     "sparqls" : [ ]
   }, {
     "id" : "30",
     "status" : "N",
-    "sentence" : "Welche Hoehlen haben mehr als 3 Eingaenge?",
+    "sentence" : "¿Qué cuevas tienen más de 3 entradas?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Cave> ; <http://dbpedia.org/property/entranceCount> ?entrance FILTER ( ?entrance > 3 ) }",
     "sparqls" : [ ]
   }, {
     "id" : "31",
     "status" : "N",
-    "sentence" : "Wer ist der groeßte Spieler der Atlanta Falcons?",
+    "sentence" : "¿Quién es el jugador más alto de los Atlanta Falcons?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/team> <http://dbpedia.org/resource/Atlanta_Falcons> ; <http://dbpedia.org/ontology/height> ?h } ORDER BY DESC(?h) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "32",
     "status" : "N",
-    "sentence" : "Was sind laut IGN die Top-10-Action-Rollenspiele?",
+    "sentence" : "¿Cuáles son los 10 mejores videojuegos de rol de acción según la IGN?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Action_role-playing_video_games> ; <http://dbpedia.org/property/ign> ?score } ORDER BY DESC(?score) LIMIT 10",
     "sparqls" : [ ]
   }, {
     "id" : "33",
     "status" : "N",
-    "sentence" : "Gib mir alle Schriftsteller, die den Literaturnobelpreis gewonnen haben",
+    "sentence" : "Dame todos los escritores que hayan recibido el premio nobel de literatura",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> }",
     "sparqls" : [ ]
   }, {
     "id" : "34",
     "status" : "N",
-    "sentence" : "Zeig mir alle Basketballspieler, die groeßer als 2 Meter sind",
+    "sentence" : "Muéstrame todos los jugadores de baloncesto que tienes mas de 2 metros de altura",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }",
     "sparqls" : [ ]
   }, {
     "id" : "35",
     "status" : "N",
-    "sentence" : "Wann wurde die Freiheitsstatue erbaut?",
+    "sentence" : "¿Cuándo fue construída la estatua de la libertad?",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Statue_of_Liberty> <http://dbpedia.org/property/beginningDate> ?date }",
     "sparqls" : [ ]
   }, {
     "id" : "36",
     "status" : "N",
-    "sentence" : "Welche Staaten grenzen an Illinois?",
+    "sentence" : "¿Qué estados tienen frontera con Illinois?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Illinois> <http://dbpedia.org/property/borderingstates> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "37",
-    "status" : "WORK",
-    "sentence" : "Wer hat Minecraft entwickelt?",
+    "status" : "N",
+    "sentence" : "¿Quién desarrolló Minecraft?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Minecraft> <http://dbpedia.org/ontology/developer> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Minecraft> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "38",
-    "status" : "WORK",
-    "sentence" : "Wo ist Hillel Slovak gestorben?",
+    "status" : "N",
+    "sentence" : "¿Dónde murió Hillel Slovak?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Hillel_Slovak> <http://dbpedia.org/ontology/deathPlace> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/wineRegion> ?Arg .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/city> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/connotation> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/crosses> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/growingGrape> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Slovak_Spectator> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/museum> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/programmingLanguage> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/routeEnd> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/routeStart> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/country> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/location> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/mouthLocation> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "39",
     "status" : "N",
-    "sentence" : "In welchen Filmen spielt Jesse Eisenberg mit?",
+    "sentence" : "¿En qué películas participa Jesse Eisenberg?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }",
     "sparqls" : [ ]
   }, {
     "id" : "40",
     "status" : "N",
-    "sentence" : "Zeig mir alle Schwimmer, die in Moskau geboren wurden",
+    "sentence" : "Dame todos los nadadores nacidos en Moscú",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Swimmer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> }",
     "sparqls" : [ ]
   }, {
     "id" : "41",
     "status" : "N",
-    "sentence" : "Gib mir alle Kosmonauten",
+    "sentence" : "Dame todas las cosmonautas",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Russia> } UNION { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Soviet_Union> } }",
     "sparqls" : [ ]
   }, {
     "id" : "42",
     "status" : "N",
-    "sentence" : "Nenne mir alle Schweizer Nonprofit-Organisationen?",
+    "sentence" : "Dame todas las organizaciones Suizas sin animo de lucro",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Switzerland> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> } }",
     "sparqls" : [ ]
   }, {
     "id" : "43",
     "status" : "N",
-    "sentence" : "Welche Praesidenten wurden 1945 geboren?",
+    "sentence" : "¿Qué presidentes nacieron en 1945?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/President> ; <http://dbpedia.org/ontology/birthDate> ?date FILTER regex(?date, \"^1945\") }",
     "sparqls" : [ ]
   }, {
     "id" : "44",
     "status" : "N",
-    "sentence" : "Was fuer Musik hat Lou Reed gemacht?",
+    "sentence" : "¿Qué tipo de música tocaba Lou Reed?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "45",
     "status" : "N",
-    "sentence" : "Wo spielen die Red Sox?",
+    "sentence" : "¿Dónde juegan los Red Sox?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Boston_Red_Sox> <http://dbpedia.org/property/ballpark> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "46",
     "status" : "N",
-    "sentence" : "Zeig mir eine Liste der Fußballvereine, die in der Bundesliga spielen",
+    "sentence" : "Dame una lista de los clubs de futbol que juegan en Bundesliga",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Bundesliga> }",
     "sparqls" : [ ]
   }, {
     "id" : "47",
     "status" : "N",
-    "sentence" : "Welche japanischen Vulkane sind seit 2000 ausgebrochen?",
+    "sentence" : "¿Que volcanos han erupcionado en Japon desde el 2000?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Japan> ; <http://dbpedia.org/ontology/eruptionYear> ?date FILTER ( year(?date) >= 2000 ) }",
     "sparqls" : [ ]
   }, {
     "id" : "48",
     "status" : "N",
-    "sentence" : "Welche Bruecken ueberqueren die Seine?",
+    "sentence" : "¿Cuantos puentes cruzan el Siena?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Bridge> ; <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> }",
     "sparqls" : [ ]
   }, {
     "id" : "49",
     "status" : "N",
-    "sentence" : "Was ist die offizielle Farbe der Universitaet Oxford?",
+    "sentence" : "¿Cuál es el color oficial de la Universidad de Oxford?",
     "givenSparql" : "SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }",
     "sparqls" : [ ]
   }, {
     "id" : "50",
     "status" : "N",
-    "sentence" : "Wieviele Filme hat Hal Roach produziert?",
+    "sentence" : "¿Cuántas películas ha producido Hal Roach?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }",
     "sparqls" : [ ]
   }, {
     "id" : "51",
     "status" : "N",
-    "sentence" : "Gib mir alle daenischen Filme",
+    "sentence" : "Dame todas las películas danesas",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }",
     "sparqls" : [ ]
   }, {
     "id" : "52",
     "status" : "N",
-    "sentence" : "Was ist die haeufigste Todesursache?",
+    "sentence" : "¿Cual es la causa mortal más común?",
     "givenSparql" : "SELECT DISTINCT ?x WHERE { ?uri <http://dbpedia.org/ontology/deathCause> ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "53",
     "status" : "N",
-    "sentence" : "Wer sind die vier juengsten MVP Baskettballspieler?",
+    "sentence" : "¿Cuáles son los cuatro jugadores de baloncesto de categoría MVP más jóvenes?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, \"MVP\") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4",
     "sparqls" : [ ]
   }, {
     "id" : "54",
     "status" : "N",
-    "sentence" : "Gib mir alle Unternehmen in Muenchen",
+    "sentence" : "Dame todas las empresas de Munich?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }",
     "sparqls" : [ ]
   }, {
     "id" : "55",
     "status" : "N",
-    "sentence" : "Gib mir die Haupstaedte aller Laender, ueber die sich der Himalaya erstreckt",
+    "sentence" : "Dame las capitales de todos los países que atraviesa el Himalaya",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?country . ?country <http://dbpedia.org/ontology/capital> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "56",
     "status" : "N",
-    "sentence" : "Bei wievielen Filmen hat Park Chan-wook Regie gefuehrt?",
+    "sentence" : "¿Cuántas películas dirigió Park Chan-wook?",
     "givenSparql" : "SELECT COUNT(DISTINCT ?uri AS ?uri) WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Park_Chan-wook> . }",
     "sparqls" : [ ]
   }, {
     "id" : "57",
     "status" : "N",
-    "sentence" : "Welche Fluesse fließen in deutsche Seen?",
+    "sentence" : "¿Qué ríos desembocan en un lago alemán?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> . ?x <http://dbpedia.org/ontology/inflow> ?uri ; a <http://dbpedia.org/ontology/Lake> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> }",
     "sparqls" : [ ]
   }, {
     "id" : "58",
     "status" : "N",
-    "sentence" : "Wieviele Fluggesellschaften gibt es?",
+    "sentence" : "¿Cuantas líneas aéreas existen?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Airline> }",
     "sparqls" : [ ]
   }, {
     "id" : "59",
     "status" : "N",
-    "sentence" : "Gib mir alle Inseln, die zu Japan gehoeren",
+    "sentence" : "Dame todas la islas que pertenezcan a Japón",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }",
     "sparqls" : [ ]
   }, {
     "id" : "60",
     "status" : "N",
-    "sentence" : "Wieviele Einwohner hat Maribor?",
+    "sentence" : "¿Cuántos habitantes tiene Maribor?",
     "givenSparql" : "SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Maribor> <http://dbpedia.org/ontology/populationTotal> ?num }",
     "sparqls" : [ ]
   }, {
     "id" : "61",
     "status" : "N",
-    "sentence" : "Gib mir alle Apollo-14-Astronauten",
+    "sentence" : "Dame todos los astronautas de Apolo 14?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }",
     "sparqls" : [ ]
   }, {
     "id" : "62",
     "status" : "N",
-    "sentence" : "Welche Unternehmen haben mehr als 1 Millionen Angestellte?",
+    "sentence" : "¿Qué empresas tienen mas de 1 millón de empleados?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/numberOfEmployees> ?n } UNION { ?uri <http://dbpedia.org/property/numEmployees> ?n } FILTER ( ?n > 1000000 ) }",
     "sparqls" : [ ]
   }, {
     "id" : "63",
     "status" : "N",
-    "sentence" : "In welchem Filmen, bei denen Garry Marshall Regie gefuehrt hat, hat Julia Roberts mitgespielt?",
+    "sentence" : "¿En qué películas dirigidas por Garry Mashall actuó Julia Roberts?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> ; <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Garry_Marshall> }",
     "sparqls" : [ ]
   }, {
     "id" : "64",
     "status" : "N",
-    "sentence" : "Gib mir alle Vereine in der Premier League",
+    "sentence" : "Dame todos los clubs de la Premier League",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }",
     "sparqls" : [ ]
   }, {
     "id" : "65",
     "status" : "N",
-    "sentence" : "Was ist die hoehchste Stelle des Ural?",
+    "sentence" : "¿Cuál es el punto más alto del montes Urales?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ural_Mountains> <http://dbpedia.org/property/highest> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "66",
     "status" : "N",
-    "sentence" : "Wer ist der Gouverneur von Wyoming?",
+    "sentence" : "¿Quién es el gobernador de Wyoming?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Wyoming> <http://dbpedia.org/property/governor> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "67",
     "status" : "N",
-    "sentence" : "Wo hat der Architekt des Eiffelturms studiert?",
+    "sentence" : "¿Dónde estudio el arquitecto de la torre Eiffel?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Eiffel_Tower> <http://dbpedia.org/ontology/architect> ?x . ?x <http://dbpedia.org/property/almaMater> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "68",
     "status" : "N",
-    "sentence" : "Gib mir alle Welterbestaetten, die in den vergangenen zwei Jahren aufgenommen wurden",
+    "sentence" : "¿Qué patrimonios de la humanidad fueron reconocidos en los últimos dos años?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/WorldHeritageSite> . { ?uri <http://dbpedia.org/property/year> '2013'^^xsd:integer . } UNION { ?uri <http://dbpedia.org/property/year> '2014'^^xsd:integer . } }",
     "sparqls" : [ ]
   }, {
     "id" : "69",
     "status" : "N",
-    "sentence" : "Gib mir alle Schauspieler, die nach 1950 in Paris geboren wurden",
+    "sentence" : "Dame todos los actores nacidos en Paris después de 1950",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> . ?uri <http://dbpedia.org/ontology/birthDate> ?date . FILTER ( ?date >= xsd:dateTime('1950-12-31T00:00:00Z')) }",
     "sparqls" : [ ]
   }, {
     "id" : "70",
     "status" : "N",
-    "sentence" : "In welchen Filmen spielen sowohl Liz Taylor als auch Richard Burton mit?",
+    "sentence" : "¿Qué películas protagonizan juntos Liz Taylor y Richard Burton?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Elizabeth_Taylor> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Burton> }",
     "sparqls" : [ ]
   }, {
     "id" : "71",
     "status" : "N",
-    "sentence" : "Gib mir alle gemeinnuetzigen Organisationen in Australien",
+    "sentence" : "Dame todas las organizaciones benéficas de Australia",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/locationCountry> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
     "sparqls" : [ ]
   }, {
     "id" : "72",
     "status" : "N",
-    "sentence" : "Welcher Papst folgte auf Johannes Paul II?",
+    "sentence" : "¿Qué papa fue el sucesor de Juan Pablo II?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pope_John_Paul_II> <http://dbpedia.org/property/successor> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "73",
     "status" : "N",
-    "sentence" : "Gib mir alle ESA-Astronauten",
+    "sentence" : "Dame todos los astronautas de la ESA",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> ; <http://dbpedia.org/property/type> <http://dbpedia.org/resource/European_Space_Agency> }",
     "sparqls" : [ ]
   }, {
     "id" : "74",
     "status" : "N",
-    "sentence" : "Wer war 1978 Praesident von Pakistan?",
+    "sentence" : "¿Quién fue el presidente de Pakistán en 1978?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/President_of_Pakistan> ; <http://dbpedia.org/property/years> 1978 }",
     "sparqls" : [ ]
   }, {
     "id" : "75",
     "status" : "N",
-    "sentence" : "Wem gehoert Rolls-Royce?",
+    "sentence" : "¿Quién es el dueño de Rolls-Royce?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rolls-Royce_Motors> <http://dbpedia.org/ontology/owner> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "76",
     "status" : "N",
-    "sentence" : "Wieviele Museen hat Paris?",
+    "sentence" : "¿Cuantos museos hay en Paris?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }",
     "sparqls" : [ ]
   }, {
     "id" : "77",
     "status" : "N",
-    "sentence" : "Wo wurde JFK ermordet?",
+    "sentence" : "¿Dónde fue JFK asesinado?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "78",
     "status" : "N",
-    "sentence" : "Gib mir alle Bundeskanzler",
+    "sentence" : "Dame todos los cancilleres alemanos",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/office> \"Chancellor of Germany\" } UNION { ?uri <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Chancellor_of_Germany> } }",
     "sparqls" : [ ]
   }, {
     "id" : "79",
     "status" : "N",
-    "sentence" : "Nenne mir alle Personen, die an Halloween geboren sind ",
+    "sentence" : "Muestrame todas las personas nacidas en Halloween",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/birthDate> ?date } UNION { ?uri <http://dbpedia.org/property/birthDate> ?date } <http://dbpedia.org/resource/Halloween> <http://dbpedia.org/property/date> ?date }",
     "sparqls" : [ ]
   }, {
     "id" : "80",
     "status" : "N",
-    "sentence" : "Welches Bier kommt aus Irland?",
+    "sentence" : "¿Qué cerveza se ha originado en Irlanda?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/type> <http://dbpedia.org/resource/Beer> ; <http://dbpedia.org/ontology/origin> <http://dbpedia.org/resource/Beer_in_Ireland> }",
     "sparqls" : [ ]
   }, {
     "id" : "81",
     "status" : "N",
-    "sentence" : "Über welche Laender erstreckt sich der Himalaya?",
+    "sentence" : "¿Por qué países se extiende el Himalaya?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "82",
     "status" : "N",
-    "sentence" : "Welche Schauspieler wurden in Deutschland geboren?",
+    "sentence" : "¿Qué actores nacieron en Alemania?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> { ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> } UNION { ?uri <http://dbpedia.org/ontology/birthPlace> ?place . ?place <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> } }",
     "sparqls" : [ ]
   }, {
     "id" : "83",
     "status" : "N",
-    "sentence" : "Wieviele Kohlenhydrate hat Erdnussbutter?",
+    "sentence" : "¿Cuantos hidrates de carbono tienen la manteca de cacahuete?",
     "givenSparql" : "SELECT DISTINCT ?carbs WHERE { <http://dbpedia.org/resource/Peanut_butter> <http://dbpedia.org/property/carbs> ?carbs }",
     "sparqls" : [ ]
   }, {
     "id" : "84",
     "status" : "N",
-    "sentence" : "Wer hat die meisten Filme produziert?",
+    "sentence" : "¿Quién ha producido más películas?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/producer> ?uri . } ORDER BY DESC(COUNT(?film)) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "85",
     "status" : "N",
-    "sentence" : "Wieviele Angestellte hat Google?",
+    "sentence" : "¿Cuántos empleados tiene Google?",
     "givenSparql" : "SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Google> <http://dbpedia.org/ontology/numberOfEmployees> ?num }",
     "sparqls" : [ ]
   }, {
     "id" : "86",
     "status" : "N",
-    "sentence" : "Gib mir alle in Berlin geborenenen Schauspieler",
+    "sentence" : "Dame todos los actores nacidos en Berlin",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Berlin> }",
     "sparqls" : [ ]
   }, {
     "id" : "87",
-    "status" : "WORK",
-    "sentence" : "Wer hat Goofy erfunden?",
+    "status" : "N",
+    "sentence" : "¿Quién es el creador de Goofy?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Goofy> <http://dbpedia.org/ontology/creator> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Goofy> <http://dbpedia.org/ontology/creator> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "88",
     "status" : "N",
-    "sentence" : "Auf welchen Musikalben ist das Lied Last Christmas?",
+    "sentence" : "¿Qué albums musicales contienen la canción Las Christmas?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?single <http://dbpedia.org/ontology/album> ?uri ; <http://www.w3.org/2000/01/rdf-schema#label> \"Last Christmas\"@en }",
     "sparqls" : [ ]
   }, {
     "id" : "89",
     "status" : "N",
-    "sentence" : "Wann wurde die Provinz Alberta gegruendet?",
+    "sentence" : "¿Cúando fué fundada la provincia de Alberta?",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Alberta> <http://dbpedia.org/property/admittancedate> ?date }",
     "sparqls" : [ ]
   }, {
     "id" : "90",
     "status" : "N",
-    "sentence" : "Wieviele Missionen umfasst das Soyuz-Programm?",
+    "sentence" : "¿Cuántas misiones tiene el programa Soyuz?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/property/programme> <http://dbpedia.org/resource/Soyuz_programme> }",
     "sparqls" : [ ]
   }, {
     "id" : "91",
     "status" : "N",
-    "sentence" : "Gib mir alle Fernsehserien mit Neil Patrick Harris",
+    "sentence" : "Dame todos los programas de televisión con Neil Patrick Harris",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Neil_Patrick_Harris> }",
     "sparqls" : [ ]
   }, {
     "id" : "92",
     "status" : "N",
-    "sentence" : "Wann wurden die Hells Angels gegruendet?",
+    "sentence" : "¿Cúando se fundaron los Hells Angels?",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }",
     "sparqls" : [ ]
   }, {
     "id" : "93",
-    "status" : "WORK",
-    "sentence" : "Was ist der Nettogewinn von Apple?",
+    "status" : "N",
+    "sentence" : "¿Cual es la ganancia en neto de Apple?",
     "givenSparql" : "SELECT DISTINCT ?ni WHERE { <http://dbpedia.org/resource/Apple_Inc.> <http://dbpedia.org/ontology/netIncome> ?ni }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Apple_Inc.> <http://dbpedia.org/ontology/netIncome> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "94",
     "status" : "N",
-    "sentence" : "Gib mir alle schwedischen Feiertage",
+    "sentence" : "Dame todos los días festivos en Suecia",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Holiday> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Sweden> }",
     "sparqls" : [ ]
   }, {
     "id" : "95",
     "status" : "N",
-    "sentence" : "In welcher Stadt wurde die ehemalige niederlaendische Koenigin Juliana beerdigt?",
+    "sentence" : "¿En qué ciudad fué enterrada la antigua reina de los países bajos Juliana?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Juliana_of_the_Netherlands> <http://dbpedia.org/property/burialPlace> ?uri . ?uri a <http://dbpedia.org/ontology/Settlement> }",
     "sparqls" : [ ]
   }, {
     "id" : "96",
     "status" : "N",
-    "sentence" : "Liste alle Musicals mit Musik von Leonard Bernstein auf",
+    "sentence" : "Dame todos los musicales con música de Leonard Bernstein",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Musical> ; <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Leonard_Bernstein> }",
     "sparqls" : [ ]
   }, {
     "id" : "97",
     "status" : "N",
-    "sentence" : "Gib mir alle Unternehmen, die in der Werbebranche taetig sind",
+    "sentence" : "Dame todas las empresas publicitarias",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Advertising> } UNION { ?uri <http://dbpedia.org/ontology/industry> ?industry FILTER regex(?industry, \"advertising\", \"i\") } }",
     "sparqls" : [ ]
   }, {
     "id" : "98",
     "status" : "N",
-    "sentence" : "Was ist das groeßte Ballungsgebiet im Staat Washington?",
+    "sentence" : "¿Cuál es el área metropolitana mas larga en el estado de Washington?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Washington_(state)> <http://dbpedia.org/property/largestmetro> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "99",
     "status" : "N",
-    "sentence" : "Wer hat John Lennon getoetet?",
+    "sentence" : "¿Quién asesino a John Lennon?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> ; <http://dbpedia.org/property/conviction> <http://dbpedia.org/resource/Death_of_John_Lennon> }",
     "sparqls" : [ ]
   }, {
     "id" : "100",
     "status" : "N",
-    "sentence" : "Welche Schriftsteller haben in Istanbul studiert?",
+    "sentence" : "¿Que escritores estudiaron en Estambul?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> { ?uri <http://dbpedia.org/ontology/almaMater> ?x } UNION { ?uri <http://dbpedia.org/ontology/education> ?x } { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Istanbul> } UNION { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Istanbul> } }",
     "sparqls" : [ ]
   }, {
     "id" : "101",
     "status" : "N",
-    "sentence" : "Gib mir alle australischen Metalcore-Bands",
+    "sentence" : "Dame todos los grupos australianos de metalcore",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Band> ; <http://dbpedia.org/ontology/genre> <http://dbpedia.org/resource/Metalcore> { ?uri <http://dbpedia.org/ontology/hometown> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/hometown> ?h . ?h <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
     "sparqls" : [ ]
   }, {
     "id" : "102",
     "status" : "N",
-    "sentence" : "Welche Laender haben den Euro uebernommen?",
+    "sentence" : "¿Qué países han introducido el Euro?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> { ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Euro> } UNION { ?uri <http://dbpedia.org/property/currencyCode> \"EUR\"@en } }",
     "sparqls" : [ ]
   }, {
     "id" : "103",
     "status" : "N",
-    "sentence" : "Zeig mir alle Arten von Essstoerungen",
+    "sentence" : "¿Que tipos hay de trastornos de la alimentación?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/class/yago/WikicatEatingDisorders> }",
     "sparqls" : [ ]
   }, {
     "id" : "104",
     "status" : "N",
-    "sentence" : "War Marc Chagall ein Jude?",
+    "sentence" : "¿Fué Marc Chagall judío?",
     "givenSparql" : "ASK WHERE { <http://dbpedia.org/resource/Marc_Chagall> <http://dbpedia.org/property/ethnicity> \"Jewish\"@en }",
     "sparqls" : [ ]
   }, {
     "id" : "105",
     "status" : "N",
-    "sentence" : "Was war Brasiliens niedrigste Platzierung in der FIFA-Weltrangliste?",
+    "sentence" : "¿Cuál ha sido la posición de ranking más baja de Brasil en el ranking mundial de la FIFA?",
     "givenSparql" : "SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Brazil_national_football_team> <http://dbpedia.org/property/fifaMin> ?n }",
     "sparqls" : [ ]
   }, {
     "id" : "106",
     "status" : "N",
-    "sentence" : "In wievielen Filmen hat Leonardo DiCaprio mitgespielt?",
+    "sentence" : "¿En cuántas películas ha actuado Leonardo DiCaprio?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Leonardo_DiCaprio> }",
     "sparqls" : [ ]
   }, {
     "id" : "107",
     "status" : "N",
-    "sentence" : "War Margaret Thatcher Chemikerin?",
+    "sentence" : "¿Fue Margaret Thatcher química?",
     "givenSparql" : "ASK WHERE { <http://dbpedia.org/resource/Margaret_Thatcher> <http://dbpedia.org/ontology/profession> <http://dbpedia.org/resource/Chemist> }",
     "sparqls" : [ ]
   }, {
     "id" : "108",
     "status" : "N",
-    "sentence" : "Welche US-Bundesstaaten liegen in derselben Zeitzone wie Utah?",
+    "sentence" : "¿Qué estados americanos se encuentran en la misma zona que Utah?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Utah> <http://dbpedia.org/property/timezone> ?x . ?uri a <http://dbpedia.org/class/yago/WikicatStatesOfTheUnitedStates> ; <http://dbpedia.org/property/timezone> ?x FILTER ( ?uri != <http://dbpedia.org/resource/Utah> ) }",
     "sparqls" : [ ]
   }, {
     "id" : "109",
     "status" : "N",
-    "sentence" : "Gib mir alle Buecher, die Danielle Steel geschrieben hat",
+    "sentence" : "Dame todos los libros escritos por Danielle Steel",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Book> ; <http://dbpedia.org/ontology/author> <http://dbpedia.org/resource/Danielle_Steel> }",
     "sparqls" : [ ]
   }, {
     "id" : "110",
-    "status" : "N",
-    "sentence" : "Welches Land hat die meisten Amtssprachen?",
+    "status" : "WORK",
+    "sentence" : "¿Qué país tiene más idiomas oficiales?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country> . ?uri <http://dbpedia.org/property/officialLanguages> ?language . } ORDER BY DESC(COUNT(?language)) OFFSET 0 LIMIT 1",
-    "sparqls" : [ ]
+    "sparqls" : [ "No Sparql!!!!" ]
   }, {
     "id" : "111",
     "status" : "N",
-    "sentence" : "Wieviele Maenner und Frauen arbeiten in der New Yorker Berufsfeuerwehr?",
+    "sentence" : "¿Cúantos hombres y mujeres trabajan para los bomberos de Nueva York?",
     "givenSparql" : "SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/New_York_City_Fire_Department> <http://dbpedia.org/property/employees> ?num }",
     "sparqls" : [ ]
   }, {
     "id" : "112",
     "status" : "N",
-    "sentence" : "Welcher Schauspieler hat Chewbacca gespielt?",
+    "sentence" : "¿Qué actor hizo el papel de Chewbacca?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Chewbacca> <http://dbpedia.org/ontology/portrayer> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "113",
     "status" : "N",
-    "sentence" : "Gib mir alle Bibliotheken, die vor 1400 gegruendet worden",
+    "sentence" : "Dame todas las bibliotecas que fueron establecidas antes de 1400",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Library> ; <http://dbpedia.org/property/established> ?year FILTER ( ?year < 1400 ) }",
     "sparqls" : [ ]
   }, {
     "id" : "114",
     "status" : "N",
-    "sentence" : "Welche Programmiersprachen wurden durch Perl beeinflusst?",
+    "sentence" : "¿Qué lenguajes de programación fueron influenciados por el Perl?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/ProgrammingLanguage> { ?uri <http://dbpedia.org/ontology/influencedBy> <http://dbpedia.org/resource/Perl> } UNION { <http://dbpedia.org/resource/Perl> <http://dbpedia.org/ontology/influenced> ?uri } }",
     "sparqls" : [ ]
   }, {
     "id" : "115",
     "status" : "WORK",
-    "sentence" : "In welchem US-Bundesstaat befindet sich der Mount McKinley?",
+    "sentence" : "¿En qué estado de los estados unidos se encuentra el monte McKinley?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Mount_McKinley> dbo:wikiPageRedirects ?x . ?x <http://dbpedia.org/ontology/locatedInArea> ?uri. ?uri rdf:type yago:WikicatStatesOfTheUnitedStates }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Shadow_Rising> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/South_El_Monte,_California> <http://dbpedia.org/ontology/country> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/El_Tepozteco> <http://dbpedia.org/property/location> ?Answer .}" ]
   }, {
     "id" : "116",
     "status" : "N",
-    "sentence" : "Welche Fluggesellschaften sind Teil der SkyTeam-Allianz?",
+    "sentence" : "¿Qué aerolíneas forman parte del la alianza SkyTeam?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Airline> { ?uri <http://dbpedia.org/ontology/alliance> <http://dbpedia.org/resource/SkyTeam> } UNION { ?uri <http://dbpedia.org/ontology/Alliance> <http://dbpedia.org/resource/SkyTeam> } }",
     "sparqls" : [ ]
   }, {
     "id" : "117",
     "status" : "N",
-    "sentence" : "Welche Schiffe wurden nach Benjamin Franklin benannt?",
+    "sentence" : "¿Qué barcos fueron bautizados en honor a Benjamin Franklin?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/shipNamesake> <http://dbpedia.org/resource/Benjamin_Franklin> }",
     "sparqls" : [ ]
   }, {
     "id" : "118",
     "status" : "N",
-    "sentence" : "Gib mir alle Politiker, die Methodisten sind",
+    "sentence" : "Dame todos los políticos que sean metodístas",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Politician> ; <http://dbpedia.org/ontology/religion> <http://dbpedia.org/resource/Methodism> }",
     "sparqls" : [ ]
   }, {
     "id" : "119",
     "status" : "N",
-    "sentence" : "Welche anderen Buecher wurden vom Autor von Der Fehler unserer Sterne geschrieben? ",
+    "sentence" : "Qué otro libros tener estado escrito por el autor de los Culpa en Nuestra ¿Estrellas? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?books WHERE { ?books dbo:author <http://dbpedia.org/resource/John_Green_(author)> }",
     "sparqls" : [ ]
   }, {
     "id" : "120",
     "status" : "N",
-    "sentence" : "Was ist der hoechste Berg?",
+    "sentence" : "¿Cuál es la montaña más alta?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Mountain> ; <http://dbpedia.org/ontology/elevation> ?elevation } ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "121",
-    "status" : "WORK",
-    "sentence" : "Welcher Dichter hat die meisten Buecher geschrieben?",
+    "status" : "N",
+    "sentence" : "¿Que poeta ha escrito el mayor número de libros?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Poet> . ?x <http://dbpedia.org/ontology/author> ?uri . ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> . } ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Good_Terrorist> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Snorks> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_List_of_Adrian_Messenger> <http://dbpedia.org/ontology/musicComposer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_List_of_Adrian_Messenger> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "122",
     "status" : "N",
-    "sentence" : "Welche Programmiersprachen haben Javascript beeinflusst?",
+    "sentence" : "¿Que lenguajes de programación influenciaron el Javascript?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/ProgrammingLanguage> ; <http://dbpedia.org/ontology/influenced> <http://dbpedia.org/resource/JavaScript> }",
     "sparqls" : [ ]
   }, {
     "id" : "123",
-    "status" : "WORK",
-    "sentence" : "Welcher Musiker hat die meisten Buecher geschrieben?",
+    "status" : "N",
+    "sentence" : "¿Qué músico ha escrito el mayor numero de libros?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Musician> . ?x <http://dbpedia.org/ontology/author> ?uri . ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Book> . } ORDER BY DESC(COUNT(?x)) OFFSET 0 LIMIT 1",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Good_Terrorist> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Snorks> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_List_of_Adrian_Messenger> <http://dbpedia.org/ontology/musicComposer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_List_of_Adrian_Messenger> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "124",
     "status" : "N",
-    "sentence" : "Bei welchen Filmen mit Clint Eastwood hat er selber Regie gefuehrt?",
+    "sentence" : "¿En qué películas con Clint Eastwood están dirigidas por él mismo?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Clint_Eastwood> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Clint_Eastwood> }",
     "sparqls" : [ ]
   }, {
     "id" : "125",
     "status" : "N",
-    "sentence" : "Welche Softwareprodukte wurden von Unternehmen entwickelt, die in Kalifornien gegruendet wurden?",
+    "sentence" : "¿Qué productos de software han sido desarrollados por empresas fundadas en California?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Software> . ?company a <http://dbpedia.org/ontology/Company> . ?uri <http://dbpedia.org/ontology/developer> ?company . ?company <http://dbpedia.org/ontology/foundationPlace> <http://dbpedia.org/resource/California> }",
     "sparqls" : [ ]
   }, {
     "id" : "126",
     "status" : "N",
-    "sentence" : "Welche Instrumente spielt Cat Stevens?",
+    "sentence" : "¿Qué instrumentos tocaba Cat Stevens?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Cat_Stevens> <http://dbpedia.org/ontology/instrument> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "127",
     "status" : "N",
-    "sentence" : "Wieviele Fluggesellschaften sind in der Star Alliance?",
+    "sentence" : "¿Cuántas compañías son miembros del la Star Alliance?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Airline> ; <http://dbpedia.org/ontology/alliance> <http://dbpedia.org/resource/Star_Alliance> }",
     "sparqls" : [ ]
   }, {
     "id" : "128",
     "status" : "N",
-    "sentence" : "Gib mir alle Schauspieler, die Baldwin heißen",
+    "sentence" : "Dame todos los actores llamados Baldwin",
     "givenSparql" : "PREFIX foaf:<http://xmlns.com/foaf/0.1/> SELECT DISTINCT ?uri WHERE { ?uri foaf:surname 'Baldwin'@en . { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Actor> . } UNION { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . } }",
     "sparqls" : [ ]
   }, {
     "id" : "129",
-    "status" : "WORK",
-    "sentence" : "Wer hat Die Tribute von Panem geschrieben?",
+    "status" : "N",
+    "sentence" : "¿Quien escribió Los juegos del hambre?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Hunger_Games> <http://dbpedia.org/property/author> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mockingjay> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Legend_of_Korra> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Hunger_Games_(film_series)> <http://dbpedia.org/ontology/musicComposer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Hunger_Games_(film)> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "130",
     "status" : "N",
-    "sentence" : "Welche Plattenfirma hat Elvis' erstes Album aufgenommen?",
+    "sentence" : "¿Qué discográfica grabó el primer album de Elvis?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?x rdf:type dbo:Album ; dbo:artist res:Elvis_Presley ; dbo:releaseDate ?y ; dbo:recordLabel ?uri } ORDER BY ASC(?y) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "131",
     "status" : "N",
-    "sentence" : "Spielt Christian Bale in Batman Begins mit?",
+    "sentence" : "¿Actúa Christian Bale en Batman Begins?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Batman_Begins dbo:starring res:Christian_Bale }",
     "sparqls" : [ ]
   }, {
     "id" : "132",
     "status" : "WORK",
-    "sentence" : "Wo wohnt der Premierminister von Spanien?",
+    "sentence" : "¿Dónde vive el primer ministor de España?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Prime_Minister_of_Spain> <http://dbpedia.org/property/residence> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Spain> <http://dbpedia.org/ontology/leader> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/El_Puerto_de_Santa_María> .}" ]
   }, {
     "id" : "133",
-    "status" : "N",
-    "sentence" : "Welcher Schauspieler spielte in den meisten Filmen mit?",
+    "status" : "WORK",
+    "sentence" : "¿Qué actor ha actuado en el mayor número de películas?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?f <http://dbpedia.org/ontology/starring> ?uri . } ORDER BY DESC(COUNT(DISTINCT(?f))) OFFSET 0 LIMIT 1",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/N_(singer)> .}" ]
   }, {
     "id" : "134",
     "status" : "N",
-    "sentence" : "Welche Laender haben mehr als zwei Amtssprachen?",
+    "sentence" : "¿Qué países tienes más de dos lenguas oficiales?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> ; <http://dbpedia.org/ontology/officialLanguage> ?language } GROUP BY ?uri HAVING ( COUNT(?language) > 2 )",
     "sparqls" : [ ]
   }, {
     "id" : "135",
     "status" : "N",
-    "sentence" : "In welchen Laendern gibt es mehr als zehn Hoehlen?",
+    "sentence" : "¿Qué países tienen más de diez cuevas?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Country> . ?cave a <http://dbpedia.org/ontology/Cave> { ?cave <http://dbpedia.org/ontology/location> ?uri } UNION { ?cave <http://dbpedia.org/ontology/location> ?loc . ?loc <http://dbpedia.org/ontology/country> ?uri } } GROUP BY ?uri HAVING ( COUNT(?cave) > 10 )",
     "sparqls" : [ ]
   }, {
     "id" : "136",
     "status" : "N",
-    "sentence" : "Zeige mir alle Lieder von Bruce Springsteen, die zwischen 1980 und 1990 herausgebracht wurden",
+    "sentence" : "¿Enseñame todas las canciones de Bruce Springsteen que aparecieron entre 1980 y 1990",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Song> . ?uri <http://dbpedia.org/ontology/artist> <http://dbpedia.org/resource/Bruce_Springsteen> . ?uri <http://dbpedia.org/ontology/releaseDate> ?date . FILTER (?date >= '1980-01-01'^^xsd:date && ?date <= '1990-12-31'^^xsd:date) }",
     "sparqls" : [ ]
   }, {
     "id" : "137",
-    "status" : "N",
-    "sentence" : "Welche Fernsehserien hat John Cleese entworfen?",
+    "status" : "WORK",
+    "sentence" : "¿Qué series televisivas ideó John Cleese?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/creator> <http://dbpedia.org/resource/John_Cleese> }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/creator> <http://dbpedia.org/resource/John_Cleese> .}" ]
   }, {
     "id" : "138",
     "status" : "N",
-    "sentence" : "Wann ist Lettland der EU beigetreten?",
+    "sentence" : "¿Cuándo ingresó Letonia a la unión europea?",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Latvia> <http://dbpedia.org/property/accessioneudate> ?date }",
     "sparqls" : [ ]
   }, {
     "id" : "139",
     "status" : "N",
-    "sentence" : "Welche Fußballer wurden auf Malta geboren?",
+    "sentence" : "¿Que jugadores de futbol han nacido en Malta?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerPlayer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Malta> }",
     "sparqls" : [ ]
   }, {
     "id" : "140",
     "status" : "N",
-    "sentence" : "Wieviele Politiker haben einen Abschluss von der Columbia University?",
+    "sentence" : "¿Cuántos políticos se han graduado en la universidad de Columbia?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/profession> <http://dbpedia.org/resource/Politician> ; <http://dbpedia.org/ontology/almaMater> <http://dbpedia.org/resource/Columbia_University> }",
     "sparqls" : [ ]
   }, {
     "id" : "141",
     "status" : "N",
-    "sentence" : "Gib mir die Geburtstage von allen Darstellern der Fernsehserie Charmed",
+    "sentence" : "Dame los cumpleaños de los actores de la serie de televisión Charmed",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Charmed> <http://dbpedia.org/ontology/starring> ?actor . ?actor <http://dbpedia.org/ontology/birthDate> ?date }",
     "sparqls" : [ ]
   }, {
     "id" : "142",
     "status" : "N",
-    "sentence" : "Welche Telekommunikationsunternehmen haben ihren Sitz in Belgien?",
+    "sentence" : "¿Qué empresas de telecomunicaciones tienen su sede en Bélgica?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Organisation> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Telecommunication> } UNION { ?uri <http://dbpedia.org/property/industry> ?industry FILTER regex(?industry, \"Telecommunications\") } { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Belgium> } UNION { ?uri <http://dbpedia.org/property/locationCountry> \"Belgium\"@en } }",
     "sparqls" : [ ]
   }, {
     "id" : "143",
     "status" : "N",
-    "sentence" : "Gib mir eine Liste aller Seen in Daenemark",
+    "sentence" : "Dame una lista de todos los lagos en Dinamarca",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { { ?uri a <http://dbpedia.org/ontology/Lake> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> } UNION { ?uri a <http://dbpedia.org/class/yago/LakesOfDenmark> } }",
     "sparqls" : [ ]
   }, {
     "id" : "144",
     "status" : "N",
-    "sentence" : "Wieviele Kinder hat Eddie Murphy?",
+    "sentence" : "¿Cuántos hijos tiene Eddie Murphy?",
     "givenSparql" : "SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Eddie_Murphy> <http://dbpedia.org/property/children> ?n }",
     "sparqls" : [ ]
   }, {
     "id" : "145",
     "status" : "N",
-    "sentence" : "Zeige mir alle Gebaeude in Kent, die im Stil der englischen Gothik erbaut wurden",
+    "sentence" : "Muéstrame todos los edificios góticos en Kent",
     "givenSparql" : "SELECT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Building> ; <http://dbpedia.org/ontology/architecturalStyle> <http://dbpedia.org/resource/English_Gothic_architecture> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Kent> }",
     "sparqls" : [ ]
   }, {
     "id" : "146",
-    "status" : "WORK",
-    "sentence" : "Wer ist der Manager von Real Madrid?",
+    "status" : "N",
+    "sentence" : "¿Quien es el manager de Real Madrid?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Real_Madrid_C.F.> <http://dbpedia.org/ontology/manager> ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Real_Madrid_C> <http://dbpedia.org/ontology/manager> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "147",
     "status" : "N",
-    "sentence" : "In welchen Laendern kann ich mit dem CFA-Franc BCEAO bezahlen?",
+    "sentence" : "¿En qué páises se paga con el Franco CFA?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/West_African_CFA_franc> }",
     "sparqls" : [ ]
   }, {
     "id" : "148",
     "status" : "N",
-    "sentence" : "Welche Feiertage werden auf der Welt gefeiert?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Holiday }",
     "sparqls" : [ ]
   }, {
     "id" : "149",
     "status" : "N",
-    "sentence" : "Was ist der laengste Fluss?",
+    "sentence" : "¿Cuál es el río más largo?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> { ?uri <http://dbpedia.org/ontology/length> ?l } UNION { ?uri <http://dbpedia.org/property/length> ?l } } ORDER BY DESC(?l) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "150",
     "status" : "N",
-    "sentence" : "Welche Unternehmen wurden 1930 gegruendet?",
+    "sentence" : "¿Qué empresas fueron fundadas en 1930?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Organisation> { ?uri <http://dbpedia.org/ontology/formationYear> ?date } UNION { ?uri <http://dbpedia.org/ontology/foundingYear> ?date } FILTER regex(?date, \"^1930\") }",
     "sparqls" : [ ]
   }, {
     "id" : "151",
     "status" : "N",
-    "sentence" : "Was ist der Geburtsname von Angela Merkel?",
+    "sentence" : "¿Cuál es el nombre de soltera de Angela Merkel?",
     "givenSparql" : "SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/Angela_Merkel> <http://dbpedia.org/property/birthName> ?string }",
     "sparqls" : [ ]
   }, {
     "id" : "152",
     "status" : "N",
-    "sentence" : "Mit wem war Tom Cruise verheiratet?",
+    "sentence" : "¿Quién ha estado casado con Tom Cruise?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spouse> <http://dbpedia.org/resource/Tom_Cruise> }",
     "sparqls" : [ ]
   }, {
     "id" : "153",
     "status" : "N",
-    "sentence" : "Welche Waffen hat Heckler & Koch entwickelt?",
+    "sentence" : "¿Qué armas crearon Heckler y Koch?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Weapon> ; <http://dbpedia.org/property/designer> <http://dbpedia.org/resource/Heckler_&_Koch> }",
     "sparqls" : [ ]
   }, {
     "id" : "154",
     "status" : "N",
-    "sentence" : "Was ist die kleinste Stadt gemessen an der Flaeche in Deutschland? ",
+    "sentence" : "Qué es el pequeñísimo ciudad por zona en ¿Alemania? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX dbc: <http://dbpedia.org/resource/Category:> PREFIX dct: <http://purl.org/dc/terms/> SELECT ?city WHERE { ?m skos:broader dbc:Cities_in_Germany . ?city dct:subject ?m ; dbo:areaTotal ?area } ORDER BY ?area LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "155",
     "status" : "N",
-    "sentence" : "Welche Partei regiert in Lissabon?",
+    "sentence" : "¿Qué partido gobierna en Lisboa?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/leaderParty> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "156",
     "status" : "N",
-    "sentence" : "Wie schwer ist Jupiters leichtester Mond?",
+    "sentence" : "¿Cuánto pesa el satélite más ligero de Júpiter?",
     "givenSparql" : "SELECT DISTINCT ?n WHERE { ?uri <http://dbpedia.org/property/satelliteOf> <http://dbpedia.org/resource/Jupiter> ; <http://dbpedia.org/ontology/mass> ?n } ORDER BY ASC(?n) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "157",
     "status" : "N",
-    "sentence" : "Wieviele Angestellte hat IBM?",
+    "sentence" : "¿Cuántos empleados tiene IBM?",
     "givenSparql" : "SELECT DISTINCT ?number WHERE { <http://dbpedia.org/resource/IBM> <http://dbpedia.org/ontology/numberOfEmployees> ?number }",
     "sparqls" : [ ]
   }, {
     "id" : "158",
     "status" : "N",
-    "sentence" : "Liste alle Episoden der ersten Staffel der HBO-Fernsehserie Die Sopranos auf",
+    "sentence" : "Dame todos los episodios de la prímera época de la serie de HBO Los Sporanos",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:The_Sopranos ; dbo:seasonNumber 1 }",
     "sparqls" : [ ]
   }, {
     "id" : "159",
     "status" : "N",
-    "sentence" : "Wofuer steht ICRO?",
+    "sentence" : "¿Qué abrevia ICRO?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/abbreviation> \"ICRO\" }",
     "sparqls" : [ ]
   }, {
     "id" : "160",
     "status" : "N",
-    "sentence" : "Hat die neue Battlestar-Galactica-Serie mehr Episoden als die alte?",
+    "sentence" : "¿Tiene la nueve serie de Battlestar-Galactica más episodios que la anterior?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { <http://dbpedia.org/resource/Battlestar_Galactica_%281978_TV_series%29> dbo:numberOfEpisodes ?x . <http://dbpedia.org/resource/Battlestar_Galactica_%282004_TV_series%29> dbo:numberOfEpisodes ?y FILTER ( ?y > ?x ) }",
     "sparqls" : [ ]
   }, {
     "id" : "161",
     "status" : "N",
-    "sentence" : "Gib mir alle Filme des Produzenten Hal Roach",
+    "sentence" : "Dame todas las películas del producente Hal Roach",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }",
     "sparqls" : [ ]
   }, {
     "id" : "162",
     "status" : "N",
-    "sentence" : "Wer hat Agent Smith in Matrix gespielt?",
+    "sentence" : "¿Quien actuó como el agente Smith en Matrix?",
     "givenSparql" : "PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Agent_Smith <http://dbpedia.org/ontology/portrayer> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "163",
     "status" : "N",
-    "sentence" : "Welche griechischen Parteien sind pro-europaeisch?",
+    "sentence" : "¿Qué partidos Griegos están a favor de Europa?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/PoliticalParty> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Greece> ; <http://dbpedia.org/ontology/ideology> <http://dbpedia.org/resource/Pro-Europeanism> }",
     "sparqls" : [ ]
   }, {
     "id" : "164",
     "status" : "N",
-    "sentence" : "Gib mir eine Liste aller Bandleader, die Trompete spielen",
+    "sentence" : "Dame una lista de todos los líderes de un grupo que tocan la trompeta",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/occupation> <http://dbpedia.org/resource/Bandleader> ; <http://dbpedia.org/ontology/instrument> <http://dbpedia.org/resource/Trumpet> }",
     "sparqls" : [ ]
   }, {
     "id" : "165",
     "status" : "N",
-    "sentence" : "Was ist der zweithoechste Berg der Erde?",
+    "sentence" : "¿Cuál es la segunda montaña más alta de la tierra?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Mountain> ; <http://dbpedia.org/ontology/elevation> ?elevation } ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "166",
     "status" : "N",
-    "sentence" : "Ist Ägyptens groeßte Stadt auch seine Hauptstadt?",
+    "sentence" : "¿Es la cuidad más grande de Egipto también capital?",
     "givenSparql" : "ASK WHERE { <http://dbpedia.org/resource/Egypt> <http://dbpedia.org/ontology/largestCity> ?large ; <http://dbpedia.org/ontology/capital> ?capital FILTER ( ?large = ?capital ) }",
     "sparqls" : [ ]
   }, {
     "id" : "167",
     "status" : "N",
-    "sentence" : "Welche Raketen sind von Baikonur gestartet?",
+    "sentence" : "¿Qué cohetes han sido lanzados desde Baionur?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Rocket> ; <http://dbpedia.org/ontology/launchSite> <http://dbpedia.org/resource/Baikonur_Cosmodrome> }",
     "sparqls" : [ ]
   }, {
     "id" : "168",
     "status" : "N",
-    "sentence" : "Wieviele Programmiersprachen gibt es?",
+    "sentence" : "¿Cuántos lenguajes de programación existen?",
     "givenSparql" : "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/ProgrammingLanguage> }",
     "sparqls" : [ ]
   }, {
     "id" : "169",
     "status" : "N",
-    "sentence" : "Welche Schachspieler starben am selben Ort, an dem sie geboren wurden?",
+    "sentence" : "¿Qué jugadores de ajedrez murieron en sus lugares de nacimiento?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/ChessPlayer> ; <http://dbpedia.org/ontology/birthPlace> ?x ; <http://dbpedia.org/ontology/deathPlace> ?y FILTER ( ?x = ?y ) }",
     "sparqls" : [ ]
   }, {
     "id" : "170",
     "status" : "N",
-    "sentence" : "Wem gehoert Facebook?",
+    "sentence" : "¿Quién es el dueño de Facebook?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Facebook> <http://dbpedia.org/ontology/foundedBy> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "171",
     "status" : "N",
-    "sentence" : "Gib mir alle Filme mit Tom Cruise",
+    "sentence" : "Dame todas las películas con Tom Cruise",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Tom_Cruise> }",
     "sparqls" : [ ]
   }, {
     "id" : "172",
     "status" : "WORK",
-    "sentence" : "In welchem US-Bundesstaat liegt Fort Knox?",
+    "sentence" : "¿En qué estado american se encuentra Fort Knox?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Fort_Knox dbo:location ?uri . ?uri dbo:country res:United_States }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Fort_Pierre,_South_Dakota> <http://dbpedia.org/ontology/country> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Knox_Peak> <http://dbpedia.org/ontology/locatedInArea> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Navan_Fort> <http://dbpedia.org/property/location> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Fort_Pierce,_Florida> <http://dbpedia.org/ontology/country> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Fort_Augustus> <http://dbpedia.org/property/location> ?Answer .}" ]
   }, {
     "id" : "173",
     "status" : "N",
-    "sentence" : "Gib mir alle Staedte in New Jersey, die mehr als 100000 Einwohner haben",
+    "sentence" : "Dame todas las cuidades en New Jersey que tengan más de 100000 habitantes",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:isPartOf res:New_Jersey ; dbo:populationTotal ?inhabitants FILTER ( ?inhabitants > 100000 ) }",
     "sparqls" : [ ]
   }, {
     "id" : "174",
     "status" : "N",
-    "sentence" : "Welche Berge sind hoeher als der Nanga Parbat?",
+    "sentence" : "¿Qué montañas son más altas que el Nanga Parbat?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Nanga_Parbat> <http://dbpedia.org/ontology/elevation> ?elevation . ?uri a <http://dbpedia.org/ontology/Mountain> { ?uri <http://dbpedia.org/ontology/elevation> ?otherelevation } UNION { ?uri <http://dbpedia.org/property/elevationM> ?otherelevation } FILTER ( ?otherelevation > ?elevation ) }",
     "sparqls" : [ ]
   }, {
     "id" : "175",
     "status" : "N",
-    "sentence" : "Gib mir alle B-Seiten der Ramones",
+    "sentence" : "Dame todas las caras B de los Ramones",
     "givenSparql" : "SELECT DISTINCT ?string WHERE { ?x <http://dbpedia.org/ontology/musicalArtist> <http://dbpedia.org/resource/Ramones> ; <http://dbpedia.org/ontology/bSide> ?string }",
     "sparqls" : [ ]
   }, {
     "id" : "176",
     "status" : "N",
-    "sentence" : "Worauf ist die UNC Health Care spezialisiert?",
+    "sentence" : "¿Cuáles son las especialidades del UNC Health Care?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/UNC_Health_Care> <http://dbpedia.org/property/speciality> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "177",
     "status" : "N",
-    "sentence" : "Wann wurde Olof Palme erschossen?",
+    "sentence" : "¿Cuándo fue disparado Olof Palme?",
     "givenSparql" : "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Olof_Palme> <http://dbpedia.org/ontology/deathDate> ?date }",
     "sparqls" : [ ]
   }, {
     "id" : "178",
     "status" : "N",
-    "sentence" : "Gib mir eine Liste aller Koenige von Rom",
+    "sentence" : "Lista los siete reyes de Roma",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/King_of_Rome> }",
     "sparqls" : [ ]
   }, {
     "id" : "179",
     "status" : "N",
-    "sentence" : "Gib mir alle Personen, die in Wien geboren wurden und in Berlin gestorben sind",
+    "sentence" : "Dame todas las personas que hayan nacido en Viena y hayan muerto en Berlin",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Vienna> ; <http://dbpedia.org/ontology/deathPlace> <http://dbpedia.org/resource/Berlin> }",
     "sparqls" : [ ]
   }, {
     "id" : "180",
     "status" : "N",
-    "sentence" : "Ist Darth Vader Lukes Vater?",
+    "sentence" : "¿Es Darth Vader el padre de Luke?",
     "givenSparql" : "ASK WHERE { <http://dbpedia.org/resource/Darth_Vader> <http://dbpedia.org/ontology/child> <http://dbpedia.org/resource/Luke_Skywalker> }",
     "sparqls" : [ ]
   }, {
     "id" : "181",
     "status" : "N",
-    "sentence" : "Zeig mir alle Brauereien in Australien",
+    "sentence" : "Muéstrame todas las cervecerías en Australia",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Brewery> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }",
     "sparqls" : [ ]
   }, {
     "id" : "182",
     "status" : "N",
-    "sentence" : "Gib mir alle Filme, die von Steven Spielberg produziert wurden und ein Budget von mindestens 80 Millionen Dollar hatten",
+    "sentence" : "Dame todas las películas producidas por Steven Spielberg con un presupuesto de al menos 80 milliones de dólares",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Steven_Spielberg> . ?uri <http://dbpedia.org/ontology/budget> ?b . FILTER( xsd:double(?b) >= 8.0E7 ) }",
     "sparqls" : [ ]
   }, {
     "id" : "183",
     "status" : "N",
-    "sentence" : "Gib mir alle Fußballvereine in Spanien",
+    "sentence" : "Dame todos los club de fútbol de España",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> { ?uri <http://dbpedia.org/ontology/ground> <http://dbpedia.org/resource/Spain> } UNION { ?uri <http://dbpedia.org/property/ground> ?ground FILTER regex(?ground, \"Spain\") } }",
     "sparqls" : [ ]
   }, {
     "id" : "184",
     "status" : "N",
-    "sentence" : "Wer produzierte Filme, in denen Natalie Portman mitspielt?",
+    "sentence" : "¿Quién ha producido películas en las que actua Natalie Portman?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?film a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Natalie_Portman> ; <http://dbpedia.org/ontology/producer> ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "185",
     "status" : "N",
-    "sentence" : "Gib mir alle Schaeferhundrassen",
+    "sentence" : "Dame todas las razas de pastor alemán",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/breed> <http://dbpedia.org/resource/German_Shepherd> }",
     "sparqls" : [ ]
   }, {
     "id" : "186",
     "status" : "N",
-    "sentence" : "Wer ist der schwerste Spieler der Chicago Bulls?",
+    "sentence" : "¿Quien es el jugador mas pesado del los Chicago Bulls?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> ; <http://dbpedia.org/ontology/weight> ?num { ?uri <http://dbpedia.org/property/team> <http://dbpedia.org/resource/Chicago_Bulls> } UNION { ?uri <http://dbpedia.org/property/draftTeam> <http://dbpedia.org/resource/Chicago_Bulls> } UNION { ?uri <http://dbpedia.org/ontology/draftTeam> <http://dbpedia.org/resource/Chicago_Bulls> } } ORDER BY DESC(?num) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "187",
     "status" : "N",
-    "sentence" : "Welche Sprachen werden in Estland gesprochen?",
+    "sentence" : "¿Qué idiomas se hablan en Estonia?",
     "givenSparql" : "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/spokenIn> <http://dbpedia.org/resource/Estonia> }",
     "sparqls" : [ ]
   }, {
     "id" : "188",
     "status" : "N",
-    "sentence" : "Was ist das groeßte Land der Welt?",
+    "sentence" : "¿Cuál es el país más grande del mundo?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country ; dbo:areaTotal ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "189",
     "status" : "N",
-    "sentence" : "Was ist das groeßten Stadt im Amerika? ",
+    "sentence" : "Qué es el más grande ciudad en ¿America? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?lcity WHERE { dbr:United_States dbo:largestCity ?lcity }",
     "sparqls" : [ ]
   }, {
     "id" : "190",
     "status" : "N",
-    "sentence" : "Welcher Papst hat das Vatikanische Fernsehen gegruendet?",
+    "sentence" : "¿Quien fue el papa que fundo la televisión Vaticana?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:Pope . res:Vatican_Television_Center dbo:foundedBy ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "191",
     "status" : "N",
-    "sentence" : "Wer entdeckte Ceres?",
+    "sentence" : "¿Quién descubrió Ceres?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ceres_(dwarf_planet)> dbo:discoverer ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "192",
     "status" : "N",
-    "sentence" : "Wer ist der Koenig der Niederlande?",
+    "sentence" : "¿Quién es el rey de los Países Bajos?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Netherlands dbo:leader ?uri . ?uri rdf:type dbo:Royalty }",
     "sparqls" : [ ]
   }, {
     "id" : "193",
     "status" : "N",
-    "sentence" : "Ist Cola ein Getraenk?",
+    "sentence" : "¿La Coca Cola es una bebida?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { res:Cola rdf:type dbo:Beverage }",
     "sparqls" : [ ]
   }, {
     "id" : "194",
     "status" : "N",
-    "sentence" : "Was ist das Alma mater von das Kanzler von Deutschland Angela Merkel? ",
+    "sentence" : "Qué es el alma mater de el canciller de Alemania Angela Merkel? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?Almamater WHERE { dbr:Angela_Merkel dbo:almaMater ?Almamater }",
     "sparqls" : [ ]
   }, {
     "id" : "195",
     "status" : "N",
-    "sentence" : "Wer schrieb das Buch Die Saeulen der Erde?",
+    "sentence" : "¿Quen escribió el libro Los pilares de la Tierra?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "196",
     "status" : "N",
-    "sentence" : "Welche Flughaefen fliegt Yeti Airlines an?",
+    "sentence" : "¿Qué aeropuertos sirve Yeti Airlines?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Yeti_Airlines dbo:targetAirport ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "197",
     "status" : "N",
-    "sentence" : "Woher ist das Geburtsort von Goethe? ",
+    "sentence" : "Dónde es el lugar de nacimiento de ¿Goethe? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?Goethe WHERE { dbr:Johann_Wolfgang_von_Goethe dbo:birthPlace ?Goethe }",
     "sparqls" : [ ]
   }, {
     "id" : "198",
     "status" : "N",
-    "sentence" : "War die Kubakrise vor der Schweinebuchtinvasion?",
+    "sentence" : "¿Fué la crisis de cuba antes de la invasión de bahía de cochinos?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Cuban_Missile_Crisis dbo:date ?x . res:Bay_of_Pigs_Invasion dbo:date ?y FILTER ( ?x < ?y ) }",
     "sparqls" : [ ]
   }, {
     "id" : "199",
-    "status" : "N",
-    "sentence" : "Welche Zutaten brauche ich fuer Moehrenkuchen?",
+    "status" : "WORK",
+    "sentence" : "¿Qué ingredientes son necesarios para una tarta de zanahorias?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Carrot_cake dbo:ingredient ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/ingredient> <http://dbpedia.org/resource/Orange_juice> .}" ]
   }, {
     "id" : "200",
     "status" : "N",
-    "sentence" : "Wer hat Wikipedia gegruendet?",
+    "sentence" : "¿Quién creó Wikipedia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Wikipedia dbo:author ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "201",
     "status" : "N",
-    "sentence" : "Was ist das hoechste Berg im Sachsen Deutschland? ",
+    "sentence" : "Qué es el más alto montaña en Sajonia ¿Alemania? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?m WHERE { ?m dbo:mountainRange dbr:Ore_Mountains ; dbo:elevation ?height } ORDER BY DESC(?height) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "202",
     "status" : "N",
-    "sentence" : "Wer ist das Strom Bundes Minister von Finanzen im Deutschland? ",
+    "sentence" : "Quien es el corriente federal ministro de financiar en ¿Alemania? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?leader WHERE { <http://dbpedia.org/resource/Federal_Ministry_of_Finance_(Germany)> dbo:leader ?leader }",
     "sparqls" : [ ]
   }, {
     "id" : "203",
-    "status" : "WORK",
-    "sentence" : "In welchem Land liegt Mekka?",
+    "status" : "N",
+    "sentence" : "¿En que país se sitúa la Meca?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Mecca dbo:country ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mecca> <http://dbpedia.org/ontology/country> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/locatedInArea> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/location> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "204",
-    "status" : "N",
-    "sentence" : "Wer hat Gus Fring in Breaking Bad gespielt?",
+    "status" : "WORK",
+    "sentence" : "¿Quién interpreto a Gus Fring en Breaking Bad?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Gus_Fring dbo:portrayer ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Gus_Fring> <http://dbpedia.org/ontology/portrayer> ?Answer .}" ]
   }, {
     "id" : "205",
     "status" : "N",
-    "sentence" : "In welchem Land entspringt der Nil?",
+    "sentence" : "¿En qué país nace el Nilo?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Nile dbo:sourceCountry ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "206",
     "status" : "N",
-    "sentence" : "Im welche Zustand Penn Zustand Universitaet ist gelegen? ",
+    "sentence" : "En cual estado Penn Estado Universidad es ¿situado? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?s WHERE { dbr:Pennsylvania_State_University dbo:state ?s }",
     "sparqls" : [ ]
   }, {
     "id" : "207",
     "status" : "N",
-    "sentence" : "Was ist das groeßte Stadion in Spanien?",
+    "sentence" : "¿Cuál es el estadio más grande de España?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Stadium ; dbo:location res:Spain ; dbo:seatingCapacity ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "208",
     "status" : "N",
-    "sentence" : "Wer ist der Trainer von Ankaras Eishockeymannschaft?",
+    "sentence" : "¿Quién es el entrenador del equipo de hockey sobre hielo de Ankara?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?x dbo:city res:Ankara ; dbo:league res:Turkish_Ice_Hockey_First_League ; dbo:coach ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "209",
     "status" : "N",
-    "sentence" : "Wie groß ist das Bereich von VEREINIGTES KÖNIGREICH? ",
+    "sentence" : "Cómo grande es el zona de ¿REINO UNIDO? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?area WHERE { dbr:United_Kingdom dbo:areaTotal ?area }",
     "sparqls" : [ ]
   }, {
     "id" : "210",
-    "status" : "WORK",
-    "sentence" : "Wer hat Batman erfunden?",
+    "status" : "N",
+    "sentence" : "¿Quién creó Batman?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Batman dbo:creator ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Batman> <http://dbpedia.org/ontology/creator> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "211",
     "status" : "N",
-    "sentence" : "War Sigmund Freud verheiratet?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ASK WHERE { dbr:Sigmund_Freud dbo:spouse ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "212",
-    "status" : "WORK",
-    "sentence" : "Wer sind die Entwickler von DBpedia?",
+    "status" : "N",
+    "sentence" : "¿Quiénes son los desarrolladores de DBpedia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:DBpedia dbo:developer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/DBpedia> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "213",
     "status" : "N",
-    "sentence" : "Gib mir alle Filme, bei denen Francis Ford Coppola Regie gefuehrt hat",
+    "sentence" : "Dame todas las películas que haya dirigido Francis Ford Coppola",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:director res:Francis_Ford_Coppola }",
     "sparqls" : [ ]
   }, {
     "id" : "214",
     "status" : "N",
-    "sentence" : "Sind Laubfroesche Amphibien?",
+    "sentence" : "¿Son las ranas verdes un tipo de anfibio?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Hylidae dbo:class res:Amphibian }",
     "sparqls" : [ ]
   }, {
     "id" : "215",
     "status" : "WORK",
-    "sentence" : "Wo ist der Westminster-Palast?",
+    "sentence" : "¿Donde están situadas las Casas del Parlamento?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT ?uri WHERE { res:Palace_of_Westminster dbo:location ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/wineRegion> <http://dbpedia.org/resource/Netherlands> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Der_Internist> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Der_Spiegel> <http://dbpedia.org/ontology/city> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/connotation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Legion_Bridge> <http://dbpedia.org/ontology/crosses> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/growingGrape> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Hanging_Tree> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Blind_Leading_the_Blind> <http://dbpedia.org/ontology/museum> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/CorelDRAW> <http://dbpedia.org/ontology/programmingLanguage> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Youth_Hero_Motorway> <http://dbpedia.org/ontology/routeEnd> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Youth_Hero_Motorway> <http://dbpedia.org/ontology/routeStart> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Iron_John> <http://dbpedia.org/property/country> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Porticus_Octaviae> <http://dbpedia.org/property/location> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/mouthLocation> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Parliament_of_Lebanon> <http://dbpedia.org/ontology/location> ?Answer .}" ]
   }, {
     "id" : "216",
     "status" : "N",
-    "sentence" : "Wie viel ist das Elevation von Duesseldorf Flughafen ? ",
+    "sentence" : "cómo mucho es el elevación de Düsseldorf Aeropuerto ? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?ele WHERE { dbr:Düsseldorf_Airport dbo:elevation ?ele } LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "217",
     "status" : "N",
-    "sentence" : "Wie viel ist das Population von Mexiko Stadt ? ",
+    "sentence" : "Cómo mucho es el población de Méjico ciudad ? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?Mexico_City WHERE { dbr:Mexico_City dbo:populationTotal ?Mexico_City }",
     "sparqls" : [ ]
   }, {
     "id" : "218",
     "status" : "N",
-    "sentence" : "wann war das Gruendung Datum von Franzoesisch fuenfte Republik? ",
+    "sentence" : "cuando estaba el establecimiento fecha de francés quinto ¿república? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?ff WHERE { dbr:French_Fifth_Republic dbo:foundingDate ?ff }",
     "sparqls" : [ ]
   }, {
     "id" : "219",
     "status" : "N",
-    "sentence" : "Wer war der erste Koenig von England?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Royalty ; rdf:type yago:WikicatEnglishMonarchs ; dbo:activeYearsStartYear ?date } ORDER BY ASC(?date) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "220",
-    "status" : "WORK",
-    "sentence" : "Wer ist der Herausgeber von Forbes?",
+    "status" : "N",
+    "sentence" : "¿Quién es el editor de Forbes?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Forbes dbo:editor ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Forbes> <http://dbpedia.org/ontology/editor> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "221",
     "status" : "N",
-    "sentence" : "Welche Preise hat Douglas Hofstadter gewonnen?",
+    "sentence" : "¿Qué premios ha ganado Douglas Hofstadter?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Douglas_Hofstadter dbo:award ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "222",
     "status" : "N",
-    "sentence" : "Wer ist der juengste Dartspieler?",
+    "sentence" : "¿Quién es el jugador mas jóven de dardos?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:DartsPlayer ; dbo:birthDate ?date } ORDER BY DESC(?date) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "223",
     "status" : "N",
-    "sentence" : "Ist Pferderennen ein Sport",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { dbr:Horse_racing rdf:type dbo:Sport }",
     "sparqls" : [ ]
   }, {
     "id" : "224",
     "status" : "N",
-    "sentence" : "Welchen Fluss ueberspannt die Brooklyn Bridge?",
+    "sentence" : "¿Por qué río cruza la Brooklyn Bridge?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbo:crosses ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "225",
     "status" : "N",
-    "sentence" : "Wieviele Menschen leben in Polen?",
+    "sentence" : "¿Cuántas personas viven en Polonia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Poland dbo:populationTotal ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "226",
     "status" : "N",
-    "sentence" : "Wann war das letzte Folge von das Fernseher Serie Freunde ausgestrahlt? ",
+    "sentence" : "Cuando estaba el último episodio de el televisión serie Amigos aireado? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?date WHERE { dbr:Friends dbo:completionDate ?date }",
     "sparqls" : [ ]
   }, {
     "id" : "227",
-    "status" : "WORK",
-    "sentence" : "Heißt die Frau von Praesident Obama Michelle?",
+    "status" : "N",
+    "sentence" : "¿La mujer del presidente Obama se llama Michelle?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK WHERE { res:Barack_Obama dbo:spouse ?spouse . ?spouse rdfs:label ?name FILTER regex(?name, \"Michelle\") }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Michelle_Obama> <http://dbpedia.org/ontology/spouse> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "229",
     "status" : "N",
-    "sentence" : "Wer ist 8 Praesident von UNS? ",
+    "sentence" : "Quien es Octavo presidente de ¿NOS? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?name WHERE { dbr:8th_President_of_the_United_States dbo:wikiPageRedirects ?link . ?link dbp:name ?name }",
     "sparqls" : [ ]
   }, {
     "id" : "230",
     "status" : "N",
-    "sentence" : "Wie viel ist das gesamt Population von europaeisch Union? ",
+    "sentence" : "cómo mucho es el total población de europeo ¿Unión? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?europop WHERE { dbr:European_Union dbo:populationTotal ?europop }",
     "sparqls" : [ ]
   }, {
     "id" : "231",
-    "status" : "WORK",
-    "sentence" : "Gib mir alle von der NASA betriebenen Startrampen",
+    "status" : "N",
+    "sentence" : "Dame todas las plataformas de lanzamiento operadas por la NASA",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:LaunchPad ; dbo:operator res:NASA }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/operator> <http://dbpedia.org/resource/NASA> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "232",
-    "status" : "WORK",
-    "sentence" : "Wer hat das Videospiel World of Warcraft entwickelt?",
+    "status" : "N",
+    "sentence" : "¿Quién desarrolló el videojuego Warcraft?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:World_of_Warcraft dbo:developer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Chessington_World_of_Adventures> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "233",
     "status" : "N",
-    "sentence" : "Was ist das Geburt Name von Adele? ",
+    "sentence" : "Qué es el nacimiento nombre de Adele? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?bn WHERE { dbr:Adele dbo:birthName ?bn }",
     "sparqls" : [ ]
   }, {
     "id" : "234",
     "status" : "N",
-    "sentence" : "Was ist das Population von Kairo? ",
+    "sentence" : "Qué es el población de ¿El Cairo? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pop WHERE { dbr:Cairo dbo:populationTotal ?pop }",
     "sparqls" : [ ]
   }, {
     "id" : "235",
     "status" : "N",
-    "sentence" : "Lebt Frank Herbert noch?",
+    "sentence" : "¿Todavía vive Frank Herbert?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { OPTIONAL { res:Frank_Herbert dbo:deathDate ?date } FILTER ( ! bound(?date) ) }",
     "sparqls" : [ ]
   }, {
     "id" : "236",
     "status" : "N",
-    "sentence" : "Was ist das letzte Arbeit von Und Braun? ",
+    "sentence" : "Qué es el último trabajo de Y ¿Marrón? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?book WHERE { { ?book dbo:author dbr:Dan_Brown . ?book dbp:releaseDate ?date } UNION { ?book dbo:author dbr:Dan_Brown . ?book dbo:publicationDate ?date} } ORDER BY DESC(xsd:date(?date)) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "237",
     "status" : "N",
-    "sentence" : "Woher ist Sungkyunkwan Universitaet? ",
+    "sentence" : "Dónde es Sungkyunkwan ¿Universidad? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?country WHERE { dbr:Sungkyunkwan_University dbo:city ?city ; dbo:country ?country }",
     "sparqls" : [ ]
   }, {
     "id" : "238",
     "status" : "N",
-    "sentence" : "Wer ist das Autor von das Deutung von Traeume? ",
+    "sentence" : "Quien es el autor de el interpretación de ¿Sueños? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?Author WHERE { dbr:The_Interpretation_of_Dreams dbo:author ?Author }",
     "sparqls" : [ ]
   }, {
     "id" : "239",
     "status" : "N",
-    "sentence" : "Wann war das Tod von Shakespeare? ",
+    "sentence" : "Cuando estaba el muerte de Shakespeare? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?x WHERE { dbr:William_Shakespeare dbo:deathDate ?x } LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "241",
-    "status" : "WORK",
-    "sentence" : "Wer hat Slack entwickelt?",
+    "status" : "N",
+    "sentence" : "¿Quien desarrolló Slack?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri dbo:product <http://dbpedia.org/resource/Slack_(software)> }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Slack_(software)> .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "242",
     "status" : "N",
-    "sentence" : "Woher ist das Ursprung von Carolina Sensenmann? ",
+    "sentence" : "Dónde es el origen de Carolina ¿segador? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/>PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { dbr:Carolina_Reaper dbo:origin ?uri}",
     "sparqls" : [ ]
   }, {
     "id" : "243",
     "status" : "N",
-    "sentence" : "In welchem Jahr wurde Rachel Stevens geboren?",
+    "sentence" : "¿En que año nació Rachel Stevens?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Rachel_Stevens dbo:birthYear ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "244",
     "status" : "N",
-    "sentence" : "Wie oft hat Jane Fonda geheiratet?",
+    "sentence" : "¿Cuántas veces ha estado casada Jane Fonda?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Jane_Fonda dbo:spouse ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "245",
-    "status" : "WORK",
-    "sentence" : "Hieß die Frau von Praesident Lincoln Mary?",
+    "status" : "N",
+    "sentence" : "¿La mujer del presidente Lincoln se llama Mary?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK WHERE { res:Abraham_Lincoln dbo:spouse ?spouse . ?spouse rdfs:label ?name FILTER regex(?name, \"Mary\") }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mary_Todd_Lincoln> <http://dbpedia.org/ontology/spouse> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "246",
     "status" : "WORK",
-    "sentence" : "Durch welche Staedte fließt die Weser?",
+    "sentence" : "¿Por qué ciudades pasa el río Weser?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Weser dbo:city ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Weser> <http://dbpedia.org/ontology/city> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Internationale> <http://dbpedia.org/property/country> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/El_Jueves> <http://dbpedia.org/ontology/city> ?Answer .}" ]
   }, {
     "id" : "247",
     "status" : "N",
-    "sentence" : "In welcher Programmiersprache wurde GIMP geschrieben?",
+    "sentence" : "¿En qué lenguaje de programación esta programado GIMP?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:GIMP dbo:programmingLanguage ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "248",
     "status" : "N",
-    "sentence" : "Welche Universiaet hat Angela Merkel besucht?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?university WHERE { res:Angela_Merkel dbo:almaMater ?university }",
     "sparqls" : [ ]
   }, {
     "id" : "249",
     "status" : "N",
-    "sentence" : "Liste alle Musicals mit Musik von Elton John auf",
+    "sentence" : "Dame todos los musicales con música de Elton John",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Musical ; dbo:musicBy res:Elton_John }",
     "sparqls" : [ ]
   }, {
     "id" : "250",
     "status" : "N",
-    "sentence" : "Wieviele Aldi-Filialen gibt es?",
+    "sentence" : "¿Cuántas tiendas Aldi hay?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?number WHERE { res:Aldi dbo:numberOfLocations ?number }",
     "sparqls" : [ ]
   }, {
     "id" : "251",
     "status" : "N",
-    "sentence" : "Was ist der laengste Fluss der Welt?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri rdf:type dbo:BodyOfWater ; dbo:length ?length } ORDER BY DESC(?length) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "252",
-    "status" : "WORK",
-    "sentence" : "Wann wurde John Adams geboren?",
+    "status" : "N",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:John_Adams dbo:birthDate ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/John_Adams_(physicist)> <http://dbpedia.org/ontology/birthYear> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "253",
     "status" : "N",
-    "sentence" : "Welche Firmen stellen Hovercrafts her?",
+    "sentence" : "¿Qué compañías producen aerodeslizadores?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:product res:Hovercraft }",
     "sparqls" : [ ]
   }, {
     "id" : "254",
-    "status" : "WORK",
-    "sentence" : "Wer war die Frau von US-Praesident Lincoln?",
+    "status" : "N",
+    "sentence" : "¿Quién fué la mujer del presidente americano Lincoln?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:spouse ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Abraham_Lincoln> <http://dbpedia.org/ontology/spouse> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "255",
     "status" : "N",
-    "sentence" : "Welche Spezies tut ein Elefant gehoeren? ",
+    "sentence" : "Cual especies hace un elefante ¿pertenecer a? ",
     "givenSparql" : "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?species WHERE { dbr:Elephant dbp:species ?species }",
     "sparqls" : [ ]
   }, {
     "id" : "256",
     "status" : "N",
-    "sentence" : "Wieviele Menschen leben in der Hauptstadt Australiens?",
+    "sentence" : "¿Cuánta gente vive en la capital de Australia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Australia dbo:capital ?x . ?x dbo:populationTotal ?num }",
     "sparqls" : [ ]
   }, {
     "id" : "257",
     "status" : "N",
-    "sentence" : "In welchem alten Reich konnte man mit Kakaobohnen bezahlen?",
+    "sentence" : "En que imperio antiguo pagaría con granos de cacao?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:currency res:Cocoa_bean }",
     "sparqls" : [ ]
   }, {
     "id" : "258",
     "status" : "N",
-    "sentence" : "Wie viele Theorien hat Albert Einstein formuliert?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT (COUNT(?uri) AS ?count) WHERE { dbr:Albert_Einstein dbo:knownFor ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "259",
-    "status" : "WORK",
-    "sentence" : "Wer hat den Soundtrack fuer Camerons Titanic geschrieben?",
+    "status" : "N",
+    "sentence" : "¿Quién compuso la banda sonora del Titanic de Cameron?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Titanic_(1997_film)> dbo:musicComposer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/On_Parables> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/You_Don't_Know_Jack_(film)> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Titanic_(1997_film)> <http://dbpedia.org/ontology/musicComposer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Titanic_(1943_film)> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "260",
-    "status" : "WORK",
-    "sentence" : "Gib mir die Laufzeit von Toy Story",
+    "status" : "N",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?runtime WHERE { res:Toy_Story dbo:runtime ?runtime }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Toy_Soldiers_(song)> <http://dbpedia.org/ontology/runtime> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "262",
     "status" : "N",
-    "sentence" : "Mit Wie viele Laender Ich rannte hat Grenzen? ",
+    "sentence" : "Con cómo muchos países Corrí tiene fronteras? ",
     "givenSparql" : "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?border WHERE { dbr:Geography_of_Iran dbp:borders ?border } LIMIT 8",
     "sparqls" : [ ]
   }, {
     "id" : "263",
     "status" : "N",
-    "sentence" : "Welche Elektronikunternehmen wurden in Peking gegruendet?",
+    "sentence" : "¿Qué compañías de electrónica fueron fundadas en Pekín?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:industry res:Electronics ; dbo:foundationPlace res:Beijing }",
     "sparqls" : [ ]
   }, {
     "id" : "264",
-    "status" : "WORK",
-    "sentence" : "Wer war der Nachfolger von John F Kennedy?",
+    "status" : "N",
+    "sentence" : "¿Quién fué el sucesor de John F Kennedy?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:successor ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/successor> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "265",
     "status" : "N",
-    "sentence" : "Wer ist Buergermeister von Paris?",
+    "sentence" : "¿Quién es el alcalde de París?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Paris dbo:mayor ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "266",
     "status" : "N",
-    "sentence" : "Hat Arnold Schwarzenegger eine Universitaet besucht?",
+    "sentence" : "¿Fue Arnold Schwarzenegger a la universidad?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { res:Arnold_Schwarzenegger dbo:almaMater ?x . ?x rdf:type dbo:University }",
     "sparqls" : [ ]
   }, {
     "id" : "267",
     "status" : "N",
-    "sentence" : "Ist James Bond verheiratet?",
+    "sentence" : "¿Está James Bond casado?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:James_Bond dbo:spouse ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "268",
     "status" : "N",
-    "sentence" : "Fließt die Isar in einen See?",
+    "sentence" : "¿Desemboca el Isar en un lago?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { ?x dbo:inflow res:Isar ; rdf:type dbo:Lake }",
     "sparqls" : [ ]
   }, {
     "id" : "269",
     "status" : "N",
-    "sentence" : "Welches indische Unternehmen hat die meisten Angestellten?",
+    "sentence" : "¿Qué empresa de la India tiene el mayor número de empleados?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company ; dbo:location res:India ; dbo:numberOfEmployees ?n } ORDER BY DESC(?n) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "270",
     "status" : "N",
-    "sentence" : "Wer war der Vizepraesident unter John F Kennedy?",
+    "sentence" : "¿Quién fué el vicepresidente de John F Kennedy?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:vicePresident ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "271",
     "status" : "N",
-    "sentence" : "Aus welchem Land kommt der Erfinder von Nijntje?",
+    "sentence" : "¿De qué país viene el creador de Nijntje?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Miffy dbo:creator ?x . ?x dbo:nationality ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "273",
-    "status" : "N",
-    "sentence" : "In welcher Stadt ist die Heinekenbrauerei?",
+    "status" : "WORK",
+    "sentence" : "¿En qué ciudad esta la fábrica de cerveza Heineken?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Heineken dbo:manufacturer ?x . ?x dbo:locationCity ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "No Sparql!!!!" ]
   }, {
     "id" : "274",
     "status" : "N",
-    "sentence" : "Ist Barack Obama ein Demokrat?",
+    "sentence" : "¿Es Barack Obama demócrata?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Barack_Obama dbo:party <http://dbpedia.org/resource/Democratic_Party_(United_States)> }",
     "sparqls" : [ ]
   }, {
     "id" : "275",
     "status" : "N",
-    "sentence" : "Liste die Kinder von Margaret Thatcher auf",
+    "sentence" : "Dame una lista de los hijos de Margaret Thatcher",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Margaret_Thatcher dbo:child ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "276",
     "status" : "N",
-    "sentence" : "Aus welcher Region ist der Melon de Bourgogne?",
+    "sentence" : "¿De que región es el vino Melon de Bourgogne?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Melon_de_Bourgogne dbo:wineRegion ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "278",
     "status" : "N",
-    "sentence" : "Wie groß ist das gesamt Bereich von Norden Rhein- Westfalen? ",
+    "sentence" : "cómo grande es el total zona de norte Rhine- Westfalia? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?tarea WHERE { dbr:North_Rhine-Westphalia dbo:areaTotal ?tarea }",
     "sparqls" : [ ]
   }, {
     "id" : "279",
     "status" : "N",
-    "sentence" : "Welche Stadt hat die meisten Einwohner?",
+    "sentence" : "¿Que ciudad tiene la mayor población?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:populationTotal ?pop } ORDER BY DESC(?pop) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "280",
     "status" : "N",
-    "sentence" : "Was ist Donald Trumps Main Geschaeft? ",
+    "sentence" : "Qué es Donald Trump principal ¿negocio? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?owner WHERE { ?owner dbo:owner dbr:Donald_Trump }",
     "sparqls" : [ ]
   }, {
     "id" : "281",
     "status" : "N",
-    "sentence" : "Wann werden Anfang das Finale Spiel von das Fußball Welt Tasse 2018? ",
+    "sentence" : "Cuando será comienzo el final partido de el fútbol mundo vaso 2018? ",
     "givenSparql" : "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?Date WHERE { dbr:2018_FIFA_World_Cup dbp:date ?Date } ORDER BY DESC(?Date) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "282",
     "status" : "N",
-    "sentence" : "Bei wievielen Filmen hat Stanley Kubrick Regie gefuehrt?",
+    "sentence" : "¿Qué películas dirigio Stanley Kubrick?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Stanley_Kubrick }",
     "sparqls" : [ ]
   }, {
     "id" : "283",
     "status" : "N",
-    "sentence" : "Wie viel ist das Population Irak? ",
+    "sentence" : "cómo mucho es el población ¿Irak? ",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?pIraq WHERE { dbr:Iraq dbo:populationTotal ?pIraq }",
     "sparqls" : [ ]
   }, {
     "id" : "284",
     "status" : "N",
-    "sentence" : "Wieviele Einwohner hat die groeßte Stadt in Kanada?",
+    "sentence" : "¿Cuántos habitantes tiene la ciudad más grande de Canadá?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Canada dbo:largestCity ?city . ?city dbo:populationTotal ?num }",
     "sparqls" : [ ]
   }, {
     "id" : "285",
-    "status" : "WORK",
-    "sentence" : "Wer ist der Buergermeister der Hauptstadt von Franzoesisch-Polynesien?",
+    "status" : "N",
+    "sentence" : "¿Quien es el alcalde de la capital de la Polinesia Francesa?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:French_Polynesia dbo:capital ?x . ?x dbo:mayor ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Tokyo> <http://dbpedia.org/ontology/leaderName> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Angern_an_der_March> <http://dbpedia.org/ontology/mayor> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "286",
     "status" : "N",
-    "sentence" : "Gib mir alle Schauspieler von Filmen, in denen William Shatner Regie gefuehrt hat",
+    "sentence" : "Dame todos los actores de películas dirigidas por William Shatner",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "287",
     "status" : "N",
-    "sentence" : "Wie groß ist Claudia Schiffer?",
+    "sentence" : "¿Cómo de alta es Claudia Schiffer?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height }",
     "sparqls" : [ ]
   }, {
     "id" : "288",
     "status" : "N",
-    "sentence" : "Wie viel ist das Population Dichte Rang von Deutschland? ",
+    "sentence" : "cómo mucho es el población densidad rango de ¿Alemania? ",
     "givenSparql" : "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?rank WHERE { dbr:Germany dbp:populationDensityRank ?rank }",
     "sparqls" : [ ]
   }, {
     "id" : "289",
     "status" : "N",
-    "sentence" : "Was ist der hoechste Berg in Italien?",
+    "sentence" : "¿Cuál es la montaña mas alta en Italia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain ; dbo:locatedInArea res:Italy ; dbo:elevation ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "290",
-    "status" : "WORK",
-    "sentence" : "Liste alle Spiele von GMT auf",
+    "status" : "N",
+    "sentence" : "Dame todos los juegos de GMT",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/publisher> <http://dbpedia.org/resource/GMT_Games> .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/date> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "291",
     "status" : "N",
-    "sentence" : "Was ist die Amtssprache Von Surinam?",
+    "sentence" : "¿Cuál es la idioma oficial de Surinam?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Suriname dbo:officialLanguage ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "292",
     "status" : "N",
-    "sentence" : "In welcher Stadt ist Nikos Kazantzakis gestorben?",
+    "sentence" : "¿En que ciudad murió Nikos Kazantzakis?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Nikos_Kazantzakis dbo:deathPlace ?uri . ?uri rdf:type dbo:Town }",
     "sparqls" : [ ]
   }, {
     "id" : "293",
-    "status" : "N",
-    "sentence" : "Was ist in Chocolate Chip Cookies drin?",
+    "status" : "WORK",
+    "sentence" : "¿Qué contiene una galleta de chocolate?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chocolate_chip_cookie dbo:ingredient ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/ingredient> <http://dbpedia.org/resource/Chocolate_chip_cookie> .}" ]
   }, {
     "id" : "294",
-    "status" : "WORK",
-    "sentence" : "In welchem Land befindet sich der Limerick Lake?",
+    "status" : "N",
+    "sentence" : "¿En qué país se encuentra el lago Limerick?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Limerick_Lake dbo:country ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Limerick_Lake> <http://dbpedia.org/ontology/country> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "295",
     "status" : "N",
-    "sentence" : "Gib mir alle Videospiele von Mean Hamster Software",
+    "sentence" : "Dame todos los videojuegos de Mean Hamster Software",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:VideoGame ; dbo:publisher res:Mean_Hamster_Software }",
     "sparqls" : [ ]
   }, {
     "id" : "296",
     "status" : "N",
-    "sentence" : "Gib mir alle Bandmitglieder von Prodigy",
+    "sentence" : "Dame todos los miembros de la banda Prodigy",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Prodigy dbo:bandMember ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "297",
-    "status" : "N",
-    "sentence" : "In welcher Zeitzone liegt Rom?",
+    "status" : "WORK",
+    "sentence" : "¿En qué zona horaria esta Roma?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Rome dbo:timeZone ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "No Sparql!!!!", "No Sparql!!!!", "No Sparql!!!!" ]
   }, {
     "id" : "298",
     "status" : "N",
-    "sentence" : "Wie hoch ist der Leuchtturm in Colombo?",
+    "sentence" : "¿Cómo de alta el faro de Colombo?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Colombo_Lighthouse dbo:height ?num }",
     "sparqls" : [ ]
   }, {
     "id" : "299",
     "status" : "N",
-    "sentence" : "Wer sind das Schriftsteller von das Mauer Album von Rosa Floyd? ",
+    "sentence" : "Quien son el escritores de el pared álbum de Rosado Floyd? ",
     "givenSparql" : "PREFIX dbr: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT ?writers WHERE { dbr:The_Wall dbp:writer ?writers }",
     "sparqls" : [ ]
   }, {
     "id" : "300",
-    "status" : "WORK",
-    "sentence" : "Wer ist der Buergermeister von Rotterdam?",
+    "status" : "N",
+    "sentence" : "¿Quién es el alcalde de Rotterdam?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Rotterdam dbo:leaderName ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Rotterdam> <http://dbpedia.org/ontology/leaderName> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/mayor> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "301",
     "status" : "N",
-    "sentence" : "Was ist die groeßte Stadt in Australien?",
+    "sentence" : "¿Cuál es la cuidad más grande de Australia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Australia dbo:largestCity ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "302",
-    "status" : "WORK",
-    "sentence" : "Wer war mit Praesident Chirac verheiratet?",
+    "status" : "N",
+    "sentence" : "¿Quién estuvo casado con el presidente Chirac?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Jacques_Chirac dbo:spouse ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Claude_Chirac> <http://dbpedia.org/ontology/spouse> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "303",
     "status" : "N",
-    "sentence" : "Welche Regierungsform hat Suedafrika?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { dbr:South_Africa dbo:governmentType ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "304",
     "status" : "N",
-    "sentence" : "Wie hoch ist der Yokohama Marine Tower?",
+    "sentence" : "¿Cómo de alta el la torre Yokohama Marine?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Yokohama_Marine_Tower dbo:height ?num }",
     "sparqls" : [ ]
   }, {
     "id" : "305",
     "status" : "N",
-    "sentence" : "Welche Feiertage werden auf der Welt gefeiert? test1",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Holiday }",
     "sparqls" : [ ]
   }, {
     "id" : "306",
     "status" : "N",
-    "sentence" : "Wer ist der groeßte Basketballspieler?",
+    "sentence" : "Quien es el jugador de baloncesto mas alto?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:BasketballPlayer ; dbo:height ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "307",
     "status" : "N",
-    "sentence" : "Wieviele Sprachen werden in Turkmenistan gesprochen?",
+    "sentence" : "¿Cuántos idiomas se hablan en Turkmenistán?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?x) AS ?c) WHERE { res:Turkmenistan dbo:language ?x }",
     "sparqls" : [ ]
   }, {
     "id" : "308",
     "status" : "N",
-    "sentence" : "Hatte Che Guevara Kinder?",
+    "sentence" : "¿Tuvo hijos el Che Guevara?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Che_Guevara dbo:child ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "309",
     "status" : "N",
-    "sentence" : "Hat Kaurismaeki jemals den Großen Preis der Jury in Cannes gewonnen?",
+    "sentence" : "¿Gano Kaurismäki alguna vez el Gran Prix de Cannes?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aki_Kaurismäki dbo:award <http://dbpedia.org/resource/Grand_Prix_(Cannes_Film_Festival)> }",
     "sparqls" : [ ]
   }, {
     "id" : "310",
     "status" : "N",
-    "sentence" : "Welcher Partei gehoert die Buergermeisterin von Paris an?",
+    "sentence" : "¿A qué partido politico pertenece el alcalde de París?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Paris dbo:mayor ?x . ?x dbo:party ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "311",
     "status" : "N",
-    "sentence" : "Wer ist der Formel-1-Fahrer mit den meisten Rennen?",
+    "sentence" : "¿Quién es el conductor de Formula 1 con más carreras?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:FormulaOneRacer ; dbo:races ?x } ORDER BY DESC(?x) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "312",
     "status" : "N",
-    "sentence" : "Aus welchem Land kommt Sitecore?",
+    "sentence" : "¿De qué país es Sitecore?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Sitecore dbo:foundationPlace ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "313",
     "status" : "N",
-    "sentence" : "Gib mir den Geburtsort von Frank Sinatra",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?place WHERE { res:Frank_Sinatra dbo:birthPlace ?place }",
     "sparqls" : [ ]
   }, {
     "id" : "314",
     "status" : "N",
-    "sentence" : "Spielt Christian Bale in Velvet Goldmine mit?",
+    "sentence" : "¿Actúa Christian Bale en Velvet Goldmine?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Velvet_Goldmine dbo:starring res:Christian_Bale }",
     "sparqls" : [ ]
   }, {
     "id" : "315",
     "status" : "N",
-    "sentence" : "Wer ist der Sohn von Sonny und Cher?",
+    "sentence" : "¿Quién es el hijo de Sonny y Cher?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:parent res:Cher ; dbo:parent res:Sonny_Bono }",
     "sparqls" : [ ]
   }, {
     "id" : "316",
     "status" : "N",
-    "sentence" : "Wieviele ethnische Gruppen leben in Slovenien?",
+    "sentence" : "¿Cuántos grupos étnicos viven en Eslovenia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Slovenia dbo:ethnicGroup ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "317",
-    "status" : "WORK",
-    "sentence" : "Was ist die Hauptstadt von Kamerun?",
+    "status" : "N",
+    "sentence" : "¿Cuál es la capital de Camerún?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Cameroon dbo:capital ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Cameroon> <http://dbpedia.org/ontology/capital> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "318",
     "status" : "N",
-    "sentence" : "Wurde Natalie Portman in den Vereinigten Staaten geboren?",
+    "sentence" : "¿Nació Natalie Portman en los estados unidos de américa?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Natalie_Portman dbo:birthPlace ?city . ?city dbo:country res:United_States }",
     "sparqls" : [ ]
   }, {
     "id" : "319",
     "status" : "N",
-    "sentence" : "Wieviele Seiten hat Krieg und Frieden?",
+    "sentence" : "¿Cuántas páginas tiene Guerra y Paz?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?n WHERE { res:War_and_Peace dbo:numberOfPages ?n }",
     "sparqls" : [ ]
   }, {
     "id" : "320",
     "status" : "N",
-    "sentence" : "Wer ist das aelteste Kind von Meryl Streep?",
+    "sentence" : "¿Cuál es el hijo mas mayor de Meryl Streep?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Meryl_Streep dbo:child ?uri . ?uri dbo:birthDate ?d } ORDER BY ASC(?d) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "321",
-    "status" : "N",
-    "sentence" : "Welche Fernsehserien hat Walt Disney entworfen?",
+    "status" : "WORK",
+    "sentence" : "¿Qué series televisivas ideó Walt Disney?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:TelevisionShow ; dbo:creator res:Walt_Disney }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/creator> <http://dbpedia.org/resource/Walt_Disney> .}" ]
   }, {
     "id" : "322",
     "status" : "N",
-    "sentence" : "Wofuer steht IYCM?",
+    "sentence" : "¿Qué abrevia IYCM?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:abbreviation \"IYCM\" }",
     "sparqls" : [ ]
   }, {
     "id" : "323",
-    "status" : "WORK",
-    "sentence" : "Welche Traubenarten wachsen in Oregon?",
+    "status" : "N",
+    "sentence" : "¿Que tipo de uva crece en Oregon?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Oregon_wine dbo:growingGrape ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/growingGrape> ?Arg .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/wineRegion> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "324",
     "status" : "N",
-    "sentence" : "War US-Praesident Jackson in einen Krieg verwickelt?",
+    "sentence" : "¿Estuvo el el presidente de los estados unidos Jackson involucrado en una guerra?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Andrew_Jackson dbo:battle ?battle }",
     "sparqls" : [ ]
   }, {
     "id" : "325",
-    "status" : "WORK",
-    "sentence" : "Wann wurde die Titanic fertiggestellt?",
+    "status" : "N",
+    "sentence" : "¿Cuando se completo el Titanic?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:RMS_Titanic dbo:completionDate ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Snorks> <http://dbpedia.org/ontology/completionDate> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "326",
     "status" : "N",
-    "sentence" : "Hat Tesla den Nobelpreis fuer Physik gewonnen?",
+    "sentence" : "¿Obtuvo Tesla el premio nobel de física?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Nikola_Tesla dbo:award res:Nobel_Prize_in_Physics }",
     "sparqls" : [ ]
   }, {
     "id" : "327",
     "status" : "N",
-    "sentence" : "Wie viele Staaten gibt es in Mexiko?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT (COUNT(?uri) AS ?count) WHERE { ?uri dbo:type dbr:States_of_Mexico }",
     "sparqls" : [ ]
   }, {
     "id" : "328",
     "status" : "N",
-    "sentence" : "Welcher Wissenschaftler ist bekannt fuer das Manhattan-Projekt und den Friedensnobelpreis?",
+    "sentence" : "¿Qué científicos son conocidos por el proyecto Manhattan y el premio Nobel de la Paz?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri dbo:knownFor res:Manhattan_Project ; rdf:type dbo:Scientist ; dbo:knownFor res:Nobel_Peace_Prize }",
     "sparqls" : [ ]
   }, {
     "id" : "329",
     "status" : "N",
-    "sentence" : "Wieviel hat der Legofilm gekostet?",
+    "sentence" : "¿Cuánto cuesta la película de Lego?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?n WHERE { res:The_Lego_Movie dbo:budget ?n }",
     "sparqls" : [ ]
   }, {
     "id" : "330",
-    "status" : "WORK",
-    "sentence" : "Wer hat die Musik fuer Harold und Maude komponiert?",
+    "status" : "N",
+    "sentence" : "¿Quién compuso la música para Harold y Maude?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Harold_and_Maude> <http://dbpedia.org/ontology/musicComposer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "331",
     "status" : "N",
-    "sentence" : "Liste alle Episoden der ersten Staffel der HBO-Fernsehserie Die Sopranos auf",
+    "sentence" : "Dame todos los episodios de la prímera época de la serie de HBO Los Sporanos",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:The_Sopranos ; dbo:seasonNumber 1 }",
     "sparqls" : [ ]
   }, {
     "id" : "332",
     "status" : "N",
-    "sentence" : "Welche Stadt hat die wenigsten Einwohner?",
+    "sentence" : "¿Que ciudad tiene la menor población?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City ; dbo:populationTotal ?pop } ORDER BY ASC(?pop) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "333",
     "status" : "N",
-    "sentence" : "Wo liegt Syngman Rhee begraben?",
+    "sentence" : "¿Dónde está enterrado Syngman Rhee?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Syngman_Rhee dbo:restingPlace ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "334",
     "status" : "N",
-    "sentence" : "Spielt Neymar fuer Real Madrid?",
+    "sentence" : "¿juega Neymar en el Real Madrid?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Neymar dbo:team <http://dbpedia.org/resource/Real_Madrid_C.F.> }",
     "sparqls" : [ ]
   }, {
     "id" : "335",
     "status" : "N",
-    "sentence" : "Wer schrieb das Buch Die Saeulen der Erde?",
+    "sentence" : "¿Quen escribió el libro Los pilares de la Tierra?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "336",
     "status" : "N",
-    "sentence" : "Haben Prinz Harry und Prinz William dieselben Eltern?",
+    "sentence" : "¿Tienen el príncipe Harry y el prínciple William la misma madre?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { <http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> dbo:parent ?x . res:Prince_Harry dbo:parent ?x }",
     "sparqls" : [ ]
   }, {
     "id" : "337",
-    "status" : "WORK",
-    "sentence" : "Wer war der Doktorvater von Albert Einstein?",
+    "status" : "N",
+    "sentence" : "¿Quien es el supervisor de doctorado de Albert Einstein?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Albert_Einstein dbo:doctoralAdvisor ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Albert_Einstein> <http://dbpedia.org/ontology/doctoralAdvisor> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "338",
     "status" : "N",
-    "sentence" : "Hat Breaking Bad mehr Episoden als Game of Thrones?",
+    "sentence" : "¿Tiene Breaking Bad más episodios que Game of Thrones?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Breaking_Bad dbo:numberOfEpisodes ?x . res:Game_of_Thrones dbo:numberOfEpisodes ?y FILTER ( ?y > ?x ) }",
     "sparqls" : [ ]
   }, {
     "id" : "339",
     "status" : "N",
-    "sentence" : "Wer hat Vincent van Gogh inspiriert?",
+    "sentence" : "¿Quién inspiro a Vincent van Gogh?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:influenced res:Vincent_van_Gogh }",
     "sparqls" : [ ]
   }, {
     "id" : "340",
     "status" : "N",
-    "sentence" : "Welches Gebaeude nach dem Burj Khalifa hat die meisten Etagen",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Burj_Khalifa dbo:floorCount ?burj . ?uri rdf:type dbo:Building ; dbo:floorCount ?proj FILTER ( ?proj < ?burj ) } ORDER BY DESC(?proj) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "341",
     "status" : "N",
-    "sentence" : "Was war das Endergebnis der Rosenkriege?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT DISTINCT ?result WHERE { ?uri dbo:isPartOfMilitaryConflict dbr:Wars_of_the_Roses ; dbo:result ?result ; dbo:date ?date } ORDER BY DESC(?date) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "342",
     "status" : "N",
-    "sentence" : "Wieviel hat Pulp Fiction gekostet?",
+    "sentence" : "¿Cuanto costo Pulp Fiction?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?n WHERE { res:Pulp_Fiction dbo:budget ?n }",
     "sparqls" : [ ]
   }, {
     "id" : "343",
     "status" : "N",
-    "sentence" : "Ist Proinsulin ein Protein?",
+    "sentence" : "¿La proinsulina es una proteina?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { res:Proinsulin rdf:type dbo:Protein }",
     "sparqls" : [ ]
   }, {
     "id" : "344",
     "status" : "N",
-    "sentence" : "Haben Urdu und Persisch gemeinsame Wurzeln?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ASK WHERE { dbr:Urdu dbo:languageFamily ?uri . dbr:Persian_language dbo:languageFamily ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "345",
     "status" : "N",
-    "sentence" : "Wer spielt alles in spanischen Filmen produziert von Benicio del Toro mit? ",
+    "sentence" : "¿Quien protagoniza peliculas españolas producidas por Benicio del Toro?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?film rdf:type dbo:Film ; dbo:country res:Spain ; dbo:producer res:Benicio_del_Toro ; dbo:starring ?uri . ?uri rdf:type dbo:Person }",
     "sparqls" : [ ]
   }, {
     "id" : "346",
     "status" : "N",
-    "sentence" : "Ist der Baikalsee groeßer als der Große Baerensee?",
+    "sentence" : "¿Es el lago Baikal mayor que el lago Great Bear?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Lake_Baikal dbo:areaTotal ?a1 . res:Great_Bear_Lake dbo:areaTotal ?a2 FILTER ( ?a1 > ?a2 ) }",
     "sparqls" : [ ]
   }, {
     "id" : "347",
     "status" : "N",
-    "sentence" : "Zeig mir alle Buecher in Asimovs Foundation-Serie",
+    "sentence" : "Muéstrame todos los libros en la serie Fundación de Asimov",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:Foundation_series }",
     "sparqls" : [ ]
   }, {
     "id" : "348",
     "status" : "WORK",
-    "sentence" : "Wo wurde Bach geboren?",
+    "sentence" : "¿Dónde nació Bach?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Johann_Sebastian_Bach dbo:birthPlace ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Yannick_Bach> <http://dbpedia.org/ontology/birthPlace> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Pamela_Bach> <http://dbpedia.org/ontology/birthPlace> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/property/mouthLocation> ?Answer .}" ]
   }, {
     "id" : "349",
     "status" : "N",
-    "sentence" : "Welche Stadt hat die aelteste funktionierende U-Bahn?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?loc WHERE { ?uri dbo:type dbr:Rapid_transit ; dbo:openingYear ?date ; dbo:location ?loc . ?loc rdf:type dbo:City } ORDER BY ASC(?date) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "350",
-    "status" : "WORK",
-    "sentence" : "Wer hat die Brooklyn Bridge entworfen?",
+    "status" : "N",
+    "sentence" : "¿Quién diseñó la Brooklyn Bridge?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbo:architect ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Brooklyn_Bridge> <http://dbpedia.org/ontology/architect> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Good_Terrorist> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Snorks> <http://dbpedia.org/ontology/creator> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "351",
     "status" : "N",
-    "sentence" : "Wie viele Menschen leben in Eurasien?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?population WHERE { res:Eurasia dbo:populationTotal ?population }",
     "sparqls" : [ ]
   }, {
     "id" : "352",
-    "status" : "WORK",
-    "sentence" : "Wer moderiert die BBC Wildlife Specials?",
+    "status" : "N",
+    "sentence" : "¿Quién es el anfitrión de los especiales de la BBC Wildlife?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:BBC_Wildlife_Specials dbo:presenter ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Curiosity_Show> <http://dbpedia.org/ontology/presenter> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "353",
-    "status" : "WORK",
-    "sentence" : "Was ist die Gesamteinwohnerzahl von Melbourne, Florida?",
+    "status" : "N",
+    "sentence" : "¿Cuál es la población total de Melbourne, Florida?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?uri WHERE { <http://dbpedia.org/resource/Melbourne,_Florida> dbo:populationTotal ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Melbourne> <http://dbpedia.org/ontology/populationTotal> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "354",
-    "status" : "WORK",
-    "sentence" : "In welchem Land ist der Mount Everest?",
+    "status" : "N",
+    "sentence" : "¿En que país esta el monte Everest?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Mount_Everest dbo:locatedInArea ?uri . ?uri rdf:type dbo:Country }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mount_Wasilewski> <http://dbpedia.org/ontology/country> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mount_Everest> <http://dbpedia.org/ontology/locatedInArea> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "355",
     "status" : "N",
-    "sentence" : "Welcher Stilrichtung gehoerte der Maler der Drei Taenzer an?",
+    "sentence" : "¿A qué estilo artístico pertenece el pinto de Los Tres Bailarines?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Three_Dancers dbo:author ?person . ?person dbo:movement ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "356",
     "status" : "N",
-    "sentence" : "Wann wurde die Operation Overlord durchgefuehrt?",
+    "sentence" : "¿Cuándo comenzó la operación Overlord?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?d WHERE { res:Operation_Overlord dbo:date ?d }",
     "sparqls" : [ ]
   }, {
     "id" : "357",
     "status" : "N",
-    "sentence" : "Welche Bruecke hat die laengste Spannweite?",
+    "sentence" : "¿Qué puente tiene el mayor largo del vano?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Bridge ; dbo:mainspan ?s } ORDER BY DESC(?s) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "358",
     "status" : "N",
-    "sentence" : "Gibt es ein Videospiel, das Battle Chess heißt?",
+    "sentence" : "¿Hay algún videojuego que se llame Battle Chess?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { ?uri rdf:type dbo:VideoGame ; rdfs:label \"Battle Chess\"@en }",
     "sparqls" : [ ]
   }, {
     "id" : "359",
     "status" : "N",
-    "sentence" : "Wer wurde in der Cheops-Pyramide begraben?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { ?uri dbo:restingPlace dbr:Great_Pyramid_of_Giza }",
     "sparqls" : [ ]
   }, {
     "id" : "360",
     "status" : "N",
-    "sentence" : "Hat Ford eine Frabik in Malaysia?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> ASK WHERE { ?uri dbo:assembly dbr:Malaysia ; dbo:manufacturer dbr:Ford_Motor_Company }",
     "sparqls" : [ ]
   }, {
     "id" : "361",
     "status" : "N",
-    "sentence" : "Hat Sokrates Aristoteles beeinflusst?",
+    "sentence" : "¿Tuvo Sócrates influencia sobre Aristóteles?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates }",
     "sparqls" : [ ]
   }, {
     "id" : "362",
     "status" : "N",
-    "sentence" : "Wieviele Kinder hatte Benjamin Franklin?",
+    "sentence" : "¿Cuántos hijos tuvo Benjamin Franklin?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { res:Benjamin_Franklin dbo:child ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "363",
     "status" : "N",
-    "sentence" : "Wie groß ist Michael Jordan?",
+    "sentence" : "¿Qué altura tiene Michael Jordan?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Michael_Jordan dbo:height ?num }",
     "sparqls" : [ ]
   }, {
     "id" : "364",
-    "status" : "N",
-    "sentence" : "In welcher Stadt im Vereinigten Koenigreich ist das Hauptquartier des MI6?",
+    "status" : "WORK",
+    "sentence" : "¿En qué ciudad del reino unido se encuentra el cuartel genetal del MI6?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Secret_Intelligence_Service dbo:headquarter ?uri . ?uri dbo:country res:United_Kingdom }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Dream_of_Light> <http://dbpedia.org/ontology/country> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/World's_Strongest_Man> <http://dbpedia.org/property/location> ?Answer .}" ]
   }, {
     "id" : "365",
-    "status" : "WORK",
-    "sentence" : "Wer hat sich Family Guy ausgedacht?",
+    "status" : "N",
+    "sentence" : "¿Quién creó Family Guy?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Family_Guy dbo:creator ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Family_Guy> <http://dbpedia.org/ontology/creator> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "366",
     "status" : "N",
-    "sentence" : "In welcher Stadt hoert die Ruta 68 auf?",
+    "sentence" : "¿En que ciudad termina la ruta Chilena 68?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Chile_Route_68 dbo:routeEnd ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "367",
     "status" : "N",
-    "sentence" : "Gib mir die Enkel von Elvis Presley",
+    "sentence" : "Dame todos los nietos de Elvis Presley",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Elvis_Presley dbo:child ?child . ?child dbo:child ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "368",
     "status" : "WORK",
-    "sentence" : "Wann endete die Ming-Dynastie?",
+    "sentence" : "¿Cuándo se disolvió la dinastía de Ming?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Ming_dynasty dbo:dissolutionDate ?date }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ming_dynasty> <http://dbpedia.org/ontology/dissolutionDate> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Viceroyalty_of_the_Río_de_la_Plata> <http://dbpedia.org/ontology/dissolutionDate> ?Answer .}" ]
   }, {
     "id" : "369",
-    "status" : "N",
-    "sentence" : "An welchen militaerischen Auseinandersetzungen war Lawrence von Arabien beteiligt?",
+    "status" : "WORK",
+    "sentence" : "¿En qué conflictos militares participó Lawrence de Arabia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:T._E._Lawrence dbo:battle ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Lawrence_Massacre> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Zhu_De> <http://dbpedia.org/ontology/battle> ?Answer .}" ]
   }, {
     "id" : "370",
     "status" : "N",
-    "sentence" : "In welcher Zeitzone liegt San Pedro de Atacama?",
+    "sentence" : "¿Cuál es la zona horaria en San Pedro de Atacama?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:San_Pedro_de_Atacama dbo:timeZone ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "371",
-    "status" : "WORK",
-    "sentence" : "Gib mir alle Buecher von William Goldman mit mehr als 300 Seiten",
+    "status" : "N",
+    "sentence" : "Dame todos los libros de Wiliam Goldman con más de 300 páginas",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:author res:William_Goldman ; dbo:numberOfPages ?x FILTER ( ?x > 300 ) }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Keeping_Up_Appearances> <http://dbpedia.org/ontology/author> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "372",
     "status" : "WORK",
-    "sentence" : "Woran ist Bruce Carver gestorben?",
+    "sentence" : "¿De qué murió Bruce Carver?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Carver dbo:deathCause ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Lynne_Carver> <http://dbpedia.org/ontology/deathCause> ?Answer .}" ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Nigel_Bruce> <http://dbpedia.org/ontology/deathCause> ?Answer .}" ]
   }, {
     "id" : "373",
     "status" : "N",
-    "sentence" : "Welche Tochtergesellschaft von Lufthansa fliegt sowohl Dortmund als auch Berlin Tegel an?",
+    "sentence" : "¿Qué subsidiario de Lufthansa vuela en Dortmund y en Berlin?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Lufthansa dbo:subsidiary ?uri . ?uri dbo:targetAirport res:Dortmund_Airport ; dbo:targetAirport res:Berlin_Tegel_Airport }",
     "sparqls" : [ ]
   }, {
     "id" : "374",
     "status" : "N",
-    "sentence" : "Hat Abraham Lincolns Sterbeort eine Webseite?",
+    "sentence" : "¿Tiene el lugar de nacimiento de Abraham Lincol una página web?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Abraham_Lincoln dbo:deathPlace ?p . ?p dbo:website ?w }",
     "sparqls" : [ ]
   }, {
     "id" : "375",
     "status" : "N",
-    "sentence" : "Hatte Elvis Presley Kinder?",
+    "sentence" : "Tuvo hijos Elvis Presley?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Elvis_Presley dbo:child ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "376",
-    "status" : "WORK",
-    "sentence" : "Ist Michelle Obama die Ehefrau von Barack Obama?",
+    "status" : "N",
+    "sentence" : "¿Es Michele Obama la esposa de Barack Obama?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Barack_Obama dbo:spouse res:Michelle_Obama }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Barack_Obama> <http://dbpedia.org/ontology/spouse> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "377",
-    "status" : "N",
-    "sentence" : "In welcher Stadt wohnt Sylvester Stallone?",
+    "status" : "WORK",
+    "sentence" : "¿En qué ciudad vive Sylvester Stallone?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . res:Sylvester_Stallone dbo:residence ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> ?Arg .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sylvester_Stallone> <http://dbpedia.org/ontology/residence> ?Answer .}" ]
   }, {
     "id" : "378",
     "status" : "N",
-    "sentence" : "Welche Buecher von Kerouac wurden von Viking Press verlegt?",
+    "sentence" : "¿Qué libros de Kerouac han sido publicados por Viking Press?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:publisher res:Viking_Press ; dbo:author res:Jack_Kerouac }",
     "sparqls" : [ ]
   }, {
     "id" : "379",
-    "status" : "WORK",
-    "sentence" : "Wer hat das Lied Hotel California geschrieben?",
+    "status" : "N",
+    "sentence" : "¿Quién escribió la canción Hotel California?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Hotel_California dbo:writer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Hotel_New_Hampshire> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/California_Games> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Hotel_(1967_film)> <http://dbpedia.org/ontology/musicComposer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Hotel_California> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "380",
-    "status" : "WORK",
-    "sentence" : "Was ist die Hauptstadt von Kanada?",
+    "status" : "N",
+    "sentence" : "¿Cuál es la capital de Canadá?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Canada dbo:capital ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Canada> <http://dbpedia.org/ontology/capital> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "381",
-    "status" : "WORK",
-    "sentence" : "Wer ist der Buergermeister von Tel Aviv?",
+    "status" : "N",
+    "sentence" : "¿Quién es el alcalde de Tel Aviv?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Tel_Aviv dbo:leaderName ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Tel_Aviv> <http://dbpedia.org/ontology/leaderName> ?Answer .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/mayor> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "382",
-    "status" : "N",
-    "sentence" : "Welche Regierungsform hat Russland?",
+    "status" : "WORK",
+    "sentence" : "¿Qué forma de gobierno tiene Rusia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Russia dbo:governmentType ?uri }",
-    "sparqls" : [ ]
+    "sparqls" : [ "No Sparql!!!!" ]
   }, {
     "id" : "383",
     "status" : "N",
-    "sentence" : "Zeig mir das Buch, das Muhammad Ali geschrieben hat",
+    "sentence" : "Muéstrame el libro escrito por Muhammad Ali",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book ; dbo:author res:Muhammad_Ali }",
     "sparqls" : [ ]
   }, {
     "id" : "384",
-    "status" : "WORK",
-    "sentence" : "Wer hat als erstes den Mount Everest bestiegen?",
+    "status" : "N",
+    "sentence" : "¿Quién fue el primero en ascender al Monte Everest?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Mount_Everest dbo:firstAscentPerson ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mount_Everest> <http://dbpedia.org/ontology/firstAscentPerson> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "385",
     "status" : "N",
-    "sentence" : "Wieviele Sprachen werden in Kolumbien gesprochen?",
+    "sentence" : "¿Cuántos idiomas se hablan en Colombia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri rdf:type dbo:Language . res:Colombia dbo:language ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "386",
     "status" : "N",
-    "sentence" : "Was ist die Waehrung der Tschechischen Republik?",
+    "sentence" : "¿Cuál es la moneda de la república checa?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Czech_Republic dbo:currency ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "387",
     "status" : "N",
-    "sentence" : "Wo in Frankreich wird Schaumwein hergestellt?",
+    "sentence" : "¿Dónde en Francia se produce el vino espumoso?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:wineProduced res:Sparkling_wine ; dbo:location res:France }",
     "sparqls" : [ ]
   }, {
     "id" : "388",
     "status" : "N",
-    "sentence" : "Wann hat Boris Becker seine aktive Karriere beendet?",
+    "sentence" : "¿Cuándo termino Boris Becker su carrera como actor?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?d WHERE { res:Boris_Becker dbo:activeYearsEndDate ?d }",
     "sparqls" : [ ]
   }, {
     "id" : "389",
     "status" : "N",
-    "sentence" : "Bei welchen Filmen, in denen Mickey Rourke mitspielt, hat Guy Ritchie Regie gefuehrt?",
+    "sentence" : "¿Que peliculas protagonizadas por Mickey Rourke han sido dirigidas por Guy Ritchie?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Mickey_Rourke ; dbo:director res:Guy_Ritchie }",
     "sparqls" : [ ]
   }, {
     "id" : "390",
     "status" : "N",
-    "sentence" : "In welchen Filmen spielen sowohl Julia Roberts als auch Richard Gere mit?",
+    "sentence" : "¿En qué películas actúan Julia Roberts y Richard Gere?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Julia_Roberts ; dbo:starring res:Richard_Gere }",
     "sparqls" : [ ]
   }, {
     "id" : "391",
     "status" : "N",
-    "sentence" : "Zeig mir Hemmingways Autobiographie",
+    "sentence" : "Muéstrame la autobiografía Hemingway",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:author res:Ernest_Hemingway ; dbo:literaryGenre res:Autobiography }",
     "sparqls" : [ ]
   }, {
     "id" : "392",
     "status" : "N",
-    "sentence" : "Wie groß ist Amazon Eve?",
+    "sentence" : "¿Cómo de alta es Amazon Eve?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?height WHERE { res:Amazon_Eve dbo:height ?height }",
     "sparqls" : [ ]
   }, {
     "id" : "393",
     "status" : "N",
-    "sentence" : "Was sind die fuenf Stadtteile von New York?",
+    "sentence" : "¿Cuáles son los cinco condados de Nueva York?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri dbo:governmentType <http://dbpedia.org/resource/Borough_(New_York_City)> }",
     "sparqls" : [ ]
   }, {
     "id" : "394",
     "status" : "N",
-    "sentence" : "Gib mir alle kanadischen Grunge-Plattenfirmen",
+    "sentence" : "Dame todos las empresas canadienses productoras de música Grunge",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:RecordLabel ; dbo:genre res:Grunge ; dbo:country res:Canada }",
     "sparqls" : [ ]
   }, {
     "id" : "395",
     "status" : "N",
-    "sentence" : "In welchem Land entspringt der Ganges?",
+    "sentence" : "¿En qué país nace el Ganges?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ganges dbo:sourceCountry ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "396",
     "status" : "N",
-    "sentence" : "Wer hat Penguin Books gegruendet?",
+    "sentence" : "¿Quien es el fundador de Penguin Books?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Penguin_Books dbo:founder ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "397",
-    "status" : "WORK",
-    "sentence" : "Wer hat das Titellied fuer Games of Thrones geschrieben?",
+    "status" : "N",
+    "sentence" : "¿Quién escribió el tema del Juego de Tronos?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Game_of_Thrones dbo:composer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/A_Game_of_Thrones> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Game_of_Thrones> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Opposite_of_Sex> <http://dbpedia.org/ontology/musicComposer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Prince_of_Persia:_The_Two_Thrones> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "398",
-    "status" : "WORK",
-    "sentence" : "Wer ist der Praesident von Eritrea?",
+    "status" : "N",
+    "sentence" : "¿Quién es el presidente de Eritrea?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Eritrea dbo:leader ?uri ; dbo:leaderTitle \"President\"@en }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Eritrea> <http://dbpedia.org/ontology/leader> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "399",
-    "status" : "N",
-    "sentence" : "In welcher Stadt ist John F Kennedy gestorben?",
+    "status" : "WORK",
+    "sentence" : "¿En qué ciudad murió John F Kennedy?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:deathPlace ?uri . ?uri rdf:type dbo:City }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?Answer .}" ]
   }, {
     "id" : "400",
     "status" : "N",
-    "sentence" : "Was ist der hoechste Berg in Australien?",
+    "sentence" : "¿Cuál es la montaña más alta de Australia?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain ; dbo:locatedInArea res:Australia ; dbo:elevation ?elevation } ORDER BY DESC(?elevation) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "401",
     "status" : "N",
-    "sentence" : "Wer schreibt das Farmes' Almanac?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbp: <http://dbpedia.org/property/> SELECT ?uri WHERE { <http://dbpedia.org/resource/Farmers'_Almanac> dbp:editor ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "402",
     "status" : "N",
-    "sentence" : "Zeig mir die Waehrung in China an",
+    "sentence" : "¿Cual es la moneda de China?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:China dbo:currency ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "403",
     "status" : "N",
-    "sentence" : "Gib mir alle in Schweden geborenen Ozeanographen",
+    "sentence" : "Dame todos los oceanógrafos suecos",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:field res:Oceanography ; dbo:birthPlace res:Sweden }",
     "sparqls" : [ ]
   }, {
     "id" : "404",
-    "status" : "N",
-    "sentence" : "In welcher Stadt ist das Hauptquartier der Vereinten Nationen?",
+    "status" : "WORK",
+    "sentence" : "¿En qué ciudad se encuentra la sede de las Naciones Unidas?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Headquarters_of_the_United_Nations dbo:location ?uri . ?uri rdf:type dbo:City }",
-    "sparqls" : [ ]
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Wealth_of_Nations> <http://dbpedia.org/ontology/country> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/United_Nations_Memorial_Cemetery> <http://dbpedia.org/property/location> ?Answer .}" ]
   }, {
     "id" : "405",
-    "status" : "WORK",
-    "sentence" : "Ist Rita Wilson die Ehefrau von Tom Hanks?",
+    "status" : "N",
+    "sentence" : "¿Es Rita Wilson la esposa de Tom Hanks?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Tom_Hanks dbo:spouse res:Rita_Wilson }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Tom_Hanks> <http://dbpedia.org/ontology/spouse> ?Answer .}" ]
+    "sparqls" : [ ]
   }, {
     "id" : "406",
     "status" : "N",
-    "sentence" : "In welchen Laendern wird Japanisch gesprochen?",
+    "sentence" : "¿En qué países se habla japonés?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country ; dbo:language res:Japanese_language }",
     "sparqls" : [ ]
   }, {
     "id" : "407",
     "status" : "N",
-    "sentence" : "Welcher von Tim Burtons Filmen hatte das hoechste Budget?",
+    "sentence" : "¿Cuál es la película de Tim Burton con el mayor presupuesto?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Tim_Burton ; dbo:budget ?b } ORDER BY ?b OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "408",
     "status" : "N",
-    "sentence" : "Welches Museum in New York hat die meisten Besucher?",
+    "sentence" : "¿Qué museo en Nueva York tiene el mayor numero de visitantes?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Museum ; dbo:location res:New_York_City ; dbo:numberOfVisitors ?num } ORDER BY DESC(?num) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "409",
     "status" : "N",
-    "sentence" : "Was war das erste Queen-Album?",
+    "sentence" : "¿Cuál fue el primer álbum de Queen?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Album ; dbo:artist <http://dbpedia.org/resource/Queen_(band)> ; dbo:releaseDate ?d } ORDER BY ASC(?d) OFFSET 0 LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "410",
     "status" : "N",
-    "sentence" : "Was war der erste Name der Band Queens of the Stone Age?",
+    "sentence" : "",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?name WHERE { res:Queens_of_the_Stone_Age dbo:alias ?name }",
     "sparqls" : [ ]
   }, {
     "id" : "411",
     "status" : "N",
-    "sentence" : "Was war der letzte Film mit Alec Guinness?",
+    "sentence" : "¿Cuál fue la última película con Alec Guinness?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Alec_Guinness ; dbo:releaseDate ?date } ORDER BY DESC(?date) LIMIT 1",
     "sparqls" : [ ]
   }, {
     "id" : "412",
     "status" : "N",
-    "sentence" : "Gib mir alle Schauspieler, die in Last Action Hero mitgespielt haben",
+    "sentence" : "Dame todos los actores que hayan actuado en Last Action Hero",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Last_Action_Hero dbo:starring ?uri }",
     "sparqls" : [ ]
   }, {
     "id" : "413",
-    "status" : "WORK",
-    "sentence" : "Wer hat Pluto entdeckt?",
+    "status" : "N",
+    "sentence" : "Chi scoprì Plutone?",
     "givenSparql" : "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbr: <http://dbpedia.org/resource/> SELECT ?uri WHERE { dbr:Pluto dbo:discoverer ?uri }",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Pluto> <http://dbpedia.org/ontology/discoverer> ?Answer .}" ]
+    "sparqls" : [ ]
   } ]
 }
