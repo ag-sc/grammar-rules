@@ -1,7 +1,7 @@
 # QueGG-Parser
-The project creates QA system given a lemon lexica or Csv file (contains information Syntactic Frame such NounPPframe, TransitiveFrame, etc. )
+The Parser takes a natural language question as input and returns the SPARQL query. 
 
-go to director: 
+go to directory: 
 
 ````installation
 mvn clean package
