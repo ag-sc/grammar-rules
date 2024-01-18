@@ -36,7 +36,11 @@ ID	status	sentence	sparqlQald
 
 ```` 
 
-
+## Developers
+* **Mohammad Fazleh Elahi**
+### Supervisors:
+* **Dr. Philipp Cimiano**
+* **Dr. Basil Ell**
 
 
 
