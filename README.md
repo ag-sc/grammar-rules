@@ -24,6 +24,7 @@ java -jar target/grammar-rules.jar de grammarFiles/de/grammar_FULL_DATASET_DE.js
 ````  
 
 output [output.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/output.csv)
+N refers to Not parsed
 ````
 ID	status	sentence	sparqlQald
 1	WORK	List all boardgames by GMT.	SELECT ?Answer WHERE { <http://dbpedia.org/resource/GMT_Games> <http://dbpedia.org/ontology/publisher> ?Answer .}
