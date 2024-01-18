@@ -1,4 +1,4 @@
-# QueGG
+# QueGG-Parser
 The project creates QA system given a lemon lexica or Csv file (contains information Syntactic Frame such NounPPframe, TransitiveFrame, etc. )
 
 go to director: 
