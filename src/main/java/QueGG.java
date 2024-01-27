@@ -32,9 +32,9 @@ public class QueGG {
 
     public static void main(String[] args) throws Exception {
         Boolean parseFlag=false,evaluationFlag=true;
-        String languageT="it",LangCapital="IT";
-        args = new String[]{languageT, "grammarFiles/"+languageT+"/"+"grammar_FULL_DATASET_"+LangCapital+".json",
-            "grammarFiles/"+languageT+"/input-QALD9-train-inductive.csv"};
+        String languageT=null,LangCapital=null;
+        //args = new String[]{languageT, "grammarFiles/"+languageT+"/"+"grammar_FULL_DATASET_"+LangCapital+".json",
+        //    "grammarFiles/"+languageT+"/input-QALD9-train-inductive.csv"};
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
             throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));

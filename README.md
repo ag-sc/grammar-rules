@@ -9,32 +9,43 @@ mvn clean package
 
 input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input.csv)
 ````
-id	question
-1	List all boardgames by GMT.
-2	Who developed Skype?
-3	Which people were born in Heraklion?
-4	In which U.S. state is Area 51 located?
-5	Who is the mayor of New York City?
+id,question
+1,Who is the mayor of Paris?
 ```` 
 
 run the command
 ````
-java -jar target/grammar-rules.jar en grammarFiles/en/grammar_FULL_DATASET_EN_LAST_Test.json grammarFiles/en/input-QALD9-train-inductive.csv
-java -jar target/grammar-rules.jar de grammarFiles/de/grammar_FULL_DATASET_DE.json grammarFiles/de/input-QALD7-train-inductive.csv
+for English
+java -jar target/grammar-rules.jar en grammarFiles/en/grammar_FULL_DATASET_EN.json grammarFiles/en/input_EN.csv
 ````  
 
-output [output.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/output.csv)
+output [output_EN.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/output_EN.json)
 - If Parse then the SPARQL query
 - Else 'N' refers to Not parsed
+Example for English
 ````
-ID	status	sentence	sparqlQald
-1	WORK	List all boardgames by GMT.	SELECT ?Answer WHERE { <http://dbpedia.org/resource/GMT_Games> <http://dbpedia.org/ontology/publisher> ?Answer .}
-2	WORK	Who developed Skype?	SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Skype> .}
-3	WORK	Which people were born in Heraklion?	SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Heraklion> .}
-4	N	In which U.S. state is Area 51 located?	N
-5	WORK	Who is the mayor of New York City?	SELECT ?Answer WHERE { <http://dbpedia.org/resource/New_York_City> <http://dbpedia.org/ontology/leaderName> ?Answer .}
+{
+  "results" : [ {
+    "id" : "1",
+    "status" : "WORK",
+    "sentence" : "Who developed Skype?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/mayor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/leaderName> ?Answer .}" ]
+  } ]
+}
 
-```` 
+run for other languages
+````
+For German
+java -jar target/grammar-rules.jar de grammarFiles/de/grammar_FULL_DATASET_DE.json grammarFiles/de/input_DE.csv
+For Italain
+java -jar target/grammar-rules.jar en grammarFiles/en/grammar_FULL_DATASET_IT.json grammarFiles/en/input_IT.csv
+For Spanish
+java -jar target/grammar-rules.jar de grammarFiles/de/grammar_FULL_DATASET_ES.json grammarFiles/de/input_ES.csv
+````  
+
+output [output_DE.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/de/output_DE.json)
+output [output_IT.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/it/output_IT.json)
+output [output_ES.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/es/output_ES.json)
 
 ## Developers
 * **Mohammad Fazleh Elahi**

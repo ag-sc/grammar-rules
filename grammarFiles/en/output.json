@@ -1,0 +1,9 @@
+{
+  "results" : [ {
+    "id" : "1",
+    "status" : "WORK",
+    "sentence" : "Who developed Skype?",
+    "givenSparql" : null,
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> ?Arg .}", "SELECT ?Answer WHERE { ?Arg <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+  } ]
+}
