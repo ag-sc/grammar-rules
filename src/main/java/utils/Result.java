@@ -5,6 +5,7 @@
  */
 package utils;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
@@ -23,7 +24,8 @@ public class Result {
     private String status = "status";
     @JsonProperty("sentence")
     private String sentence = "sentence";
-    @JsonProperty("givenSparql")
+    //@JsonProperty("givenSparql")
+    @JsonIgnore
     private String givenSparql = "givenSparql";
     @JsonProperty("sparqls")
     private List<String> sparqls = new ArrayList<String>();
