@@ -7,7 +7,7 @@ go to directory:
 mvn clean package
 ```` 
 
-input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input.csv)
+input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input_EN.csv)
 ````
 id,question
 1,Which airports does Air China serve?
@@ -30,7 +30,7 @@ Example for English
     "status" : "WORK",
     "sentence" : "Which airports does Air China serve?",
     "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Airport>. 
-                                          ?Answer <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/China> .}" ]
+                          ?Answer <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/China> .}" ]
   }, {
     "id" : "2",
     "status" : "WORK",
