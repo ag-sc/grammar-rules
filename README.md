@@ -10,7 +10,8 @@ mvn clean package
 input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input.csv)
 ````
 id,question
-1,Who developed Calculator?
+1,Which airports does Air China serve?
+2,How deep is Lake Placid?
 ```` 
 
 For English run the command
@@ -27,11 +28,16 @@ Example for English
   "results" : [ {
     "id" : "1",
     "status" : "WORK",
-    "sentence" : "Who developed Calculator?",
-    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Calculator> .}" ]
+    "sentence" : "Which airports does Air China serve?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://dbpedia.org/ontology/Airport>. 
+                                          ?Answer <http://dbpedia.org/ontology/targetAirport> <http://dbpedia.org/resource/China> .}" ]
+  }, {
+    "id" : "2",
+    "status" : "WORK",
+    "sentence" : "How deep is Lake Placid?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Lake_Placid_(Texas)> <http://dbpedia.org/ontology/maximumDepth> ?Answer .}" ]
   } ]
 }
-
 ````
 run for other languages
 ````
