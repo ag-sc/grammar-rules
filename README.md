@@ -7,7 +7,7 @@ go to directory:
 mvn clean package
 ```` 
 
-input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input_EN.csv)
+input file example: [input_EN.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input_EN.csv)
 ````
 id,question
 1,Which airports does Air China serve?
