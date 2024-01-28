@@ -55,7 +55,7 @@ public class LargeFileReader {
             result = builder.toString();
             System.out.println(result);
         } catch (Exception ex) {
-            Logger.getLogger(SparqlQueryT.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SparqlQuery.class.getName()).log(Level.SEVERE, null, ex);
             System.err.println("error in unicode in sparql query!" + ex.getMessage());
             ex.printStackTrace();
         }

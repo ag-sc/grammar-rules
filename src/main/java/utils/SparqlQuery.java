@@ -6,20 +6,14 @@
 package utils;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
-import static java.lang.System.exit;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -29,37 +23,37 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import utils.csv.CsvFile;
-
 /**
  *
  * @author elahi
  */
 public class SparqlQuery {
 
-    //private static String endpoint = "https://dbpedia.org/sparql";
+    private static String endpoint = "https://dbpedia.org/sparql";
     //private static String endpoint = "http://localhost:9999/blazegraph/sparql";
-    private static String endpoint = "http://localhost:19999/bigdata/sparql";
+    //private static String endpoint = "http://localhost:19999/bigdata/sparql";
     //private static String endpoint = "http://localhost:9999/blazegraph/sparql";
     private String objectOfProperty;
     private static String language=null;
     private String sparqlQuery = null;
     private String command = null;
-    private Set<String> entitySet = new TreeSet<String>();
     private int initialCapacity = 16_000_000;
     private Map<String, String> entityMap = new HashMap<String, String>(initialCapacity);
     private static String rdfs_label="<http://www.w3.org/2000/01/rdf-schema#label>";
     private Boolean bindingFlag=false;
+    private DBpediaEndpoint dbpediaAccess; 
 
 
     private String type = null;
     private Boolean online = false;
 
-    public SparqlQuery(String query, Boolean flag) throws java.lang.Exception {
-        if (query != null) {
-            this.parseResult(this.executeSparqlQuery(query));
+    public SparqlQuery(String sparql, Boolean flag) throws java.lang.Exception {
+        if (sparql != null) {
+            //this.parseResult(this.executeSparqlQuery(query));
+        this.dbpediaAccess=new DBpediaEndpoint(endpoint,sparql,this.bindingFlag);
+        this.entityMap=this.dbpediaAccess.getEntityMap();
         } else {
-            throw new Exception("The sparql query not found!!!" + query);
+            throw new Exception("The sparql query not found!!!" + sparql);
         }
     }
     
@@ -73,8 +67,10 @@ public class SparqlQuery {
         if (!this.isValid(sparql)) {
             return;
         }
-        String resultSparql = executeSparqlQuery(sparql);
-        this.parseResult(resultSparql);
+        dbpediaAccess=new DBpediaEndpoint(endpoint,sparql,this.bindingFlag);
+        this.entityMap=this.dbpediaAccess.getEntityMap();
+        //String resultSparql = executeSparqlQuery(sparql);
+        //this.parseResult(resultSparql);
     }
     
    
@@ -97,7 +93,7 @@ public class SparqlQuery {
         exit(1);
     }*/
 
-    public String executeSparqlQuery(String query) {
+    /*public String executeSparqlQuery(String query) {
         String result = null, resultUnicode = null;
         Process process = null;
         try {
@@ -131,7 +127,7 @@ public class SparqlQuery {
             ex.printStackTrace();
         }
         return result;
-    }
+    }*/
 
     public void parseResult(String xmlStr) {
         Document doc = convertStringToXMLDocument(xmlStr);

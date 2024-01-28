@@ -128,14 +128,17 @@ public class GrammarRule {
                     } else {
                         List<Map<String, String>> entityMaps = new ArrayList<Map<String, String>>();
                         entityMaps = this.findEntityMapEndpoint(bindingSparql,language,extractPartInfor.getEntities());
-                        System.out.println("bindingSparql::"+bindingSparql);
+                        //System.out.println("bindingSparql::"+bindingSparql);
                         if (!entityMaps.isEmpty()) {
                             questionSparql = this.findEntity(questions, entityMaps, extractPartInfor.getEntities(), bindingSparqls, questionSparql);
-                             System.out.println("questionSparql::"+questionSparql);
+                             //System.out.println("questionSparql::"+questionSparql);
                             if (extractPartInfor.getRestrictionClassVariable() != null) {
                                 questionSparql = addRestriction(extractPartInfor.getRestrictionClassVariable(), questionSparql);
                             }
-                            questionSparqls.add(questionSparql);
+                            //if(isValid(questionSparql)){
+                               questionSparqls.add(questionSparql);
+                            //}
+                            
                         }
                     }
 
@@ -546,8 +549,8 @@ public class GrammarRule {
         }
         return null;
     }*/
-    
-   
+
+ 
     
 
 }

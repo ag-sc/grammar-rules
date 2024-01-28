@@ -10,7 +10,7 @@ mvn clean package
 input file example: [input.csv](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/en/input.csv)
 ````
 id,question
-1,Who is the mayor of Paris?
+1,Who developed Calculator?
 ```` 
 
 run the command
@@ -28,8 +28,8 @@ Example for English
   "results" : [ {
     "id" : "1",
     "status" : "WORK",
-    "sentence" : "Who developed Skype?",
-    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/mayor> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Paris> <http://dbpedia.org/ontology/leaderName> ?Answer .}" ]
+    "sentence" : "Who developed Calculator?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/product> <http://dbpedia.org/resource/Calculator> .}" ]
   } ]
 }
 
