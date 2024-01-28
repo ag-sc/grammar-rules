@@ -1,0 +1,13 @@
+{
+  "results" : [ {
+    "id" : "1",
+    "status" : "N",
+    "sentence" : "Welche Flughaefen fliegt Air China an?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "2",
+    "status" : "N",
+    "sentence" : "Wie tief ist Lake Placid?",
+    "sparqls" : [ ]
+  } ]
+}

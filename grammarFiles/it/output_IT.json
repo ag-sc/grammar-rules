@@ -1,0 +1,2043 @@
+{
+  "results" : [ {
+    "id" : "1",
+    "status" : "N",
+    "sentence" : "Elenco tutti giochi da tavolo di GMT ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "2",
+    "status" : "N",
+    "sentence" : "Chi sviluppato Skype? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "3",
+    "status" : "N",
+    "sentence" : "Quale persone erano Nato in Candia? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "4",
+    "status" : "N",
+    "sentence" : "In quale Stati Uniti stato è La zona 51 si trova? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "5",
+    "status" : "WORK",
+    "sentence" : "Chi è il sindaco della città di New York?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/New_Bedford_Inlet> <http://dbpedia.org/ontology/isPartOf> ?Answer .}" ]
+  }, {
+    "id" : "6",
+    "status" : "N",
+    "sentence" : "Quali nazioni hanno luoghi con più di due grotte?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "7",
+    "status" : "N",
+    "sentence" : "Dove fatto Abraham Lincoln il? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "8",
+    "status" : "N",
+    "sentence" : "Quali aeroporti sono serviti da Air China?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "9",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli attori che recitano in film diretti e recitati da William Shatner",
+    "sparqls" : [ ]
+  }, {
+    "id" : "10",
+    "status" : "N",
+    "sentence" : "Quali sono le lingue ufficiali delle Filippine?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "11",
+    "status" : "N",
+    "sentence" : "Dammi tutti i film danesi",
+    "sparqls" : [ ]
+  }, {
+    "id" : "12",
+    "status" : "N",
+    "sentence" : "Quali film in cui recita Brad Pitt sono stati diretti da Guy Ritchie?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "13",
+    "status" : "N",
+    "sentence" : "Dammi i nipoti di Bruce Lee",
+    "sparqls" : [ ]
+  }, {
+    "id" : "14",
+    "status" : "N",
+    "sentence" : "Quali altre armi sono state progettate dall'inventore dell'Uzi?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "15",
+    "status" : "WORK",
+    "sentence" : "Chi è il proprietario degli Universal Studios?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Asiago> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Universal_Windows_Platform> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Brazil–Paraguay_border> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/President_of_the_United_States> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Arafura_Sea> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Accademia_degli_Umoristi> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Hot_Water_(1924_film)> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mogadishu–Villabruzzi_Railway> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "16",
+    "status" : "N",
+    "sentence" : "Quale stato appartenente agli Stati Uniti d'America ha la densità di popolazione maggiore?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "17",
+    "status" : "N",
+    "sentence" : "Quali monarchi erano sposati con persone tedesche?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "18",
+    "status" : "N",
+    "sentence" : "Quali aziende sono state fondate nel 1950?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "19",
+    "status" : "WORK",
+    "sentence" : "Chi ha creato il fumetto Capitan America?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Captain_Fracasse_(novel)> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Captain_America> <http://dbpedia.org/ontology/creator> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Claw_(video_game)> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+  }, {
+    "id" : "20",
+    "status" : "N",
+    "sentence" : "Dammi gli astronauti dell'Apollo 14",
+    "sparqls" : [ ]
+  }, {
+    "id" : "21",
+    "status" : "WORK",
+    "sentence" : "Chi ha scritto il libro Il pilastri di il Terra? ",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Adjustment_Day> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Book_of_Pooh> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+  }, {
+    "id" : "22",
+    "status" : "N",
+    "sentence" : "Quale stato di il Unito stati di America ha il massimo densità? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "23",
+    "status" : "N",
+    "sentence" : "Quali viaggi spaziali furono lanciati da Baikonur?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "24",
+    "status" : "N",
+    "sentence" : "Dammi la lista di tutti i trombettisti che sono stati leader di un gruppo",
+    "sparqls" : [ ]
+  }, {
+    "id" : "25",
+    "status" : "N",
+    "sentence" : "Quali stati degli Stati Uniti d'America si trovano nello stesso fuso orario dello Utah?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "26",
+    "status" : "N",
+    "sentence" : "In quali stati degli Stati Uniti c'è l'oro?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "27",
+    "status" : "WORK",
+    "sentence" : "Con chi è sposata la figlia di Ingrid Bergman?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Corunna> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Rosario_de_la_Frontera> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cambria_County,_Pennsylvania> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Nacogdoches_County,_Texas> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Valletta> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cambria_County,_Pennsylvania> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/La_Paz_County,_Arizona> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/European_Southern_Observatory> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mata_Hari's_Daughter> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/La_Rambla,_Barcelona> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "28",
+    "status" : "N",
+    "sentence" : "Quanto è profondo il Lake Placid?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "29",
+    "status" : "N",
+    "sentence" : "Mostrami tutti i musei di Londra",
+    "sparqls" : [ ]
+  }, {
+    "id" : "30",
+    "status" : "N",
+    "sentence" : "Quali grotte hanno più di 3 entrate?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "31",
+    "status" : "WORK",
+    "sentence" : "Chi è il giocatore più alto degli Atlanta Falcons?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Brazil–Paraguay_border> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Campaign_for_Nuclear_Disarmament> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Shock_(film)> <http://dbpedia.org/ontology/language> ?Answer .}" ]
+  }, {
+    "id" : "32",
+    "status" : "N",
+    "sentence" : "Quali sono i 10 migliori videogiochi di ruolo d'azione secondo l'IGN?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "33",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli scrittori che hanno vinto il Premio Nobel della letteratura",
+    "sparqls" : [ ]
+  }, {
+    "id" : "34",
+    "status" : "N",
+    "sentence" : "Mostrami i giocatori di pallacanestro più alti di 2 metri",
+    "sparqls" : [ ]
+  }, {
+    "id" : "35",
+    "status" : "N",
+    "sentence" : "Quando è stata costruita la Statua della Libertà?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "36",
+    "status" : "N",
+    "sentence" : "Con quali stati confina l'Illinois?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "37",
+    "status" : "N",
+    "sentence" : "Chi ha sviluppato Minecraft?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "38",
+    "status" : "N",
+    "sentence" : "Dove è morto Hillel Slovak?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "39",
+    "status" : "N",
+    "sentence" : "In quali film recita Jesse Eisenberg?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "40",
+    "status" : "N",
+    "sentence" : "Dammi tutti i nuotatori che sono nati a Mosca",
+    "sparqls" : [ ]
+  }, {
+    "id" : "41",
+    "status" : "N",
+    "sentence" : "Dammi tutte le cosmonaute",
+    "sparqls" : [ ]
+  }, {
+    "id" : "42",
+    "status" : "N",
+    "sentence" : "Dammi tutte le organizzazioni no-profit svizzere",
+    "sparqls" : [ ]
+  }, {
+    "id" : "43",
+    "status" : "N",
+    "sentence" : "Quali presidenti sono nati nel 1945?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "44",
+    "status" : "N",
+    "sentence" : "Quale tipo di musica suonava Lou Reed?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "45",
+    "status" : "N",
+    "sentence" : "Dove suonano i Red Sox?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "46",
+    "status" : "N",
+    "sentence" : "Dammi una lista di club calcistici che giocano nella Bundesliga",
+    "sparqls" : [ ]
+  }, {
+    "id" : "47",
+    "status" : "N",
+    "sentence" : "Quali vulcani in Giappone hanno eruttato dal 2000?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "48",
+    "status" : "N",
+    "sentence" : "Quanti ponti attraversano la Senna?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "49",
+    "status" : "N",
+    "sentence" : "Qual è il colore ufficiale dell'Università di Oxford?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "50",
+    "status" : "N",
+    "sentence" : "Quanti film ha prodotto Hal Roach?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "51",
+    "status" : "N",
+    "sentence" : "Dammi tutti i film danesi",
+    "sparqls" : [ ]
+  }, {
+    "id" : "52",
+    "status" : "N",
+    "sentence" : "Qual è la causa principale di morte?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "53",
+    "status" : "N",
+    "sentence" : "Chi sono i quattro più giovani giocatori di maggior valore (MVP)?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "54",
+    "status" : "N",
+    "sentence" : "Dammi tutte le aziende di Monaco",
+    "sparqls" : [ ]
+  }, {
+    "id" : "55",
+    "status" : "N",
+    "sentence" : "Dammi tutte le capitali degli stati attraversati dall'Himalaya",
+    "sparqls" : [ ]
+  }, {
+    "id" : "56",
+    "status" : "N",
+    "sentence" : "Quanti film ha diretto Park Chan-wook?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "57",
+    "status" : "N",
+    "sentence" : "Quali fiumi sfociano in un lago tedesco?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "58",
+    "status" : "N",
+    "sentence" : "Quante compagnie aeree esistono?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "59",
+    "status" : "N",
+    "sentence" : "Dammi tutte le isole che appartengono al Giappone",
+    "sparqls" : [ ]
+  }, {
+    "id" : "60",
+    "status" : "N",
+    "sentence" : "Quanti abitanti ha Maribor?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "61",
+    "status" : "N",
+    "sentence" : "Dammi gli astronauti dell'Apollo 14",
+    "sparqls" : [ ]
+  }, {
+    "id" : "62",
+    "status" : "N",
+    "sentence" : "Quali aziende hanno più di 1 milione di dipendenti?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "63",
+    "status" : "N",
+    "sentence" : "In quali film diretti da Garry Marshall recita Julia Roberts?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "64",
+    "status" : "N",
+    "sentence" : "Dammi tutti i club calcistici nella Premier League",
+    "sparqls" : [ ]
+  }, {
+    "id" : "65",
+    "status" : "N",
+    "sentence" : "Qual è il punto più alto del Uràli?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "66",
+    "status" : "WORK",
+    "sentence" : "Chi è il governatore del Wyoming?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Cerrito> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Concepción_del_Uruguay> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Province_of_Canada> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Del_Mar,_California> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/King's_Privy_Council_for_Canada> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Viceroy's_House_(film)> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Brocken_Railway> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "67",
+    "status" : "N",
+    "sentence" : "Dove ha studiato l'architetto della Tour Eiffel?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "68",
+    "status" : "N",
+    "sentence" : "Dammi tutti i siti designati patrimoni dell'umanità negli ultimi due anni",
+    "sparqls" : [ ]
+  }, {
+    "id" : "69",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli attori nati a Parigi dopo il 1950",
+    "sparqls" : [ ]
+  }, {
+    "id" : "70",
+    "status" : "N",
+    "sentence" : "Quali film sono interpretati da Liz Taylor e Richard Burton?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "71",
+    "status" : "N",
+    "sentence" : "Dammi tutte le organizzazioni australiane non a scopo di lucro",
+    "sparqls" : [ ]
+  }, {
+    "id" : "72",
+    "status" : "N",
+    "sentence" : "Quale papa fu il successore di Giovanni Paolo II?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "73",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli astronauti dell'ESA",
+    "sparqls" : [ ]
+  }, {
+    "id" : "74",
+    "status" : "N",
+    "sentence" : "Chi fu presidente del Pakistan nel 1978?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "75",
+    "status" : "WORK",
+    "sentence" : "Chi è il proprietario di Rolls-Royce?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "76",
+    "status" : "N",
+    "sentence" : "Quanti musei ha Parigi?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "77",
+    "status" : "N",
+    "sentence" : "Dove è stato assassinato JFK?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "78",
+    "status" : "N",
+    "sentence" : "Dammi tutti i cancellieri tedeschi",
+    "sparqls" : [ ]
+  }, {
+    "id" : "79",
+    "status" : "N",
+    "sentence" : "Mostrami tutti coloro che sono nati ad Halloween",
+    "sparqls" : [ ]
+  }, {
+    "id" : "80",
+    "status" : "N",
+    "sentence" : "Quale birra è originaria dell'Irlanda?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "81",
+    "status" : "N",
+    "sentence" : "Su quali stati si estende la catena montuosa dell'Himalaya?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "82",
+    "status" : "N",
+    "sentence" : "Quali attori sono nati in Germania?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "83",
+    "status" : "N",
+    "sentence" : "Quanti carboidrati ha il burro di noccioline?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "84",
+    "status" : "N",
+    "sentence" : "Chi ha prodotto più film?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "85",
+    "status" : "N",
+    "sentence" : "Quanti dipendenti ha Google?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "86",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli attori nati a Berlino",
+    "sparqls" : [ ]
+  }, {
+    "id" : "87",
+    "status" : "WORK",
+    "sentence" : "Chi è il creatore di Pippo?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "88",
+    "status" : "N",
+    "sentence" : "Quali album musicali contengono la canzone Last Christmas?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "89",
+    "status" : "N",
+    "sentence" : "Quando Alberta è stata ammessa come provincia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "90",
+    "status" : "N",
+    "sentence" : "Quante missioni ha il programma Sojuz?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "91",
+    "status" : "N",
+    "sentence" : "Dammi tutti i programmi televisivi con Neil Patrick Harris",
+    "sparqls" : [ ]
+  }, {
+    "id" : "92",
+    "status" : "N",
+    "sentence" : "Quando si sono formati gli Hells Angels?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "93",
+    "status" : "N",
+    "sentence" : "Qual è il reddito netto di Apple?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "94",
+    "status" : "N",
+    "sentence" : "Dammi tutti i giorni festivi svedesi",
+    "sparqls" : [ ]
+  }, {
+    "id" : "95",
+    "status" : "N",
+    "sentence" : "In quale città fu sepolta la precedente regina dei Paesi Bassi Juliana?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "96",
+    "status" : "N",
+    "sentence" : "Elenca tutti i musical con musiche di Leonard Bernstein",
+    "sparqls" : [ ]
+  }, {
+    "id" : "97",
+    "status" : "N",
+    "sentence" : "Dammi tutte le aziende pubblicitarie",
+    "sparqls" : [ ]
+  }, {
+    "id" : "98",
+    "status" : "N",
+    "sentence" : "Qual è la più grande area metropolitana nello stato di Washington?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "99",
+    "status" : "N",
+    "sentence" : "Chi ha ucciso John Lennon?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "100",
+    "status" : "N",
+    "sentence" : "Quali scrittori hanno studiato a Istanbul?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "101",
+    "status" : "N",
+    "sentence" : "Dammi tutte i gruppi metalcore australiani",
+    "sparqls" : [ ]
+  }, {
+    "id" : "102",
+    "status" : "N",
+    "sentence" : "Quali stati hanno introdotto l'Euro?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "103",
+    "status" : "N",
+    "sentence" : "Dammi tutti i tipi di disturbi alimentari",
+    "sparqls" : [ ]
+  }, {
+    "id" : "104",
+    "status" : "N",
+    "sentence" : "Marc Chagall era ebreo?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "105",
+    "status" : "N",
+    "sentence" : "Quale è stata la peggior posizione del Brasile nella classifica mondiale della FIFA?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "106",
+    "status" : "N",
+    "sentence" : "In quanti film ha recitato Leonardo DiCaprio?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "107",
+    "status" : "N",
+    "sentence" : "Margaret Thatcher era un chimico?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "108",
+    "status" : "N",
+    "sentence" : "Quali stati degli Stati Uniti d'America si trovano nello stesso fuso orario dello Utah?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "109",
+    "status" : "N",
+    "sentence" : "Dammi tutti i libri scritti da Danielle Steel",
+    "sparqls" : [ ]
+  }, {
+    "id" : "110",
+    "status" : "N",
+    "sentence" : "Quale stato ha più lingue ufficiali?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "111",
+    "status" : "N",
+    "sentence" : "Qual è il totale di uomini e donne che prestano servizio nel dipartimento dei vigili del fuoco di New York?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "112",
+    "status" : "WORK",
+    "sentence" : "Quale attore ha recitato il ruolo di Chewbacca?",
+    "sparqls" : [ "No Sparql!!!!" ]
+  }, {
+    "id" : "113",
+    "status" : "N",
+    "sentence" : "Dammi tutte le biblioteche fondate prima del 1400",
+    "sparqls" : [ ]
+  }, {
+    "id" : "114",
+    "status" : "N",
+    "sentence" : "Quali linguaggi di programmazione sono stati influenzati da Perl?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "115",
+    "status" : "WORK",
+    "sentence" : "In quale stato degli Stati Uniti si trova il Monte McKinley?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mount_Roland_(Antarctica)> <http://dbpedia.org/ontology/location> ?Answer .}" ]
+  }, {
+    "id" : "116",
+    "status" : "N",
+    "sentence" : "Quali compagnie aeree fanno parte dell'alleanza SkyTeam?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "117",
+    "status" : "N",
+    "sentence" : "Quali navi sono state battezzate in onore di Benjamin Franklin?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "118",
+    "status" : "N",
+    "sentence" : "Dammi tutti i politici metodisti",
+    "sparqls" : [ ]
+  }, {
+    "id" : "119",
+    "status" : "N",
+    "sentence" : "Che cosa altro libri avere stato scritto di il autore di Il Colpa in Nostro Stelle? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "120",
+    "status" : "N",
+    "sentence" : "Qual è la montagna più alta?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "121",
+    "status" : "WORK",
+    "sentence" : "Quale poeta ha scritto il maggior numero di libri?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Languages_of_Pao> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Prince_of_Atlantis> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+  }, {
+    "id" : "122",
+    "status" : "N",
+    "sentence" : "Quali linguaggi di programmazione hanno influenzato Javascript?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "123",
+    "status" : "WORK",
+    "sentence" : "Quale musicista ha scritto il maggior numero di libri?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Languages_of_Pao> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Prince_of_Atlantis> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+  }, {
+    "id" : "124",
+    "status" : "N",
+    "sentence" : "Quali film con Clint Eastwoon erano diretti da lui stesso?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "125",
+    "status" : "N",
+    "sentence" : "Quali software sono stati sviluppati da aziende fondate in California?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "126",
+    "status" : "N",
+    "sentence" : "Quali strumenti suona Cat Stevens?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "127",
+    "status" : "N",
+    "sentence" : "Quante compagnie aeree membri di Star Alliance?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "128",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli attori che si chiamano Baldwin",
+    "sparqls" : [ ]
+  }, {
+    "id" : "129",
+    "status" : "WORK",
+    "sentence" : "Chi ha scritto Hunger Games?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Funeral_Games_(novel)> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/California_Games> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Hunger_Games_(film)> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+  }, {
+    "id" : "130",
+    "status" : "WORK",
+    "sentence" : "Quale casa discografica ha inciso il primo album di Elvis?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/recordLabel> <http://dbpedia.org/resource/Capri_Records> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Calling_Elvis> <http://dbpedia.org/ontology/recordLabel> ?Answer .}" ]
+  }, {
+    "id" : "131",
+    "status" : "N",
+    "sentence" : "Christian Bale ha recitato in Batman Begins?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "132",
+    "status" : "N",
+    "sentence" : "Dove vive il primo ministro della Spagna?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "133",
+    "status" : "N",
+    "sentence" : "Quale attore è stato scritturato in piùfilm?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "134",
+    "status" : "N",
+    "sentence" : "Quali stati hanno più di due lingue ufficiali?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "135",
+    "status" : "N",
+    "sentence" : "Quali nazioni hanno più di dieci grotte?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "136",
+    "status" : "N",
+    "sentence" : "Dammi tutte le canzoni di Bruce Springsteen rilasciate tra il 1980 e il 1990",
+    "sparqls" : [ ]
+  }, {
+    "id" : "137",
+    "status" : "N",
+    "sentence" : "Quali serie televisive sono state create dalla John Cleese?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "138",
+    "status" : "N",
+    "sentence" : "Quando la Lettonia è entrata nell'Unione Europea?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "139",
+    "status" : "N",
+    "sentence" : "Quali calciatori sono nati a Malta?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "140",
+    "status" : "N",
+    "sentence" : "Quanti politici si sono laureati alla Columbia University?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "141",
+    "status" : "N",
+    "sentence" : "Dammi le date dei compleanni di tutti gli attori della serie televisiva Charmed",
+    "sparqls" : [ ]
+  }, {
+    "id" : "142",
+    "status" : "N",
+    "sentence" : "Quali aziende di telecomunicazione hanno sede in Belgio?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "143",
+    "status" : "N",
+    "sentence" : "Dammi una lista di tutti i laghi della Danimarca",
+    "sparqls" : [ ]
+  }, {
+    "id" : "144",
+    "status" : "N",
+    "sentence" : "Quanti figli ha Eddie Murphy?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "145",
+    "status" : "N",
+    "sentence" : "Mostrami tutti gli edifici in stile gotico inglese nel Kent",
+    "sparqls" : [ ]
+  }, {
+    "id" : "146",
+    "status" : "WORK",
+    "sentence" : "Chi è il manager del Real Madrid?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Cerrito> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Madrid,_Alabama> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Province_of_Canada> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Del_Mar,_California> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/King's_Privy_Council_for_Canada> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Viceroy's_House_(film)> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Brocken_Railway> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "147",
+    "status" : "N",
+    "sentence" : "In quali stati si può pagare usando il West African CFA franc?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "148",
+    "status" : "N",
+    "sentence" : "Quali festività sono celebrate nel mondo?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "149",
+    "status" : "N",
+    "sentence" : "Qual è il fiume più lungo?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "150",
+    "status" : "N",
+    "sentence" : "Quali aziende sono state fondate nel 1930?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "151",
+    "status" : "N",
+    "sentence" : "Qual è il nome da nubile di Angela Merkel?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "152",
+    "status" : "WORK",
+    "sentence" : "Con chi è stato sposato Tom Cruise?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/2012_Malian_coup_d'état> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Prussia> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Free_State_(province)> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Prussia> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Fribourg_State_Archives_(Switzerland)> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Stato_interessante> <http://dbpedia.org/ontology/language> ?Answer .}" ]
+  }, {
+    "id" : "153",
+    "status" : "N",
+    "sentence" : "Quali armi sono state create da Heckler & Koch?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "154",
+    "status" : "N",
+    "sentence" : "Che cosa è il minore città di la zona in Germania? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "155",
+    "status" : "N",
+    "sentence" : "Qual è il partito che governa Lisbona?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "156",
+    "status" : "N",
+    "sentence" : "¿Cuánto pesa il satellite più leggero di Giove?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "157",
+    "status" : "N",
+    "sentence" : "Quanti dipendenti ha IBM?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "158",
+    "status" : "N",
+    "sentence" : "Elenca tutti gli episodi della prima stagione della serie televisiva di HBO i Sopranos!",
+    "sparqls" : [ ]
+  }, {
+    "id" : "159",
+    "status" : "N",
+    "sentence" : "Che cosa significa ICRO?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "160",
+    "status" : "N",
+    "sentence" : "La nuova serie di Battlestar Galactica ha più episodi di quella precedente?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "161",
+    "status" : "N",
+    "sentence" : "Dammi tutti i film prodotti da Hal Roach",
+    "sparqls" : [ ]
+  }, {
+    "id" : "162",
+    "status" : "N",
+    "sentence" : "Chi interpretava l'agente Smith in Matrix?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "163",
+    "status" : "N",
+    "sentence" : "Quali partiti greci sono a favore dell'Europa?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "164",
+    "status" : "WORK",
+    "sentence" : "Dammi la lista di tutti i direttori di orchestra che suonano la tromba",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Playing_House_(2006_film)> <http://dbpedia.org/ontology/composer> ?Answer .}" ]
+  }, {
+    "id" : "165",
+    "status" : "N",
+    "sentence" : "Qual è la seconda montagna più alta sulla Terra?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "166",
+    "status" : "N",
+    "sentence" : "La città più grande dell'Egitto è anche la sua capitale?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "167",
+    "status" : "N",
+    "sentence" : "Quali missili furono lanciati da Baikonur?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "168",
+    "status" : "N",
+    "sentence" : "Quanti linguaggi di programmazione esistono?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "169",
+    "status" : "N",
+    "sentence" : "Quali giocatori di scacchi morirono nel loro luogo di nascita?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "170",
+    "status" : "WORK",
+    "sentence" : "Chi è il proprietario di Facebook?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "171",
+    "status" : "N",
+    "sentence" : "Dammi tutti i film con Tom Cruise",
+    "sparqls" : [ ]
+  }, {
+    "id" : "172",
+    "status" : "WORK",
+    "sentence" : "In quale stato americano si trova Fort Knox?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Bent's_Old_Fort_National_Historic_Site> <http://dbpedia.org/ontology/location> ?Answer .}" ]
+  }, {
+    "id" : "173",
+    "status" : "N",
+    "sentence" : "Dammi tutte le città del New Jersey con più di 100000 abitanti",
+    "sparqls" : [ ]
+  }, {
+    "id" : "174",
+    "status" : "N",
+    "sentence" : "Quali montagne sono più alte del Nanga Parbat?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "175",
+    "status" : "N",
+    "sentence" : "Dammi tutti i lati B dei Ramones",
+    "sparqls" : [ ]
+  }, {
+    "id" : "176",
+    "status" : "N",
+    "sentence" : "Quali sono le specialità della UNC Health Care?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "177",
+    "status" : "N",
+    "sentence" : "Quando è stato ucciso Olof Palme?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "178",
+    "status" : "N",
+    "sentence" : "Elenca i sette re di Roma",
+    "sparqls" : [ ]
+  }, {
+    "id" : "179",
+    "status" : "N",
+    "sentence" : "Dammi tutte le persone che sono nate a Vienna e morte a Berlino",
+    "sparqls" : [ ]
+  }, {
+    "id" : "180",
+    "status" : "N",
+    "sentence" : "Darth Vader è il padre di Luke?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "181",
+    "status" : "N",
+    "sentence" : "Mostrami tutti i birrifici in Australia",
+    "sparqls" : [ ]
+  }, {
+    "id" : "182",
+    "status" : "N",
+    "sentence" : "Dammi tutti i film prodotti da Steven Spielberg con un budget finale di produzione di almeno 80 milioni di dollari",
+    "sparqls" : [ ]
+  }, {
+    "id" : "183",
+    "status" : "N",
+    "sentence" : "Dammi tutti i club calcistici della Spagna",
+    "sparqls" : [ ]
+  }, {
+    "id" : "184",
+    "status" : "WORK",
+    "sentence" : "Chi ha prodotto i film in cui recita Natalie Portman?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Devil_Dogs_of_the_Air> <http://dbpedia.org/ontology/producer> ?Answer .}" ]
+  }, {
+    "id" : "185",
+    "status" : "N",
+    "sentence" : "Dammi tutte le razze del pastore tedesco",
+    "sparqls" : [ ]
+  }, {
+    "id" : "186",
+    "status" : "WORK",
+    "sentence" : "Chi è il giocatore più pesante dei Chicago Bulls?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Brazil–Paraguay_border> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Campaign_for_Nuclear_Disarmament> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Shock_(film)> <http://dbpedia.org/ontology/language> ?Answer .}" ]
+  }, {
+    "id" : "187",
+    "status" : "N",
+    "sentence" : "Quali lingue sono parlate in Estonia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "188",
+    "status" : "N",
+    "sentence" : "Qual è la nazione più grande al mondo?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "189",
+    "status" : "N",
+    "sentence" : "Che cosa è il maggiore città in America? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "190",
+    "status" : "WORK",
+    "sentence" : "Quale papa ha fondato la televisione vaticana?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/foundedBy> <http://dbpedia.org/resource/Oscar_De_La_Hoya> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/La_Porchetta> <http://dbpedia.org/ontology/foundedBy> ?Answer .}" ]
+  }, {
+    "id" : "191",
+    "status" : "WORK",
+    "sentence" : "Chi ha scoperto Cerere?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ceres_(dwarf_planet)> <http://dbpedia.org/ontology/discoverer> ?Answer .}" ]
+  }, {
+    "id" : "192",
+    "status" : "WORK",
+    "sentence" : "Chi è il re dei Paesi Bassi?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Prussian_invasion_of_Holland> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Nilgiris_district> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Caribbean_Netherlands> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Mari_El> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Royal_Dutch_Swimming_Federation> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Cleopatra's_Daughter> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Tauern_Railway> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "193",
+    "status" : "N",
+    "sentence" : "La Cola è una bevanda?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "194",
+    "status" : "N",
+    "sentence" : "Che cosa è il alma mater di il cancelliere di Germania Angela Merkel? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "195",
+    "status" : "WORK",
+    "sentence" : "Chi ha scritto il libro I pilastri della Terra?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Book_of_Dust> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Pillars_of_the_Earth_(miniseries)> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Earth_Cries_Out> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+  }, {
+    "id" : "196",
+    "status" : "N",
+    "sentence" : "Quali aeroporti sono serviti da Yeti Airlines?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "197",
+    "status" : "N",
+    "sentence" : "Dove è il luogo di nascita di Goethe? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "198",
+    "status" : "N",
+    "sentence" : "La crisi dei missili di Cuba avvenne prima dello sbarco nella Baia dei Porci?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "199",
+    "status" : "N",
+    "sentence" : "Di quali ingredienti ho bisogno per la torta di carote?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "200",
+    "status" : "WORK",
+    "sentence" : "Chi ha creato Wikipedia?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Wikipedia_Monument> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/List_of_Wikipedia_mobile_applications> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+  }, {
+    "id" : "201",
+    "status" : "N",
+    "sentence" : "Che cosa è il massimo montagna in Sassonia Germania? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "202",
+    "status" : "WORK",
+    "sentence" : "Chi è il attuale federale ministro di finanza in Germania? ",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Benedict_Arnold's_expedition_to_Quebec> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Germany> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Germany> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Central_Council_of_Muslims_in_Germany> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Fascist> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "203",
+    "status" : "WORK",
+    "sentence" : "In quale stato si trova La Mecca?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Quinceañera_(1987_TV_series)> <http://dbpedia.org/ontology/location> ?Answer .}" ]
+  }, {
+    "id" : "204",
+    "status" : "WORK",
+    "sentence" : "Chi ha interpretato Gustavo Fring in Breaking Bad - Reazioni collaterali?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/John_Carter_(ER)> <http://dbpedia.org/ontology/portrayer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/John_Carter_(ER)> <http://dbpedia.org/property/portrayer> ?Answer .}" ]
+  }, {
+    "id" : "205",
+    "status" : "WORK",
+    "sentence" : "In quale stato nasce il Nilo?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Nile> <http://dbpedia.org/property/mouthLocation> ?Answer .}" ]
+  }, {
+    "id" : "206",
+    "status" : "N",
+    "sentence" : "In quale stato Penn Stato Università è si trova? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "207",
+    "status" : "N",
+    "sentence" : "Qual è lo stadio più grande in Spagna?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "208",
+    "status" : "N",
+    "sentence" : "Chi è l'allenatore della squadra di hockey di Ankara?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "209",
+    "status" : "N",
+    "sentence" : "Come grande è il la zona di UK? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "210",
+    "status" : "WORK",
+    "sentence" : "Chi ha creato Batman?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Batman_(TV_series)> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Batman> <http://dbpedia.org/ontology/creator> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Batman_Forever_(video_game)> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+  }, {
+    "id" : "211",
+    "status" : "N",
+    "sentence" : "Sigmund Freud era sposato?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "212",
+    "status" : "WORK",
+    "sentence" : "Chi ha sviluppato DBpedia?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/DBpedia> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+  }, {
+    "id" : "213",
+    "status" : "N",
+    "sentence" : "Dammi tutti i film diretti da Francis Ford Coppola",
+    "sparqls" : [ ]
+  }, {
+    "id" : "214",
+    "status" : "N",
+    "sentence" : "Le rane verdi sono un tipo di anfibio?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "215",
+    "status" : "N",
+    "sentence" : "Dove si trova il Palazzo di Westminster?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "216",
+    "status" : "N",
+    "sentence" : "Come tanto è il elevazione di Düsseldorf Aeroporto ? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "217",
+    "status" : "N",
+    "sentence" : "Come tanto è il popolazione di Messico città ? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "218",
+    "status" : "N",
+    "sentence" : "quando era il fondazione Data di francese quinto repubblica? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "219",
+    "status" : "N",
+    "sentence" : "Chi fu il primo Re d'Inghilterra?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "220",
+    "status" : "N",
+    "sentence" : "Chi è l'editore di Forbes?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "221",
+    "status" : "N",
+    "sentence" : "Quali premi ha vinto Douglas Hofstadter?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "222",
+    "status" : "WORK",
+    "sentence" : "Chi è il giocatore di freccette più giovane?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "223",
+    "status" : "N",
+    "sentence" : "L'ippica è uno sport?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "224",
+    "status" : "N",
+    "sentence" : "Quale fiume attraversa il ponte di Brooklyn?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "225",
+    "status" : "N",
+    "sentence" : "Quante persone vivono in Polonia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "226",
+    "status" : "N",
+    "sentence" : "quando era il ultimo episodio di il tv serie Amici in onda? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "227",
+    "status" : "N",
+    "sentence" : "La moglie del presidente Obama si chiama Michelle?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "229",
+    "status" : "WORK",
+    "sentence" : "Chi è 8 ° Presidente di NOI? ",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Bundesautobahn_8> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Dekalog:_Eight> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Bundesautobahn_8> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "230",
+    "status" : "N",
+    "sentence" : "Come tanto è il totale popolazione di europeo unione? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "231",
+    "status" : "N",
+    "sentence" : "Dammi tutte le rampe di lancio gestite dalla NASA",
+    "sparqls" : [ ]
+  }, {
+    "id" : "232",
+    "status" : "WORK",
+    "sentence" : "Chi ha creato il videogioco World of Warcraft?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/On_the_Shore_of_the_Wide_World> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Bracken's_World> <http://dbpedia.org/ontology/creator> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Guinness_World_Records:_The_Videogame> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+  }, {
+    "id" : "233",
+    "status" : "N",
+    "sentence" : "Che cosa è il nascita nome di Adele? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "234",
+    "status" : "N",
+    "sentence" : "Che cosa è il popolazione di Cairo? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "235",
+    "status" : "N",
+    "sentence" : "Frank Herbert è ancora vivo?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "236",
+    "status" : "N",
+    "sentence" : "Che cosa è il ultimo lavoro di e Marrone? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "237",
+    "status" : "N",
+    "sentence" : "Dove è Sungkyunkwan Università? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "238",
+    "status" : "WORK",
+    "sentence" : "Chi è il autore di il interpretazione di sogni? ",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Lessons_of_a_Dream> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "239",
+    "status" : "N",
+    "sentence" : "quando era il Morte di Shakespeare? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "241",
+    "status" : "WORK",
+    "sentence" : "Chi ha sviluppato Slack?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Slack_(software)> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+  }, {
+    "id" : "242",
+    "status" : "N",
+    "sentence" : "Dove è il origine di Carolina mietitrice? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "243",
+    "status" : "N",
+    "sentence" : "In quale anno è nata Rachel Stevens?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "244",
+    "status" : "N",
+    "sentence" : "Quante volte si è sposata Jane Fonda?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "245",
+    "status" : "N",
+    "sentence" : "La moglie del presidente Lincoln si chiamava Mary?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "246",
+    "status" : "N",
+    "sentence" : "Attraverso quali città scorre il fiume Weser?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "247",
+    "status" : "N",
+    "sentence" : "In quale linguaggio di programmazione è scritto GIMP?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "248",
+    "status" : "WORK",
+    "sentence" : "Quale università ha frequentato Angela Merkel?",
+    "sparqls" : [ "No Sparql!!!!" ]
+  }, {
+    "id" : "249",
+    "status" : "N",
+    "sentence" : "Elenca tutti i musicals con musiche di Elton John",
+    "sparqls" : [ ]
+  }, {
+    "id" : "250",
+    "status" : "N",
+    "sentence" : "Quanti negozi Aldi ci sono?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "251",
+    "status" : "N",
+    "sentence" : "Qual è il fiume più lungo del mondo?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "252",
+    "status" : "N",
+    "sentence" : "Quando nacque John Adams?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "253",
+    "status" : "N",
+    "sentence" : "Quali società producono aeroscafi?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "254",
+    "status" : "N",
+    "sentence" : "Chi era la moglie del presidente degli Stati Uniti Lincoln?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "255",
+    "status" : "N",
+    "sentence" : "Quale specie fa un elefante appartenere? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "256",
+    "status" : "N",
+    "sentence" : "Quante persone vivono nella capitale dell'Australia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "257",
+    "status" : "N",
+    "sentence" : "In quale antico impero era possibile pagare con le fave di cacao?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "258",
+    "status" : "N",
+    "sentence" : "Quante teorie formulò Albert Einstein?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "259",
+    "status" : "WORK",
+    "sentence" : "Chi ha composto la colonna sonora di Titanic di Cameron?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Miseducation_of_Cameron_Post_(film)> <http://dbpedia.org/ontology/musicComposer> ?Answer .}" ]
+  }, {
+    "id" : "260",
+    "status" : "WORK",
+    "sentence" : "Dammi la durata di Toy Story",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Bedtime_Story_(Madonna_song)> <http://dbpedia.org/ontology/runtime> ?Answer .}" ]
+  }, {
+    "id" : "262",
+    "status" : "N",
+    "sentence" : "Con Come molti paesi Ho corso ha frontiere? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "263",
+    "status" : "N",
+    "sentence" : "Quali società di elettronica sono state fondate a Pechino?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "264",
+    "status" : "N",
+    "sentence" : "Chi fu il successore di John F Kennedy?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "265",
+    "status" : "WORK",
+    "sentence" : "Chi è il sindaco di Parigi?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Boulevard_Périphérique> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Paris_Chamber_of_Commerce> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_New_York_Hat> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "266",
+    "status" : "N",
+    "sentence" : "Arnold Schwarzenegger ha frequentato l'Università?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "267",
+    "status" : "N",
+    "sentence" : "James è Bond sposato?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "268",
+    "status" : "N",
+    "sentence" : "L'Isar sfocia in un lago?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "269",
+    "status" : "N",
+    "sentence" : "Quale società indiana ha il maggior numero di dipendenti?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "270",
+    "status" : "N",
+    "sentence" : "Chi fu il vicepresidente di John F Kennedy?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "271",
+    "status" : "N",
+    "sentence" : "Da quale stato proviene il creatore di Miffy?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "273",
+    "status" : "N",
+    "sentence" : "In quale città si trova il birrificio della Heiniken?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "274",
+    "status" : "N",
+    "sentence" : "Barack Obama è un democratico?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "275",
+    "status" : "WORK",
+    "sentence" : "Elenca i figli di Margaret Thatcher",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Georgiana_Spencer,_Countess_Spencer> <http://dbpedia.org/ontology/child> ?Answer .}" ]
+  }, {
+    "id" : "276",
+    "status" : "N",
+    "sentence" : "Da quale regione proviene il Melon de Bourgogne?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "278",
+    "status" : "N",
+    "sentence" : "Come grande è il totale la zona di Nord Reno- Westfalia? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "279",
+    "status" : "WORK",
+    "sentence" : "Quale città ha il maggior numero di abitanti?",
+    "sparqls" : [ "No Sparql!!!!" ]
+  }, {
+    "id" : "280",
+    "status" : "N",
+    "sentence" : "Che cosa è Donald Trump di principale attività commerciale? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "281",
+    "status" : "N",
+    "sentence" : "quando volere inizio il finale incontro di il calcio mondo tazza 2018? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "282",
+    "status" : "N",
+    "sentence" : "Quanti film ha diretto Stanley Kubrick?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "283",
+    "status" : "N",
+    "sentence" : "Come tanto è il popolazione Iraq? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "284",
+    "status" : "N",
+    "sentence" : "Quanti abitanti ha la città più grande del Canada?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "285",
+    "status" : "WORK",
+    "sentence" : "Chi è il sindaco della capitale della Polinesia Francese?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Rome> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Mali> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Province_of_Carolina> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Australian_Capital_Territory> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Il_Capitale_Culturale:_Studies_on_the_Value_of_Cultural_Heritage> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Whispered_Name> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/M604_railway_(Croatia)> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "286",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli attori che recitano in film diretti da William Shatner",
+    "sparqls" : [ ]
+  }, {
+    "id" : "287",
+    "status" : "N",
+    "sentence" : "Quanto è alta Claudia Schiffer?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "288",
+    "status" : "N",
+    "sentence" : "Come tanto è il popolazione densità rango di Germania? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "289",
+    "status" : "N",
+    "sentence" : "Qual è la montagna più alta in Italia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "290",
+    "status" : "N",
+    "sentence" : "Elenca tutti i giochi di GMT",
+    "sparqls" : [ ]
+  }, {
+    "id" : "291",
+    "status" : "N",
+    "sentence" : "Qual è la lingua ufficiale del Suriname?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "292",
+    "status" : "N",
+    "sentence" : "In quale città è morto Nikos Kazantzakis",
+    "sparqls" : [ ]
+  }, {
+    "id" : "293",
+    "status" : "N",
+    "sentence" : "Cosa c'e' in un biscotto con gocce di cioccolato?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "294",
+    "status" : "WORK",
+    "sentence" : "In quale stato si trova il lago Limerick?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Biviere_Lake> <http://dbpedia.org/ontology/location> ?Answer .}" ]
+  }, {
+    "id" : "295",
+    "status" : "WORK",
+    "sentence" : "Dammi tutti i videogiochi di Mean Hamster Software",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Rock_Star_Ate_My_Hamster> <http://dbpedia.org/ontology/publisher> ?Answer .}" ]
+  }, {
+    "id" : "296",
+    "status" : "N",
+    "sentence" : "Dammi tutti i membri dei Prodigy",
+    "sparqls" : [ ]
+  }, {
+    "id" : "297",
+    "status" : "N",
+    "sentence" : "Qual è il fuso orario di Roma?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "298",
+    "status" : "WORK",
+    "sentence" : "Quanto è alto il faro di Colombo?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Cairo> <http://dbpedia.org/ontology/elevation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Scheveningen_Lighthouse> <http://dbpedia.org/ontology/height> ?Answer .}" ]
+  }, {
+    "id" : "299",
+    "status" : "N",
+    "sentence" : "Chi siamo il scrittori di il Parete album di Rosa Floyd? ",
+    "sparqls" : [ ]
+  }, {
+    "id" : "300",
+    "status" : "WORK",
+    "sentence" : "Chi è il sindaco di Rotterdam?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Rotterdam> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Rotterdam> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Rotterdam> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "301",
+    "status" : "N",
+    "sentence" : "Qual è la città più grande d'Australia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "302",
+    "status" : "WORK",
+    "sentence" : "Chi è stato sposato con il presidente Chirac?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Free_State_(province)> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Prussia> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Pontifical_Council_for_Dialogue_with_Non-Believers> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Præsidenten> <http://dbpedia.org/ontology/language> ?Answer .}" ]
+  }, {
+    "id" : "303",
+    "status" : "N",
+    "sentence" : "Che forma di governo c'è in Sudafrica?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "304",
+    "status" : "WORK",
+    "sentence" : "Quanto è alta la torre Yokohama Marine?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Breda_Tower> <http://dbpedia.org/ontology/height> ?Answer .}" ]
+  }, {
+    "id" : "305",
+    "status" : "N",
+    "sentence" : "Quali festività sono celebrate nel mondo?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "306",
+    "status" : "WORK",
+    "sentence" : "Chi è il giocatore di pallacanestro più alto?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "307",
+    "status" : "N",
+    "sentence" : "Quante lingue sono parlate in Turkmenistan?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "308",
+    "status" : "N",
+    "sentence" : "Che Guevara aveva dei figli?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "309",
+    "status" : "N",
+    "sentence" : "Kaurismäki ha mai vinto il Grand Prix a Cannes?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "310",
+    "status" : "N",
+    "sentence" : "A quale partito polito appartiene il sindaco di Parigi?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "311",
+    "status" : "N",
+    "sentence" : "Qual è il pilota di Formula 1 con più gare?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "312",
+    "status" : "N",
+    "sentence" : "Di che nazione è Sitecore?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "313",
+    "status" : "N",
+    "sentence" : "Dammi il luogo di nascita di Frank Sinatra",
+    "sparqls" : [ ]
+  }, {
+    "id" : "314",
+    "status" : "N",
+    "sentence" : "Christian Bale ha recitato in Velvet Goldmine?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "315",
+    "status" : "WORK",
+    "sentence" : "Chi è il figlio di Sonny e Cher",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/United_Kingdom> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Brazil–Paraguay_border> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Protectorate_of_Bohemia_and_Moravia> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Lennox_and_Addington_County> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Congregation_of_Jesus_and_Mary> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Man_with_the_Golden_Winchester> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Line_E_(Buenos_Aires_Underground)> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "316",
+    "status" : "N",
+    "sentence" : "Quanti gruppi etnici vivono in Slovenia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "317",
+    "status" : "N",
+    "sentence" : "Qual è la capitale del Cameroon",
+    "sparqls" : [ ]
+  }, {
+    "id" : "318",
+    "status" : "N",
+    "sentence" : "Natalie Portman, nata, Stati Uniti d'America",
+    "sparqls" : [ ]
+  }, {
+    "id" : "319",
+    "status" : "N",
+    "sentence" : "Quante pagine ha Guerra e Pace?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "320",
+    "status" : "WORK",
+    "sentence" : "Chi è il figlio maggiore di Meryl Streep?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Canis_Major> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Man_with_the_Golden_Winchester> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "321",
+    "status" : "N",
+    "sentence" : "Quali serie televisive sono state create dalla Walt Disney?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "322",
+    "status" : "N",
+    "sentence" : "Che cosa significa IYCM?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "323",
+    "status" : "N",
+    "sentence" : "Quali tipi di uva crescono in Oregon?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "324",
+    "status" : "N",
+    "sentence" : "Il presidente degli Stati Uniti Jackson è stato coinvolto in una guerra?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "325",
+    "status" : "WORK",
+    "sentence" : "Quando è stato completato il Titanic?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Titanic> <http://dbpedia.org/ontology/completionDate> ?Answer .}" ]
+  }, {
+    "id" : "326",
+    "status" : "N",
+    "sentence" : "Tesla ha vinto un premio Nobel per la fisica?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "327",
+    "status" : "N",
+    "sentence" : "Quanti stati ci sono in Messico?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "328",
+    "status" : "N",
+    "sentence" : "Quale scienziato è conosciuto per il progetto Manhattan e per il premio Nobel per la pace?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "329",
+    "status" : "N",
+    "sentence" : "Quanto è costato il Lego Movie?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "330",
+    "status" : "N",
+    "sentence" : "Chi ha composto la musica per Harold e Maude?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "331",
+    "status" : "N",
+    "sentence" : "Elenca tutti gli episodi della prima stagione della serie televisiva di HBO i Sopranos",
+    "sparqls" : [ ]
+  }, {
+    "id" : "332",
+    "status" : "WORK",
+    "sentence" : "Quale città ha il minor numero di abitanti?",
+    "sparqls" : [ "No Sparql!!!!" ]
+  }, {
+    "id" : "333",
+    "status" : "N",
+    "sentence" : "Dove è sepolto Syngman Rhee?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "334",
+    "status" : "N",
+    "sentence" : "Neymar gioca per il Real Madrid?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "335",
+    "status" : "WORK",
+    "sentence" : "Chi ha scritto il libro I pilastri della Terra?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Book_of_Dust> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Pillars_of_the_Earth_(miniseries)> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Earth_Cries_Out> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+  }, {
+    "id" : "336",
+    "status" : "N",
+    "sentence" : "Il principe Harry e il principe William hanno gli stessi genitoris?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "337",
+    "status" : "N",
+    "sentence" : "Chi era il supervisore della tesi di dottorato di Albert Einstein?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "338",
+    "status" : "N",
+    "sentence" : "Breaking Bad ha più episodi di Game of Thrones?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "339",
+    "status" : "N",
+    "sentence" : "Da chi fu inspirato Vincent van Gogh?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "340",
+    "status" : "N",
+    "sentence" : "Quale edificio dopo il Burj Khalifa ha più piani?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "341",
+    "status" : "N",
+    "sentence" : "Quale fu il risultato finale della Guerra delle Due Rose?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "342",
+    "status" : "N",
+    "sentence" : "Quanto è costato Pulp Fiction?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "343",
+    "status" : "N",
+    "sentence" : "a proinsulina è una proteina?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "344",
+    "status" : "N",
+    "sentence" : "Urdu e Persiano hanno le stesse radici?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "345",
+    "status" : "N",
+    "sentence" : "Chi recita nei film spagnoli prodotti da Benicio del Toro?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "346",
+    "status" : "N",
+    "sentence" : "Il lago Baikal è più grande le lago Great Bear?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "347",
+    "status" : "WORK",
+    "sentence" : "Mostrami tutti i libri del Ciclo della Fondazione di Asimov",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/series> <http://dbpedia.org/resource/Cthulhu_Mythos> .}" ]
+  }, {
+    "id" : "348",
+    "status" : "N",
+    "sentence" : "Dove è nato Bach?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "349",
+    "status" : "WORK",
+    "sentence" : "Quale città ha la più antica metropolitana in funzione?",
+    "sparqls" : [ "No Sparql!!!!" ]
+  }, {
+    "id" : "350",
+    "status" : "WORK",
+    "sentence" : "Chi ha progettato il ponte di Brooklyn?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Brooklyn_Bridge> <http://dbpedia.org/ontology/architect> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Riven> <http://dbpedia.org/ontology/designer> ?Answer .}" ]
+  }, {
+    "id" : "351",
+    "status" : "N",
+    "sentence" : "Quante persone vivono in Eurasia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "352",
+    "status" : "WORK",
+    "sentence" : "Chi è il presentatore degli speciali della BBC Wildlife?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Asiago> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Mendel_Pass> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Province_of_Carolina> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Table_Bay> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Servants_of_Charity> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Hot_Water_(1924_film)> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/M604_railway_(Croatia)> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "353",
+    "status" : "N",
+    "sentence" : "Qual è la popolazione totale di Melbourne, Florida?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "354",
+    "status" : "WORK",
+    "sentence" : "In quale stato si trova il Monte Everest?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mount_Roland_(Antarctica)> <http://dbpedia.org/ontology/location> ?Answer .}" ]
+  }, {
+    "id" : "355",
+    "status" : "N",
+    "sentence" : "A quale movimento artistico apparteneva il pittore de I tre ballerini?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "356",
+    "status" : "N",
+    "sentence" : "Quando è iniziata l'operatione Overlord?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "357",
+    "status" : "N",
+    "sentence" : "Qual è il ponte con la campata più lunga?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "358",
+    "status" : "N",
+    "sentence" : "Esiste un videogioco che si chiama Battle Chess?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "359",
+    "status" : "N",
+    "sentence" : "Chi fu sepolto nella Grande Piramide di Giza?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "360",
+    "status" : "N",
+    "sentence" : "La Ford ha una fabbrica in Malesia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "361",
+    "status" : "N",
+    "sentence" : "Socrate ha influenzato Aristotele?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "362",
+    "status" : "N",
+    "sentence" : "Quanti figli ebbe Benjamin Franklin?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "363",
+    "status" : "WORK",
+    "sentence" : "Quanto è alto Michael Jordan?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sankt_Michael_im_Lungau> <http://dbpedia.org/ontology/elevation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sarah_Michael> <http://dbpedia.org/ontology/height> ?Answer .}" ]
+  }, {
+    "id" : "364",
+    "status" : "N",
+    "sentence" : "In quale città del Regno Unito si trova il quartier generale del MI6?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "365",
+    "status" : "WORK",
+    "sentence" : "Chi ha creato I Griffin?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Melencolia_I> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Family_Guy> <http://dbpedia.org/ontology/creator> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Family_Guy> <http://dbpedia.org/ontology/developer> ?Answer .}" ]
+  }, {
+    "id" : "366",
+    "status" : "N",
+    "sentence" : "In quale città termina la Route 68 in Cile?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "367",
+    "status" : "N",
+    "sentence" : "Dammi i nipoti di Elvis Presley",
+    "sparqls" : [ ]
+  }, {
+    "id" : "368",
+    "status" : "N",
+    "sentence" : "Quando è scomparsa la dinastia Ming?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "369",
+    "status" : "N",
+    "sentence" : "A quali conflitti militari ha partecipato Lawrence d'Arabia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "370",
+    "status" : "N",
+    "sentence" : "Qual è il fuso orario di San Pedro de Atacama?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "371",
+    "status" : "WORK",
+    "sentence" : "Dammi tutti i libri di Wiliam Goldman con più di 300 pagine",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/A_Dance_with_Dragons> <http://dbpedia.org/ontology/series> ?Answer .}" ]
+  }, {
+    "id" : "372",
+    "status" : "WORK",
+    "sentence" : "Di cosa è morto Bruce Carver?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Bruce_Lee> <http://dbpedia.org/ontology/deathCause> ?Answer .}" ]
+  }, {
+    "id" : "373",
+    "status" : "N",
+    "sentence" : "Quale società sussidiaria di Lufthansa serve sia Dortmund che Berlin Tegel?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "374",
+    "status" : "N",
+    "sentence" : "Il luogo di morte di Abraham Lincoln ha un sito web?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "375",
+    "status" : "N",
+    "sentence" : "Elvis Presley ha avuto dei figli?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "376",
+    "status" : "N",
+    "sentence" : "Michelle Obama è la moglie di Barack Obama?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "377",
+    "status" : "N",
+    "sentence" : "In quale città vive Sylvester Stallone?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "378",
+    "status" : "N",
+    "sentence" : "Quali libri di Kerouac furono pubblicati da Viking Press?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "379",
+    "status" : "WORK",
+    "sentence" : "Chi ha scritto la canzone Hotel California?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Brian's_Song> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/California_Games> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/La_canzone_nostra> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+  }, {
+    "id" : "380",
+    "status" : "N",
+    "sentence" : "Qual è la capitale del Canada?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "381",
+    "status" : "WORK",
+    "sentence" : "Chi è il sindaco di Tel Aviv?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Tel_Aviv_District> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "382",
+    "status" : "WORK",
+    "sentence" : "Quale forma di governo ha la Russia?",
+    "sparqls" : [ "No Sparql!!!!" ]
+  }, {
+    "id" : "383",
+    "status" : "N",
+    "sentence" : "Mostrami il libro scritto da Muhammad Ali",
+    "sparqls" : [ ]
+  }, {
+    "id" : "384",
+    "status" : "WORK",
+    "sentence" : "Chi è stato il primo a scalare il Monte Everest?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Command-line_interface> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Lovćen> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Prussia> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/A_Pontenova> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Physical_Review_A> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Mount_Analogue> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Naples–Salerno_high-speed_railway> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "385",
+    "status" : "N",
+    "sentence" : "Quante lingue sono parlate in Colombia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "386",
+    "status" : "WORK",
+    "sentence" : "Qual è la valuta della Repubblica Ceca?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Czech_Republic> <http://dbpedia.org/ontology/currency> ?Answer .}" ]
+  }, {
+    "id" : "387",
+    "status" : "N",
+    "sentence" : "Dove si produce vino frizzante in Francia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "388",
+    "status" : "N",
+    "sentence" : "Boris Becker quando ha concluso la sua carriera?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "389",
+    "status" : "N",
+    "sentence" : "Quali film in cui recita Mickey Rourke sono stati diretti da Guy Ritchie?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "390",
+    "status" : "N",
+    "sentence" : "In quali film recitano sia Julia Roberts che Richard Gere?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "391",
+    "status" : "N",
+    "sentence" : "Mostrami l'autobiografia di Hemingway",
+    "sparqls" : [ ]
+  }, {
+    "id" : "392",
+    "status" : "N",
+    "sentence" : "Quanto è alta Amazon Eve?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "393",
+    "status" : "N",
+    "sentence" : "Quali sono i cinque quartieri di New York?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "394",
+    "status" : "N",
+    "sentence" : "Dammi tutti i produttori canadesi di musica Grunge",
+    "sparqls" : [ ]
+  }, {
+    "id" : "395",
+    "status" : "WORK",
+    "sentence" : "In quale stato nasce il Gange?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ganges> <http://dbpedia.org/property/mouthLocation> ?Answer .}" ]
+  }, {
+    "id" : "396",
+    "status" : "WORK",
+    "sentence" : "Chi è il fondatore di Penguin Books?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/programmingLanguage> <http://dbpedia.org/resource/Scripting_language> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Faridabad> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/Principality_of_Capua> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/mouthLocation> <http://dbpedia.org/resource/Great_Rann_of_Kutch> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Sisters_of_Saint_Andrew> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Rubber_Wall> <http://dbpedia.org/ontology/language> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Ramal_de_Reguengos> <http://dbpedia.org/ontology/routeStart> ?Answer .}" ]
+  }, {
+    "id" : "397",
+    "status" : "WORK",
+    "sentence" : "Chi ha scritto Game of Thrones?",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Cross_Game> <http://dbpedia.org/ontology/author> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Game_of_Thrones_(2014_video_game)> <http://dbpedia.org/ontology/composer> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/The_Name_of_the_Game_(ABBA_song)> <http://dbpedia.org/ontology/writer> ?Answer .}" ]
+  }, {
+    "id" : "398",
+    "status" : "WORK",
+    "sentence" : "Chi è il presidente dell'Eritrea?",
+    "sparqls" : [ "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/battle> <http://dbpedia.org/resource/Battle_of_Castle_Itter> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Dell_Rapids,_South_Dakota> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Rio_Dell,_California> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/country> <http://dbpedia.org/resource/President_of_the_United_States> .}", "SELECT ?Answer WHERE { ?Answer <http://dbpedia.org/property/location> <http://dbpedia.org/resource/Cairo> .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Campaign_for_Nuclear_Disarmament> <http://dbpedia.org/ontology/abbreviation> ?Answer .}", "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Præsidenten> <http://dbpedia.org/ontology/language> ?Answer .}" ]
+  }, {
+    "id" : "399",
+    "status" : "N",
+    "sentence" : "In quale città morì John F Kennedy?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "400",
+    "status" : "N",
+    "sentence" : "Qual è la montagna più alta d'Australia?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "401",
+    "status" : "N",
+    "sentence" : "Chi scrive il Farmers' Almanac?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "402",
+    "status" : "WORK",
+    "sentence" : "Dammi la valuta della Cina",
+    "sparqls" : [ "SELECT ?Answer WHERE { <http://dbpedia.org/resource/Taiwan> <http://dbpedia.org/ontology/currency> ?Answer .}" ]
+  }, {
+    "id" : "403",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli oceanografi svedesi",
+    "sparqls" : [ ]
+  }, {
+    "id" : "404",
+    "status" : "N",
+    "sentence" : "In quale città si trova il quartier generale delle Nazioni Unite?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "405",
+    "status" : "N",
+    "sentence" : "Rita Wilson è la moglie di Tom Hanks?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "406",
+    "status" : "N",
+    "sentence" : "In quali stati si parla giapponese?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "407",
+    "status" : "N",
+    "sentence" : "Quali film di Tim Burton hanno avuto il budget più alto?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "408",
+    "status" : "N",
+    "sentence" : "Quale museo di New York ha il maggior numero di visitatori?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "409",
+    "status" : "N",
+    "sentence" : "Qual è stato il primo album dei Queen?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "410",
+    "status" : "N",
+    "sentence" : "Qual è stato il primo nome del gruppo Queens of the Stone Age?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "411",
+    "status" : "N",
+    "sentence" : "Qual è l'ultimo film con Alec Guinness?",
+    "sparqls" : [ ]
+  }, {
+    "id" : "412",
+    "status" : "N",
+    "sentence" : "Dammi tutti gli attori che hanno recitato in Last Action Hero",
+    "sparqls" : [ ]
+  }, {
+    "id" : "413",
+    "status" : "N",
+    "sentence" : "Chi scoprì Plutone?",
+    "sparqls" : [ ]
+  } ]
+}

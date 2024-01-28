@@ -17,16 +17,16 @@ import utils.csv.CsvUtils;
 public class QueGG {
 
     //private static String inputDir = "grammarFiles/en/";
-    private static String inputDir = "result/en/";
+   //private static String inputDir = "result/it/";
     private static String classFileName = "src/main/resources/LexicalEntryForClass.csv";
     private static Boolean entityRetriveOnline = true;
     private static Integer numberOfEntities = -1;
 
     public static void main(String[] args) throws Exception {
         Boolean parseFlag = false, evaluationFlag = true;
-        String languageT = "en", LangCapital = "EN";
-        args = new String[]{languageT, "grammarFiles/" + languageT + "/" + "grammar_FULL_DATASET_" + LangCapital + ".json",
-            "grammarFiles/" + languageT + "/input_EN.csv"};
+        //String languageT = "it", LangCapital = "IT";
+        //args = new String[]{languageT, "grammarFiles/" + languageT + "/" + "grammar_FULL_DATASET_" + LangCapital + ".json",
+        //    "grammarFiles/" + languageT + "/input_IT.csv"};
         if (args.length < 3) {
             System.err.printf("Too few parameters (%s/%s)", args.length);
             throw new IllegalArgumentException(String.format("Too few parameters (%s/%s)", args.length));
@@ -78,8 +78,8 @@ public class QueGG {
 
             System.out.println();
 
-            //if(index>200)
-            //     break;
+            //if(index>100)
+            //    break;
         }
         try {
             ObjectMapper mapper = new ObjectMapper();
