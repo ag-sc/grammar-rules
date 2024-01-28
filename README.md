@@ -43,12 +43,10 @@ For Spanish
 java -jar target/grammar-rules.jar de grammarFiles/de/grammar_FULL_DATASET_ES.json grammarFiles/de/input_ES.csv
 ````
 
+- output for German [output_DE.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/de/output_DE.json)
+- output for Italian [output_IT.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/it/output_IT.json)
+- output for Spanish [output_ES.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/es/output_ES.json)
 
-````  
-output [output_DE.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/de/output_DE.json)
-output [output_IT.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/it/output_IT.json)
-output [output_ES.json](https://github.com/ag-sc/grammar-rules/blob/main/grammarFiles/es/output_ES.json)
-````
 
 ## Developers
 * **Mohammad Fazleh Elahi**
